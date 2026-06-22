@@ -1,0 +1,401 @@
+{
+  "id": "mimas",
+  "name": {
+    "zh": "土卫一",
+    "en": "Mimas"
+  },
+  "icon": "🪐",
+  "theme_color": "#c0c0c0",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "土星的天然卫星",
+            "en": "Natural satellite of Saturn"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "396.4 km",
+            "en": "396.4 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "3.749×10¹⁹ kg",
+            "en": "3.749×10¹⁹ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "3.3×10⁷ km³",
+            "en": "3.3×10⁷ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.15 g/cm³",
+            "en": "1.15 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.064 m/s²",
+            "en": "0.064 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫一因巨大的赫歇尔撞击坑而酷似《星球大战》中的死星，直径约139公里，几乎占卫星直径的三分之一。",
+        "en": "※ Mimas resembles the Death Star from Star Wars due to the giant Herschel Crater, which is about 139 km in diameter, nearly one-third of the moon's own diameter."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "22小时37分5秒（同步自转）",
+            "en": "22h 37m 5s (synchronous rotation)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "22小时37分5秒",
+            "en": "22h 37m 5s"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "14.28 km/s",
+            "en": "14.28 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0196",
+            "en": "0.0196"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "1.574°（相对于土星赤道）",
+            "en": "1.574° (to Saturn's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫一是土星已知卫星中距离土星最近的大卫星，轨道半径仅185,520公里。",
+        "en": "※ Mimas is the innermost major moon of Saturn, with an orbital radius of only 185,520 km."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "64 K（-209 °C）至 90 K（-183 °C）",
+            "en": "64 K (-209 °C) to 90 K (-183 °C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 77 K（-196 °C）",
+            "en": "Approx. 77 K (-196 °C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "几乎为零（无显著大气层）",
+            "en": "Virtually zero (no significant atmosphere)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无内源磁场",
+            "en": "No intrinsic magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫一的低密度（1.15 g/cm³）表明其内部主要由水冰组成，可能含有一个小岩石核心。",
+        "en": "※ Mimas' low density (1.15 g/cm³) indicates it is composed mostly of water ice, possibly with a small rocky core."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕土星公转）",
+            "en": "N/A (orbits Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用（绕土星公转）",
+            "en": "N/A (orbits Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "185,520 km（绕土星）",
+            "en": "185,520 km (around Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.00124 AU（相对于土星）",
+            "en": "0.00124 AU (relative to Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约1.23秒（从土星到土卫一）",
+            "en": "About 1.23 seconds (from Saturn to Mimas)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（土卫一本身是卫星，无子卫星）",
+            "en": "0 (Mimas itself is a moon, no sub-satellites)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫一与土星环中的卡西尼缝有引力共振关系，其引力清除了环缝中的粒子。",
+        "en": "※ Mimas has a gravitational resonance with the Cassini Division in Saturn's rings, clearing particles from the gap."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "冰质表面，布满撞击坑，有沟壑和断层",
+            "en": "Icy surface, heavily cratered, with grooves and faults"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "赫歇尔撞击坑（直径约139 km）",
+            "en": "Herschel Crater (diameter ~139 km)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约40亿年（古老表面）",
+            "en": "~4 billion years (ancient surface)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "赫歇尔坑中央峰，高约6 km",
+            "en": "Central peak of Herschel, ~6 km high"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 赫歇尔撞击坑的直径（139 km）几乎达到土卫一直径（396 km）的三分之一，使其看起来像科幻电影中的死星。",
+        "en": "※ The Herschel Crater's diameter (139 km) is nearly one-third of Mimas' diameter (396 km), giving it a Death Star appearance from science fiction."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1789年9月17日，由威廉·赫歇尔发现",
+            "en": "Discovered by William Herschel on September 17, 1789"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1980年11月12日，旅行者1号",
+            "en": "Voyager 1, November 12, 1980"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "2004年7月1日，卡西尼号进入土星轨道后多次飞掠",
+            "en": "Cassini orbited Saturn from July 1, 2004, with multiple flybys"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "卡西尼号（2004-2017）提供了最详细的观测数据",
+            "en": "Cassini (2004-2017) provided the most detailed observations"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 卡西尼号在2010年发现土卫一表面存在奇怪的“热斑”，温度异常高，可能与潮汐加热有关。",
+        "en": "※ Cassini discovered strange 'thermal anomalies' on Mimas in 2010, with unusually high temperatures possibly linked to tidal heating."
+      }
+    }
+  ]
+}

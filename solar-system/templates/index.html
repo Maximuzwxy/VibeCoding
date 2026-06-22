@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">🌌 太阳系 - Solar System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 顶部搜索框 -->
+    <div id="search-container">
+        <div id="search-box">
+            <input type="text" id="search-input" data-i18n-placeholder="search_placeholder" placeholder="输入问题，探索太阳系...">
+            <div id="search-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- 对话面板 -->
+    <div id="chat-panel">
+        <div class="chat-header">
+            <h4 data-i18n="chat_title">🤖 太阳系探索助手</h4>
+            <div class="chat-close" id="chat-close">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-message ai" data-i18n="chat_welcome">
+                你好！我是太阳系探索助手。🌌 有什么关于太阳系的问题吗？
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" data-i18n-placeholder="chat_input_placeholder" placeholder="输入你的问题...">
+            <button id="chat-send" data-i18n="btn_send">发送</button>
+        </div>
+    </div>
+
+    <!-- 左侧信息面板（动态加载） -->
+    <div id="info-panel">
+        <!-- 内容由 JS 动态加载 templates/components/info-panel-solar.html -->
+    </div>
+
+    <!-- 右侧答题面板 -->
+    <div id="quiz-panel">
+        <h3 data-i18n="quiz_title">📝 太阳系知识挑战</h3>
+        
+        <!-- 题库主题配置 -->
+        <input type="hidden" id="quiz-topic" data-topic="solar_system">
+
+        <div id="quiz-content">
+            <div class="quiz-mode-switch">
+                <button class="quiz-mode-btn active" id="mode-local" data-i18n="quiz_mode_local">本地题库</button>
+                <button class="quiz-mode-btn" id="mode-online" data-i18n="quiz_mode_online">在线生成</button>
+            </div>
+
+            <div class="question-text" id="question-text" data-i18n="quiz_loading">加载中...</div>
+
+            <div class="options-container" id="options-container"></div>
+
+            <div class="feedback" id="feedback">
+                <div class="feedback-title" id="feedback-title"></div>
+                <div class="feedback-explanation" id="feedback-explanation"></div>
+            </div>
+
+            <div style="display: flex; gap: 8px; margin-top: 15px;">
+                <button class="next-btn" id="save-btn" data-i18n="btn_save_to_bank" style="flex: 1;">💾 加入题库</button>
+                <button class="next-btn" id="next-btn" data-i18n="btn_next" style="flex: 1;">⏭ 下一题</button>
+                <!-- 完成提示文字（本地题库做完后显示，与按钮同位置） -->
+                <div id="complete-message" style="display: none; flex: 1; text-align: center; padding: 10px; color: var(--theme-text); font-size: 16px; font-weight: bold; align-self: center;">✅ 题目已做完</div>
+            </div>
+        </div>
+
+        <div class="score-display" id="score-display">
+            <div class="score-title" data-i18n="quiz_complete_title">🎉 挑战完成!</div>
+            <div class="score-value" data-i18n="quiz_score">得分：<span id="final-score">0</span> / 100</div>
+            <button class="restart-btn" onclick="restartQuiz()" data-i18n="btn_restart">🔄 重新开始</button>
+        </div>
+    </div>
+
+    <!-- 语言切换按钮 -->
+    <button id="lang-switch">CN</button>
+
+    <!-- 底部天体选择器 -->
+    <div id="planet-selector">
+        <div class="planet-orbit">
+            <div class="planet-icon active" data-planet="sun" data-color="#ffdd00">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #ffdd00, #ff8800);"></div>
+                <div class="planet-name-label" data-i18n="planet_sun">☀️ 太阳</div>
+            </div>
+            <div class="planet-icon" data-planet="mercury" data-color="#b5b5b5">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #e0e0e0, #b5b5b5);"></div>
+                <div class="planet-name-label" data-i18n="planet_mercury">☿️ 水星</div>
+            </div>
+            <div class="planet-icon" data-planet="venus" data-color="#ffc649">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #ffe0a0, #ffc649);"></div>
+                <div class="planet-name-label" data-i18n="planet_venus">♀️ 金星</div>
+            </div>
+            <div class="planet-icon" data-planet="earth" data-color="#4da6ff">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #80c1ff, #4da6ff);"></div>
+                <div class="planet-name-label" data-i18n="planet_earth">🌍 地球</div>
+            </div>
+            <div class="planet-icon" data-planet="mars" data-color="#c15a3a">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #e87850, #c15a3a);"></div>
+                <div class="planet-name-label" data-i18n="planet_mars">♂️ 火星</div>
+            </div>
+            <div class="planet-icon" data-planet="jupiter" data-color="#d8ca9d">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #f0e0c0, #d8ca9d);"></div>
+                <div class="planet-name-label" data-i18n="planet_jupiter">♃ 木星</div>
+            </div>
+            <div class="planet-icon" data-planet="saturn" data-color="#ead6b8">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #fff0e0, #ead6b8);"></div>
+                <div class="planet-name-label" data-i18n="planet_saturn">🪐 土星</div>
+            </div>
+            <div class="planet-icon" data-planet="uranus" data-color="#4fd0e7">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #80e0f0, #4fd0e7);"></div>
+                <div class="planet-name-label" data-i18n="planet_uranus">♅ 天王星</div>
+            </div>
+            <div class="planet-icon" data-planet="neptune" data-color="#2244ff">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #6060ff, #2244ff);"></div>
+                <div class="planet-name-label" data-i18n="planet_neptune">♆ 海王星</div>
+            </div>
+            <!-- 卫星列表按钮 -->
+            <div class="planet-icon" id="moons-list-btn" data-color="#cccccc">
+                <div class="planet-sphere" style="background: radial-gradient(circle at 30% 30%, #e0e0e0, #cccccc);"></div>
+                <div class="planet-name-label" data-i18n="moons_list">🌑 卫星列表</div>
+                <!-- 卫星弹出列表 -->
+                <div class="moons-popup" id="moons-popup">
+                    <div class="moons-popup-header" id="moons-popup-header">
+                        🌑 卫星列表
+                    </div>
+                    <div class="moons-popup-content" id="moons-popup-content">
+                        <!-- 卫星列表由 JS 动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script src="/static/js/language.js"></script>
+    <script src="/static/js/chat.js"></script>
+    <script src="/static/js/quiz.js"></script>
+    <script type="module" src="/static/js/planet-selector.js"></script>
+    <script type="module" src="/static/js/main.js"></script>
+</body>
+</html>

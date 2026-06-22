@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS8 - 加载中</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .loading-container {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.5em;
+            color: #00d4ff;
+            margin-bottom: 40px;
+        }
+
+        .countdown {
+            font-size: 8em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            margin-bottom: 30px;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .status {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 1.1em;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .retry-btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            display: none;
+        }
+
+        .retry-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="title">游戏加载中</div>
+        <div class="countdown" id="countdown">3</div>
+        <div class="status" id="status">正在初始化游戏世界...</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+        </div>
+        <div class="error-message" id="error-message"></div>
+        <button class="retry-btn" id="retry-btn" onclick="returnToLobby()">返回大厅</button>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const roomId = params.get('room_id');
+
+        let countdownValue = 3;
+
+        const statusMessages = [
+            '正在初始化游戏世界...',
+            '正在加载地图资源...',
+            '正在生成NPC...',
+            '准备进入游戏!'
+        ];
+
+        console.log('[Loading] Page loaded, roomId:', roomId);
+
+        function updateStatus(index) {
+            document.getElementById('status').textContent = statusMessages[index] || statusMessages[0];
+        }
+
+        function updateProgress(percent) {
+            document.getElementById('progress-fill').style.width = percent + '%';
+        }
+
+        function showError(message) {
+            console.error('[Loading] Error:', message);
+            document.getElementById('error-message').textContent = message;
+            document.getElementById('error-message').style.display = 'block';
+            document.getElementById('retry-btn').style.display = 'inline-block';
+            document.getElementById('countdown').style.display = 'none';
+        }
+
+        function returnToLobby() {
+            window.location.href = 'lobby.html';
+        }
+
+        function startCountdown() {
+            console.log('[Loading] Starting countdown from', countdownValue);
+            const countdownInterval = setInterval(() => {
+                countdownValue--;
+                console.log('[Loading] Countdown:', countdownValue);
+                document.getElementById('countdown').textContent = countdownValue;
+                updateStatus(3 - countdownValue);
+                updateProgress((3 - countdownValue) * 33);
+
+                if (countdownValue <= 0) {
+                    clearInterval(countdownInterval);
+                    console.log('[Loading] Countdown finished');
+
+                    const gameState = localStorage.getItem('fps8_game_state');
+                    console.log('[Loading] localStorage has game_state:', !!gameState);
+
+                    if (gameState) {
+                        console.log('[Loading] Navigating to multi_game.html');
+                        setTimeout(() => {
+                            window.location.href = 'multi_game.html?room_id=' + roomId;
+                        }, 500);
+                    } else {
+                        showError('游戏数据加载失败，请返回重试');
+                    }
+                }
+            }, 1000);
+        }
+
+        startCountdown();
+    </script>
+</body>
+</html>

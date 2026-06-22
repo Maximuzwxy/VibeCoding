@@ -1,0 +1,743 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Layout Variables */
+    --panel-width: 380px;
+    --panel-padding: 18px;
+    --section-margin: 14px;
+    --section-padding: 12px;
+    
+    /* Typography */
+    --font-size-title: 22px;
+    --font-size-subtitle: 15px;
+    --font-size-header: 13px;
+    --font-size-label: 11px;
+    --font-size-input: 12px;
+    --font-size-button: 12px;
+    --font-size-text: 12px;
+    --font-size-small: 10px;
+    
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 18px;
+    
+    /* Colors */
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --primary-gradient-hover: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+    --bg-light: #fafafa;
+    --border-color: #e8e8e8;
+    --text-primary: #2c3e50;
+    --text-secondary: #555;
+    --text-muted: #888;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Control Panel Styles - Refactored */
+.control-panel {
+    width: var(--panel-width);
+    min-width: var(--panel-width);
+    max-width: var(--panel-width);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: var(--panel-padding);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: none;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    color: var(--text-primary);
+    /* Hide scrollbar but keep functionality */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.control-panel::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.control-panel h1 {
+    font-size: var(--font-size-title);
+    margin-bottom: var(--spacing-lg);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.control-panel h2 {
+    font-size: var(--font-size-subtitle);
+    margin-bottom: var(--spacing-md);
+    color: #667eea;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 6px;
+    font-weight: 600;
+}
+
+.panel-section {
+    margin-bottom: var(--section-margin);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: var(--section-padding);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    width: 100%;
+    min-width: 0;
+}
+
+/* Collapsible Panel - Refactored */
+.collapsible .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 12px;
+    background: var(--primary-gradient);
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: var(--font-size-header);
+    user-select: none;
+}
+
+.collapsible .panel-header:hover {
+    background: var(--primary-gradient-hover);
+}
+
+.toggle-icon {
+    transition: transform 0.3s;
+    font-size: 10px;
+}
+
+.collapsible.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.panel-content {
+    max-height: 800px;
+    overflow: hidden;
+    transition: max-height 0.25s ease, padding 0.25s ease, margin-top 0.25s ease;
+    padding: var(--spacing-md);
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    margin-top: var(--spacing-sm);
+    width: 100%;
+    min-width: 0;
+}
+
+.collapsible.collapsed .panel-content {
+    max-height: 0;
+    padding: 0 var(--spacing-md);
+    margin-top: 0;
+}
+
+.panel-content p {
+    margin: var(--spacing-sm) 0;
+    line-height: 1.5;
+    font-size: var(--font-size-text);
+    color: var(--text-secondary);
+}
+
+.panel-content ul {
+    margin-left: 18px;
+    margin-top: var(--spacing-sm);
+}
+
+.panel-content li {
+    margin: var(--spacing-xs) 0;
+    font-size: 11px;
+    color: #666;
+}
+
+/* Form Styles - Refactored */
+.form-group {
+    margin-bottom: var(--spacing-md);
+    width: 100%;
+    min-width: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-label);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.input-row {
+    display: flex;
+    gap: var(--spacing-sm);
+    width: 100%;
+    min-width: 0;
+}
+
+.input-row > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.input-row input {
+    width: 100%;
+    padding: 6px 5px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: var(--text-primary);
+    font-size: var(--font-size-input);
+    transition: all 0.3s;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.input-row input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-row input::placeholder {
+    color: #aaa;
+    font-size: var(--font-size-input);
+}
+
+select {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: var(--text-primary);
+    font-size: var(--font-size-input);
+    cursor: pointer;
+    transition: all 0.3s;
+    appearance: none;
+    box-sizing: border-box;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667eea' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.color-input-row {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+}
+
+input[type="color"] {
+    width: 55px;
+    min-width: 55px;
+    height: 34px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+input[type="color"]:hover {
+    border-color: #667eea;
+}
+
+/* Button Styles - Refactored */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 14px;
+    font-size: var(--font-size-button);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary {
+    width: 100%;
+    background: var(--primary-gradient);
+    color: white;
+    margin-top: var(--spacing-md);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--primary-gradient-hover);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #555;
+    border: 1px solid #d0d0d0;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #e8ecf1 0%, #b8c5d8 100%);
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.btn-secondary.active {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.btn-danger {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #ff5252 0%, #e04560 100%);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.btn-danger:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+}
+
+.toggle-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    width: 100%;
+    min-width: 0;
+}
+
+.toggle-buttons button {
+    flex: 1;
+    min-width: 0;
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    padding: 5px 10px;
+    font-size: 11px;
+    box-shadow: 0 2px 6px rgba(255, 107, 107, 0.2);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(135deg, #ff5252 0%, #e04560 100%);
+    box-shadow: 0 3px 8px rgba(255, 107, 107, 0.3);
+}
+
+/* Object List Styles - Refactored */
+.object-list {
+    max-height: 180px;
+    overflow-y: auto;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    width: 100%;
+    min-width: 0;
+}
+
+.object-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    width: 100%;
+    min-width: 0;
+}
+
+.object-item:hover {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8ecf8 100%);
+    border-color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.object-info {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.object-name {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.object-position {
+    color: var(--text-muted);
+    font-size: var(--font-size-small);
+    margin-top: 2px;
+    font-family: 'Courier New', monospace;
+}
+
+.empty-message {
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+    padding: 20px;
+    font-size: 12px;
+}
+
+/* Object Properties Styles */
+.selection-hint {
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+    padding: 20px 10px;
+    font-size: 12px;
+    margin: 0;
+}
+
+#properties-content {
+    width: 100%;
+    min-width: 0;
+}
+
+#reset-transform-btn {
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+/* Canvas Container */
+.canvas-container {
+    flex: 1;
+    position: relative;
+    background: radial-gradient(circle at center, #2c3e50 0%, #1a1a2e 100%);
+    min-width: 0;
+}
+
+#scene-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Toast Notification - Enhanced */
+.toast {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    font-size: 12px;
+}
+
+.toast.hidden {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+    pointer-events: none;
+}
+
+/* Camera Parameters Panel */
+.camera-panel {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    overflow: hidden;
+}
+
+.camera-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 14px;
+    background: var(--primary-gradient);
+    color: white;
+    font-weight: 600;
+    font-size: var(--font-size-header);
+    user-select: none;
+}
+
+.camera-panel-header:hover {
+    background: var(--primary-gradient-hover);
+}
+
+.camera-panel-content {
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.25s ease, padding 0.25s ease;
+    padding: 12px;
+    background-color: var(--bg-light);
+}
+
+.collapsible.collapsed .camera-panel-content {
+    max-height: 0;
+    padding: 0 12px;
+}
+
+.camera-panel .form-group {
+    margin-bottom: 10px;
+}
+
+.camera-panel .form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: var(--font-size-label);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.camera-panel input[type="number"] {
+    width: 100%;
+    padding: 6px 5px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: var(--text-primary);
+    font-size: var(--font-size-input);
+    transition: all 0.3s;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.camera-panel input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#reset-camera-btn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Scrollbar Styles - Enhanced */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-gradient-hover);
+}
+
+/* Additional polish */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+    height: 20px;
+}
+
+/* Mode Switch Styles */
+.mode-switch {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: 0;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #555;
+    font-size: var(--font-size-button);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.mode-btn:hover {
+    background: linear-gradient(135deg, #e8ecf1 0%, #b8c5d8 100%);
+    color: #667eea;
+}
+
+.mode-btn.active {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* FPS Instructions Overlay */
+.fps-instructions {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    pointer-events: none;
+}
+
+.fps-instructions.hidden {
+    display: none;
+}
+
+.fps-hint {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    border: 2px solid rgba(102, 126, 234, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fps-hint p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.fps-hint strong {
+    font-size: 18px;
+    color: #667eea;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* FPS Crosshair */
+.fps-crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    pointer-events: none;
+}
+
+.fps-crosshair.hidden {
+    display: none;
+}
+
+.crosshair-line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.crosshair-line.horizontal {
+    width: 20px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.crosshair-line.vertical {
+    width: 2px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hide control panel in FPS mode */
+.control-panel.fps-hidden {
+    display: none;
+}
+
+/* Hide camera panel in FPS mode */
+.camera-panel.fps-hidden {
+    display: none;
+}
+
+/* FPS fullscreen mode - canvas fills entire viewport */
+.canvas-container.fps-fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 1000 !important;
+    flex: none !important;
+}
+
+.canvas-container.fps-fullscreen #scene-canvas {
+    width: 100vw !important;
+    height: 100vh !important;
+}

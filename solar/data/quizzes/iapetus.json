@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_iapetus_001",
+      "question": {
+        "zh": "土卫八（Iapetus）是土星的第几大卫星？",
+        "en": "What is the rank of Iapetus in terms of size among Saturn's moons?"
+      },
+      "options": [
+        {
+          "zh": "第三大",
+          "en": "Third largest"
+        },
+        {
+          "zh": "第一大",
+          "en": "Largest"
+        },
+        {
+          "zh": "第五大",
+          "en": "Fifth largest"
+        },
+        {
+          "zh": "第七大",
+          "en": "Seventh largest"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫八是土星第三大卫星，仅次于土卫六（泰坦）和土卫五（瑞亚）。",
+        "en": "Iapetus is the third largest moon of Saturn, after Titan and Rhea."
+      }
+    },
+    {
+      "id": "q_iapetus_002",
+      "question": {
+        "zh": "土卫八最显著的外观特征是什么？",
+        "en": "What is the most notable surface feature of Iapetus?"
+      },
+      "options": [
+        {
+          "zh": "全球性的冰火山活动",
+          "en": "Global cryovolcanism"
+        },
+        {
+          "zh": "明亮的冰盖覆盖整个表面",
+          "en": "Bright ice cap covering the entire surface"
+        },
+        {
+          "zh": "强烈的双色外观：一面亮一面暗",
+          "en": "Strong two-tone appearance: one hemisphere bright, the other dark"
+        },
+        {
+          "zh": "密集的环形山链",
+          "en": "Dense crater chains"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫八以其极端的双色外观闻名：前导半球非常暗（像沥青），后随半球非常亮（像雪）。",
+        "en": "Iapetus is famous for its extreme two-tone appearance: the leading hemisphere is very dark (like asphalt) and the trailing hemisphere is very bright (like snow)."
+      }
+    },
+    {
+      "id": "q_iapetus_003",
+      "question": {
+        "zh": "土卫八的轨道倾角约为多少？",
+        "en": "What is the approximate orbital inclination of Iapetus?"
+      },
+      "options": [
+        {
+          "zh": "约 0.1°",
+          "en": "About 0.1°"
+        },
+        {
+          "zh": "约 8°",
+          "en": "About 8°"
+        },
+        {
+          "zh": "约 15°",
+          "en": "About 15°"
+        },
+        {
+          "zh": "约 90°",
+          "en": "About 90°"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫八的轨道倾角约为 15.47°，是土星主要卫星中倾角最大的之一。",
+        "en": "Iapetus has an orbital inclination of about 15.47°, one of the highest among Saturn's major moons."
+      }
+    },
+    {
+      "id": "q_iapetus_004",
+      "question": {
+        "zh": "土卫八的赤道脊（Equatorial Ridge）的高度大约是多少？",
+        "en": "What is the approximate height of Iapetus's equatorial ridge?"
+      },
+      "options": [
+        {
+          "zh": "约 1 公里",
+          "en": "About 1 km"
+        },
+        {
+          "zh": "约 5 公里",
+          "en": "About 5 km"
+        },
+        {
+          "zh": "约 13 公里",
+          "en": "About 13 km"
+        },
+        {
+          "zh": "约 30 公里",
+          "en": "About 30 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫八的赤道脊最高处可达约 13 公里，是太阳系中独特的地形特征。",
+        "en": "The equatorial ridge of Iapetus reaches up to about 13 km in height, a unique topographic feature in the solar system."
+      }
+    },
+    {
+      "id": "q_iapetus_005",
+      "question": {
+        "zh": "土卫八的平均密度约为多少？",
+        "en": "What is the average density of Iapetus?"
+      },
+      "options": [
+        {
+          "zh": "约 1.0 g/cm³",
+          "en": "About 1.0 g/cm³"
+        },
+        {
+          "zh": "约 1.1 g/cm³",
+          "en": "About 1.1 g/cm³"
+        },
+        {
+          "zh": "约 2.5 g/cm³",
+          "en": "About 2.5 g/cm³"
+        },
+        {
+          "zh": "约 3.9 g/cm³",
+          "en": "About 3.9 g/cm³"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫八的平均密度约为 1.088 g/cm³，表明其主要由水冰和少量岩石组成。",
+        "en": "The average density of Iapetus is about 1.088 g/cm³, indicating it is composed mainly of water ice with a small amount of rock."
+      }
+    },
+    {
+      "id": "q_iapetus_006",
+      "question": {
+        "zh": "土卫八的暗面物质（Cassini Regio）主要成分被认为是什么？",
+        "en": "What is the main component thought to be in the dark region (Cassini Regio) of Iapetus?"
+      },
+      "options": [
+        {
+          "zh": "纯水冰",
+          "en": "Pure water ice"
+        },
+        {
+          "zh": "有机化合物和硅酸盐尘埃",
+          "en": "Organic compounds and silicate dust"
+        },
+        {
+          "zh": "液态甲烷",
+          "en": "Liquid methane"
+        },
+        {
+          "zh": "金属铁",
+          "en": "Metallic iron"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "暗面物质被认为是由有机化合物（类似托林）和硅酸盐尘埃组成，可能来自土卫九（菲比）或其他外源物质。",
+        "en": "The dark material is thought to consist of organic compounds (similar to tholins) and silicate dust, possibly originating from Phoebe or other external sources."
+      }
+    },
+    {
+      "id": "q_iapetus_007",
+      "question": {
+        "zh": "土卫八的直径大约是多少？",
+        "en": "What is the approximate diameter of Iapetus?"
+      },
+      "options": [
+        {
+          "zh": "约 500 公里",
+          "en": "About 500 km"
+        },
+        {
+          "zh": "约 1,000 公里",
+          "en": "About 1,000 km"
+        },
+        {
+          "zh": "约 1,470 公里",
+          "en": "About 1,470 km"
+        },
+        {
+          "zh": "约 2,500 公里",
+          "en": "About 2,500 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫八的平均直径约为 1,470 公里，使其成为土星第三大卫星。",
+        "en": "Iapetus has a mean diameter of about 1,470 km, making it Saturn's third largest moon."
+      }
+    },
+    {
+      "id": "q_iapetus_008",
+      "question": {
+        "zh": "土卫八的发现者是谁？",
+        "en": "Who discovered Iapetus?"
+      },
+      "options": [
+        {
+          "zh": "伽利略·伽利雷",
+          "en": "Galileo Galilei"
+        },
+        {
+          "zh": "克里斯蒂安·惠更斯",
+          "en": "Christiaan Huygens"
+        },
+        {
+          "zh": "乔瓦尼·多梅尼科·卡西尼",
+          "en": "Giovanni Domenico Cassini"
+        },
+        {
+          "zh": "威廉·赫歇尔",
+          "en": "William Herschel"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫八由乔瓦尼·卡西尼于 1671 年发现。",
+        "en": "Iapetus was discovered by Giovanni Cassini in 1671."
+      }
+    },
+    {
+      "id": "q_iapetus_009",
+      "question": {
+        "zh": "土卫八绕土星公转一周大约需要多长时间？",
+        "en": "How long does it take for Iapetus to orbit Saturn?"
+      },
+      "options": [
+        {
+          "zh": "约 16 天",
+          "en": "About 16 days"
+        },
+        {
+          "zh": "约 79 天",
+          "en": "About 79 days"
+        },
+        {
+          "zh": "约 365 天",
+          "en": "About 365 days"
+        },
+        {
+          "zh": "约 10 小时",
+          "en": "About 10 hours"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫八的轨道周期约为 79.33 天，是土星主要卫星中轨道周期最长的之一。",
+        "en": "Iapetus has an orbital period of about 79.33 days, one of the longest among Saturn's major moons."
+      }
+    },
+    {
+      "id": "q_iapetus_010",
+      "question": {
+        "zh": "以下哪项关于土卫八表面温度的描述是正确的？",
+        "en": "Which of the following statements about Iapetus's surface temperature is correct?"
+      },
+      "options": [
+        {
+          "zh": "暗面与亮面温度相同，约 -150°C",
+          "en": "Dark and bright sides have the same temperature, about -150°C"
+        },
+        {
+          "zh": "暗面比亮面温度高约 30 K",
+          "en": "The dark side is about 30 K warmer than the bright side"
+        },
+        {
+          "zh": "亮面比暗面温度高约 50 K",
+          "en": "The bright side is about 50 K warmer than the dark side"
+        },
+        {
+          "zh": "表面温度均匀，约 -200°C",
+          "en": "Surface temperature is uniform, about -200°C"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "由于暗面吸收更多阳光，其温度可达约 -143°C（130 K），而亮面温度约为 -173°C（100 K），温差约 30 K。",
+        "en": "Due to greater sunlight absorption, the dark side can reach about -143°C (130 K), while the bright side is about -173°C (100 K), a difference of about 30 K."
+      }
+    }
+  ]
+}

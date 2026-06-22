@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_venus_001",
+      "question": {"zh": "金星的直径约为多少？", "en": "What is the approximate diameter of Venus?"},
+      "options": [
+        {"zh": "9,480 公里", "en": "9,480 km"},
+        {"zh": "10,104 公里", "en": "10,104 km"},
+        {"zh": "12,104 公里", "en": "12,104 km"},
+        {"zh": "12,742 公里", "en": "12,742 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "金星的直径约为 12,104 公里，与地球（12,742 公里）非常接近，被称为地球的'姐妹星'。", "en": "Venus's diameter is approximately 12,104 km, very close to Earth's (12,742 km), earning it the nickname 'Earth's sister planet'."}
+    },
+    {
+      "id": "q_venus_002",
+      "question": {"zh": "金星绕太阳公转一周需要多少天？", "en": "How many days does it take for Venus to orbit the Sun once?"},
+      "options": [
+        {"zh": "88 天", "en": "88 days"},
+        {"zh": "225 天", "en": "225 days"},
+        {"zh": "365 天", "en": "365 days"},
+        {"zh": "687 天", "en": "687 days"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "金星公转周期为 225 天，比地球的 365 天短。", "en": "Venus's orbital period is 225 days, shorter than Earth's 365 days."}
+    },
+    {
+      "id": "q_venus_003",
+      "question": {"zh": "金星的自转周期是多少？", "en": "What is Venus's rotation period?"},
+      "options": [
+        {"zh": "24 小时", "en": "24 hours"},
+        {"zh": "58.6 天", "en": "58.6 days"},
+        {"zh": "243 天", "en": "243 days"},
+        {"zh": "365 天", "en": "365 days"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "金星自转一周需要 243 天，是太阳系自转最慢的行星，而且是逆向自转。", "en": "Venus takes 243 days to complete one rotation, the slowest in the Solar System, and rotates in retrograde direction."}
+    },
+    {
+      "id": "q_venus_004",
+      "question": {"zh": "金星表面的平均温度约为多少？", "en": "What is the average surface temperature on Venus?"},
+      "options": [
+        {"zh": "约 167°C", "en": "About 167°C"},
+        {"zh": "约 250°C", "en": "About 250°C"},
+        {"zh": "约 350°C", "en": "About 350°C"},
+        {"zh": "约 465°C", "en": "About 465°C"}
+      ],
+      "answer": 3,
+      "explanation": {"zh": "金星表面温度约为 465°C，是太阳系最热的行星，甚至比水星还热。", "en": "Venus's surface temperature is about 465°C, making it the hottest planet in the Solar System, even hotter than Mercury."}
+    },
+    {
+      "id": "q_venus_005",
+      "question": {"zh": "金星有多少颗天然卫星？", "en": "How many natural satellites does Venus have?"},
+      "options": [
+        {"zh": "0 颗", "en": "0 moons"},
+        {"zh": "1 颗", "en": "1 moon"},
+        {"zh": "2 颗", "en": "2 moons"},
+        {"zh": "4 颗", "en": "4 moons"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "金星没有天然卫星，是太阳系中两颗没有卫星的行星之一（另一颗是水星）。", "en": "Venus has no natural satellites, one of two planets in the Solar System without moons (the other is Mercury)."}
+    },
+    {
+      "id": "q_venus_006",
+      "question": {"zh": "金星距离太阳的平均距离约为多少？", "en": "What is the average distance from Venus to the Sun?"},
+      "options": [
+        {"zh": "5,790 万公里", "en": "57.9 million km"},
+        {"zh": "1.082 亿公里", "en": "108.2 million km"},
+        {"zh": "1.5 亿公里", "en": "150 million km"},
+        {"zh": "2.28 亿公里", "en": "228 million km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "金星与太阳的平均距离约为 1.082 亿公里（0.72 AU），是离太阳第二近的行星。", "en": "Venus's average distance from the Sun is approximately 108.2 million km (0.72 AU), making it the second closest planet to the Sun."}
+    },
+    {
+      "id": "q_venus_007",
+      "question": {"zh": "金星大气层中含量最多的气体是什么？", "en": "What is the most abundant gas in Venus's atmosphere?"},
+      "options": [
+        {"zh": "氮气", "en": "Nitrogen"},
+        {"zh": "氧气", "en": "Oxygen"},
+        {"zh": "二氧化碳", "en": "Carbon Dioxide"},
+        {"zh": "氩气", "en": "Argon"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "金星大气层中二氧化碳约占 96.5%，是造成强烈温室效应的主要原因。", "en": "Venus's atmosphere consists of approximately 96.5% carbon dioxide, which causes the intense greenhouse effect."}
+    },
+    {
+      "id": "q_venus_008",
+      "question": {"zh": "金星的大气压力是地球的多少倍？", "en": "How many times is Venus's atmospheric pressure compared to Earth's?"},
+      "options": [
+        {"zh": "约 10 倍", "en": "About 10 times"},
+        {"zh": "约 50 倍", "en": "About 50 times"},
+        {"zh": "约 90 倍", "en": "About 90 times"},
+        {"zh": "约 100 倍", "en": "About 100 times"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "金星表面大气压力约为 9,200 kPa，是地球海平面大气压的约 90 倍。", "en": "Venus's surface atmospheric pressure is approximately 9,200 kPa, about 90 times that of Earth's sea level pressure."}
+    },
+    {
+      "id": "q_venus_009",
+      "question": {"zh": "首次成功着陆金星的探测器是？", "en": "Which spacecraft first successfully landed on Venus?"},
+      "options": [
+        {"zh": "水手 2 号", "en": "Mariner 2"},
+        {"zh": "金星 7 号", "en": "Venera 7"},
+        {"zh": "先驱者金星号", "en": "Pioneer Venus"},
+        {"zh": "麦哲伦号", "en": "Magellan"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "苏联的金星 7 号于 1970 年成功着陆金星，是第一个在金星表面软着陆的人类探测器。", "en": "The Soviet Venera 7 successfully landed on Venus in 1970, becoming the first spacecraft to soft-land on Venus."}
+    },
+    {
+      "id": "q_venus_010",
+      "question": {"zh": "金星自转方向的特点是？", "en": "What is unique about Venus's rotation direction?"},
+      "options": [
+        {"zh": "与地球相同", "en": "Same as Earth"},
+        {"zh": "逆向自转（自东向西）", "en": "Retrograde (east to west)"},
+        {"zh": "不旋转", "en": "Does not rotate"},
+        {"zh": "随机方向", "en": "Random direction"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "金星是太阳系中唯一逆向自转的行星（自东向西），轴倾角约 177.4°，几乎是'倒着'旋转。", "en": "Venus is the only planet in the Solar System with retrograde rotation (east to west), with an axial tilt of about 177.4°, almost 'upside down'."}
+    }
+  ]
+}

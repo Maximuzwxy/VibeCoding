@@ -1,0 +1,67 @@
+{
+  "id": "io",
+  "name": {"zh": "木卫一", "en": "Io"},
+  "icon": "🌑",
+  "theme_color": "#dcc658",
+  "accent_color": "#dcc658",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "卫星类型", "en": "Satellite Type"}, "value": {"zh": "岩石卫星", "en": "Rocky Moon"}},
+        {"label": {"zh": "直径", "en": "Diameter"}, "value": {"zh": "3,642 km", "en": "3,642 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "8.93×10²²kg", "en": "8.93×10²²kg"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "3.53 g/cm³", "en": "3.53 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "1.80 m/s²", "en": "1.80 m/s²"}}
+      ],
+      "note": {"zh": "※ 太阳系火山活动最活跃的天体", "en": "※ Most volcanically active body in Solar System"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "1.77 天", "en": "1.77 days"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "1.77 天", "en": "1.77 days"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "17.33 km/s", "en": "17.33 km/s"}},
+        {"label": {"zh": "轨道半径", "en": "Orbital Radius"}, "value": {"zh": "421,700 km", "en": "421,700 km"}}
+      ],
+      "note": {"zh": "※ 潮汐锁定", "en": "※ Tidally locked"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-130°C ~ 1650°C", "en": "-130°C to 1650°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-150°C", "en": "-150°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "0.00001 kPa", "en": "0.00001 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "SO₂ 微量", "en": "Trace SO₂"}}
+      ],
+      "note": {"zh": "※ 火山喷发温度可达 1650°C", "en": "※ Volcanic eruptions can reach 1650°C"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "与木星距离", "en": "Distance from Jupiter"}, "value": {"zh": "421,700 km", "en": "421,700 km"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "0.05°", "en": "0.05°"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "约 1.4 秒", "en": "About 1.4 seconds"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "活火山数量", "en": "Active Volcanoes"}, "value": {"zh": "400+ 座", "en": "400+ volcanoes"}},
+        {"label": {"zh": "最高火山", "en": "Tallest Volcano"}, "value": {"zh": "托希尔火山", "en": "Tohil Mons"}},
+        {"label": {"zh": "火山高度", "en": "Volcano Height"}, "value": {"zh": "约 18 km", "en": "About 18 km"}},
+        {"label": {"zh": "表面颜色", "en": "Surface Color"}, "value": {"zh": "黄色、橙色、红色", "en": "Yellow, orange, red"}}
+      ],
+      "note": {"zh": "※ 表面覆盖硫磺和二氧化硫", "en": "※ Surface covered with sulfur and sulfur dioxide"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现者", "en": "Discoverer"}, "value": {"zh": "1610 年伽利略", "en": "1610 by Galileo"}},
+        {"label": {"zh": "首次近距离拍摄", "en": "First Close-up Photos"}, "value": {"zh": "1973 年先驱者 10 号", "en": "1973 Pioneer 10"}},
+        {"label": {"zh": "详细探测", "en": "Detailed Survey"}, "value": {"zh": "1979 年旅行者号", "en": "1979 Voyager"}},
+        {"label": {"zh": "命名来源", "en": "Name Origin"}, "value": {"zh": "希腊神话宙斯情人", "en": "Zeus's lover in Greek mythology"}}
+      ]
+    }
+  ]
+}

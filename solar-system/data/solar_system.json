@@ -1,0 +1,56 @@
+{
+  "title": {
+    "zh": "太阳系",
+    "en": "Solar System"
+  },
+  "icon": "🌌",
+  "theme_color": "#ffdd00",
+  "basic_info": {
+    "title": { "zh": "基本信息", "en": "Basic Information" },
+    "formation_time": { "zh": "46 亿年前", "en": "4.6 billion years ago" },
+    "location": { "zh": "银河系猎户臂", "en": "Orion Arm, Milky Way" },
+    "distance_to_galactic_center": { "zh": "2.6 万光年", "en": "26,000 light years" },
+    "orbital_period": { "zh": "2.3 亿年", "en": "230 million years" },
+    "orbital_speed": { "zh": "220 km/s", "en": "220 km/s" }
+  },
+  "sun": {
+    "title": { "zh": "太阳", "en": "The Sun" },
+    "type": { "zh": "黄矮星", "en": "G-type main-sequence star" },
+    "diameter": { "zh": "1,392,700 km", "en": "1,392,700 km" },
+    "mass": { "zh": "1.989×10³⁰kg", "en": "1.989×10³⁰kg" },
+    "surface_temp": { "zh": "5,500°C", "en": "5,500°C" },
+    "core_temp": { "zh": "1,500 万°C", "en": "15 million°C" },
+    "note": { "zh": "占太阳系总质量的 99.86%", "en": "Contains 99.86% of Solar System's mass" }
+  },
+  "planets": {
+    "title": { "zh": "八大行星", "en": "Eight Planets" },
+    "terrestrial_count": { "zh": "类地行星 4 颗", "en": "4 Terrestrial Planets" },
+    "gas_giant_count": { "zh": "气态巨行星 4 颗", "en": "4 Gas Giants" },
+    "moons_count": { "zh": "已知卫星 290+ 颗", "en": "290+ Known Moons" },
+    "list": [
+      { "name": { "zh": "水星", "en": "Mercury" }, "color": "#b5b5b5", "type": "terrestrial" },
+      { "name": { "zh": "金星", "en": "Venus" }, "color": "#ffc649", "type": "terrestrial" },
+      { "name": { "zh": "地球", "en": "Earth" }, "color": "#4da6ff", "type": "terrestrial" },
+      { "name": { "zh": "火星", "en": "Mars" }, "color": "#c15a3a", "type": "terrestrial" },
+      { "name": { "zh": "木星", "en": "Jupiter" }, "color": "#d8ca9d", "type": "gas_giant" },
+      { "name": { "zh": "土星", "en": "Saturn" }, "color": "#ead6b8", "type": "gas_giant", "has_rings": true },
+      { "name": { "zh": "天王星", "en": "Uranus" }, "color": "#4fd0e7", "type": "ice_giant" },
+      { "name": { "zh": "海王星", "en": "Neptune" }, "color": "#2244ff", "type": "ice_giant" }
+    ]
+  },
+  "other_bodies": {
+    "title": { "zh": "其他天体", "en": "Other Bodies" },
+    "asteroid_belt": { "zh": "小行星带（火星 - 木星间）", "en": "Asteroid Belt (between Mars and Jupiter)" },
+    "kuiper_belt": { "zh": "柯伊伯带（海王星轨道外）", "en": "Kuiper Belt (beyond Neptune)" },
+    "dwarf_planets": { "zh": "5 颗确认矮行星", "en": "5 Confirmed Dwarf Planets" },
+    "comets": { "zh": "数千颗彗星", "en": "Thousands of Comets" },
+    "note": { "zh": "冥王星是最大矮行星", "en": "Pluto is the largest dwarf planet" }
+  },
+  "exploration_history": {
+    "title": { "zh": "探索历史", "en": "Exploration History" },
+    "first_satellite": { "zh": "1957 年第一颗人造卫星", "en": "1957 First Artificial Satellite" },
+    "moon_landing": { "zh": "1969 年阿波罗 11 号登月", "en": "1969 Apollo 11 Moon Landing" },
+    "voyager": { "zh": "1977 年旅行者号发射", "en": "1977 Voyager Launch" },
+    "current_missions": { "zh": "多个任务进行中", "en": "Multiple Ongoing Missions" }
+  }
+}

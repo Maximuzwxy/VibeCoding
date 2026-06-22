@@ -1,0 +1,68 @@
+{
+  "id": "phobos",
+  "name": {"zh": "火卫一", "en": "Phobos"},
+  "icon": "🌑",
+  "theme_color": "#8b7355",
+  "accent_color": "#8b7355",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "卫星类型", "en": "Satellite Type"}, "value": {"zh": "不规则岩石卫星", "en": "Irregular Rocky Moon"}},
+        {"label": {"zh": "直径", "en": "Diameter"}, "value": {"zh": "22.2 km", "en": "22.2 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "1.06×10¹⁶kg", "en": "1.06×10¹⁶kg"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "1.88 g/cm³", "en": "1.88 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "0.0057 m/s²", "en": "0.0057 m/s²"}}
+      ],
+      "note": {"zh": "※ 火星较大的卫星，形状不规则", "en": "※ Larger moon of Mars, irregularly shaped"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "7 小时 39 分", "en": "7h 39m"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "7 小时 39 分", "en": "7h 39m"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "2.14 km/s", "en": "2.14 km/s"}},
+        {"label": {"zh": "轨道半径", "en": "Orbital Radius"}, "value": {"zh": "9,376 km", "en": "9,376 km"}}
+      ],
+      "note": {"zh": "※ 潮汐锁定，距离火星非常近", "en": "※ Tidally locked, very close to Mars"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-4°C ~ -112°C", "en": "-4°C to -112°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-58°C", "en": "-58°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "≈0 kPa", "en": "≈0 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "无", "en": "None"}}
+      ],
+      "note": {"zh": "※ 没有大气层", "en": "※ No atmosphere"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "与火星距离", "en": "Distance from Mars"}, "value": {"zh": "9,376 km", "en": "9,376 km"}},
+        {"label": {"zh": "轨道高度", "en": "Orbital Altitude"}, "value": {"zh": "6,000 km", "en": "6,000 km"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "1.08°", "en": "1.08°"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "约 0.03 秒", "en": "About 0.03 seconds"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "最大撞击坑", "en": "Largest Crater"}, "value": {"zh": "斯蒂克尼坑", "en": "Stickney Crater"}},
+        {"label": {"zh": "撞击坑直径", "en": "Crater Diameter"}, "value": {"zh": "9 km", "en": "9 km"}},
+        {"label": {"zh": "表面特征", "en": "Surface Features"}, "value": {"zh": "沟槽和条纹", "en": "Grooves and streaks"}},
+        {"label": {"zh": "形状", "en": "Shape"}, "value": {"zh": "不规则椭球", "en": "Irregular ellipsoid"}}
+      ],
+      "note": {"zh": "※ 表面布满沟槽，可能是潮汐力造成", "en": "※ Surface covered with grooves, possibly from tidal forces"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现者", "en": "Discoverer"}, "value": {"zh": "1877 年霍尔", "en": "1877 by Hall"}},
+        {"label": {"zh": "首次近距离拍摄", "en": "First Close-up Photos"}, "value": {"zh": "1977 年海盗 1 号", "en": "1977 Viking 1"}},
+        {"label": {"zh": "详细探测", "en": "Detailed Survey"}, "value": {"zh": "2003 年火星快车号", "en": "2003 Mars Express"}},
+        {"label": {"zh": "未来任务", "en": "Future Mission"}, "value": {"zh": "MMX 任务 (2024)", "en": "MMX Mission (2024)"}}
+      ]
+    }
+  ]
+}

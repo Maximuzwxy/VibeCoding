@@ -1,0 +1,1101 @@
+{% extends "base.html" %}
+
+{% block title %}朋友圈 - Social{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Modal Styles */
+.modal {
+    display: none;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.modal.show .modal-overlay {
+    pointer-events: auto;
+}
+
+.modal:not(.show) .modal-overlay {
+    pointer-events: none;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    max-width: 500px;
+    width: 90%;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 24px;
+    pointer-events: auto;
+}
+
+/* Image Viewer Styles */
+.image-viewer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 20000;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-viewer.show {
+    display: flex;
+}
+
+.image-viewer-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 20001;
+}
+
+.image-viewer-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.image-viewer-counter {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 16px;
+    z-index: 20001;
+}
+
+.image-viewer-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-viewer-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.image-viewer-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    z-index: 20001;
+}
+
+.image-viewer-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.image-viewer-prev {
+    left: 20px;
+}
+
+.image-viewer-next {
+    right: 20px;
+}
+
+.image-viewer-nav.hidden {
+    display: none;
+}
+
+.friends-circle-page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.header-btn {
+    padding: 8px 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.header-btn:hover {
+    background: var(--primary-hover);
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
+}
+
+.post-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-info {
+    flex: 1;
+}
+
+.post-username {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-primary);
+}
+
+.post-time {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.post-delete-btn {
+    padding: 6px 12px;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.post-delete-btn:hover {
+    background: var(--danger);
+    color: white;
+    border-color: var(--danger);
+}
+
+.post-content {
+    padding: 0 16px 16px;
+}
+
+.post-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-primary);
+    word-break: break-word;
+}
+
+.post-images {
+    padding: 0 16px 16px;
+}
+
+.image-grid {
+    display: grid;
+    gap: 4px;
+}
+
+.image-grid.cols-1 {
+    grid-template-columns: 1fr;
+}
+
+.image-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.image-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.image-grid.cols-4,
+.image-grid:not([class*="cols-"]) {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.image-grid a {
+    display: block;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--background);
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.03);
+}
+
+.post-actions {
+    display: flex;
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    gap: 24px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: var(--background);
+    color: var(--text-primary);
+}
+
+.action-btn.liked {
+    color: var(--danger);
+}
+
+.action-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.post-engagement {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 16px 16px;
+}
+
+.likes-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.likes-list .like-icon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.likes-list a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.likes-list a:hover {
+    text-decoration: underline;
+}
+
+.comments-section {
+    border-top: 1px solid var(--border);
+    padding: 12px 16px;
+}
+
+.comment-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    align-items: flex-start;
+}
+
+.comment-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.comment-content-wrapper {
+    flex: 1;
+    line-height: 1.5;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.comment-username {
+    color: var(--accent);
+    font-weight: 500;
+    margin-right: 6px;
+}
+
+.comment-text {
+    color: var(--text-primary);
+    word-break: break-word;
+}
+
+.comment-time {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.comment-delete-btn {
+    color: var(--text-secondary);
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 6px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.comment-item:hover .comment-delete-btn {
+    opacity: 1;
+}
+
+.comment-delete-btn:hover {
+    color: var(--danger);
+}
+
+.comment-input-wrapper {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    align-items: flex-start;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    resize: none;
+    min-height: 36px;
+    max-height: 100px;
+    font-family: inherit;
+}
+
+.comment-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.comment-submit-btn {
+    padding: 8px 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.comment-submit-btn:hover {
+    background: var(--primary-hover);
+}
+
+.comment-input-container {
+    border-top: 1px solid var(--border);
+    padding: 12px 16px;
+    display: none;
+}
+
+.comment-input-container.show {
+    display: block;
+}
+
+.comment-content {
+    flex: 1;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.comment-username {
+    color: var(--accent);
+    font-weight: 500;
+    margin-right: 6px;
+}
+
+.comment-text {
+    color: var(--text-primary);
+}
+
+.comment-time {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+}
+
+.empty-state svg {
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.empty-state p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.empty-state .empty-hint {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+    .friends-circle-page {
+        padding: 12px;
+    }
+
+    .post-card {
+        border-radius: 0;
+        margin: 0 -12px;
+        border-left: none;
+        border-right: none;
+    }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="friends-circle-page">
+    <div class="page-header">
+        <h1>朋友圈</h1>
+        <div class="header-actions">
+            <button class="header-btn" onclick="showMyPosts()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+                我的帖子
+            </button>
+            <button class="header-btn" onclick="showCreatePostModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                发布
+            </button>
+        </div>
+    </div>
+
+    <div id="postsList" class="posts-list">
+    </div>
+</div>
+
+<div id="createPostModal" class="modal">
+    <div class="modal-overlay" onclick="closeCreatePostModal()"></div>
+    <div class="modal-content">
+        <h2 style="margin-bottom: 20px; font-size: 18px;">发布朋友圈</h2>
+        <textarea id="postTextInput" placeholder="分享新鲜事..." style="width: 100%; min-height: 120px; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 15px; resize: vertical; margin-bottom: 16px;"></textarea>
+        <div id="imagePreviewContainer" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--text-secondary);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <span>添加图片</span>
+                <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
+            </label>
+            <div style="display: flex; gap: 12px;">
+                <button onclick="closeCreatePostModal()" style="padding: 10px 20px; background: transparent; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer;">取消</button>
+                <button onclick="submitPost()" style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: var(--radius-sm); cursor: pointer;">发布</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image Viewer Modal -->
+<div id="imageViewer" class="image-viewer">
+    <div class="image-viewer-close" onclick="closeImageViewer()">&times;</div>
+    <div class="image-viewer-counter" id="imageViewerCounter"></div>
+    <div class="image-viewer-content" id="imageViewerContent">
+        <img id="imageViewerImg" src="" alt="">
+    </div>
+    <div class="image-viewer-nav image-viewer-prev" id="imageViewerPrev" onclick="prevImage()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </div>
+    <div class="image-viewer-nav image-viewer-next" id="imageViewerNext" onclick="nextImage()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let postsData = [];
+
+function formatTime(dateStr) {
+    const date = new Date(dateStr);
+    const now = new Date();
+    const diff = now - date;
+    const minutes = Math.floor(diff / 60000);
+    const hours = Math.floor(diff / 3600000);
+    const days = Math.floor(diff / 86400000);
+
+    if (minutes < 1) return '刚刚';
+    if (minutes < 60) return `${minutes}分钟前`;
+    if (hours < 24) return `${hours}小时前`;
+    if (days < 7) return `${days}天前`;
+    return date.toLocaleDateString('zh-CN');
+}
+
+function getImageGridClass(count) {
+    if (count === 1) return 'cols-1';
+    if (count === 2) return 'cols-2';
+    if (count === 3 || count === 6 || count === 9) return 'cols-3';
+    return 'cols-3';
+}
+
+function renderPosts(posts) {
+    const container = document.getElementById('postsList');
+
+    if (posts.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <p>还没有帖子</p>
+                <p class="empty-hint">发布第一条朋友圈吧</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = posts.map(post => {
+        const isMyPost = currentUser && post.username === currentUser.username;
+        const likedByMe = currentUser && post.likes.includes(currentUser.username);
+        const likesText = post.likes.length > 0
+            ? `<span class="like-icon">❤️</span> ${post.likes.slice(0, 2).join('、')}${post.likes.length > 2 ? `等${post.likes.length}人` : ''}`
+            : '';
+
+        const imageGridClass = getImageGridClass(post.images.length);
+        const imagesHtml = post.images.length > 0 ? `
+            <div class="post-images">
+                <div class="image-grid ${imageGridClass}">
+                    ${post.images.map((img, index) => `<img src="${img}" alt="图片" onclick="openImageViewerFromElement(this)" style="cursor: pointer;">`).join('')}
+                </div>
+            </div>
+        ` : '';
+
+        const likesHtml = post.likes.length > 0 ? `
+            <div class="likes-list">
+                <span class="like-icon">❤️</span>
+                ${post.likes.map(u => `<a href="/profile/${u}">${u}</a>`).join('、')}
+            </div>
+        ` : '';
+
+        const commentsHtml = post.comments.length > 0 ? `
+            <div class="comments-section">
+                ${post.comments.map(c => `
+                    <div class="comment-item" data-comment-id="${c.id}">
+                        <img class="comment-avatar" src="${c.avatar}" alt="${c.username}">
+                        <div class="comment-content-wrapper">
+                            <div class="comment-header">
+                                <a class="comment-username" href="/profile/${c.username}">${c.username}</a>
+                                <span class="comment-time">${formatTime(c.created_at)}</span>
+                                ${currentUser && c.username === currentUser.username ? `<span class="comment-delete-btn" onclick="deleteComment('${post.id}', '${c.id}')">删除</span>` : ''}
+                            </div>
+                            <div class="comment-text">${c.content}</div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        ` : '';
+
+        const commentInputHtml = `
+            <div class="comment-input-container" id="comment-input-${post.id}">
+                <div class="comment-input-wrapper">
+                    <textarea class="comment-input" id="comment-text-${post.id}" placeholder="写评论..." rows="1" onkeydown="if(event.key==='Enter' && !event.shiftKey){event.preventDefault();submitComment('${post.id}');}"></textarea>
+                    <button class="comment-submit-btn" onclick="submitComment('${post.id}')">发送</button>
+                </div>
+            </div>
+        `;
+
+        return `
+            <div class="post-card" data-post-id="${post.id}">
+                <div class="post-header">
+                    <img class="post-avatar" src="${post.avatar}" alt="${post.username}">
+                    <div class="post-info">
+                        <div class="post-username">${post.username}</div>
+                        <div class="post-time">${formatTime(post.created_at)}</div>
+                    </div>
+                    ${isMyPost ? `<button class="post-delete-btn" onclick="deletePost('${post.id}')">删除</button>` : ''}
+                </div>
+                <div class="post-content">
+                    <p class="post-text">${post.content}</p>
+                </div>
+                ${imagesHtml}
+                <div class="post-engagement">
+                    ${likesHtml}
+                </div>
+                <div class="post-actions">
+                    <button class="action-btn ${likedByMe ? 'liked' : ''}" onclick="toggleLike('${post.id}')">
+                        <svg viewBox="0 0 24 24" fill="${likedByMe ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        ${post.likes.length > 0 ? post.likes.length : '赞'}
+                    </button>
+                    <button class="action-btn" onclick="showComments('${post.id}')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        ${post.comments.length > 0 ? post.comments.length : '评论'}
+                    </button>
+                </div>
+                ${commentsHtml}
+                ${commentInputHtml}
+            </div>
+        `;
+    }).join('');
+}
+
+async function loadPosts() {
+    try {
+        const response = await API.getPosts();
+        postsData = response.posts;
+        renderPosts(postsData);
+    } catch (error) {
+        showToast('加载帖子失败: ' + error.message, 'error');
+    }
+}
+
+async function loadMyPosts() {
+    try {
+        const response = await API.getMyPosts();
+        postsData = response.posts;
+        renderPosts(postsData);
+    } catch (error) {
+        showToast('加载帖子失败: ' + error.message, 'error');
+    }
+}
+
+function showMyPosts() {
+    loadMyPosts();
+}
+
+function showAllPosts() {
+    loadPosts();
+}
+
+function showCreatePostModal() {
+    const modal = document.getElementById('createPostModal');
+    if (modal) {
+        modal.classList.add('show');
+    }
+}
+
+function closeCreatePostModal() {
+    const modal = document.getElementById('createPostModal');
+    if (modal) {
+        modal.classList.remove('show');
+    }
+    document.getElementById('postTextInput').value = '';
+    document.getElementById('imagePreviewContainer').innerHTML = '';
+}
+
+// Image Viewer
+let currentImageIndex = 0;
+let currentImageList = [];
+let currentPostId = null;
+
+function openImageViewer(imageList, index) {
+    currentImageList = imageList;
+    currentImageIndex = index;
+    currentPostId = null;
+    
+    showImageViewer();
+}
+
+function openImageViewerByIndex(index) {
+    // Find current post's images from postsData
+    const postsContainer = document.getElementById('postsList');
+    const postCards = postsContainer.querySelectorAll('.post-card');
+    
+    for (const card of postCards) {
+        const postId = card.dataset.postId;
+        const post = postsData.find(p => p.id === postId);
+        if (post && post.images && post.images.length > index) {
+            currentImageList = post.images;
+            currentImageIndex = index;
+            currentPostId = postId;
+            showImageViewer();
+            return;
+        }
+    }
+}
+
+function openImageViewerFromElement(imgElement) {
+    // Find the parent .post-card element
+    let parentCard = imgElement;
+    while (parentCard && !parentCard.classList.contains('post-card')) {
+        parentCard = parentCard.parentElement;
+    }
+    
+    if (!parentCard) {
+        console.error('Cannot find parent post-card');
+        return;
+    }
+    
+    const postId = parentCard.dataset.postId;
+    const post = postsData.find(p => p.id === postId);
+    
+    if (!post || !post.images || post.images.length === 0) {
+        console.error('Post has no images');
+        return;
+    }
+    
+    // Find the index of this image in the post's images array
+    const imgGrid = imgElement.parentElement;
+    const images = imgGrid.querySelectorAll('img');
+    const clickedIndex = Array.from(images).indexOf(imgElement);
+    
+    currentImageList = post.images;
+    currentImageIndex = clickedIndex;
+    currentPostId = postId;
+    showImageViewer();
+}
+
+function showImageViewer() {
+    const viewer = document.getElementById('imageViewer');
+    const img = document.getElementById('imageViewerImg');
+    const counter = document.getElementById('imageViewerCounter');
+    const prevBtn = document.getElementById('imageViewerPrev');
+    const nextBtn = document.getElementById('imageViewerNext');
+    
+    viewer.classList.add('show');
+    
+    updateImageViewer();
+    
+    // Update counter visibility
+    if (currentImageList.length <= 1) {
+        counter.style.display = 'none';
+        prevBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+    } else {
+        counter.style.display = 'block';
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+    }
+}
+
+function updateImageViewer() {
+    const img = document.getElementById('imageViewerImg');
+    const counter = document.getElementById('imageViewerCounter');
+    
+    img.src = currentImageList[currentImageIndex];
+    counter.textContent = `${currentImageIndex + 1} / ${currentImageList.length}`;
+}
+
+function closeImageViewer() {
+    const viewer = document.getElementById('imageViewer');
+    viewer.classList.remove('show');
+}
+
+function prevImage() {
+    if (currentImageIndex > 0) {
+        currentImageIndex--;
+        updateImageViewer();
+    }
+}
+
+function nextImage() {
+    if (currentImageIndex < currentImageList.length - 1) {
+        currentImageIndex++;
+        updateImageViewer();
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    const viewer = document.getElementById('imageViewer');
+    if (!viewer.classList.contains('show')) return;
+    
+    if (e.key === 'Escape') {
+        closeImageViewer();
+    } else if (e.key === 'ArrowLeft') {
+        prevImage();
+    } else if (e.key === 'ArrowRight') {
+        nextImage();
+    }
+});
+
+// Touch swipe support
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', (e) => {
+    const viewer = document.getElementById('imageViewer');
+    if (viewer.classList.contains('show')) {
+        touchStartX = e.changedTouches[0].screenX;
+    }
+});
+
+document.addEventListener('touchend', (e) => {
+    const viewer = document.getElementById('imageViewer');
+    if (viewer.classList.contains('show')) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }
+});
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (diff > swipeThreshold) {
+        nextImage();
+    } else if (diff < -swipeThreshold) {
+        prevImage();
+    }
+}
+
+async function deletePost(postId) {
+    if (confirm('确定要删除这条帖子吗？')) {
+        try {
+            await API.deletePost(postId);
+            showToast('删除成功', 'success');
+            loadPosts();
+        } catch (error) {
+            showToast('删除失败: ' + error.message, 'error');
+        }
+    }
+}
+
+async function toggleLike(postId) {
+    if (!currentUser) {
+        showToast('请先登录', 'error');
+        return;
+    }
+    
+    try {
+        const post = postsData.find(p => p.id === postId);
+        if (!post) return;
+
+        const isLiked = post.likes.includes(currentUser.username);
+        if (isLiked) {
+            await API.unlikePost(postId);
+            post.likes = post.likes.filter(u => u !== currentUser.username);
+        } else {
+            await API.likePost(postId);
+            post.likes.push(currentUser.username);
+        }
+        renderPosts(postsData);
+    } catch (error) {
+        showToast('操作失败: ' + error.message, 'error');
+    }
+}
+
+function showComments(postId) {
+    const commentInput = document.getElementById(`comment-input-${postId}`);
+    if (commentInput) {
+        commentInput.classList.toggle('show');
+        if (commentInput.classList.contains('show')) {
+            const textarea = document.getElementById(`comment-text-${postId}`);
+            if (textarea) {
+                textarea.focus();
+            }
+        }
+    }
+}
+
+async function submitComment(postId) {
+    const textarea = document.getElementById(`comment-text-${postId}`);
+    if (!textarea) return;
+
+    const content = textarea.value.trim();
+    if (!content) {
+        showToast('请输入评论内容', 'error');
+        return;
+    }
+
+    try {
+        await API.addComment(postId, content);
+        textarea.value = '';
+        showToast('评论成功', 'success');
+        loadPosts();
+    } catch (error) {
+        showToast('评论失败: ' + error.message, 'error');
+    }
+}
+
+async function deleteComment(postId, commentId) {
+    if (!confirm('确定要删除这条评论吗？')) {
+        return;
+    }
+
+    try {
+        await API.deleteComment(postId, commentId);
+        showToast('删除成功', 'success');
+        loadPosts();
+    } catch (error) {
+        showToast('删除失败: ' + error.message, 'error');
+    }
+}
+
+async function submitPost() {
+    const text = document.getElementById('postTextInput').value.trim();
+    if (!text) {
+        showToast('请输入内容', 'error');
+        return;
+    }
+
+    const imageInput = document.getElementById('imageInput');
+    const files = Array.from(imageInput.files);
+
+    try {
+        await API.createPost(text, files.length > 0 ? files : null);
+        showToast('发布成功', 'success');
+        closeCreatePostModal();
+        loadPosts();
+    } catch (error) {
+        showToast('发布失败: ' + error.message, 'error');
+    }
+}
+
+function previewImages() {
+    const imageInput = document.getElementById('imageInput');
+    const previewContainer = document.getElementById('imagePreviewContainer');
+    const files = Array.from(imageInput.files);
+
+    if (files.length > 9) {
+        showToast('最多只能上传9张图片', 'error');
+        imageInput.value = '';
+        previewContainer.innerHTML = '';
+        return;
+    }
+
+    previewContainer.innerHTML = files.map((file, index) => {
+        const url = URL.createObjectURL(file);
+        return `
+            <div style="position: relative; width: 80px; height: 80px;">
+                <img src="${url}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                <button type="button" onclick="removeImage(${index})" style="position: absolute; top: -4px; right: -4px; width: 20px; height: 20px; background: #ff4d4f; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 12px; display: flex; align-items: center; justify-content: center;">×</button>
+            </div>
+        `;
+    }).join('');
+}
+
+function removeImage(index) {
+    const imageInput = document.getElementById('imageInput');
+    const dt = new DataTransfer();
+    const files = Array.from(imageInput.files);
+    files.splice(index, 1);
+    files.forEach(file => dt.items.add(file));
+    imageInput.files = dt.files;
+    previewImages();
+}
+
+// Wait for currentUser to be available before initializing
+function initializeFriendsCircle() {
+    if (typeof currentUser !== 'undefined' && currentUser) {
+        if (document.getElementById('postsList')) {
+            showAllPosts();
+        }
+    } else {
+        setTimeout(initializeFriendsCircle, 100);
+    }
+}
+
+// Start initialization
+if (document.getElementById('postsList')) {
+    initializeFriendsCircle();
+}
+
+const imageInput = document.getElementById('imageInput');
+if (imageInput) {
+    imageInput.addEventListener('change', previewImages);
+}
+</script>
+{% endblock %}

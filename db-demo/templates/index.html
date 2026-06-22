@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB Demo - CRUD Operations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 DB Demo</h1>
+            <p>Create · Read · Update · Delete</p>
+        </header>
+
+        <main>
+            <!-- Actions Section -->
+            <section class="actions-section">
+                <button id="view-json-btn" class="btn btn-json">📄 View JSON</button>
+            </section>
+
+            <!-- Form Section -->
+            <section class="form-section">
+                <h2 id="form-title">➕ Add New Record</h2>
+                <form id="crud-form">
+                    <input type="hidden" id="item-id">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" placeholder="Enter phone" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn" class="btn btn-primary">Add</button>
+                        <button type="button" id="cancel-btn" class="btn btn-secondary" style="display: none;">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Data List Section -->
+            <section class="list-section">
+                <h2>📋 Data List</h2>
+                <div class="table-container">
+                    <table id="items-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="items-table-body">
+                            <!-- Data rows will be loaded dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- JSON Viewer Modal -->
+        <div id="json-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>📄 JSON Data</h2>
+                    <button class="modal-close" id="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <pre id="json-content"></pre>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 DB Demo | Flask + JSON CRUD Demo</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

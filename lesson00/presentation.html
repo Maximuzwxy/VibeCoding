@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studying in the AI Era</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fdcb6e;
+            --dark: #1a1a2e;
+            --darker: #0d0d1a;
+            --light: #f7f7f7;
+            --gray: #8a8a9e;
+            --success: #00b894;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .presentation-container {
+            max-width: 900px;
+            width: 100%;
+            height: 90vh;
+            background: rgba(26, 26, 46, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(108, 92, 231, 0.3);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 10;
+        }
+
+        .slide-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        .slide-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #e0e0ff;
+            margin-bottom: 30px;
+        }
+
+        .slide-content.highlight {
+            background: rgba(108, 92, 231, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .point-card {
+            background: rgba(40, 40, 70, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .point-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .point-card h3 i {
+            color: var(--accent);
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 20;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(108, 92, 231, 0.2);
+            border: 2px solid var(--primary);
+            color: var(--secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .progress-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .ai-icon {
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        .ai-icon.top-right {
+            top: 20px;
+            right: 20px;
+        }
+
+        .ai-icon.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            transform: rotate(180deg);
+        }
+
+        .quote {
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 3px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .footer-note {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 2.2rem;
+            }
+            
+            .slide-content {
+                font-size: 1rem;
+            }
+            
+            .points {
+                grid-template-columns: 1fr;
+            }
+            
+            .ai-icon {
+                font-size: 5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="ai-icon top-right">
+            <i class="fas fa-brain"></i>
+        </div>
+        <div class="ai-icon bottom-left">
+            <i class="fas fa-robot"></i>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <!-- Slide 1: Title -->
+        <div class="slide active" id="slide1">
+            <h1 class="slide-title">How to Study in the AI Era</h1>
+            <p class="slide-content highlight">
+                Embracing intelligent tools while preserving human creativity and critical thinking
+            </p>
+            <div class="quote">
+                "The future belongs to those who learn more languages and skills than just one." - Eric Schmidt
+            </div>
+        </div>
+        
+        <!-- Slide 2: The New Learning Landscape -->
+        <div class="slide" id="slide2">
+            <h2 class="slide-title">The New Learning Landscape</h2>
+            <p class="slide-content">
+                Artificial Intelligence is transforming education at an unprecedented pace. We're moving from information memorization to skill-based learning where understanding concepts and applying knowledge matters more than rote learning.
+            </p>
+            <div class="points">
+                <div class="point-card">
+                    <h3><i class="fas fa-bolt"></i> Instant Access</h3>
+                    <p>AI provides immediate answers to questions, changing how we approach problem-solving.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-sync-alt"></i> Personalized Paths</h3>
+                    <p>Learning experiences adapt to individual needs, strengths, and weaknesses.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-globe"></i> Global Knowledge</h3>
+                    <p>Access to diverse perspectives and resources from around the world.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Essential Skills -->
+        <div class="slide" id="slide3">
+            <h2 class="slide-title">Essential Skills for the AI Era</h2>
+            <p class="slide-content">
+                While AI handles information processing, humans must focus on uniquely human capabilities:
+            </p>
+            <div class="points">
+                <div class="point-card">
+                    <h3><i class="fas fa-lightbulb"></i> Critical Thinking</h3>
+                    <p>Evaluating AI outputs, identifying biases, and making sound judgments.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-handshake"></i> Collaboration</h3>
+                    <p>Working effectively with both humans and AI systems as teammates.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-paint-brush"></i> Creativity</h3>
+                    <p>Generating original ideas and solutions beyond algorithmic patterns.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-project-diagram"></i> Systems Thinking</h3>
+                    <p>Understanding complex interconnections between technologies and society.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Effective Study Strategies -->
+        <div class="slide" id="slide4">
+            <h2 class="slide-title">Effective Study Strategies</h2>
+            <p class="slide-content">
+                Leverage AI as a tool while maintaining deep learning practices:
+            </p>
+            <div class="points">
+                <div class="point-card">
+                    <h3><i class="fas fa-search"></i> Active Inquiry</h3>
+                    <p>Use AI to explore "what if" scenarios rather than just seeking answers.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-exchange-alt"></i> Explain to Teach</h3>
+                    <p>Have AI explain concepts, then re-explain them in your own words.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-project-diagram"></i> Concept Mapping</h3>
+                    <p>Use AI to generate visual connections between ideas.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-sync"></i> Spaced Repetition</h3>
+                    <p>Combine AI-generated quizzes with proven memory techniques.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Ethical Considerations -->
+        <div class="slide" id="slide5">
+            <h2 class="slide-title">Ethical Considerations</h2>
+            <p class="slide-content">
+                Responsible AI usage requires awareness of important boundaries:
+            </p>
+            <div class="points">
+                <div class="point-card">
+                    <h3><i class="fas fa-fingerprint"></i> Academic Integrity</h3>
+                    <p>Understand when AI assistance crosses into plagiarism or cheating.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-balance-scale"></i> Bias Awareness</h3>
+                    <p>Recognize that AI systems can perpetuate societal biases.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-shield-alt"></i> Privacy Protection</h3>
+                    <p>Be cautious about sharing personal or sensitive information with AI tools.</p>
+                </div>
+                <div class="point-card">
+                    <h3><i class="fas fa-users"></i> Digital Equity</h3>
+                    <p>Consider access disparities in AI technology availability.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 6: Conclusion -->
+        <div class="slide" id="slide6">
+            <h2 class="slide-title">Embrace the Future</h2>
+            <p class="slide-content highlight">
+                AI won't replace students, but students who use AI effectively will replace those who don't. The key is to become a thoughtful collaborator with intelligent systems while developing irreplaceable human skills.
+            </p>
+            <div class="quote">
+                "The best way to predict the future is to invent it." - Alan Kay
+            </div>
+            <p class="slide-content" style="text-align: center; margin-top: 30px;">
+                Continue learning, stay curious, and remember that technology should enhance—not replace—your unique human potential.
+            </p>
+        </div>
+        
+        <div class="navigation">
+            <div class="nav-btn" id="prevBtn"><i class="fas fa-arrow-left"></i></div>
+            <div class="nav-btn" id="nextBtn"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        
+        <div class="footer-note">How to Study in the AI Era | Educational Presentation</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const progressBar = document.getElementById('progressBar');
+            let currentSlide = 0;
+            
+            // Initialize progress bar
+            updateProgressBar();
+            
+            // Next button functionality
+            nextBtn.addEventListener('click', function() {
+                if (currentSlide < slides.length - 1) {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide++;
+                    slides[currentSlide].classList.add('active');
+                    updateProgressBar();
+                }
+            });
+            
+            // Previous button functionality
+            prevBtn.addEventListener('click', function() {
+                if (currentSlide > 0) {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide--;
+                    slides[currentSlide].classList.add('active');
+                    updateProgressBar();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                }
+            });
+            
+            // Update progress bar
+            function updateProgressBar() {
+                const progress = ((currentSlide + 1) / slides.length) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            // Auto-advance for demo (optional)
+            // setInterval(() => {
+            //     if (currentSlide < slides.length - 1) {
+            //         nextBtn.click();
+            //     } else {
+            //         currentSlide = -1;
+            //     }
+            // }, 8000);
+        });
+    </script>
+</body>
+</html>

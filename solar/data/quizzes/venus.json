@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_venus_001",
+      "question": {
+        "zh": "金星在太阳系中按离太阳由近及远的顺序排在第几位？",
+        "en": "What is the position of Venus from the Sun in the solar system?"
+      },
+      "options": [
+        {
+          "zh": "第一",
+          "en": "First"
+        },
+        {
+          "zh": "第二",
+          "en": "Second"
+        },
+        {
+          "zh": "第三",
+          "en": "Third"
+        },
+        {
+          "zh": "第四",
+          "en": "Fourth"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "金星是离太阳第二近的行星，位于水星和地球之间。",
+        "en": "Venus is the second planet from the Sun, located between Mercury and Earth."
+      }
+    },
+    {
+      "id": "q_venus_002",
+      "question": {
+        "zh": "金星的自转方向与大多数行星不同，它的自转方向是？",
+        "en": "Venus rotates in a direction opposite to most planets. What is its rotation direction?"
+      },
+      "options": [
+        {
+          "zh": "自西向东",
+          "en": "West to east"
+        },
+        {
+          "zh": "自东向西",
+          "en": "East to west"
+        },
+        {
+          "zh": "自北向南",
+          "en": "North to south"
+        },
+        {
+          "zh": "无自转",
+          "en": "No rotation"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "金星是太阳系中自转方向为自东向西（逆行自转）的行星之一，这意味着太阳从西方升起。",
+        "en": "Venus has a retrograde rotation, spinning from east to west, meaning the Sun rises in the west."
+      }
+    },
+    {
+      "id": "q_venus_003",
+      "question": {
+        "zh": "金星的大气层主要由哪种气体组成？",
+        "en": "Which gas primarily makes up the atmosphere of Venus?"
+      },
+      "options": [
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "氧气",
+          "en": "Oxygen"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        },
+        {
+          "zh": "氢气",
+          "en": "Hydrogen"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "金星大气层约96.5%是二氧化碳，导致强烈的温室效应，使其表面温度极高。",
+        "en": "About 96.5% of Venus's atmosphere is carbon dioxide, causing a runaway greenhouse effect and extremely high surface temperatures."
+      }
+    },
+    {
+      "id": "q_venus_004",
+      "question": {
+        "zh": "金星表面温度极高的主要原因是？",
+        "en": "What is the main reason for the extremely high surface temperature on Venus?"
+      },
+      "options": [
+        {
+          "zh": "离太阳太近",
+          "en": "Being too close to the Sun"
+        },
+        {
+          "zh": "火山活动频繁",
+          "en": "Frequent volcanic activity"
+        },
+        {
+          "zh": "强烈的温室效应",
+          "en": "Intense greenhouse effect"
+        },
+        {
+          "zh": "内部热量释放",
+          "en": "Internal heat release"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "虽然金星离太阳比水星远，但由于浓厚的二氧化碳大气层产生强烈的温室效应，其表面温度高达约465°C，比水星还热。",
+        "en": "Although Venus is farther from the Sun than Mercury, its thick carbon dioxide atmosphere creates a strong greenhouse effect, raising surface temperatures to about 465°C, hotter than Mercury."
+      }
+    },
+    {
+      "id": "q_venus_005",
+      "question": {
+        "zh": "金星上的一天（自转周期）比它的一年（公转周期）要？",
+        "en": "A day on Venus (rotation period) compared to its year (orbital period) is:"
+      },
+      "options": [
+        {
+          "zh": "短得多",
+          "en": "Much shorter"
+        },
+        {
+          "zh": "差不多相等",
+          "en": "About the same"
+        },
+        {
+          "zh": "长得多",
+          "en": "Much longer"
+        },
+        {
+          "zh": "无法比较",
+          "en": "Incomparable"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "金星的自转周期约为243个地球日，而公转周期约为225个地球日，因此金星上的一天比一年还长。",
+        "en": "Venus's rotation period is about 243 Earth days, while its orbital period is about 225 Earth days, so a day on Venus is longer than its year."
+      }
+    },
+    {
+      "id": "q_venus_006",
+      "question": {
+        "zh": "金星在夜空中常被称为什么？",
+        "en": "What is Venus often called in the night sky?"
+      },
+      "options": [
+        {
+          "zh": "红色星球",
+          "en": "Red Planet"
+        },
+        {
+          "zh": "蓝色星球",
+          "en": "Blue Planet"
+        },
+        {
+          "zh": "启明星或长庚星",
+          "en": "Morning Star or Evening Star"
+        },
+        {
+          "zh": "土星环",
+          "en": "Ringed Planet"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "金星非常明亮，常在日出前或日落后出现，因此被称为启明星（晨星）或长庚星（昏星）。",
+        "en": "Venus is very bright and often appears before sunrise or after sunset, earning the names Morning Star or Evening Star."
+      }
+    },
+    {
+      "id": "q_venus_007",
+      "question": {
+        "zh": "金星表面最大的大陆高地名称是？",
+        "en": "What is the name of the largest continental highland on Venus's surface?"
+      },
+      "options": [
+        {
+          "zh": "伊师塔地",
+          "en": "Ishtar Terra"
+        },
+        {
+          "zh": "阿佛洛狄忒地",
+          "en": "Aphrodite Terra"
+        },
+        {
+          "zh": "阿尔法区",
+          "en": "Alpha Regio"
+        },
+        {
+          "zh": "贝塔区",
+          "en": "Beta Regio"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "阿佛洛狄忒地是金星上最大的高地，面积与非洲相当，以希腊爱与美之神命名。",
+        "en": "Aphrodite Terra is the largest highland on Venus, comparable in size to Africa, named after the Greek goddess of love and beauty."
+      }
+    },
+    {
+      "id": "q_venus_008",
+      "question": {
+        "zh": "第一个成功在金星表面着陆的探测器是？",
+        "en": "Which was the first spacecraft to successfully land on the surface of Venus?"
+      },
+      "options": [
+        {
+          "zh": "美国的水手2号",
+          "en": "Mariner 2 (USA)"
+        },
+        {
+          "zh": "苏联的金星7号",
+          "en": "Venera 7 (USSR)"
+        },
+        {
+          "zh": "苏联的金星9号",
+          "en": "Venera 9 (USSR)"
+        },
+        {
+          "zh": "美国的麦哲伦号",
+          "en": "Magellan (USA)"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "金星7号于1970年12月15日成功在金星软着陆，成为第一个从另一颗行星表面传回数据的探测器。",
+        "en": "Venera 7 successfully soft-landed on Venus on December 15, 1970, becoming the first spacecraft to return data from another planet's surface."
+      }
+    },
+    {
+      "id": "q_venus_009",
+      "question": {
+        "zh": "金星表面的大气压力约为地球的多少倍？",
+        "en": "The atmospheric pressure on the surface of Venus is about how many times that of Earth?"
+      },
+      "options": [
+        {
+          "zh": "1倍",
+          "en": "1 time"
+        },
+        {
+          "zh": "10倍",
+          "en": "10 times"
+        },
+        {
+          "zh": "92倍",
+          "en": "92 times"
+        },
+        {
+          "zh": "500倍",
+          "en": "500 times"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "金星表面大气压约为地球的92倍，相当于地球海洋下约900米深处的压力。",
+        "en": "The surface pressure on Venus is about 92 times that of Earth, equivalent to the pressure at a depth of about 900 meters in Earth's oceans."
+      }
+    },
+    {
+      "id": "q_venus_010",
+      "question": {
+        "zh": "金星没有像地球一样的板块构造，其表面主要特征是什么？",
+        "en": "Venus lacks plate tectonics like Earth. What is the dominant surface feature?"
+      },
+      "options": [
+        {
+          "zh": "广阔的海洋盆地",
+          "en": "Vast ocean basins"
+        },
+        {
+          "zh": "大量的撞击坑",
+          "en": "Numerous impact craters"
+        },
+        {
+          "zh": "火山平原和盾状火山",
+          "en": "Volcanic plains and shield volcanoes"
+        },
+        {
+          "zh": "巨大的冰川",
+          "en": "Huge glaciers"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "金星表面主要由火山平原和数千座盾状火山覆盖，表明其历史上曾经历广泛的火山活动。",
+        "en": "The surface of Venus is dominated by volcanic plains and thousands of shield volcanoes, indicating extensive volcanic activity in its history."
+      }
+    }
+  ]
+}

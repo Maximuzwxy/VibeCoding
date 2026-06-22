@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_mercury_001",
+      "question": {
+        "zh": "水星是太阳系中距离太阳最近的行星，它距离太阳的平均距离约为多少？",
+        "en": "Mercury is the closest planet to the Sun in the solar system. What is its average distance from the Sun?"
+      },
+      "options": [
+        {
+          "zh": "5790万公里",
+          "en": "57.9 million km"
+        },
+        {
+          "zh": "1.08亿公里",
+          "en": "108 million km"
+        },
+        {
+          "zh": "1.5亿公里",
+          "en": "150 million km"
+        },
+        {
+          "zh": "2.28亿公里",
+          "en": "228 million km"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "水星距太阳平均约5790万公里（0.387天文单位），是离太阳最近的行星。",
+        "en": "Mercury's average distance from the Sun is about 57.9 million km (0.387 AU), making it the closest planet."
+      }
+    },
+    {
+      "id": "q_mercury_002",
+      "question": {
+        "zh": "水星绕太阳公转一周大约需要多少天？",
+        "en": "How many Earth days does it take for Mercury to complete one orbit around the Sun?"
+      },
+      "options": [
+        {
+          "zh": "88天",
+          "en": "88 days"
+        },
+        {
+          "zh": "225天",
+          "en": "225 days"
+        },
+        {
+          "zh": "365天",
+          "en": "365 days"
+        },
+        {
+          "zh": "687天",
+          "en": "687 days"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "水星公转周期约为88个地球日，是太阳系中公转最快的行星。",
+        "en": "Mercury's orbital period is about 88 Earth days, the shortest of all planets in the solar system."
+      }
+    },
+    {
+      "id": "q_mercury_003",
+      "question": {
+        "zh": "水星的自转周期与公转周期之比约为多少？",
+        "en": "What is the approximate ratio of Mercury's rotation period to its orbital period?"
+      },
+      "options": [
+        {
+          "zh": "1:1",
+          "en": "1:1"
+        },
+        {
+          "zh": "2:3",
+          "en": "2:3"
+        },
+        {
+          "zh": "1:2",
+          "en": "1:2"
+        },
+        {
+          "zh": "3:2",
+          "en": "3:2"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "水星自转周期约58.6天，公转周期约88天，两者之比为2:3，即自转三圈公转两圈。",
+        "en": "Mercury's rotation period is about 58.6 days and its orbital period about 88 days, giving a 2:3 spin-orbit resonance."
+      }
+    },
+    {
+      "id": "q_mercury_004",
+      "question": {
+        "zh": "水星表面昼夜温差极大，白天最高温度可达多少摄氏度？",
+        "en": "Mercury has extreme temperature variations. What is the maximum daytime temperature on its surface?"
+      },
+      "options": [
+        {
+          "zh": "约100°C",
+          "en": "About 100°C"
+        },
+        {
+          "zh": "约230°C",
+          "en": "About 230°C"
+        },
+        {
+          "zh": "约430°C",
+          "en": "About 430°C"
+        },
+        {
+          "zh": "约700°C",
+          "en": "About 700°C"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "水星白天表面温度可达约430°C，夜间则骤降至约-180°C，温差超过600°C。",
+        "en": "Mercury's daytime surface temperature can reach about 430°C, while at night it plunges to about -180°C."
+      }
+    },
+    {
+      "id": "q_mercury_005",
+      "question": {
+        "zh": "水星没有像地球一样浓厚的大气层，它的大气层主要由什么组成？",
+        "en": "Mercury has a very thin exosphere instead of a thick atmosphere. What is it primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "氮气和氧气",
+          "en": "Nitrogen and oxygen"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        },
+        {
+          "zh": "氢气和氦气",
+          "en": "Hydrogen and helium"
+        },
+        {
+          "zh": "氧、钠、氢、氦、钾等原子",
+          "en": "Oxygen, sodium, hydrogen, helium, potassium, etc."
+        }
+      ],
+      "answer": 3,
+      "explanation": {
+        "zh": "水星的稀薄外逸层包含氧、钠、氢、氦、钾等原子，来自太阳风和表面释放。",
+        "en": "Mercury's tenuous exosphere contains atoms such as oxygen, sodium, hydrogen, helium, and potassium, sourced from the solar wind and surface."
+      }
+    },
+    {
+      "id": "q_mercury_006",
+      "question": {
+        "zh": "水星表面最显著的地貌特征是什么？",
+        "en": "What is the most prominent surface feature on Mercury?"
+      },
+      "options": [
+        {
+          "zh": "巨大的火山",
+          "en": "Giant volcanoes"
+        },
+        {
+          "zh": "卡洛里盆地",
+          "en": "Caloris Basin"
+        },
+        {
+          "zh": "水手号峡谷",
+          "en": "Valles Marineris"
+        },
+        {
+          "zh": "冰盖",
+          "en": "Ice caps"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "卡洛里盆地是水星上最大的撞击坑，直径约1550公里，是显著的地貌特征。",
+        "en": "The Caloris Basin is the largest impact crater on Mercury, about 1,550 km in diameter, and a prominent feature."
+      }
+    },
+    {
+      "id": "q_mercury_007",
+      "question": {
+        "zh": "水星的密度在太阳系行星中排名第几（仅次于地球）？",
+        "en": "Mercury is the second densest planet in the solar system after Earth. What is its approximate density?"
+      },
+      "options": [
+        {
+          "zh": "3.9 g/cm³",
+          "en": "3.9 g/cm³"
+        },
+        {
+          "zh": "5.4 g/cm³",
+          "en": "5.4 g/cm³"
+        },
+        {
+          "zh": "7.9 g/cm³",
+          "en": "7.9 g/cm³"
+        },
+        {
+          "zh": "1.3 g/cm³",
+          "en": "1.3 g/cm³"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "水星密度约5.43 g/cm³，仅次于地球（5.51 g/cm³），因其巨大的铁核。",
+        "en": "Mercury's density is about 5.43 g/cm³, second only to Earth (5.51 g/cm³), due to its large iron core."
+      }
+    },
+    {
+      "id": "q_mercury_008",
+      "question": {
+        "zh": "水星是否有全球性的磁场？",
+        "en": "Does Mercury have a global magnetic field?"
+      },
+      "options": [
+        {
+          "zh": "完全没有磁场",
+          "en": "No magnetic field at all"
+        },
+        {
+          "zh": "有微弱的全球性磁场",
+          "en": "Yes, a weak global magnetic field"
+        },
+        {
+          "zh": "有和地球一样强的磁场",
+          "en": "Yes, as strong as Earth's"
+        },
+        {
+          "zh": "只有局部磁场",
+          "en": "Only local magnetic fields"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "水星拥有一个微弱的全球性偶极磁场，强度约为地球的1%。",
+        "en": "Mercury has a weak global dipole magnetic field, about 1% the strength of Earth's."
+      }
+    },
+    {
+      "id": "q_mercury_009",
+      "question": {
+        "zh": "第一艘飞越水星的探测器是哪个？",
+        "en": "Which was the first spacecraft to fly by Mercury?"
+      },
+      "options": [
+        {
+          "zh": "水手10号",
+          "en": "Mariner 10"
+        },
+        {
+          "zh": "信使号",
+          "en": "MESSENGER"
+        },
+        {
+          "zh": "贝皮科伦布号",
+          "en": "BepiColombo"
+        },
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "水手10号于1974-1975年三次飞越水星，是第一艘探测水星的探测器。",
+        "en": "Mariner 10 made three flybys of Mercury in 1974-1975, becoming the first spacecraft to visit it."
+      }
+    },
+    {
+      "id": "q_mercury_010",
+      "question": {
+        "zh": "水星两极的永久阴影区中发现了什么？",
+        "en": "What has been discovered in the permanently shadowed regions at Mercury's poles?"
+      },
+      "options": [
+        {
+          "zh": "液态水海洋",
+          "en": "Liquid water oceans"
+        },
+        {
+          "zh": "水冰和有机物质",
+          "en": "Water ice and organic materials"
+        },
+        {
+          "zh": "活火山",
+          "en": "Active volcanoes"
+        },
+        {
+          "zh": "甲烷湖",
+          "en": "Methane lakes"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "信使号探测器证实水星极地永久阴影区存在水冰和有机物质。",
+        "en": "The MESSENGER mission confirmed the presence of water ice and organic materials in Mercury's polar permanently shadowed craters."
+      }
+    }
+  ]
+}

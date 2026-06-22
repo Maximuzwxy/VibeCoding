@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_callisto_001",
+      "question": {"zh": "木卫四的直径约为多少？", "en": "What is the approximate diameter of Callisto?"},
+      "options": [
+        {"zh": "3,821 km", "en": "3,821 km"},
+        {"zh": "4,821 km", "en": "4,821 km"},
+        {"zh": "5,821 km", "en": "5,821 km"},
+        {"zh": "6,821 km", "en": "6,821 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫四的直径约为 4,821 公里，是太阳系第三大卫星。", "en": "Callisto's diameter is approximately 4,821 km, the third largest moon in the Solar System."}
+    },
+    {
+      "id": "q_callisto_002",
+      "question": {"zh": "木卫四绕木星公转一周需要多少天？", "en": "How many days does it take for Callisto to orbit Jupiter once?"},
+      "options": [
+        {"zh": "7.15 天", "en": "7.15 days"},
+        {"zh": "11.69 天", "en": "11.69 days"},
+        {"zh": "16.69 天", "en": "16.69 days"},
+        {"zh": "21.69 天", "en": "21.69 days"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫四公转周期为 16.69 天，是最外侧的伽利略卫星。", "en": "Callisto's orbital period is 16.69 days, the outermost Galilean moon."}
+    },
+    {
+      "id": "q_callisto_003",
+      "question": {"zh": "木卫四表面最显著的特征是？", "en": "What is the most prominent feature on Callisto's surface?"},
+      "options": [
+        {"zh": "活火山", "en": "Active volcanoes"},
+        {"zh": "冰裂纹", "en": "Ice cracks"},
+        {"zh": "密集撞击坑", "en": "Heavy cratering"},
+        {"zh": "液态湖泊", "en": "Liquid lakes"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫四是太阳系中撞击坑最多的天体之一，表面非常古老。", "en": "Callisto is one of the most heavily cratered bodies in the Solar System, with a very ancient surface."}
+    },
+    {
+      "id": "q_callisto_004",
+      "question": {"zh": "木卫四上最大的撞击坑是？", "en": "What is the largest crater on Callisto?"},
+      "options": [
+        {"zh": "斯蒂克尼坑", "en": "Stickney Crater"},
+        {"zh": "瓦尔哈拉撞击坑", "en": "Valhalla Crater"},
+        {"zh": "南极 - 艾特肯盆地", "en": "South Pole-Aitken Basin"},
+        {"zh": "盖尼米德坑", "en": "Ganymede Crater"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "瓦尔哈拉撞击坑直径约 3,800 公里，是太阳系最大的多环撞击坑。", "en": "Valhalla Crater is about 3,800 km in diameter, the largest multi-ring crater in the Solar System."}
+    },
+    {
+      "id": "q_callisto_005",
+      "question": {"zh": "木卫四的表面年龄约为多少？", "en": "What is the estimated age of Callisto's surface?"},
+      "options": [
+        {"zh": "约 2-3 亿年", "en": "About 200-300 million years"},
+        {"zh": "约 10-20 亿年", "en": "About 1-2 billion years"},
+        {"zh": "约 30-40 亿年", "en": "About 3-4 billion years"},
+        {"zh": "约 45 亿年", "en": "About 4.5 billion years"}
+      ],
+      "answer": 3,
+      "explanation": {"zh": "木卫四表面年龄约 45 亿年，是太阳系中最古老的地表之一。", "en": "Callisto's surface is about 4.5 billion years old, one of the oldest surfaces in the Solar System."}
+    },
+    {
+      "id": "q_callisto_006",
+      "question": {"zh": "木卫四是由谁发现的？", "en": "Who discovered Callisto?"},
+      "options": [
+        {"zh": "开普勒", "en": "Kepler"},
+        {"zh": "伽利略", "en": "Galileo"},
+        {"zh": "牛顿", "en": "Newton"},
+        {"zh": "惠更斯", "en": "Huygens"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "伽利略于 1610 年发现木卫四，是最后一颗被发现的伽利略卫星。", "en": "Galileo discovered Callisto in 1610, the last Galilean moon to be discovered."}
+    },
+    {
+      "id": "q_callisto_007",
+      "question": {"zh": "木卫四的平均密度约为多少？", "en": "What is the average density of Callisto?"},
+      "options": [
+        {"zh": "0.83 g/cm³", "en": "0.83 g/cm³"},
+        {"zh": "1.83 g/cm³", "en": "1.83 g/cm³"},
+        {"zh": "2.83 g/cm³", "en": "2.83 g/cm³"},
+        {"zh": "3.83 g/cm³", "en": "3.83 g/cm³"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫四平均密度约 1.83 g/cm³，表明由冰和岩石混合组成。", "en": "Callisto's average density is about 1.83 g/cm³, indicating a mixture of ice and rock."}
+    },
+    {
+      "id": "q_callisto_008",
+      "question": {"zh": "木卫四可能拥有什么？", "en": "What might Callisto have?"},
+      "options": [
+        {"zh": "活火山", "en": "Active volcanoes"},
+        {"zh": "地下海洋", "en": "Subsurface ocean"},
+        {"zh": "浓厚大气", "en": "Thick atmosphere"},
+        {"zh": "磁场", "en": "Magnetic field"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "科学家认为木卫四冰层下可能存在地下海洋。", "en": "Scientists believe there may be a subsurface ocean beneath Callisto's ice layer."}
+    },
+    {
+      "id": "q_callisto_009",
+      "question": {"zh": "木卫四在伽利略卫星中的位置是？", "en": "What is Callisto's position among the Galilean moons?"},
+      "options": [
+        {"zh": "最内侧", "en": "Innermost"},
+        {"zh": "第二内侧", "en": "Second innermost"},
+        {"zh": "第三内侧", "en": "Third innermost"},
+        {"zh": "最外侧", "en": "Outermost"}
+      ],
+      "answer": 3,
+      "explanation": {"zh": "木卫四是四颗伽利略卫星中最外侧的一颗。", "en": "Callisto is the outermost of the four Galilean moons."}
+    },
+    {
+      "id": "q_callisto_010",
+      "question": {"zh": "哪个探测器详细探测了木卫四？", "en": "Which spacecraft detailed surveyed Callisto?"},
+      "options": [
+        {"zh": "旅行者 1 号", "en": "Voyager 1"},
+        {"zh": "伽利略号", "en": "Galileo"},
+        {"zh": "卡西尼号", "en": "Cassini"},
+        {"zh": "新视野号", "en": "New Horizons"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "伽利略号于 1995-2003 年详细探测了木卫四。", "en": "Galileo spacecraft detailed surveyed Callisto from 1995-2003."}
+    }
+  ]
+}

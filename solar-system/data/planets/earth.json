@@ -1,0 +1,85 @@
+{
+  "id": "earth",
+  "name": {"zh": "地球", "en": "Earth"},
+  "icon": "🌍",
+  "theme_color": "#4da6ff",
+  "accent_color": "#4da6ff",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "行星类型", "en": "Planet Type"}, "value": {"zh": "类地行星", "en": "Terrestrial Planet"}},
+        {"label": {"zh": "赤道直径", "en": "Equatorial Diameter"}, "value": {"zh": "12,756 km", "en": "12,756 km"}},
+        {"label": {"zh": "极地直径", "en": "Polar Diameter"}, "value": {"zh": "12,714 km", "en": "12,714 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "5.972×10²⁴kg", "en": "5.972×10²⁴kg"}},
+        {"label": {"zh": "体积", "en": "Volume"}, "value": {"zh": "1.083×10¹²km³", "en": "1.083×10¹²km³"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "5.515 g/cm³", "en": "5.515 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "9.807 m/s²", "en": "9.807 m/s²"}}
+      ],
+      "note": {"zh": "※ 太阳系中密度最大的行星", "en": "※ Densest planet in the Solar System"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "23 小时 56 分 4 秒", "en": "23h 56m 4s"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "365.256 天", "en": "365.256 days"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "29.78 km/s", "en": "29.78 km/s"}},
+        {"label": {"zh": "轨道离心率", "en": "Orbital Eccentricity"}, "value": {"zh": "0.0167", "en": "0.0167"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "7.155°", "en": "7.155°"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-88°C ~ 58°C", "en": "-88°C to 58°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "15°C", "en": "15°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "101.325 kPa", "en": "101.325 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "N₂ 78%, O₂ 21%", "en": "N₂ 78%, O₂ 21%"}},
+        {"label": {"zh": "磁场强度", "en": "Magnetic Field Strength"}, "value": {"zh": "0.25-0.65 高斯", "en": "0.25-0.65 Gauss"}}
+      ],
+      "note": {"zh": "※ 唯一已知存在生命的行星", "en": "※ Only planet known to support life"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "近日点", "en": "Perihelion"}, "value": {"zh": "1.471 亿 km", "en": "147.1 million km"}},
+        {"label": {"zh": "远日点", "en": "Aphelion"}, "value": {"zh": "1.521 亿 km", "en": "152.1 million km"}},
+        {"label": {"zh": "半长轴", "en": "Semi-major Axis"}, "value": {"zh": "1.496 亿 km", "en": "149.6 million km"}},
+        {"label": {"zh": "天文单位", "en": "Astronomical Units"}, "value": {"zh": "1.00 AU", "en": "1.00 AU"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "8 分 20 秒", "en": "8 min 20 sec"}}
+      ]
+    },
+    {
+      "title": {"zh": "🛰 卫星系统", "en": "🛰 Satellite System"},
+      "items": [
+        {"label": {"zh": "已知卫星", "en": "Known Moons"}, "value": {"zh": "1 颗", "en": "1 moon"}},
+        {"label": {"zh": "卫星名称", "en": "Moon Name"}, "value": {"zh": "月球", "en": "The Moon"}},
+        {"label": {"zh": "卫星直径", "en": "Moon Diameter"}, "value": {"zh": "3,474 km", "en": "3,474 km"}},
+        {"label": {"zh": "地月距离", "en": "Earth-Moon Distance"}, "value": {"zh": "384,400 km", "en": "384,400 km"}}
+      ],
+      "note": {"zh": "※ 月球是太阳系第五大卫星", "en": "※ The Moon is the fifth largest moon in the Solar System"},
+      "moons_list": [
+        {"name": {"zh": "月球", "en": "The Moon"}, "color": "#cccccc", "period": {"zh": "27.3 天", "en": "27.3 days"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌊 水体特征", "en": "🌊 Water Features"},
+      "items": [
+        {"label": {"zh": "表面水覆盖", "en": "Surface Water Coverage"}, "value": {"zh": "71%", "en": "71%"}},
+        {"label": {"zh": "海洋体积", "en": "Ocean Volume"}, "value": {"zh": "13.32 亿 km³", "en": "1.332 billion km³"}},
+        {"label": {"zh": "最深点", "en": "Deepest Point"}, "value": {"zh": "马里亚纳海沟", "en": "Mariana Trench"}},
+        {"label": {"zh": "最大深度", "en": "Maximum Depth"}, "value": {"zh": "10,984 m", "en": "10,984 m"}}
+      ],
+      "note": {"zh": "※ 唯一表面有稳定液态水的行星", "en": "※ Only planet with stable liquid water on surface"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "首次人造卫星", "en": "First Satellite"}, "value": {"zh": "1957 年斯普特尼克 1 号", "en": "1957 Sputnik 1"}},
+        {"label": {"zh": "首次载人航天", "en": "First Human Spaceflight"}, "value": {"zh": "1961 年加加林", "en": "1961 Yuri Gagarin"}},
+        {"label": {"zh": "首次登月", "en": "First Moon Landing"}, "value": {"zh": "1969 年阿波罗 11 号", "en": "1969 Apollo 11"}},
+        {"label": {"zh": "空间站", "en": "Space Station"}, "value": {"zh": "国际空间站 (1998-)", "en": "ISS (1998-)"}}
+      ]
+    }
+  ]
+}

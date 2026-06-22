@@ -1,0 +1,401 @@
+{
+  "id": "moon",
+  "name": {
+    "zh": "月球",
+    "en": "Moon"
+  },
+  "icon": "🌙",
+  "theme_color": "#C0C0C0",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "天然卫星（地球的卫星）",
+            "en": "Natural satellite (Earth's moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "3,474.8 km",
+            "en": "3,474.8 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "7.342 × 10²² kg",
+            "en": "7.342 × 10²² kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "2.1958 × 10¹⁰ km³",
+            "en": "2.1958 × 10¹⁰ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "3.344 g/cm³",
+            "en": "3.344 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "1.62 m/s²（地球的1/6）",
+            "en": "1.62 m/s² (1/6 of Earth)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 月球是太阳系第五大卫星，其直径约为地球的1/4。",
+        "en": "※ The Moon is the fifth largest moon in the Solar System, with a diameter about 1/4 that of Earth."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "27.322 天（同步自转）",
+            "en": "27.322 days (synchronous rotation)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "27.322 天（恒星月）",
+            "en": "27.322 days (sidereal month)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "1.022 km/s",
+            "en": "1.022 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0549",
+            "en": "0.0549"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "5.145°（相对于黄道面）",
+            "en": "5.145° (relative to ecliptic)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 月球始终以同一面朝向地球（潮汐锁定），因此我们永远看不到它的背面。",
+        "en": "※ The Moon always shows the same face to Earth (tidal locking), so we never see its far side."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "白天：约127°C；夜晚：约-173°C",
+            "en": "Day: ~127°C; Night: ~-173°C"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约-23°C（赤道区域）",
+            "en": "~-23°C (equatorial region)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "极稀薄（约10⁻¹² Pa）",
+            "en": "Extremely thin (~10⁻¹² Pa)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "氩、氦、钠、钾、氢（微量）",
+            "en": "Argon, helium, sodium, potassium, hydrogen (trace)"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "极弱（约0.1 nT，局部区域）",
+            "en": "Very weak (~0.1 nT, localized)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 月球几乎没有大气层，导致昼夜温差极大，且表面直接暴露于太阳风和宇宙射线。",
+        "en": "※ The Moon has virtually no atmosphere, causing extreme temperature swings and direct exposure to solar wind and cosmic rays."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕地球公转）",
+            "en": "N/A (orbits Earth)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用（绕地球公转）",
+            "en": "N/A (orbits Earth)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "384,400 km（地月平均距离）",
+            "en": "384,400 km (average Earth-Moon distance)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.00257 AU",
+            "en": "0.00257 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约1.28秒",
+            "en": "~1.28 seconds"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（月球本身是地球的卫星）",
+            "en": "0 (the Moon itself is Earth's satellite)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 月球是地球唯一的天然卫星，也是太阳系中已知唯一拥有大型卫星的类地行星。",
+        "en": "※ The Moon is Earth's only natural satellite and the only large moon of a terrestrial planet in the Solar System."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "月海（暗色玄武岩平原）、高地（明亮崎岖区域）、撞击坑",
+            "en": "Maria (dark basalt plains), highlands (bright rugged areas), impact craters"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "南极-艾特肯盆地（直径约2,500 km）",
+            "en": "South Pole-Aitken basin (~2,500 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约44.7亿年（最古老岩石）",
+            "en": "~4.47 billion years (oldest rocks)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "莱布尼茨山脉（最高点约10,786 m）",
+            "en": "Leibniz Mountains (highest point ~10,786 m)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 月球背面比正面有更多撞击坑，而正面则分布着大面积的月海。",
+        "en": "※ The far side has many more craters than the near side, while the near side is dominated by large maria."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "史前（已知最古老天体之一）",
+            "en": "Prehistoric (one of the oldest known celestial bodies)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1959年（苏联月球3号）",
+            "en": "1959 (Soviet Luna 3)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "1966年（苏联月球10号）",
+            "en": "1966 (Soviet Luna 10)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "嫦娥六号（中国，2024年采样返回）",
+            "en": "Chang'e 6 (China, 2024 sample return)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 1969年阿波罗11号实现了人类首次登月，至今共有12人踏上月球表面。",
+        "en": "※ Apollo 11 achieved the first human moon landing in 1969, and 12 people have walked on the lunar surface to date."
+      }
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "id": "europa",
+  "name": {
+    "zh": "木卫二",
+    "en": "Europa"
+  },
+  "icon": "🪐",
+  "theme_color": "#a0c4d8",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "冰卫星（伽利略卫星之一）",
+            "en": "Icy moon (Galilean moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "3,121.6 公里",
+            "en": "3,121.6 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "4.7998 × 10²² 千克",
+            "en": "4.7998 × 10²² kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "1.593 × 10¹⁰ 立方公里",
+            "en": "1.593 × 10¹⁰ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "3.013 克/立方厘米",
+            "en": "3.013 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "1.315 米/秒²（0.134 g）",
+            "en": "1.315 m/s² (0.134 g)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫二表面覆盖着一层厚达数十公里的冰壳，冰壳之下可能隐藏着全球性的液态水海洋，水量约为地球海洋的两倍。",
+        "en": "※ Europa is covered by an ice shell tens of kilometers thick, beneath which may lie a global liquid water ocean containing about twice the volume of Earth's oceans."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "3.551 天（潮汐锁定）",
+            "en": "3.551 days (tidally locked)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "3.551 天",
+            "en": "3.551 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "13.74 公里/秒",
+            "en": "13.74 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0094",
+            "en": "0.0094"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.470°（相对于木星赤道）",
+            "en": "0.470° (to Jupiter's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫二与木星其他伽利略卫星存在轨道共振（拉普拉斯共振），使其轨道轻微偏心，潮汐摩擦加热内部，维持地下海洋液态。",
+        "en": "※ Europa is in orbital resonance (Laplace resonance) with other Galilean moons; its slight eccentricity causes tidal heating that keeps the subsurface ocean liquid."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "赤道约 110 K（-163°C），极区约 50 K（-223°C）",
+            "en": "Equator ~110 K (-163°C), poles ~50 K (-223°C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 102 K（-171°C）",
+            "en": "~102 K (-171°C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "约 0.1 微帕（极稀薄）",
+            "en": "~0.1 μPa (extremely tenuous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "主要为氧气（O₂），来自冰面辐射分解",
+            "en": "Primarily molecular oxygen (O₂) from radiolysis of ice"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "约 120 nT（感应磁场，由木星磁场与地下海洋相互作用产生）",
+            "en": "~120 nT (induced field from interaction with Jupiter's magnetosphere and subsurface ocean)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫二极稀薄的氧气大气层并非生物来源，而是高能粒子轰击冰面将水分子分解为氢和氧，氢逸散后留下氧气。",
+        "en": "※ Europa's tenuous oxygen atmosphere is not biological; it is produced by energetic particles splitting water molecules, with hydrogen escaping and oxygen retained."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕木星公转）",
+            "en": "N/A (orbits Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用（绕木星公转）",
+            "en": "N/A (orbits Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "670,900 公里（绕木星）",
+            "en": "670,900 km (from Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.00448 AU（绕木星）",
+            "en": "0.00448 AU (from Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "从木星约 2.24 秒；从地球约 33–53 分钟（取决于相对位置）",
+            "en": "~2.24 s from Jupiter; ~33–53 min from Earth (depending on position)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "木卫二是木星的卫星，本身无已知天然卫星",
+            "en": "Europa is a moon of Jupiter; it has no known natural satellites"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "木卫二（Europa）是木星第四大卫星",
+            "en": "Europa is Jupiter's fourth-largest moon"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫二是伽利略卫星中最小的一个，但因其冰下海洋成为太阳系中最有希望找到地外生命的地点之一。",
+        "en": "※ Europa is the smallest of the Galilean moons, yet its subsurface ocean makes it one of the most promising places to search for extraterrestrial life in the Solar System."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "冰壳平原、暗色裂隙带（线纹）、混沌地形、冰丘",
+            "en": "Ice plains, dark fracture bands (lineae), chaotic terrain, ice domes"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "普尔瓦（Pwyll）撞击坑，直径约 26 公里",
+            "en": "Pwyll crater, ~26 km diameter"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 2000 万至 1.8 亿年（非常年轻）",
+            "en": "~20 million to 180 million years (very young)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "无明显高山，地形起伏一般不超过数百米",
+            "en": "No prominent mountains; relief generally < a few hundred meters"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫二表面布满纵横交错的暗色裂隙，称为“线纹”，有些长达数千公里，是冰壳因潮汐应力反复开裂和重新冻结形成的。",
+        "en": "※ Europa's surface is crisscrossed by dark fractures called 'lineae', some thousands of kilometers long, formed by repeated cracking and refreezing of the ice shell due to tidal stresses."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1610 年 1 月 7 日，伽利略·伽利莱",
+            "en": "January 7, 1610, by Galileo Galilei"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1973 年 12 月 4 日，先驱者 10 号（距离约 321,000 公里）",
+            "en": "December 4, 1973, Pioneer 10 (closest approach ~321,000 km)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "尚未有专门探测器入轨木卫二；伽利略号探测器（1995–2003）多次飞掠",
+            "en": "No dedicated orbiter yet; Galileo probe (1995–2003) performed multiple flybys"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "欧罗巴快船（Europa Clipper，NASA，2024 年发射，预计 2030 年到达）",
+            "en": "Europa Clipper (NASA, launched 2024, expected arrival 2030)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 欧罗巴快船任务将进行约 50 次近距离飞掠，携带九台科学仪器，旨在评估木卫二地下海洋的宜居性，但不会着陆。",
+        "en": "※ The Europa Clipper mission will perform ~50 close flybys with nine science instruments to assess the habitability of Europa's subsurface ocean, but will not land."
+      }
+    }
+  ]
+}

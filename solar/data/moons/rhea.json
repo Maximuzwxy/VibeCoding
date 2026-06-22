@@ -1,0 +1,401 @@
+{
+  "id": "rhea",
+  "name": {
+    "zh": "土卫五",
+    "en": "Rhea"
+  },
+  "icon": "🪐",
+  "theme_color": "#b0b7c6",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "冰卫星（土星卫星）",
+            "en": "Icy moon (Saturnian moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "1,528 公里",
+            "en": "1,528 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "2.306 × 10²¹ 千克",
+            "en": "2.306 × 10²¹ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "1.87 × 10⁹ 立方公里",
+            "en": "1.87 × 10⁹ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.236 克/立方厘米",
+            "en": "1.236 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.264 米/秒²",
+            "en": "0.264 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫五是太阳系中唯一已知拥有稀薄大气（氧-二氧化碳）的冰卫星。",
+        "en": "※ Rhea is the only known icy moon in the solar system with a tenuous oxygen-carbon dioxide atmosphere."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "4.518 天（同步自转）",
+            "en": "4.518 days (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "4.518 天",
+            "en": "4.518 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "8.48 公里/秒",
+            "en": "8.48 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.001",
+            "en": "0.001"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.345°（相对于土星赤道）",
+            "en": "0.345° (to Saturn's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫五的轨道几乎完美圆形，离心率仅0.001，是土星主要卫星中最圆的轨道之一。",
+        "en": "※ Rhea's orbit is nearly perfectly circular, with an eccentricity of only 0.001, one of the roundest among Saturn's major moons."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "53 K 至 99 K",
+            "en": "53 K to 99 K"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "76 K（-197°C）",
+            "en": "76 K (-197°C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "极稀薄，约 10⁻¹² 巴",
+            "en": "Extremely tenuous, ~10⁻¹² bar"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "氧气 (O₂) 约 70%，二氧化碳 (CO₂) 约 30%",
+            "en": "Oxygen (O₂) ~70%, Carbon dioxide (CO₂) ~30%"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无固有磁场",
+            "en": "No intrinsic magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫五的稀薄氧气大气层是由表面水冰被土星磁层高能粒子分解产生的。",
+        "en": "※ Rhea's tenuous oxygen atmosphere is produced by the decomposition of surface water ice by high-energy particles from Saturn's magnetosphere."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕土星公转）",
+            "en": "N/A (orbits Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用（绕土星公转）",
+            "en": "N/A (orbits Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "527,040 公里",
+            "en": "527,040 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.00352 AU",
+            "en": "0.00352 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 1.76 秒（从土星）",
+            "en": "~1.76 seconds (from Saturn)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（土卫五本身是土星的卫星）",
+            "en": "0 (Rhea itself is a moon of Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无已知天然卫星",
+            "en": "No known natural satellites"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫五曾被认为可能拥有自己的环系统，但卡西尼号探测器并未证实。",
+        "en": "※ Rhea was once thought to possibly have its own ring system, but Cassini did not confirm it."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "撞击坑、冰原、悬崖、沟壑",
+            "en": "Impact craters, ice plains, scarps, chasmata"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "蒂拉瓦（Tirawa）撞击盆地，直径约 360 公里",
+            "en": "Tirawa impact basin, ~360 km diameter"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 10 亿年（较年轻区域）至 40 亿年（古老区域）",
+            "en": "~1 billion years (younger areas) to ~4 billion years (ancient areas)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "约 10 公里（位于蒂拉瓦盆地边缘）",
+            "en": "~10 km (on the rim of Tirawa basin)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫五表面分为明亮的高纬度冰原和较暗的赤道区域，被称为“两面色”。",
+        "en": "※ Rhea's surface is divided into bright high-latitude ice plains and darker equatorial regions, known as a 'two-tone' appearance."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1672年12月23日，由乔瓦尼·卡西尼发现",
+            "en": "December 23, 1672, by Giovanni Cassini"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1980年11月12日，旅行者1号",
+            "en": "November 12, 1980, Voyager 1"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "2004年7月1日，卡西尼号进入土星轨道后多次飞掠",
+            "en": "July 1, 2004, Cassini orbiter (multiple flybys)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "卡西尼号（2004-2017）进行了多次近距离飞掠",
+            "en": "Cassini (2004-2017) performed multiple close flybys"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 卡西尼号在2005年至2015年间对土卫五进行了多次飞掠，最近距离仅约 100 公里。",
+        "en": "※ Cassini performed multiple flybys of Rhea between 2005 and 2015, with the closest approach at only about 100 km."
+      }
+    }
+  ]
+}

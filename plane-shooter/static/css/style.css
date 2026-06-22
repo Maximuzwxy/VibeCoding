@@ -1,0 +1,726 @@
+/* ========================================
+   Plane Shooter - Main Stylesheet
+   Space-themed gaming design
+   ======================================== */
+
+:root {
+    --primary-color: #00d4ff;
+    --secondary-color: #7b2cbf;
+    --accent-color: #ff006e;
+    --success-color: #00ff88;
+    --warning-color: #ffbe0b;
+    --danger-color: #ff0040;
+    --dark-bg: #0a0a1a;
+    --space-bg: #1a1a3a;
+    --text-color: #ffffff;
+    --border-radius: 10px;
+    --border-radius-lg: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #0a0a1a 0%, #1a1a3a 100%);
+    min-height: 100vh;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+/* ============== Game Container ============== */
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameCanvas {
+    background: linear-gradient(180deg, #0a0a2a 0%, #1a1a4a 100%);
+    border: 3px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+/* ============== HUD ============== */
+
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--primary-color);
+    z-index: 100;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 0.75em;
+    color: #aaa;
+    margin-bottom: 2px;
+}
+
+.hud-item span:last-child {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ============== Menus ============== */
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(10, 10, 30, 0.95);
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+    text-align: center;
+    z-index: 200;
+    min-width: 400px;
+}
+
+.game-title {
+    font-size: 3em;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.menu h2 {
+    font-size: 2em;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.player-welcome {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #444;
+    color: #aaa;
+}
+
+.player-welcome strong {
+    color: var(--primary-color);
+}
+
+.logout-link {
+    color: var(--danger-color);
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+/* ============== Buttons ============== */
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #0099cc);
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary-color), #5a1a9f);
+    color: white;
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, var(--accent-color), #cc0055);
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color), #00cc66);
+    color: #0a0a1a;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--warning-color), #cc9900);
+    color: #0a0a1a;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--danger-color), #cc0033);
+    color: white;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #666, #444);
+    color: white;
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.3em;
+    width: 100%;
+}
+
+/* ============== Login Page ============== */
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a1a 0%, #2a1a4a 100%);
+}
+
+.login-container {
+    background: rgba(10, 10, 30, 0.95);
+    padding: 50px;
+    border-radius: var(--border-radius-lg);
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+}
+
+.login-title {
+    font-size: 3em;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    color: #aaa;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.login-form {
+    margin-bottom: 20px;
+}
+
+.login-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px dashed #444;
+    color: #888;
+    font-size: 0.9em;
+}
+
+.login-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============== Form Elements ============== */
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #444;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+select.form-control {
+    cursor: pointer;
+}
+
+/* ============== Flash Messages ============== */
+
+.flash-messages {
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    font-weight: bold;
+    border: 2px solid;
+}
+
+.alert-success {
+    background: rgba(0, 255, 136, 0.2);
+    color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.alert-danger {
+    background: rgba(255, 0, 64, 0.2);
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.alert-warning {
+    background: rgba(255, 190, 11, 0.2);
+    color: var(--warning-color);
+    border-color: var(--warning-color);
+}
+
+.alert-info {
+    background: rgba(0, 212, 255, 0.2);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* ============== Leaderboard ============== */
+
+.leaderboard-container {
+    background: rgba(10, 10, 30, 0.95);
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+    max-width: 800px;
+    width: 90%;
+}
+
+.leaderboard-title {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px var(--primary-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.leaderboard-subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.leaderboard-table th {
+    background: rgba(0, 212, 255, 0.2);
+    color: var(--primary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.leaderboard-table tr:hover {
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.score-row.rank-1 { background: rgba(255, 215, 0, 0.2); }
+.score-row.rank-2 { background: rgba(192, 192, 192, 0.2); }
+.score-row.rank-3 { background: rgba(205, 127, 50, 0.2); }
+
+.rank {
+    font-size: 1.3em;
+    width: 50px;
+}
+
+.username {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.score {
+    font-weight: bold;
+    color: var(--success-color);
+}
+
+.leaderboard-footer {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.no-scores {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}
+
+/* ============== Rules Page ============== */
+
+.rules-container {
+    background: rgba(10, 10, 30, 0.95);
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.rules-title {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.rules-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #333;
+}
+
+.rules-section:last-child {
+    border-bottom: none;
+}
+
+.rules-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.rules-section p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.controls-table {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    padding: 15px;
+}
+
+.controls-table tr {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.controls-table tr:last-child {
+    border-bottom: none;
+}
+
+.controls-table td:last-child {
+    color: #ccc;
+}
+
+kbd {
+    background: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    font-family: monospace;
+    margin: 2px;
+}
+
+.note {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(0, 212, 255, 0.1);
+    border-left: 3px solid var(--primary-color);
+    font-size: 0.9em;
+}
+
+/* Power-up Grid */
+
+.powerup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.powerup-item {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 2px solid #333;
+    transition: all 0.3s;
+}
+
+.powerup-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.powerup-icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.powerup-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.powerup-item p {
+    font-size: 0.85em;
+    color: #888;
+}
+
+/* Scoring Table */
+
+.scoring-table {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    padding: 15px;
+}
+
+.scoring-table tr {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.scoring-table tr:last-child {
+    border-bottom: none;
+}
+
+.scoring-table td:last-child {
+    color: var(--success-color);
+}
+
+/* Level List */
+
+.level-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.level-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #333;
+    color: #ccc;
+}
+
+.level-list li:last-child {
+    border-bottom: none;
+}
+
+.level-list strong {
+    color: var(--primary-color);
+}
+
+.rules-footer {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ============== Game Over ============== */
+
+.game-over-title {
+    font-size: 3em;
+    color: var(--danger-color);
+    text-shadow: 0 0 20px var(--danger-color);
+    margin-bottom: 20px;
+}
+
+.final-score {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+}
+
+.final-score p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #ccc;
+}
+
+.final-score span {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/* ============== Level Complete ============== */
+
+.level-complete-title {
+    font-size: 2.5em;
+    color: var(--success-color);
+    text-shadow: 0 0 20px var(--success-color);
+    margin-bottom: 15px;
+}
+
+/* ============== Error Page ============== */
+
+.error-container {
+    text-align: center;
+    background: rgba(10, 10, 30, 0.95);
+    padding: 60px;
+    border-radius: var(--border-radius-lg);
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+}
+
+.error-code {
+    font-size: 6em;
+    color: var(--danger-color);
+    text-shadow: 0 0 30px var(--danger-color);
+    margin-bottom: 10px;
+}
+
+.error-message {
+    font-size: 1.5em;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.error-icon {
+    font-size: 5em;
+    margin-bottom: 30px;
+}
+
+/* ============== Settings ============== */
+
+.settings-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.settings-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* ============== Scrollbar ============== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* ============== Responsive ============== */
+
+@media (max-width: 768px) {
+    .menu {
+        min-width: 90%;
+        padding: 30px 20px;
+    }
+    
+    .game-title {
+        font-size: 2em;
+    }
+    
+    #hud {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.9em;
+    }
+    
+    .leaderboard-table {
+        font-size: 0.9em;
+    }
+    
+    .powerup-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

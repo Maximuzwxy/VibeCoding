@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_earth_001",
+      "question": {"zh": "地球的直径约为多少？", "en": "What is the approximate diameter of Earth?"},
+      "options": [
+        {"zh": "8,568 公里", "en": "8,568 km"},
+        {"zh": "10,924 公里", "en": "10,924 km"},
+        {"zh": "12,742 公里", "en": "12,742 km"},
+        {"zh": "15,386 公里", "en": "15,386 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "地球的平均直径约为 12,742 公里，是太阳系中第五大的行星。", "en": "Earth's average diameter is approximately 12,742 km, making it the fifth largest planet in the Solar System."}
+    },
+    {
+      "id": "q_earth_002",
+      "question": {"zh": "地球的大气层中含量最多的气体是什么？", "en": "What is the most abundant gas in Earth's atmosphere?"},
+      "options": [
+        {"zh": "氧气", "en": "Oxygen"},
+        {"zh": "二氧化碳", "en": "Carbon Dioxide"},
+        {"zh": "氮气", "en": "Nitrogen"},
+        {"zh": "氩气", "en": "Argon"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "地球大气层中氮气约占 78%，氧气约占 21%，其余为氩气、二氧化碳等。", "en": "Earth's atmosphere consists of approximately 78% nitrogen, 21% oxygen, and the rest is argon, carbon dioxide, and other gases."}
+    },
+    {
+      "id": "q_earth_003",
+      "question": {"zh": "地球距离太阳的平均距离约为多少？", "en": "What is the average distance from Earth to the Sun?"},
+      "options": [
+        {"zh": "1 亿公里", "en": "100 million km"},
+        {"zh": "1.5 亿公里", "en": "150 million km"},
+        {"zh": "2 亿公里", "en": "200 million km"},
+        {"zh": "2.5 亿公里", "en": "250 million km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "地球与太阳的平均距离约为 1.5 亿公里（精确值为 149,597,870 公里），这个距离被定义为 1 个天文单位（AU）。", "en": "The average distance from Earth to the Sun is approximately 150 million km (precisely 149,597,870 km), which is defined as 1 Astronomical Unit (AU)."}
+    },
+    {
+      "id": "q_earth_004",
+      "question": {"zh": "地球的自转周期（一天）是多少小时？", "en": "What is Earth's rotation period (one day) in hours?"},
+      "options": [
+        {"zh": "20 小时", "en": "20 hours"},
+        {"zh": "22 小时", "en": "22 hours"},
+        {"zh": "24 小时", "en": "24 hours"},
+        {"zh": "26 小时", "en": "26 hours"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "地球自转一周的时间约为 24 小时，这就是我们定义的一天的长度。", "en": "Earth takes approximately 24 hours to complete one rotation, which defines the length of our day."}
+    },
+    {
+      "id": "q_earth_005",
+      "question": {"zh": "地球的天然卫星是什么？", "en": "What is Earth's natural satellite?"},
+      "options": [
+        {"zh": "火卫一", "en": "Phobos"},
+        {"zh": "月球", "en": "The Moon"},
+        {"zh": "木卫二", "en": "Europa"},
+        {"zh": "土卫六", "en": "Titan"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "月球是地球唯一的天然卫星，直径约为 3,474 公里，是太阳系中第五大的卫星。", "en": "The Moon is Earth's only natural satellite, with a diameter of about 3,474 km, making it the fifth largest moon in the Solar System."}
+    },
+    {
+      "id": "q_earth_006",
+      "question": {"zh": "地球表面约有多少比例被水覆盖？", "en": "What percentage of Earth's surface is covered by water?"},
+      "options": [
+        {"zh": "51%", "en": "51%"},
+        {"zh": "61%", "en": "61%"},
+        {"zh": "71%", "en": "71%"},
+        {"zh": "81%", "en": "81%"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "地球表面约 71% 被水覆盖，因此地球也被称为'蓝色星球'。", "en": "Approximately 71% of Earth's surface is covered by water, earning it the nickname 'Blue Planet'."}
+    },
+    {
+      "id": "q_earth_007",
+      "question": {"zh": "地球的大气层分为几层？", "en": "How many layers does Earth's atmosphere have?"},
+      "options": [
+        {"zh": "3 层", "en": "3 layers"},
+        {"zh": "4 层", "en": "4 layers"},
+        {"zh": "5 层", "en": "5 layers"},
+        {"zh": "6 层", "en": "6 layers"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "地球大气层从下到上分为 5 层：对流层、平流层、中间层、热层和外逸层。", "en": "Earth's atmosphere is divided into 5 layers from bottom to top: troposphere, stratosphere, mesosphere, thermosphere, and exosphere."}
+    },
+    {
+      "id": "q_earth_008",
+      "question": {"zh": "地球的公转周期（一年）是多少天？", "en": "What is Earth's orbital period (one year) in days?"},
+      "options": [
+        {"zh": "360 天", "en": "360 days"},
+        {"zh": "365.25 天", "en": "365.25 days"},
+        {"zh": "370 天", "en": "370 days"},
+        {"zh": "375 天", "en": "375 days"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "地球绕太阳公转一周的时间约为 365.25 天，这就是为什么每四年有一个闰年。", "en": "Earth takes approximately 365.25 days to orbit the Sun once, which is why we have a leap year every four years."}
+    },
+    {
+      "id": "q_earth_009",
+      "question": {"zh": "地球内部结构从外到内依次是？", "en": "What is the correct order of Earth's internal structure from outside to inside?"},
+      "options": [
+        {"zh": "地壳、地幔、外核、内核", "en": "Crust, Mantle, Outer Core, Inner Core"},
+        {"zh": "地壳、外核、地幔、内核", "en": "Crust, Outer Core, Mantle, Inner Core"},
+        {"zh": "地幔、地壳、外核、内核", "en": "Mantle, Crust, Outer Core, Inner Core"},
+        {"zh": "地壳、地幔、内核、外核", "en": "Crust, Mantle, Inner Core, Outer Core"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "地球内部从外到内依次为：地壳（最外层）、地幔、外核（液态）、内核（固态）。", "en": "Earth's internal structure from outside to inside is: Crust (outermost), Mantle, Outer Core (liquid), and Inner Core (solid)."}
+    },
+    {
+      "id": "q_earth_010",
+      "question": {"zh": "地球上已知最深的海洋区域是？", "en": "What is the deepest known oceanic region on Earth?"},
+      "options": [
+        {"zh": "马里亚纳海沟", "en": "Mariana Trench"},
+        {"zh": "波多黎各海沟", "en": "Puerto Rico Trench"},
+        {"zh": "爪哇海沟", "en": "Java Trench"},
+        {"zh": "菲律宾海沟", "en": "Philippine Trench"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "马里亚纳海沟是地球上最深的海洋区域，最深处挑战者深渊深度约为 10,984 米。", "en": "The Mariana Trench is the deepest oceanic region on Earth, with its deepest point, Challenger Deep, reaching approximately 10,984 meters."}
+    }
+  ]
+}

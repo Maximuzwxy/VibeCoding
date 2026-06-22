@@ -1,0 +1,401 @@
+{
+  "id": "oberon",
+  "name": {
+    "zh": "天卫五",
+    "en": "Oberon"
+  },
+  "icon": "🪐",
+  "theme_color": "#4a5d6b",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "天王星卫星",
+            "en": "Uranian Moon"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "1,523 km",
+            "en": "1,523 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "3.014 × 10²¹ kg",
+            "en": "3.014 × 10²¹ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "1.85 × 10⁹ km³",
+            "en": "1.85 × 10⁹ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.63 g/cm³",
+            "en": "1.63 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.346 m/s²",
+            "en": "0.346 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫五是天王星最大且最外层的五大主要卫星之一",
+        "en": "※ Oberon is Uranus's largest and outermost of the five major moons"
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "13.463 天（同步自转）",
+            "en": "13.463 days (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "13.463 天",
+            "en": "13.463 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "3.15 km/s",
+            "en": "3.15 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0014",
+            "en": "0.0014"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.058°（相对于天王星赤道）",
+            "en": "0.058° (relative to Uranus's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫五的轨道几乎完美圆形，离心率极低",
+        "en": "※ Oberon's orbit is nearly perfectly circular with extremely low eccentricity"
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "−203 °C（70 K）至 −193 °C（80 K）",
+            "en": "−203 °C (70 K) to −193 °C (80 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "−198 °C（75 K）",
+            "en": "−198 °C (75 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "几乎为零（极稀薄）",
+            "en": "Nearly zero (extremely tenuous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "无稳定大气",
+            "en": "No stable atmosphere"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无显著磁场",
+            "en": "No significant magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 表面可能存在水冰和暗色有机物的混合物",
+        "en": "※ Surface likely contains a mixture of water ice and dark organic material"
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "582,600 km（距天王星）",
+            "en": "582,600 km (from Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "584,200 km（距天王星）",
+            "en": "584,200 km (from Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "583,400 km",
+            "en": "583,400 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.0039 AU（相对于天王星）",
+            "en": "0.0039 AU (relative to Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 1.94 秒（从天王星）",
+            "en": "~1.94 seconds (from Uranus)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "天卫五本身是天王星的卫星",
+            "en": "Oberon is itself a moon of Uranus"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无已知子卫星",
+            "en": "No known sub-satellites"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫五是天王星第二大卫星，仅次于泰坦尼亚",
+        "en": "※ Oberon is Uranus's second-largest moon, after Titania"
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "撞击坑、峡谷、悬崖",
+            "en": "Craters, canyons, scarps"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "哈姆雷特陨石坑（直径约 206 km）",
+            "en": "Hamlet Crater (~206 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 40 亿年",
+            "en": "~4 billion years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "约 11 km（悬崖/断崖）",
+            "en": "~11 km (scarp/cliff)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 地表有巨大的峡谷系统，可能由内部冰火山活动形成",
+        "en": "※ Surface features massive canyon systems, possibly from cryovolcanism"
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1787年1月11日，威廉·赫歇尔",
+            "en": "January 11, 1787, by William Herschel"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1986年1月24日，旅行者2号",
+            "en": "January 24, 1986, Voyager 2"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "尚未有探测器入轨",
+            "en": "No orbiter yet"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "无活跃任务",
+            "en": "No active mission"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 旅行者2号是唯一造访过天卫五的探测器，仅拍摄了部分表面",
+        "en": "※ Voyager 2 is the only spacecraft to visit Oberon, imaging only part of its surface"
+      }
+    }
+  ]
+}

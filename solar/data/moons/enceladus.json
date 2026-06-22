@@ -1,0 +1,401 @@
+{
+  "id": "enceladus",
+  "name": {
+    "zh": "土卫二",
+    "en": "Enceladus"
+  },
+  "icon": "🪐",
+  "theme_color": "#C0E0D0",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "冰卫星（土星卫星）",
+            "en": "Icy moon (Saturnian moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "504.2 km",
+            "en": "504.2 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.08 × 10²⁰ kg",
+            "en": "1.08 × 10²⁰ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "6.7 × 10⁷ km³",
+            "en": "6.7 × 10⁷ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.61 g/cm³",
+            "en": "1.61 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.113 m/s² (0.0115 g)",
+            "en": "0.113 m/s² (0.0115 g)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫二表面覆盖着纯净的水冰，使其成为太阳系中反射率最高的天体之一（反照率约1.4）",
+        "en": "※ Enceladus is covered in pure water ice, making it one of the most reflective bodies in the Solar System (albedo ~1.4)"
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "1.370 天（同步自转）",
+            "en": "1.370 days (synchronous rotation)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "1.370 天",
+            "en": "1.370 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "约 12.6 km/s",
+            "en": "~12.6 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0047",
+            "en": "0.0047"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.009°（相对于土星赤道）",
+            "en": "0.009° (relative to Saturn's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫二与土卫一（Mimas）存在 2:1 轨道共振，这种潮汐加热是其地质活动的能量来源",
+        "en": "※ Enceladus is in a 2:1 orbital resonance with Mimas, and this tidal heating powers its geological activity"
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "白天约 -198°C（75 K），夜间约 -240°C（33 K）",
+            "en": "Day ~ -198°C (75 K), night ~ -240°C (33 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 -200°C（73 K）",
+            "en": "~ -200°C (73 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "极稀薄，约 0.1 微帕（局部）",
+            "en": "Extremely tenuous, ~0.1 μPa (local)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "水蒸气（91%）、氮气（4%）、二氧化碳（3.2%）、甲烷（1.7%）",
+            "en": "Water vapor (91%), nitrogen (4%), CO₂ (3.2%), methane (1.7%)"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无固有磁场，但受土星磁层影响",
+            "en": "No intrinsic field, but influenced by Saturn's magnetosphere"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 南极地区存在巨大的热异常，温度比周围高约 30 K，由内部海洋的热液活动造成",
+        "en": "※ The south polar region has a huge thermal anomaly ~30 K warmer than surroundings, caused by hydrothermal activity from the internal ocean"
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "（绕土星）约 237,378 km",
+            "en": "(around Saturn) ~237,378 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "（绕土星）约 239,828 km",
+            "en": "(around Saturn) ~239,828 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "238,037 km（距土星中心）",
+            "en": "238,037 km (from Saturn's center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "约 0.00159 AU（距土星）",
+            "en": "~0.00159 AU (from Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 1.3 秒（从土星到土卫二）",
+            "en": "~1.3 seconds (Saturn to Enceladus)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "土卫二本身是土星的卫星，无天然子卫星",
+            "en": "Enceladus itself is a moon of Saturn, no natural sub-satellites"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "土卫二（Enceladus）是土星第14大卫星",
+            "en": "Enceladus is the 14th largest moon of Saturn"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫二位于土星 E 环的最稠密区域，其冰喷泉不断向 E 环补充冰粒",
+        "en": "※ Enceladus lies in the densest part of Saturn's E ring, and its ice plumes continuously replenish the ring with ice particles"
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "冰平原、裂缝带、南极虎纹状地形（Tiger Stripes）",
+            "en": "Ice plains, fracture zones, south polar tiger stripes"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "阿里斯托芬陨石坑（直径约 35 km）",
+            "en": "Aristophanes crater (~35 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "不同区域差异大，南极区域约 1 亿年，其他区域可能更古老",
+            "en": "Varies widely; south polar region ~100 million years, other areas older"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "约 1.5 km（脊状隆起）",
+            "en": "~1.5 km (ridge-like uplift)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 南极的“虎纹”裂缝（如巴格达、大马士革等）是活跃冰喷泉的源头，喷出的水冰高达数百公里",
+        "en": "※ The 'tiger stripe' fractures at the south pole (e.g., Baghdad, Damascus) are sources of active ice plumes reaching hundreds of kilometers high"
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1789年8月28日，由威廉·赫歇尔发现",
+            "en": "August 28, 1789, discovered by William Herschel"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1980年8月，旅行者1号",
+            "en": "August 1980, Voyager 1"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "卡西尼号于2004年进入土星轨道后多次飞掠，未入轨土卫二",
+            "en": "Cassini performed multiple flybys after entering Saturn orbit in 2004, but did not orbit Enceladus"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "卡西尼号（2004-2017）进行了23次近距离飞掠，最近一次约 25 km",
+            "en": "Cassini (2004-2017) conducted 23 close flybys, closest ~25 km"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 2005年卡西尼号首次发现土卫二南极的冰喷泉，证实其内部存在液态水海洋，成为太阳系中最有希望寻找地外生命的地点之一",
+        "en": "※ In 2005, Cassini first discovered the south polar ice plumes, confirming a subsurface liquid water ocean, making Enceladus one of the most promising places to search for extraterrestrial life"
+      }
+    }
+  ]
+}

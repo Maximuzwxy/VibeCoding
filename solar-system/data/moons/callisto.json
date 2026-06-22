@@ -1,0 +1,67 @@
+{
+  "id": "callisto",
+  "name": {"zh": "木卫四", "en": "Callisto"},
+  "icon": "🌑",
+  "theme_color": "#8a7f75",
+  "accent_color": "#8a7f75",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "卫星类型", "en": "Satellite Type"}, "value": {"zh": "冰 - 岩石卫星", "en": "Ice-Rock Moon"}},
+        {"label": {"zh": "直径", "en": "Diameter"}, "value": {"zh": "4,821 km", "en": "4,821 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "1.076×10²³kg", "en": "1.076×10²³kg"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "1.83 g/cm³", "en": "1.83 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "1.24 m/s²", "en": "1.24 m/s²"}}
+      ],
+      "note": {"zh": "※ 太阳系第三大卫星", "en": "※ Third largest moon in Solar System"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "16.69 天", "en": "16.69 days"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "16.69 天", "en": "16.69 days"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "8.20 km/s", "en": "8.20 km/s"}},
+        {"label": {"zh": "轨道半径", "en": "Orbital Radius"}, "value": {"zh": "1,882,700 km", "en": "1,882,700 km"}}
+      ],
+      "note": {"zh": "※ 潮汐锁定", "en": "※ Tidally locked"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-170°C", "en": "-170°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-170°C", "en": "-170°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "0.0000000075 kPa", "en": "0.0000000075 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "CO₂、O₂ 微量", "en": "Trace CO₂, O₂"}}
+      ],
+      "note": {"zh": "※ 有极稀薄的二氧化碳和氧气大气", "en": "※ Has extremely thin CO₂ and O₂ atmosphere"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "与木星距离", "en": "Distance from Jupiter"}, "value": {"zh": "1,882,700 km", "en": "1,882,700 km"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "0.20°", "en": "0.20°"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "约 6.3 秒", "en": "About 6.3 seconds"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "最大撞击坑", "en": "Largest Crater"}, "value": {"zh": "瓦尔哈拉撞击坑", "en": "Valhalla Crater"}},
+        {"label": {"zh": "撞击坑直径", "en": "Crater Diameter"}, "value": {"zh": "3,800 km", "en": "3,800 km"}},
+        {"label": {"zh": "表面年龄", "en": "Surface Age"}, "value": {"zh": "约 45 亿年", "en": "About 4.5 billion years"}},
+        {"label": {"zh": "表面特征", "en": "Surface Features"}, "value": {"zh": "密集撞击坑", "en": "Heavily cratered"}}
+      ],
+      "note": {"zh": "※ 太阳系中撞击坑最多的天体之一", "en": "※ One of the most heavily cratered bodies in Solar System"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现者", "en": "Discoverer"}, "value": {"zh": "1610 年伽利略", "en": "1610 by Galileo"}},
+        {"label": {"zh": "首次近距离拍摄", "en": "First Close-up Photos"}, "value": {"zh": "1973 年先驱者 10 号", "en": "1973 Pioneer 10"}},
+        {"label": {"zh": "详细探测", "en": "Detailed Survey"}, "value": {"zh": "1995-2003 伽利略号", "en": "1995-2003 Galileo"}},
+        {"label": {"zh": "命名来源", "en": "Name Origin"}, "value": {"zh": "希腊神话宁芙仙女", "en": "Nymph in Greek mythology"}}
+      ]
+    }
+  ]
+}

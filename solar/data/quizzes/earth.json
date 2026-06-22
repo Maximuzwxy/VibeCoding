@@ -1,0 +1,334 @@
+{
+  "questions": [
+    {
+      "id": "q_earth_001",
+      "question": {
+        "zh": "地球是太阳系中第几颗行星？",
+        "en": "What is the position of Earth in the solar system?"
+      },
+      "options": [
+        {
+          "zh": "第一颗",
+          "en": "First"
+        },
+        {
+          "zh": "第二颗",
+          "en": "Second"
+        },
+        {
+          "zh": "第三颗",
+          "en": "Third"
+        },
+        {
+          "zh": "第四颗",
+          "en": "Fourth"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "地球是距离太阳第三近的行星，位于金星之后、火星之前。",
+        "en": "Earth is the third planet from the Sun, after Venus and before Mars."
+      }
+    },
+    {
+      "id": "q_earth_002",
+      "question": {
+        "zh": "地球绕太阳公转一周大约需要多长时间？",
+        "en": "How long does it take for Earth to complete one orbit around the Sun?"
+      },
+      "options": [
+        {
+          "zh": "约24小时",
+          "en": "About 24 hours"
+        },
+        {
+          "zh": "约30天",
+          "en": "About 30 days"
+        },
+        {
+          "zh": "约365天",
+          "en": "About 365 days"
+        },
+        {
+          "zh": "约12小时",
+          "en": "About 12 hours"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "地球公转周期约为365.25天，即一个回归年。",
+        "en": "Earth's orbital period is about 365.25 days, or one tropical year."
+      }
+    },
+    {
+      "id": "q_earth_003",
+      "question": {
+        "zh": "地球的赤道半径大约是多少？",
+        "en": "What is the approximate equatorial radius of Earth?"
+      },
+      "options": [
+        {
+          "zh": "3,000公里",
+          "en": "3,000 km"
+        },
+        {
+          "zh": "6,371公里",
+          "en": "6,371 km"
+        },
+        {
+          "zh": "12,742公里",
+          "en": "12,742 km"
+        },
+        {
+          "zh": "1,000公里",
+          "en": "1,000 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "地球的平均半径约为6,371公里，赤道半径略大。",
+        "en": "Earth's mean radius is about 6,371 km, with the equatorial radius slightly larger."
+      }
+    },
+    {
+      "id": "q_earth_004",
+      "question": {
+        "zh": "地球表面大约有多少比例被水覆盖？",
+        "en": "What percentage of Earth's surface is covered by water?"
+      },
+      "options": [
+        {
+          "zh": "约30%",
+          "en": "About 30%"
+        },
+        {
+          "zh": "约50%",
+          "en": "About 50%"
+        },
+        {
+          "zh": "约71%",
+          "en": "About 71%"
+        },
+        {
+          "zh": "约90%",
+          "en": "About 90%"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "地球表面约71%被海洋覆盖，因此被称为蓝色星球。",
+        "en": "About 71% of Earth's surface is covered by oceans, earning it the nickname 'Blue Planet'."
+      }
+    },
+    {
+      "id": "q_earth_005",
+      "question": {
+        "zh": "地球的大气层中含量最多的气体是什么？",
+        "en": "Which gas is the most abundant in Earth's atmosphere?"
+      },
+      "options": [
+        {
+          "zh": "氧气",
+          "en": "Oxygen"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        },
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "氩气",
+          "en": "Argon"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "地球大气中氮气约占78%，氧气约占21%。",
+        "en": "Earth's atmosphere is about 78% nitrogen and 21% oxygen."
+      }
+    },
+    {
+      "id": "q_earth_006",
+      "question": {
+        "zh": "地球的天然卫星是什么？",
+        "en": "What is Earth's natural satellite?"
+      },
+      "options": [
+        {
+          "zh": "太阳",
+          "en": "The Sun"
+        },
+        {
+          "zh": "月球",
+          "en": "The Moon"
+        },
+        {
+          "zh": "火星",
+          "en": "Mars"
+        },
+        {
+          "zh": "金星",
+          "en": "Venus"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "月球是地球唯一的天然卫星，平均距离约38.4万公里。",
+        "en": "The Moon is Earth's only natural satellite, with an average distance of about 384,000 km."
+      }
+    },
+    {
+      "id": "q_earth_007",
+      "question": {
+        "zh": "地球的自转轴倾斜角度大约是多少？",
+        "en": "What is the approximate axial tilt of Earth?"
+      },
+      "options": [
+        {
+          "zh": "0度",
+          "en": "0 degrees"
+        },
+        {
+          "zh": "23.5度",
+          "en": "23.5 degrees"
+        },
+        {
+          "zh": "45度",
+          "en": "45 degrees"
+        },
+        {
+          "zh": "90度",
+          "en": "90 degrees"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "地球自转轴倾斜约23.5度，这是四季变化的主要原因。",
+        "en": "Earth's axial tilt is about 23.5 degrees, which causes the seasons."
+      }
+    },
+    {
+      "id": "q_earth_008",
+      "question": {
+        "zh": "地球的内部结构从外到内依次是什么？",
+        "en": "What is the order of Earth's internal structure from outside to inside?"
+      },
+      "options": [
+        {
+          "zh": "地核、地幔、地壳",
+          "en": "Core, mantle, crust"
+        },
+        {
+          "zh": "地壳、地幔、地核",
+          "en": "Crust, mantle, core"
+        },
+        {
+          "zh": "地幔、地壳、地核",
+          "en": "Mantle, crust, core"
+        },
+        {
+          "zh": "地壳、地核、地幔",
+          "en": "Crust, core, mantle"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "地球由外到内分为地壳、地幔和地核三层。",
+        "en": "Earth is composed of three layers: crust, mantle, and core."
+      }
+    },
+    {
+      "id": "q_earth_009",
+      "question": {
+        "zh": "人类首次进入太空的年份是哪一年？",
+        "en": "In which year did humans first enter space?"
+      },
+      "options": [
+        {
+          "zh": "1957年",
+          "en": "1957"
+        },
+        {
+          "zh": "1961年",
+          "en": "1961"
+        },
+        {
+          "zh": "1969年",
+          "en": "1969"
+        },
+        {
+          "zh": "1972年",
+          "en": "1972"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "1961年，苏联宇航员尤里·加加林成为第一个进入太空的人类。",
+        "en": "In 1961, Soviet cosmonaut Yuri Gagarin became the first human in space."
+      }
+    },
+    {
+      "id": "q_earth_010",
+      "question": {
+        "zh": "地球的磁场主要来源于哪里？",
+        "en": "What is the primary source of Earth's magnetic field?"
+      },
+      "options": [
+        {
+          "zh": "地壳中的铁矿石",
+          "en": "Iron ore in the crust"
+        },
+        {
+          "zh": "太阳风",
+          "en": "Solar wind"
+        },
+        {
+          "zh": "地球外核中液态铁镍的对流",
+          "en": "Convection of liquid iron and nickel in the outer core"
+        },
+        {
+          "zh": "大气层中的电离层",
+          "en": "The ionosphere in the atmosphere"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "地球磁场主要由外核中液态铁镍合金的对流运动产生，称为地磁发电机效应。",
+        "en": "Earth's magnetic field is generated by the convection of liquid iron and nickel in the outer core, known as the geodynamo."
+      }
+    },
+    {
+      "id": "q_eart_011",
+      "question": {
+        "en": "What is the approximate rotation period of Earth?",
+        "zh": "地球的自转周期大约是多少？"
+      },
+      "options": [
+        {
+          "en": "12 hours",
+          "zh": "12小时"
+        },
+        {
+          "en": "24 hours",
+          "zh": "24小时"
+        },
+        {
+          "en": "48 hours",
+          "zh": "48小时"
+        },
+        {
+          "en": "365 days",
+          "zh": "365天"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Earth takes about 24 hours to complete one rotation, which defines our day.",
+        "zh": "地球自转一圈大约需要24小时，这定义了我们的一天。"
+      }
+    }
+  ]
+}

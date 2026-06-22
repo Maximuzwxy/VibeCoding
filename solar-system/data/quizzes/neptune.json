@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_neptune_001",
+      "question": {"zh": "海王星的直径约为多少？", "en": "What is the approximate diameter of Neptune?"},
+      "options": [
+        {"zh": "39,528 公里", "en": "39,528 km"},
+        {"zh": "44,528 公里", "en": "44,528 km"},
+        {"zh": "49,528 公里", "en": "49,528 km"},
+        {"zh": "54,528 公里", "en": "54,528 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "海王星的直径约为 49,528 公里，是太阳系第四大行星（按直径计算）。", "en": "Neptune's diameter is approximately 49,528 km, making it the fourth largest planet by diameter in the Solar System."}
+    },
+    {
+      "id": "q_neptune_002",
+      "question": {"zh": "海王星绕太阳公转一周需要多少年？", "en": "How many years does it take for Neptune to orbit the Sun once?"},
+      "options": [
+        {"zh": "84 年", "en": "84 years"},
+        {"zh": "125 年", "en": "125 years"},
+        {"zh": "165 年", "en": "165 years"},
+        {"zh": "200 年", "en": "200 years"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "海王星公转周期为 165 年，是太阳系中公转周期最长的行星。", "en": "Neptune's orbital period is 165 years, the longest orbital period in the Solar System."}
+    },
+    {
+      "id": "q_neptune_003",
+      "question": {"zh": "海王星的自转周期是多少？", "en": "What is Neptune's rotation period?"},
+      "options": [
+        {"zh": "10 小时", "en": "10 hours"},
+        {"zh": "16 小时 6 分", "en": "16h 6m"},
+        {"zh": "24 小时", "en": "24 hours"},
+        {"zh": "58 天", "en": "58 days"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "海王星自转一周需要约 16 小时 6 分，自转速度较快。", "en": "Neptune takes approximately 16 hours and 6 minutes to complete one rotation, rotating relatively fast."}
+    },
+    {
+      "id": "q_neptune_004",
+      "question": {"zh": "海王星最大的卫星是什么？", "en": "What is Neptune's largest moon?"},
+      "options": [
+        {"zh": "海卫二", "en": "Nereid"},
+        {"zh": "海卫一（Triton）", "en": "Triton"},
+        {"zh": "海卫三", "en": "Naiad"},
+        {"zh": "海卫四", "en": "Thalassa"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "海卫一（Triton）是海王星最大的卫星，直径约 2,707 公里，是太阳系第七大卫星。", "en": "Triton is Neptune's largest moon, with a diameter of about 2,707 km, making it the seventh largest moon in the Solar System."}
+    },
+    {
+      "id": "q_neptune_005",
+      "question": {"zh": "海王星有多少颗已知卫星？", "en": "How many known moons does Neptune have?"},
+      "options": [
+        {"zh": "5 颗", "en": "5 moons"},
+        {"zh": "10 颗", "en": "10 moons"},
+        {"zh": "14 颗", "en": "14 moons"},
+        {"zh": "27 颗", "en": "27 moons"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "海王星有 14 颗已知卫星，其中海卫一是最大且唯一有大气的大型卫星。", "en": "Neptune has 14 known moons, with Triton being the largest and only large moon with an atmosphere."}
+    },
+    {
+      "id": "q_neptune_006",
+      "question": {"zh": "海王星距离太阳的平均距离约为多少？", "en": "What is the average distance from Neptune to the Sun?"},
+      "options": [
+        {"zh": "19.2 AU", "en": "19.2 AU"},
+        {"zh": "25.1 AU", "en": "25.1 AU"},
+        {"zh": "30.1 AU", "en": "30.1 AU"},
+        {"zh": "39.5 AU", "en": "39.5 AU"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "海王星与太阳的平均距离约为 30.1 AU（45 亿公里），是太阳系第八颗也是最远的行星。", "en": "Neptune's average distance from the Sun is approximately 30.1 AU (4.5 billion km), the eighth and farthest planet from the Sun."}
+    },
+    {
+      "id": "q_neptune_007",
+      "question": {"zh": "海王星大气层中含量最多的气体是什么？", "en": "What is the most abundant gas in Neptune's atmosphere?"},
+      "options": [
+        {"zh": "氦气", "en": "Helium"},
+        {"zh": "甲烷", "en": "Methane"},
+        {"zh": "氢气", "en": "Hydrogen"},
+        {"zh": "二氧化碳", "en": "Carbon Dioxide"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "海王星大气层中氢气约占 80%，氦气约占 19%，甲烷约占 1.5%。甲烷使海王星呈现深蓝色。", "en": "Neptune's atmosphere consists of approximately 80% hydrogen, 19% helium, and 1.5% methane. Methane gives Neptune its deep blue color."}
+    },
+    {
+      "id": "q_neptune_008",
+      "question": {"zh": "海王星的最大风速约为多少？", "en": "What is the maximum wind speed on Neptune?"},
+      "options": [
+        {"zh": "500 km/h", "en": "500 km/h"},
+        {"zh": "1,100 km/h", "en": "1,100 km/h"},
+        {"zh": "2,100 km/h", "en": "2,100 km/h"},
+        {"zh": "3,000 km/h", "en": "3,000 km/h"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "海王星的最大风速可达 2,100 km/h，是太阳系中风速最快的行星。", "en": "Neptune's maximum wind speed can reach 2,100 km/h, the fastest winds in the Solar System."}
+    },
+    {
+      "id": "q_neptune_009",
+      "question": {"zh": "海王星是如何被发现的？", "en": "How was Neptune discovered?"},
+      "options": [
+        {"zh": "肉眼观测", "en": "Naked eye observation"},
+        {"zh": "望远镜偶然发现", "en": "Accidental telescope discovery"},
+        {"zh": "数学预测", "en": "Mathematical prediction"},
+        {"zh": "探测器发现", "en": "Spacecraft discovery"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "海王星是唯一通过数学预测发现的行星，由勒威耶和亚当斯独立计算出位置，1846 年被观测到。", "en": "Neptune is the only planet discovered by mathematical prediction, independently calculated by Le Verrier and Adams, and observed in 1846."}
+    },
+    {
+      "id": "q_neptune_010",
+      "question": {"zh": "海卫一的轨道特点是什么？", "en": "What is unique about Triton's orbit?"},
+      "options": [
+        {"zh": "轨道最圆", "en": "Most circular orbit"},
+        {"zh": "逆行轨道（顺时针）", "en": "Retrograde orbit (clockwise)"},
+        {"zh": "轨道最扁", "en": "Most elliptical orbit"},
+        {"zh": "轨道最快", "en": "Fastest orbit"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "海卫一是太阳系中唯一有逆行轨道（顺时针）的大型卫星，这表明它可能是被海王星捕获的柯伊伯带天体。", "en": "Triton is the only large moon in the Solar System with a retrograde orbit (clockwise), suggesting it was likely a captured Kuiper Belt object."}
+    }
+  ]
+}

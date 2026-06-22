@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Shooter - Space Battle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Game Container -->
+    <div id="game-container">
+        <!-- Canvas -->
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- HUD (Heads Up Display) -->
+        <div id="hud" style="display: none;">
+            <div class="hud-item">
+                <span class="hud-label">👤 Player:</span>
+                <span id="hud-player">{{ username }}</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">❤️ Lives:</span>
+                <span id="hud-lives">3</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">🎯 Score:</span>
+                <span id="hud-score">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">⚔️ Wave:</span>
+                <span id="hud-wave">0/0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">🌟 Level:</span>
+                <span id="hud-level">1</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">⚡ Power:</span>
+                <span id="hud-powerup">-</span>
+            </div>
+        </div>
+        
+        <!-- Main Menu -->
+        <div id="main-menu" class="menu">
+            <h1 class="game-title">🚀 Plane Shooter</h1>
+            <p class="subtitle">Space Battle</p>
+            
+            <div class="menu-buttons">
+                <button class="btn btn-primary" onclick="showModeSelect()">🎮 Start Game</button>
+                <button class="btn btn-secondary" onclick="showLeaderboard()">🏆 Leaderboard</button>
+                <button class="btn btn-accent" onclick="showRules()">📖 Rules</button>
+                <button class="btn btn-info" onclick="showSettings()">⚙️ Settings</button>
+            </div>
+            
+            <div class="player-welcome">
+                Welcome, <strong>{{ username }}</strong>!
+                <br>
+                <a href="{{ url_for('logout') }}" class="logout-link">Logout</a>
+            </div>
+        </div>
+        
+        <!-- Mode Select Menu -->
+        <div id="mode-menu" class="menu" style="display: none;">
+            <h2>Choose Game Mode</h2>
+            <div class="menu-buttons">
+                <button class="btn btn-primary" onclick="startGame(1)">👤 Single Player</button>
+                <button class="btn btn-secondary" onclick="startGame(2)">👥 2 Players (Local)</button>
+                <button class="btn btn-danger" onclick="showMainMenu()">← Back</button>
+            </div>
+        </div>
+        
+        <!-- Difficulty Menu -->
+        <div id="difficulty-menu" class="menu" style="display: none;">
+            <h2>Select Difficulty</h2>
+            <div class="menu-buttons">
+                <button class="btn btn-success" onclick="selectDifficulty('easy')">🟢 Easy</button>
+                <button class="btn btn-warning" onclick="selectDifficulty('normal')">🟡 Normal</button>
+                <button class="btn btn-danger" onclick="selectDifficulty('hard')">🔴 Hard</button>
+                <button class="btn btn-secondary" onclick="showModeSelect()">← Back</button>
+            </div>
+        </div>
+        
+        <!-- Settings Menu -->
+        <div id="settings-menu" class="menu" style="display: none;">
+            <h2>⚙️ Settings</h2>
+            
+            <div class="settings-group">
+                <label for="lives-setting">❤️ Number of Lives:</label>
+                <select id="lives-setting" class="form-control">
+                    <option value="1">1 Life</option>
+                    <option value="3" selected>3 Lives</option>
+                    <option value="5">5 Lives</option>
+                </select>
+            </div>
+            
+            <div class="settings-group">
+                <label for="sound-setting">🔊 Sound Effects:</label>
+                <select id="sound-setting" class="form-control">
+                    <option value="on" selected>On</option>
+                    <option value="off">Off</option>
+                </select>
+            </div>
+            
+            <div class="settings-group">
+                <label for="music-setting">🎵 Background Music:</label>
+                <select id="music-setting" class="form-control">
+                    <option value="on" selected>On</option>
+                    <option value="off">Off</option>
+                </select>
+            </div>
+            
+            <div class="menu-buttons">
+                <button class="btn btn-primary" onclick="saveSettings()">💾 Save</button>
+                <button class="btn btn-secondary" onclick="showMainMenu()">← Back</button>
+            </div>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="game-over" class="menu" style="display: none;">
+            <h2 class="game-over-title">💀 Game Over</h2>
+            <div class="final-score">
+                <p>Final Score: <span id="final-score">0</span></p>
+                <p>Level Reached: <span id="final-level">1</span></p>
+                <p>Best Score: <span id="best-score">0</span></p>
+            </div>
+            <div class="menu-buttons">
+                <button class="btn btn-success" onclick="continueGame()">🔄 Continue</button>
+                <button class="btn btn-primary" onclick="showMainMenu()">🏠 Main Menu</button>
+                <button class="btn btn-secondary" onclick="showLeaderboard()">🏆 Leaderboard</button>
+            </div>
+        </div>
+        
+        <!-- Level Complete Screen -->
+        <div id="level-complete" class="menu" style="display: none;">
+            <h2 class="level-complete-title">🎉 Level Complete!</h2>
+            <p>Boss Defeated!</p>
+            <div class="menu-buttons">
+                <button class="btn btn-primary" onclick="nextLevel()">➡️ Next Level</button>
+            </div>
+        </div>
+        
+        <!-- Pause overlay (hidden, for reference) -->
+        <div id="pause-overlay" style="display: none;"></div>
+    </div>
+    
+    <!-- Hidden canvas for rendering game elements -->
+    <canvas id="renderCanvas" width="800" height="600" style="display: none;"></canvas>
+    
+    <!-- Game Scripts -->
+    <script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/powerup.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/enemy.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/boss.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS Game - All Stages</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <canvas id="scene-canvas"></canvas>
+        <div id="instructions">点击画面锁定鼠标 | 左键射击 | G扔手雷</div>
+        <div id="controls">
+            <div class="control-group">
+                <label>W A S D:</label>
+                <span>移动</span>
+            </div>
+            <div class="control-group">
+                <label>Space:</label>
+                <span>跳跃</span>
+            </div>
+            <div class="control-group">
+                <label>Q:</label>
+                <span>蹲下</span>
+            </div>
+            <div class="control-group">
+                <label>Enter:</label>
+                <span>切换视角</span>
+            </div>
+            <div class="control-group">
+                <label>点击画面:</label>
+                <span>锁定鼠标射击</span>
+            </div>
+            <div class="control-group">
+                <span id="view-mode">第一人称视角</span>
+            </div>
+        </div>
+        <div id="health-ui"></div>
+        <div id="fps-ui">FPS: 0</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="js/config/SkeletonConfig.js"></script>
+    <script src="js/config/CharacterConfig.js"></script>
+    <script src="js/skeleton/SkeletonFactory.js"></script>
+    <script src="js/skeleton/SkeletonAnimator.js"></script>
+    <script src="js/core/Character.js"></script>
+    <script src="js/core/NPC.js"></script>
+    <script src="js/core/NPCAI.js"></script>
+    <script src="js/core/Player.js"></script>
+    <script src="js/audio/AudioManager.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

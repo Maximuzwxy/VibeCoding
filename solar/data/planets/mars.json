@@ -1,0 +1,401 @@
+{
+  "id": "mars",
+  "name": {
+    "zh": "火星",
+    "en": "Mars"
+  },
+  "icon": "🔴",
+  "theme_color": "#E27B58",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "类地行星（岩石行星）",
+            "en": "Terrestrial Planet (Rocky)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "6,792 km",
+            "en": "6,792 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "6.417 × 10²³ kg",
+            "en": "6.417 × 10²³ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "1.6318 × 10¹¹ km³",
+            "en": "1.6318 × 10¹¹ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "3.933 g/cm³",
+            "en": "3.933 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "3.72076 m/s²（地球的 37.9%）",
+            "en": "3.72076 m/s² (37.9% of Earth)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火星拥有太阳系最高的山峰——奥林匹斯山（约21.9 km），是珠穆朗玛峰的2.5倍。",
+        "en": "※ Mars has the tallest mountain in the solar system—Olympus Mons (~21.9 km), 2.5 times the height of Everest."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "24小时37分22.663秒（1.0257地球日）",
+            "en": "24h 37m 22.663s (1.0257 Earth days)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "687地球日（约1.88地球年）",
+            "en": "687 Earth days (~1.88 Earth years)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "24.07 km/s",
+            "en": "24.07 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0934",
+            "en": "0.0934"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "1.850°（相对于黄道面）",
+            "en": "1.850° (relative to ecliptic)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火星的轨道离心率是八大行星中第二大的（仅次于水星），导致其近日点和远日点温差可达30°C以上。",
+        "en": "※ Mars has the second largest orbital eccentricity among the eight planets (after Mercury), causing a temperature difference of over 30°C between perihelion and aphelion."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "−143°C（冬季极冠）至 35°C（夏季赤道）",
+            "en": "−143°C (winter pole) to 35°C (summer equator)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "−63°C",
+            "en": "−63°C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "0.636 kPa（地球的0.6%）",
+            "en": "0.636 kPa (0.6% of Earth's)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "95.32% CO₂、2.7% N₂、1.6% Ar、0.13% O₂",
+            "en": "95.32% CO₂, 2.7% N₂, 1.6% Ar, 0.13% O₂"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "极弱（约地球的0.1%），局部地壳剩磁",
+            "en": "Very weak (~0.1% of Earth), localized crustal remanence"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火星大气极其稀薄，无法阻挡太阳风和宇宙射线，表面辐射水平约为国际空间站的2.5倍。",
+        "en": "※ Mars' atmosphere is so thin that it cannot block solar wind and cosmic rays; surface radiation is about 2.5 times that on the ISS."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "2.0665 × 10⁸ km（1.381 AU）",
+            "en": "2.0665 × 10⁸ km (1.381 AU)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "2.4923 × 10⁸ km（1.666 AU）",
+            "en": "2.4923 × 10⁸ km (1.666 AU)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "2.2794 × 10⁸ km（1.524 AU）",
+            "en": "2.2794 × 10⁸ km (1.524 AU)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "1.524 AU",
+            "en": "1.524 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约3.1至22.3分钟（取决于相对位置）",
+            "en": "~3.1 to 22.3 minutes (depending on relative position)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "2颗",
+            "en": "2"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "火卫一（福波斯）、火卫二（德摩斯）",
+            "en": "Phobos, Deimos"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫一正以每年约2厘米的速度螺旋靠近火星，预计约5000万年后将撞入火星或碎裂成环。",
+        "en": "※ Phobos is spiraling toward Mars at ~2 cm per year; in about 50 million years it will either crash into Mars or break apart into a ring."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "北部低平原、南部高原地、巨型火山、深邃峡谷、极冠",
+            "en": "Northern lowlands, southern highlands, giant volcanoes, deep canyons, polar caps"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "希腊平原（Hellas Planitia），直径约2,300 km，深约7 km",
+            "en": "Hellas Planitia, ~2,300 km diameter, ~7 km deep"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约40亿年（南部高地）至数亿年（北部平原）",
+            "en": "~4 billion years (southern highlands) to hundreds of millions of years (northern plains)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "奥林匹斯山（Olympus Mons），约21.9 km高，底部直径约600 km",
+            "en": "Olympus Mons, ~21.9 km high, base diameter ~600 km"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 水手号峡谷（Valles Marineris）长约4,000 km，宽达200 km，深达7 km，是太阳系最大的峡谷系统。",
+        "en": "※ Valles Marineris stretches ~4,000 km long, up to 200 km wide and 7 km deep—the largest canyon system in the solar system."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "史前已知，伽利略于1610年首次用望远镜观测",
+            "en": "Known since prehistory; first telescopic observation by Galileo in 1610"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1965年，美国水手4号（Mariner 4）",
+            "en": "1965, NASA's Mariner 4"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "1971年，美国水手9号（Mariner 9）",
+            "en": "1971, NASA's Mariner 9"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "毅力号火星车（Perseverance，2021年着陆）及机智号直升机；天问一号轨道器/祝融号火星车（2021年）",
+            "en": "Perseverance rover (landed 2021) with Ingenuity helicopter; Tianwen-1 orbiter/Zhurong rover (2021)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火星是人类探测次数最多的行星之一，已有超过50次任务尝试，但成功率仅约50%。",
+        "en": "※ Mars is one of the most explored planets, with over 50 mission attempts, but only about 50% have succeeded."
+      }
+    }
+  ]
+}

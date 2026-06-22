@@ -1,0 +1,401 @@
+{
+  "id": "titan",
+  "name": {
+    "zh": "土卫六",
+    "en": "Titan"
+  },
+  "icon": "🪐",
+  "theme_color": "#d4a017",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "土星最大卫星（冰卫星）",
+            "en": "Largest moon of Saturn (icy moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "5,149.46 km",
+            "en": "5,149.46 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.3452 × 10²³ kg",
+            "en": "1.3452 × 10²³ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "7.16 × 10¹⁰ km³",
+            "en": "7.16 × 10¹⁰ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.879 g/cm³",
+            "en": "1.879 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "1.352 m/s²（约地球的0.138倍）",
+            "en": "1.352 m/s² (≈0.138 g)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫六是太阳系中唯一拥有浓厚大气层的卫星，大气压约为地球的1.5倍。",
+        "en": "※ Titan is the only moon in the Solar System with a thick atmosphere, with surface pressure about 1.5 times that of Earth."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "15.945 天（同步自转）",
+            "en": "15.945 days (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "15.945 天",
+            "en": "15.945 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "5.57 km/s",
+            "en": "5.57 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0288",
+            "en": "0.0288"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.3485°（相对于土星赤道）",
+            "en": "0.3485° (to Saturn's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫六与土星之间处于潮汐锁定状态，始终以同一面朝向土星。",
+        "en": "※ Titan is tidally locked to Saturn, always showing the same face toward the planet."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "约 -179 °C（94 K）",
+            "en": "≈ -179 °C (94 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "-179 °C",
+            "en": "-179 °C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "146.7 kPa（约1.45 atm）",
+            "en": "146.7 kPa (≈1.45 atm)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "氮气（N₂）约95%，甲烷（CH₄）约5%，少量氢、氩等",
+            "en": "N₂ ~95%, CH₄ ~5%, trace H₂, Ar, etc."
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无固有磁场（受土星磁层保护）",
+            "en": "No intrinsic field (shielded by Saturn's magnetosphere)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫六表面存在液态甲烷和乙烷组成的河流与湖泊，是太阳系中除地球外唯一表面有稳定液体的天体。",
+        "en": "※ Titan has rivers and lakes of liquid methane and ethane, making it the only other body in the Solar System with stable surface liquids."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕土星公转）",
+            "en": "N/A (orbits Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用",
+            "en": "N/A"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "1,221,870 km（距土星中心）",
+            "en": "1,221,870 km (from Saturn's center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "约0.00817 AU（距土星）",
+            "en": "≈0.00817 AU (from Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约4.07秒（从土星到土卫六）",
+            "en": "≈4.07 seconds (Saturn to Titan)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "土卫六本身是土星的卫星",
+            "en": "Titan is itself a moon of Saturn"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "土卫六无已知天然子卫星",
+            "en": "Titan has no known natural sub-satellites"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫六是土星系统中最大的卫星，比水星还大，但质量只有水星的一半。",
+        "en": "※ Titan is the largest moon in the Saturn system, larger than Mercury but only half its mass."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "冰原、沙丘、液态烃湖泊、山脉、撞击坑",
+            "en": "Ice plains, dunes, hydrocarbon lakes, mountains, impact craters"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "门瓦撞击坑（Menrva），直径约425 km",
+            "en": "Menrva, ~425 km diameter"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "相对年轻，约1亿至10亿年",
+            "en": "Relatively young, ~100 million to 1 billion years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "米斯林山脉（Mithrim Montes），约3,337 m",
+            "en": "Mithrim Montes, ~3,337 m"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫六表面有巨大的碳氢化合物沙丘，有些沙丘长达数百公里，高度超过100米。",
+        "en": "※ Titan has vast hydrocarbon dunes, some hundreds of kilometers long and over 100 m tall."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1655年3月25日，克里斯蒂安·惠更斯",
+            "en": "March 25, 1655, by Christiaan Huygens"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1979年9月1日，先驱者11号",
+            "en": "September 1, 1979, Pioneer 11"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "2004年7月1日，卡西尼号进入土星轨道后多次飞掠",
+            "en": "July 1, 2004, Cassini orbiter (multiple flybys)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "卡西尼-惠更斯任务（2004–2017）；未来计划：蜻蜓号（Dragonfly，预计2034年到达）",
+            "en": "Cassini-Huygens (2004–2017); Future: Dragonfly (expected arrival 2034)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 2005年1月14日，惠更斯号探测器成功降落在土卫六表面，这是人类在外太阳系天体上最远的软着陆。",
+        "en": "※ On January 14, 2005, the Huygens probe landed on Titan's surface, the most distant soft landing on an outer Solar System body."
+      }
+    }
+  ]
+}

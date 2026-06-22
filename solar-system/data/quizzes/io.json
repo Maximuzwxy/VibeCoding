@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_io_001",
+      "question": {"zh": "木卫一的直径约为多少？", "en": "What is the approximate diameter of Io?"},
+      "options": [
+        {"zh": "2,642 km", "en": "2,642 km"},
+        {"zh": "3,642 km", "en": "3,642 km"},
+        {"zh": "4,642 km", "en": "4,642 km"},
+        {"zh": "5,642 km", "en": "5,642 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫一的直径约为 3,642 公里，是木星第三大卫星。", "en": "Io's diameter is approximately 3,642 km, the third largest moon of Jupiter."}
+    },
+    {
+      "id": "q_io_002",
+      "question": {"zh": "木卫一绕木星公转一周需要多少天？", "en": "How many days does it take for Io to orbit Jupiter once?"},
+      "options": [
+        {"zh": "1.77 天", "en": "1.77 days"},
+        {"zh": "3.55 天", "en": "3.55 days"},
+        {"zh": "7.15 天", "en": "7.15 days"},
+        {"zh": "15.95 天", "en": "15.95 days"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "木卫一公转周期为 1.77 天，是伽利略卫星中最快的。", "en": "Io's orbital period is 1.77 days, the fastest of the Galilean moons."}
+    },
+    {
+      "id": "q_io_003",
+      "question": {"zh": "木卫一表面有多少座活火山？", "en": "How many active volcanoes are on Io's surface?"},
+      "options": [
+        {"zh": "50+ 座", "en": "50+ volcanoes"},
+        {"zh": "150+ 座", "en": "150+ volcanoes"},
+        {"zh": "400+ 座", "en": "400+ volcanoes"},
+        {"zh": "1000+ 座", "en": "1000+ volcanoes"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫一表面有 400 多座活火山，是太阳系火山活动最活跃的天体。", "en": "Io has over 400 active volcanoes, the most volcanically active body in the Solar System."}
+    },
+    {
+      "id": "q_io_004",
+      "question": {"zh": "木卫一的表面颜色主要是？", "en": "What is the main color of Io's surface?"},
+      "options": [
+        {"zh": "蓝色和绿色", "en": "Blue and green"},
+        {"zh": "黄色、橙色和红色", "en": "Yellow, orange, and red"},
+        {"zh": "灰色和白色", "en": "Gray and white"},
+        {"zh": "黑色和棕色", "en": "Black and brown"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫一表面覆盖硫磺和二氧化硫，呈现黄色、橙色和红色。", "en": "Io's surface is covered with sulfur and sulfur dioxide, appearing yellow, orange, and red."}
+    },
+    {
+      "id": "q_io_005",
+      "question": {"zh": "木卫一火山喷发的温度可达多少？", "en": "What temperature can Io's volcanic eruptions reach?"},
+      "options": [
+        {"zh": "约 650°C", "en": "About 650°C"},
+        {"zh": "约 1050°C", "en": "About 1050°C"},
+        {"zh": "约 1650°C", "en": "About 1650°C"},
+        {"zh": "约 2250°C", "en": "About 2250°C"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫一火山喷发温度可达 1650°C，比地球火山热得多。", "en": "Io's volcanic eruptions can reach 1650°C, much hotter than Earth's volcanoes."}
+    },
+    {
+      "id": "q_io_006",
+      "question": {"zh": "木卫一是由谁发现的？", "en": "Who discovered Io?"},
+      "options": [
+        {"zh": "开普勒", "en": "Kepler"},
+        {"zh": "伽利略", "en": "Galileo"},
+        {"zh": "牛顿", "en": "Newton"},
+        {"zh": "惠更斯", "en": "Huygens"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "伽利略于 1610 年发现木卫一，是伽利略卫星中最内侧的一颗。", "en": "Galileo discovered Io in 1610, the innermost of the Galilean moons."}
+    },
+    {
+      "id": "q_io_007",
+      "question": {"zh": "木卫一火山活动的原因是？", "en": "What causes Io's volcanic activity?"},
+      "options": [
+        {"zh": "放射性衰变", "en": "Radioactive decay"},
+        {"zh": "木星潮汐加热", "en": "Jupiter's tidal heating"},
+        {"zh": "陨石撞击", "en": "Meteor impacts"},
+        {"zh": "内部核反应", "en": "Internal nuclear reactions"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫一的火山活动由木星和其他伽利略卫星的潮汐力加热引起。", "en": "Io's volcanic activity is caused by tidal heating from Jupiter and other Galilean moons."}
+    },
+    {
+      "id": "q_io_008",
+      "question": {"zh": "木卫一的平均密度约为多少？", "en": "What is the average density of Io?"},
+      "options": [
+        {"zh": "1.53 g/cm³", "en": "1.53 g/cm³"},
+        {"zh": "2.53 g/cm³", "en": "2.53 g/cm³"},
+        {"zh": "3.53 g/cm³", "en": "3.53 g/cm³"},
+        {"zh": "4.53 g/cm³", "en": "4.53 g/cm³"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫一平均密度约 3.53 g/cm³，是四颗伽利略卫星中密度最高的。", "en": "Io's average density is about 3.53 g/cm³, the highest of the four Galilean moons."}
+    },
+    {
+      "id": "q_io_009",
+      "question": {"zh": "木卫一的大气主要由什么组成？", "en": "What is Io's atmosphere mainly composed of?"},
+      "options": [
+        {"zh": "氮气", "en": "Nitrogen"},
+        {"zh": "二氧化碳", "en": "Carbon Dioxide"},
+        {"zh": "二氧化硫", "en": "Sulfur Dioxide"},
+        {"zh": "氧气", "en": "Oxygen"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫一有极稀薄的二氧化硫大气，由火山喷发提供。", "en": "Io has an extremely thin sulfur dioxide atmosphere, supplied by volcanic eruptions."}
+    },
+    {
+      "id": "q_io_010",
+      "question": {"zh": "木卫一最高的火山是？", "en": "What is the tallest volcano on Io?"},
+      "options": [
+        {"zh": "普罗米修斯火山", "en": "Prometheus"},
+        {"zh": "托希尔火山", "en": "Tohil Mons"},
+        {"zh": "洛基火山", "en": "Loki"},
+        {"zh": "佩莱火山", "en": "Pele"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "托希尔火山高约 18 公里，是木卫一最高的火山。", "en": "Tohil Mons is about 18 km tall, the tallest volcano on Io."}
+    }
+  ]
+}

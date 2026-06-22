@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_uranus_001",
+      "question": {
+        "zh": "天王星的自转轴倾斜角度大约是多少度？",
+        "en": "What is the approximate axial tilt of Uranus?"
+      },
+      "options": [
+        {
+          "zh": "23.5度",
+          "en": "23.5 degrees"
+        },
+        {
+          "zh": "97.8度",
+          "en": "97.8 degrees"
+        },
+        {
+          "zh": "45度",
+          "en": "45 degrees"
+        },
+        {
+          "zh": "0度",
+          "en": "0 degrees"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天王星的自转轴倾斜约97.8度，几乎是躺着绕太阳公转，与其他行星显著不同。",
+        "en": "Uranus has an axial tilt of about 97.8 degrees, essentially rolling on its side as it orbits the Sun, which is unique among the planets."
+      }
+    },
+    {
+      "id": "q_uranus_002",
+      "question": {
+        "zh": "天王星是哪一年被发现的？",
+        "en": "In which year was Uranus discovered?"
+      },
+      "options": [
+        {
+          "zh": "1781年",
+          "en": "1781"
+        },
+        {
+          "zh": "1846年",
+          "en": "1846"
+        },
+        {
+          "zh": "1930年",
+          "en": "1930"
+        },
+        {
+          "zh": "1609年",
+          "en": "1609"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天王星由威廉·赫歇尔于1781年发现，是第一颗通过望远镜发现的行星。",
+        "en": "Uranus was discovered by William Herschel in 1781, making it the first planet found using a telescope."
+      }
+    },
+    {
+      "id": "q_uranus_003",
+      "question": {
+        "zh": "天王星的大气中哪种气体赋予它蓝绿色的外观？",
+        "en": "Which gas in Uranus's atmosphere gives it its blue-green color?"
+      },
+      "options": [
+        {
+          "zh": "氧气",
+          "en": "Oxygen"
+        },
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "甲烷",
+          "en": "Methane"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天王星大气中的甲烷吸收红光，反射蓝光和绿光，使其呈现蓝绿色。",
+        "en": "Methane in Uranus's atmosphere absorbs red light and reflects blue and green light, giving the planet its blue-green appearance."
+      }
+    },
+    {
+      "id": "q_uranus_004",
+      "question": {
+        "zh": "唯一造访过天王星的探测器是哪一个？",
+        "en": "Which spacecraft is the only one to have visited Uranus?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "旅行者2号于1986年飞越天王星，是迄今为止唯一造访过天王星的探测器。",
+        "en": "Voyager 2 flew by Uranus in 1986, and remains the only spacecraft to have visited the planet."
+      }
+    },
+    {
+      "id": "q_uranus_005",
+      "question": {
+        "zh": "天王星绕太阳公转一周大约需要多少年？",
+        "en": "Approximately how many years does it take for Uranus to orbit the Sun?"
+      },
+      "options": [
+        {
+          "zh": "12年",
+          "en": "12 years"
+        },
+        {
+          "zh": "29年",
+          "en": "29 years"
+        },
+        {
+          "zh": "84年",
+          "en": "84 years"
+        },
+        {
+          "zh": "165年",
+          "en": "165 years"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天王星的公转周期约为84个地球年。",
+        "en": "Uranus takes about 84 Earth years to complete one orbit around the Sun."
+      }
+    },
+    {
+      "id": "q_uranus_006",
+      "question": {
+        "zh": "天王星属于哪一类行星？",
+        "en": "What type of planet is Uranus?"
+      },
+      "options": [
+        {
+          "zh": "类地行星",
+          "en": "Terrestrial planet"
+        },
+        {
+          "zh": "气态巨行星",
+          "en": "Gas giant"
+        },
+        {
+          "zh": "冰巨行星",
+          "en": "Ice giant"
+        },
+        {
+          "zh": "矮行星",
+          "en": "Dwarf planet"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天王星和海王星被归类为冰巨行星，因为它们内部含有大量的水、甲烷和氨的冰。",
+        "en": "Uranus and Neptune are classified as ice giants due to their interiors containing large amounts of water, methane, and ammonia ices."
+      }
+    },
+    {
+      "id": "q_uranus_007",
+      "question": {
+        "zh": "天王星有多少颗已知的环？",
+        "en": "How many known rings does Uranus have?"
+      },
+      "options": [
+        {
+          "zh": "没有环",
+          "en": "No rings"
+        },
+        {
+          "zh": "1个环",
+          "en": "1 ring"
+        },
+        {
+          "zh": "13个环",
+          "en": "13 rings"
+        },
+        {
+          "zh": "7个环",
+          "en": "7 rings"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天王星拥有13个已知的环，它们暗淡且主要由尘埃和冰粒组成。",
+        "en": "Uranus has 13 known rings, which are faint and composed mainly of dust and ice particles."
+      }
+    },
+    {
+      "id": "q_uranus_008",
+      "question": {
+        "zh": "天王星的内核主要由什么组成？",
+        "en": "What is Uranus's core primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "固态铁和镍",
+          "en": "Solid iron and nickel"
+        },
+        {
+          "zh": "岩石和冰",
+          "en": "Rock and ice"
+        },
+        {
+          "zh": "液态氢",
+          "en": "Liquid hydrogen"
+        },
+        {
+          "zh": "纯甲烷",
+          "en": "Pure methane"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天王星被认为有一个由岩石和冰组成的小内核，周围是水、甲烷和氨的冰幔。",
+        "en": "Uranus is thought to have a small core of rock and ice, surrounded by a mantle of water, methane, and ammonia ices."
+      }
+    },
+    {
+      "id": "q_uranus_009",
+      "question": {
+        "zh": "天王星表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Uranus?"
+      },
+      "options": [
+        {
+          "zh": "-100°C",
+          "en": "-100°C"
+        },
+        {
+          "zh": "-200°C",
+          "en": "-200°C"
+        },
+        {
+          "zh": "-50°C",
+          "en": "-50°C"
+        },
+        {
+          "zh": "0°C",
+          "en": "0°C"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天王星是太阳系中最冷的行星之一，云顶温度可低至约-224°C（-371°F），接近-200°C。",
+        "en": "Uranus is one of the coldest planets in the solar system, with cloud-top temperatures around -224°C (-371°F), close to -200°C."
+      }
+    },
+    {
+      "id": "q_uranus_010",
+      "question": {
+        "zh": "天王星最大的卫星叫什么名字？",
+        "en": "What is the name of Uranus's largest moon?"
+      },
+      "options": [
+        {
+          "zh": "泰坦",
+          "en": "Titan"
+        },
+        {
+          "zh": "欧罗巴",
+          "en": "Europa"
+        },
+        {
+          "zh": "天卫三（泰坦尼亚）",
+          "en": "Titania"
+        },
+        {
+          "zh": "天卫四（奥伯龙）",
+          "en": "Oberon"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天卫三（泰坦尼亚）是天王星最大的卫星，直径约1578公里。",
+        "en": "Titania is the largest moon of Uranus, with a diameter of about 1,578 kilometers."
+      }
+    }
+  ]
+}

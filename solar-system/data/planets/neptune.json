@@ -1,0 +1,86 @@
+{
+  "id": "neptune",
+  "name": {"zh": "海王星", "en": "Neptune"},
+  "icon": "♆",
+  "theme_color": "#2244ff",
+  "accent_color": "#2244ff",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "行星类型", "en": "Planet Type"}, "value": {"zh": "冰巨星", "en": "Ice Giant"}},
+        {"label": {"zh": "赤道直径", "en": "Equatorial Diameter"}, "value": {"zh": "49,528 km", "en": "49,528 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "1.024×10²⁶kg", "en": "1.024×10²⁶kg"}},
+        {"label": {"zh": "体积", "en": "Volume"}, "value": {"zh": "6.254×10¹³km³", "en": "6.254×10¹³km³"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "1.64 g/cm³", "en": "1.64 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "11.15 m/s²", "en": "11.15 m/s²"}}
+      ],
+      "note": {"zh": "※ 太阳系第四大行星（按直径）", "en": "※ Fourth largest planet by diameter in Solar System"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "16 小时 6 分", "en": "16h 6m"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "165 年", "en": "165 years"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "5.43 km/s", "en": "5.43 km/s"}},
+        {"label": {"zh": "轨道离心率", "en": "Orbital Eccentricity"}, "value": {"zh": "0.0086", "en": "0.0086"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "1.77°", "en": "1.77°"}}
+      ],
+      "note": {"zh": "※ 太阳系公转周期最长的行星", "en": "※ Longest orbital period in Solar System"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-218°C", "en": "-218°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-200°C", "en": "-200°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "100-300 kPa", "en": "100-300 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "H₂ 80%, He 19%, CH₄ 1.5%", "en": "H₂ 80%, He 19%, CH₄ 1.5%"}},
+        {"label": {"zh": "磁场强度", "en": "Magnetic Field Strength"}, "value": {"zh": "地球的 27 倍", "en": "27x Earth's"}}
+      ],
+      "note": {"zh": "※ 太阳系风速最快的行星（2,100 km/h）", "en": "※ Fastest winds in Solar System (2,100 km/h)"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "近日点", "en": "Perihelion"}, "value": {"zh": "44.5 亿 km", "en": "4.45 billion km"}},
+        {"label": {"zh": "远日点", "en": "Aphelion"}, "value": {"zh": "45.5 亿 km", "en": "4.55 billion km"}},
+        {"label": {"zh": "半长轴", "en": "Semi-major Axis"}, "value": {"zh": "45.0 亿 km", "en": "4.50 billion km"}},
+        {"label": {"zh": "天文单位", "en": "Astronomical Units"}, "value": {"zh": "30.1 AU", "en": "30.1 AU"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "4.1-4.2 小时", "en": "4.1-4.2 hours"}}
+      ]
+    },
+    {
+      "title": {"zh": "🛰 卫星系统", "en": "🛰 Satellite System"},
+      "items": [
+        {"label": {"zh": "已知卫星", "en": "Known Moons"}, "value": {"zh": "14 颗", "en": "14 moons"}},
+        {"label": {"zh": "最大卫星", "en": "Largest Moon"}, "value": {"zh": "海卫一 (Triton)", "en": "Triton"}},
+        {"label": {"zh": "海卫一直径", "en": "Triton Diameter"}, "value": {"zh": "2,707 km", "en": "2,707 km"}},
+        {"label": {"zh": "轨道方向", "en": "Orbit Direction"}, "value": {"zh": "逆行（顺时针）", "en": "Retrograde (clockwise)"}}
+      ],
+      "note": {"zh": "※ 海卫一是唯一有大气的大型卫星，轨道逆行", "en": "※ Triton is the only large moon with retrograde orbit"},
+      "moons_list": [
+        {"name": {"zh": "海卫一", "en": "Triton"}, "color": "#c8b8a8", "period": {"zh": "5.88 天（逆行）", "en": "5.88 days (retrograde)"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌪 大气特征", "en": "🌪 Atmospheric Features"},
+      "items": [
+        {"label": {"zh": "最大风速", "en": "Maximum Wind Speed"}, "value": {"zh": "2,100 km/h", "en": "2,100 km/h"}},
+        {"label": {"zh": "大暗斑", "en": "Great Dark Spot"}, "value": {"zh": "13,000 × 6,600 km", "en": "13,000 × 6,600 km"}},
+        {"label": {"zh": "云层高度", "en": "Cloud Altitude"}, "value": {"zh": "50-70 km", "en": "50-70 km"}},
+        {"label": {"zh": "甲烷含量", "en": "Methane Content"}, "value": {"zh": "1.5%", "en": "1.5%"}}
+      ],
+      "note": {"zh": "※ 大暗斑是太阳系最大的风暴之一", "en": "※ Great Dark Spot is one of largest storms in Solar System"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现者", "en": "Discoverer"}, "value": {"zh": "勒威耶/亚当斯", "en": "Le Verrier/Adams"}},
+        {"label": {"zh": "发现时间", "en": "Discovery Year"}, "value": {"zh": "1846 年", "en": "1846"}},
+        {"label": {"zh": "首次飞掠", "en": "First Flyby"}, "value": {"zh": "1989 年旅行者 2 号", "en": "1989 Voyager 2"}},
+        {"label": {"zh": "海卫一发现", "en": "Triton Discovery"}, "value": {"zh": "1846 年拉塞尔", "en": "1846 by Lassell"}}
+      ],
+      "note": {"zh": "※ 唯一通过数学预测发现的行星", "en": "※ Only planet discovered by mathematical prediction"}
+    }
+  ]
+}

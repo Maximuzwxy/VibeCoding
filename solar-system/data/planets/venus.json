@@ -1,0 +1,80 @@
+{
+  "id": "venus",
+  "name": {"zh": "金星", "en": "Venus"},
+  "icon": "♀️",
+  "theme_color": "#ffc649",
+  "accent_color": "#ffc649",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "行星类型", "en": "Planet Type"}, "value": {"zh": "类地行星", "en": "Terrestrial Planet"}},
+        {"label": {"zh": "赤道直径", "en": "Equatorial Diameter"}, "value": {"zh": "12,104 km", "en": "12,104 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "4.867×10²⁴kg", "en": "4.867×10²⁴kg"}},
+        {"label": {"zh": "体积", "en": "Volume"}, "value": {"zh": "9.28×10¹¹km³", "en": "9.28×10¹¹km³"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "5.243 g/cm³", "en": "5.243 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "8.87 m/s²", "en": "8.87 m/s²"}}
+      ],
+      "note": {"zh": "※ 大小和质量最接近地球的行星", "en": "※ Most similar in size and mass to Earth"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "243 天（逆向）", "en": "243 days (retrograde)"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "225 天", "en": "225 days"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "35.02 km/s", "en": "35.02 km/s"}},
+        {"label": {"zh": "轨道离心率", "en": "Orbital Eccentricity"}, "value": {"zh": "0.0068", "en": "0.0068"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "3.39°", "en": "3.39°"}}
+      ],
+      "note": {"zh": "※ 自转方向与其他行星相反（逆向自转）", "en": "※ Rotates in opposite direction (retrograde rotation)"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "约 465°C", "en": "About 465°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "465°C", "en": "465°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "9,200 kPa", "en": "9,200 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "CO₂ 96.5%, N₂ 3.5%", "en": "CO₂ 96.5%, N₂ 3.5%"}},
+        {"label": {"zh": "磁场强度", "en": "Magnetic Field Strength"}, "value": {"zh": "极弱", "en": "Very Weak"}}
+      ],
+      "note": {"zh": "※ 太阳系最热的行星（温室效应）", "en": "※ Hottest planet in Solar System (greenhouse effect)"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "近日点", "en": "Perihelion"}, "value": {"zh": "1.074 亿 km", "en": "107.4 million km"}},
+        {"label": {"zh": "远日点", "en": "Aphelion"}, "value": {"zh": "1.089 亿 km", "en": "108.9 million km"}},
+        {"label": {"zh": "半长轴", "en": "Semi-major Axis"}, "value": {"zh": "1.082 亿 km", "en": "108.2 million km"}},
+        {"label": {"zh": "天文单位", "en": "Astronomical Units"}, "value": {"zh": "0.72 AU", "en": "0.72 AU"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "6-12 分钟", "en": "6-12 minutes"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌑 卫星系统", "en": "🌑 Satellite System"},
+      "items": [
+        {"label": {"zh": "已知卫星", "en": "Known Moons"}, "value": {"zh": "0 颗", "en": "0 moons"}},
+        {"label": {"zh": "卫星名称", "en": "Moon Names"}, "value": {"zh": "无", "en": "None"}}
+      ],
+      "note": {"zh": "※ 金星没有卫星", "en": "※ Venus has no moons"}
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "最高峰", "en": "Highest Peak"}, "value": {"zh": "麦克斯韦山", "en": "Maxwell Montes"}},
+        {"label": {"zh": "山峰高度", "en": "Peak Height"}, "value": {"zh": "11,000 m", "en": "11,000 m"}},
+        {"label": {"zh": "火山数量", "en": "Number of Volcanoes"}, "value": {"zh": "1,600+ 座", "en": "1,600+ volcanoes"}},
+        {"label": {"zh": "地表年龄", "en": "Surface Age"}, "value": {"zh": "约 5 亿年", "en": "About 500 million years"}}
+      ],
+      "note": {"zh": "※ 表面被浓厚云层覆盖，有大量火山", "en": "※ Surface covered by thick clouds, many volcanoes"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "首次飞掠", "en": "First Flyby"}, "value": {"zh": "1962 年水手 2 号", "en": "1962 Mariner 2"}},
+        {"label": {"zh": "首次着陆", "en": "First Landing"}, "value": {"zh": "1970 年金星 7 号", "en": "1970 Venera 7"}},
+        {"label": {"zh": "首次轨道器", "en": "First Orbiter"}, "value": {"zh": "1978 年金星先驱者号", "en": "1978 Pioneer Venus"}},
+        {"label": {"zh": "当前任务", "en": "Current Missions"}, "value": {"zh": "多个任务规划中", "en": "Multiple missions planned"}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_enceladus_001",
+      "question": {
+        "zh": "土卫二是土星的第几大卫星？",
+        "en": "What is the rank of Enceladus in size among Saturn's moons?"
+      },
+      "options": [
+        {
+          "zh": "第一大",
+          "en": "Largest"
+        },
+        {
+          "zh": "第二大",
+          "en": "Second largest"
+        },
+        {
+          "zh": "第六大",
+          "en": "Sixth largest"
+        },
+        {
+          "zh": "第十四大",
+          "en": "Fourteenth largest"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫二是土星的第六大卫星，直径约500公里。",
+        "en": "Enceladus is the sixth-largest moon of Saturn, with a diameter of about 500 km."
+      }
+    },
+    {
+      "id": "q_enceladus_002",
+      "question": {
+        "zh": "土卫二绕土星公转的轨道位于土星哪个环的内部？",
+        "en": "Enceladus orbits within which of Saturn's rings?"
+      },
+      "options": [
+        {
+          "zh": "A环",
+          "en": "A Ring"
+        },
+        {
+          "zh": "B环",
+          "en": "B Ring"
+        },
+        {
+          "zh": "E环",
+          "en": "E Ring"
+        },
+        {
+          "zh": "F环",
+          "en": "F Ring"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫二的轨道位于土星最外层的E环内部，其喷发物是E环物质的主要来源。",
+        "en": "Enceladus orbits within Saturn's outermost E ring, and its plumes are the primary source of material for the E ring."
+      }
+    },
+    {
+      "id": "q_enceladus_003",
+      "question": {
+        "zh": "土卫二的表面主要由什么物质覆盖？",
+        "en": "What material primarily covers the surface of Enceladus?"
+      },
+      "options": [
+        {
+          "zh": "岩石",
+          "en": "Rock"
+        },
+        {
+          "zh": "水冰",
+          "en": "Water ice"
+        },
+        {
+          "zh": "干冰",
+          "en": "Dry ice"
+        },
+        {
+          "zh": "甲烷冰",
+          "en": "Methane ice"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫二表面几乎完全由纯净的水冰覆盖，使其成为太阳系中反照率最高的天体之一。",
+        "en": "Enceladus's surface is almost entirely covered by pure water ice, making it one of the most reflective bodies in the Solar System."
+      }
+    },
+    {
+      "id": "q_enceladus_004",
+      "question": {
+        "zh": "土卫二南极附近著名的“虎纹”地形是什么？",
+        "en": "What are the famous 'tiger stripes' near Enceladus's south pole?"
+      },
+      "options": [
+        {
+          "zh": "巨大的陨石坑链",
+          "en": "A chain of large craters"
+        },
+        {
+          "zh": "平行分布的深裂缝",
+          "en": "Parallel deep fissures"
+        },
+        {
+          "zh": "火山熔岩流",
+          "en": "Lava flows"
+        },
+        {
+          "zh": "冰火山锥",
+          "en": "Ice volcanic cones"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "虎纹是四条平行分布的深裂缝，内部温度较高，是冰喷泉活动的源头。",
+        "en": "The tiger stripes are four parallel deep fissures with elevated internal temperatures, serving as the source of cryovolcanic plumes."
+      }
+    },
+    {
+      "id": "q_enceladus_005",
+      "question": {
+        "zh": "卡西尼号探测器在哪一年首次发现土卫二的冰喷泉？",
+        "en": "In which year did the Cassini spacecraft first discover Enceladus's ice plumes?"
+      },
+      "options": [
+        {
+          "zh": "2004年",
+          "en": "2004"
+        },
+        {
+          "zh": "2005年",
+          "en": "2005"
+        },
+        {
+          "zh": "2008年",
+          "en": "2008"
+        },
+        {
+          "zh": "2010年",
+          "en": "2010"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "卡西尼号在2005年飞越土卫二时首次观测到从其南极地区喷出的水冰羽流。",
+        "en": "Cassini first observed water ice plumes erupting from Enceladus's south polar region during a flyby in 2005."
+      }
+    },
+    {
+      "id": "q_enceladus_006",
+      "question": {
+        "zh": "土卫二被认为拥有地下海洋，其主要能量来源是什么？",
+        "en": "What is the primary energy source for Enceladus's subsurface ocean?"
+      },
+      "options": [
+        {
+          "zh": "太阳辐射",
+          "en": "Solar radiation"
+        },
+        {
+          "zh": "放射性衰变",
+          "en": "Radioactive decay"
+        },
+        {
+          "zh": "潮汐加热",
+          "en": "Tidal heating"
+        },
+        {
+          "zh": "原始热量",
+          "en": "Primordial heat"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫二与土星及其他卫星的引力相互作用产生潮汐摩擦，提供维持地下海洋液态所需的热量。",
+        "en": "Gravitational interactions with Saturn and other moons generate tidal friction, providing the heat needed to maintain a liquid subsurface ocean."
+      }
+    },
+    {
+      "id": "q_enceladus_007",
+      "question": {
+        "zh": "土卫二的平均密度约为多少？",
+        "en": "What is the approximate average density of Enceladus?"
+      },
+      "options": [
+        {
+          "zh": "0.6 g/cm³",
+          "en": "0.6 g/cm³"
+        },
+        {
+          "zh": "1.6 g/cm³",
+          "en": "1.6 g/cm³"
+        },
+        {
+          "zh": "3.9 g/cm³",
+          "en": "3.9 g/cm³"
+        },
+        {
+          "zh": "5.5 g/cm³",
+          "en": "5.5 g/cm³"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫二的平均密度约为1.6 g/cm³，表明其内部含有大量冰和少量岩石。",
+        "en": "Enceladus's average density is about 1.6 g/cm³, indicating a composition of mostly ice with a small rocky core."
+      }
+    },
+    {
+      "id": "q_enceladus_008",
+      "question": {
+        "zh": "卡西尼号在土卫二喷出的羽流中检测到了哪些对生命重要的元素？",
+        "en": "Which life-essential elements did Cassini detect in Enceladus's plumes?"
+      },
+      "options": [
+        {
+          "zh": "氮和氖",
+          "en": "Nitrogen and neon"
+        },
+        {
+          "zh": "碳、氢、氧、氮",
+          "en": "Carbon, hydrogen, oxygen, nitrogen"
+        },
+        {
+          "zh": "铁和镁",
+          "en": "Iron and magnesium"
+        },
+        {
+          "zh": "金和银",
+          "en": "Gold and silver"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "卡西尼号在羽流中检测到水、二氧化碳、甲烷、氨以及简单有机分子，包含碳、氢、氧、氮等生命必需元素。",
+        "en": "Cassini detected water, carbon dioxide, methane, ammonia, and simple organic molecules in the plumes, containing carbon, hydrogen, oxygen, and nitrogen."
+      }
+    },
+    {
+      "id": "q_enceladus_009",
+      "question": {
+        "zh": "土卫二绕土星公转一周大约需要多长时间？",
+        "en": "How long does it take for Enceladus to complete one orbit around Saturn?"
+      },
+      "options": [
+        {
+          "zh": "约1.4天",
+          "en": "About 1.4 days"
+        },
+        {
+          "zh": "约3.5天",
+          "en": "About 3.5 days"
+        },
+        {
+          "zh": "约7.2天",
+          "en": "About 7.2 days"
+        },
+        {
+          "zh": "约15.9天",
+          "en": "About 15.9 days"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫二的轨道周期约为1.37地球日，与土卫一存在2:1轨道共振。",
+        "en": "Enceladus's orbital period is about 1.37 Earth days, and it is in a 2:1 orbital resonance with Mimas."
+      }
+    },
+    {
+      "id": "q_enceladus_010",
+      "question": {
+        "zh": "土卫二的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Enceladus?"
+      },
+      "options": [
+        {
+          "zh": "约-200°C",
+          "en": "About -200°C"
+        },
+        {
+          "zh": "约-130°C",
+          "en": "About -130°C"
+        },
+        {
+          "zh": "约-50°C",
+          "en": "About -50°C"
+        },
+        {
+          "zh": "约0°C",
+          "en": "About 0°C"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫二表面温度极低，平均约-200°C（约75 K），但虎纹裂缝处温度可高达-100°C以上。",
+        "en": "Enceladus's surface temperature is extremely cold, averaging about -200°C (75 K), though the tiger stripe fissures can reach above -100°C."
+      }
+    }
+  ]
+}

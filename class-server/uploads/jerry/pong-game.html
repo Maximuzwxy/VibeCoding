@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Pong Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .game-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .mode-selector {
+            margin-bottom: 20px;
+        }
+
+        .mode-selector button {
+            background: #fff;
+            border: none;
+            padding: 12px 24px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .mode-selector button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .mode-selector button.active {
+            background: #ffd700;
+            color: #333;
+        }
+
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .score {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 30px;
+            border-radius: 10px;
+            min-width: 120px;
+        }
+
+        canvas {
+            border: 4px solid #fff;
+            border-radius: 10px;
+            background: #000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .controls {
+            margin-top: 20px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .controls p {
+            margin: 8px 0;
+        }
+
+        .start-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            margin-top: 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .start-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-over {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .game-over.show {
+            display: block;
+        }
+
+        .game-over h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .game-over button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        /* Operation Bar Styles */
+        .operation-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .operation-bar .left-controls,
+        .operation-bar .right-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .settings-btn {
+            background: #9c27b0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .settings-btn:hover {
+            background: #7b1fa2;
+            transform: translateY(-2px);
+        }
+
+        /* Settings Modal Styles */
+        .settings-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .settings-modal.show {
+            display: flex;
+        }
+
+        .settings-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .settings-content h2 {
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .setting-group {
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .setting-group label {
+            display: block;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .setting-group input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .setting-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ffd700;
+            cursor: pointer;
+        }
+
+        .setting-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .setting-value {
+            color: #ffd700;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .settings-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .settings-actions button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .save-btn {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .save-btn:hover {
+            background: #45a049;
+        }
+
+        .cancel-btn {
+            background: #f44336;
+            color: white;
+        }
+
+        .cancel-btn:hover {
+            background: #da190b;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🏓 CLASSIC PONG</h1>
+        
+        <!-- Operation Bar -->
+        <div class="operation-bar">
+            <div class="left-controls">
+                <button id="pvpBtn" onclick="setMode('pvp')">Player vs Player</button>
+                <button id="pcBtn" onclick="setMode('pc')" class="active">Player vs PC</button>
+                <button class="start-btn" onclick="startGame()">Start Game</button>
+            </div>
+            <div class="right-controls">
+                <button class="settings-btn" onclick="openSettings()">⚙️ Settings</button>
+            </div>
+        </div>
+
+        <div class="score-board">
+            <div class="score">
+                <div>Player 1</div>
+                <div id="score1">0</div>
+            </div>
+            <div class="score">
+                <div id="player2Label">PC</div>
+                <div id="score2">0</div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+        <div class="controls">
+            <p><strong>Player 1:</strong> W/S (Up/Down) + A/D (Left/Right)</p>
+            <p id="player2Controls"><strong>Player 2:</strong> ↑↓ (Up/Down) + ←→ (Left/Right)</p>
+            <p><strong>First to 10 wins!</strong></p>
+        </div>
+    </div>
+
+    <div class="game-over" id="gameOver">
+        <h2 id="winnerText">Player 1 Wins!</h2>
+        <button onclick="resetGame()">Play Again</button>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="settings-modal" id="settingsModal">
+        <div class="settings-content">
+            <h2>⚙️ Game Settings</h2>
+            
+            <!-- Buff Refresh Speed Level -->
+            <div class="setting-group">
+                <label for="buffLevel">Buff Block Spawn Rate (Level 0-5)</label>
+                <input type="range" id="buffLevel" min="0" max="5" value="3" step="1">
+                <div class="setting-value" id="buffLevelValue">Level 3</div>
+            </div>
+            
+            <!-- Base Ball Speed -->
+            <div class="setting-group">
+                <label for="baseSpeed">Base Ball Speed (starting speed)</label>
+                <input type="number" id="baseSpeed" min="1" max="15" value="3" step="0.5">
+            </div>
+            
+            <!-- Ball Speed Limits -->
+            <div class="setting-group">
+                <label for="minSpeed">Minimum Ball Speed</label>
+                <input type="number" id="minSpeed" min="1" max="10" value="3" step="0.5">
+            </div>
+            
+            <div class="setting-group">
+                <label for="maxSpeed">Maximum Ball Speed</label>
+                <input type="number" id="maxSpeed" min="10" max="30" value="15" step="1">
+            </div>
+            
+            <div class="setting-group">
+                <label for="speedRatio">Speed Change Ratio (per paddle hit)</label>
+                <input type="range" id="speedRatio" min="1.1" max="1.5" value="1.015" step="0.005">
+                <div class="setting-value" id="speedRatioValue">1.015</div>
+            </div>
+            
+            <!-- Paddle Length Settings -->
+            <div class="setting-group">
+                <label for="minPaddle">Minimum Paddle Length</label>
+                <input type="number" id="minPaddle" min="50" max="150" value="60" step="5">
+            </div>
+            
+            <div class="setting-group">
+                <label for="maxPaddle">Maximum Paddle Length</label>
+                <input type="number" id="maxPaddle" min="100" max="200" value="150" step="5">
+            </div>
+            
+            <div class="setting-group">
+                <label for="paddleRatio">Paddle Length Change Ratio (with buffs)</label>
+                <input type="range" id="paddleRatio" min="1.1" max="1.5" value="1.5" step="0.1">
+                <div class="setting-value" id="paddleRatioValue">1.5</div>
+            </div>
+            
+            <div class="settings-actions">
+                <button class="save-btn" onclick="saveSettings()">Save & Apply</button>
+                <button class="cancel-btn" onclick="closeSettings()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let gameMode = 'pc'; // 'pc' or 'pvp'
+        let gameRunning = false;
+        let animationId;
+        let gamePaused = false;
+
+        // Settings configuration
+        let gameSettings = {
+            buffLevel: 3,           // 0-5 (0 = no buffs, 5 = many buffs)
+            baseSpeed: 3,           // Starting ball speed
+            minSpeed: 3,            // Minimum ball speed
+            maxSpeed: 15,           // Maximum ball speed
+            speedRatio: 1.015,      // Speed multiplier per hit (1.01-1.5)
+            minPaddleLength: 60,    // Minimum paddle height
+            maxPaddleLength: 150,   // Maximum paddle height
+            paddleRatio: 1.5        // Paddle buff multiplier (1.1-1.5)
+        };
+
+        // Game objects
+        const ball = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            radius: 10,
+            speedX: gameSettings.baseSpeed,
+            speedY: gameSettings.baseSpeed * 0.83,
+            baseSpeed: gameSettings.baseSpeed,
+            color: '#fff'
+        };
+
+        const paddleWidth = 15;
+        const paddleHeight = 100;
+        const paddleSpeed = 8;
+
+        const player1 = {
+            x: 20,
+            y: canvas.height / 2 - paddleHeight / 2,
+            width: paddleWidth,
+            height: paddleHeight,
+            score: 0,
+            color: '#00ff00',
+            dy: 0,
+            buff: null,
+            buffRounds: 0
+        };
+
+        const player2 = {
+            x: canvas.width - 20 - paddleWidth,
+            y: canvas.height / 2 - paddleHeight / 2,
+            width: paddleWidth,
+            height: paddleHeight,
+            score: 0,
+            color: '#ff0000',
+            dy: 0,
+            buff: null,
+            buffRounds: 0
+        };
+
+        // Buff types
+        const BUFF_TYPES = {
+            ENLARGE: { name: 'enlarge', color: '#00ffff', duration: 3, effect: 'Paddle Enlarged!' },
+            SHRINK: { name: 'shrink', color: '#ff00ff', duration: 3, effect: 'Enemy Shrunk!' },
+            SPEED: { name: 'speed', color: '#ffff00', duration: 3, effect: 'Speed Boost!' },
+            SLOW: { name: 'slow', color: '#ff6600', duration: 3, effect: 'Enemy Slowed!' }
+        };
+
+        // Buff blocks on the field
+        let buffBlocks = [];
+        let roundCounter = 0;
+        let lastBallDirection = null;
+        
+        // Screen flash effect variables
+        let screenFlash = {
+            active: false,
+            color: '#ffffff',
+            alpha: 0,
+            maxAlpha: 0.4,
+            duration: 15
+        };
+
+        // Keyboard controls
+        const keys = {};
+
+        document.addEventListener('keydown', (e) => {
+            keys[e.key] = true;
+        });
+
+        document.addEventListener('keyup', (e) => {
+            keys[e.key] = false;
+        });
+
+        function setMode(mode) {
+            gameMode = mode;
+            document.getElementById('pvpBtn').classList.toggle('active', mode === 'pvp');
+            document.getElementById('pcBtn').classList.toggle('active', mode === 'pc');
+            document.getElementById('player2Label').textContent = mode === 'pc' ? 'PC' : 'Player 2';
+            document.getElementById('player2Controls').innerHTML = 
+                mode === 'pc' ? '<strong>PC:</strong> AI Controlled' : '<strong>Player 2:</strong> ↑ (Up) / ↓ (Down)';
+            resetGame();
+        }
+
+        // Settings Modal Functions
+        function openSettings() {
+            gamePaused = true;
+            document.getElementById('settingsModal').classList.add('show');
+            
+            // Load current settings into form
+            document.getElementById('buffLevel').value = gameSettings.buffLevel;
+            document.getElementById('buffLevelValue').textContent = `Level ${gameSettings.buffLevel}`;
+            document.getElementById('baseSpeed').value = gameSettings.baseSpeed;
+            document.getElementById('minSpeed').value = gameSettings.minSpeed;
+            document.getElementById('maxSpeed').value = gameSettings.maxSpeed;
+            document.getElementById('speedRatio').value = gameSettings.speedRatio;
+            document.getElementById('speedRatioValue').textContent = gameSettings.speedRatio.toFixed(3);
+            document.getElementById('minPaddle').value = gameSettings.minPaddleLength;
+            document.getElementById('maxPaddle').value = gameSettings.maxPaddleLength;
+            document.getElementById('paddleRatio').value = gameSettings.paddleRatio;
+            document.getElementById('paddleRatioValue').textContent = gameSettings.paddleRatio.toFixed(1);
+        }
+
+        function closeSettings() {
+            document.getElementById('settingsModal').classList.remove('show');
+            gamePaused = false;
+        }
+
+        function saveSettings() {
+            // Read values from form
+            gameSettings.buffLevel = parseInt(document.getElementById('buffLevel').value);
+            gameSettings.baseSpeed = parseFloat(document.getElementById('baseSpeed').value);
+            gameSettings.minSpeed = parseFloat(document.getElementById('minSpeed').value);
+            gameSettings.maxSpeed = parseFloat(document.getElementById('maxSpeed').value);
+            gameSettings.speedRatio = parseFloat(document.getElementById('speedRatio').value);
+            gameSettings.minPaddleLength = parseFloat(document.getElementById('minPaddle').value);
+            gameSettings.maxPaddleLength = parseFloat(document.getElementById('maxPaddle').value);
+            gameSettings.paddleRatio = parseFloat(document.getElementById('paddleRatio').value);
+            
+            // Update ball base speed
+            ball.baseSpeed = gameSettings.baseSpeed;
+            
+            // If game is running, update current ball speed
+            if (!gameRunning) {
+                ball.speedX = gameSettings.baseSpeed;
+                ball.speedY = gameSettings.baseSpeed * 0.83;
+            }
+            
+            console.log('Settings saved:', gameSettings);
+            closeSettings();
+        }
+
+        // Update slider value displays
+        document.addEventListener('DOMContentLoaded', () => {
+            const buffLevelSlider = document.getElementById('buffLevel');
+            const buffLevelValue = document.getElementById('buffLevelValue');
+            if (buffLevelSlider && buffLevelValue) {
+                buffLevelSlider.addEventListener('input', (e) => {
+                    buffLevelValue.textContent = `Level ${e.target.value}`;
+                });
+            }
+            
+            const speedRatioSlider = document.getElementById('speedRatio');
+            const speedRatioValue = document.getElementById('speedRatioValue');
+            if (speedRatioSlider && speedRatioValue) {
+                speedRatioSlider.addEventListener('input', (e) => {
+                    speedRatioValue.textContent = parseFloat(e.target.value).toFixed(3);
+                });
+            }
+            
+            const paddleRatioSlider = document.getElementById('paddleRatio');
+            const paddleRatioValue = document.getElementById('paddleRatioValue');
+            if (paddleRatioSlider && paddleRatioValue) {
+                paddleRatioSlider.addEventListener('input', (e) => {
+                    paddleRatioValue.textContent = parseFloat(e.target.value).toFixed(1);
+                });
+            }
+        });
+
+        function spawnBuffBlock() {
+            // Randomly spawn a single buff block in the middle area with larger size
+            if (buffBlocks.length < 10) { // Allow up to 10 blocks
+                const buffTypeKeys = Object.keys(BUFF_TYPES);
+                const randomType = buffTypeKeys[Math.floor(Math.random() * buffTypeKeys.length)];
+                
+                buffBlocks.push({
+                    x: canvas.width / 2 - 150 + Math.random() * 300,
+                    y: 50 + Math.random() * (canvas.height - 100),
+                    width: 50,
+                    height: 50,
+                    type: BUFF_TYPES[randomType],
+                    pulsePhase: 0,
+                    spawnTime: Date.now(),
+                    lifetime: 5000 // 5 seconds in milliseconds
+                });
+            }
+        }
+
+        function spawnMultipleBuffBlocks() {
+            // Check buff level setting - level 0 means no buffs
+            if (gameSettings.buffLevel === 0) {
+                return;
+            }
+            
+            // Calculate number of blocks based on buff level (1-5)
+            // Level 1: ~1 block per 10 rounds = 0.1 per round
+            // Level 5: ~5 blocks per 10 rounds = 0.5 per round
+            const blocksPerRound = gameSettings.buffLevel / 2;
+            const numberOfBlocks = Math.max(1, Math.ceil(blocksPerRound + Math.random() * blocksPerRound));
+            
+            for (let i = 0; i < numberOfBlocks; i++) {
+                setTimeout(() => {
+                    spawnBuffBlock();
+                }, i * 200); // Stagger spawning over time
+            }
+            
+            console.log(`Buff Level ${gameSettings.buffLevel}: Spawning ${numberOfBlocks} buff blocks`);
+        }
+
+        function checkPaddleBuffCollision(paddle) {
+            for (let i = buffBlocks.length - 1; i >= 0; i--) {
+                const block = buffBlocks[i];
+                // Larger collision area for better gameplay
+                const collisionMargin = 10;
+                if (paddle.x < block.x + block.width + collisionMargin &&
+                    paddle.x + paddle.width > block.x - collisionMargin &&
+                    paddle.y < block.y + block.height + collisionMargin &&
+                    paddle.y + paddle.height > block.y - collisionMargin) {
+                    
+                    // Apply buff to the paddle that touched it
+                    applyBuff(paddle, block.type);
+                    
+                    // Visual feedback - flash effect
+                    showBuffPickupEffect(block.x + block.width/2, block.y + block.height/2, block.type);
+                    
+                    buffBlocks.splice(i, 1);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function applyBuff(paddle, buffType) {
+            // Remove negative effects from opponent
+            const opponent = paddle === player1 ? player2 : player1;
+            
+            switch(buffType.name) {
+                case 'enlarge':
+                    paddle.buff = 'enlarge';
+                    paddle.buffRounds = buffType.duration;
+                    break;
+                case 'shrink':
+                    opponent.buff = 'shrink';
+                    opponent.buffRounds = buffType.duration;
+                    break;
+                case 'speed':
+                    paddle.buff = 'speed';
+                    paddle.buffRounds = buffType.duration;
+                    break;
+                case 'slow':
+                    opponent.buff = 'slow';
+                    opponent.buffRounds = buffType.duration;
+                    break;
+            }
+        }
+
+        function updateBuffBlocks() {
+            const currentTime = Date.now();
+            for (let i = buffBlocks.length - 1; i >= 0; i--) {
+                const block = buffBlocks[i];
+                const age = currentTime - block.spawnTime;
+                
+                // Remove buff block if it has expired (5 seconds)
+                if (age >= block.lifetime) {
+                    buffBlocks.splice(i, 1);
+                }
+            }
+        }
+
+        function updateBuffs() {
+            // Update player1 buffs
+            if (player1.buffRounds > 0) {
+                player1.buffRounds--;
+                if (player1.buffRounds <= 0) {
+                    player1.buff = null;
+                }
+            }
+            
+            // Update player2 buffs
+            if (player2.buffRounds > 0) {
+                player2.buffRounds--;
+                if (player2.buffRounds <= 0) {
+                    player2.buff = null;
+                }
+            }
+        }
+
+        function getPaddleHeight(paddle) {
+            const baseHeight = paddle.height;
+            const enlargeRatio = gameSettings.paddleRatio;
+            const shrinkRatio = 1 / gameSettings.paddleRatio;
+            
+            if (paddle.buff === 'enlarge') {
+                return Math.min(gameSettings.maxPaddleLength, baseHeight * enlargeRatio);
+            }
+            if (paddle.buff === 'shrink') {
+                return Math.max(gameSettings.minPaddleLength, baseHeight * shrinkRatio);
+            }
+            return baseHeight;
+        }
+
+        function getPaddleSpeed(paddle) {
+            if (paddle.buff === 'speed') return paddleSpeed * 1.5;
+            if (paddle.buff === 'slow') return paddleSpeed * 0.5;
+            return paddleSpeed;
+        }
+
+        function updatePaddles() {
+            const player1Height = getPaddleHeight(player1);
+            const player2Height = getPaddleHeight(player2);
+            const player1Speed = getPaddleSpeed(player1);
+            const player2Speed = getPaddleSpeed(player2);
+
+            // Player 1 controls (W/S for vertical, A/D for horizontal)
+            if (keys['w'] || keys['W']) {
+                player1.y -= player1Speed;
+            }
+            if (keys['s'] || keys['S']) {
+                player1.y += player1Speed;
+            }
+            if (keys['a'] || keys['A']) {
+                player1.x -= player1Speed * 0.7; // Horizontal movement slower
+            }
+            if (keys['d'] || keys['D']) {
+                player1.x += player1Speed * 0.7;
+            }
+
+            // Player 2 controls or AI
+            if (gameMode === 'pvp') {
+                if (keys['ArrowUp']) {
+                    player2.y -= player2Speed;
+                }
+                if (keys['ArrowDown']) {
+                    player2.y += player2Speed;
+                }
+                if (keys['ArrowLeft']) {
+                    player2.x -= player2Speed * 0.7;
+                }
+                if (keys['ArrowRight']) {
+                    player2.x += player2Speed * 0.7;
+                }
+            } else {
+                // AI control with horizontal movement
+                aiControl(player2Speed);
+            }
+
+            // Keep paddles within canvas boundaries
+            // Vertical boundaries
+            player1.y = Math.max(0, Math.min(canvas.height - player1Height, player1.y));
+            player2.y = Math.max(0, Math.min(canvas.height - player2Height, player2.y));
+            
+            // Horizontal boundaries - Player 1 (left side, can't cross middle)
+            player1.x = Math.max(0, Math.min(canvas.width / 2 - player1.width - 10, player1.x));
+            
+            // Horizontal boundaries - Player 2 (right side, can't cross middle)
+            player2.x = Math.max(canvas.width / 2 + 10, Math.min(canvas.width - player2.width, player2.x));
+            
+            // Check buff collisions
+            checkPaddleBuffCollision(player1);
+            checkPaddleBuffCollision(player2);
+        }
+
+        function aiControl(speed) {
+            const paddleCenter = player2.y + getPaddleHeight(player2) / 2;
+            const difficulty = 0.85; // AI accuracy (0-1)
+            
+            if (ball.speedX > 0) { // Ball moving towards AI
+                // Vertical movement
+                if (paddleCenter < ball.y - 10) {
+                    player2.y += speed * difficulty;
+                } else if (paddleCenter > ball.y + 10) {
+                    player2.y -= speed * difficulty;
+                }
+                
+                // Horizontal movement - follow ball x position
+                const targetX = canvas.width - 20 - paddleWidth;
+                if (player2.x < targetX - 5) {
+                    player2.x += speed * 0.5 * difficulty;
+                } else if (player2.x > targetX + 5) {
+                    player2.x -= speed * 0.5 * difficulty;
+                }
+            } else {
+                // Return to default position when ball moving away
+                const defaultX = canvas.width - 20 - paddleWidth;
+                if (player2.x < defaultX - 5) {
+                    player2.x += speed * 0.3;
+                } else if (player2.x > defaultX + 5) {
+                    player2.x -= speed * 0.3;
+                }
+            }
+        }
+
+        function updateBall() {
+            // Track ball direction for round counting
+            if (lastBallDirection === null || (ball.speedX > 0 && lastBallDirection < 0) || (ball.speedX < 0 && lastBallDirection > 0)) {
+                lastBallDirection = ball.speedX;
+            }
+
+            ball.x += ball.speedX;
+            ball.y += ball.speedY;
+
+            // Top and bottom collision
+            if (ball.y - ball.radius <= 0 || ball.y + ball.radius >= canvas.height) {
+                ball.speedY = -ball.speedY;
+            }
+
+            // Update buff blocks and remove expired ones
+            updateBuffBlocks();
+
+            // Check ball collision with buff blocks
+            checkBallBuffCollision();
+
+            // Paddle collision - prevent ball from going through
+            const player1Hit = checkPaddleCollision(player1);
+            const player2Hit = checkPaddleCollision(player2);
+
+            if (player1Hit) {
+                // Ball hits Player 1 paddle - bounce RIGHT towards opponent
+                ball.speedX = Math.abs(ball.speedX); // Always positive (moving right)
+                ball.x = player1.x + player1.width + ball.radius + 1; // Push outside paddle
+                
+                // Add angle based on where ball hits paddle
+                const currentHeight = getPaddleHeight(player1);
+                const hitPos = (ball.y - player1.y) / currentHeight;
+                ball.speedY = (hitPos - 0.5) * 10;
+                
+                // Increase ball speed slightly with each paddle hit within the round
+                increaseBallSpeed();
+            }
+            
+            if (player2Hit) {
+                // Ball hits Player 2 paddle - bounce LEFT towards opponent
+                ball.speedX = -Math.abs(ball.speedX); // Always negative (moving left)
+                ball.x = player2.x - ball.radius - 1; // Push outside paddle
+                
+                // Add angle based on where ball hits paddle
+                const currentHeight = getPaddleHeight(player2);
+                const hitPos = (ball.y - player2.y) / currentHeight;
+                ball.speedY = (hitPos - 0.5) * 10;
+                
+                // Increase ball speed slightly with each paddle hit within the round
+                increaseBallSpeed();
+            }
+
+            // Scoring - count as a round completion
+            if (ball.x < 0) {
+                player2.score++;
+                completeRound();
+                resetBall();
+            } else if (ball.x > canvas.width) {
+                player1.score++;
+                completeRound();
+                resetBall();
+            }
+
+            updateScore();
+        }
+
+        function checkBallBuffCollision() {
+            for (let i = buffBlocks.length - 1; i >= 0; i--) {
+                const block = buffBlocks[i];
+                // Check if ball collides with buff block
+                if (ball.x + ball.radius > block.x && 
+                    ball.x - ball.radius < block.x + block.width &&
+                    ball.y + ball.radius > block.y && 
+                    ball.y - ball.radius < block.y + block.height) {
+                    
+                    // Determine which player benefits from the buff
+                    const benefitingPlayer = ball.x < canvas.width / 2 ? player1 : player2;
+                    
+                    // Apply buff to the benefiting player
+                    applyBuff(benefitingPlayer, block.type);
+                    
+                    // Visual feedback
+                    showBuffPickupEffect(block.x + block.width/2, block.y + block.height/2, block.type);
+                    
+                    // Remove the buff block
+                    buffBlocks.splice(i, 1);
+                    
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function increaseBallSpeed() {
+            // Increase speed with each paddle hit - using settings ratio
+            const maxSpeed = gameSettings.maxSpeed;
+            
+            // Increase by configured ratio per paddle hit
+            if (Math.abs(ball.speedX) < maxSpeed) {
+                ball.speedX *= gameSettings.speedRatio;
+            }
+            
+            // Cap vertical speed variation
+            ball.speedY = Math.max(-maxSpeed, Math.min(maxSpeed, ball.speedY));
+        }
+
+        function completeRound() {
+            roundCounter++;
+            updateBuffs();
+            
+            // Spawn 6-10 buff blocks every round
+            spawnMultipleBuffBlocks();
+            
+            console.log(`Round ${roundCounter} completed`);
+        }
+
+        function checkPaddleCollision(paddle) {
+            return ball.x - ball.radius < paddle.x + paddle.width &&
+                   ball.x + ball.radius > paddle.x &&
+                   ball.y - ball.radius < paddle.y + paddle.height &&
+                   ball.y + ball.radius > paddle.y;
+        }
+
+        function resetBall() {
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+            
+            // Ball speed based on settings and round progression
+            const minSpeed = gameSettings.minSpeed;
+            const maxSpeed = gameSettings.maxSpeed;
+            const baseSpeed = gameSettings.baseSpeed;
+            
+            // Speed increases with each round
+            const roundBonus = roundCounter * 0.4;
+            let currentBaseSpeed = baseSpeed + roundBonus;
+            
+            // Clamp between min and max
+            currentBaseSpeed = Math.max(minSpeed, Math.min(maxSpeed, currentBaseSpeed));
+            
+            ball.speedX = (Math.random() > 0.5 ? 1 : -1) * currentBaseSpeed;
+            ball.speedY = (Math.random() - 0.5) * (currentBaseSpeed * 1.8);
+            
+            console.log(`Round ${roundCounter + 1} - Ball Speed: ${currentBaseSpeed.toFixed(1)}`);
+            
+            // Check for win condition
+            if (player1.score >= 10 || player2.score >= 10) {
+                endGame();
+            }
+        }
+
+        function updateScore() {
+            document.getElementById('score1').textContent = player1.score;
+            document.getElementById('score2').textContent = player2.score;
+        }
+
+        function draw() {
+            // Clear canvas
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw center line
+            ctx.setLineDash([5, 15]);
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, 0);
+            ctx.lineTo(canvas.width / 2, canvas.height);
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Draw buff blocks with enhanced effects
+            buffBlocks.forEach(block => {
+                // Pulse animation
+                block.pulsePhase += 0.1;
+                const pulse = Math.sin(block.pulsePhase) * 5;
+                
+                // Outer glow
+                ctx.shadowBlur = 25 + pulse;
+                ctx.shadowColor = block.type.color;
+                
+                // Main block
+                ctx.fillStyle = block.type.color;
+                ctx.fillRect(block.x - pulse/2, block.y - pulse/2, 
+                           block.width + pulse, block.height + pulse);
+                
+                // Inner border
+                ctx.strokeStyle = '#fff';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(block.x - pulse/2, block.y - pulse/2, 
+                             block.width + pulse, block.height + pulse);
+                
+                // Draw icon or text on block (larger and more visible)
+                ctx.fillStyle = '#000';
+                ctx.font = 'bold 28px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                const icon = block.type.name === 'enlarge' ? '↕' : 
+                            block.type.name === 'shrink' ? '↕' : 
+                            block.type.name === 'speed' ? '⚡' : '◉';
+                ctx.fillText(icon, block.x + block.width/2, block.y + block.height/2);
+                
+                // Add label below
+                ctx.font = 'bold 11px Arial';
+                ctx.fillText(block.type.name.toUpperCase(), 
+                           block.x + block.width/2, block.y + block.height + 15);
+                
+                // Draw timer bar showing remaining time
+                const currentTime = Date.now();
+                const age = currentTime - block.spawnTime;
+                const timeLeft = Math.max(0, block.lifetime - age);
+                const timePercent = timeLeft / block.lifetime;
+                
+                // Timer background
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+                ctx.fillRect(block.x, block.y + block.height + 3, block.width, 5);
+                
+                // Timer bar (color changes from green to red as time runs out)
+                const barColor = timePercent > 0.5 ? '#00ff00' : 
+                                timePercent > 0.25 ? '#ffff00' : '#ff0000';
+                ctx.fillStyle = barColor;
+                ctx.fillRect(block.x, block.y + block.height + 3, block.width * timePercent, 5);
+                
+                // Show countdown number
+                const secondsLeft = Math.ceil(timeLeft / 1000);
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 14px Arial';
+                ctx.fillText(secondsLeft.toString(), 
+                           block.x + block.width/2, block.y - 8);
+                
+                ctx.shadowBlur = 0;
+            });
+
+            // Draw paddles with buff effects
+            const player1Height = getPaddleHeight(player1);
+            const player2Height = getPaddleHeight(player2);
+            
+            // Player 1 with possible glow effect
+            if (player1.buff) {
+                const buffColor = player1.buff === 'enlarge' ? '#00ffff' : 
+                                 player1.buff === 'speed' ? '#ffff00' : '#00ff00';
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = buffColor;
+            }
+            ctx.fillStyle = player1.color;
+            ctx.fillRect(player1.x, player1.y, player1.width, player1Height);
+            ctx.shadowBlur = 0;
+
+            // Player 2 with possible glow effect
+            if (player2.buff) {
+                const buffColor = player2.buff === 'enlarge' ? '#00ffff' : 
+                                 player2.buff === 'speed' ? '#ffff00' : '#ff0000';
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = buffColor;
+            }
+            ctx.fillStyle = player2.color;
+            ctx.fillRect(player2.x, player2.y, player2.width, player2Height);
+            ctx.shadowBlur = 0;
+
+            // Draw ball
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            ctx.fillStyle = ball.color;
+            ctx.fill();
+            ctx.closePath();
+
+            // Draw screen flash overlay
+            if (screenFlash.active) {
+                ctx.save();
+                ctx.globalAlpha = screenFlash.alpha;
+                ctx.fillStyle = screenFlash.color;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.restore();
+                
+                // Update flash effect
+                screenFlash.alpha -= 0.03;
+                screenFlash.duration--;
+                
+                if (screenFlash.duration <= 0 || screenFlash.alpha <= 0) {
+                    screenFlash.active = false;
+                }
+            }
+
+            // Draw buff status
+            drawBuffStatus();
+        }
+
+        function drawBuffStatus() {
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'top';
+            
+            if (player1.buff) {
+                const buffType = Object.values(BUFF_TYPES).find(b => b.name === player1.buff);
+                ctx.fillStyle = buffType.color;
+                ctx.fillText(`${buffType.effect} (${player1.buffRounds})`, 10, 10);
+            }
+            
+            if (player2.buff) {
+                const buffType = Object.values(BUFF_TYPES).find(b => b.name === player2.buff);
+                ctx.fillStyle = buffType.color;
+                ctx.textAlign = 'right';
+                ctx.fillText(`${buffType.effect} (${player2.buffRounds})`, canvas.width - 10, 10);
+            }
+        }
+
+        function gameLoop() {
+            if (!gameRunning || gamePaused) return;
+
+            updatePaddles();
+            updateBall();
+            draw();
+
+            animationId = requestAnimationFrame(gameLoop);
+        }
+
+        function startGame() {
+            if (gameRunning) return;
+            
+            gameRunning = true;
+            player1.score = 0;
+            player2.score = 0;
+            roundCounter = 0; // Reset round counter
+            resetBall();
+            updateScore();
+            
+            // Spawn 6-10 initial buff blocks at game start
+            buffBlocks = [];
+            spawnMultipleBuffBlocks();
+            
+            gameLoop();
+        }
+
+        function endGame() {
+            gameRunning = false;
+            cancelAnimationFrame(animationId);
+            
+            const winner = player1.score >= 10 ? 'Player 1' : (gameMode === 'pc' ? 'PC' : 'Player 2');
+            document.getElementById('winnerText').textContent = `${winner} Wins! 🎉`;
+            document.getElementById('gameOver').classList.add('show');
+        }
+
+        function resetGame() {
+            gameRunning = false;
+            cancelAnimationFrame(animationId);
+            
+            player1.score = 0;
+            player2.score = 0;
+            player1.y = canvas.height / 2 - paddleHeight / 2;
+            player2.y = canvas.height / 2 - paddleHeight / 2;
+            player1.buff = null;
+            player1.buffRounds = 0;
+            player2.buff = null;
+            player2.buffRounds = 0;
+            
+            buffBlocks = [];
+            roundCounter = 0;
+            lastBallDirection = null;
+            
+            // Reset screen flash
+            screenFlash.active = false;
+            screenFlash.alpha = 0;
+            
+            updateScore();
+            resetBall();
+            draw();
+            
+            document.getElementById('gameOver').classList.remove('show');
+        }
+
+        function showBuffPickupEffect(x, y, buffType) {
+            // Create a temporary visual effect
+            ctx.save();
+            ctx.fillStyle = buffType.color;
+            ctx.globalAlpha = 0.8;
+            ctx.beginPath();
+            ctx.arc(x, y, 40, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+            
+            // Activate screen flash effect
+            screenFlash.active = true;
+            screenFlash.color = buffType.color;
+            screenFlash.alpha = screenFlash.maxAlpha;
+            screenFlash.duration = 15;
+        }
+
+        // Initial draw
+        draw();
+    </script>
+</body>
+</html>

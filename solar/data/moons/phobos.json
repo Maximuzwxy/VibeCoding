@@ -1,0 +1,401 @@
+{
+  "id": "phobos",
+  "name": {
+    "zh": "火卫一",
+    "en": "Phobos"
+  },
+  "icon": "🌑",
+  "theme_color": "#8B7D6B",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "不规则卫星（火星）",
+            "en": "Irregular moon (Mars)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "约 22.4 km",
+            "en": "~22.4 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.06 × 10¹⁶ kg",
+            "en": "1.06 × 10¹⁶ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "约 5,700 km³",
+            "en": "~5,700 km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.88 g/cm³",
+            "en": "1.88 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.0057 m/s²",
+            "en": "0.0057 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫一是太阳系中反射率最低的天体之一，表面非常暗黑。",
+        "en": "※ Phobos is one of the least reflective bodies in the Solar System, with a very dark surface."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "7 小时 39 分钟（同步自转）",
+            "en": "7 h 39 min (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "7 小时 39 分钟",
+            "en": "7 h 39 min"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "约 2.14 km/s",
+            "en": "~2.14 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0151",
+            "en": "0.0151"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "1.093°（相对于火星赤道）",
+            "en": "1.093° (to Mars equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫一轨道不断衰减，约 5000 万年后将撞向火星或瓦解成环。",
+        "en": "※ Phobos' orbit is decaying; in about 50 million years it will either crash into Mars or break apart into a ring."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "−4 °C（白天）至 −112 °C（夜晚）",
+            "en": "−4 °C (day) to −112 °C (night)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 −40 °C",
+            "en": "~−40 °C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "几乎为零（无大气层）",
+            "en": "Nearly zero (no atmosphere)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无显著磁场",
+            "en": "No significant magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫一表面覆盖一层厚约 1 米的细粒尘埃（风化层）。",
+        "en": "※ Phobos is covered by a layer of fine dust (regolith) about 1 meter thick."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "约 9,234 km（距火星中心）",
+            "en": "~9,234 km (from Mars center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "约 9,518 km（距火星中心）",
+            "en": "~9,518 km (from Mars center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "9,376 km（距火星中心）",
+            "en": "9,376 km (from Mars center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.0000627 AU",
+            "en": "0.0000627 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 0.031 秒",
+            "en": "~0.031 seconds"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（火卫一本身是火星的卫星）",
+            "en": "0 (Phobos itself is a moon of Mars)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫一是火星两颗天然卫星中较大的一颗，另一颗是火卫二（Deimos）。",
+        "en": "※ Phobos is the larger of Mars' two natural moons; the other is Deimos."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "撞击坑、沟槽、块状地形",
+            "en": "Impact craters, grooves, blocky terrain"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "斯蒂克尼撞击坑（直径约 9 km）",
+            "en": "Stickney Crater (~9 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 40 亿年",
+            "en": "~4 billion years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "约 90 m（相对高度）",
+            "en": "~90 m (relative height)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 斯蒂克尼撞击坑几乎覆盖了火卫一整个表面，形成时差点将其撞碎。",
+        "en": "※ Stickney crater covers nearly the entire surface of Phobos and nearly shattered it upon impact."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1877 年 8 月 18 日，阿萨夫·霍尔",
+            "en": "August 18, 1877, by Asaph Hall"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1971 年，水手 9 号",
+            "en": "1971, Mariner 9"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "无专用轨道器（火星轨道器曾多次飞掠）",
+            "en": "No dedicated orbiter (multiple flybys by Mars orbiters)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "火星快车号（ESA）持续观测",
+            "en": "Mars Express (ESA) ongoing observations"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 日本计划于 2026 年发射火星卫星探测任务（MMX）采样返回火卫一。",
+        "en": "※ Japan plans to launch the Martian Moons eXploration (MMX) mission in 2026 to return samples from Phobos."
+      }
+    }
+  ]
+}

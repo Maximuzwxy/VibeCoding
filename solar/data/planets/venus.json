@@ -1,0 +1,401 @@
+{
+  "id": "venus",
+  "name": {
+    "zh": "金星",
+    "en": "Venus"
+  },
+  "icon": "♀️",
+  "theme_color": "#e6b800",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "类地行星",
+            "en": "Terrestrial planet"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "12,104 km",
+            "en": "12,104 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "4.867 × 10²⁴ kg",
+            "en": "4.867 × 10²⁴ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "9.284 × 10¹¹ km³",
+            "en": "9.284 × 10¹¹ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "5.243 g/cm³",
+            "en": "5.243 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "8.87 m/s²",
+            "en": "8.87 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 金星是太阳系中最热的行星，表面温度足以熔化铅。",
+        "en": "※ Venus is the hottest planet in the Solar System, with surface temperatures hot enough to melt lead."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "243.025 天（逆向自转）",
+            "en": "243.025 days (retrograde)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "224.7 天",
+            "en": "224.7 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "35.02 km/s",
+            "en": "35.02 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0068",
+            "en": "0.0068"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "3.39°",
+            "en": "3.39°"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 金星自转比公转还慢，金星上的一天比一年还长。",
+        "en": "※ A day on Venus (rotation) is longer than a year (orbit)."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "约 462 °C",
+            "en": "Approx. 462 °C"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "462 °C",
+            "en": "462 °C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "92 bar（地球海平面的92倍）",
+            "en": "92 bar (92 times Earth's sea level)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "96.5% 二氧化碳，3.5% 氮气",
+            "en": "96.5% carbon dioxide, 3.5% nitrogen"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "极弱（感应磁场）",
+            "en": "Very weak (induced magnetosphere)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 金星浓厚的二氧化碳大气层导致失控温室效应，使其表面温度比水星还高。",
+        "en": "※ Venus's thick CO₂ atmosphere causes a runaway greenhouse effect, making its surface hotter than Mercury."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "1.075 × 10⁸ km",
+            "en": "1.075 × 10⁸ km"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "1.089 × 10⁸ km",
+            "en": "1.089 × 10⁸ km"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "1.082 × 10⁸ km",
+            "en": "1.082 × 10⁸ km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.723 AU",
+            "en": "0.723 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 6 分钟",
+            "en": "About 6 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0",
+            "en": "0"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 金星是太阳系中两颗没有天然卫星的行星之一（另一颗是水星）。",
+        "en": "※ Venus is one of only two planets in the Solar System with no natural moons (the other is Mercury)."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "火山平原、盾状火山、裂谷",
+            "en": "Volcanic plains, shield volcanoes, rift valleys"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "米德陨击坑（直径约 270 km）",
+            "en": "Mead Crater (diameter ~270 km)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 3 亿 – 5 亿年",
+            "en": "~300–500 million years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "麦克斯韦山（约 11 km）",
+            "en": "Maxwell Montes (~11 km)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 金星表面遍布超过 1,600 座大型火山，但至今未观测到活跃喷发。",
+        "en": "※ Venus has over 1,600 major volcanoes on its surface, but no active eruptions have been observed."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "史前已知（古代文明记录）",
+            "en": "Known since prehistoric times (ancient civilizations)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1962年，水手2号（美国）",
+            "en": "1962, Mariner 2 (USA)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "1975年，金星9号（苏联）",
+            "en": "1975, Venera 9 (USSR)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "2021年发射的贝皮科伦布号（ESA/JAXA，飞掠中）",
+            "en": "BepiColombo (ESA/JAXA, flyby en route to Mercury, launched 2021)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 苏联的金星探测器曾成功在金星表面着陆并传回照片，是唯一在金星表面成功工作的探测器。",
+        "en": "※ Soviet Venera landers successfully touched down on Venus and returned images—the only landers to have operated on the surface."
+      }
+    }
+  ]
+}

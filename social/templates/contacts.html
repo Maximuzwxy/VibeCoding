@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}通讯录 - Social{% endblock %}
+
+{% block content %}
+<div class="contacts-page">
+    <div class="page-header">
+        <h1>通讯录</h1>
+        <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" id="searchInput" placeholder="搜索用户...">
+        </div>
+    </div>
+    
+    <div id="friendRequestsSection" class="friend-requests-section" style="display: none;">
+        <div class="section-header">
+            <h3>好友请求</h3>
+            <span id="requestBadge" class="badge" style="display: none;">0</span>
+        </div>
+        <div id="friendRequestsList" class="friend-requests-list"></div>
+    </div>
+    
+    <div class="section-header">
+        <h3>我的好友</h3>
+    </div>
+    <div id="friendsList" class="friends-list">
+        <div class="empty-state">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <p>还没有好友</p>
+            <p class="empty-hint">搜索用户并发送好友请求</p>
+        </div>
+    </div>
+    
+    <div id="searchResults" class="search-results" style="display: none;">
+        <div class="section-header">
+            <h3>搜索结果</h3>
+        </div>
+        <div id="searchResultsList" class="search-results-list"></div>
+    </div>
+</div>
+{% endblock %}

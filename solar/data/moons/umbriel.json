@@ -1,0 +1,401 @@
+{
+  "id": "umbriel",
+  "name": {
+    "zh": "天卫三",
+    "en": "Umbriel"
+  },
+  "icon": "🪐",
+  "theme_color": "#3a3a4a",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "天王星的卫星",
+            "en": "Moon of Uranus"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "1,169.4 km",
+            "en": "1,169.4 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.172 × 10²¹ kg",
+            "en": "1.172 × 10²¹ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "8.37 × 10⁸ km³",
+            "en": "8.37 × 10⁸ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.39 g/cm³",
+            "en": "1.39 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.23 m/s²",
+            "en": "0.23 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫三是天王星第三大卫星，表面异常黑暗，反射率仅约16%。",
+        "en": "※ Umbriel is Uranus's third-largest moon, with an unusually dark surface reflecting only about 16% of sunlight."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "4.144 天（同步自转）",
+            "en": "4.144 days (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "4.144 天",
+            "en": "4.144 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "4.67 km/s",
+            "en": "4.67 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0039",
+            "en": "0.0039"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.128°（相对于天王星赤道）",
+            "en": "0.128° (relative to Uranus's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫三的轨道几乎完美圆形，离心率极低，是天王星主要卫星中最接近正圆的轨道之一。",
+        "en": "※ Umbriel's orbit is nearly perfectly circular, with one of the lowest eccentricities among Uranus's major moons."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "约 -195 °C（78 K）",
+            "en": "Approx. -195 °C (78 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 -195 °C",
+            "en": "Approx. -195 °C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "无大气层",
+            "en": "No atmosphere"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "极弱或不存在",
+            "en": "Negligible or absent"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫三表面覆盖着深色物质，可能是碳质或有机化合物，使其成为天王星系统中反射率最低的卫星之一。",
+        "en": "※ Umbriel's surface is coated with dark material, possibly carbonaceous or organic compounds, making it one of the least reflective moons in the Uranian system."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕天王星公转）",
+            "en": "N/A (orbits Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用",
+            "en": "N/A"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "266,000 km",
+            "en": "266,000 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.00178 AU",
+            "en": "0.00178 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 1.48 秒（从天王星）",
+            "en": "About 1.48 seconds (from Uranus)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "天卫三本身是天王星的卫星",
+            "en": "Umbriel is itself a moon of Uranus"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无已知子卫星",
+            "en": "No known sub-satellites"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫三是天王星已知27颗卫星中的第三大，也是距离天王星第三近的主要卫星。",
+        "en": "※ Umbriel is the third-largest among Uranus's 27 known moons and the third-closest major moon to the planet."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "古老撞击坑、暗色平原、峡谷",
+            "en": "Ancient craters, dark plains, canyons"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "沃科洛陨击坑（直径约210 km）",
+            "en": "Wokolo crater (approx. 210 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约40亿年",
+            "en": "About 4 billion years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "未知，但地形起伏相对平缓",
+            "en": "Unknown, but terrain relief is relatively subdued"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫三表面有一个明亮的环状结构——荧光环（Fluorescent Ring），成因至今未解。",
+        "en": "※ Umbriel features a bright ring-shaped structure called the 'Fluorescent Ring', whose origin remains unexplained."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1851年10月24日，威廉·拉塞尔",
+            "en": "October 24, 1851, by William Lassell"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1986年1月24日，旅行者2号",
+            "en": "January 24, 1986, Voyager 2"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "尚未有探测器入轨",
+            "en": "No orbiter yet"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "无活跃任务；未来计划：天王星轨道器（2030年代）",
+            "en": "No active mission; future: Uranus Orbiter (2030s)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 旅行者2号是迄今为止唯一飞掠天卫三的探测器，传回了其表面约40%的影像。",
+        "en": "※ Voyager 2 is the only spacecraft to have flown by Umbriel, imaging about 40% of its surface."
+      }
+    }
+  ]
+}

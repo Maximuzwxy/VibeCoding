@@ -1,0 +1,401 @@
+{
+  "id": "jupiter",
+  "name": {
+    "zh": "木星",
+    "en": "Jupiter"
+  },
+  "icon": "♃",
+  "theme_color": "#d4a574",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "气态巨行星",
+            "en": "Gas Giant"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "142,984 km",
+            "en": "142,984 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.898 × 10²⁷ kg",
+            "en": "1.898 × 10²⁷ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "1.431 × 10¹⁵ km³",
+            "en": "1.431 × 10¹⁵ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.326 g/cm³",
+            "en": "1.326 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "24.79 m/s²",
+            "en": "24.79 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木星的质量是太阳系其他所有行星总和的2.5倍",
+        "en": "※ Jupiter's mass is 2.5 times that of all other planets in the Solar System combined"
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "9小时55分30秒",
+            "en": "9h 55m 30s"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "11.86年",
+            "en": "11.86 years"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "13.07 km/s",
+            "en": "13.07 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0489",
+            "en": "0.0489"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "1.303°",
+            "en": "1.303°"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木星是太阳系自转最快的行星，赤道自转速度高达45,583 km/h",
+        "en": "※ Jupiter is the fastest rotating planet in the Solar System, with equatorial rotation speed of 45,583 km/h"
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "云顶约 -145°C",
+            "en": "Cloud top approx -145°C"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "-108°C",
+            "en": "-108°C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "云顶 0.7 bar（无固态表面）",
+            "en": "Cloud top 0.7 bar (no solid surface)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "氢 89.8%, 氦 10.2%, 微量甲烷、氨、水汽",
+            "en": "H₂ 89.8%, He 10.2%, trace CH₄, NH₃, H₂O"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "约 4.3 高斯（地球的14倍）",
+            "en": "~4.3 Gauss (14× Earth's)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木星大红斑是一个持续数百年的巨型反气旋风暴，面积可容纳整个地球",
+        "en": "※ The Great Red Spot is a giant anticyclonic storm lasting centuries, large enough to swallow Earth"
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "7.405 × 10⁸ km",
+            "en": "7.405 × 10⁸ km"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "8.166 × 10⁸ km",
+            "en": "8.166 × 10⁸ km"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "7.786 × 10⁸ km",
+            "en": "7.786 × 10⁸ km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "5.203 AU",
+            "en": "5.203 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 43 分钟",
+            "en": "~43 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "95颗（截至2024年）",
+            "en": "95 (as of 2024)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "木卫一（Io）、木卫二（Europa）、木卫三（Ganymede）、木卫四（Callisto）等",
+            "en": "Io, Europa, Ganymede, Callisto, etc."
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫三是太阳系最大的卫星，直径大于水星；木卫二拥有地下液态海洋，是寻找地外生命的热点",
+        "en": "※ Ganymede is the largest moon in the Solar System, bigger than Mercury; Europa has a subsurface liquid ocean, a prime target for astrobiology"
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "无固态表面，由氢和氦组成的气态/液态层，内部可能是金属氢",
+            "en": "No solid surface; gaseous/liquid layers of H₂ and He, interior likely metallic hydrogen"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "无固态表面，无传统撞击坑",
+            "en": "No solid surface, no traditional impact craters"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "不适用（气态行星）",
+            "en": "N/A (gas planet)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "不适用（无固态地形）",
+            "en": "N/A (no solid terrain)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木星内部可能含有金属氢层，其巨大的压力将氢转化为导电的液态金属",
+        "en": "※ Jupiter's interior likely contains a layer of metallic hydrogen, where immense pressure turns hydrogen into a conductive liquid metal"
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "古代文明已知，伽利略·伽利雷于1610年首次用望远镜详细观测",
+            "en": "Known since antiquity; first telescopic observation by Galileo Galilei in 1610"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1973年12月，先驱者10号",
+            "en": "December 1973, Pioneer 10"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "1995年12月，伽利略号",
+            "en": "December 1995, Galileo"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "朱诺号（Juno，2016年入轨，仍在运行）",
+            "en": "Juno (entered orbit 2016, still active)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 朱诺号是首个使用太阳能电池板运行在木星轨道上的探测器，其轨道设计使其能避开木星强辐射带",
+        "en": "※ Juno is the first solar-powered spacecraft to orbit Jupiter, with an orbit designed to avoid the planet's intense radiation belts"
+      }
+    }
+  ]
+}

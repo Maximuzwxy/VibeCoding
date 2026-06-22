@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_titania_001",
+      "question": {
+        "zh": "天卫四（Titania）是天王星的哪一颗卫星？",
+        "en": "Titania is which moon of Uranus?"
+      },
+      "options": [
+        {
+          "zh": "最大的一颗",
+          "en": "The largest one"
+        },
+        {
+          "zh": "第二大的",
+          "en": "The second largest"
+        },
+        {
+          "zh": "第三大的",
+          "en": "The third largest"
+        },
+        {
+          "zh": "最小的",
+          "en": "The smallest"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫四是天王星最大的卫星，直径约1578公里。",
+        "en": "Titania is the largest moon of Uranus, with a diameter of about 1578 km."
+      }
+    },
+    {
+      "id": "q_titania_002",
+      "question": {
+        "zh": "天卫四的轨道距离天王星大约多远？",
+        "en": "What is the approximate orbital distance of Titania from Uranus?"
+      },
+      "options": [
+        {
+          "zh": "约 10,000 公里",
+          "en": "About 10,000 km"
+        },
+        {
+          "zh": "约 44,000 公里",
+          "en": "About 44,000 km"
+        },
+        {
+          "zh": "约 436,000 公里",
+          "en": "About 436,000 km"
+        },
+        {
+          "zh": "约 1,000,000 公里",
+          "en": "About 1,000,000 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天卫四的平均轨道半径约为436,000公里，是天王星最外层的大卫星之一。",
+        "en": "Titania orbits at an average distance of about 436,000 km, making it one of Uranus's outermost large moons."
+      }
+    },
+    {
+      "id": "q_titania_003",
+      "question": {
+        "zh": "天卫四的表面主要由什么物质构成？",
+        "en": "What is the primary composition of Titania's surface?"
+      },
+      "options": [
+        {
+          "zh": "纯冰",
+          "en": "Pure ice"
+        },
+        {
+          "zh": "水冰和岩石混合物",
+          "en": "A mixture of water ice and rock"
+        },
+        {
+          "zh": "液态甲烷",
+          "en": "Liquid methane"
+        },
+        {
+          "zh": "铁和镍",
+          "en": "Iron and nickel"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫四由大约等比例的水冰和岩石组成，表面覆盖着水冰。",
+        "en": "Titania is composed of roughly equal parts water ice and rock, with a surface covered by water ice."
+      }
+    },
+    {
+      "id": "q_titania_004",
+      "question": {
+        "zh": "天卫四的表面环境温度大约是多少？",
+        "en": "What is the approximate surface temperature on Titania?"
+      },
+      "options": [
+        {
+          "zh": "约 -200°C",
+          "en": "About -200°C"
+        },
+        {
+          "zh": "约 -100°C",
+          "en": "About -100°C"
+        },
+        {
+          "zh": "约 0°C",
+          "en": "About 0°C"
+        },
+        {
+          "zh": "约 100°C",
+          "en": "About 100°C"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫四表面温度极低，平均约为 -200°C（约70 K）。",
+        "en": "Titania's surface is extremely cold, with an average temperature of about -200°C (70 K)."
+      }
+    },
+    {
+      "id": "q_titania_005",
+      "question": {
+        "zh": "天卫四上最显著的地貌特征是什么？",
+        "en": "What is the most prominent surface feature on Titania?"
+      },
+      "options": [
+        {
+          "zh": "巨大的火山",
+          "en": "Huge volcanoes"
+        },
+        {
+          "zh": "一个巨大的峡谷系统",
+          "en": "A large canyon system"
+        },
+        {
+          "zh": "环形山密集的高地",
+          "en": "Cratered highlands"
+        },
+        {
+          "zh": "冰火山喷发平原",
+          "en": "Cryovolcanic plains"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫四上有一个名为墨西拿峡谷（Messina Chasma）的巨大峡谷系统，长度超过1000公里。",
+        "en": "Titania features a large canyon system called Messina Chasma, which extends over 1000 km."
+      }
+    },
+    {
+      "id": "q_titania_006",
+      "question": {
+        "zh": "天卫四是由谁在什么时候发现的？",
+        "en": "Who discovered Titania and when?"
+      },
+      "options": [
+        {
+          "zh": "伽利略·伽利莱，1610年",
+          "en": "Galileo Galilei, 1610"
+        },
+        {
+          "zh": "威廉·赫歇尔，1787年",
+          "en": "William Herschel, 1787"
+        },
+        {
+          "zh": "约翰·柯西·亚当斯，1846年",
+          "en": "John Couch Adams, 1846"
+        },
+        {
+          "zh": "杰拉德·柯伊伯，1948年",
+          "en": "Gerard Kuiper, 1948"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫四由英国天文学家威廉·赫歇尔于1787年1月11日发现。",
+        "en": "Titania was discovered by British astronomer William Herschel on January 11, 1787."
+      }
+    },
+    {
+      "id": "q_titania_007",
+      "question": {
+        "zh": "天卫四的轨道相对于天王星赤道面的倾角如何？",
+        "en": "What is the orbital inclination of Titania relative to Uranus's equator?"
+      },
+      "options": [
+        {
+          "zh": "几乎为零，与赤道面共面",
+          "en": "Nearly zero, coplanar with the equator"
+        },
+        {
+          "zh": "约 45 度",
+          "en": "About 45 degrees"
+        },
+        {
+          "zh": "约 90 度",
+          "en": "About 90 degrees"
+        },
+        {
+          "zh": "约 180 度（逆行）",
+          "en": "About 180 degrees (retrograde)"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫四的轨道倾角非常小（约0.34°），几乎与天王星的赤道面共面，属于规则卫星。",
+        "en": "Titania has a very low orbital inclination (about 0.34°), nearly coplanar with Uranus's equator, making it a regular moon."
+      }
+    },
+    {
+      "id": "q_titania_008",
+      "question": {
+        "zh": "天卫四的内部结构可能包含什么？",
+        "en": "What might Titania's internal structure include?"
+      },
+      "options": [
+        {
+          "zh": "完全固态的冰",
+          "en": "Completely solid ice"
+        },
+        {
+          "zh": "岩石核心和冰质地幔",
+          "en": "A rocky core and an icy mantle"
+        },
+        {
+          "zh": "液态金属核心",
+          "en": "A liquid metal core"
+        },
+        {
+          "zh": "全岩石结构",
+          "en": "A fully rocky structure"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫四很可能有一个岩石核心，周围包裹着冰质地幔，内部可能存在液态水层。",
+        "en": "Titania likely has a rocky core surrounded by an icy mantle, and may contain a subsurface liquid water layer."
+      }
+    },
+    {
+      "id": "q_titania_009",
+      "question": {
+        "zh": "哪艘探测器曾近距离探测过天卫四？",
+        "en": "Which spacecraft has performed a close flyby of Titania?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "旅行者2号于1986年1月飞越天王星系统，对天卫四进行了近距离探测和成像。",
+        "en": "Voyager 2 flew by the Uranian system in January 1986, conducting close-up observations and imaging of Titania."
+      }
+    },
+    {
+      "id": "q_titania_010",
+      "question": {
+        "zh": "天卫四的直径大约是多少？",
+        "en": "What is the approximate diameter of Titania?"
+      },
+      "options": [
+        {
+          "zh": "约 500 公里",
+          "en": "About 500 km"
+        },
+        {
+          "zh": "约 1000 公里",
+          "en": "About 1000 km"
+        },
+        {
+          "zh": "约 1578 公里",
+          "en": "About 1578 km"
+        },
+        {
+          "zh": "约 2700 公里",
+          "en": "About 2700 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天卫四的直径约为1578公里，是天王星最大的卫星，在太阳系中排名第八。",
+        "en": "Titania has a diameter of about 1578 km, making it the largest moon of Uranus and the eighth largest in the Solar System."
+      }
+    }
+  ]
+}

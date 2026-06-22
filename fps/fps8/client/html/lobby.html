@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS8 - 游戏大厅</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            color: #00d4ff;
+            font-size: 1.5em;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lobby-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .lobby-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .lobby-header h2 {
+            color: #00d4ff;
+        }
+
+        .create-btn {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border: none;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .create-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .refresh-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.2s;
+        }
+
+        .refresh-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .room-list {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .room-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .room-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .room-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .room-info h3 {
+            color: #00d4ff;
+            margin-bottom: 5px;
+        }
+
+        .room-info p {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        .join-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border: none;
+            color: #fff;
+            padding: 8px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .join-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #aaa;
+            padding: 40px;
+        }
+
+        .current-user {
+            color: #00d4ff;
+            margin-right: 15px;
+            font-size: 0.95em;
+        }
+
+        .change-user-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: all 0.2s;
+        }
+
+        .change-user-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>FPS8 - 游戏大厅</h1>
+        <button class="back-btn" onclick="goBack()">返回主页</button>
+    </div>
+
+    <div class="lobby-container">
+        <div class="lobby-header">
+            <h2>房间列表</h2>
+            <div>
+                <span class="current-user" id="current-user"></span>
+                <button class="change-user-btn" onclick="changeUser()">切换用户</button>
+                <button class="create-btn" onclick="createRoom()">创建房间</button>
+                <button class="refresh-btn" onclick="refreshRooms()">刷新</button>
+            </div>
+        </div>
+
+        <div class="room-list" id="room-list">
+            <div class="empty-message">暂无房间，点击"创建房间"开始游戏</div>
+        </div>
+    </div>
+
+    <script>
+        const SERVER_URL = window.location.origin;
+        let playerName = localStorage.getItem('fps8_player_name') || '';
+        let userId = localStorage.getItem('fps8_user_id') || '';
+
+        if (!playerName || !userId) {
+            window.location.href = 'login.html';
+        } else {
+            document.getElementById('current-user').textContent = '当前用户: ' + playerName;
+        }
+
+        function goBack() {
+            window.location.href = '../index.html';
+        }
+
+        function changeUser() {
+            localStorage.removeItem('fps8_user_id');
+            localStorage.removeItem('fps8_player_name');
+            window.location.href = 'login.html';
+        }
+
+        async function createRoom() {
+            if (!playerName || !userId) {
+                alert('请先登录');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            try {
+                const response = await fetch(`${SERVER_URL}/api/rooms`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ host_name: playerName, host_id: userId })
+                });
+
+                const data = await response.json();
+                console.log('[Lobby] Room created:', data.room_id);
+                window.location.href = `room.html?room_id=${data.room_id}&host=true&name=${encodeURIComponent(playerName)}&user_id=${encodeURIComponent(userId)}`;
+            } catch (error) {
+                console.error('[Lobby] Failed to create room:', error);
+                alert('创建房间失败，请检查服务器是否运行');
+            }
+        }
+
+        async function refreshRooms() {
+            try {
+                const response = await fetch(`${SERVER_URL}/api/rooms`);
+                const rooms = await response.json();
+
+                const roomList = document.getElementById('room-list');
+
+                if (rooms.length === 0) {
+                    roomList.innerHTML = '<div class="empty-message">暂无房间，点击"创建房间"开始游戏</div>';
+                    return;
+                }
+
+                roomList.innerHTML = rooms.map(room => `
+                    <div class="room-item">
+                        <div class="room-info">
+                            <h3>房间 ${room.room_id}</h3>
+                            <p>房主: ${room.host_name} | 玩家: ${room.player_count} | 蓝方: ${room.blue_count} | 红方: ${room.red_count}</p>
+                        </div>
+                        <button class="join-btn" onclick="joinRoom('${room.room_id}')">加入</button>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('[Lobby] Failed to refresh rooms:', error);
+            }
+        }
+
+        async function joinRoom(roomId) {
+            if (!playerName || !userId) {
+                alert('请先登录');
+                window.location.href = 'login.html';
+                return;
+            }
+            window.location.href = `room.html?room_id=${roomId}&host=false&name=${encodeURIComponent(playerName)}&user_id=${encodeURIComponent(userId)}`;
+        }
+
+        refreshRooms();
+    </script>
+</body>
+</html>

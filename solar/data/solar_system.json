@@ -1,0 +1,75 @@
+{
+  "id": "solar_system",
+  "name": { "zh": "太阳系", "en": "Solar System" },
+  "icon": "🌌",
+  "theme_color": "#ffdd00",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本信息", "en": "📊 Basic Information"},
+      "items": [
+        {"label": {"zh": "形成时间", "en": "Formation"}, "value": {"zh": "46 亿年前", "en": "4.6 billion years ago"}},
+        {"label": {"zh": "位置", "en": "Location"}, "value": {"zh": "银河系猎户臂", "en": "Orion Arm, Milky Way"}},
+        {"label": {"zh": "距银河中心", "en": "Distance to Galactic Center"}, "value": {"zh": "2.6 万光年", "en": "26,000 light years"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "2.3 亿年", "en": "230 million years"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "220 km/s", "en": "220 km/s"}}
+      ]
+    },
+    {
+      "title": {"zh": "☀️ 太阳", "en": "☀️ The Sun"},
+      "items": [
+        {"label": {"zh": "类型", "en": "Type"}, "value": {"zh": "黄矮星 (G型主序星)", "en": "G-type Main-Sequence Star"}},
+        {"label": {"zh": "直径", "en": "Diameter"}, "value": {"zh": "1,392,700 km", "en": "1,392,700 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "1.989×10³⁰ kg", "en": "1.989×10³⁰ kg"}},
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "5,500°C", "en": "5,500°C"}},
+        {"label": {"zh": "核心温度", "en": "Core Temperature"}, "value": {"zh": "1,500万°C", "en": "15 million°C"}}
+      ],
+      "note": {"zh": "※ 占太阳系总质量的 99.86%", "en": "※ 99.86% of Solar System mass"}
+    },
+    {
+      "title": {"zh": "🪐 八大行星", "en": "🪐 Eight Planets"},
+      "items": [
+        {"label": {"zh": "类地行星", "en": "Terrestrial Planets"}, "value": {"zh": "4 颗 (水金地火)", "en": "4 (Mercury, Venus, Earth, Mars)"}},
+        {"label": {"zh": "气态巨行星", "en": "Gas Giants"}, "value": {"zh": "2 颗 (木星土星)", "en": "2 (Jupiter, Saturn)"}},
+        {"label": {"zh": "冰巨行星", "en": "Ice Giants"}, "value": {"zh": "2 颗 (天王海王)", "en": "2 (Uranus, Neptune)"}},
+        {"label": {"zh": "卫星总数", "en": "Total Moons"}, "value": {"zh": "290+ 颗", "en": "290+ known moons"}}
+      ],
+      "note": {"zh": "※ 冥王星于2006年被重新分类为矮行星", "en": "※ Pluto was reclassified as a dwarf planet in 2006"}
+    },
+    {
+      "title": {"zh": "☄️ 其他天体", "en": "☄️ Other Bodies"},
+      "items": [
+        {"label": {"zh": "小行星带", "en": "Asteroid Belt"}, "value": {"zh": "火星与木星之间", "en": "Between Mars & Jupiter"}},
+        {"label": {"zh": "柯伊伯带", "en": "Kuiper Belt"}, "value": {"zh": "海王星轨道外", "en": "Beyond Neptune's orbit"}},
+        {"label": {"zh": "矮行星", "en": "Dwarf Planets"}, "value": {"zh": "5 颗确认", "en": "5 confirmed"}},
+        {"label": {"zh": "彗星", "en": "Comets"}, "value": {"zh": "数千颗", "en": "Thousands"}}
+      ]
+    },
+    {
+      "title": {"zh": "🚀 探索历史", "en": "🚀 Exploration History"},
+      "items": [
+        {"label": {"zh": "第一颗人造卫星", "en": "First Satellite"}, "value": {"zh": "1957年", "en": "1957"}},
+        {"label": {"zh": "阿波罗11号登月", "en": "Apollo 11"}, "value": {"zh": "1969年", "en": "1969"}},
+        {"label": {"zh": "旅行者号发射", "en": "Voyager Launch"}, "value": {"zh": "1977年", "en": "1977"}}
+      ]
+    }
+  ],
+  "sun": {
+    "name": { "zh": "太阳", "en": "Sun" },
+    "type": { "zh": "黄矮星 (G型主序星)", "en": "G-type Main-Sequence Star" },
+    "diameter": { "zh": "1,392,700 km", "en": "1,392,700 km" },
+    "mass": { "zh": "1.989×10³⁰ kg", "en": "1.989×10³⁰ kg" },
+    "surface_temp": { "zh": "5,500°C", "en": "5,500°C" },
+    "core_temp": { "zh": "1,500万°C", "en": "15 million°C" },
+    "age": { "zh": "46亿年", "en": "4.6 billion years" }
+  },
+  "planets": [
+    { "name": { "zh": "水星", "en": "Mercury" }, "color": "#b5b5b5", "type": "terrestrial", "distance_au": "0.39 AU", "moons": 0, "axial_tilt": "0.03°" },
+    { "name": { "zh": "金星", "en": "Venus" }, "color": "#ffc649", "type": "terrestrial", "distance_au": "0.72 AU", "moons": 0, "axial_tilt": "177.4°" },
+    { "name": { "zh": "地球", "en": "Earth" }, "color": "#4da6ff", "type": "terrestrial", "distance_au": "1.00 AU", "moons": 1, "axial_tilt": "23.44°" },
+    { "name": { "zh": "火星", "en": "Mars" }, "color": "#c15a3a", "type": "terrestrial", "distance_au": "1.52 AU", "moons": 2, "axial_tilt": "25.19°" },
+    { "name": { "zh": "木星", "en": "Jupiter" }, "color": "#d8ca9d", "type": "gas_giant", "distance_au": "5.20 AU", "moons": 95, "axial_tilt": "3.13°" },
+    { "name": { "zh": "土星", "en": "Saturn" }, "color": "#ead6b8", "type": "gas_giant", "distance_au": "9.54 AU", "moons": 274, "axial_tilt": "26.73°", "has_rings": true },
+    { "name": { "zh": "天王星", "en": "Uranus" }, "color": "#4fd0e7", "type": "ice_giant", "distance_au": "19.2 AU", "moons": 28, "axial_tilt": "97.77°" },
+    { "name": { "zh": "海王星", "en": "Neptune" }, "color": "#2244ff", "type": "ice_giant", "distance_au": "30.1 AU", "moons": 16, "axial_tilt": "28.32°" }
+  ]
+}

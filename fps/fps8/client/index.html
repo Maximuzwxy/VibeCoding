@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS8 - 主菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .menu-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #00d4ff;
+        }
+
+        .subtitle {
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .mode-btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .mode-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .single-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+        }
+
+        .single-btn:hover {
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .multi-btn {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+        }
+
+        .multi-btn:hover {
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .mode-desc {
+            font-size: 0.8em;
+            color: #aaa;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>FPS8</h1>
+        <p class="subtitle">选择游戏模式</p>
+
+        <button class="mode-btn single-btn" onclick="startSinglePlayer()">
+            单机模式
+            <div class="mode-desc">与 NPC 对战</div>
+        </button>
+
+        <button class="mode-btn multi-btn" onclick="startMultiPlayer()">
+            联网模式
+            <div class="mode-desc">与其他玩家在线对战</div>
+        </button>
+    </div>
+
+    <script>
+        function startSinglePlayer() {
+            window.location.href = 'html/config.html';
+        }
+
+        function startMultiPlayer() {
+            window.location.href = 'html/login.html';
+        }
+    </script>
+</body>
+</html>

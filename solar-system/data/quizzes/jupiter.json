@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_jup_001",
+      "question": {"zh": "木星是太阳系中最大的行星，它的直径约为多少？", "en": "Jupiter is the largest planet in the Solar System. What is its approximate diameter?"},
+      "options": [
+        {"zh": "142,984 km", "en": "142,984 km"},
+        {"zh": "120,000 km", "en": "120,000 km"},
+        {"zh": "98,000 km", "en": "98,000 km"},
+        {"zh": "156,000 km", "en": "156,000 km"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "木星的赤道直径约为 142,984 公里，是地球直径的 11 倍多。", "en": "Jupiter's equatorial diameter is approximately 142,984 kilometers, more than 11 times that of Earth."}
+    },
+    {
+      "id": "q_jup_002",
+      "question": {"zh": "木星的自转周期是多少？", "en": "What is Jupiter's rotation period?"},
+      "options": [
+        {"zh": "约 24 小时", "en": "About 24 hours"},
+        {"zh": "约 9 小时 55 分", "en": "About 9 hours 55 minutes"},
+        {"zh": "约 16 小时", "en": "About 16 hours"},
+        {"zh": "约 12 小时", "en": "About 12 hours"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木星是太阳系中自转最快的行星，自转周期约为 9 小时 55 分钟。", "en": "Jupiter is the fastest-spinning planet in the Solar System, with a rotation period of about 9 hours and 55 minutes."}
+    },
+    {
+      "id": "q_jup_003",
+      "question": {"zh": "木星著名的大红斑是什么？", "en": "What is Jupiter's famous Great Red Spot?"},
+      "options": [
+        {"zh": "一座活火山", "en": "An active volcano"},
+        {"zh": "一个巨型风暴气旋", "en": "A giant storm cyclone"},
+        {"zh": "一个陨石坑", "en": "An impact crater"},
+        {"zh": "一片海洋", "en": "An ocean"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "大红斑是一个持续存在了至少 350 年的巨型反气旋风暴，尺寸比地球还大。", "en": "The Great Red Spot is a massive anticyclonic storm that has existed for at least 350 years, larger than Earth."}
+    },
+    {
+      "id": "q_jup_004",
+      "question": {"zh": "木星有多少颗已确认的卫星（截至 2024 年）？", "en": "How many confirmed moons does Jupiter have (as of 2024)?"},
+      "options": [
+        {"zh": "67 颗", "en": "67 moons"},
+        {"zh": "79 颗", "en": "79 moons"},
+        {"zh": "95 颗", "en": "95 moons"},
+        {"zh": "82 颗", "en": "82 moons"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "截至 2024 年，木星已确认有 95 颗卫星，是太阳系中卫星最多的行星。", "en": "As of 2024, Jupiter has 95 confirmed moons, making it the planet with the most moons in the Solar System."}
+    },
+    {
+      "id": "q_jup_005",
+      "question": {"zh": "以下哪颗不是木星的伽利略卫星？", "en": "Which of the following is NOT one of Jupiter's Galilean moons?"},
+      "options": [
+        {"zh": "木卫一（伊奥）", "en": "Io"},
+        {"zh": "木卫二（欧罗巴）", "en": "Europa"},
+        {"zh": "木卫三（盖尼米德）", "en": "Ganymede"},
+        {"zh": "木卫六（希玛利亚）", "en": "Himalia"}
+      ],
+      "answer": 3,
+      "explanation": {"zh": "伽利略卫星是木卫一、木卫二、木卫三和木卫四，由伽利略于 1610 年发现。木卫六是较小的不规则卫星。", "en": "The Galilean moons are Io, Europa, Ganymede, and Callisto, discovered by Galileo in 1610. Himalia is a smaller irregular moon."}
+    },
+    {
+      "id": "q_jup_006",
+      "question": {"zh": "太阳系中最大的卫星是哪颗？", "en": "Which is the largest moon in the Solar System?"},
+      "options": [
+        {"zh": "土卫六（泰坦）", "en": "Titan"},
+        {"zh": "木卫三（盖尼米德）", "en": "Ganymede"},
+        {"zh": "木卫四（卡利斯托）", "en": "Callisto"},
+        {"zh": "月球", "en": "Earth's Moon"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫三是太阳系中最大的卫星，直径约 5,268 公里，甚至比水星还大。", "en": "Ganymede is the largest moon in the Solar System, with a diameter of about 5,268 km, even larger than Mercury."}
+    },
+    {
+      "id": "q_jup_007",
+      "question": {"zh": "木星大气层的主要成分是什么？", "en": "What are the main components of Jupiter's atmosphere?"},
+      "options": [
+        {"zh": "氮气和氧气", "en": "Nitrogen and Oxygen"},
+        {"zh": "氢气和氦气", "en": "Hydrogen and Helium"},
+        {"zh": "二氧化碳和氮气", "en": "Carbon Dioxide and Nitrogen"},
+        {"zh": "甲烷和氨气", "en": "Methane and Ammonia"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木星大气层主要由氢（约 90%）和氦（约 10%）组成，与太阳的成分相似。", "en": "Jupiter's atmosphere is composed mainly of hydrogen (about 90%) and helium (about 10%), similar to the Sun's composition."}
+    },
+    {
+      "id": "q_jup_008",
+      "question": {"zh": "木星的云顶温度约为多少？", "en": "What is the approximate temperature of Jupiter's cloud tops?"},
+      "options": [
+        {"zh": "约 -145°C", "en": "About -145°C"},
+        {"zh": "约 -50°C", "en": "About -50°C"},
+        {"zh": "约 -200°C", "en": "About -200°C"},
+        {"zh": "约 0°C", "en": "About 0°C"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "木星云顶的温度约为 -145°C，但内部温度可高达约 24,000°C。", "en": "The temperature at Jupiter's cloud tops is approximately -145°C, but the internal temperature can reach about 24,000°C."}
+    },
+    {
+      "id": "q_jup_009",
+      "question": {"zh": "哪颗伽利略卫星被认为冰层下存在液态水海洋？", "en": "Which Galilean moon is believed to have a subsurface liquid water ocean beneath its ice layer?"},
+      "options": [
+        {"zh": "木卫一（伊奥）", "en": "Io"},
+        {"zh": "木卫二（欧罗巴）", "en": "Europa"},
+        {"zh": "木卫三（盖尼米德）", "en": "Ganymede"},
+        {"zh": "木卫四（卡利斯托）", "en": "Callisto"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫二的冰壳下存在全球性液态水海洋，是太阳系中最可能存在外星生命的地方之一。", "en": "Europa has a global subsurface ocean beneath its icy crust, making it one of the most promising places for potential extraterrestrial life in the Solar System."}
+    },
+    {
+      "id": "q_jup_010",
+      "question": {"zh": "木星完成一次公转需要多长时间？", "en": "How long does it take Jupiter to complete one orbit around the Sun?"},
+      "options": [
+        {"zh": "约 5 年", "en": "About 5 years"},
+        {"zh": "约 12 年", "en": "About 12 years"},
+        {"zh": "约 20 年", "en": "About 20 years"},
+        {"zh": "约 30 年", "en": "About 30 years"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木星公转周期约为 11.86 地球年，距离太阳约 5.2 天文单位。", "en": "Jupiter takes approximately 11.86 Earth years to complete one orbit, at a distance of about 5.2 astronomical units from the Sun."}
+    }
+  ]
+}

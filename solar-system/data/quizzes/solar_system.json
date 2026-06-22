@@ -1,0 +1,172 @@
+{
+  "questions": [
+    {
+      "id": "q_sun_001",
+      "question": {"zh": "太阳系中最大的行星是哪颗？", "en": "Which is the largest planet in the Solar System?"},
+      "options": [
+        {"zh": "土星", "en": "Saturn"},
+        {"zh": "木星", "en": "Jupiter"},
+        {"zh": "天王星", "en": "Uranus"},
+        {"zh": "海王星", "en": "Neptune"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木星是太阳系中最大的行星，直径约为 142,984 公里，质量是其他所有行星总和的 2.5 倍。", "en": "Jupiter is the largest planet in the Solar System, with a diameter of about 142,984 km and a mass 2.5 times that of all other planets combined."}
+    },
+    {
+      "id": "q_sun_002",
+      "question": {"zh": "太阳系有多少颗行星？", "en": "How many planets are there in the Solar System?"},
+      "options": [
+        {"zh": "7 颗", "en": "7"},
+        {"zh": "8 颗", "en": "8"},
+        {"zh": "9 颗", "en": "9"},
+        {"zh": "10 颗", "en": "10"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "太阳系有 8 颗行星：水星、金星、地球、火星、木星、土星、天王星、海王星。冥王星在 2006 年被重新分类为矮行星。", "en": "The Solar System has 8 planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune. Pluto was reclassified as a dwarf planet in 2006."}
+    },
+    {
+      "id": "q_sun_003",
+      "question": {"zh": "哪颗行星离太阳最近？", "en": "Which planet is closest to the Sun?"},
+      "options": [
+        {"zh": "金星", "en": "Venus"},
+        {"zh": "地球", "en": "Earth"},
+        {"zh": "水星", "en": "Mercury"},
+        {"zh": "火星", "en": "Mars"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "水星是离太阳最近的行星，平均距离约 5800 万公里。", "en": "Mercury is the closest planet to the Sun, with an average distance of about 58 million kilometers."}
+    },
+    {
+      "id": "q_sun_004",
+      "question": {"zh": "太阳的表面温度约为多少？", "en": "What is the approximate surface temperature of the Sun?"},
+      "options": [
+        {"zh": "3,500°C", "en": "3,500°C"},
+        {"zh": "5,500°C", "en": "5,500°C"},
+        {"zh": "7,500°C", "en": "7,500°C"},
+        {"zh": "10,000°C", "en": "10,000°C"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "太阳的表面温度约为 5,500°C，而核心温度高达 1,500 万°C。", "en": "The Sun's surface temperature is approximately 5,500°C, while its core temperature reaches 15 million°C."}
+    },
+    {
+      "id": "q_sun_005",
+      "question": {"zh": "哪颗行星被称为'红色星球'？", "en": "Which planet is known as the 'Red Planet'?"},
+      "options": [
+        {"zh": "金星", "en": "Venus"},
+        {"zh": "火星", "en": "Mars"},
+        {"zh": "木星", "en": "Jupiter"},
+        {"zh": "土星", "en": "Saturn"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火星因其表面富含氧化铁（铁锈）而呈现红色，被称为'红色星球'。", "en": "Mars appears red due to iron oxide (rust) on its surface, earning it the nickname 'Red Planet'."}
+    },
+    {
+      "id": "q_sun_006",
+      "question": {"zh": "太阳系形成于约多少年前？", "en": "When was the Solar System formed?"},
+      "options": [
+        {"zh": "26 亿年前", "en": "2.6 billion years ago"},
+        {"zh": "36 亿年前", "en": "3.6 billion years ago"},
+        {"zh": "46 亿年前", "en": "4.6 billion years ago"},
+        {"zh": "56 亿年前", "en": "5.6 billion years ago"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "太阳系形成于约 46 亿年前，由一个巨大的分子云坍缩形成。", "en": "The Solar System formed approximately 4.6 billion years ago from the gravitational collapse of a giant molecular cloud."}
+    },
+    {
+      "id": "q_sun_007",
+      "question": {"zh": "哪颗行星有最明显的行星环？", "en": "Which planet has the most prominent ring system?"},
+      "options": [
+        {"zh": "木星", "en": "Jupiter"},
+        {"zh": "土星", "en": "Saturn"},
+        {"zh": "天王星", "en": "Uranus"},
+        {"zh": "海王星", "en": "Neptune"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土星拥有太阳系中最壮观、最明显的行星环系统，主要由冰粒和岩石碎片组成。", "en": "Saturn has the most spectacular and prominent ring system in the Solar System, composed mainly of ice particles and rocky debris."}
+    },
+    {
+      "id": "q_sun_008",
+      "question": {"zh": "人类首次登月是在哪一年？", "en": "In which year did humans first land on the Moon?"},
+      "options": [
+        {"zh": "1967 年", "en": "1967"},
+        {"zh": "1969 年", "en": "1969"},
+        {"zh": "1971 年", "en": "1971"},
+        {"zh": "1973 年", "en": "1973"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "1969 年 7 月 20 日，阿波罗 11 号任务成功将人类首次送上月球。", "en": "On July 20, 1969, the Apollo 11 mission successfully landed humans on the Moon for the first time."}
+    },
+    {
+      "id": "q_sun_009",
+      "question": {"zh": "太阳系位于银河系的哪个位置？", "en": "Where is the Solar System located in the Milky Way?"},
+      "options": [
+        {"zh": "银河系中心", "en": "Galactic Center"},
+        {"zh": "猎户臂", "en": "Orion Arm"},
+        {"zh": "英仙臂", "en": "Perseus Arm"},
+        {"zh": "人马臂", "en": "Sagittarius Arm"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "太阳系位于银河系的猎户臂上，距离银河系中心约 2.6 万光年。", "en": "The Solar System is located in the Orion Arm of the Milky Way, about 26,000 light-years from the galactic center."}
+    },
+    {
+      "id": "q_sun_010",
+      "question": {"zh": "小行星带位于哪两颗行星之间？", "en": "Between which two planets is the asteroid belt located?"},
+      "options": [
+        {"zh": "地球和火星", "en": "Earth and Mars"},
+        {"zh": "金星和地球", "en": "Venus and Earth"},
+        {"zh": "火星和木星", "en": "Mars and Jupiter"},
+        {"zh": "木星和土星", "en": "Jupiter and Saturn"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "小行星带位于火星和木星轨道之间，包含数百万颗大小不一的小行星。", "en": "The asteroid belt is located between the orbits of Mars and Jupiter, containing millions of asteroids of various sizes."}
+    },
+    {
+      "id": "q_sun_011",
+      "question": {"zh": "太阳系中唯一已知存在稳定液态水表面的行星是哪一颗？", "en": "Which planet in the Solar System is the only one known to have stable liquid water on its surface?"},
+      "options": [
+        {"zh": "金星", "en": "Venus"},
+        {"zh": "地球", "en": "Earth"},
+        {"zh": "火星", "en": "Mars"},
+        {"zh": "木星", "en": "Jupiter"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "地球是太阳系中唯一已确认拥有大面积稳定液态水（海洋、湖泊）长期存在于地表的行星。金星表面温度过高且干燥，火星仅有短暂卤水痕迹和地下冰，木星为气态巨行星无固体表面。", "en": "Earth is the only planet confirmed to have large areas of stable liquid water (oceans, lakes)长期 existing on its surface. Venus is too hot and dry, Mars has only transient brine traces and subsurface ice, and Jupiter is a gas giant with no solid surface."}
+    },
+    {
+      "id": "q_sun_012",
+      "question": {"zh": "土卫六（泰坦）的大气层在太阳系卫星中最为独特，其主要成分是什么？", "en": "What is the main component of Titan's atmosphere, which is the most unique among satellites in the Solar System?"},
+      "options": [
+        {"zh": "氮气与甲烷", "en": "Nitrogen and Methane"},
+        {"zh": "二氧化碳与氮气", "en": "Carbon Dioxide and Nitrogen"},
+        {"zh": "氢气与氦气", "en": "Hydrogen and Helium"},
+        {"zh": "氧气与氩气", "en": "Oxygen and Argon"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "土卫六拥有太阳系所有卫星中最浓厚的大气层，表面气压约为地球的 1.5 倍，其中约 95% 为氮气，约 5% 为甲烷，还存在复杂有机 haze 和碳氢化合物云系。", "en": "Titan has the thickest atmosphere of all satellites in the Solar System, with surface pressure about 1.5 times that of Earth. It consists of approximately 95% nitrogen and 5% methane, with complex organic haze and hydrocarbon clouds."}
+    },
+    {
+      "id": "q_sun_013",
+      "question": {"zh": "太阳系中唯一已知存在液态水海洋（位于冰层之下）的卫星是哪一颗？", "en": "Which satellite in the Solar System is the only one known to have a liquid water ocean (beneath an ice layer)?"},
+      "options": [
+        {"zh": "木卫二（欧罗巴）", "en": "Europa"},
+        {"zh": "土卫六（泰坦）", "en": "Titan"},
+        {"zh": "木卫三（盖尼米德）", "en": "Ganymede"},
+        {"zh": "海卫一（特里同）", "en": "Triton"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "木卫二表面覆盖着厚厚的冰壳，但潮汐加热作用使其冰下存在全球性液态水海洋，已被伽利略号和哈勃望远镜等观测证据强烈支持。", "en": "Europa's surface is covered by a thick ice shell, but tidal heating creates a global subsurface liquid water ocean beneath it, strongly supported by observational evidence from the Galileo and Hubble telescopes."}
+    },
+    {
+      "id": "q_sun_014",
+      "question": {"en": "Which of the following celestial bodies is a 'dwarf planet' located in the Kuiper Belt?", "zh": "下列哪颗天体属于‘矮行星’且位于柯伊伯带？"},
+      "options": [
+        {"en": "Ceres", "zh": "谷神星"},
+        {"en": "Pluto", "zh": "冥王星"},
+        {"en": "Eris", "zh": "阋神星"},
+        {"en": "Makemake", "zh": "鸟神星"}
+      ],
+      "answer": 1,
+      "explanation": {"en": "Pluto was the prototype dwarf planet defined by the IAU in 2006 and resides in the classical Kuiper Belt; Ceres orbits in the asteroid belt, while Eris and Makemake are also Kuiper Belt dwarf planets—but Pluto is the archetypal, historically first-discovered, and dynamically canonical Kuiper Belt object among the options.", "zh": "冥王星是国际天文学联合会（IAU）2006年定义矮行星时的原型天体，轨道位于柯伊伯带内；谷神星位于小行星带，阋神星和鸟神星也属矮行星且在柯伊伯带，但题目要求‘属于且位于’——四个选项均为矮行星，但只有冥王星是最早被发现、最具代表性且明确位于经典柯伊伯带的成员。"}
+    }
+  ]
+}

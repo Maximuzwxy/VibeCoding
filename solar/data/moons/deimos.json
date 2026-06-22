@@ -1,0 +1,401 @@
+{
+  "id": "deimos",
+  "name": {
+    "zh": "火卫二",
+    "en": "Deimos"
+  },
+  "icon": "🌑",
+  "theme_color": "#8B7D6B",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "火星卫星",
+            "en": "Martian moon"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "约 12.4 千米",
+            "en": "≈ 12.4 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "约 1.48 × 10¹⁵ 千克",
+            "en": "≈ 1.48 × 10¹⁵ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "约 1.0 × 10³ 立方千米",
+            "en": "≈ 1.0 × 10³ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "约 1.47 克/立方厘米",
+            "en": "≈ 1.47 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "约 0.003 米/秒²",
+            "en": "≈ 0.003 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫二是太阳系中已知最小的卫星之一，形状不规则，类似一颗小行星。",
+        "en": "※ Deimos is one of the smallest known moons in the Solar System, irregularly shaped and resembling an asteroid."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "30.3 小时（同步自转）",
+            "en": "30.3 h (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "30.3 小时",
+            "en": "30.3 h"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "约 1.35 千米/秒",
+            "en": "≈ 1.35 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0002",
+            "en": "0.0002"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.93°（相对于火星赤道）",
+            "en": "0.93° (to Mars equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫二的轨道几乎为完美的圆形，离心率极低，是太阳系中最接近正圆的卫星轨道之一。",
+        "en": "※ Deimos has an almost perfectly circular orbit with extremely low eccentricity, one of the most circular moon orbits in the Solar System."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "约 -40°C（白天）至 -112°C（夜晚）",
+            "en": "≈ -40°C (day) to -112°C (night)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 -70°C",
+            "en": "≈ -70°C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "几乎为零（无大气层）",
+            "en": "Nearly zero (no atmosphere)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "可忽略不计",
+            "en": "Negligible"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 由于没有大气层，火卫二表面昼夜温差极大，且直接暴露于太阳风和宇宙射线中。",
+        "en": "※ With no atmosphere, Deimos experiences extreme temperature swings and is directly exposed to solar wind and cosmic rays."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "约 23,455 千米（距火星中心）",
+            "en": "≈ 23,455 km (from Mars center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "约 23,470 千米（距火星中心）",
+            "en": "≈ 23,470 km (from Mars center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "约 23,463 千米",
+            "en": "≈ 23,463 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.000157 AU",
+            "en": "0.000157 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 0.078 秒",
+            "en": "≈ 0.078 s"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（火卫二本身是火星的卫星）",
+            "en": "0 (Deimos itself is a moon of Mars)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "不适用",
+            "en": "N/A"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫二是火星两颗天然卫星中外侧的一颗，比内侧的火卫一（Phobos）更小且更远。",
+        "en": "※ Deimos is the outer of Mars' two natural moons, smaller and farther than the inner moon Phobos."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "布满撞击坑的灰色表面，覆盖厚层风化层",
+            "en": "Cratered grey surface covered with thick regolith"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "斯威夫特撞击坑（直径约 1 千米）",
+            "en": "Swift crater (≈ 1 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 30 亿年",
+            "en": "≈ 3 billion years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "无明显高峰，地形起伏较小",
+            "en": "No prominent peak; low relief"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫二表面覆盖着厚达数十米的细粒风化层，使其看起来比实际更平滑。",
+        "en": "※ Deimos is covered by a thick layer of fine regolith up to tens of meters deep, giving it a smoother appearance than it actually has."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1877年8月12日，由阿萨夫·霍尔发现",
+            "en": "August 12, 1877, by Asaph Hall"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1971年，水手9号",
+            "en": "1971, Mariner 9"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "无专用轨道器，但多次被火星轨道器观测",
+            "en": "No dedicated orbiter; observed by Mars orbiters"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "火星快车号、火星勘测轨道器（MRO）等",
+            "en": "Mars Express, Mars Reconnaissance Orbiter (MRO), etc."
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 火卫二直到水手9号任务才被首次详细成像，此前仅作为光点被观测。",
+        "en": "※ Deimos was first imaged in detail by Mariner 9; before that it was only seen as a point of light."
+      }
+    }
+  ]
+}

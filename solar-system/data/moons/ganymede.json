@@ -1,0 +1,68 @@
+{
+  "id": "ganymede",
+  "name": {"zh": "木卫三", "en": "Ganymede"},
+  "icon": "🌑",
+  "theme_color": "#a89888",
+  "accent_color": "#a89888",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "卫星类型", "en": "Satellite Type"}, "value": {"zh": "岩石 - 冰卫星", "en": "Rocky-Icy Moon"}},
+        {"label": {"zh": "直径", "en": "Diameter"}, "value": {"zh": "5,268 km", "en": "5,268 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "1.482×10²³kg", "en": "1.482×10²³kg"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "1.94 g/cm³", "en": "1.94 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "1.43 m/s²", "en": "1.43 m/s²"}}
+      ],
+      "note": {"zh": "※ 太阳系最大卫星，比水星还大", "en": "※ Largest moon in Solar System, larger than Mercury"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "7.15 天", "en": "7.15 days"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "7.15 天", "en": "7.15 days"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "10.88 km/s", "en": "10.88 km/s"}},
+        {"label": {"zh": "轨道离心率", "en": "Orbital Eccentricity"}, "value": {"zh": "0.0013", "en": "0.0013"}}
+      ],
+      "note": {"zh": "※ 潮汐锁定，始终以同一面朝向木星", "en": "※ Tidally locked, always shows same face to Jupiter"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-163°C ~ -113°C", "en": "-163°C to -113°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-138°C", "en": "-138°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "≈0.0001 kPa", "en": "≈0.0001 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "O₂ 微量", "en": "Trace O₂"}}
+      ],
+      "note": {"zh": "※ 有极稀薄的氧气大气", "en": "※ Has extremely thin oxygen atmosphere"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "轨道半径", "en": "Orbital Radius"}, "value": {"zh": "1,070,400 km", "en": "1,070,400 km"}},
+        {"label": {"zh": "与木星距离", "en": "Distance from Jupiter"}, "value": {"zh": "1,070,400 km", "en": "1,070,400 km"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "0.2°", "en": "0.2°"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "约 3.6 秒", "en": "About 3.6 seconds"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "最高峰", "en": "Highest Peak"}, "value": {"zh": "约 5,000 m", "en": "About 5,000 m"}},
+        {"label": {"zh": "最大撞击坑", "en": "Largest Crater"}, "value": {"zh": "盖尼米德撞击坑", "en": "Ganymede Crater"}},
+        {"label": {"zh": "冰壳厚度", "en": "Ice Shell Thickness"}, "value": {"zh": "约 150 km", "en": "About 150 km"}},
+        {"label": {"zh": "地下海洋", "en": "Subsurface Ocean"}, "value": {"zh": "可能存在", "en": "Likely exists"}}
+      ],
+      "note": {"zh": "※ 可能有地下咸水海洋，水量超过地球", "en": "※ May have subsurface saltwater ocean, more water than Earth"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现者", "en": "Discoverer"}, "value": {"zh": "1610 年伽利略", "en": "1610 by Galileo"}},
+        {"label": {"zh": "首次飞掠", "en": "First Flyby"}, "value": {"zh": "1973 年先驱者 10 号", "en": "1973 Pioneer 10"}},
+        {"label": {"zh": "详细探测", "en": "Detailed Survey"}, "value": {"zh": "1996-2003 伽利略号", "en": "1996-2003 Galileo"}},
+        {"label": {"zh": "未来任务", "en": "Future Mission"}, "value": {"zh": "2023 JUICE", "en": "2023 JUICE"}}
+      ]
+    }
+  ]
+}

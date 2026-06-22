@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_ganymede_001",
+      "question": {"zh": "木卫三的直径约为多少？", "en": "What is the approximate diameter of Ganymede?"},
+      "options": [
+        {"zh": "3,268 公里", "en": "3,268 km"},
+        {"zh": "4,268 公里", "en": "4,268 km"},
+        {"zh": "5,268 公里", "en": "5,268 km"},
+        {"zh": "6,268 公里", "en": "6,268 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫三的直径约为 5,268 公里，是太阳系最大的卫星，比水星（4,880 km）还大。", "en": "Ganymede's diameter is approximately 5,268 km, making it the largest moon in the Solar System, even larger than Mercury (4,880 km)."}
+    },
+    {
+      "id": "q_ganymede_002",
+      "question": {"zh": "木卫三绕木星公转一周需要多少天？", "en": "How many days does it take for Ganymede to orbit Jupiter once?"},
+      "options": [
+        {"zh": "3.15 天", "en": "3.15 days"},
+        {"zh": "5.15 天", "en": "5.15 days"},
+        {"zh": "7.15 天", "en": "7.15 days"},
+        {"zh": "9.15 天", "en": "9.15 days"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫三公转周期为 7.15 天，与自转周期相同（潮汐锁定）。", "en": "Ganymede's orbital period is 7.15 days, the same as its rotation period (tidally locked)."}
+    },
+    {
+      "id": "q_ganymede_003",
+      "question": {"zh": "木卫三是由谁发现的？", "en": "Who discovered Ganymede?"},
+      "options": [
+        {"zh": "开普勒", "en": "Kepler"},
+        {"zh": "伽利略", "en": "Galileo"},
+        {"zh": "牛顿", "en": "Newton"},
+        {"zh": "惠更斯", "en": "Huygens"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "伽利略于 1610 年发现木卫三，是伽利略卫星中最大的一颗。", "en": "Galileo discovered Ganymede in 1610, it is the largest of the Galilean moons."}
+    },
+    {
+      "id": "q_ganymede_004",
+      "question": {"zh": "木卫三距离木星约为多少？", "en": "What is the distance from Ganymede to Jupiter?"},
+      "options": [
+        {"zh": "570,400 km", "en": "570,400 km"},
+        {"zh": "770,400 km", "en": "770,400 km"},
+        {"zh": "1,070,400 km", "en": "1,070,400 km"},
+        {"zh": "1,370,400 km", "en": "1,370,400 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫三距离木星约 1,070,400 公里，是木星第三颗伽利略卫星。", "en": "Ganymede is approximately 1,070,400 km from Jupiter, the third Galilean moon."}
+    },
+    {
+      "id": "q_ganymede_005",
+      "question": {"zh": "木卫三的表面主要由什么组成？", "en": "What is Ganymede's surface mainly composed of?"},
+      "options": [
+        {"zh": "岩石和金属", "en": "Rock and metal"},
+        {"zh": "冰和岩石", "en": "Ice and rock"},
+        {"zh": "气体和尘埃", "en": "Gas and dust"},
+        {"zh": "液态水", "en": "Liquid water"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫三表面由冰和岩石混合组成，冰壳厚度约 150 公里。", "en": "Ganymede's surface is composed of ice and rock mixture, with an ice shell about 150 km thick."}
+    },
+    {
+      "id": "q_ganymede_006",
+      "question": {"zh": "木卫三可能拥有什么？", "en": "What might Ganymede have?"},
+      "options": [
+        {"zh": "浓厚大气层", "en": "Thick atmosphere"},
+        {"zh": "地下咸水海洋", "en": "Subsurface saltwater ocean"},
+        {"zh": "活火山", "en": "Active volcanoes"},
+        {"zh": "液态甲烷湖", "en": "Liquid methane lakes"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "科学家认为木卫三冰壳下可能存在咸水海洋，水量可能超过地球。", "en": "Scientists believe there may be a saltwater ocean beneath Ganymede's ice shell, possibly containing more water than Earth."}
+    },
+    {
+      "id": "q_ganymede_007",
+      "question": {"zh": "木卫三的大气层主要成分是什么？", "en": "What is the main component of Ganymede's atmosphere?"},
+      "options": [
+        {"zh": "氮气", "en": "Nitrogen"},
+        {"zh": "二氧化碳", "en": "Carbon Dioxide"},
+        {"zh": "氧气（微量）", "en": "Oxygen (trace)"},
+        {"zh": "氢气", "en": "Hydrogen"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫三有极稀薄的氧气大气，压力约为 0.0001 kPa。", "en": "Ganymede has an extremely thin oxygen atmosphere, with pressure about 0.0001 kPa."}
+    },
+    {
+      "id": "q_ganymede_008",
+      "question": {"zh": "木卫三表面的暗色区域是什么？", "en": "What are the dark areas on Ganymede's surface?"},
+      "options": [
+        {"zh": "海洋", "en": "Oceans"},
+        {"zh": "古老撞击坑密集区", "en": "Ancient cratered regions"},
+        {"zh": "火山平原", "en": "Volcanic plains"},
+        {"zh": "沙漠", "en": "Deserts"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫三的暗色区域是古老的撞击坑密集区，年龄约 40 亿年。", "en": "The dark areas on Ganymede are ancient cratered regions, about 4 billion years old."}
+    },
+    {
+      "id": "q_ganymede_009",
+      "question": {"zh": "哪个探测器详细探测了木卫三？", "en": "Which spacecraft detailed surveyed Ganymede?"},
+      "options": [
+        {"zh": "旅行者 1 号", "en": "Voyager 1"},
+        {"zh": "伽利略号", "en": "Galileo"},
+        {"zh": "卡西尼号", "en": "Cassini"},
+        {"zh": "新视野号", "en": "New Horizons"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "伽利略号于 1996-2003 年详细探测了木卫三，发现了地下海洋的证据。", "en": "Galileo spacecraft surveyed Ganymede from 1996-2003, discovering evidence of subsurface ocean."}
+    },
+    {
+      "id": "q_ganymede_010",
+      "question": {"zh": "木卫三的沟槽地形是如何形成的？", "en": "How did Ganymede's grooved terrain form?"},
+      "options": [
+        {"zh": "火山喷发", "en": "Volcanic eruptions"},
+        {"zh": "构造活动", "en": "Tectonic activity"},
+        {"zh": "陨石撞击", "en": "Meteor impacts"},
+        {"zh": "风化侵蚀", "en": "Weathering erosion"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫三的沟槽地形是由古代构造活动形成的，表明木卫三曾经地质活跃。", "en": "Ganymede's grooved terrain was formed by ancient tectonic activity, indicating Ganymede was once geologically active."}
+    }
+  ]
+}

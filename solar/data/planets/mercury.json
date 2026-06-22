@@ -1,0 +1,401 @@
+{
+  "id": "mercury",
+  "name": {
+    "zh": "水星",
+    "en": "Mercury"
+  },
+  "icon": "☿",
+  "theme_color": "#b0b0b0",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "类地行星",
+            "en": "Terrestrial Planet"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "4,879.4 km",
+            "en": "4,879.4 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "3.301 × 10²³ kg",
+            "en": "3.301 × 10²³ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "6.083 × 10¹⁰ km³",
+            "en": "6.083 × 10¹⁰ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "5.427 g/cm³",
+            "en": "5.427 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "3.7 m/s²",
+            "en": "3.7 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 水星是太阳系中最小、最靠近太阳的行星，其铁核占体积约85%。",
+        "en": "※ Mercury is the smallest and closest planet to the Sun, with an iron core making up about 85% of its volume."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "58.646 天",
+            "en": "58.646 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "87.969 天",
+            "en": "87.969 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "47.87 km/s",
+            "en": "47.87 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.2056",
+            "en": "0.2056"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "7.005°",
+            "en": "7.005°"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 水星的自转周期与公转周期之比为3:2，导致一个水星日（日出到日出）长达176个地球日。",
+        "en": "※ Mercury's rotation period is in a 3:2 resonance with its orbit, making one solar day (sunrise to sunrise) last 176 Earth days."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "-180°C 至 430°C",
+            "en": "-180°C to 430°C"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "167°C",
+            "en": "167°C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "极稀薄（约 10⁻¹⁴ bar）",
+            "en": "Extremely thin (~10⁻¹⁴ bar)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "氧、钠、氢、氦、钾",
+            "en": "Oxygen, Sodium, Hydrogen, Helium, Potassium"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "约地球的1.1%",
+            "en": "~1.1% of Earth's"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 尽管水星离太阳最近，其极地陨石坑内永久阴影区存在水冰。",
+        "en": "※ Despite being closest to the Sun, Mercury has water ice in permanently shadowed polar craters."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "46,001,200 km",
+            "en": "46,001,200 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "69,816,900 km",
+            "en": "69,816,900 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "57,909,050 km",
+            "en": "57,909,050 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.387 AU",
+            "en": "0.387 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 3.2 分钟",
+            "en": "~3.2 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0",
+            "en": "0"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 水星是太阳系中除金星外唯一没有天然卫星的行星。",
+        "en": "※ Mercury is the only planet besides Venus in the Solar System with no natural moons."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "撞击坑、平原、悬崖",
+            "en": "Craters, plains, scarps"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "卡洛里斯盆地（直径1,550 km）",
+            "en": "Caloris Basin (1,550 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 40-46 亿年",
+            "en": "~4.0–4.6 billion years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "未知（无正式命名）",
+            "en": "Unknown (no official name)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 水星表面遍布被称为“皱脊”的悬崖，是行星冷却收缩形成的独特地貌。",
+        "en": "※ Mercury's surface is covered with 'wrinkle ridges' and scarps formed by planetary cooling and contraction."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "自古已知（苏美尔时期，约公元前3000年）",
+            "en": "Known since antiquity (Sumerian, ~3000 BCE)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "水手10号，1974年3月29日",
+            "en": "Mariner 10, March 29, 1974"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "信使号，2011年3月18日",
+            "en": "MESSENGER, March 18, 2011"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "贝皮科伦布号（BepiColombo，2018年发射，预计2025年入轨）",
+            "en": "BepiColombo (launched 2018, expected orbit insertion 2025)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 信使号是首个环绕水星的探测器，其任务以燃料耗尽撞击水星表面告终。",
+        "en": "※ MESSENGER was the first spacecraft to orbit Mercury, ending its mission by crashing into the surface."
+      }
+    }
+  ]
+}

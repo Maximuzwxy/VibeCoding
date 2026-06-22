@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Molecular Structures</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            background: #0d1117;
+        }
+        /* ============ 顶部导航栏 ============ */
+        #topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background: rgba(13, 17, 23, 0.92);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.12);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            gap: 16px;
+        }
+        #topbar .logo {
+            font-size: 1.3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d9ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        #topbar .logo-icon { font-size: 1.4em; }
+        #topbar .topbar-divider {
+            width: 1px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        #topbar .molecule-count {
+            color: #8899aa;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        #topbar .molecule-count span {
+            color: #00d9ff;
+            font-weight: 700;
+        }
+        
+        #container { width: 100vw; height: 100vh; position: relative; z-index: 1; }
+        
+        /* ============ 侧边栏 ============ */
+        #sidebar {
+            position: fixed;
+            top: 56px;
+            left: 0;
+            width: 310px;
+            height: calc(100vh - 56px);
+            background: rgba(13, 17, 23, 0.9);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 100;
+            padding: 0;
+        }
+        .search-wrapper {
+            position: sticky;
+            top: 0;
+            padding: 14px;
+            background: rgba(13, 17, 23, 0.95);
+            z-index: 10;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .search-input {
+            width: 100%;
+            padding: 9px 12px 9px 34px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            color: #d0d4dc;
+            font-size: 0.88em;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .search-input::placeholder { color: rgba(255, 255, 255, 0.25); }
+        .search-input:focus {
+            border-color: #00d9ff;
+            background: rgba(0, 217, 255, 0.06);
+        }
+        .search-icon {
+            position: absolute;
+            left: 26px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 0.8em;
+            pointer-events: none;
+        }
+        
+        /* ============ 可折叠分类 ============ */
+        .cat-section { margin-bottom: 4px; }
+        .cat-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            cursor: pointer;
+            user-select: none;
+            color: rgba(0, 217, 255, 0.7);
+            font-size: 0.73em;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .cat-toggle:hover { color: #00d9ff; background: rgba(0, 217, 255, 0.04); }
+        .cat-toggle .arrow {
+            display: inline-block;
+            transition: transform 0.25s;
+            font-size: 0.7em;
+        }
+        .cat-toggle .count {
+            font-weight: 400;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 0;
+        }
+        .cat-section.open .cat-toggle .arrow { transform: rotate(90deg); }
+        .cat-body { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
+        .cat-section.open .cat-body { max-height: 2000px; }
+        .cat-body-inner { padding: 4px 12px 12px; }
+        
+        /* 分子列表 */
+        .mol-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            margin: 2px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #bcc8d4;
+            border: 1px solid transparent;
+        }
+        .mol-item:hover {
+            background: rgba(0, 217, 255, 0.06);
+            border-color: rgba(0, 217, 255, 0.15);
+            color: #fff;
+        }
+        .mol-item.active {
+            background: rgba(0, 217, 255, 0.1);
+            border-color: rgba(0, 217, 255, 0.35);
+            color: #fff;
+        }
+        .mol-item .mol-formula {
+            color: #00d9ff;
+            font-weight: 700;
+            font-size: 0.88em;
+            font-family: 'Courier New', monospace;
+            white-space: nowrap;
+            min-width: 40px;
+        }
+        .mol-item .mol-name {
+            font-size: 0.84em;
+            font-weight: 500;
+            color: #a0a8b4;
+        }
+        .mol-item.active .mol-name { color: #d0d8e4; }
+        
+        /* ============ 信息面板 ============ */
+        #info-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(13, 17, 23, 0.9);
+            border-radius: 12px;
+            color: #fff;
+            max-width: 360px;
+            z-index: 100;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+        #info-panel .panel-header {
+            padding: 18px 20px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        #info-panel h3 {
+            color: #fff;
+            font-size: 1.05em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        #info-panel .tags-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        #info-panel .formula-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(0, 217, 255, 0.12);
+            color: #00d9ff;
+            font-size: 0.78em;
+            font-weight: 600;
+        }
+        #info-panel .stat-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #788898;
+            font-size: 0.72em;
+            font-weight: 500;
+        }
+        #info-panel .panel-body {
+            padding: 14px 20px 18px;
+        }
+        #info-panel p {
+            color: #8898a8;
+            line-height: 1.75;
+            font-size: 0.85em;
+        }
+        
+        /* ============ 滚动条 ============ */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 217, 255, 0.2);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 217, 255, 0.4); }
+        
+        /* ============ 分子切换动画 ============ */
+        @keyframes moleculeEnter {
+            from { opacity: 0; transform: scale(0.85); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .molecule-entering {
+            animation: moleculeEnter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        }
+        
+        /* ============ 响应式 ============ */
+        @media (max-width: 768px) {
+            #sidebar { width: 260px; }
+            #info-panel { max-width: 280px; right: 10px; bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div id="topbar">
+        <span class="logo-icon">🧪</span>
+        <span class="logo">Molecule Viewer</span>
+        <span class="topbar-divider"></span>
+        <span class="molecule-count">Total: <span id="total-count">0</span> molecules</span>
+    </div>
+
+    <div id="container"></div>
+    
+    <div id="sidebar">
+        <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input class="search-input" id="search-input" type="text" placeholder="Search molecules..." autocomplete="off">
+        </div>
+        <div id="molecule-list"></div>
+    </div>
+
+    <div id="info-panel">
+        <div class="panel-header">
+            <h3 id="info-title">Select a Molecule</h3>
+            <div class="tags-row">
+                <span class="formula-tag" id="info-formula"></span>
+                <span class="stat-tag" id="info-atoms"></span>
+                <span class="stat-tag" id="info-bonds"></span>
+            </div>
+        </div>
+        <div class="panel-body">
+            <p id="info-desc">Choose a molecule from the left panel to view its 3D structure</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <script>
+        // 原子颜色定义
+        const atomColors = {
+            'H': 0xffffff,   // 氢 - 白色
+            'C': 0x333333,   // 碳 - 深灰
+            'N': 0x0000ff,   // 氮 - 蓝色
+            'O': 0xff0000,   // 氧 - 红色
+            'F': 0x00ff00,   // 氟 - 绿色
+            'Cl': 0x00ff00,  // 氯 - 绿色
+            'S': 0xffff00,   // 硫 - 黄色
+            'P': 0xff8800,   // 磷 - 橙色
+            'Na': 0x8800ff,  // 钠 - 紫色
+            'Fe': 0xcc6600,  // 铁 - 棕橙色
+            'Cu': 0xcc6633,  // 铜 - 铜色
+            'Zn': 0x777777,  // 锌 - 灰色
+            'I': 0x880088,   // 碘 - 紫红色
+            'Br': 0x884400,  // 溴 - 深棕色
+            'Ca': 0x00cc00,  // 钙 - 深绿色
+            'Mg': 0x00aa00,  // 镁 - 草绿色
+            'K': 0x8800cc    // 钾 - 深紫色
+        };
+
+        // 原子半径
+        const atomRadii = {
+            'H': 0.3, 'C': 0.7, 'N': 0.65, 'O': 0.6, 'F': 0.5,
+            'Cl': 0.8, 'S': 1.0, 'P': 1.0, 'Na': 1.2, 'Fe': 1.1,
+            'Cu': 1.1, 'Zn': 1.1, 'I': 1.1, 'Br': 1.0, 'Ca': 1.2,
+            'Mg': 1.1, 'K': 1.3
+        };
+
+        // 40 molecule data (30 common + 10 organic compounds)
+        const molecules = [
+            {
+                name: 'Water (H₂O)',
+                formula: 'H₂O',
+                desc: 'Water is the most common molecule, composed of two hydrogen atoms and one oxygen atom. It has a bent structure with a bond angle of approximately 104.5°.',
+                atoms: [
+                    { element: 'O', x: 0, y: 0, z: 0 },
+                    { element: 'H', x: 0.76, y: 0.59, z: 0 },
+                    { element: 'H', x: -0.76, y: 0.59, z: 0 }
+                ],
+                bonds: [[0, 1], [0, 2]]
+            },
+            {
+                name: 'Carbon Dioxide (CO₂)',
+                formula: 'CO₂',
+                desc: 'Carbon dioxide is a linear molecule where the carbon atom forms double bonds with two oxygen atoms, with a bond angle of 180°.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.16, y: 0, z: 0 },
+                    { element: 'O', x: -1.16, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [0, 2, 2]]
+            },
+            {
+                name: 'Methane (CH₄)',
+                formula: 'CH₄',
+                desc: 'Methane is the simplest alkane, featuring a tetrahedral structure with bond angles of 109.5°.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'H', x: 0.63, y: 0.63, z: 0.63 },
+                    { element: 'H', x: -0.63, y: -0.63, z: 0.63 },
+                    { element: 'H', x: -0.63, y: 0.63, z: -0.63 },
+                    { element: 'H', x: 0.63, y: -0.63, z: -0.63 }
+                ],
+                bonds: [[0, 1], [0, 2], [0, 3], [0, 4]]
+            },
+            {
+                name: 'Ammonia (NH₃)',
+                formula: 'NH₃',
+                desc: 'Ammonia has a trigonal pyramidal structure with a lone pair on the nitrogen atom, resulting in bond angles of approximately 107°.',
+                atoms: [
+                    { element: 'N', x: 0, y: 0, z: 0 },
+                    { element: 'H', x: 0.94, y: 0, z: 0 },
+                    { element: 'H', x: -0.47, y: 0.81, z: 0 },
+                    { element: 'H', x: -0.47, y: -0.41, z: 0.71 }
+                ],
+                bonds: [[0, 1], [0, 2], [0, 3]]
+            },
+            {
+                name: 'Oxygen (O₂)',
+                formula: 'O₂',
+                desc: 'The oxygen molecule consists of two oxygen atoms connected by a double bond.',
+                atoms: [
+                    { element: 'O', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.21, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1, 2]]
+            },
+            {
+                name: 'Nitrogen (N₂)',
+                formula: 'N₂',
+                desc: 'The nitrogen molecule features two nitrogen atoms connected by a triple bond, resulting in very high bond energy.',
+                atoms: [
+                    { element: 'N', x: 0, y: 0, z: 0 },
+                    { element: 'N', x: 1.10, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1, 3]]
+            },
+            {
+                name: 'Sodium Chloride (NaCl)',
+                formula: 'NaCl',
+                desc: 'Sodium chloride is an ionic compound where sodium and chloride ions are held together by ionic bonds.',
+                atoms: [
+                    { element: 'Na', x: 0, y: 0, z: 0 },
+                    { element: 'Cl', x: 2.36, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1]]
+            },
+            {
+                name: 'Hydrogen (H₂)',
+                formula: 'H₂',
+                desc: 'Hydrogen is the simplest and most abundant element in the universe. The H₂ molecule consists of two hydrogen atoms sharing a single covalent bond.',
+                atoms: [
+                    { element: 'H', x: 0, y: 0, z: 0 },
+                    { element: 'H', x: 0.74, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1]]
+            },
+            {
+                name: 'Carbon Monoxide (CO)',
+                formula: 'CO',
+                desc: 'Carbon monoxide is a colorless, odorless toxic gas. It has a triple bond between carbon and oxygen, with a small dipole moment.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.13, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1, 3]]
+            },
+            {
+                name: 'Magnesium Oxide (MgO)',
+                formula: 'MgO',
+                desc: 'Magnesium oxide is an ionic compound formed by Mg²⁺ and O²⁻ ions. It is used as a refractory material and antacid.',
+                atoms: [
+                    { element: 'Mg', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.7, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1]]
+            },
+            {
+                name: 'Calcium Oxide (CaO)',
+                formula: 'CaO',
+                desc: 'Calcium oxide, commonly known as quicklime or burnt lime, is widely used in construction. It reacts vigorously with water to form slaked lime.',
+                atoms: [
+                    { element: 'Ca', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.8, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1]]
+            },
+            {
+                name: 'Sodium Hydroxide (NaOH)',
+                formula: 'NaOH',
+                desc: 'Sodium hydroxide, also known as caustic soda or lye, is a strong base used in soap making, paper production, and drain cleaners.',
+                atoms: [
+                    { element: 'Na', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 2.0, y: 0, z: 0 },
+                    { element: 'H', x: 2.8, y: 0.96, z: 0 }
+                ],
+                bonds: [[1, 2]]
+            },
+            {
+                name: 'Nitric Acid (HNO₃)',
+                formula: 'HNO₃',
+                desc: 'Nitric acid is a strong mineral acid used in fertilizer production, explosives manufacturing, and metal etching. It has a planar structure.',
+                atoms: [
+                    { element: 'N', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.22, y: 0, z: 0 },
+                    { element: 'O', x: -0.61, y: 1.05, z: 0 },
+                    { element: 'O', x: 0, y: 0, z: 1.0 },
+                    { element: 'H', x: -1.1, y: 1.5, z: 0.3 }
+                ],
+                bonds: [[0, 1, 2], [0, 2], [0, 3], [3, 4]]
+            },
+            {
+                name: 'Calcium Carbonate (CaCO₃)',
+                formula: 'CaCO₃',
+                desc: 'Calcium carbonate is the main component of limestone, marble, and chalk. It is used in construction, as an antacid, and in toothpaste.',
+                atoms: [
+                    { element: 'Ca', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 2.0, y: 0, z: 0 },
+                    { element: 'O', x: 2.0, y: 1.3, z: 0.9 },
+                    { element: 'O', x: 2.0, y: 1.3, z: -0.9 },
+                    { element: 'O', x: 2.0, y: -1.3, z: 0 }
+                ],
+                bonds: [[1, 2, 2], [1, 3], [1, 4]]
+            },
+            {
+                name: 'Potassium Permanganate (KMnO₄)',
+                formula: 'KMnO₄',
+                desc: 'Potassium permanganate is a strong oxidizing agent with a deep purple color. It is used as a disinfectant, in water treatment, and in redox titrations.',
+                atoms: [
+                    { element: 'K', x: 0, y: 0, z: 0 },
+                    { element: 'Mn', x: 2.2, y: 0, z: 0 },
+                    { element: 'O', x: 3.7, y: 0, z: 0 },
+                    { element: 'O', x: 1.5, y: 1.5, z: 0.9 },
+                    { element: 'O', x: 1.5, y: 1.5, z: -0.9 },
+                    { element: 'O', x: 1.5, y: -1.5, z: 0 }
+                ],
+                bonds: [[1, 2, 2], [1, 3], [1, 4], [1, 5]]
+            },
+            {
+                name: 'Ethanol (C₂H₅OH)',
+                formula: 'C₂H₅OH',
+                desc: 'Ethanol is the main component of alcoholic beverages, containing a hydroxyl functional group.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.54, y: 0, z: 0 },
+                    { element: 'O', x: 2.2, y: 1.3, z: 0 },
+                    { element: 'H', x: 3.0, y: 1.2, z: 0 },
+                    { element: 'H', x: -0.36, y: 1.0, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: 0.9 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 1.5, y: -0.5, z: 0.9 },
+                    { element: 'H', x: 1.5, y: -0.5, z: -0.9 }
+                ],
+                bonds: [[0, 1], [1, 2], [2, 3], [0, 4], [0, 5], [0, 6], [1, 7], [1, 8]]
+            },
+            {
+                name: 'Benzene (C₆H₆)',
+                formula: 'C₆H₆',
+                desc: 'Benzene is an aromatic hydrocarbon with six carbon atoms forming a planar hexagonal ring with delocalized π electrons.',
+                atoms: [
+                    { element: 'C', x: 1.4, y: 0, z: 0 },
+                    { element: 'C', x: 0.7, y: 1.21, z: 0 },
+                    { element: 'C', x: -0.7, y: 1.21, z: 0 },
+                    { element: 'C', x: -1.4, y: 0, z: 0 },
+                    { element: 'C', x: -0.7, y: -1.21, z: 0 },
+                    { element: 'C', x: 0.7, y: -1.21, z: 0 },
+                    { element: 'H', x: 2.5, y: 0, z: 0 },
+                    { element: 'H', x: 1.25, y: 2.17, z: 0 },
+                    { element: 'H', x: -1.25, y: 2.17, z: 0 },
+                    { element: 'H', x: -2.5, y: 0, z: 0 },
+                    { element: 'H', x: -1.25, y: -2.17, z: 0 },
+                    { element: 'H', x: 1.25, y: -2.17, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [1, 2], [2, 3, 2], [3, 4], [4, 5, 2], [5, 0], [0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11]]
+            },
+            {
+                name: 'Sulfuric Acid (H₂SO₄)',
+                formula: 'H₂SO₄',
+                desc: 'Sulfuric acid is a strong acid where the sulfur atom is bonded to four oxygen atoms in a tetrahedral arrangement.',
+                atoms: [
+                    { element: 'S', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.43, y: 0, z: 0 },
+                    { element: 'O', x: -1.43, y: 0, z: 0 },
+                    { element: 'O', x: 0, y: 1.43, z: 0.85 },
+                    { element: 'O', x: 0, y: 1.43, z: -0.85 },
+                    { element: 'H', x: -2.2, y: 0.8, z: 0 },
+                    { element: 'H', x: 2.2, y: 0.8, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [0, 2, 2], [0, 3], [0, 4], [2, 5], [1, 6]]
+            },
+            {
+                name: 'Hydrogen Chloride (HCl)',
+                formula: 'HCl',
+                desc: 'Hydrogen chloride is a polar molecule that forms hydrochloric acid when dissolved in water.',
+                atoms: [
+                    { element: 'H', x: 0, y: 0, z: 0 },
+                    { element: 'Cl', x: 1.27, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1]]
+            },
+            {
+                name: 'Formaldehyde (HCHO)',
+                formula: 'HCHO',
+                desc: 'Formaldehyde is the simplest aldehyde, featuring a planar trigonal structure with a carbon-oxygen double bond.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.22, y: 0, z: 0 },
+                    { element: 'H', x: -0.6, y: 0.93, z: 0 },
+                    { element: 'H', x: -0.6, y: -0.93, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [0, 2], [0, 3]]
+            },
+            {
+                name: 'Hydrogen Peroxide (H₂O₂)',
+                formula: 'H₂O₂',
+                desc: 'Hydrogen peroxide is the main ingredient in hydrogen peroxide solutions, featuring a non-planar structure.',
+                atoms: [
+                    { element: 'O', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.48, y: 0, z: 0 },
+                    { element: 'H', x: -0.5, y: 0.8, z: 0.5 },
+                    { element: 'H', x: 1.98, y: 0.8, z: -0.5 }
+                ],
+                bonds: [[0, 1], [0, 2], [1, 3]]
+            },
+            {
+                name: 'Phosphoric Acid (H₃PO₄)',
+                formula: 'H₃PO₄',
+                desc: 'Phosphoric acid is a moderate acid with the phosphorus atom forming a tetrahedron with four oxygen atoms.',
+                atoms: [
+                    { element: 'P', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.52, y: 0, z: 0 },
+                    { element: 'O', x: -0.8, y: 1.3, z: 0.8 },
+                    { element: 'O', x: -0.8, y: 1.3, z: -0.8 },
+                    { element: 'O', x: -0.8, y: -1.3, z: 0 },
+                    { element: 'H', x: -1.6, y: 2.0, z: 0.8 },
+                    { element: 'H', x: -1.6, y: 2.0, z: -0.8 },
+                    { element: 'H', x: -1.6, y: -2.0, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [0, 2], [0, 3], [0, 4], [2, 5], [3, 6], [4, 7]]
+            },
+            {
+                name: 'Ethylene (C₂H₄)',
+                formula: 'C₂H₄',
+                desc: 'Ethylene contains a carbon-carbon double bond with all atoms lying in the same plane.',
+                atoms: [
+                    { element: 'C', x: 0.67, y: 0, z: 0 },
+                    { element: 'C', x: -0.67, y: 0, z: 0 },
+                    { element: 'H', x: 1.2, y: 0.93, z: 0 },
+                    { element: 'H', x: 1.2, y: -0.93, z: 0 },
+                    { element: 'H', x: -1.2, y: 0.93, z: 0 },
+                    { element: 'H', x: -1.2, y: -0.93, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [0, 2], [0, 3], [1, 4], [1, 5]]
+            },
+            {
+                name: 'Acetylene (C₂H₂)',
+                formula: 'C₂H₂',
+                desc: 'Acetylene contains a carbon-carbon triple bond and has a linear molecular geometry.',
+                atoms: [
+                    { element: 'C', x: 0.6, y: 0, z: 0 },
+                    { element: 'C', x: -0.6, y: 0, z: 0 },
+                    { element: 'H', x: 1.66, y: 0, z: 0 },
+                    { element: 'H', x: -1.66, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1, 3], [0, 2], [1, 3]]
+            },
+            {
+                name: 'Methanol (CH₃OH)',
+                formula: 'CH₃OH',
+                desc: 'Methanol is the simplest alcohol, containing one hydroxyl group.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.43, y: 0, z: 0 },
+                    { element: 'H', x: 2.0, y: 0.8, z: 0 },
+                    { element: 'H', x: -0.36, y: 1.0, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: 0.9 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 }
+                ],
+                bonds: [[0, 1], [1, 2], [0, 3], [0, 4], [0, 5]]
+            },
+            {
+                name: 'Acetic Acid (CH₃COOH)',
+                formula: 'CH₃COOH',
+                desc: 'Acetic acid is the main component of vinegar, containing a carboxyl functional group.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.52, y: 0, z: 0 },
+                    { element: 'O', x: 2.2, y: 1.2, z: 0 },
+                    { element: 'O', x: 2.2, y: -1.2, z: 0 },
+                    { element: 'H', x: 2.9, y: -1.5, z: 0 },
+                    { element: 'H', x: -0.36, y: 1.0, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: 0.9 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 }
+                ],
+                bonds: [[0, 1], [1, 2, 2], [1, 3], [3, 4], [0, 5], [0, 6], [0, 7]]
+            },
+            {
+                name: 'Hydrogen Fluoride (HF)',
+                formula: 'HF',
+                desc: 'Hydrogen fluoride is one of the most polar diatomic molecules.',
+                atoms: [
+                    { element: 'H', x: 0, y: 0, z: 0 },
+                    { element: 'F', x: 0.92, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1]]
+            },
+            {
+                name: 'Hydrogen Sulfide (H₂S)',
+                formula: 'H₂S',
+                desc: 'Hydrogen sulfide has a characteristic rotten egg odor and a structure similar to water.',
+                atoms: [
+                    { element: 'S', x: 0, y: 0, z: 0 },
+                    { element: 'H', x: 0.93, y: 0.77, z: 0 },
+                    { element: 'H', x: -0.93, y: 0.77, z: 0 }
+                ],
+                bonds: [[0, 1], [0, 2]]
+            },
+            {
+                name: 'Ozone (O₃)',
+                formula: 'O₃',
+                desc: 'Ozone is an allotrope of oxygen with a bent molecular structure.',
+                atoms: [
+                    { element: 'O', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.28, y: 0, z: 0 },
+                    { element: 'O', x: -0.64, y: 1.1, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [0, 2, 2]]
+            },
+            {
+                name: 'Nitric Oxide (NO)',
+                formula: 'NO',
+                desc: 'Nitric oxide is a free radical that serves as a signaling molecule in biological systems.',
+                atoms: [
+                    { element: 'N', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.15, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1, 2]]
+            },
+            {
+                name: 'Sulfur Dioxide (SO₂)',
+                formula: 'SO₂',
+                desc: 'Sulfur dioxide is an atmospheric pollutant with a bent molecular geometry.',
+                atoms: [
+                    { element: 'S', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.43, y: 0.75, z: 0 },
+                    { element: 'O', x: -1.43, y: 0.75, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [0, 2, 2]]
+            },
+            {
+                name: 'Sodium Bicarbonate (NaHCO₃)',
+                formula: 'NaHCO₃',
+                desc: 'Sodium bicarbonate, commonly known as baking soda, is widely used in baking and medicine.',
+                atoms: [
+                    { element: 'Na', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 2.0, y: 1.0, z: 0 },
+                    { element: 'O', x: 2.0, y: 2.5, z: 0 },
+                    { element: 'O', x: 3.3, y: 0.3, z: 0 },
+                    { element: 'O', x: 1.0, y: 0.3, z: 0.9 },
+                    { element: 'H', x: 0.4, y: -0.6, z: 1.2 }
+                ],
+                bonds: [[1, 2, 2], [1, 3], [1, 4], [4, 5]]
+            },
+            {
+                name: 'Hydrogen Bromide (HBr)',
+                formula: 'HBr',
+                desc: 'Hydrogen bromide is a strong acid with a structure similar to HCl.',
+                atoms: [
+                    { element: 'H', x: 0, y: 0, z: 0 },
+                    { element: 'Br', x: 1.41, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1]]
+            },
+            {
+                name: 'Hydrogen Iodide (HI)',
+                formula: 'HI',
+                desc: 'Hydrogen iodide has the longest bond length among the hydrogen halides.',
+                atoms: [
+                    { element: 'H', x: 0, y: 0, z: 0 },
+                    { element: 'I', x: 1.61, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1]]
+            },
+            {
+                name: 'Carbon Tetrachloride (CCl₄)',
+                formula: 'CCl₄',
+                desc: 'Carbon tetrachloride has a tetrahedral structure and was formerly used as a fire extinguishing agent.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'Cl', x: 1.77, y: 0, z: 0 },
+                    { element: 'Cl', x: -0.59, y: 1.67, z: 0 },
+                    { element: 'Cl', x: -0.59, y: -0.84, z: 1.45 },
+                    { element: 'Cl', x: -0.59, y: -0.84, z: -1.45 }
+                ],
+                bonds: [[0, 1], [0, 2], [0, 3], [0, 4]]
+            },
+            {
+                name: 'Chloroform (CHCl₃)',
+                formula: 'CHCl₃',
+                desc: 'Chloroform, also known as trichloromethane, was formerly used as an anesthetic.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'H', x: 1.09, y: 0, z: 0 },
+                    { element: 'Cl', x: -0.36, y: 1.7, z: 0 },
+                    { element: 'Cl', x: -0.36, y: -0.85, z: 1.47 },
+                    { element: 'Cl', x: -0.36, y: -0.85, z: -1.47 }
+                ],
+                bonds: [[0, 1], [0, 2], [0, 3], [0, 4]]
+            },
+            {
+                name: 'Iron(III) Oxide (Fe₂O₃)',
+                formula: 'Fe₂O₃',
+                desc: 'Iron(III) oxide is the main component of rust, exhibiting a reddish-brown color.',
+                atoms: [
+                    { element: 'Fe', x: 0, y: 0, z: 0 },
+                    { element: 'Fe', x: 0, y: 2.0, z: 0 },
+                    { element: 'O', x: 1.5, y: 0.5, z: 0.8 },
+                    { element: 'O', x: -1.5, y: 0.5, z: 0.8 },
+                    { element: 'O', x: 0, y: 0.5, z: -1.2 }
+                ],
+                bonds: [[0, 2], [0, 3], [0, 4], [1, 2], [1, 3], [1, 4]]
+            },
+            {
+                name: 'Calcium Hydroxide (Ca(OH)₂)',
+                formula: 'Ca(OH)₂',
+                desc: 'Calcium hydroxide, commonly known as slaked lime, is used in the construction industry.',
+                atoms: [
+                    { element: 'Ca', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.8, y: 1.2, z: 0 },
+                    { element: 'O', x: -1.8, y: 1.2, z: 0 },
+                    { element: 'H', x: 2.6, y: 0.5, z: 0 },
+                    { element: 'H', x: -2.6, y: 0.5, z: 0 }
+                ],
+                bonds: [[1, 3], [2, 4]]
+            },
+            {
+                name: 'Iron(II) Sulfide (FeS)',
+                formula: 'FeS',
+                desc: 'Iron(II) sulfide is a black solid that reacts with acids to produce hydrogen sulfide gas.',
+                atoms: [
+                    { element: 'Fe', x: 0, y: 0, z: 0 },
+                    { element: 'S', x: 2.1, y: 0, z: 0 }
+                ],
+                bonds: [[0, 1]]
+            },
+            {
+                name: 'Propane (C₃H₈)',
+                formula: 'C₃H₈',
+                desc: 'Propane is a three-carbon alkane commonly used as fuel for heating and cooking.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.54, y: 0, z: 0 },
+                    { element: 'C', x: 3.08, y: 0, z: 0 },
+                    { element: 'H', x: -0.36, y: 1.0, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: 0.9 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 1.54, y: 1.0, z: 0.9 },
+                    { element: 'H', x: 1.54, y: 1.0, z: -0.9 },
+                    { element: 'H', x: 3.44, y: 1.0, z: 0 },
+                    { element: 'H', x: 3.44, y: -0.5, z: 0.9 },
+                    { element: 'H', x: 3.44, y: -0.5, z: -0.9 }
+                ],
+                bonds: [[0, 1], [1, 2], [0, 3], [0, 4], [0, 5], [1, 6], [1, 7], [2, 8], [2, 9], [2, 10]]
+            },
+            {
+                name: 'Acetone (C₃H₆O)',
+                formula: 'C₃H₆O',
+                desc: 'Acetone is the simplest ketone, widely used as an organic solvent and nail polish remover.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.52, y: 0, z: 0 },
+                    { element: 'C', x: 3.04, y: 0, z: 0 },
+                    { element: 'O', x: 1.52, y: 1.22, z: 0 },
+                    { element: 'H', x: -0.36, y: 1.0, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: 0.9 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 3.4, y: 1.0, z: 0 },
+                    { element: 'H', x: 3.4, y: -0.5, z: 0.9 },
+                    { element: 'H', x: 3.4, y: -0.5, z: -0.9 }
+                ],
+                bonds: [[0, 1], [1, 2], [1, 3, 2], [0, 4], [0, 5], [0, 6], [2, 7], [2, 8], [2, 9]]
+            },
+            {
+                name: 'Toluene (C₇H₈)',
+                formula: 'C₇H₈',
+                desc: 'Toluene is an aromatic hydrocarbon consisting of a benzene ring with a methyl substituent.',
+                atoms: [
+                    { element: 'C', x: 1.4, y: 0, z: 0 },
+                    { element: 'C', x: 0.7, y: 1.21, z: 0 },
+                    { element: 'C', x: -0.7, y: 1.21, z: 0 },
+                    { element: 'C', x: -1.4, y: 0, z: 0 },
+                    { element: 'C', x: -0.7, y: -1.21, z: 0 },
+                    { element: 'C', x: 0.7, y: -1.21, z: 0 },
+                    { element: 'C', x: 2.9, y: 0, z: 0 },
+                    { element: 'H', x: 1.25, y: 2.17, z: 0 },
+                    { element: 'H', x: -1.25, y: 2.17, z: 0 },
+                    { element: 'H', x: -2.5, y: 0, z: 0 },
+                    { element: 'H', x: -1.25, y: -2.17, z: 0 },
+                    { element: 'H', x: 1.25, y: -2.17, z: 0 },
+                    { element: 'H', x: 3.26, y: 1.0, z: 0 },
+                    { element: 'H', x: 3.26, y: -0.5, z: 0.9 },
+                    { element: 'H', x: 3.26, y: -0.5, z: -0.9 }
+                ],
+                bonds: [[0, 1, 2], [1, 2], [2, 3, 2], [3, 4], [4, 5, 2], [5, 0], [0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11], [6, 12], [6, 13], [6, 14]]
+            },
+            {
+                name: 'Ethyl Acetate (C₄H₈O₂)',
+                formula: 'C₄H₈O₂',
+                desc: 'Ethyl acetate is an ester commonly used as a solvent in paints, varnishes, and perfumes.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.52, y: 0, z: 0 },
+                    { element: 'O', x: 2.2, y: 1.2, z: 0 },
+                    { element: 'C', x: 3.5, y: 1.2, z: 0 },
+                    { element: 'O', x: 2.2, y: -1.2, z: 0 },
+                    { element: 'C', x: 3.5, y: -1.2, z: 0 },
+                    { element: 'H', x: -0.36, y: 1.0, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: 0.9 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 3.5, y: 2.2, z: 0 },
+                    { element: 'H', x: 3.86, y: 0.7, z: 0.9 },
+                    { element: 'H', x: 3.86, y: 0.7, z: -0.9 },
+                    { element: 'H', x: 3.86, y: -2.2, z: 0 },
+                    { element: 'H', x: 4.2, y: -0.7, z: 0.9 },
+                    { element: 'H', x: 4.2, y: -0.7, z: -0.9 }
+                ],
+                bonds: [[0, 1], [1, 2, 2], [1, 4], [2, 3], [4, 5], [0, 6], [0, 7], [0, 8], [3, 9], [3, 10], [3, 11], [5, 12], [5, 13], [5, 14]]
+            },
+            {
+                name: 'Diethyl Ether (C₄H₁₀O)',
+                formula: 'C₄H₁₀O',
+                desc: 'Diethyl ether is an ether historically used as an anesthetic, featuring an oxygen atom between two ethyl groups.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.54, y: 0, z: 0 },
+                    { element: 'O', x: 2.2, y: 1.3, z: 0 },
+                    { element: 'C', x: 3.74, y: 1.3, z: 0 },
+                    { element: 'C', x: 4.8, y: 0.2, z: 0 },
+                    { element: 'H', x: -0.36, y: 1.0, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: 0.9 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 1.54, y: -0.5, z: 0.9 },
+                    { element: 'H', x: 1.54, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 3.74, y: 2.3, z: 0 },
+                    { element: 'H', x: 3.74, y: 1.3, z: 0.9 },
+                    { element: 'H', x: 4.8, y: -0.8, z: 0 },
+                    { element: 'H', x: 5.16, y: 0.7, z: 0.9 },
+                    { element: 'H', x: 5.16, y: 0.7, z: -0.9 }
+                ],
+                bonds: [[0, 1], [1, 2], [2, 3], [3, 4], [0, 5], [0, 6], [0, 7], [1, 8], [1, 9], [3, 10], [3, 11], [4, 12], [4, 13], [4, 14]]
+            },
+            {
+                name: 'Aniline (C₆H₇N)',
+                formula: 'C₆H₇N',
+                desc: 'Aniline is an aromatic amine consisting of a benzene ring with an amino substituent, used in dye production.',
+                atoms: [
+                    { element: 'C', x: 1.4, y: 0, z: 0 },
+                    { element: 'C', x: 0.7, y: 1.21, z: 0 },
+                    { element: 'C', x: -0.7, y: 1.21, z: 0 },
+                    { element: 'C', x: -1.4, y: 0, z: 0 },
+                    { element: 'C', x: -0.7, y: -1.21, z: 0 },
+                    { element: 'C', x: 0.7, y: -1.21, z: 0 },
+                    { element: 'N', x: 2.8, y: 0, z: 0 },
+                    { element: 'H', x: 2.5, y: 0, z: 0 },
+                    { element: 'H', x: 1.25, y: 2.17, z: 0 },
+                    { element: 'H', x: -1.25, y: 2.17, z: 0 },
+                    { element: 'H', x: -2.5, y: 0, z: 0 },
+                    { element: 'H', x: -1.25, y: -2.17, z: 0 },
+                    { element: 'H', x: 1.25, y: -2.17, z: 0 },
+                    { element: 'H', x: 3.4, y: 0.8, z: 0 },
+                    { element: 'H', x: 3.4, y: -0.8, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [1, 2], [2, 3, 2], [3, 4], [4, 5, 2], [5, 0], [0, 6], [6, 13], [6, 14], [1, 8], [2, 9], [3, 10], [4, 11], [5, 12]]
+            },
+            {
+                name: 'Cyclohexane (C₆H₁₂)',
+                formula: 'C₆H₁₂',
+                desc: 'Cyclohexane is a cycloalkane with six carbon atoms in a ring, commonly adopting a chair conformation.',
+                atoms: [
+                    { element: 'C', x: 1.5, y: 0, z: 0 },
+                    { element: 'C', x: 0.75, y: 1.3, z: 0 },
+                    { element: 'C', x: -0.75, y: 1.3, z: 0 },
+                    { element: 'C', x: -1.5, y: 0, z: 0 },
+                    { element: 'C', x: -0.75, y: -1.3, z: 0 },
+                    { element: 'C', x: 0.75, y: -1.3, z: 0 },
+                    { element: 'H', x: 2.6, y: 0, z: 0 },
+                    { element: 'H', x: 1.3, y: 2.2, z: 0 },
+                    { element: 'H', x: -1.3, y: 2.2, z: 0 },
+                    { element: 'H', x: -2.6, y: 0, z: 0 },
+                    { element: 'H', x: -1.3, y: -2.2, z: 0 },
+                    { element: 'H', x: 1.3, y: -2.2, z: 0 },
+                    { element: 'H', x: 1.5, y: 0, z: 1.0 },
+                    { element: 'H', x: 0.75, y: 1.3, z: -1.0 },
+                    { element: 'H', x: -0.75, y: 1.3, z: 1.0 },
+                    { element: 'H', x: -1.5, y: 0, z: -1.0 },
+                    { element: 'H', x: -0.75, y: -1.3, z: 1.0 },
+                    { element: 'H', x: 0.75, y: -1.3, z: -1.0 }
+                ],
+                bonds: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0], [0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11], [0, 12], [1, 13], [2, 14], [3, 15], [4, 16], [5, 17]]
+            },
+            {
+                name: 'Propene (C₃H₆)',
+                formula: 'C₃H₆',
+                desc: 'Propene is an alkene with three carbon atoms and one double bond, used in the production of polypropylene.',
+                atoms: [
+                    { element: 'C', x: 0.67, y: 0, z: 0 },
+                    { element: 'C', x: -0.67, y: 0, z: 0 },
+                    { element: 'C', x: 2.1, y: 0, z: 0 },
+                    { element: 'H', x: 1.2, y: 0.93, z: 0 },
+                    { element: 'H', x: -1.2, y: 0.93, z: 0 },
+                    { element: 'H', x: -1.2, y: -0.93, z: 0 },
+                    { element: 'H', x: 2.46, y: 1.0, z: 0 },
+                    { element: 'H', x: 2.46, y: -0.5, z: 0.9 },
+                    { element: 'H', x: 2.46, y: -0.5, z: -0.9 }
+                ],
+                bonds: [[0, 1, 2], [0, 2], [0, 3], [1, 4], [1, 5], [2, 6], [2, 7], [2, 8]]
+            },
+            {
+                name: 'Butane (C₄H₁₀)',
+                formula: 'C₄H₁₀',
+                desc: 'Butane is a four-carbon alkane commonly used as a fuel in lighters and portable stoves.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.54, y: 0, z: 0 },
+                    { element: 'C', x: 3.08, y: 0, z: 0 },
+                    { element: 'C', x: 4.62, y: 0, z: 0 },
+                    { element: 'H', x: -0.36, y: 1.0, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: 0.9 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 1.54, y: 1.0, z: 0.9 },
+                    { element: 'H', x: 1.54, y: 1.0, z: -0.9 },
+                    { element: 'H', x: 3.08, y: 1.0, z: 0.9 },
+                    { element: 'H', x: 3.08, y: 1.0, z: -0.9 },
+                    { element: 'H', x: 4.98, y: 1.0, z: 0 },
+                    { element: 'H', x: 4.98, y: -0.5, z: 0.9 },
+                    { element: 'H', x: 4.98, y: -0.5, z: -0.9 }
+                ],
+                bonds: [[0, 1], [1, 2], [2, 3], [0, 4], [0, 5], [0, 6], [1, 7], [1, 8], [2, 9], [2, 10], [3, 11], [3, 12], [3, 13]]
+            },
+            {
+                name: 'Glucose (C₆H₁₂O₆)',
+                formula: 'C₆H₁₂O₆',
+                desc: 'Glucose is the most important simple sugar (monosaccharide) in biology. It is the primary energy source for living cells and is produced by plants through photosynthesis.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.54, y: 0, z: 0 },
+                    { element: 'C', x: 2.31, y: 1.33, z: 0 },
+                    { element: 'C', x: 3.85, y: 1.33, z: 0 },
+                    { element: 'C', x: 4.62, y: 0, z: 0 },
+                    { element: 'O', x: 6.0, y: 0, z: 0 },
+                    { element: 'O', x: 0, y: 1.43, z: 0 },
+                    { element: 'O', x: -0.77, y: -0.66, z: 0.9 },
+                    { element: 'O', x: 1.54, y: 1.33, z: -0.9 },
+                    { element: 'O', x: 2.31, y: 2.66, z: 0 },
+                    { element: 'O', x: 3.85, y: 2.66, z: 0 },
+                    { element: 'H', x: 4.62, y: 1.33, z: 0.9 },
+                    { element: 'H', x: -1.2, y: -0.9, z: 0 },
+                    { element: 'H', x: 1.54, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 2.31, y: 0, z: 0.9 },
+                    { element: 'H', x: 3.85, y: 0, z: -0.9 },
+                    { element: 'H', x: 4.62, y: -1.0, z: 0 },
+                    { element: 'H', x: 2.31, y: 3.1, z: 0 },
+                    { element: 'H', x: 3.85, y: 3.1, z: 0 },
+                    { element: 'H', x: 6.5, y: 0, z: 0 },
+                    { element: 'H', x: 0, y: 2.0, z: 0 }
+                ],
+                bonds: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [0, 6], [0, 7], [1, 8], [2, 9], [3, 10], [4, 11], [7, 12], [1, 13], [2, 14], [3, 15], [4, 16], [9, 17], [10, 18], [5, 19], [6, 20]]
+            },
+            {
+                name: 'Glycerol (C₃H₈O₃)',
+                formula: 'C₃H₈O₃',
+                desc: 'Glycerol, also known as glycerin, is a simple polyol compound. It is widely used in cosmetics, as a sweetener, and as a precursor for nitroglycerin.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.54, y: 0, z: 0 },
+                    { element: 'C', x: 2.31, y: 1.33, z: 0 },
+                    { element: 'O', x: 0, y: 1.43, z: 0 },
+                    { element: 'O', x: 1.54, y: 1.33, z: -0.9 },
+                    { element: 'O', x: 2.31, y: 2.66, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: 0.9 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 1.54, y: -1.0, z: 0 },
+                    { element: 'H', x: 2.31, y: 0, z: -0.9 },
+                    { element: 'H', x: 3.31, y: 1.33, z: 0 },
+                    { element: 'H', x: 0, y: 2.0, z: 0 },
+                    { element: 'H', x: 1.54, y: 2.1, z: -0.9 },
+                    { element: 'H', x: 2.31, y: 3.2, z: 0 }
+                ],
+                bonds: [[0, 1], [1, 2], [0, 3], [1, 4], [2, 5], [0, 6], [0, 7], [1, 8], [2, 9], [2, 10], [3, 11], [4, 12], [5, 13]]
+            },
+            {
+                name: 'Urea (CO(NH₂)₂)',
+                formula: 'CH₄N₂O',
+                desc: 'Urea is the main nitrogen-containing substance in mammalian urine. It is widely used as a nitrogen-release fertilizer and in the chemical industry.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'O', x: 1.22, y: 0, z: 0 },
+                    { element: 'N', x: -1.37, y: 0.8, z: 0 },
+                    { element: 'N', x: -1.37, y: -0.8, z: 0 },
+                    { element: 'H', x: -1.7, y: 1.7, z: 0 },
+                    { element: 'H', x: -1.7, y: 0.3, z: 0.9 },
+                    { element: 'H', x: -1.7, y: -1.7, z: 0 },
+                    { element: 'H', x: -1.7, y: -0.3, z: -0.9 }
+                ],
+                bonds: [[0, 1, 2], [0, 2], [0, 3], [2, 4], [2, 5], [3, 6], [3, 7]]
+            },
+            {
+                name: 'Lactic Acid (C₃H₆O₃)',
+                formula: 'C₃H₆O₃',
+                desc: 'Lactic acid is an organic acid produced during anaerobic respiration in muscles. It is used in the food industry and in skincare products.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.52, y: 0, z: 0 },
+                    { element: 'C', x: 2.29, y: 1.33, z: 0 },
+                    { element: 'O', x: 1.52, y: 1.22, z: -0.9 },
+                    { element: 'O', x: 2.29, y: 2.66, z: 0 },
+                    { element: 'O', x: 0, y: 1.43, z: 0 },
+                    { element: 'H', x: -0.36, y: -1.0, z: 0 },
+                    { element: 'H', x: -0.36, y: -0.5, z: -0.9 },
+                    { element: 'H', x: 2.29, y: 0, z: 0.9 },
+                    { element: 'H', x: 3.29, y: 1.33, z: 0 },
+                    { element: 'H', x: 2.29, y: 3.2, z: 0 },
+                    { element: 'H', x: 0, y: 2.0, z: 0 }
+                ],
+                bonds: [[0, 1], [1, 2], [0, 5], [1, 3, 2], [1, 4], [0, 6], [0, 7], [2, 8], [2, 9], [4, 10], [5, 11]]
+            },
+            {
+                name: 'Phenol (C₆H₅OH)',
+                formula: 'C₆H₆O',
+                desc: 'Phenol is an aromatic compound with a hydroxyl group attached to a benzene ring. It is used as a disinfectant and in the production of plastics.',
+                atoms: [
+                    { element: 'C', x: 1.4, y: 0, z: 0 },
+                    { element: 'C', x: 0.7, y: 1.21, z: 0 },
+                    { element: 'C', x: -0.7, y: 1.21, z: 0 },
+                    { element: 'C', x: -1.4, y: 0, z: 0 },
+                    { element: 'C', x: -0.7, y: -1.21, z: 0 },
+                    { element: 'C', x: 0.7, y: -1.21, z: 0 },
+                    { element: 'O', x: 2.78, y: 0, z: 0 },
+                    { element: 'H', x: 3.3, y: 0.8, z: 0 },
+                    { element: 'H', x: 1.25, y: 2.17, z: 0 },
+                    { element: 'H', x: -1.25, y: 2.17, z: 0 },
+                    { element: 'H', x: -2.49, y: 0, z: 0 },
+                    { element: 'H', x: -1.25, y: -2.17, z: 0 },
+                    { element: 'H', x: 1.25, y: -2.17, z: 0 }
+                ],
+                bonds: [[0, 1, 2], [1, 2], [2, 3, 2], [3, 4], [4, 5, 2], [5, 0], [0, 6], [6, 7], [1, 8], [2, 9], [3, 10], [4, 11], [5, 12]]
+            },
+            {
+                name: 'Oxalic Acid (H₂C₂O₄)',
+                formula: 'C₂H₂O₄',
+                desc: 'Oxalic acid is a dicarboxylic acid found in many plants, especially rhubarb and spinach. It is used as a rust remover and bleaching agent.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.52, y: 0, z: 0 },
+                    { element: 'O', x: -0.68, y: 1.18, z: 0 },
+                    { element: 'O', x: -0.68, y: -1.18, z: 0 },
+                    { element: 'O', x: 2.2, y: 1.18, z: 0 },
+                    { element: 'O', x: 2.2, y: -1.18, z: 0 },
+                    { element: 'H', x: -1.2, y: 1.5, z: 0 },
+                    { element: 'H', x: 2.72, y: 1.5, z: 0 }
+                ],
+                bonds: [[0, 1], [0, 2, 2], [0, 3], [1, 4, 2], [1, 5], [2, 6], [5, 7]]
+            },
+            {
+                name: 'Glycine (Amino Acid)',
+                formula: 'C₂H₅NO₂',
+                desc: 'Glycine is the simplest amino acid, serving as a building block for proteins. It has an amino group, a carboxyl group, and a single hydrogen as its side chain.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 },
+                    { element: 'C', x: 1.52, y: 0, z: 0 },
+                    { element: 'N', x: -1.47, y: 0, z: 0 },
+                    { element: 'O', x: 2.22, y: 1.2, z: 0 },
+                    { element: 'O', x: 2.22, y: -1.2, z: 0 },
+                    { element: 'H', x: -1.8, y: 0.9, z: 0 },
+                    { element: 'H', x: -1.8, y: -0.9, z: 0 },
+                    { element: 'H', x: 0, y: 1.0, z: 0.9 },
+                    { element: 'H', x: 0, y: 1.0, z: -0.9 },
+                    { element: 'H', x: 3.0, y: -1.5, z: 0 }
+                ],
+                bonds: [[0, 1], [0, 2], [1, 3, 2], [1, 4], [2, 5], [2, 6], [0, 7], [0, 8], [4, 9]]
+            },
+            {
+                name: '🧬 DNA 3D Structure Diagram',
+                formula: 'DNA Helix',
+                desc: 'A beautiful 3D DNA double helix structure diagram similar to textbook illustrations. Features colorful helical ribbons (pink & blue) for the backbone and labeled base pair bars (A-T, C-G) connecting them in the classic twisted ladder pattern.',
+                atoms: [
+                    { element: 'C', x: 0, y: 0, z: 0 }
+                ],
+                bonds: []
+            }
+        ];
+
+        // Three.js 场景设置
+        let scene, camera, renderer, controls;
+        let moleculeGroup;
+        let currentMolecule = 0;
+
+        function init() {
+            // 创建场景
+            scene = new THREE.Scene();
+
+            // 创建相机
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 5, 15);
+
+            // 创建渲染器
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            document.getElementById('container').appendChild(renderer.domElement);
+
+            // 添加轨道控制器
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.minDistance = 3;
+            controls.maxDistance = 50;
+
+            // 添加灯光
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(5, 10, 7);
+            scene.add(directionalLight);
+
+            const pointLight1 = new THREE.PointLight(0x00d9ff, 0.5);
+            pointLight1.position.set(-10, 5, 5);
+            scene.add(pointLight1);
+
+            const pointLight2 = new THREE.PointLight(0xff00ff, 0.3);
+            pointLight2.position.set(10, -5, -5);
+            scene.add(pointLight2);
+
+            // 创建分子组
+            moleculeGroup = new THREE.Group();
+            scene.add(moleculeGroup);
+
+            // 添加星空粒子
+            addParticles();
+
+            // 创建UI
+            createUI();
+
+            // 显示第一个分子
+            showMolecule(0);
+
+            // 窗口调整
+            window.addEventListener('resize', onWindowResize);
+
+            // 开始动画循环
+            animate();
+        }
+
+        // 创建DNA 3D示意图
+        function createDNADiagram() {
+            const numLevels = 12;
+            const heightStep = 2.5;
+            const radius = 4;
+            const angleStep = (36 * Math.PI) / 180; // 36度每层
+            
+            const basePairs = [
+                { left: 'A', right: 'T', leftColor: 0x4488ff, rightColor: 0xff4444 },
+                { left: 'C', right: 'G', leftColor: 0xff8844, rightColor: 0x44cc44 },
+                { left: 'T', right: 'A', leftColor: 0xff4444, rightColor: 0x4488ff },
+                { left: 'G', right: 'C', leftColor: 0x44cc44, rightColor: 0xff8844 },
+                { left: 'A', right: 'T', leftColor: 0x4488ff, rightColor: 0xff4444 },
+                { left: 'C', right: 'G', leftColor: 0xff8844, rightColor: 0x44cc44 },
+                { left: 'G', right: 'C', leftColor: 0x44cc44, rightColor: 0xff8844 },
+                { left: 'T', right: 'A', leftColor: 0xff4444, rightColor: 0x4488ff },
+                { left: 'A', right: 'T', leftColor: 0x4488ff, rightColor: 0xff4444 },
+                { left: 'C', right: 'G', leftColor: 0xff8844, rightColor: 0x44cc44 },
+                { left: 'G', right: 'C', leftColor: 0x44cc44, rightColor: 0xff8844 },
+                { left: 'T', right: 'A', leftColor: 0xff4444, rightColor: 0x4488ff }
+            ];
+
+            // 链的颜色
+            const chain1Color = 0xff2288; // 粉红色
+            const chain2Color = 0x22aaff; // 蓝色
+            
+            // 存储每层的链位置，用于创建连续的螺旋带
+            let chain1Positions = [];
+            let chain2Positions = [];
+
+            // 创建碱基对横杠和连接件
+            for (let i = 0; i < numLevels; i++) {
+                const y = i * heightStep - (numLevels * heightStep) / 2;
+                const angle = i * angleStep;
+                
+                const x1 = Math.cos(angle) * radius;
+                const z1 = Math.sin(angle) * radius;
+                const x2 = Math.cos(angle + Math.PI) * radius;
+                const z2 = Math.sin(angle + Math.PI) * radius;
+                
+                chain1Positions.push(new THREE.Vector3(x1, y, z1));
+                chain2Positions.push(new THREE.Vector3(x2, y, z2));
+                
+                // 创建碱基对横杠（长条形状）
+                const barLength = radius * 2;
+                const barGeometry = new THREE.BoxGeometry(barLength, 0.6, 0.3);
+                const barMaterial = new THREE.MeshPhongMaterial({
+                    color: basePairs[i].leftColor,
+                    emissive: basePairs[i].leftColor,
+                    emissiveIntensity: 0.2
+                });
+                
+                // 左半部分
+                const leftBarGeo = new THREE.BoxGeometry(radius, 0.6, 0.3);
+                const leftBarMat = new THREE.MeshPhongMaterial({
+                    color: basePairs[i].leftColor,
+                    emissive: basePairs[i].leftColor,
+                    emissiveIntensity: 0.3
+                });
+                const leftBar = new THREE.Mesh(leftBarGeo, leftBarMat);
+                leftBar.position.set(x1 / 2, y, z1 / 2);
+                leftBar.lookAt(new THREE.Vector3(0, y, 0));
+                leftBar.rotateY(Math.PI / 2);
+                moleculeGroup.add(leftBar);
+                
+                // 右半部分
+                const rightBarGeo = new THREE.BoxGeometry(radius, 0.6, 0.3);
+                const rightBarMat = new THREE.MeshPhongMaterial({
+                    color: basePairs[i].rightColor,
+                    emissive: basePairs[i].rightColor,
+                    emissiveIntensity: 0.3
+                });
+                const rightBar = new THREE.Mesh(rightBarGeo, rightBarMat);
+                rightBar.position.set(x2 / 2, y, z2 / 2);
+                rightBar.lookAt(new THREE.Vector3(0, y, 0));
+                rightBar.rotateY(Math.PI / 2);
+                moleculeGroup.add(rightBar);
+                
+                // 中间连接件（白色小圆柱）
+                const connectorGeo = new THREE.CylinderGeometry(0.15, 0.15, 0.8, 16);
+                const connectorMat = new THREE.MeshPhongMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0.2 });
+                const connector = new THREE.Mesh(connectorGeo, connectorMat);
+                connector.position.set(0, y, 0);
+                connector.lookAt(new THREE.Vector3(x1, y, z1));
+                connector.rotateX(Math.PI / 2);
+                moleculeGroup.add(connector);
+                
+                // 添加文字标签
+                addTextLabel(basePairs[i].left, new THREE.Vector3(x1 * 0.5, y, z1 * 0.5));
+                addTextLabel(basePairs[i].right, new THREE.Vector3(x2 * 0.5, y, z2 * 0.5));
+            }
+            
+            // 创建螺旋链（使用管状几何体连接所有点）
+            function createHelixChain(positions, color) {
+                // 采样更多点使曲线更平滑
+                const smoothPositions = [];
+                for (let i = 0; i < positions.length - 1; i++) {
+                    const start = positions[i];
+                    const end = positions[i + 1];
+                    const segments = 10;
+                    for (let j = 0; j < segments; j++) {
+                        const t = j / segments;
+                        smoothPositions.push(new THREE.Vector3(
+                            start.x + (end.x - start.x) * t,
+                            start.y + (end.y - start.y) * t,
+                            start.z + (end.z - start.z) * t
+                        ));
+                    }
+                }
+                smoothPositions.push(positions[positions.length - 1]);
+                
+                const curve = new THREE.CatmullRomCurve3(smoothPositions);
+                const tubeGeometry = new THREE.TubeGeometry(curve, 100, 0.25, 16, false);
+                const tubeMaterial = new THREE.MeshPhongMaterial({
+                    color: color,
+                    emissive: color,
+                    emissiveIntensity: 0.3
+                });
+                const tube = new THREE.Mesh(tubeGeometry, tubeMaterial);
+                moleculeGroup.add(tube);
+            }
+            
+            createHelixChain(chain1Positions, chain1Color);
+            createHelixChain(chain2Positions, chain2Color);
+        }
+
+        // 添加文字标签
+        function addTextLabel(text, position) {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = 128;
+            canvas.height = 64;
+
+            // 背景
+            context.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            context.roundRect(0, 0, 128, 64, 10);
+            context.fill();
+
+            // 文字
+            context.fillStyle = 'white';
+            context.font = 'bold 36px Arial';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText(text, 64, 32);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMaterial = new THREE.SpriteMaterial({
+                map: texture,
+                transparent: true,
+                opacity: 0.95
+            });
+
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.copy(position);
+            sprite.position.y += 0.5;
+            sprite.scale.set(1.5, 0.75, 0.75);
+            moleculeGroup.add(sprite);
+        }
+
+        function addParticles() {
+            // 创建圆形纹理
+            const canvas = document.createElement('canvas');
+            canvas.width = 32;
+            canvas.height = 32;
+            const ctx = canvas.getContext('2d');
+            const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+            gradient.addColorStop(0, 'rgba(255,255,255,1)');
+            gradient.addColorStop(0.3, 'rgba(255,255,255,0.8)');
+            gradient.addColorStop(1, 'rgba(255,255,255,0)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 32, 32);
+            const circleTexture = new THREE.CanvasTexture(canvas);
+
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 800;
+            const positions = new Float32Array(particlesCount * 3);
+            for (let i = 0; i < particlesCount * 3; i++) {
+                positions[i] = (Math.random() - 0.5) * 100;
+            }
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const particlesMaterial = new THREE.PointsMaterial({
+                map: circleTexture,
+                color: 0xddeeff,
+                size: 0.16,
+                transparent: true,
+                opacity: 0.65,
+                blending: THREE.AdditiveBlending,
+                depthWrite: false
+            });
+            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+            particlesMesh.name = 'stars';
+            scene.add(particlesMesh);
+        }
+
+        function createUI() {
+            const list = document.getElementById('molecule-list');
+            list.innerHTML = '';
+            
+            const categories = [
+                { name: 'Simple Molecules', start: 0, end: 15 },
+                { name: 'Organic Compounds', start: 15, end: 38 },
+                { name: 'Inorganic Compounds', start: 38, end: 44 },
+                { name: 'Special Structures', start: 44, end: molecules.length }
+            ];
+            
+            categories.forEach(cat => {
+                const count = cat.end - cat.start;
+                const section = document.createElement('div');
+                section.className = 'cat-section open';
+                
+                const toggle = document.createElement('div');
+                toggle.className = 'cat-toggle';
+                toggle.innerHTML = `<span class="arrow">▶</span> ${cat.name} <span class="count">(${count})</span>`;
+                toggle.addEventListener('click', () => {
+                    section.classList.toggle('open');
+                });
+                
+                const body = document.createElement('div');
+                body.className = 'cat-body';
+                const inner = document.createElement('div');
+                inner.className = 'cat-body-inner';
+                
+                for (let i = cat.start; i < cat.end && i < molecules.length; i++) {
+                    const mol = molecules[i];
+                    const item = document.createElement('div');
+                    item.className = 'mol-item';
+                    // Extract name parts: "Water (H₂O)" -> commonName="Water"
+                    const parenIdx = mol.name.lastIndexOf('(');
+                    const commonName = parenIdx > 0 ? mol.name.substring(0, parenIdx).trim() : mol.name;
+                    item.innerHTML = `<span class="mol-formula">${mol.formula}</span><span class="mol-name">${commonName}</span>`;
+                    item.addEventListener('click', () => showMolecule(i));
+                    item.setAttribute('data-index', i);
+                    item.setAttribute('data-search', (mol.name + ' ' + mol.formula).toLowerCase());
+                    inner.appendChild(item);
+                }
+                
+                body.appendChild(inner);
+                section.appendChild(toggle);
+                section.appendChild(body);
+                list.appendChild(section);
+            });
+            
+            document.getElementById('total-count').textContent = molecules.length;
+            
+            const searchInput = document.getElementById('search-input');
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase();
+                const sections = list.querySelectorAll('.cat-section');
+                
+                sections.forEach(section => {
+                    let hasVisible = false;
+                    const items = section.querySelectorAll('.mol-item');
+                    items.forEach(item => {
+                        const txt = item.getAttribute('data-search') || '';
+                        const visible = txt.includes(query);
+                        item.style.display = visible ? '' : 'none';
+                        if (visible) hasVisible = true;
+                    });
+                    section.style.display = hasVisible ? '' : 'none';
+                    // Auto-expand matching sections
+                    if (hasVisible) section.classList.add('open');
+                });
+            });
+        }
+
+        function showMolecule(index) {
+            currentMolecule = index;
+
+            // 更新UI
+            document.querySelectorAll('.mol-item').forEach(item => {
+                const idx = parseInt(item.getAttribute('data-index'));
+                item.classList.toggle('active', idx === index);
+            });
+
+            // 更新信息面板
+            const mol = molecules[index];
+            document.getElementById('info-title').textContent = mol.name;
+            document.getElementById('info-desc').textContent = mol.desc;
+            document.getElementById('info-formula').textContent = mol.formula;
+            document.getElementById('info-atoms').textContent = 'Atoms: ' + mol.atoms.length;
+            document.getElementById('info-bonds').textContent = 'Bonds: ' + mol.bonds.length;
+
+            // 清除当前分子
+            while (moleculeGroup.children.length > 0) {
+                moleculeGroup.remove(moleculeGroup.children[0]);
+            }
+
+            // 创建新分子
+            const isDiagram = (molecules[index].name === '🧬 DNA 3D Structure Diagram');
+            if (isDiagram) {
+                createDNADiagram();
+            } else {
+                createMolecule(molecules[index]);
+            }
+            
+            // 进场动画
+            moleculeGroup.scale.set(0, 0, 0);
+            moleculeGroup.userData = { animTimer: 0, animTarget: 1 };
+
+            // 调整相机位置
+            controls.target.set(0, 0, 0);
+            if (isDiagram) {
+                camera.position.set(0, 15, 35);
+            } else {
+                camera.position.set(0, 5, 15);
+            }
+            controls.update();
+        }
+
+        function createMolecule(mol) {
+            // 计算分子中心
+            let centerX = 0, centerY = 0, centerZ = 0;
+            mol.atoms.forEach(atom => {
+                centerX += atom.x;
+                centerY += atom.y;
+                centerZ += atom.z;
+            });
+            centerX /= mol.atoms.length;
+            centerY /= mol.atoms.length;
+            centerZ /= mol.atoms.length;
+
+            // 创建原子球体
+            mol.atoms.forEach((atom, i) => {
+                const radius = atomRadii[atom.element] || 0.5;
+                const color = atomColors[atom.element] || 0x888888;
+
+                const geometry = new THREE.SphereGeometry(radius, 32, 32);
+                const material = new THREE.MeshPhongMaterial({
+                    color: color,
+                    specular: 0x444444,
+                    shininess: 30,
+                    emissive: color,
+                    emissiveIntensity: 0.1
+                });
+
+                const sphere = new THREE.Mesh(geometry, material);
+                sphere.position.set(atom.x - centerX, atom.y - centerY, atom.z - centerZ);
+                moleculeGroup.add(sphere);
+
+                // 添加原子标签
+                addLabel(atom.element, sphere.position.clone());
+            });
+
+            // 创建化学键
+            mol.bonds.forEach(bond => {
+                const [idx1, idx2, bondOrder] = bond;
+                const atom1 = mol.atoms[idx1];
+                const atom2 = mol.atoms[idx2];
+
+                const start = new THREE.Vector3(
+                    atom1.x - centerX,
+                    atom1.y - centerY,
+                    atom1.z - centerZ
+                );
+                const end = new THREE.Vector3(
+                    atom2.x - centerX,
+                    atom2.y - centerY,
+                    atom2.z - centerZ
+                );
+
+                createBond(start, end, bondOrder || 1);
+            });
+        }
+
+        function createBond(start, end, bondOrder) {
+            const direction = new THREE.Vector3().subVectors(end, start);
+            const length = direction.length();
+            direction.normalize();
+
+            if (bondOrder === 1) {
+                // 单键
+                createCylinder(start, end, 0.08);
+            } else if (bondOrder === 2) {
+                // 双键
+                const offset = new THREE.Vector3().crossVectors(direction, new THREE.Vector3(0, 1, 0));
+                if (offset.length() < 0.01) {
+                    offset.crossVectors(direction, new THREE.Vector3(1, 0, 0));
+                }
+                offset.normalize().multiplyScalar(0.15);
+
+                createCylinder(
+                    new THREE.Vector3().addVectors(start, offset),
+                    new THREE.Vector3().addVectors(end, offset),
+                    0.06
+                );
+                createCylinder(
+                    new THREE.Vector3().addVectors(start, offset).negate().add(start).add(offset),
+                    new THREE.Vector3().addVectors(end, offset).negate().add(end).add(offset),
+                    0.06
+                );
+            } else if (bondOrder === 3) {
+                // 三键
+                const offset = new THREE.Vector3().crossVectors(direction, new THREE.Vector3(0, 1, 0));
+                if (offset.length() < 0.01) {
+                    offset.crossVectors(direction, new THREE.Vector3(1, 0, 0));
+                }
+                offset.normalize();
+
+                createCylinder(start, end, 0.05);
+                createCylinder(
+                    new THREE.Vector3().addVectors(start, offset.clone().multiplyScalar(0.18)),
+                    new THREE.Vector3().addVectors(end, offset.clone().multiplyScalar(0.18)),
+                    0.05
+                );
+                createCylinder(
+                    new THREE.Vector3().addVectors(start, offset.clone().multiplyScalar(-0.18)),
+                    new THREE.Vector3().addVectors(end, offset.clone().multiplyScalar(-0.18)),
+                    0.05
+                );
+            }
+        }
+
+        function createCylinder(start, end, radius) {
+            const direction = new THREE.Vector3().subVectors(end, start);
+            const length = direction.length();
+            
+            const geometry = new THREE.CylinderGeometry(radius, radius, length, 16);
+            const material = new THREE.MeshPhongMaterial({
+                color: 0xaaaaaa,
+                specular: 0x222222,
+                shininess: 20
+            });
+            
+            const cylinder = new THREE.Mesh(geometry, material);
+            
+            const center = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
+            cylinder.position.copy(center);
+            
+            const axis = new THREE.Vector3(0, 1, 0);
+            const dir = direction.clone().normalize();
+            const quaternion = new THREE.Quaternion().setFromUnitVectors(axis, dir);
+            cylinder.quaternion.copy(quaternion);
+            
+            moleculeGroup.add(cylinder);
+        }
+
+        function addLabel(text, position) {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = 64;
+            canvas.height = 64;
+
+            context.fillStyle = 'white';
+            context.font = 'bold 40px Arial';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText(text, 32, 32);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMaterial = new THREE.SpriteMaterial({
+                map: texture,
+                transparent: true,
+                opacity: 0.9
+            });
+
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.copy(position);
+            sprite.scale.set(0.6, 0.6, 0.6);
+            moleculeGroup.add(sprite);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // 30fps limit to reduce GPU usage
+            const now = performance.now();
+            if (!animate.lastTime) animate.lastTime = 0;
+            if (now - animate.lastTime < 33) return;
+            animate.lastTime = now;
+            
+            controls.update();
+
+            // 分子自动旋转 (速度 1.5x)
+            moleculeGroup.rotation.y += 0.01;
+            
+            // 进场缩放动画
+            if (moleculeGroup.userData && moleculeGroup.userData.animTimer < 1) {
+                moleculeGroup.userData.animTimer += 0.04;
+                const t = Math.min(moleculeGroup.userData.animTimer, 1);
+                // easeOutBack
+                const c1 = 1.70158;
+                const c3 = c1 + 1;
+                const val = 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+                moleculeGroup.scale.setScalar(val);
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        // 初始化
+        init();
+    </script>
+</body>
+</html>

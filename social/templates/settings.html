@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}设置 - Social{% endblock %}
+
+{% block content %}
+<div class="settings-page">
+    <div class="settings-header">
+        <h1>设置</h1>
+    </div>
+    
+    <div class="settings-profile-card">
+        <div class="profile-header">
+            <div class="avatar-wrapper">
+                <img id="settingsAvatar" class="profile-avatar" src="" alt="头像">
+                <label for="avatarInput" class="avatar-edit-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                        <circle cx="12" cy="13" r="4"/>
+                    </svg>
+                </label>
+                <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+            </div>
+            <div class="profile-info">
+                <h2 id="profileUsername" class="profile-name"></h2>
+                <p id="profileBio" class="profile-bio"></p>
+            </div>
+        </div>
+        
+        <div id="avatarPreviewSection" class="avatar-preview-section" style="display: none;">
+            <div class="preview-header">
+                <h3>预览新头像</h3>
+                <button id="cancelAvatarBtn" class="btn-cancel-avatar">取消</button>
+            </div>
+            <div class="preview-container">
+                <img id="avatarPreview" class="avatar-preview-img" src="" alt="预览">
+            </div>
+            <button id="confirmAvatarBtn" class="btn-confirm-avatar">确认修改</button>
+        </div>
+        
+        <div class="profile-edit-section">
+            <div class="edit-field">
+                <label>个人简介</label>
+                <div class="input-with-count">
+                    <textarea id="settingsBio" maxlength="100" rows="3" placeholder="介绍一下自己..."></textarea>
+                    <span class="char-count"><span id="bioCharCount">0</span>/100</span>
+                </div>
+            </div>
+            <button id="saveProfileBtn" class="btn-save">保存修改</button>
+        </div>
+    </div>
+    
+    <div class="settings-card">
+        <h3>修改密码</h3>
+        <form id="passwordForm" class="password-form" autocomplete="off">
+            <div class="form-row">
+                <input type="password" id="currentPassword" name="currentPassword" placeholder="当前密码">
+            </div>
+            <div class="form-row">
+                <input type="password" id="newPassword" name="newPassword" placeholder="新密码">
+            </div>
+            <div class="form-row">
+                <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="确认新密码">
+            </div>
+            <button type="button" id="changePasswordBtn" class="btn-password">更新密码</button>
+        </form>
+    </div>
+    
+    <div class="settings-card danger-zone">
+        <div class="danger-content">
+            <div class="danger-text">
+                <h3>退出登录</h3>
+                <p>退出后需要重新登录</p>
+            </div>
+            <button id="logoutBtn" class="btn-logout">退出</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

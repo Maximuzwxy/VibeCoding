@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_callisto_001",
+      "question": {
+        "zh": "木卫四在太阳系中最大的特征是什么？",
+        "en": "What is the most notable feature of Callisto in the solar system?"
+      },
+      "options": [
+        {
+          "zh": "它是木星最大的卫星",
+          "en": "It is Jupiter's largest moon"
+        },
+        {
+          "zh": "它是太阳系中表面最古老的卫星之一",
+          "en": "It has one of the oldest surfaces in the solar system"
+        },
+        {
+          "zh": "它拥有最活跃的火山",
+          "en": "It has the most active volcanoes"
+        },
+        {
+          "zh": "它是唯一拥有大气层的卫星",
+          "en": "It is the only moon with an atmosphere"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫四的表面布满陨石坑，地质活动极少，被认为是太阳系中最古老的表面之一。",
+        "en": "Callisto's surface is heavily cratered with very little geological activity, making it one of the oldest surfaces in the solar system."
+      }
+    },
+    {
+      "id": "q_callisto_002",
+      "question": {
+        "zh": "木卫四绕木星公转的轨道半径大约是多少？",
+        "en": "What is the approximate orbital radius of Callisto around Jupiter?"
+      },
+      "options": [
+        {
+          "zh": "约 42 万公里",
+          "en": "About 420,000 km"
+        },
+        {
+          "zh": "约 188 万公里",
+          "en": "About 1,880,000 km"
+        },
+        {
+          "zh": "约 67 万公里",
+          "en": "About 670,000 km"
+        },
+        {
+          "zh": "约 100 万公里",
+          "en": "About 1,000,000 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫四是伽利略卫星中最外层的一颗，平均轨道半径约为 188 万公里。",
+        "en": "Callisto is the outermost of the Galilean moons, with an average orbital radius of about 1,880,000 km."
+      }
+    },
+    {
+      "id": "q_callisto_003",
+      "question": {
+        "zh": "木卫四的直径大约是多少？",
+        "en": "What is the approximate diameter of Callisto?"
+      },
+      "options": [
+        {
+          "zh": "约 1,200 公里",
+          "en": "About 1,200 km"
+        },
+        {
+          "zh": "约 3,100 公里",
+          "en": "About 3,100 km"
+        },
+        {
+          "zh": "约 4,800 公里",
+          "en": "About 4,800 km"
+        },
+        {
+          "zh": "约 5,200 公里",
+          "en": "About 5,200 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "木卫四的直径约为 4,821 公里，是太阳系中第三大的卫星。",
+        "en": "Callisto has a diameter of about 4,821 km, making it the third-largest moon in the solar system."
+      }
+    },
+    {
+      "id": "q_callisto_004",
+      "question": {
+        "zh": "木卫四的表面主要由什么物质构成？",
+        "en": "What is the primary composition of Callisto's surface?"
+      },
+      "options": [
+        {
+          "zh": "纯水冰",
+          "en": "Pure water ice"
+        },
+        {
+          "zh": "岩石和金属",
+          "en": "Rock and metal"
+        },
+        {
+          "zh": "水冰和岩石的混合物",
+          "en": "A mixture of water ice and rock"
+        },
+        {
+          "zh": "液态甲烷",
+          "en": "Liquid methane"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "木卫四的表面由水冰和岩石混合而成，光谱分析显示其表面含有大量暗色非冰物质。",
+        "en": "Callisto's surface is composed of a mixture of water ice and rock, with spectral analysis showing abundant dark non-ice materials."
+      }
+    },
+    {
+      "id": "q_callisto_005",
+      "question": {
+        "zh": "木卫四的内部结构最可能是什么？",
+        "en": "What is the most likely internal structure of Callisto?"
+      },
+      "options": [
+        {
+          "zh": "完全固态岩石",
+          "en": "Completely solid rock"
+        },
+        {
+          "zh": "金属核心和岩石地幔",
+          "en": "A metallic core and rocky mantle"
+        },
+        {
+          "zh": "冰壳、液态水海洋和岩石核心",
+          "en": "An ice crust, liquid water ocean, and rocky core"
+        },
+        {
+          "zh": "完全由冰构成",
+          "en": "Completely composed of ice"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "伽利略号探测器的数据表明木卫四内部可能存在一个液态水海洋，上方是冰壳，下方是岩石核心。",
+        "en": "Data from the Galileo spacecraft suggests Callisto may have a subsurface liquid water ocean beneath an ice crust, over a rocky core."
+      }
+    },
+    {
+      "id": "q_callisto_006",
+      "question": {
+        "zh": "木卫四的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Callisto?"
+      },
+      "options": [
+        {
+          "zh": "约 -50°C",
+          "en": "About -50°C"
+        },
+        {
+          "zh": "约 -100°C",
+          "en": "About -100°C"
+        },
+        {
+          "zh": "约 -140°C",
+          "en": "About -140°C"
+        },
+        {
+          "zh": "约 -200°C",
+          "en": "About -200°C"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "木卫四表面温度在白天约为 -140°C，夜晚更低，因为其反照率较低且远离太阳。",
+        "en": "Callisto's surface temperature is about -140°C during the day, and even lower at night, due to its low albedo and distance from the Sun."
+      }
+    },
+    {
+      "id": "q_callisto_007",
+      "question": {
+        "zh": "木卫四的轨道运动有什么特殊之处？",
+        "en": "What is special about Callisto's orbital motion?"
+      },
+      "options": [
+        {
+          "zh": "它与木星自转同步，始终一面朝向木星",
+          "en": "It is tidally locked, always showing the same face to Jupiter"
+        },
+        {
+          "zh": "它逆行公转",
+          "en": "It orbits in a retrograde direction"
+        },
+        {
+          "zh": "它每 7 天绕木星一圈",
+          "en": "It orbits Jupiter every 7 days"
+        },
+        {
+          "zh": "它的轨道离心率极大",
+          "en": "Its orbit has a very high eccentricity"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "木卫四与木星是潮汐锁定的，因此它始终以同一面朝向木星，公转周期约 16.7 天。",
+        "en": "Callisto is tidally locked to Jupiter, so it always shows the same face to the planet, with an orbital period of about 16.7 days."
+      }
+    },
+    {
+      "id": "q_callisto_008",
+      "question": {
+        "zh": "木卫四的大气层主要成分是什么？",
+        "en": "What is the main component of Callisto's thin atmosphere?"
+      },
+      "options": [
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "氧气",
+          "en": "Oxygen"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        },
+        {
+          "zh": "氢气",
+          "en": "Hydrogen"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "木卫四拥有极其稀薄的大气层，主要由二氧化碳组成，可能还含有少量氧气。",
+        "en": "Callisto has an extremely tenuous atmosphere composed primarily of carbon dioxide, with trace amounts of oxygen."
+      }
+    },
+    {
+      "id": "q_callisto_009",
+      "question": {
+        "zh": "哪艘探测器首次近距离探测了木卫四？",
+        "en": "Which spacecraft first conducted a close flyby of Callisto?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "先驱者10号",
+          "en": "Pioneer 10"
+        },
+        {
+          "zh": "伽利略号",
+          "en": "Galileo"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "旅行者1号于1979年飞越木星系统，首次近距离拍摄了木卫四的高分辨率图像。",
+        "en": "Voyager 1 flew by the Jupiter system in 1979, taking the first high-resolution images of Callisto."
+      }
+    },
+    {
+      "id": "q_callisto_010",
+      "question": {
+        "zh": "木卫四表面最显著的地貌特征是什么？",
+        "en": "What is the most prominent surface feature on Callisto?"
+      },
+      "options": [
+        {
+          "zh": "巨大的火山口",
+          "en": "A giant volcanic caldera"
+        },
+        {
+          "zh": "名为瓦尔哈拉的巨型多环盆地",
+          "en": "A giant multi-ring basin called Valhalla"
+        },
+        {
+          "zh": "绵延数千公里的峡谷",
+          "en": "Canyons stretching thousands of kilometers"
+        },
+        {
+          "zh": "极地冰冠",
+          "en": "Polar ice caps"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "瓦尔哈拉是木卫四上最大的多环撞击盆地，直径约 3,800 公里，是太阳系中最大的此类结构之一。",
+        "en": "Valhalla is the largest multi-ring impact basin on Callisto, with a diameter of about 3,800 km, one of the largest such structures in the solar system."
+      }
+    }
+  ]
+}

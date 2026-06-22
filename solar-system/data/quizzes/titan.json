@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_titan_001",
+      "question": {"zh": "土卫六的直径约为多少？", "en": "What is the approximate diameter of Titan?"},
+      "options": [
+        {"zh": "4,150 公里", "en": "4,150 km"},
+        {"zh": "5,150 公里", "en": "5,150 km"},
+        {"zh": "6,150 公里", "en": "6,150 km"},
+        {"zh": "7,150 公里", "en": "7,150 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土卫六的直径约为 5,150 公里，是太阳系第二大卫星，仅次于木卫三。", "en": "Titan's diameter is approximately 5,150 km, making it the second largest moon in the Solar System."}
+    },
+    {
+      "id": "q_titan_002",
+      "question": {"zh": "土卫六绕土星公转一周需要多少天？", "en": "How many days does it take for Titan to orbit Saturn once?"},
+      "options": [
+        {"zh": "5.95 天", "en": "5.95 days"},
+        {"zh": "10.95 天", "en": "10.95 days"},
+        {"zh": "15.95 天", "en": "15.95 days"},
+        {"zh": "20.95 天", "en": "20.95 days"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "土卫六公转周期为 15.95 天，与自转周期相同（潮汐锁定）。", "en": "Titan's orbital period is 15.95 days, the same as its rotation period (tidally locked)."}
+    },
+    {
+      "id": "q_titan_003",
+      "question": {"zh": "土卫六是由谁发现的？", "en": "Who discovered Titan?"},
+      "options": [
+        {"zh": "伽利略", "en": "Galileo"},
+        {"zh": "惠更斯", "en": "Huygens"},
+        {"zh": "卡西尼", "en": "Cassini"},
+        {"zh": "开普勒", "en": "Kepler"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "惠更斯于 1655 年发现土卫六，是土星最大的卫星。", "en": "Huygens discovered Titan in 1655, it is Saturn's largest moon."}
+    },
+    {
+      "id": "q_titan_004",
+      "question": {"zh": "土卫六的大气压力约为多少？", "en": "What is the atmospheric pressure on Titan?"},
+      "options": [
+        {"zh": "约 50 kPa", "en": "About 50 kPa"},
+        {"zh": "约 100 kPa", "en": "About 100 kPa"},
+        {"zh": "约 147 kPa", "en": "About 147 kPa"},
+        {"zh": "约 200 kPa", "en": "About 200 kPa"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "土卫六表面大气压约为 146.7 kPa，比地球高约 45%。", "en": "Titan's surface atmospheric pressure is about 146.7 kPa, about 45% higher than Earth's."}
+    },
+    {
+      "id": "q_titan_005",
+      "question": {"zh": "土卫六大气层中含量最多的气体是什么？", "en": "What is the most abundant gas in Titan's atmosphere?"},
+      "options": [
+        {"zh": "甲烷", "en": "Methane"},
+        {"zh": "氮气", "en": "Nitrogen"},
+        {"zh": "氢气", "en": "Hydrogen"},
+        {"zh": "二氧化碳", "en": "Carbon Dioxide"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土卫六大气层中氮气约占 98.4%，甲烷约占 1.4%。", "en": "Titan's atmosphere consists of approximately 98.4% nitrogen and 1.4% methane."}
+    },
+    {
+      "id": "q_titan_006",
+      "question": {"zh": "土卫六表面的液态湖泊主要由什么组成？", "en": "What are the liquid lakes on Titan's surface mainly composed of?"},
+      "options": [
+        {"zh": "液态水", "en": "Liquid water"},
+        {"zh": "液态甲烷和乙烷", "en": "Liquid methane and ethane"},
+        {"zh": "液态二氧化碳", "en": "Liquid carbon dioxide"},
+        {"zh": "液态氨", "en": "Liquid ammonia"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土卫六是唯一表面有稳定液体的卫星，湖泊由液态甲烷和乙烷组成。", "en": "Titan is the only moon with stable surface liquid, lakes are composed of liquid methane and ethane."}
+    },
+    {
+      "id": "q_titan_007",
+      "question": {"zh": "土卫六最大的湖泊是？", "en": "What is the largest lake on Titan?"},
+      "options": [
+        {"zh": "丽姬亚海", "en": "Ligeia Mare"},
+        {"zh": "蓬加海", "en": "Punga Mare"},
+        {"zh": "克拉肯海", "en": "Kraken Mare"},
+        {"zh": "安大略湖", "en": "Ontario Lacus"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "克拉肯海是土卫六最大的湖泊，面积约 40 万平方公里，比地球上的里海还大。", "en": "Kraken Mare is Titan's largest lake, about 400,000 km², larger than Earth's Caspian Sea."}
+    },
+    {
+      "id": "q_titan_008",
+      "question": {"zh": "土卫六的表面温度约为多少？", "en": "What is the surface temperature on Titan?"},
+      "options": [
+        {"zh": "-79°C", "en": "-79°C"},
+        {"zh": "-129°C", "en": "-129°C"},
+        {"zh": "-179°C", "en": "-179°C"},
+        {"zh": "-229°C", "en": "-229°C"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "土卫六表面温度约为 -179°C，非常寒冷。", "en": "Titan's surface temperature is about -179°C, extremely cold."}
+    },
+    {
+      "id": "q_titan_009",
+      "question": {"zh": "哪个探测器在土卫六上着陆？", "en": "Which spacecraft landed on Titan?"},
+      "options": [
+        {"zh": "旅行者 1 号", "en": "Voyager 1"},
+        {"zh": "卡西尼号", "en": "Cassini"},
+        {"zh": "惠更斯号", "en": "Huygens"},
+        {"zh": "新视野号", "en": "New Horizons"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "惠更斯号于 2005 年 1 月 14 日在土卫六上成功着陆，是人类探测器首次在外太阳系卫星着陆。", "en": "Huygens successfully landed on Titan on January 14, 2005, the first landing on an outer Solar System moon."}
+    },
+    {
+      "id": "q_titan_010",
+      "question": {"zh": "土卫六赤道附近的暗色区域是什么？", "en": "What are the dark areas near Titan's equator?"},
+      "options": [
+        {"zh": "海洋", "en": "Oceans"},
+        {"zh": "碳氢化合物沙丘", "en": "Hydrocarbon dunes"},
+        {"zh": "火山平原", "en": "Volcanic plains"},
+        {"zh": "森林", "en": "Forests"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土卫六赤道附近的暗色区域是由有机物质组成的沙丘，由甲烷光解产物形成。", "en": "The dark areas near Titan's equator are dunes made of organic materials, formed from methane photolysis products."}
+    }
+  ]
+}

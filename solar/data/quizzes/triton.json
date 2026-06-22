@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_triton_001",
+      "question": {
+        "zh": "海卫一是太阳系中最大的卫星之一，它围绕哪颗行星运行？",
+        "en": "Triton is one of the largest moons in the solar system. Which planet does it orbit?"
+      },
+      "options": [
+        {
+          "zh": "土星",
+          "en": "Saturn"
+        },
+        {
+          "zh": "天王星",
+          "en": "Uranus"
+        },
+        {
+          "zh": "海王星",
+          "en": "Neptune"
+        },
+        {
+          "zh": "冥王星",
+          "en": "Pluto"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "海卫一是海王星最大的卫星，于1846年被威廉·拉塞尔发现。",
+        "en": "Triton is the largest moon of Neptune, discovered by William Lassell in 1846."
+      }
+    },
+    {
+      "id": "q_triton_002",
+      "question": {
+        "zh": "海卫一的轨道方向与海王星的自转方向相反，这种轨道称为？",
+        "en": "Triton's orbit is opposite to Neptune's rotation direction. What is this type of orbit called?"
+      },
+      "options": [
+        {
+          "zh": "顺行轨道",
+          "en": "Prograde orbit"
+        },
+        {
+          "zh": "逆行轨道",
+          "en": "Retrograde orbit"
+        },
+        {
+          "zh": "同步轨道",
+          "en": "Synchronous orbit"
+        },
+        {
+          "zh": "极地轨道",
+          "en": "Polar orbit"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "海卫一拥有逆行轨道，这暗示它可能是一颗被海王星捕获的柯伊伯带天体。",
+        "en": "Triton has a retrograde orbit, suggesting it may be a Kuiper Belt object captured by Neptune."
+      }
+    },
+    {
+      "id": "q_triton_003",
+      "question": {
+        "zh": "海卫一的表面温度极低，大约是多少？",
+        "en": "The surface temperature of Triton is extremely low. Approximately what is it?"
+      },
+      "options": [
+        {
+          "zh": "-100°C",
+          "en": "-100°C"
+        },
+        {
+          "zh": "-180°C",
+          "en": "-180°C"
+        },
+        {
+          "zh": "-235°C",
+          "en": "-235°C"
+        },
+        {
+          "zh": "-270°C",
+          "en": "-270°C"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "海卫一表面温度约为-235°C（38 K），使其成为太阳系中最冷的天体之一。",
+        "en": "Triton's surface temperature is about -235°C (38 K), making it one of the coldest bodies in the solar system."
+      }
+    },
+    {
+      "id": "q_triton_004",
+      "question": {
+        "zh": "海卫一表面最显著的特征是什么？",
+        "en": "What is the most prominent surface feature of Triton?"
+      },
+      "options": [
+        {
+          "zh": "巨大的环形山",
+          "en": "Giant impact craters"
+        },
+        {
+          "zh": "“哈密瓜地形”和冰火山",
+          "en": "Cantaloupe terrain and cryovolcanoes"
+        },
+        {
+          "zh": "广阔的液态水海洋",
+          "en": "Vast liquid water ocean"
+        },
+        {
+          "zh": "浓密的二氧化碳大气层",
+          "en": "Thick carbon dioxide atmosphere"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "海卫一表面有独特的“哈密瓜地形”和活跃的冰火山，喷出氮冰和甲烷。",
+        "en": "Triton features unique 'cantaloupe terrain' and active cryovolcanoes that erupt nitrogen ice and methane."
+      }
+    },
+    {
+      "id": "q_triton_005",
+      "question": {
+        "zh": "海卫一的密度约为1.98 g/cm³，这表明其主要成分是？",
+        "en": "Triton's density is about 1.98 g/cm³. What does this suggest about its composition?"
+      },
+      "options": [
+        {
+          "zh": "纯岩石",
+          "en": "Pure rock"
+        },
+        {
+          "zh": "纯冰",
+          "en": "Pure ice"
+        },
+        {
+          "zh": "冰和岩石的混合物",
+          "en": "Mixture of ice and rock"
+        },
+        {
+          "zh": "金属核心",
+          "en": "Metallic core"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "海卫一的密度介于纯冰和纯岩石之间，表明它由大约三分之二的岩石和三分之一的冰组成。",
+        "en": "Triton's density between pure ice and pure rock indicates it is composed of roughly two-thirds rock and one-third ice."
+      }
+    },
+    {
+      "id": "q_triton_006",
+      "question": {
+        "zh": "海卫一拥有稀薄的大气层，其主要成分是什么？",
+        "en": "Triton has a thin atmosphere. What is its main component?"
+      },
+      "options": [
+        {
+          "zh": "氧气",
+          "en": "Oxygen"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        },
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "氢气",
+          "en": "Hydrogen"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "海卫一的大气层主要由氮气组成，并含有少量甲烷和一氧化碳，表面气压极低。",
+        "en": "Triton's atmosphere is primarily nitrogen, with trace amounts of methane and carbon monoxide, and has extremely low surface pressure."
+      }
+    },
+    {
+      "id": "q_triton_007",
+      "question": {
+        "zh": "唯一近距离探测过海卫一的航天器是？",
+        "en": "Which spacecraft is the only one to have made a close flyby of Triton?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        },
+        {
+          "zh": "伽利略号",
+          "en": "Galileo"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "1989年，旅行者2号飞越海王星系统，传回了海卫一的第一批详细图像和数据。",
+        "en": "In 1989, Voyager 2 flew by the Neptune system, returning the first detailed images and data of Triton."
+      }
+    },
+    {
+      "id": "q_triton_008",
+      "question": {
+        "zh": "海卫一的直径大约是多少？",
+        "en": "What is the approximate diameter of Triton?"
+      },
+      "options": [
+        {
+          "zh": "1,200公里",
+          "en": "1,200 km"
+        },
+        {
+          "zh": "2,700公里",
+          "en": "2,700 km"
+        },
+        {
+          "zh": "3,500公里",
+          "en": "3,500 km"
+        },
+        {
+          "zh": "5,000公里",
+          "en": "5,000 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "海卫一的直径约为2,707公里，是海王星最大的卫星，也是太阳系第七大卫星。",
+        "en": "Triton has a diameter of about 2,707 km, making it Neptune's largest moon and the seventh-largest moon in the solar system."
+      }
+    },
+    {
+      "id": "q_triton_009",
+      "question": {
+        "zh": "海卫一表面观测到的暗色条纹被认为是由什么造成的？",
+        "en": "The dark streaks observed on Triton's surface are believed to be caused by what?"
+      },
+      "options": [
+        {
+          "zh": "陨石撞击的碎片",
+          "en": "Debris from meteorite impacts"
+        },
+        {
+          "zh": "冰火山喷出的物质被风吹散",
+          "en": "Material from cryovolcanic eruptions blown by wind"
+        },
+        {
+          "zh": "液态甲烷河流的沉积",
+          "en": "Deposits from liquid methane rivers"
+        },
+        {
+          "zh": "太阳风侵蚀形成的沟壑",
+          "en": "Gullies formed by solar wind erosion"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "暗色条纹被认为是冰火山喷出的含碳物质被稀薄大气中的风搬运并沉积形成的。",
+        "en": "The dark streaks are thought to be carbon-bearing material from cryovolcanoes, transported and deposited by winds in the thin atmosphere."
+      }
+    },
+    {
+      "id": "q_triton_010",
+      "question": {
+        "zh": "关于海卫一的起源，最被广泛接受的理论是什么？",
+        "en": "What is the most widely accepted theory for the origin of Triton?"
+      },
+      "options": [
+        {
+          "zh": "与海王星同时从原行星盘形成",
+          "en": "Formed together with Neptune from the protoplanetary disk"
+        },
+        {
+          "zh": "海王星从土星引力场中捕获的卫星",
+          "en": "A moon captured from Saturn's gravitational field"
+        },
+        {
+          "zh": "一颗被海王星捕获的柯伊伯带矮行星",
+          "en": "A Kuiper Belt dwarf planet captured by Neptune"
+        },
+        {
+          "zh": "海王星与另一颗行星碰撞后的碎片",
+          "en": "Debris from a collision between Neptune and another planet"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "海卫一的逆行轨道、与冥王星相似的成分，以及其密度，都支持它是一颗被海王星捕获的柯伊伯带天体。",
+        "en": "Triton's retrograde orbit, composition similar to Pluto, and density support the theory that it is a Kuiper Belt object captured by Neptune."
+      }
+    }
+  ]
+}

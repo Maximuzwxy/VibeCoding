@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_europa_001",
+      "question": {"zh": "木卫二的直径约为多少？", "en": "What is the approximate diameter of Europa?"},
+      "options": [
+        {"zh": "2,122 km", "en": "2,122 km"},
+        {"zh": "3,122 km", "en": "3,122 km"},
+        {"zh": "4,122 km", "en": "4,122 km"},
+        {"zh": "5,122 km", "en": "5,122 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫二的直径约为 3,122 公里，略小于月球。", "en": "Europa's diameter is approximately 3,122 km, slightly smaller than Earth's Moon."}
+    },
+    {
+      "id": "q_europa_002",
+      "question": {"zh": "木卫二绕木星公转一周需要多少天？", "en": "How many days does it take for Europa to orbit Jupiter once?"},
+      "options": [
+        {"zh": "1.77 天", "en": "1.77 days"},
+        {"zh": "3.55 天", "en": "3.55 days"},
+        {"zh": "5.55 天", "en": "5.55 days"},
+        {"zh": "7.15 天", "en": "7.15 days"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫二公转周期为 3.55 天，是第二颗伽利略卫星。", "en": "Europa's orbital period is 3.55 days, the second Galilean moon."}
+    },
+    {
+      "id": "q_europa_003",
+      "question": {"zh": "木卫二表面覆盖着什么？", "en": "What covers Europa's surface?"},
+      "options": [
+        {"zh": "岩石和尘埃", "en": "Rock and dust"},
+        {"zh": "冰层", "en": "Ice layer"},
+        {"zh": "液态水", "en": "Liquid water"},
+        {"zh": "熔岩", "en": "Lava"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫二表面覆盖着厚厚的冰层，厚度约 10-30 公里。", "en": "Europa's surface is covered by a thick ice layer, about 10-30 km thick."}
+    },
+    {
+      "id": "q_europa_004",
+      "question": {"zh": "木卫二冰层下的海洋深度约为多少？", "en": "What is the estimated depth of Europa's subsurface ocean?"},
+      "options": [
+        {"zh": "约 10 km", "en": "About 10 km"},
+        {"zh": "约 50 km", "en": "About 50 km"},
+        {"zh": "约 100 km", "en": "About 100 km"},
+        {"zh": "约 200 km", "en": "About 200 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "科学家估计木卫二冰层下的海洋深度约 100 公里，水量可能超过地球。", "en": "Scientists estimate Europa's subsurface ocean is about 100 km deep, possibly containing more water than Earth."}
+    },
+    {
+      "id": "q_europa_005",
+      "question": {"zh": "木卫二表面的特征主要是？", "en": "What are the main features on Europa's surface?"},
+      "options": [
+        {"zh": "火山和熔岩流", "en": "Volcanoes and lava flows"},
+        {"zh": "撞击坑和山脉", "en": "Craters and mountains"},
+        {"zh": "冰裂纹和脊", "en": "Ice cracks and ridges"},
+        {"zh": "沙漠和峡谷", "en": "Deserts and canyons"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫二表面布满冰裂纹和脊，表明地质活跃。", "en": "Europa's surface is covered with ice cracks and ridges, indicating geological activity."}
+    },
+    {
+      "id": "q_europa_006",
+      "question": {"zh": "木卫二是由谁发现的？", "en": "Who discovered Europa?"},
+      "options": [
+        {"zh": "开普勒", "en": "Kepler"},
+        {"zh": "伽利略", "en": "Galileo"},
+        {"zh": "牛顿", "en": "Newton"},
+        {"zh": "惠更斯", "en": "Huygens"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "伽利略于 1610 年发现木卫二。", "en": "Galileo discovered Europa in 1610."}
+    },
+    {
+      "id": "q_europa_007",
+      "question": {"zh": "木卫二为什么是寻找外星生命的热点？", "en": "Why is Europa a prime target for searching for alien life?"},
+      "options": [
+        {"zh": "因为有浓厚大气", "en": "Because of thick atmosphere"},
+        {"zh": "因为有地下海洋", "en": "Because of subsurface ocean"},
+        {"zh": "因为有火山活动", "en": "Because of volcanic activity"},
+        {"zh": "因为有磁场", "en": "Because of magnetic field"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "木卫二冰层下可能有液态水海洋，是寻找外星生命的理想目标。", "en": "Europa may have a liquid water ocean beneath its ice, making it an ideal target for searching for alien life."}
+    },
+    {
+      "id": "q_europa_008",
+      "question": {"zh": "木卫二的表面温度约为多少？", "en": "What is Europa's surface temperature?"},
+      "options": [
+        {"zh": "-60°C", "en": "-60°C"},
+        {"zh": "-110°C", "en": "-110°C"},
+        {"zh": "-160°C", "en": "-160°C"},
+        {"zh": "-210°C", "en": "-210°C"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "木卫二表面温度约 -160°C，非常寒冷。", "en": "Europa's surface temperature is about -160°C, extremely cold."}
+    },
+    {
+      "id": "q_europa_009",
+      "question": {"zh": "木卫二的表面年龄约为多少？", "en": "What is the estimated age of Europa's surface?"},
+      "options": [
+        {"zh": "约 2-3 亿年", "en": "About 200-300 million years"},
+        {"zh": "约 10-20 亿年", "en": "About 1-2 billion years"},
+        {"zh": "约 30-40 亿年", "en": "About 3-4 billion years"},
+        {"zh": "约 45 亿年", "en": "About 4.5 billion years"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "木卫二表面非常年轻，约 2-3 亿年，表明地质活动活跃。", "en": "Europa's surface is very young, about 200-300 million years, indicating active geology."}
+    },
+    {
+      "id": "q_europa_010",
+      "question": {"zh": "哪个未来任务将探测木卫二？", "en": "Which future mission will explore Europa?"},
+      "options": [
+        {"zh": "火星快车号", "en": "Mars Express"},
+        {"zh": "欧罗巴快船", "en": "Europa Clipper"},
+        {"zh": "卡西尼号", "en": "Cassini"},
+        {"zh": "新视野号", "en": "New Horizons"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "NASA 的欧罗巴快船计划于 2024 年发射，将详细探测木卫二。", "en": "NASA's Europa Clipper is planned to launch in 2024, will explore Europa in detail."}
+    }
+  ]
+}

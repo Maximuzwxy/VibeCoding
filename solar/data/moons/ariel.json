@@ -1,0 +1,405 @@
+{
+  "id": "ariel",
+  "name": {
+    "zh": "天卫二",
+    "en": "Ariel"
+  },
+  "icon": "⛢",
+  "theme_color": "#8B9DC3",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "冰卫星（天王星卫星）",
+            "en": "Icy moon (Uranian moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "1,157.8 km",
+            "en": "1,157.8 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.35 × 10²¹ kg",
+            "en": "1.35 × 10²¹ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "8.13 × 10⁸ km³",
+            "en": "8.13 × 10⁸ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.66 g/cm³",
+            "en": "1.66 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.27 m/s²",
+            "en": "0.27 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫二是天王星第四大卫星，表面拥有太阳系中最年轻的地貌之一，布满峡谷和冰火山遗迹。",
+        "en": "※ Ariel is the fourth-largest moon of Uranus, with one of the youngest surfaces in the solar system, covered in canyons and cryovolcanic features."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "2.520 天（同步自转）",
+            "en": "2.520 days (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "2.520 天",
+            "en": "2.520 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "5.51 km/s",
+            "en": "5.51 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0012",
+            "en": "0.0012"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.260°（相对于天王星赤道）",
+            "en": "0.260° (to Uranus' equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫二与天王星同步自转，始终以同一面朝向母星，其轨道几乎完美圆形，离心率极低。",
+        "en": "※ Ariel is tidally locked to Uranus, always showing the same face, and its orbit is nearly circular with very low eccentricity."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "约 60 K（-213°C）",
+            "en": "~60 K (-213°C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 60 K",
+            "en": "~60 K"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "极稀薄或无大气",
+            "en": "Extremely tenuous or none"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "可能存在微量 CO₂ 冰升华",
+            "en": "Possible trace CO₂ sublimation"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无显著固有磁场",
+            "en": "No significant intrinsic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫二表面覆盖水冰和二氧化碳冰，温度极低，但冰火山活动曾将内部热量带到表面。",
+        "en": "※ Ariel's surface is covered in water ice and carbon dioxide ice; despite extreme cold, past cryovolcanism brought internal heat to the surface."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "约 190,900 km（距天王星）",
+            "en": "~190,900 km (from Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "约 191,400 km（距天王星）",
+            "en": "~191,400 km (from Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "191,020 km",
+            "en": "191,020 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.001277 AU",
+            "en": "0.001277 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 0.637 秒（从天王星）",
+            "en": "~0.637 s (from Uranus)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫二位于天王星最内层的大卫星轨道上，距离天王星仅约 19 万公里，比地球到月球的一半还近。",
+        "en": "※ Ariel orbits in the innermost major moon belt of Uranus, only ~190,000 km away—less than half the Earth-Moon distance."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（天卫二本身是卫星）",
+            "en": "0 (Ariel itself is a moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "不适用",
+            "en": "N/A"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫二是天王星已知 27 颗卫星之一，属于五大主要卫星（米兰达、阿里尔、翁布里尔、泰坦尼亚、欧贝隆）中的第二近。",
+        "en": "※ Ariel is one of Uranus' 27 known moons, the second-closest among the five major moons (Miranda, Ariel, Umbriel, Titania, Oberon)."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "峡谷、冰火山平原、撞击坑",
+            "en": "Canyons, cryovolcanic plains, impact craters"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "杨格（Yangoor）直径约 78 km",
+            "en": "Yangoor, ~78 km diameter"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 1-3 亿年（相对年轻）",
+            "en": "~100-300 million years (relatively young)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "约 2 km（峡谷壁）",
+            "en": "~2 km (canyon walls)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫二拥有太阳系中最密集的峡谷系统之一，有些峡谷深达 10 公里，表明曾发生大规模地质伸展运动。",
+        "en": "※ Ariel has one of the densest canyon systems in the solar system, with some gorges up to 10 km deep, indicating massive extensional tectonics."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1851年10月24日，威廉·拉塞尔",
+            "en": "October 24, 1851, by William Lassell"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1986年1月24日，旅行者2号",
+            "en": "January 24, 1986, Voyager 2"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "尚未实现",
+            "en": "Not yet achieved"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "无活跃任务（旅行者2号为唯一探测）",
+            "en": "No active mission (only Voyager 2 flyby)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 旅行者2号飞掠时仅拍摄了约 40% 的天卫二表面，分辨率最高达 2.5 km/像素，至今仍是人类唯一近距离观测。",
+        "en": "※ Voyager 2 imaged only about 40% of Ariel's surface at best resolution of 2.5 km/pixel—still humanity's only close-up view."
+      }
+    }
+  ]
+}

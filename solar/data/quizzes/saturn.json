@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_saturn_001",
+      "question": {
+        "zh": "土星最显著的特征是什么？",
+        "en": "What is the most prominent feature of Saturn?"
+      },
+      "options": [
+        {
+          "zh": "巨大的行星环系统",
+          "en": "A prominent ring system"
+        },
+        {
+          "zh": "大红斑",
+          "en": "The Great Red Spot"
+        },
+        {
+          "zh": "极亮的白色表面",
+          "en": "A bright white surface"
+        },
+        {
+          "zh": "强烈的蓝色极光",
+          "en": "Intense blue aurorae"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土星以其壮观且复杂的行星环系统闻名，主要由冰粒和岩石碎片组成。",
+        "en": "Saturn is famous for its spectacular and complex ring system, composed mainly of ice particles and rocky debris."
+      }
+    },
+    {
+      "id": "q_saturn_002",
+      "question": {
+        "zh": "土星在太阳系行星中按距离太阳由近到远排第几？",
+        "en": "What is Saturn's position from the Sun in the solar system?"
+      },
+      "options": [
+        {
+          "zh": "第五",
+          "en": "Fifth"
+        },
+        {
+          "zh": "第六",
+          "en": "Sixth"
+        },
+        {
+          "zh": "第七",
+          "en": "Seventh"
+        },
+        {
+          "zh": "第八",
+          "en": "Eighth"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土星是距离太阳第六远的行星，位于木星和天王星之间。",
+        "en": "Saturn is the sixth planet from the Sun, located between Jupiter and Uranus."
+      }
+    },
+    {
+      "id": "q_saturn_003",
+      "question": {
+        "zh": "土星的平均密度大约是多少？",
+        "en": "What is the approximate average density of Saturn?"
+      },
+      "options": [
+        {
+          "zh": "0.69 g/cm³",
+          "en": "0.69 g/cm³"
+        },
+        {
+          "zh": "1.33 g/cm³",
+          "en": "1.33 g/cm³"
+        },
+        {
+          "zh": "3.93 g/cm³",
+          "en": "3.93 g/cm³"
+        },
+        {
+          "zh": "5.51 g/cm³",
+          "en": "5.51 g/cm³"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土星的平均密度约为0.69 g/cm³，比水还低，是太阳系中密度最小的行星。",
+        "en": "Saturn's average density is about 0.69 g/cm³, lower than water, making it the least dense planet in the solar system."
+      }
+    },
+    {
+      "id": "q_saturn_004",
+      "question": {
+        "zh": "土星上的一天（自转周期）大约有多长？",
+        "en": "How long is a day on Saturn (rotation period)?"
+      },
+      "options": [
+        {
+          "zh": "约10.7小时",
+          "en": "About 10.7 hours"
+        },
+        {
+          "zh": "约24小时",
+          "en": "About 24 hours"
+        },
+        {
+          "zh": "约16.1小时",
+          "en": "About 16.1 hours"
+        },
+        {
+          "zh": "约5.2小时",
+          "en": "About 5.2 hours"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土星的自转周期约为10.7小时，是太阳系中自转最快的行星之一。",
+        "en": "Saturn's rotation period is about 10.7 hours, making it one of the fastest rotating planets in the solar system."
+      }
+    },
+    {
+      "id": "q_saturn_005",
+      "question": {
+        "zh": "土星的大气层主要由什么气体组成？",
+        "en": "What gas primarily composes Saturn's atmosphere?"
+      },
+      "options": [
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        },
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "氢气",
+          "en": "Hydrogen"
+        },
+        {
+          "zh": "氦气",
+          "en": "Helium"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土星大气层主要由氢气（约96%）和氦气（约3%）组成，与木星类似。",
+        "en": "Saturn's atmosphere is composed primarily of hydrogen (about 96%) and helium (about 3%), similar to Jupiter."
+      }
+    },
+    {
+      "id": "q_saturn_006",
+      "question": {
+        "zh": "哪颗探测器是第一个进入土星轨道进行长期探测的？",
+        "en": "Which spacecraft was the first to enter orbit around Saturn for long-term exploration?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        },
+        {
+          "zh": "先驱者11号",
+          "en": "Pioneer 11"
+        },
+        {
+          "zh": "朱诺号",
+          "en": "Juno"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "卡西尼号于2004年进入土星轨道，进行了长达13年的详细探测，并于2017年结束任务。",
+        "en": "Cassini entered Saturn's orbit in 2004, conducted detailed exploration for 13 years, and ended its mission in 2017."
+      }
+    },
+    {
+      "id": "q_saturn_007",
+      "question": {
+        "zh": "土星最大的卫星是哪一颗？",
+        "en": "Which is the largest moon of Saturn?"
+      },
+      "options": [
+        {
+          "zh": "泰坦（土卫六）",
+          "en": "Titan"
+        },
+        {
+          "zh": "瑞亚（土卫五）",
+          "en": "Rhea"
+        },
+        {
+          "zh": "狄俄涅（土卫四）",
+          "en": "Dione"
+        },
+        {
+          "zh": "土卫二（恩克拉多斯）",
+          "en": "Enceladus"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "泰坦是土星最大的卫星，也是太阳系中唯一拥有浓厚大气层的卫星。",
+        "en": "Titan is Saturn's largest moon and the only moon in the solar system with a thick atmosphere."
+      }
+    },
+    {
+      "id": "q_saturn_008",
+      "question": {
+        "zh": "土星环主要由什么物质构成？",
+        "en": "What are Saturn's rings primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "岩石和金属",
+          "en": "Rock and metal"
+        },
+        {
+          "zh": "冰粒和岩石碎片",
+          "en": "Ice particles and rocky debris"
+        },
+        {
+          "zh": "气体和尘埃",
+          "en": "Gas and dust"
+        },
+        {
+          "zh": "液态水",
+          "en": "Liquid water"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土星环主要由数十亿个冰粒和少量岩石碎片组成，大小从微米到数米不等。",
+        "en": "Saturn's rings consist of billions of ice particles and a small amount of rocky debris, ranging in size from micrometers to meters."
+      }
+    },
+    {
+      "id": "q_saturn_009",
+      "question": {
+        "zh": "土星上观测到的最高风速大约是多少？",
+        "en": "What is the approximate maximum wind speed observed on Saturn?"
+      },
+      "options": [
+        {
+          "zh": "约500米/秒",
+          "en": "About 500 m/s"
+        },
+        {
+          "zh": "约100米/秒",
+          "en": "About 100 m/s"
+        },
+        {
+          "zh": "约1800米/秒",
+          "en": "About 1800 m/s"
+        },
+        {
+          "zh": "约50米/秒",
+          "en": "About 50 m/s"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土星赤道附近的风速可达约500米/秒（1800公里/小时），是太阳系中风速最高的行星之一。",
+        "en": "Wind speeds near Saturn's equator can reach about 500 m/s (1800 km/h), among the highest in the solar system."
+      }
+    },
+    {
+      "id": "q_saturn_010",
+      "question": {
+        "zh": "土星绕太阳公转一周大约需要多少地球年？",
+        "en": "How many Earth years does it take for Saturn to orbit the Sun once?"
+      },
+      "options": [
+        {
+          "zh": "约11.86年",
+          "en": "About 11.86 years"
+        },
+        {
+          "zh": "约29.5年",
+          "en": "About 29.5 years"
+        },
+        {
+          "zh": "约84年",
+          "en": "About 84 years"
+        },
+        {
+          "zh": "约165年",
+          "en": "About 165 years"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土星的公转周期约为29.5地球年，是太阳系中公转周期第三长的行星。",
+        "en": "Saturn's orbital period is about 29.5 Earth years, making it the third longest orbital period among the planets."
+      }
+    }
+  ]
+}

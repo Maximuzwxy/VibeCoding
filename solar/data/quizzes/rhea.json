@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_rhea_001",
+      "question": {
+        "zh": "土卫五（Rhea）是土星的第几大卫星？",
+        "en": "What is the rank of Rhea among Saturn's moons by size?"
+      },
+      "options": [
+        {
+          "zh": "第一大",
+          "en": "Largest"
+        },
+        {
+          "zh": "第二大",
+          "en": "Second largest"
+        },
+        {
+          "zh": "第三大",
+          "en": "Third largest"
+        },
+        {
+          "zh": "第四大",
+          "en": "Fourth largest"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫五是土星第二大卫星，仅次于土卫六（泰坦），大于土卫三（特提斯）和土卫四（狄俄涅）。",
+        "en": "Rhea is the second-largest moon of Saturn, after Titan, and larger than Tethys and Dione."
+      }
+    },
+    {
+      "id": "q_rhea_002",
+      "question": {
+        "zh": "土卫五的轨道周期大约是多少天？",
+        "en": "What is the approximate orbital period of Rhea in days?"
+      },
+      "options": [
+        {
+          "zh": "1.5天",
+          "en": "1.5 days"
+        },
+        {
+          "zh": "4.5天",
+          "en": "4.5 days"
+        },
+        {
+          "zh": "10天",
+          "en": "10 days"
+        },
+        {
+          "zh": "15天",
+          "en": "15 days"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫五的轨道周期约为4.5天（精确值为4.518天），与土星自转同步。",
+        "en": "Rhea's orbital period is about 4.5 days (precisely 4.518 days), and it is tidally locked with Saturn."
+      }
+    },
+    {
+      "id": "q_rhea_003",
+      "question": {
+        "zh": "土卫五主要由什么物质组成？",
+        "en": "What is Rhea primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "纯冰",
+          "en": "Pure ice"
+        },
+        {
+          "zh": "岩石和冰的混合物",
+          "en": "A mixture of rock and ice"
+        },
+        {
+          "zh": "纯岩石",
+          "en": "Pure rock"
+        },
+        {
+          "zh": "金属核心",
+          "en": "Metallic core"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫五由大约75%的冰和25%的岩石组成，密度约为1.24 g/cm³，表明其内部含有大量水冰。",
+        "en": "Rhea is composed of about 75% ice and 25% rock, with a density of about 1.24 g/cm³, indicating a significant water ice content."
+      }
+    },
+    {
+      "id": "q_rhea_004",
+      "question": {
+        "zh": "土卫五的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Rhea?"
+      },
+      "options": [
+        {
+          "zh": "-100°C",
+          "en": "-100°C"
+        },
+        {
+          "zh": "-174°C",
+          "en": "-174°C"
+        },
+        {
+          "zh": "-50°C",
+          "en": "-50°C"
+        },
+        {
+          "zh": "0°C",
+          "en": "0°C"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫五的表面温度极低，平均约为-174°C（99 K），因为距离太阳很远且反照率较高。",
+        "en": "Rhea's surface temperature is extremely cold, averaging about -174°C (99 K), due to its great distance from the Sun and high albedo."
+      }
+    },
+    {
+      "id": "q_rhea_005",
+      "question": {
+        "zh": "哪艘探测器首次近距离飞越土卫五并传回详细图像？",
+        "en": "Which spacecraft first performed a close flyby of Rhea and returned detailed images?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        },
+        {
+          "zh": "先驱者11号",
+          "en": "Pioneer 11"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "卡西尼号在2005年至2013年间多次飞越土卫五，提供了高分辨率图像和科学数据，而旅行者号只进行了远距离观测。",
+        "en": "Cassini performed multiple close flybys of Rhea between 2005 and 2013, providing high-resolution images and scientific data, while Voyager only made distant observations."
+      }
+    },
+    {
+      "id": "q_rhea_006",
+      "question": {
+        "zh": "土卫五是否拥有稀薄的大气层？",
+        "en": "Does Rhea have a thin atmosphere?"
+      },
+      "options": [
+        {
+          "zh": "有，主要由氧气和二氧化碳组成",
+          "en": "Yes, mainly composed of oxygen and carbon dioxide"
+        },
+        {
+          "zh": "有，主要由氮气组成",
+          "en": "Yes, mainly composed of nitrogen"
+        },
+        {
+          "zh": "没有大气层",
+          "en": "No atmosphere"
+        },
+        {
+          "zh": "有，主要由氢气组成",
+          "en": "Yes, mainly composed of hydrogen"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "卡西尼号发现土卫五拥有极其稀薄的大气层（外逸层），主要成分为氧气和二氧化碳，由表面冰的辐射分解产生。",
+        "en": "Cassini discovered that Rhea has an extremely tenuous atmosphere (exosphere) composed mainly of oxygen and carbon dioxide, produced by radiolysis of surface ice."
+      }
+    },
+    {
+      "id": "q_rhea_007",
+      "question": {
+        "zh": "土卫五的平均直径大约是多少公里？",
+        "en": "What is the approximate mean diameter of Rhea in kilometers?"
+      },
+      "options": [
+        {
+          "zh": "约500公里",
+          "en": "About 500 km"
+        },
+        {
+          "zh": "约950公里",
+          "en": "About 950 km"
+        },
+        {
+          "zh": "约1530公里",
+          "en": "About 1530 km"
+        },
+        {
+          "zh": "约2500公里",
+          "en": "About 2500 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫五的平均直径约为1528公里，是太阳系中第九大卫星。",
+        "en": "Rhea has a mean diameter of about 1528 km, making it the ninth-largest moon in the Solar System."
+      }
+    },
+    {
+      "id": "q_rhea_008",
+      "question": {
+        "zh": "土卫五的表面特征包括哪些？",
+        "en": "What surface features are found on Rhea?"
+      },
+      "options": [
+        {
+          "zh": "只有环形山",
+          "en": "Only craters"
+        },
+        {
+          "zh": "环形山和明亮的冰崖",
+          "en": "Craters and bright ice cliffs"
+        },
+        {
+          "zh": "环形山、沟壑和明亮的冰原",
+          "en": "Craters, chasms, and bright ice plains"
+        },
+        {
+          "zh": "火山和熔岩流",
+          "en": "Volcanoes and lava flows"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫五表面布满环形山，并存在大型沟壑系统（如伊克翁峡谷）以及明亮的冰原区域，但没有火山活动。",
+        "en": "Rhea's surface is heavily cratered and features large chasm systems (such as Ixion Chasma) and bright icy plains, but no volcanic activity."
+      }
+    },
+    {
+      "id": "q_rhea_009",
+      "question": {
+        "zh": "土卫五的轨道距离土星中心大约多少公里？",
+        "en": "What is the approximate orbital distance of Rhea from Saturn's center in kilometers?"
+      },
+      "options": [
+        {
+          "zh": "约18.5万公里",
+          "en": "About 185,000 km"
+        },
+        {
+          "zh": "约52.7万公里",
+          "en": "About 527,000 km"
+        },
+        {
+          "zh": "约122万公里",
+          "en": "About 1.22 million km"
+        },
+        {
+          "zh": "约237万公里",
+          "en": "About 2.37 million km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫五的轨道半长轴约为527,000公里，位于土星环系统之外。",
+        "en": "Rhea's orbital semi-major axis is about 527,000 km, placing it outside Saturn's ring system."
+      }
+    },
+    {
+      "id": "q_rhea_010",
+      "question": {
+        "zh": "关于土卫五的环系统，以下哪项是正确的？",
+        "en": "Which statement about Rhea's ring system is correct?"
+      },
+      "options": [
+        {
+          "zh": "土卫五拥有一个明显的环系统，已被确认",
+          "en": "Rhea has a confirmed, prominent ring system"
+        },
+        {
+          "zh": "土卫五可能拥有一个极稀薄的尘埃环，但尚未被确认",
+          "en": "Rhea may have an extremely tenuous dust ring, but it is not confirmed"
+        },
+        {
+          "zh": "土卫五没有环系统",
+          "en": "Rhea has no ring system"
+        },
+        {
+          "zh": "土卫五的环系统与土星环一样大",
+          "en": "Rhea's ring system is as large as Saturn's rings"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "卡西尼号在2008年曾探测到土卫五周围可能存在一个稀薄的尘埃环，但后续观测未能明确确认，目前仍是一个未解之谜。",
+        "en": "In 2008, Cassini detected signs of a possible tenuous dust ring around Rhea, but later observations have not confirmed it, leaving it an open question."
+      }
+    }
+  ]
+}

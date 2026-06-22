@@ -1,0 +1,401 @@
+{
+  "id": "callisto",
+  "name": {
+    "zh": "木卫四",
+    "en": "Callisto"
+  },
+  "icon": "🪐",
+  "theme_color": "#8B7D6B",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "木星伽利略卫星",
+            "en": "Galilean moon of Jupiter"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "4,820.6 km",
+            "en": "4,820.6 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.0759 × 10²³ kg",
+            "en": "1.0759 × 10²³ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "5.9 × 10¹⁰ km³",
+            "en": "5.9 × 10¹⁰ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.834 g/cm³",
+            "en": "1.834 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "1.235 m/s² (0.126 g)",
+            "en": "1.235 m/s² (0.126 g)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫四是太阳系中表面最古老的固体天体，其表面年龄约40亿年，几乎没有地质活动。",
+        "en": "※ Callisto has the oldest surface of any solid body in the Solar System, estimated at about 4 billion years old, with almost no geological activity."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "16.689 天（同步自转）",
+            "en": "16.689 days (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "16.689 天",
+            "en": "16.689 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "8.204 km/s",
+            "en": "8.204 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0074",
+            "en": "0.0074"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.192°（相对于木星赤道）",
+            "en": "0.192° (to Jupiter's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫四是伽利略卫星中距离木星最远的一颗，轨道半径约188万公里。",
+        "en": "※ Callisto is the outermost of the four Galilean moons, orbiting at about 1.88 million km from Jupiter."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "80–165 K（-193 至 -108 °C）",
+            "en": "80–165 K (-193 to -108 °C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 120 K（-153 °C）",
+            "en": "~120 K (-153 °C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "极稀薄（约 7.5 × 10⁻¹² bar）",
+            "en": "Extremely thin (~7.5 × 10⁻¹² bar)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "二氧化碳 (CO₂) 为主，微量氧气 (O₂)",
+            "en": "Primarily CO₂, trace O₂"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无内源磁场，但受木星磁场影响",
+            "en": "No intrinsic magnetic field; influenced by Jupiter's magnetosphere"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫四拥有极稀薄的二氧化碳大气层，表面压力仅为地球的百亿分之一。",
+        "en": "※ Callisto has an extremely thin CO₂ atmosphere with a surface pressure about 10⁻¹¹ of Earth's."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕木星公转）",
+            "en": "N/A (orbits Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用（绕木星公转）",
+            "en": "N/A (orbits Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "1,882,700 km",
+            "en": "1,882,700 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.0126 AU（相对于木星）",
+            "en": "0.0126 AU (relative to Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 6.3 秒（从木星出发）",
+            "en": "~6.3 seconds (from Jupiter)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（木卫四本身是木星的卫星）",
+            "en": "0 (Callisto is itself a moon of Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫四是太阳系中第三大的卫星，仅次于木卫三和土卫六。",
+        "en": "※ Callisto is the third-largest moon in the Solar System, after Ganymede and Titan."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "撞击坑、多环盆地、冰原",
+            "en": "Impact craters, multi-ring basins, icy plains"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "瓦尔哈拉（Valhalla）多环盆地，直径约 3,800 km",
+            "en": "Valhalla multi-ring basin, ~3,800 km diameter"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 40 亿年",
+            "en": "~4 billion years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "不明显，地表相对平坦",
+            "en": "Not prominent; relatively flat terrain"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 瓦尔哈拉是太阳系中最大的多环撞击盆地之一，其环状结构延伸超过 3,000 公里。",
+        "en": "※ Valhalla is one of the largest multi-ring impact basins in the Solar System, with rings extending over 3,000 km."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1610年1月7日，伽利略·伽利莱",
+            "en": "January 7, 1610, by Galileo Galilei"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1979年3月6日，旅行者1号",
+            "en": "March 6, 1979, Voyager 1"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "1995年12月8日，伽利略号探测器",
+            "en": "December 8, 1995, Galileo orbiter"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "朱诺号（Juno）多次飞掠（2016年至今）",
+            "en": "Juno multiple flybys (2016–present)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 伽利略号探测器在1995–2003年间对木卫四进行了多次近距离飞掠，揭示了其可能存在地下海洋。",
+        "en": "※ The Galileo spacecraft made multiple close flybys of Callisto between 1995 and 2003, revealing evidence of a possible subsurface ocean."
+      }
+    }
+  ]
+}

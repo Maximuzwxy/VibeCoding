@@ -1,0 +1,89 @@
+{
+  "id": "jupiter",
+  "name": {"zh": "木星", "en": "Jupiter"},
+  "icon": "🪐",
+  "theme_color": "#d8ca9d",
+  "accent_color": "#00d4ff",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "行星类型", "en": "Planet Type"}, "value": {"zh": "气态巨行星", "en": "Gas Giant"}},
+        {"label": {"zh": "赤道直径", "en": "Equatorial Diameter"}, "value": {"zh": "142,984 km", "en": "142,984 km"}},
+        {"label": {"zh": "极地直径", "en": "Polar Diameter"}, "value": {"zh": "133,708 km", "en": "133,708 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "1.898×10²⁷kg", "en": "1.898×10²⁷kg"}},
+        {"label": {"zh": "体积", "en": "Volume"}, "value": {"zh": "1.43×10¹⁵km³", "en": "1.43×10¹⁵km³"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "1.326 g/cm³", "en": "1.326 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "24.79 m/s²", "en": "24.79 m/s²"}}
+      ],
+      "note": {"zh": "※ 1 巴压力水平面，赤道区域", "en": "※ At 1 bar pressure level, equatorial region"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "9 小时 55 分", "en": "9h 55m"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "11.86 年", "en": "11.86 years"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "13.07 km/s", "en": "13.07 km/s"}},
+        {"label": {"zh": "轨道离心率", "en": "Orbital Eccentricity"}, "value": {"zh": "0.0489", "en": "0.0489"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "1.304°", "en": "1.304°"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "云顶温度", "en": "Cloud Top Temperature"}, "value": {"zh": "-145°C", "en": "-145°C"}},
+        {"label": {"zh": "内部温度", "en": "Core Temperature"}, "value": {"zh": "~24,000°C", "en": "~24,000°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "100 kPa (1 巴)", "en": "100 kPa (1 bar)"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "H₂ 90%, He 10%", "en": "H₂ 90%, He 10%"}},
+        {"label": {"zh": "磁场强度", "en": "Magnetic Field Strength"}, "value": {"zh": "4.2 高斯", "en": "4.2 Gauss"}}
+      ],
+      "note": {"zh": "※ 太阳系最强行星磁场", "en": "※ Strongest planetary magnetic field in Solar System"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "近日点", "en": "Perihelion"}, "value": {"zh": "7.41 亿 km", "en": "741 million km"}},
+        {"label": {"zh": "远日点", "en": "Aphelion"}, "value": {"zh": "8.17 亿 km", "en": "817 million km"}},
+        {"label": {"zh": "半长轴", "en": "Semi-major Axis"}, "value": {"zh": "7.78 亿 km", "en": "778 million km"}},
+        {"label": {"zh": "天文单位", "en": "Astronomical Units"}, "value": {"zh": "5.20 AU", "en": "5.20 AU"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "43 分钟", "en": "43 minutes"}}
+      ]
+    },
+    {
+      "title": {"zh": "🛰 卫星系统", "en": "🛰 Satellite System"},
+      "items": [
+        {"label": {"zh": "已知卫星", "en": "Known Moons"}, "value": {"zh": "95 颗", "en": "95 moons"}},
+        {"label": {"zh": "伽利略卫星", "en": "Galilean Moons"}, "value": {"zh": "4 颗", "en": "4 moons"}},
+        {"label": {"zh": "最大卫星", "en": "Largest Moon"}, "value": {"zh": "木卫三", "en": "Ganymede"}},
+        {"label": {"zh": "最活跃", "en": "Most Active"}, "value": {"zh": "木卫一", "en": "Io"}}
+      ],
+      "note": {"zh": "※ 95 颗为 2024 年确认数量", "en": "※ 95 moons confirmed as of 2024"},
+      "moons_list": [
+        {"name": {"zh": "木卫一", "en": "Io"}, "color": "#ffffcc", "period": {"zh": "1.77 天", "en": "1.77 days"}},
+        {"name": {"zh": "木卫二", "en": "Europa"}, "color": "#ccddff", "period": {"zh": "3.55 天", "en": "3.55 days"}},
+        {"name": {"zh": "木卫三", "en": "Ganymede"}, "color": "#aaa", "period": {"zh": "7.15 天", "en": "7.15 days"}},
+        {"name": {"zh": "木卫四", "en": "Callisto"}, "color": "#886644", "period": {"zh": "16.7 天", "en": "16.7 days"}}
+      ]
+    },
+    {
+      "title": {"zh": "🔴 大红斑", "en": "🔴 Great Red Spot"},
+      "items": [
+        {"label": {"zh": "发现时间", "en": "Discovered"}, "value": {"zh": "1665 年", "en": "1665"}},
+        {"label": {"zh": "尺寸", "en": "Size"}, "value": {"zh": "16,000×12,000km", "en": "16,000×12,000km"}},
+        {"label": {"zh": "风速", "en": "Wind Speed"}, "value": {"zh": "432 km/h", "en": "432 km/h"}},
+        {"label": {"zh": "旋转周期", "en": "Rotation Period"}, "value": {"zh": "6 地球日", "en": "6 Earth days"}}
+      ],
+      "note": {"zh": "※ 已存在超过 350 年的巨型风暴", "en": "※ Giant storm existing for over 350 years"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "首次观测", "en": "First Observation"}, "value": {"zh": "古代已知", "en": "Known since antiquity"}},
+        {"label": {"zh": "望远镜观测", "en": "Telescope Observation"}, "value": {"zh": "1610 年伽利略", "en": "1610 by Galileo"}},
+        {"label": {"zh": "首次飞掠", "en": "First Flyby"}, "value": {"zh": "1973 年先驱者 10 号", "en": "1973 Pioneer 10"}},
+        {"label": {"zh": "在轨探测", "en": "Orbital Mission"}, "value": {"zh": "1995-2003 伽利略号", "en": "1995-2003 Galileo"}},
+        {"label": {"zh": "当前任务", "en": "Current Mission"}, "value": {"zh": "朱诺号 (2016-)", "en": "Juno (2016-)"}}
+      ]
+    }
+  ]
+}

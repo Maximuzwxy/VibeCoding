@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_tethys_001",
+      "question": {
+        "zh": "土卫三（Tethys）是土星的第几大卫星？",
+        "en": "What is the rank of Tethys among Saturn's moons by size?"
+      },
+      "options": [
+        {
+          "zh": "第三大",
+          "en": "Third largest"
+        },
+        {
+          "zh": "第五大",
+          "en": "Fifth largest"
+        },
+        {
+          "zh": "第七大",
+          "en": "Seventh largest"
+        },
+        {
+          "zh": "第九大",
+          "en": "Ninth largest"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫三是土星第五大卫星，仅次于土卫六、土卫五、土卫四和土卫三（实际上土卫三比土卫四略小，但通常按直径排序为第五）。",
+        "en": "Tethys is the fifth largest moon of Saturn, after Titan, Rhea, Iapetus, and Dione (Tethys is slightly smaller than Dione, thus ranking fifth by diameter)."
+      }
+    },
+    {
+      "id": "q_tethys_002",
+      "question": {
+        "zh": "土卫三的平均直径大约是多少？",
+        "en": "What is the approximate mean diameter of Tethys?"
+      },
+      "options": [
+        {
+          "zh": "约 500 公里",
+          "en": "About 500 km"
+        },
+        {
+          "zh": "约 1060 公里",
+          "en": "About 1060 km"
+        },
+        {
+          "zh": "约 1500 公里",
+          "en": "About 1500 km"
+        },
+        {
+          "zh": "约 2000 公里",
+          "en": "About 2000 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫三的平均直径约为 1062 公里，是土星中等大小的冰卫星。",
+        "en": "Tethys has a mean diameter of about 1062 km, making it a mid-sized icy moon of Saturn."
+      }
+    },
+    {
+      "id": "q_tethys_003",
+      "question": {
+        "zh": "土卫三最显著的地表特征是什么？",
+        "en": "What is the most prominent surface feature on Tethys?"
+      },
+      "options": [
+        {
+          "zh": "巨大的环形山 Herschel",
+          "en": "The giant impact crater Herschel"
+        },
+        {
+          "zh": "长达 2000 公里的峡谷 Ithaca Chasma",
+          "en": "The 2000 km long canyon Ithaca Chasma"
+        },
+        {
+          "zh": "活跃的冰火山",
+          "en": "Active cryovolcanoes"
+        },
+        {
+          "zh": "液态甲烷海洋",
+          "en": "Liquid methane oceans"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫三最显著的特征是直径约 400 公里的 Herschel 环形山，几乎覆盖了卫星表面的三分之一。",
+        "en": "The most prominent feature on Tethys is the Herschel crater, about 400 km in diameter, which covers nearly one-third of the moon's surface."
+      }
+    },
+    {
+      "id": "q_tethys_004",
+      "question": {
+        "zh": "土卫三的密度约为多少，这暗示了其组成成分？",
+        "en": "What is the approximate density of Tethys, and what does it imply about its composition?"
+      },
+      "options": [
+        {
+          "zh": "约 0.97 g/cm³，主要由水冰组成",
+          "en": "About 0.97 g/cm³, composed mainly of water ice"
+        },
+        {
+          "zh": "约 3.5 g/cm³，主要由岩石组成",
+          "en": "About 3.5 g/cm³, composed mainly of rock"
+        },
+        {
+          "zh": "约 1.9 g/cm³，冰岩混合",
+          "en": "About 1.9 g/cm³, a mixture of ice and rock"
+        },
+        {
+          "zh": "约 5.4 g/cm³，富含铁核",
+          "en": "About 5.4 g/cm³, rich in an iron core"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫三的密度约为 0.97 g/cm³，略低于水的密度，表明它几乎完全由水冰组成，岩石含量极少。",
+        "en": "Tethys has a density of about 0.97 g/cm³, slightly less than water, indicating it is composed almost entirely of water ice with very little rock."
+      }
+    },
+    {
+      "id": "q_tethys_005",
+      "question": {
+        "zh": "土卫三绕土星公转的轨道周期大约是多久？",
+        "en": "What is the approximate orbital period of Tethys around Saturn?"
+      },
+      "options": [
+        {
+          "zh": "约 1.9 天",
+          "en": "About 1.9 days"
+        },
+        {
+          "zh": "约 4.5 天",
+          "en": "About 4.5 days"
+        },
+        {
+          "zh": "约 10.7 天",
+          "en": "About 10.7 days"
+        },
+        {
+          "zh": "约 16.7 天",
+          "en": "About 16.7 days"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫三的轨道周期约为 1.887 天，它与土卫四和土卫二存在轨道共振。",
+        "en": "Tethys orbits Saturn with a period of about 1.887 days, and it is in orbital resonance with Dione and Enceladus."
+      }
+    },
+    {
+      "id": "q_tethys_006",
+      "question": {
+        "zh": "土卫三的表面反照率（反光能力）如何？",
+        "en": "What is the surface albedo (reflectivity) of Tethys?"
+      },
+      "options": [
+        {
+          "zh": "非常低，约 0.1",
+          "en": "Very low, about 0.1"
+        },
+        {
+          "zh": "中等，约 0.4",
+          "en": "Moderate, about 0.4"
+        },
+        {
+          "zh": "很高，约 0.8",
+          "en": "Very high, about 0.8"
+        },
+        {
+          "zh": "变化极大，从 0.1 到 0.9",
+          "en": "Highly variable, from 0.1 to 0.9"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫三的表面反照率很高，约为 0.8，这是因为其表面主要由干净的水冰覆盖，反射了大量阳光。",
+        "en": "Tethys has a very high albedo of about 0.8, due to its surface being covered with clean water ice that reflects most sunlight."
+      }
+    },
+    {
+      "id": "q_tethys_007",
+      "question": {
+        "zh": "土卫三表面巨大的峡谷 Ithaca Chasma 最可能的成因是什么？",
+        "en": "What is the most likely origin of the giant canyon Ithaca Chasma on Tethys?"
+      },
+      "options": [
+        {
+          "zh": "板块构造运动",
+          "en": "Plate tectonic activity"
+        },
+        {
+          "zh": "内部冰融化导致地表塌陷",
+          "en": "Surface collapse due to internal ice melting"
+        },
+        {
+          "zh": "形成 Herschel 环形山的撞击导致应力裂缝",
+          "en": "Stress fractures from the impact that formed Herschel crater"
+        },
+        {
+          "zh": "潮汐加热引起的火山喷发",
+          "en": "Volcanic eruptions driven by tidal heating"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "Ithaca Chasma 长约 2000 公里，被认为是在形成 Herschel 环形山的巨大撞击后，卫星内部应力导致地表张裂形成的。",
+        "en": "Ithaca Chasma, about 2000 km long, is thought to have formed from stress fractures caused by the giant impact that created the Herschel crater."
+      }
+    },
+    {
+      "id": "q_tethys_008",
+      "question": {
+        "zh": "土卫三位于土星环系统中的什么位置？",
+        "en": "Where is Tethys located within Saturn's ring system?"
+      },
+      "options": [
+        {
+          "zh": "在土星环内部",
+          "en": "Inside Saturn's rings"
+        },
+        {
+          "zh": "在土星环之间，与环共轨",
+          "en": "Between the rings, co-orbital with rings"
+        },
+        {
+          "zh": "在土星环外侧，靠近 E 环",
+          "en": "Outside the rings, near the E ring"
+        },
+        {
+          "zh": "远离土星环，在土星磁层外",
+          "en": "Far from the rings, outside Saturn's magnetosphere"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫三的轨道位于土星主环系统外侧，靠近稀薄的 E 环，并与土卫四和土卫二共享轨道共振关系。",
+        "en": "Tethys orbits outside Saturn's main ring system, near the tenuous E ring, and shares orbital resonances with Dione and Enceladus."
+      }
+    },
+    {
+      "id": "q_tethys_009",
+      "question": {
+        "zh": "哪艘太空探测器首次传回了土卫三的近距离图像？",
+        "en": "Which space probe first returned close-up images of Tethys?"
+      },
+      "options": [
+        {
+          "zh": "旅行者 1 号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "旅行者 2 号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        },
+        {
+          "zh": "先驱者 11 号",
+          "en": "Pioneer 11"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "旅行者 2 号于 1981 年 8 月飞越土星系统时，首次传回了土卫三的详细近距离图像。",
+        "en": "Voyager 2 provided the first detailed close-up images of Tethys during its flyby of the Saturn system in August 1981."
+      }
+    },
+    {
+      "id": "q_tethys_010",
+      "question": {
+        "zh": "土卫三的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature on Tethys?"
+      },
+      "options": [
+        {
+          "zh": "约 -100°C",
+          "en": "About -100°C"
+        },
+        {
+          "zh": "约 -187°C",
+          "en": "About -187°C"
+        },
+        {
+          "zh": "约 -50°C",
+          "en": "About -50°C"
+        },
+        {
+          "zh": "约 -220°C",
+          "en": "About -220°C"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫三表面温度极低，平均约为 -187°C（86 K），这是因为其距离太阳遥远且反照率高。",
+        "en": "The surface temperature of Tethys is extremely cold, averaging about -187°C (86 K), due to its great distance from the Sun and high albedo."
+      }
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "questions": [
+    {
+      "id": "q_mercury_001",
+      "question": {"zh": "水星的直径约为多少？", "en": "What is the approximate diameter of Mercury?"},
+      "options": [
+        {"zh": "3,480 公里", "en": "3,480 km"},
+        {"zh": "4,880 公里", "en": "4,880 km"},
+        {"zh": "6,792 公里", "en": "6,792 km"},
+        {"zh": "12,742 公里", "en": "12,742 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "水星的直径约为 4,880 公里，是太阳系中最小的行星，比地球的卫星月球稍大。", "en": "Mercury's diameter is approximately 4,880 km, making it the smallest planet in the Solar System, slightly larger than Earth's Moon."}
+    },
+    {
+      "id": "q_mercury_002",
+      "question": {"zh": "水星绕太阳公转一周需要多少天？", "en": "How many days does it take for Mercury to orbit the Sun once?"},
+      "options": [
+        {"zh": "58 天", "en": "58 days"},
+        {"zh": "88 天", "en": "88 days"},
+        {"zh": "365 天", "en": "365 days"},
+        {"zh": "687 天", "en": "687 days"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "水星公转周期为 88 天，是太阳系中公转最快的行星。", "en": "Mercury's orbital period is 88 days, making it the fastest orbiting planet in the Solar System."}
+    },
+    {
+      "id": "q_mercury_003",
+      "question": {"zh": "水星的自转周期是多少？", "en": "What is Mercury's rotation period?"},
+      "options": [
+        {"zh": "24 小时", "en": "24 hours"},
+        {"zh": "58.6 天", "en": "58.6 days"},
+        {"zh": "88 天", "en": "88 days"},
+        {"zh": "365 天", "en": "365 days"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "水星自转一周需要 58.6 天，自转速度非常慢。", "en": "Mercury takes 58.6 days to complete one rotation, rotating very slowly."}
+    },
+    {
+      "id": "q_mercury_004",
+      "question": {"zh": "水星表面的温度范围是？", "en": "What is the surface temperature range on Mercury?"},
+      "options": [
+        {"zh": "-63°C ~ 30°C", "en": "-63°C to 30°C"},
+        {"zh": "-180°C ~ 430°C", "en": "-180°C to 430°C"},
+        {"zh": "-140°C ~ 30°C", "en": "-140°C to 30°C"},
+        {"zh": "400°C ~ 500°C", "en": "400°C to 500°C"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "水星表面温差极大，夜间可达 -180°C，白天可达 430°C，是太阳系温差最大的行星。", "en": "Mercury has extreme temperature variation, from -180°C at night to 430°C during the day, the largest variation in the Solar System."}
+    },
+    {
+      "id": "q_mercury_005",
+      "question": {"zh": "水星有多少颗天然卫星？", "en": "How many natural satellites does Mercury have?"},
+      "options": [
+        {"zh": "0 颗", "en": "0 moons"},
+        {"zh": "1 颗", "en": "1 moon"},
+        {"zh": "2 颗", "en": "2 moons"},
+        {"zh": "4 颗", "en": "4 moons"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "水星没有天然卫星，是太阳系中两颗没有卫星的行星之一（另一颗是金星）。", "en": "Mercury has no natural satellites, one of two planets in the Solar System without moons (the other is Venus)."}
+    },
+    {
+      "id": "q_mercury_006",
+      "question": {"zh": "水星距离太阳的平均距离约为多少？", "en": "What is the average distance from Mercury to the Sun?"},
+      "options": [
+        {"zh": "5,790 万公里", "en": "57.9 million km"},
+        {"zh": "1.5 亿公里", "en": "150 million km"},
+        {"zh": "2.28 亿公里", "en": "228 million km"},
+        {"zh": "5.79 亿公里", "en": "579 million km"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "水星与太阳的平均距离约为 5,790 万公里（0.39 AU），是离太阳最近的行星。", "en": "Mercury's average distance from the Sun is approximately 57.9 million km (0.39 AU), making it the closest planet to the Sun."}
+    },
+    {
+      "id": "q_mercury_007",
+      "question": {"zh": "水星表面最大的撞击坑是？", "en": "What is the largest impact crater on Mercury's surface?"},
+      "options": [
+        {"zh": "第谷坑", "en": "Tycho Crater"},
+        {"zh": "卡洛里盆地", "en": "Caloris Basin"},
+        {"zh": "贝多芬坑", "en": "Beethoven Crater"},
+        {"zh": "库伊伯坑", "en": "Kuiper Crater"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "卡洛里盆地是水星上最大的撞击坑，直径约 1,550 公里，是太阳系中最大的撞击坑之一。", "en": "The Caloris Basin is the largest impact crater on Mercury, approximately 1,550 km in diameter, one of the largest in the Solar System."}
+    },
+    {
+      "id": "q_mercury_008",
+      "question": {"zh": "水星的轴倾角约为多少度？", "en": "What is Mercury's axial tilt in degrees?"},
+      "options": [
+        {"zh": "0.034°", "en": "0.034°"},
+        {"zh": "23.5°", "en": "23.5°"},
+        {"zh": "25.2°", "en": "25.2°"},
+        {"zh": "90°", "en": "90°"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "水星的轴倾角仅为 0.034 度，几乎垂直于其轨道平面，是太阳系中轴倾角最小的行星。", "en": "Mercury's axial tilt is only 0.034 degrees, almost perpendicular to its orbital plane, the smallest in the Solar System."}
+    },
+    {
+      "id": "q_mercury_009",
+      "question": {"zh": "首次飞掠水星的探测器是？", "en": "Which spacecraft first flew by Mercury?"},
+      "options": [
+        {"zh": "旅行者 1 号", "en": "Voyager 1"},
+        {"zh": "水手 10 号", "en": "Mariner 10"},
+        {"zh": "信使号", "en": "MESSENGER"},
+        {"zh": "先驱者 10 号", "en": "Pioneer 10"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "水手 10 号于 1974 年首次飞掠水星，是第一个探测水星的人类探测器。", "en": "Mariner 10 first flew by Mercury in 1974, becoming the first human spacecraft to explore Mercury."}
+    },
+    {
+      "id": "q_mercury_010",
+      "question": {"zh": "水星的公转速度约为多少？", "en": "What is Mercury's orbital speed?"},
+      "options": [
+        {"zh": "24.07 km/s", "en": "24.07 km/s"},
+        {"zh": "29.78 km/s", "en": "29.78 km/s"},
+        {"zh": "35.5 km/s", "en": "35.5 km/s"},
+        {"zh": "47.4 km/s", "en": "47.4 km/s"}
+      ],
+      "answer": 3,
+      "explanation": {"zh": "水星的公转速度约为 47.4 km/s，是太阳系中公转速度最快的行星。", "en": "Mercury's orbital speed is approximately 47.4 km/s, the fastest orbiting planet in the Solar System."}
+    },
+    {
+      "id": "q_sun_011",
+      "question": {"en": "What is the dominant rock type composing Mercury's crust?", "zh": "水星的地壳主要由哪种岩石类型构成？"},
+      "options": [
+        {"en": "Basalt (iron- and magnesium-rich volcanic rock)", "zh": "玄武岩（富含铁镁的火山岩）"},
+        {"en": "Granite (silica- and aluminum-rich intrusive rock)", "zh": "花岗岩（富含硅铝的深成岩）"},
+        {"en": "Dunite (ultramafic rock derived from the mantle)", "zh": "橄榄岩（地幔来源的超基性岩）"},
+        {"en": "Limestone (sedimentary carbonate rock)", "zh": "石灰岩（沉积成因的碳酸盐岩）"}
+      ],
+      "answer": 0,
+      "explanation": {"en": "X-ray spectrometer data from the MESSENGER mission revealed Mercury’s crust is enriched in magnesium, sulfur, and calcium but depleted in aluminum and silicon—consistent with reduced, magnesium-rich basalts formed by extensive ancient volcanic flooding.", "zh": "信使号（MESSENGER）探测器的X射线光谱分析表明，水星地壳富含镁、硫和钙，贫铝和硅，其成分与还原性玄武岩一致，支持早期广泛火山活动形成玄武质平原。"}
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "id": "saturn",
+  "name": {
+    "zh": "土星",
+    "en": "Saturn"
+  },
+  "icon": "🪐",
+  "theme_color": "#E8D5A3",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "气态巨行星",
+            "en": "Gas Giant"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "120,536 km",
+            "en": "120,536 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "5.683 × 10²⁶ kg",
+            "en": "5.683 × 10²⁶ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "8.271 × 10¹⁴ km³",
+            "en": "8.271 × 10¹⁴ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "0.687 g/cm³",
+            "en": "0.687 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "10.44 m/s²",
+            "en": "10.44 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土星是太阳系中密度最低的行星，其密度甚至低于水（1 g/cm³），理论上如果有一个足够大的海洋，土星会漂浮起来。",
+        "en": "※ Saturn is the least dense planet in the Solar System, with a density lower than water (1 g/cm³); theoretically, it would float in a sufficiently large ocean."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "10.7 小时",
+            "en": "10.7 hours"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "29.457 地球年",
+            "en": "29.457 Earth years"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "9.69 km/s",
+            "en": "9.69 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0565",
+            "en": "0.0565"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "2.485°",
+            "en": "2.485°"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土星的自转速度极快，导致其赤道明显隆起，极地扁平，形状像一个压扁的球体。",
+        "en": "※ Saturn's rapid rotation causes a noticeable equatorial bulge and polar flattening, giving it an oblate spheroid shape."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "−139 °C（云顶）",
+            "en": "−139 °C (cloud top)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "−178 °C",
+            "en": "−178 °C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "140 kPa（云顶）",
+            "en": "140 kPa (cloud top)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "96.3% 氢气, 3.25% 氦气, 微量甲烷、氨",
+            "en": "96.3% hydrogen, 3.25% helium, trace methane, ammonia"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "0.21 高斯（赤道）",
+            "en": "0.21 gauss (equatorial)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土星内部温度极高，核心温度可达11,700 °C，它向外辐射的能量比从太阳接收的能量多约2.5倍。",
+        "en": "※ Saturn's interior is extremely hot, with a core temperature of about 11,700 °C; it radiates about 2.5 times more energy than it receives from the Sun."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "9.041 AU",
+            "en": "9.041 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "10.124 AU",
+            "en": "10.124 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "9.582 AU",
+            "en": "9.582 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "9.582 AU",
+            "en": "9.582 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 79 分钟",
+            "en": "Approx. 79 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "146 颗（截至2024年）",
+            "en": "146 (as of 2024)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "土卫六（泰坦）、土卫五（瑞亚）、土卫三（特提斯）、土卫四（狄俄涅）、土卫二（恩克拉多斯）等",
+            "en": "Titan, Rhea, Tethys, Dione, Enceladus, etc."
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫六（泰坦）是太阳系中唯一拥有浓厚大气层的卫星，其大气压约为地球的1.5倍，表面存在液态甲烷和乙烷的湖泊。",
+        "en": "※ Titan is the only moon in the Solar System with a dense atmosphere, about 1.5 times Earth's pressure, and has lakes of liquid methane and ethane on its surface."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "气态表面无固体地表，云带、风暴、六边形极地涡旋",
+            "en": "Gaseous surface, no solid ground; cloud bands, storms, hexagonal polar vortex"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "不适用（气态行星）",
+            "en": "Not applicable (gas giant)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "不适用（无固体表面）",
+            "en": "Not applicable (no solid surface)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "不适用",
+            "en": "Not applicable"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土星北极有一个巨大的六边形风暴，边长约13,800公里，其形成机制至今仍是未解之谜。",
+        "en": "※ Saturn's north pole features a massive hexagonal storm with sides about 13,800 km long; its formation mechanism remains a mystery."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "古代已知（巴比伦人约公元前7世纪记录）",
+            "en": "Known since antiquity (recorded by Babylonians c. 7th century BCE)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1979年9月1日（先驱者11号）",
+            "en": "September 1, 1979 (Pioneer 11)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "2004年7月1日（卡西尼号）",
+            "en": "July 1, 2004 (Cassini)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "卡西尼号（2004–2017年，已结束）",
+            "en": "Cassini (2004–2017, ended)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 卡西尼号在2017年9月15日主动坠入土星大气层，结束了长达13年的探测任务，避免污染可能拥有生命的土卫二和土卫六。",
+        "en": "※ Cassini deliberately plunged into Saturn's atmosphere on September 15, 2017, ending its 13-year mission to avoid contaminating potentially life-bearing moons Enceladus and Titan."
+      }
+    }
+  ]
+}

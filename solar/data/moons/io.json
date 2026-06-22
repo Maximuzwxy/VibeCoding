@@ -1,0 +1,401 @@
+{
+  "id": "io",
+  "name": {
+    "zh": "木卫一",
+    "en": "Io"
+  },
+  "icon": "🌋",
+  "theme_color": "#FFD700",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "卫星（木星伽利略卫星）",
+            "en": "Moon (Jovian Galilean moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "3,643.2 公里",
+            "en": "3,643.2 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "8.9319 × 10²² 千克",
+            "en": "8.9319 × 10²² kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "2.53 × 10¹⁰ 立方公里",
+            "en": "2.53 × 10¹⁰ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "3.528 克/立方厘米",
+            "en": "3.528 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "1.796 米/秒² (0.183 g)",
+            "en": "1.796 m/s² (0.183 g)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫一是太阳系中火山活动最活跃的天体，拥有超过400座活火山。",
+        "en": "※ Io is the most volcanically active body in the Solar System, with over 400 active volcanoes."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "1.769 天（同步自转）",
+            "en": "1.769 days (synchronous rotation)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "1.769 天",
+            "en": "1.769 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "17.334 公里/秒",
+            "en": "17.334 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0041",
+            "en": "0.0041"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.05°（相对于木星赤道）",
+            "en": "0.05° (relative to Jupiter's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫一与木卫二、木卫三处于轨道共振（拉普拉斯共振），每绕木星4圈，木卫二绕2圈，木卫三绕1圈，这种共振导致潮汐加热驱动其火山活动。",
+        "en": "※ Io is in orbital resonance with Europa and Ganymede (Laplace resonance): for every 4 orbits of Io, Europa orbits twice and Ganymede once, causing tidal heating that drives its volcanism."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "平均约 -143°C（130 K），火山热点可达 1,700°C（1,970 K）",
+            "en": "Average ~ -143°C (130 K), volcanic hotspots up to 1,700°C (1,970 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "-143°C（130 K）",
+            "en": "-143°C (130 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "极稀薄，约 10⁻⁹ 帕（纳帕级）",
+            "en": "Extremely thin, ~ 10⁻⁹ Pa (nanobar level)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "二氧化硫（SO₂）为主，另有硫、氧、钠、钾等",
+            "en": "Primarily sulfur dioxide (SO₂), with sulfur, oxygen, sodium, potassium"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无固有磁场，但受木星磁场强烈影响，产生感应磁场",
+            "en": "No intrinsic magnetic field, but strongly influenced by Jupiter's magnetosphere, inducing a magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫一的火山喷发可将硫和二氧化硫喷射到500公里高的太空中，形成巨大的等离子体环（木卫一等离子体环）。",
+        "en": "※ Io's volcanic eruptions can eject sulfur and sulfur dioxide up to 500 km into space, forming a massive plasma torus (Io plasma torus)."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕木星公转）",
+            "en": "N/A (orbits Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用（绕木星公转）",
+            "en": "N/A (orbits Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "421,700 公里（距木星中心）",
+            "en": "421,700 km (from Jupiter's center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.00282 AU（距木星）",
+            "en": "0.00282 AU (from Jupiter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 1.4 秒（从木星到木卫一）",
+            "en": "~ 1.4 seconds (from Jupiter to Io)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "木卫一本身是木星的卫星，无天然卫星",
+            "en": "Io itself is a moon of Jupiter, has no natural moons"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫一是木星四颗伽利略卫星中最内侧的一颗，也是太阳系中密度最大的卫星之一。",
+        "en": "※ Io is the innermost of Jupiter's four Galilean moons and one of the densest moons in the Solar System."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "火山平原、熔岩流、硫磺沉积、火山口、山脉",
+            "en": "Volcanic plains, lava flows, sulfur deposits, calderas, mountains"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "Tvashtar Paterae（火山口群，直径约 290 公里）",
+            "en": "Tvashtar Paterae (volcanic crater complex, ~290 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "极年轻，平均约 100 万年（因火山活动不断更新）",
+            "en": "Extremely young, average ~1 million years (constantly resurfaced by volcanism)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "Boösaule Montes，约 17,500 米（比珠穆朗玛峰还高）",
+            "en": "Boösaule Montes, ~17,500 m (taller than Mount Everest)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 木卫一表面几乎没有撞击坑，因为火山活动不断覆盖旧地表，使其成为太阳系中地质最年轻的天体之一。",
+        "en": "※ Io's surface has almost no impact craters because volcanic activity constantly buries old terrain, making it one of the geologically youngest bodies in the Solar System."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1610年1月8日，伽利略·伽利莱",
+            "en": "January 8, 1610, by Galileo Galilei"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1973年12月3日，先驱者10号",
+            "en": "December 3, 1973, Pioneer 10"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "1995年12月7日，伽利略号探测器（木星轨道器，多次飞掠木卫一）",
+            "en": "December 7, 1995, Galileo orbiter (Jupiter orbiter, multiple Io flybys)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "朱诺号（Juno，2016年至今，多次飞掠木卫一，最近一次2024年2月）",
+            "en": "Juno (2016–present, multiple Io flybys, most recent February 2024)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 伽利略号探测器在2001年10月飞掠木卫一时，距离仅181公里，是迄今为止最接近的探测。",
+        "en": "※ The Galileo spacecraft flew within 181 km of Io in October 2001, the closest flyby to date."
+      }
+    }
+  ]
+}

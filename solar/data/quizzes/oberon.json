@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_oberon_001",
+      "question": {
+        "zh": "天卫五（Oberon）是哪个行星的卫星？",
+        "en": "Which planet's moon is Oberon?"
+      },
+      "options": [
+        {
+          "zh": "天王星",
+          "en": "Uranus"
+        },
+        {
+          "zh": "海王星",
+          "en": "Neptune"
+        },
+        {
+          "zh": "土星",
+          "en": "Saturn"
+        },
+        {
+          "zh": "木星",
+          "en": "Jupiter"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫五（Oberon）是天王星最大的卫星之一，由威廉·赫歇尔于1787年发现。",
+        "en": "Oberon is one of the largest moons of Uranus, discovered by William Herschel in 1787."
+      }
+    },
+    {
+      "id": "q_oberon_002",
+      "question": {
+        "zh": "天卫五的直径大约是多少？",
+        "en": "What is the approximate diameter of Oberon?"
+      },
+      "options": [
+        {
+          "zh": "约1520公里",
+          "en": "About 1520 km"
+        },
+        {
+          "zh": "约2700公里",
+          "en": "About 2700 km"
+        },
+        {
+          "zh": "约4800公里",
+          "en": "About 4800 km"
+        },
+        {
+          "zh": "约800公里",
+          "en": "About 800 km"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫五的直径约为1520公里，是天王星第二大卫星，仅次于天卫三（Titania）。",
+        "en": "Oberon has a diameter of about 1520 km, making it the second-largest moon of Uranus after Titania."
+      }
+    },
+    {
+      "id": "q_oberon_003",
+      "question": {
+        "zh": "天卫五的轨道距离天王星中心大约多远？",
+        "en": "What is the approximate orbital distance of Oberon from Uranus's center?"
+      },
+      "options": [
+        {
+          "zh": "约435,000公里",
+          "en": "About 435,000 km"
+        },
+        {
+          "zh": "约190,000公里",
+          "en": "About 190,000 km"
+        },
+        {
+          "zh": "约1,000,000公里",
+          "en": "About 1,000,000 km"
+        },
+        {
+          "zh": "约600,000公里",
+          "en": "About 600,000 km"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫五的轨道半长轴约为435,000公里，是天王星最外层的主要卫星之一。",
+        "en": "Oberon's orbital semi-major axis is about 435,000 km, making it one of the outermost major moons of Uranus."
+      }
+    },
+    {
+      "id": "q_oberon_004",
+      "question": {
+        "zh": "天卫五的表面主要特征是什么？",
+        "en": "What is the main surface feature of Oberon?"
+      },
+      "options": [
+        {
+          "zh": "大量陨石坑和暗色物质",
+          "en": "Numerous craters and dark material"
+        },
+        {
+          "zh": "活跃的火山喷发",
+          "en": "Active volcanic eruptions"
+        },
+        {
+          "zh": "液态水海洋",
+          "en": "Liquid water ocean"
+        },
+        {
+          "zh": "浓厚的大气层",
+          "en": "Thick atmosphere"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫五表面布满陨石坑，并覆盖有暗色物质，可能来自内部喷发或外部撞击。",
+        "en": "Oberon's surface is heavily cratered and covered with dark material, possibly from internal eruptions or external impacts."
+      }
+    },
+    {
+      "id": "q_oberon_005",
+      "question": {
+        "zh": "天卫五的密度大约是多少？",
+        "en": "What is the approximate density of Oberon?"
+      },
+      "options": [
+        {
+          "zh": "约1.6 g/cm³",
+          "en": "About 1.6 g/cm³"
+        },
+        {
+          "zh": "约3.5 g/cm³",
+          "en": "About 3.5 g/cm³"
+        },
+        {
+          "zh": "约0.9 g/cm³",
+          "en": "About 0.9 g/cm³"
+        },
+        {
+          "zh": "约5.5 g/cm³",
+          "en": "About 5.5 g/cm³"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫五的密度约为1.6 g/cm³，表明它主要由水冰和岩石混合组成。",
+        "en": "Oberon's density is about 1.6 g/cm³, indicating a composition of roughly equal parts water ice and rock."
+      }
+    },
+    {
+      "id": "q_oberon_006",
+      "question": {
+        "zh": "天卫五的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Oberon?"
+      },
+      "options": [
+        {
+          "zh": "约-200°C",
+          "en": "About -200°C"
+        },
+        {
+          "zh": "约-100°C",
+          "en": "About -100°C"
+        },
+        {
+          "zh": "约0°C",
+          "en": "About 0°C"
+        },
+        {
+          "zh": "约-50°C",
+          "en": "About -50°C"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫五的表面温度极低，约为-200°C（70 K），因为距离太阳遥远且缺乏大气保温。",
+        "en": "Oberon's surface temperature is extremely cold, about -200°C (70 K), due to its great distance from the Sun and lack of insulating atmosphere."
+      }
+    },
+    {
+      "id": "q_oberon_007",
+      "question": {
+        "zh": "天卫五的轨道偏心率如何？",
+        "en": "What is the orbital eccentricity of Oberon?"
+      },
+      "options": [
+        {
+          "zh": "接近圆形（偏心率很小）",
+          "en": "Nearly circular (very low eccentricity)"
+        },
+        {
+          "zh": "高度椭圆",
+          "en": "Highly elliptical"
+        },
+        {
+          "zh": "中等偏心率",
+          "en": "Moderate eccentricity"
+        },
+        {
+          "zh": "偏心率随时间变化很大",
+          "en": "Eccentricity varies greatly over time"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫五的轨道偏心率很小（约0.0014），轨道接近正圆形。",
+        "en": "Oberon's orbital eccentricity is very small (about 0.0014), making its orbit nearly circular."
+      }
+    },
+    {
+      "id": "q_oberon_008",
+      "question": {
+        "zh": "天卫五是否拥有大气层？",
+        "en": "Does Oberon have an atmosphere?"
+      },
+      "options": [
+        {
+          "zh": "没有明显的大气层",
+          "en": "No significant atmosphere"
+        },
+        {
+          "zh": "有稀薄的二氧化碳大气",
+          "en": "A thin carbon dioxide atmosphere"
+        },
+        {
+          "zh": "有浓厚的氮气大气",
+          "en": "A thick nitrogen atmosphere"
+        },
+        {
+          "zh": "有甲烷大气",
+          "en": "A methane atmosphere"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫五没有明显的大气层，表面气压极低，几乎可以忽略。",
+        "en": "Oberon has no significant atmosphere, with an extremely low surface pressure that is nearly negligible."
+      }
+    },
+    {
+      "id": "q_oberon_009",
+      "question": {
+        "zh": "哪艘探测器曾飞越并观测天卫五？",
+        "en": "Which spacecraft flew by and observed Oberon?"
+      },
+      "options": [
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        },
+        {
+          "zh": "伽利略号",
+          "en": "Galileo"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "旅行者2号于1986年飞越天王星系统，对天卫五进行了近距离观测和成像。",
+        "en": "Voyager 2 flew by the Uranian system in 1986 and conducted close-up observations and imaging of Oberon."
+      }
+    },
+    {
+      "id": "q_oberon_010",
+      "question": {
+        "zh": "天卫五的名称来源于什么？",
+        "en": "What is the origin of the name Oberon?"
+      },
+      "options": [
+        {
+          "zh": "莎士比亚戏剧《仲夏夜之梦》中的仙王",
+          "en": "The fairy king in Shakespeare's A Midsummer Night's Dream"
+        },
+        {
+          "zh": "希腊神话中的一位神",
+          "en": "A god in Greek mythology"
+        },
+        {
+          "zh": "一位天文学家的名字",
+          "en": "The name of an astronomer"
+        },
+        {
+          "zh": "拉丁语中'黑暗'的意思",
+          "en": "The Latin word for 'dark'"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫五（Oberon）得名于莎士比亚戏剧《仲夏夜之梦》中的仙王奥布朗。",
+        "en": "Oberon is named after the fairy king Oberon from Shakespeare's play A Midsummer Night's Dream."
+      }
+    }
+  ]
+}

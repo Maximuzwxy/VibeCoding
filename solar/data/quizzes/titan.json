@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_titan_001",
+      "question": {
+        "zh": "土卫六是太阳系中唯一拥有浓厚大气层的卫星，其主要大气成分是什么？",
+        "en": "Titan is the only moon in the solar system with a thick atmosphere. What is its primary atmospheric component?"
+      },
+      "options": [
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "氧气",
+          "en": "Oxygen"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        },
+        {
+          "zh": "甲烷",
+          "en": "Methane"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫六的大气层约98%是氮气，其余主要为甲烷和少量其他碳氢化合物。",
+        "en": "Titan's atmosphere is about 98% nitrogen, with the remainder being primarily methane and small amounts of other hydrocarbons."
+      }
+    },
+    {
+      "id": "q_titan_002",
+      "question": {
+        "zh": "土卫六绕土星公转的周期大约是多少天？",
+        "en": "What is the approximate orbital period of Titan around Saturn?"
+      },
+      "options": [
+        {
+          "zh": "约10天",
+          "en": "About 10 days"
+        },
+        {
+          "zh": "约16天",
+          "en": "About 16 days"
+        },
+        {
+          "zh": "约30天",
+          "en": "About 30 days"
+        },
+        {
+          "zh": "约80天",
+          "en": "About 80 days"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫六的公转周期约为15.95天，与土星的自转周期同步，因此它始终以同一面朝向土星。",
+        "en": "Titan's orbital period is about 15.95 days, and it is tidally locked to Saturn, always showing the same face."
+      }
+    },
+    {
+      "id": "q_titan_003",
+      "question": {
+        "zh": "土卫六的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature on Titan?"
+      },
+      "options": [
+        {
+          "zh": "约-180°C",
+          "en": "About -180°C"
+        },
+        {
+          "zh": "约-100°C",
+          "en": "About -100°C"
+        },
+        {
+          "zh": "约-50°C",
+          "en": "About -50°C"
+        },
+        {
+          "zh": "约0°C",
+          "en": "About 0°C"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫六表面温度极低，约为-179°C，这使得甲烷和乙烷能以液态形式存在，形成湖泊和海洋。",
+        "en": "Titan's surface temperature is extremely low, around -179°C, allowing methane and ethane to exist as liquids, forming lakes and seas."
+      }
+    },
+    {
+      "id": "q_titan_004",
+      "question": {
+        "zh": "土卫六的直径在太阳系卫星中排名第几？",
+        "en": "What is the size rank of Titan among all moons in the solar system by diameter?"
+      },
+      "options": [
+        {
+          "zh": "第一",
+          "en": "1st"
+        },
+        {
+          "zh": "第二",
+          "en": "2nd"
+        },
+        {
+          "zh": "第三",
+          "en": "3rd"
+        },
+        {
+          "zh": "第四",
+          "en": "4th"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫六是太阳系第二大卫星，仅次于木卫三（Ganymede），直径约5150公里。",
+        "en": "Titan is the second largest moon in the solar system, after Ganymede, with a diameter of about 5,150 km."
+      }
+    },
+    {
+      "id": "q_titan_005",
+      "question": {
+        "zh": "哪一项是土卫六表面最显著的地貌特征？",
+        "en": "Which of the following is the most prominent surface feature on Titan?"
+      },
+      "options": [
+        {
+          "zh": "巨大的环形山",
+          "en": "Huge impact craters"
+        },
+        {
+          "zh": "液态碳氢化合物湖泊",
+          "en": "Liquid hydrocarbon lakes"
+        },
+        {
+          "zh": "活火山",
+          "en": "Active volcanoes"
+        },
+        {
+          "zh": "冰盖",
+          "en": "Ice caps"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫六表面分布着大量由液态甲烷和乙烷构成的湖泊与海洋，尤其是在北极地区，这是其最显著的特征。",
+        "en": "Titan's surface features numerous lakes and seas of liquid methane and ethane, especially in the polar regions, making it the most prominent feature."
+      }
+    },
+    {
+      "id": "q_titan_006",
+      "question": {
+        "zh": "第一个成功着陆土卫六的探测器是哪个？",
+        "en": "Which spacecraft made the first successful landing on Titan?"
+      },
+      "options": [
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        },
+        {
+          "zh": "惠更斯号",
+          "en": "Huygens"
+        },
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "2005年1月14日，欧洲空间局的惠更斯号探测器成功降落在土卫六表面，这是人类首次在外太阳系卫星上着陆。",
+        "en": "On January 14, 2005, the European Space Agency's Huygens probe successfully landed on Titan's surface, the first landing on a moon in the outer solar system."
+      }
+    },
+    {
+      "id": "q_titan_007",
+      "question": {
+        "zh": "土卫六的内部结构被认为可能包含什么？",
+        "en": "What is Titan's internal structure thought to possibly contain?"
+      },
+      "options": [
+        {
+          "zh": "液态水海洋",
+          "en": "A liquid water ocean"
+        },
+        {
+          "zh": "固态铁核",
+          "en": "A solid iron core"
+        },
+        {
+          "zh": "岩浆层",
+          "en": "A magma layer"
+        },
+        {
+          "zh": "气态氢层",
+          "en": "A gaseous hydrogen layer"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "根据卡西尼号的数据，土卫六内部很可能存在一个由液态水与氨组成的海洋，位于冰壳与岩石核心之间。",
+        "en": "Data from Cassini suggests that Titan likely harbors a subsurface ocean of liquid water and ammonia beneath its icy crust."
+      }
+    },
+    {
+      "id": "q_titan_008",
+      "question": {
+        "zh": "土卫六的大气压力大约是地球海平面大气压的多少倍？",
+        "en": "How does Titan's surface atmospheric pressure compare to Earth's sea-level pressure?"
+      },
+      "options": [
+        {
+          "zh": "0.1倍",
+          "en": "0.1 times"
+        },
+        {
+          "zh": "0.5倍",
+          "en": "0.5 times"
+        },
+        {
+          "zh": "1.5倍",
+          "en": "1.5 times"
+        },
+        {
+          "zh": "10倍",
+          "en": "10 times"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫六的表面大气压约为1.45倍地球海平面大气压，比地球略高。",
+        "en": "Titan's surface atmospheric pressure is about 1.45 times that of Earth's sea-level pressure, slightly higher than Earth's."
+      }
+    },
+    {
+      "id": "q_titan_009",
+      "question": {
+        "zh": "土卫六的轨道距离土星大约多远？",
+        "en": "Approximately how far is Titan's orbit from Saturn?"
+      },
+      "options": [
+        {
+          "zh": "约12万公里",
+          "en": "About 120,000 km"
+        },
+        {
+          "zh": "约42万公里",
+          "en": "About 420,000 km"
+        },
+        {
+          "zh": "约122万公里",
+          "en": "About 1,220,000 km"
+        },
+        {
+          "zh": "约237万公里",
+          "en": "About 2,370,000 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫六的平均轨道半径约为1,221,870公里，是土星最大的卫星。",
+        "en": "Titan's average orbital distance from Saturn is about 1,221,870 km, making it Saturn's largest moon."
+      }
+    },
+    {
+      "id": "q_titan_010",
+      "question": {
+        "zh": "土卫六上发现的“沙丘”主要由什么物质构成？",
+        "en": "What are the 'dunes' found on Titan primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "硅酸盐沙粒",
+          "en": "Silicate sand grains"
+        },
+        {
+          "zh": "冰晶颗粒",
+          "en": "Ice crystal grains"
+        },
+        {
+          "zh": "碳氢化合物颗粒",
+          "en": "Hydrocarbon particles"
+        },
+        {
+          "zh": "火山灰",
+          "en": "Volcanic ash"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫六赤道附近的沙丘由固态碳氢化合物（如苯、乙炔等）颗粒组成，这些颗粒来自大气中的光化学烟雾。",
+        "en": "The dunes near Titan's equator are composed of solid hydrocarbon particles (such as benzene and acetylene) that settle from the atmospheric photochemical smog."
+      }
+    }
+  ]
+}

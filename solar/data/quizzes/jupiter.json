@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_jupiter_001",
+      "question": {
+        "zh": "木星是太阳系中第几颗行星？",
+        "en": "What is the position of Jupiter in the solar system?"
+      },
+      "options": [
+        {
+          "zh": "第四颗",
+          "en": "Fourth"
+        },
+        {
+          "zh": "第五颗",
+          "en": "Fifth"
+        },
+        {
+          "zh": "第六颗",
+          "en": "Sixth"
+        },
+        {
+          "zh": "第七颗",
+          "en": "Seventh"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木星是太阳系中距离太阳第五近的行星，位于火星和土星之间。",
+        "en": "Jupiter is the fifth planet from the Sun, located between Mars and Saturn."
+      }
+    },
+    {
+      "id": "q_jupiter_002",
+      "question": {
+        "zh": "木星主要由哪两种元素构成？",
+        "en": "Which two elements primarily make up Jupiter?"
+      },
+      "options": [
+        {
+          "zh": "氢和氦",
+          "en": "Hydrogen and helium"
+        },
+        {
+          "zh": "氧和氮",
+          "en": "Oxygen and nitrogen"
+        },
+        {
+          "zh": "碳和铁",
+          "en": "Carbon and iron"
+        },
+        {
+          "zh": "氖和氩",
+          "en": "Neon and argon"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "木星是一颗气态巨行星，其大气和内部主要由氢（约90%）和氦（约10%）组成。",
+        "en": "Jupiter is a gas giant, with its atmosphere and interior composed mainly of hydrogen (about 90%) and helium (about 10%)."
+      }
+    },
+    {
+      "id": "q_jupiter_003",
+      "question": {
+        "zh": "木星上著名的大红斑是什么？",
+        "en": "What is the Great Red Spot on Jupiter?"
+      },
+      "options": [
+        {
+          "zh": "一座巨大的火山",
+          "en": "A giant volcano"
+        },
+        {
+          "zh": "一个巨大的风暴",
+          "en": "A giant storm"
+        },
+        {
+          "zh": "一片液态氢海洋",
+          "en": "An ocean of liquid hydrogen"
+        },
+        {
+          "zh": "一颗撞击坑",
+          "en": "An impact crater"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "大红斑是一个持续数百年的巨大反气旋风暴，其大小超过地球直径。",
+        "en": "The Great Red Spot is a giant anticyclonic storm that has persisted for hundreds of years and is larger than Earth's diameter."
+      }
+    },
+    {
+      "id": "q_jupiter_004",
+      "question": {
+        "zh": "木星的自转周期大约是多少？",
+        "en": "What is the approximate rotation period of Jupiter?"
+      },
+      "options": [
+        {
+          "zh": "约10小时",
+          "en": "About 10 hours"
+        },
+        {
+          "zh": "约24小时",
+          "en": "About 24 hours"
+        },
+        {
+          "zh": "约12小时",
+          "en": "About 12 hours"
+        },
+        {
+          "zh": "约48小时",
+          "en": "About 48 hours"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "木星是太阳系中自转最快的行星，其赤道自转周期约为9小时55分钟。",
+        "en": "Jupiter is the fastest rotating planet in the solar system, with an equatorial rotation period of about 9 hours and 55 minutes."
+      }
+    },
+    {
+      "id": "q_jupiter_005",
+      "question": {
+        "zh": "木星拥有太阳系行星中最强的什么？",
+        "en": "What does Jupiter have the strongest of among solar system planets?"
+      },
+      "options": [
+        {
+          "zh": "磁场",
+          "en": "Magnetic field"
+        },
+        {
+          "zh": "温室效应",
+          "en": "Greenhouse effect"
+        },
+        {
+          "zh": "火山活动",
+          "en": "Volcanic activity"
+        },
+        {
+          "zh": "地震活动",
+          "en": "Seismic activity"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "木星拥有太阳系行星中最强的磁场，其磁层延伸数百万公里，远超土星。",
+        "en": "Jupiter has the strongest magnetic field of any planet in the solar system, with a magnetosphere extending millions of kilometers."
+      }
+    },
+    {
+      "id": "q_jupiter_006",
+      "question": {
+        "zh": "以下哪颗是木星最大的卫星？",
+        "en": "Which of the following is Jupiter's largest moon?"
+      },
+      "options": [
+        {
+          "zh": "欧罗巴",
+          "en": "Europa"
+        },
+        {
+          "zh": "伊奥",
+          "en": "Io"
+        },
+        {
+          "zh": "盖尼米得",
+          "en": "Ganymede"
+        },
+        {
+          "zh": "卡利斯托",
+          "en": "Callisto"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "盖尼米得（木卫三）是太阳系中最大的卫星，直径超过水星，也是木星最大的卫星。",
+        "en": "Ganymede is the largest moon in the solar system, larger than Mercury, and is Jupiter's biggest moon."
+      }
+    },
+    {
+      "id": "q_jupiter_007",
+      "question": {
+        "zh": "木星绕太阳公转一周大约需要多少年？",
+        "en": "How many Earth years does it take for Jupiter to orbit the Sun once?"
+      },
+      "options": [
+        {
+          "zh": "约5年",
+          "en": "About 5 years"
+        },
+        {
+          "zh": "约12年",
+          "en": "About 12 years"
+        },
+        {
+          "zh": "约29年",
+          "en": "About 29 years"
+        },
+        {
+          "zh": "约84年",
+          "en": "About 84 years"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木星的公转周期约为11.86地球年，通常近似为12年。",
+        "en": "Jupiter's orbital period is about 11.86 Earth years, commonly approximated as 12 years."
+      }
+    },
+    {
+      "id": "q_jupiter_008",
+      "question": {
+        "zh": "哪项任务首次进入木星轨道进行详细探测？",
+        "en": "Which mission first entered orbit around Jupiter for detailed exploration?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "伽利略号",
+          "en": "Galileo"
+        },
+        {
+          "zh": "朱诺号",
+          "en": "Juno"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "伽利略号于1995年进入木星轨道，是首个环绕木星进行长期探测的航天器。",
+        "en": "The Galileo spacecraft entered orbit around Jupiter in 1995, becoming the first to conduct long-term exploration of the planet."
+      }
+    },
+    {
+      "id": "q_jupiter_009",
+      "question": {
+        "zh": "木星的平均密度约为多少？",
+        "en": "What is the average density of Jupiter?"
+      },
+      "options": [
+        {
+          "zh": "约1.3 g/cm³",
+          "en": "About 1.3 g/cm³"
+        },
+        {
+          "zh": "约3.9 g/cm³",
+          "en": "About 3.9 g/cm³"
+        },
+        {
+          "zh": "约5.5 g/cm³",
+          "en": "About 5.5 g/cm³"
+        },
+        {
+          "zh": "约0.7 g/cm³",
+          "en": "About 0.7 g/cm³"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "木星的平均密度约为1.33 g/cm³，略高于水的密度，远低于类地行星。",
+        "en": "Jupiter's average density is about 1.33 g/cm³, slightly higher than water and much lower than terrestrial planets."
+      }
+    },
+    {
+      "id": "q_jupiter_010",
+      "question": {
+        "zh": "木星大气层中温度最高的区域通常在哪里？",
+        "en": "Where is the hottest region in Jupiter's atmosphere typically located?"
+      },
+      "options": [
+        {
+          "zh": "赤道附近",
+          "en": "Near the equator"
+        },
+        {
+          "zh": "两极地区",
+          "en": "The polar regions"
+        },
+        {
+          "zh": "大红斑中心",
+          "en": "The center of the Great Red Spot"
+        },
+        {
+          "zh": "云层底部",
+          "en": "The bottom of the cloud layers"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木星的两极地区存在极光活动，导致高层大气温度显著高于赤道区域。",
+        "en": "Jupiter's polar regions experience auroral activity, causing upper atmospheric temperatures to be significantly higher than at the equator."
+      }
+    }
+  ]
+}

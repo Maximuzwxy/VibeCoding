@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_deimos_001",
+      "question": {"zh": "火卫二的直径约为多少？", "en": "What is the approximate diameter of Deimos?"},
+      "options": [
+        {"zh": "7.6 km", "en": "7.6 km"},
+        {"zh": "12.6 km", "en": "12.6 km"},
+        {"zh": "17.6 km", "en": "17.6 km"},
+        {"zh": "22.6 km", "en": "22.6 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫二的直径约为 12.6 公里，是火星较小的卫星。", "en": "Deimos's diameter is approximately 12.6 km, the smaller moon of Mars."}
+    },
+    {
+      "id": "q_deimos_002",
+      "question": {"zh": "火卫二绕火星公转一周需要多少时间？", "en": "How long does it take for Deimos to orbit Mars once?"},
+      "options": [
+        {"zh": "7 小时 39 分", "en": "7h 39m"},
+        {"zh": "17 小时 39 分", "en": "17h 39m"},
+        {"zh": "30 小时 18 分", "en": "30h 18m"},
+        {"zh": "40 小时 18 分", "en": "40h 18m"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "火卫二公转周期为 30 小时 18 分，比火卫一慢。", "en": "Deimos's orbital period is 30h 18m, slower than Phobos."}
+    },
+    {
+      "id": "q_deimos_003",
+      "question": {"zh": "火卫二距离火星表面约为多少？", "en": "What is the distance from Deimos to Mars's surface?"},
+      "options": [
+        {"zh": "约 5,000 km", "en": "About 5,000 km"},
+        {"zh": "约 10,000 km", "en": "About 10,000 km"},
+        {"zh": "约 20,000 km", "en": "About 20,000 km"},
+        {"zh": "约 30,000 km", "en": "About 30,000 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "火卫二距离火星表面约 20,000 公里，比火卫一远得多。", "en": "Deimos is about 20,000 km from Mars's surface, much farther than Phobos."}
+    },
+    {
+      "id": "q_deimos_004",
+      "question": {"zh": "火卫二是哪一年被发现的？", "en": "In which year was Deimos discovered?"},
+      "options": [
+        {"zh": "1867 年", "en": "1867"},
+        {"zh": "1877 年", "en": "1877"},
+        {"zh": "1887 年", "en": "1887"},
+        {"zh": "1897 年", "en": "1897"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "阿萨夫·霍尔于 1877 年发现火卫二，比火卫一晚几天发现。", "en": "Asaph Hall discovered Deimos in 1877, a few days after Phobos."}
+    },
+    {
+      "id": "q_deimos_005",
+      "question": {"zh": "火卫二的形状是？", "en": "What is the shape of Deimos?"},
+      "options": [
+        {"zh": "完美球体", "en": "Perfect sphere"},
+        {"zh": "不规则椭球", "en": "Irregular ellipsoid"},
+        {"zh": "扁平圆盘", "en": "Flat disk"},
+        {"zh": "长条状", "en": "Elongated"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫二形状不规则，呈椭球状，尺寸约为 15×12×11 公里。", "en": "Deimos is irregularly shaped, an ellipsoid about 15×12×11 km."}
+    },
+    {
+      "id": "q_deimos_006",
+      "question": {"zh": "火卫二的平均密度约为多少？", "en": "What is the average density of Deimos?"},
+      "options": [
+        {"zh": "0.47 g/cm³", "en": "0.47 g/cm³"},
+        {"zh": "1.47 g/cm³", "en": "1.47 g/cm³"},
+        {"zh": "2.47 g/cm³", "en": "2.47 g/cm³"},
+        {"zh": "3.47 g/cm³", "en": "3.47 g/cm³"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫二平均密度约 1.47 g/cm³，表明内部多孔，可能含有大量水冰。", "en": "Deimos's average density is about 1.47 g/cm³, indicating a porous interior, possibly containing water ice."}
+    },
+    {
+      "id": "q_deimos_007",
+      "question": {"zh": "火卫二表面的撞击坑数量比火卫一？", "en": "How does the number of craters on Deimos compare to Phobos?"},
+      "options": [
+        {"zh": "更多", "en": "More"},
+        {"zh": "更少", "en": "Fewer"},
+        {"zh": "差不多", "en": "About the same"},
+        {"zh": "没有撞击坑", "en": "No craters"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫二表面撞击坑比火卫一少，表面相对平滑。", "en": "Deimos has fewer craters than Phobos, with a relatively smoother surface."}
+    },
+    {
+      "id": "q_deimos_008",
+      "question": {"zh": "火卫二的命名来源于？", "en": "What is the naming origin of Deimos?"},
+      "options": [
+        {"zh": "罗马战神", "en": "Roman god of war"},
+        {"zh": "希腊神话恐惧之神", "en": "Greek god of dread"},
+        {"zh": "希腊神话胜利女神", "en": "Greek goddess of victory"},
+        {"zh": "罗马神话爱神", "en": "Roman goddess of love"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫二以希腊神话中战神阿瑞斯（火星）的儿子恐惧之神命名。", "en": "Deimos is named after the Greek god of dread, son of Ares (Mars)."}
+    },
+    {
+      "id": "q_deimos_009",
+      "question": {"zh": "从火星表面看，火卫二的大小约为？", "en": "How large does Deimos appear from Mars's surface?"},
+      "options": [
+        {"zh": "比满月大", "en": "Larger than full Moon"},
+        {"zh": "和满月差不多", "en": "About the same as full Moon"},
+        {"zh": "比满月小", "en": "Smaller than full Moon"},
+        {"zh": "肉眼看不见", "en": "Invisible to naked eye"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "从火星表面看，火卫二比地球上的满月小得多，像一颗明亮的星星。", "en": "From Mars's surface, Deimos appears much smaller than Earth's full Moon, like a bright star."}
+    },
+    {
+      "id": "q_deimos_010",
+      "question": {"zh": "哪个探测器首次近距离拍摄了火卫二？", "en": "Which spacecraft first took close-up photos of Deimos?"},
+      "options": [
+        {"zh": "水手 4 号", "en": "Mariner 4"},
+        {"zh": "海盗 1 号", "en": "Viking 1"},
+        {"zh": "旅行者 1 号", "en": "Voyager 1"},
+        {"zh": "火星快车号", "en": "Mars Express"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "海盗 1 号于 1977 年首次近距离拍摄了火卫二。", "en": "Viking 1 took the first close-up photos of Deimos in 1977."}
+    }
+  ]
+}

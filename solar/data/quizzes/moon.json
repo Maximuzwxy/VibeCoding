@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_moon_001",
+      "question": {
+        "zh": "月球是地球的什么？",
+        "en": "What is the Moon to Earth?"
+      },
+      "options": [
+        {
+          "zh": "天然卫星",
+          "en": "Natural satellite"
+        },
+        {
+          "zh": "人造卫星",
+          "en": "Artificial satellite"
+        },
+        {
+          "zh": "小行星",
+          "en": "Asteroid"
+        },
+        {
+          "zh": "行星",
+          "en": "Planet"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "月球是地球唯一的天然卫星，绕地球公转。",
+        "en": "The Moon is Earth's only natural satellite, orbiting around Earth."
+      }
+    },
+    {
+      "id": "q_moon_002",
+      "question": {
+        "zh": "月球绕地球公转一周大约需要多少天？",
+        "en": "How many days does it take for the Moon to orbit Earth?"
+      },
+      "options": [
+        {
+          "zh": "约15天",
+          "en": "About 15 days"
+        },
+        {
+          "zh": "约27.3天",
+          "en": "About 27.3 days"
+        },
+        {
+          "zh": "约30天",
+          "en": "About 30 days"
+        },
+        {
+          "zh": "约365天",
+          "en": "About 365 days"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "月球公转周期约为27.3天，称为恒星月。",
+        "en": "The Moon's orbital period is about 27.3 days, known as a sidereal month."
+      }
+    },
+    {
+      "id": "q_moon_003",
+      "question": {
+        "zh": "月球表面的重力大约是地球的多少？",
+        "en": "The gravity on the Moon's surface is about what fraction of Earth's?"
+      },
+      "options": [
+        {
+          "zh": "1/2",
+          "en": "1/2"
+        },
+        {
+          "zh": "1/6",
+          "en": "1/6"
+        },
+        {
+          "zh": "1/10",
+          "en": "1/10"
+        },
+        {
+          "zh": "1/20",
+          "en": "1/20"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "月球重力约为地球的1/6，因此宇航员在月球上可以跳得更高。",
+        "en": "The Moon's gravity is about 1/6 of Earth's, allowing astronauts to jump higher."
+      }
+    },
+    {
+      "id": "q_moon_004",
+      "question": {
+        "zh": "月球表面白天和夜晚的温差大约是多少？",
+        "en": "What is the approximate temperature difference between day and night on the Moon?"
+      },
+      "options": [
+        {
+          "zh": "约50°C",
+          "en": "About 50°C"
+        },
+        {
+          "zh": "约100°C",
+          "en": "About 100°C"
+        },
+        {
+          "zh": "约260°C",
+          "en": "About 260°C"
+        },
+        {
+          "zh": "约500°C",
+          "en": "About 500°C"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "月球表面白天可达约127°C，夜晚可降至约-173°C，温差约300°C，但常见说法约260°C。",
+        "en": "The Moon's surface can reach about 127°C during the day and drop to about -173°C at night, a difference of about 300°C, often cited as around 260°C."
+      }
+    },
+    {
+      "id": "q_moon_005",
+      "question": {
+        "zh": "月球上是否有大气层？",
+        "en": "Does the Moon have an atmosphere?"
+      },
+      "options": [
+        {
+          "zh": "有，和地球一样厚",
+          "en": "Yes, as thick as Earth's"
+        },
+        {
+          "zh": "有，但非常稀薄",
+          "en": "Yes, but very thin"
+        },
+        {
+          "zh": "完全没有",
+          "en": "No atmosphere at all"
+        },
+        {
+          "zh": "只有二氧化碳",
+          "en": "Only carbon dioxide"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "月球有极稀薄的外大气层（外逸层），几乎接近真空，无法支持呼吸。",
+        "en": "The Moon has an extremely thin exosphere, nearly a vacuum, unable to support breathing."
+      }
+    },
+    {
+      "id": "q_moon_006",
+      "question": {
+        "zh": "人类首次登月任务是哪一年？",
+        "en": "In which year did the first human moon landing occur?"
+      },
+      "options": [
+        {
+          "zh": "1965年",
+          "en": "1965"
+        },
+        {
+          "zh": "1967年",
+          "en": "1967"
+        },
+        {
+          "zh": "1969年",
+          "en": "1969"
+        },
+        {
+          "zh": "1971年",
+          "en": "1971"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "1969年7月20日，阿波罗11号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次踏上月球。",
+        "en": "On July 20, 1969, Apollo 11 astronauts Neil Armstrong and Buzz Aldrin first set foot on the Moon."
+      }
+    },
+    {
+      "id": "q_moon_007",
+      "question": {
+        "zh": "月球表面最显著的地貌特征是什么？",
+        "en": "What is the most prominent surface feature on the Moon?"
+      },
+      "options": [
+        {
+          "zh": "高山",
+          "en": "Mountains"
+        },
+        {
+          "zh": "环形山（撞击坑）",
+          "en": "Craters (impact craters)"
+        },
+        {
+          "zh": "河流",
+          "en": "Rivers"
+        },
+        {
+          "zh": "火山",
+          "en": "Volcanoes"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "月球表面布满撞击形成的环形山，是其主要地貌特征。",
+        "en": "The Moon's surface is covered with impact craters, its most prominent feature."
+      }
+    },
+    {
+      "id": "q_moon_008",
+      "question": {
+        "zh": "月球与地球的平均距离大约是多少？",
+        "en": "What is the average distance between the Moon and Earth?"
+      },
+      "options": [
+        {
+          "zh": "约3.8万公里",
+          "en": "About 38,000 km"
+        },
+        {
+          "zh": "约38万公里",
+          "en": "About 380,000 km"
+        },
+        {
+          "zh": "约380万公里",
+          "en": "About 3,800,000 km"
+        },
+        {
+          "zh": "约3800万公里",
+          "en": "About 38,000,000 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "地月平均距离约为38.4万公里。",
+        "en": "The average Earth-Moon distance is about 384,000 km."
+      }
+    },
+    {
+      "id": "q_moon_009",
+      "question": {
+        "zh": "月球的自转周期与公转周期有什么关系？",
+        "en": "What is the relationship between the Moon's rotation and revolution periods?"
+      },
+      "options": [
+        {
+          "zh": "自转比公转快",
+          "en": "Rotation is faster than revolution"
+        },
+        {
+          "zh": "自转比公转慢",
+          "en": "Rotation is slower than revolution"
+        },
+        {
+          "zh": "两者相等",
+          "en": "They are equal"
+        },
+        {
+          "zh": "没有固定关系",
+          "en": "No fixed relationship"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "月球自转周期与公转周期相同，约27.3天，因此始终以同一面朝向地球。",
+        "en": "The Moon's rotation period equals its orbital period (about 27.3 days), so it always shows the same face to Earth."
+      }
+    },
+    {
+      "id": "q_moon_010",
+      "question": {
+        "zh": "以下哪个国家/组织在月球背面成功着陆了探测器？",
+        "en": "Which country/organization successfully landed a probe on the far side of the Moon?"
+      },
+      "options": [
+        {
+          "zh": "美国",
+          "en": "United States"
+        },
+        {
+          "zh": "俄罗斯",
+          "en": "Russia"
+        },
+        {
+          "zh": "中国",
+          "en": "China"
+        },
+        {
+          "zh": "欧洲空间局",
+          "en": "European Space Agency"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "2019年，中国的嫦娥四号探测器在月球背面（南极-艾特肯盆地）成功着陆，这是人类首次。",
+        "en": "In 2019, China's Chang'e-4 probe successfully landed on the far side of the Moon (South Pole-Aitken Basin), a first for humanity."
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_uranus_001",
+      "question": {"zh": "天王星的直径约为多少？", "en": "What is the approximate diameter of Uranus?"},
+      "options": [
+        {"zh": "31,118 公里", "en": "31,118 km"},
+        {"zh": "41,118 公里", "en": "41,118 km"},
+        {"zh": "51,118 公里", "en": "51,118 km"},
+        {"zh": "61,118 公里", "en": "61,118 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "天王星的直径约为 51,118 公里，是太阳系第三大行星（按直径计算）。", "en": "Uranus's diameter is approximately 51,118 km, making it the third largest planet by diameter in the Solar System."}
+    },
+    {
+      "id": "q_uranus_002",
+      "question": {"zh": "天王星绕太阳公转一周需要多少年？", "en": "How many years does it take for Uranus to orbit the Sun once?"},
+      "options": [
+        {"zh": "44 年", "en": "44 years"},
+        {"zh": "64 年", "en": "64 years"},
+        {"zh": "84 年", "en": "84 years"},
+        {"zh": "104 年", "en": "104 years"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "天王星公转周期为 84 年，是太阳系中公转周期最长的行星之一。", "en": "Uranus's orbital period is 84 years, one of the longest orbital periods in the Solar System."}
+    },
+    {
+      "id": "q_uranus_003",
+      "question": {"zh": "天王星的自转周期是多少？", "en": "What is Uranus's rotation period?"},
+      "options": [
+        {"zh": "10 小时", "en": "10 hours"},
+        {"zh": "17 小时 14 分", "en": "17h 14m"},
+        {"zh": "24 小时", "en": "24 hours"},
+        {"zh": "58 天", "en": "58 days"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "天王星自转一周需要约 17 小时 14 分，自转速度较快。", "en": "Uranus takes approximately 17 hours and 14 minutes to complete one rotation, rotating relatively fast."}
+    },
+    {
+      "id": "q_uranus_004",
+      "question": {"zh": "天王星的轴倾角约为多少度？", "en": "What is Uranus's axial tilt in degrees?"},
+      "options": [
+        {"zh": "23.5°", "en": "23.5°"},
+        {"zh": "45°", "en": "45°"},
+        {"zh": "67.5°", "en": "67.5°"},
+        {"zh": "97.8°", "en": "97.8°"}
+      ],
+      "answer": 3,
+      "explanation": {"zh": "天王星的轴倾角约为 97.8°，几乎是'躺着'自转，是太阳系中独一无二的。", "en": "Uranus's axial tilt is about 97.8°, rotating almost on its side, unique in the Solar System."}
+    },
+    {
+      "id": "q_uranus_005",
+      "question": {"zh": "天王星有多少颗已知卫星？", "en": "How many known moons does Uranus have?"},
+      "options": [
+        {"zh": "5 颗", "en": "5 moons"},
+        {"zh": "15 颗", "en": "15 moons"},
+        {"zh": "27 颗", "en": "27 moons"},
+        {"zh": "50 颗", "en": "50 moons"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "天王星有 27 颗已知卫星，其中 5 颗是主要卫星：天卫一、天卫二、天卫三、天卫四、天卫五。", "en": "Uranus has 27 known moons, with 5 major moons: Miranda, Ariel, Titania, Oberon, and Umbriel."}
+    },
+    {
+      "id": "q_uranus_006",
+      "question": {"zh": "天王星距离太阳的平均距离约为多少？", "en": "What is the average distance from Uranus to the Sun?"},
+      "options": [
+        {"zh": "9.5 AU", "en": "9.5 AU"},
+        {"zh": "14.2 AU", "en": "14.2 AU"},
+        {"zh": "19.2 AU", "en": "19.2 AU"},
+        {"zh": "30.1 AU", "en": "30.1 AU"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "天王星与太阳的平均距离约为 19.2 AU（28.7 亿公里），是太阳系第七颗行星。", "en": "Uranus's average distance from the Sun is approximately 19.2 AU (2.87 billion km), the seventh planet from the Sun."}
+    },
+    {
+      "id": "q_uranus_007",
+      "question": {"zh": "天王星大气层中含量最多的气体是什么？", "en": "What is the most abundant gas in Uranus's atmosphere?"},
+      "options": [
+        {"zh": "氦气", "en": "Helium"},
+        {"zh": "甲烷", "en": "Methane"},
+        {"zh": "氢气", "en": "Hydrogen"},
+        {"zh": "二氧化碳", "en": "Carbon Dioxide"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "天王星大气层中氢气约占 83%，氦气约占 15%，甲烷约占 2.3%。甲烷使天王星呈现青蓝色。", "en": "Uranus's atmosphere consists of approximately 83% hydrogen, 15% helium, and 2.3% methane. Methane gives Uranus its blue-green color."}
+    },
+    {
+      "id": "q_uranus_008",
+      "question": {"zh": "天王星的表面温度约为多少？", "en": "What is the surface temperature on Uranus?"},
+      "options": [
+        {"zh": "-100°C", "en": "-100°C"},
+        {"zh": "-150°C", "en": "-150°C"},
+        {"zh": "-197°C", "en": "-197°C"},
+        {"zh": "-224°C", "en": "-224°C"}
+      ],
+      "answer": 3,
+      "explanation": {"zh": "天王星表面温度约为 -224°C，是太阳系最冷的行星大气。", "en": "Uranus's surface temperature is about -224°C, the coldest planetary atmosphere in the Solar System."}
+    },
+    {
+      "id": "q_uranus_009",
+      "question": {"zh": "天王星是由谁发现的？", "en": "Who discovered Uranus?"},
+      "options": [
+        {"zh": "伽利略", "en": "Galileo"},
+        {"zh": "威廉·赫歇尔", "en": "William Herschel"},
+        {"zh": "开普勒", "en": "Kepler"},
+        {"zh": "牛顿", "en": "Newton"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "威廉·赫歇尔于 1781 年发现天王星，是第一颗用望远镜发现的行星。", "en": "William Herschel discovered Uranus in 1781, the first planet discovered with a telescope."}
+    },
+    {
+      "id": "q_uranus_010",
+      "question": {"zh": "首次飞掠天王星的探测器是？", "en": "Which spacecraft first flew by Uranus?"},
+      "options": [
+        {"zh": "旅行者 1 号", "en": "Voyager 1"},
+        {"zh": "旅行者 2 号", "en": "Voyager 2"},
+        {"zh": "先驱者 10 号", "en": "Pioneer 10"},
+        {"zh": "卡西尼号", "en": "Cassini"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "旅行者 2 号于 1986 年飞掠天王星，是唯一一个造访过天王星的人类探测器。", "en": "Voyager 2 flew by Uranus in 1986, the only spacecraft to have visited Uranus."}
+    }
+  ]
+}

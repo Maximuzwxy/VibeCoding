@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "question": {"zh": "火星表面呈现红色的主要原因是什么？", "en": "What is the primary reason for Mars' reddish surface appearance?"},
+      "options": [
+        {"zh": "大量液态水反射阳光", "en": "Reflection of sunlight by large bodies of liquid water"},
+        {"zh": "地表富含氧化铁（赤铁矿）", "en": "Abundance of iron oxide (hematite) on the surface"},
+        {"zh": "火山喷发释放的硫磺尘埃", "en": "Sulfur dust emitted from volcanic eruptions"},
+        {"zh": "臭氧层对红光的选择性吸收", "en": "Selective absorption of red light by an ozone layer"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火星土壤和岩石富含铁元素，在长期风化作用下被氧化形成红色的氧化铁（如赤铁矿），使整颗行星呈现锈红色。", "en": "Martian soil and rocks are rich in iron, which oxidizes over long-term weathering to form red iron oxides (e.g., hematite), giving the planet its characteristic rust-red color."},
+      "id": "q_mars_001"
+    },
+    {
+      "question": {"zh": "火星上已知最高的火山是哪一座？", "en": "What is the tallest known volcano on Mars?"},
+      "options": [
+        {"zh": "帕弗尼斯山（Pavonis Mons）", "en": "Pavonis Mons"},
+        {"zh": "阿尔西亚山（Arsia Mons）", "en": "Arsia Mons"},
+        {"zh": "奥林帕斯山（Olympus Mons）", "en": "Olympus Mons"},
+        {"zh": "艾斯克雷尔斯山（Ascraeus Mons）", "en": "Ascraeus Mons"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "奥林帕斯山高达约21.9公里，是太阳系中已知最高的火山，也是最大的盾状火山，直径约600公里。", "en": "Olympus Mons stands about 21.9 km high — the tallest known volcano in the Solar System and the largest shield volcano, with a diameter of ~600 km."},
+      "id": "q_mars_002"
+    },
+    {
+      "question": {"zh": "火星大气的主要成分是什么？", "en": "What is the primary component of Mars' atmosphere?"},
+      "options": [
+        {"zh": "氮气（N₂）", "en": "Nitrogen (N₂)"},
+        {"zh": "氧气（O₂）", "en": "Oxygen (O₂)"},
+        {"zh": "二氧化碳（CO₂）", "en": "Carbon dioxide (CO₂)"},
+        {"zh": "甲烷（CH₄）", "en": "Methane (CH₄)"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "火星大气约95%为二氧化碳，其余主要为氮气（2.8%）和氩气（1.6%），氧气和甲烷含量极低且呈局部瞬变特征。", "en": "Mars' atmosphere is ~95% carbon dioxide; the remainder consists mostly of nitrogen (2.8%) and argon (1.6%), with trace and transient amounts of oxygen and methane."},
+      "id": "q_mars_003"
+    },
+    {
+      "question": {"zh": "人类首次成功着陆火星的探测器是哪一个？", "en": "Which spacecraft achieved the first successful landing on Mars?"},
+      "options": [
+        {"zh": "海盗1号（Viking 1）", "en": "Viking 1"},
+        {"zh": "火星探路者（Mars Pathfinder）", "en": "Mars Pathfinder"},
+        {"zh": "勇气号（Spirit）", "en": "Spirit"},
+        {"zh": "天问一号（Tianwen-1）", "en": "Tianwen-1"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "美国NASA的海盗1号于1976年7月20日成功着陆火星，成为首个在火星表面软着陆并传回图像与科学数据的探测器。", "en": "NASA's Viking 1 landed successfully on Mars on July 20, 1976 — the first spacecraft to achieve a soft landing and return images and scientific data from the Martian surface."},
+      "id": "q_mars_004"
+    },
+    {
+      "question": {"zh": "火星自转周期（即一个‘火星日’）约为多少地球小时？", "en": "Approximately how many Earth hours is one 'sol' (a Martian day)?"},
+      "options": [
+        {"zh": "23.5小时", "en": "23.5 hours"},
+        {"zh": "24.6小时", "en": "24.6 hours"},
+        {"zh": "25.3小时", "en": "25.3 hours"},
+        {"zh": "26.1小时", "en": "26.1 hours"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火星自转周期为24小时37分22秒，约等于24.6地球小时，称为一个‘火星日’（sol）。", "en": "Mars rotates once every 24 hours, 37 minutes, and 22 seconds — approximately 24.6 Earth hours — defining one 'sol' (a Martian day)."},
+      "id": "q_mars_005"
+    },
+    {
+      "question": {"zh": "火星拥有几颗天然卫星？", "en": "How many natural satellites does Mars have?"},
+      "options": [
+        {"zh": "0颗", "en": "0"},
+        {"zh": "1颗", "en": "1"},
+        {"zh": "2颗", "en": "2"},
+        {"zh": "4颗", "en": "4"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "火星有两颗小型不规则形状的天然卫星：火卫一（Phobos）和火卫二（Deimos），均可能为被捕获的小行星。", "en": "Mars has two small, irregularly shaped natural satellites: Phobos and Deimos — both likely captured asteroids."},
+      "id": "q_mars_006"
+    },
+    {
+      "question": {"zh": "以下哪项证据最有力地支持火星远古时期存在液态水？", "en": "Which evidence most strongly supports the existence of liquid water on ancient Mars?"},
+      "options": [
+        {"zh": "当前极冠中检测到水冰", "en": "Detection of water ice in present-day polar caps"},
+        {"zh": "火星快车号探测到地下液态盐水湖", "en": "Subsurface briny lakes detected by Mars Express"},
+        {"zh": "干涸的河谷网络、三角洲与粘土矿物分布", "en": "Dry river valleys, deltas, and clay mineral deposits"},
+        {"zh": "大气中短暂出现的甲烷峰值", "en": "Transient methane spikes in the atmosphere"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "全球分布的古河谷系统（如纳内迪谷）、三角洲（如杰泽罗陨石坑）及含水粘土矿物（如蒙脱石）共同构成火星曾长期存在地表液态水的关键地质证据。", "en": "Globally distributed ancient valley networks (e.g., Nanedi Valles), deltas (e.g., Jezero Crater), and hydrated clay minerals (e.g., smectite) collectively provide key geological evidence for sustained surface liquid water on early Mars."},
+      "id": "q_mars_007"
+    },
+    {
+      "question": {"zh": "中国首次火星探测任务‘天问一号’于哪一年成功实现‘绕、着、巡’三大目标？", "en": "In which year did China's Tianwen-1 mission successfully achieve orbiting, landing, and roving on Mars?"},
+      "options": [
+        {"zh": "2018年", "en": "2018"},
+        {"zh": "2020年", "en": "2020"},
+        {"zh": "2021年", "en": "2021"},
+        {"zh": "2023年", "en": "2023"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "天问一号于2021年2月进入环火轨道，5月15日着陆器携祝融号火星车成功着陆乌托邦平原，5月22日祝融号驶上火星表面，首次实现中国火星探测‘一步到位’。", "en": "Tianwen-1 entered Mars orbit in February 2021, landed successfully in Utopia Planitia with the Zhurong rover on May 15, and deployed the rover on May 22 — achieving China’s first integrated orbital, landing, and roving mission in a single campaign."},
+      "id": "q_mars_008"
+    },
+    {
+      "question": {"zh": "火星的平均表面温度约为多少摄氏度？", "en": "What is the average surface temperature on Mars?"},
+      "options": [
+        {"zh": "–150 °C", "en": "–150 °C"},
+        {"zh": "–60 °C", "en": "–60 °C"},
+        {"zh": "0 °C", "en": "0 °C"},
+        {"zh": "25 °C", "en": "25 °C"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "由于稀薄大气和缺乏温室效应，火星平均表面温度约为–60 °C；赤道白天可达20 °C，夜间可骤降至–73 °C以下。", "en": "Due to its thin atmosphere and weak greenhouse effect, Mars has an average surface temperature of ~–60 °C; equatorial daytime highs can reach 20 °C, while nighttime lows plunge below –73 °C."},
+      "id": "q_mars_009"
+    },
+    {
+      "question": {"zh": "火星南北两极的极冠主要由什么物质构成？", "en": "What is the primary composition of Mars' north and south polar ice caps?"},
+      "options": [
+        {"zh": "全年均为固态二氧化碳（干冰）", "en": "Solid carbon dioxide (dry ice) year-round"},
+        {"zh": "夏季为水冰，冬季覆盖干冰", "en": "Water ice in summer, overlain by seasonal dry ice in winter"},
+        {"zh": "北极为水冰为主，南极为干冰为主", "en": "North cap dominated by water ice; south cap dominated by dry ice"},
+        {"zh": "主要为甲烷冰与氨冰混合物", "en": "Mixed methane and ammonia ice"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "火星北极冠常年以水冰为主，覆盖薄层季节性干冰；南极冠则拥有更厚的永久性干冰层（数米厚），其下为水冰基底。", "en": "Mars' north polar cap is perennial water ice with a thin seasonal CO₂ frost layer; the south polar cap has a thicker permanent CO₂ ice cover (several meters thick) over a water ice base."},
+      "id": "q_mars_010"
+    }
+  ]
+}

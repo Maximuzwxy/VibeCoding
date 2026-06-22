@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}会话 - Social{% endblock %}
+
+{% block content %}
+<div class="chat-page">
+    <div class="chat-container">
+        <aside class="chat-sidebar">
+            <div class="chat-sidebar-header">
+                <h3>聊天</h3>
+                <div class="chat-search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="chatSearchInput" placeholder="搜索聊天...">
+                </div>
+            </div>
+            <div id="chatList" class="chat-list"></div>
+        </aside>
+        
+        <main class="chat-main">
+            <div id="chatEmpty" class="chat-empty">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <p>选择一个聊天开始对话</p>
+            </div>
+            
+            <div id="chatWindow" class="chat-window" style="display: none;">
+                <div class="chat-window-header">
+                    <button id="chatBackBtn" class="chat-back-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                    </button>
+                    <img id="chatWindowAvatar" class="chat-window-avatar" src="" alt="">
+                    <div class="chat-window-info">
+                        <h4 id="chatWindowName"></h4>
+                    </div>
+                </div>
+                
+                <div id="chatMessages" class="chat-messages"></div>
+                
+                <div class="chat-input-area">
+                    <div class="chat-input-wrapper">
+                        <textarea id="chatInput" placeholder="输入消息..." rows="1"></textarea>
+                        <button id="chatSendBtn" class="chat-send-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON MAZE RUNNER</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            overflow: hidden;
+            color: #fff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 960px;
+            height: 95vh;
+            display: flex;
+            flex-direction: column;
+            background: rgba(10, 8, 20, 0.85);
+            border-radius: 16px;
+            border: 2px solid #0ff;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.5),
+                        0 0 40px rgba(138, 43, 226, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glow-border {
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 16px;
+            box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.7),
+                        inset 0 0 40px rgba(138, 43, 226, 0.5);
+            z-index: -1;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border-bottom: 2px solid #0ff;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #0ff, #f0f, #0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            margin-bottom: 8px;
+        }
+        
+        /* Control panel - fixed alignment */
+        .controls-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        label {
+            font-size: 14px;
+            color: #0ff;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+            letter-spacing: 1px;
+        }
+        
+        select, button, input[type="range"] {
+            background: rgba(0, 0, 0, 0.7);
+            color: #0ff;
+            border: 1px solid #0ff;
+            border-radius: 6px;
+            padding: 8px 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+        }
+        
+        select:focus, button:focus, input[type="range"]:focus {
+            outline: none;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
+        }
+        
+        select:hover, button:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+        
+        /* AI controls */
+        .ai-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .ai-speed-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .ai-speed-value {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2px 8px;
+            border-radius: 4px;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        /* Game area - fills remaining space */
+        .game-area {
+            position: relative;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        #defaultCanvas0 {
+            border: 2px solid #f0f;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+            border-radius: 8px;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .instructions {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 2px solid #f0f;
+            font-size: 13px;
+            color: #0ff;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+        
+        /* Win Animation Styles */
+        #win-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        
+        #win-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .win-title {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #0ff, #f0f, #0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.9), 0 0 50px rgba(138, 43, 226, 0.8);
+        }
+        
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #0ff;
+            box-shadow: 0 0 8px #0ff, 0 0 16px #0ff;
+            animation: particleFloat 3s infinite ease-in;
+        }
+        
+        @keyframes particleFloat {
+            0% { transform: translateY(0) translateX(0); opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+        
+        .cyberpunk-btn {
+            background: linear-gradient(to right, #0ff, #f0f);
+            color: #000;
+            font-weight: bold;
+            padding: 10px 25px;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyberpunk-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.9), 0 0 35px rgba(138, 43, 226, 0.8);
+        }
+        
+        .cyberpunk-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.5s;
+        }
+        
+        .cyberpunk-btn:hover::after {
+            left: 120%;
+        }
+        
+        /* Blinking effect */
+        .blink {
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0.3; }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .controls-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .win-title {
+                font-size: 2.2rem;
+            }
+            
+            .game-area {
+                min-height: 400px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="glow-border"></div>
+        <div class="header">
+            <h1>NEON MAZE RUNNER</h1>
+            <div class="cyberpunk-subtitle blink">ESCAPE THE DIGITAL LABYRINTH</div>
+        </div>
+        
+        <!-- Fixed control panel with proper alignment -->
+        <div class="controls-container">
+            <div class="control-group">
+                <label for="maze-size">MAZE SIZE</label>
+                <select id="maze-size">
+                    <option value="small">SMALL (10x10)</option>
+                    <option value="medium" selected>MEDIUM (15x15)</option>
+                    <option value="large">LARGE (20x20)</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>&nbsp;</label>
+                <button id="reset-btn" class="cyberpunk-btn">RESET MAZE</button>
+            </div>
+            
+            <div class="ai-controls">
+                <button id="ai-toggle-btn" class="cyberpunk-btn">AI: OFF</button>
+                <div class="ai-speed-label">
+                    <span>SPEED:</span>
+                    <input type="range" id="ai-speed" min="1" max="10" value="5">
+                    <div class="ai-speed-value" id="ai-speed-value">5</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-area" id="game-area">
+            <div id="win-overlay">
+                <div class="particles" id="particles"></div>
+                <h2 class="win-title">SYSTEM OVERRIDE</h2>
+                <p style="margin-bottom: 15px; font-size: 1.1rem; color: #f0f;">YOU HAVE ESCAPED THE MATRIX</p>
+                <button id="play-again-btn" class="cyberpunk-btn">REBOOT SYSTEM</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            NAVIGATE USING ARROW KEYS • REACH THE NEON EXIT • AVOID THE WALLS
+        </div>
+    </div>
+
+    <script>
+        // Game constants
+        let CELL_SIZE = 28;
+        const WALL_THICKNESS = 3;
+        
+        // Player position
+        let playerX, playerY;
+        
+        // Maze data
+        let maze;
+        let exitX, exitY;
+        let mazeWidth, mazeHeight;
+        
+        // Game state
+        let gameWon = false;
+        let aiActive = false;
+        let aiSpeed = 5; // Default speed (1-10)
+        let aiMoveTimer = 0;
+        let aiMoveDelay = 60; // Frames between AI moves (lower = faster)
+        
+        // DOM elements
+        const resetBtn = document.getElementById('reset-btn');
+        const playAgainBtn = document.getElementById('play-again-btn');
+        const mazeSizeSelect = document.getElementById('maze-size');
+        const winOverlay = document.getElementById('win-overlay');
+        const particlesContainer = document.getElementById('particles');
+        const aiToggleBtn = document.getElementById('ai-toggle-btn');
+        const aiSpeedSlider = document.getElementById('ai-speed');
+        const aiSpeedValue = document.getElementById('ai-speed-value');
+        
+        // Set initial maze size
+        setMazeSize('medium');
+        
+function setup() {
+    // Get actual available space from the game-area container
+    const container = document.querySelector('.game-area');
+    const containerWidth = container.clientWidth - 20;
+    const containerHeight = container.clientHeight - 20;
+    
+    // Dynamic cell size based on actual container space
+    CELL_SIZE = Math.floor(Math.min(
+        containerWidth / mazeWidth,
+        containerHeight / mazeHeight
+    ));
+    CELL_SIZE = Math.max(15, Math.min(32, CELL_SIZE));
+    
+    const canvasWidth = mazeWidth * CELL_SIZE;
+    const canvasHeight = mazeHeight * CELL_SIZE;
+    
+    const canvas = createCanvas(canvasWidth, canvasHeight);
+    canvas.parent('game-area');
+    
+    generateMaze();
+    resetPlayer();
+    gameWon = false;
+    aiActive = false;
+    aiToggleBtn.textContent = "AI: OFF";
+    winOverlay.classList.remove('active');
+}        
+        function draw() {
+            if (gameWon) return;
+            
+            // 30fps limit to reduce CPU/GPU usage
+            const now = performance.now();
+            if (!draw.lastTime) draw.lastTime = 0;
+            if (now - draw.lastTime < 33) return;
+            draw.lastTime = now;
+            
+            background(10, 8, 20);
+            
+            // Draw maze with cyberpunk style
+            drawMaze();
+            
+            // Draw player with glowing effect
+            fill(255, 50, 150);
+            noStroke();
+            ellipse(playerX * CELL_SIZE + CELL_SIZE/2, 
+                    playerY * CELL_SIZE + CELL_SIZE/2, 
+                    CELL_SIZE * 0.7);
+            
+            // Add glow to player
+            drawingContext.shadowBlur = 12;
+            drawingContext.shadowColor = 'rgba(255, 50, 150, 0.8)';
+            ellipse(playerX * CELL_SIZE + CELL_SIZE/2, 
+                    playerY * CELL_SIZE + CELL_SIZE/2, 
+                    CELL_SIZE * 0.7);
+            drawingContext.shadowBlur = 0;
+            
+            // Draw exit as a ball (same as player but green)
+            const pulse = sin(frameCount * 0.1) * 0.3 + 0.7;
+            fill(50, 255, 150, pulse * 255);
+            ellipse(exitX * CELL_SIZE + CELL_SIZE/2, 
+                    exitY * CELL_SIZE + CELL_SIZE/2, 
+                    CELL_SIZE * 0.7);
+            
+            // Add glow to exit
+            drawingContext.shadowBlur = 15;
+            drawingContext.shadowColor = 'rgba(50, 255, 150, 0.9)';
+            ellipse(exitX * CELL_SIZE + CELL_SIZE/2, 
+                    exitY * CELL_SIZE + CELL_SIZE/2, 
+                    CELL_SIZE * 0.7);
+            drawingContext.shadowBlur = 0;
+            
+            // Check win condition
+            if (playerX === exitX && playerY === exitY) {
+                triggerWinAnimation();
+            }
+            
+            // AI movement
+            if (aiActive && !gameWon) {
+                aiMoveTimer++;
+                if (aiMoveTimer >= aiMoveDelay) {
+                    moveAI();
+                    aiMoveTimer = 0;
+                }
+            }
+        }
+        
+        function drawMaze() {
+            stroke(0, 255, 255);
+            strokeWeight(WALL_THICKNESS);
+            
+            for (let y = 0; y < mazeHeight; y++) {
+                for (let x = 0; x < mazeWidth; x++) {
+                    const cell = maze[y][x];
+                    
+                    // Draw top wall
+                    if (cell.top) {
+                        line(x * CELL_SIZE, y * CELL_SIZE, 
+                             (x + 1) * CELL_SIZE, y * CELL_SIZE);
+                    }
+                    
+                    // Draw right wall
+                    if (cell.right) {
+                        line((x + 1) * CELL_SIZE, y * CELL_SIZE, 
+                             (x + 1) * CELL_SIZE, (y + 1) * CELL_SIZE);
+                    }
+                    
+                    // Draw bottom wall
+                    if (cell.bottom) {
+                        line(x * CELL_SIZE, (y + 1) * CELL_SIZE, 
+                             (x + 1) * CELL_SIZE, (y + 1) * CELL_SIZE);
+                    }
+                    
+                    // Draw left wall
+                    if (cell.left) {
+                        line(x * CELL_SIZE, y * CELL_SIZE, 
+                             x * CELL_SIZE, (y + 1) * CELL_SIZE);
+                    }
+                }
+            }
+        }
+        
+        function keyPressed() {
+            if (gameWon) return;
+            
+            if (keyCode === UP_ARROW) {
+                if (playerY > 0 && !maze[playerY][playerX].top) {
+                    playerY--;
+                }
+            } else if (keyCode === DOWN_ARROW) {
+                if (playerY < mazeHeight - 1 && !maze[playerY][playerX].bottom) {
+                    playerY++;
+                }
+            } else if (keyCode === LEFT_ARROW) {
+                if (playerX > 0 && !maze[playerY][playerX].left) {
+                    playerX--;
+                }
+            } else if (keyCode === RIGHT_ARROW) {
+                if (playerX < mazeWidth - 1 && !maze[playerY][playerX].right) {
+                    playerX++;
+                }
+            }
+        }
+        
+        function generateMaze() {
+            // Initialize maze with all walls
+            maze = [];
+            for (let y = 0; y < mazeHeight; y++) {
+                maze[y] = [];
+                for (let x = 0; x < mazeWidth; x++) {
+                    maze[y][x] = {
+                        top: true,
+                        right: true,
+                        bottom: true,
+                        left: true,
+                        visited: false
+                    };
+                }
+            }
+            
+            // Recursive backtracking algorithm
+            function visit(x, y) {
+                maze[y][x].visited = true;
+                
+                const directions = [
+                    {dx: 0, dy: -1, wall: 'top', opposite: 'bottom'},
+                    {dx: 1, dy: 0, wall: 'right', opposite: 'left'},
+                    {dx: 0, dy: 1, wall: 'bottom', opposite: 'top'},
+                    {dx: -1, dy: 0, wall: 'left', opposite: 'right'}
+                ];
+                
+                // Shuffle directions
+                for (let i = directions.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [directions[i], directions[j]] = [directions[j], directions[i]];
+                }
+                
+                for (const dir of directions) {
+                    const nx = x + dir.dx;
+                    const ny = y + dir.dy;
+                    
+                    if (nx >= 0 && nx < mazeWidth && ny >= 0 && ny < mazeHeight && !maze[ny][nx].visited) {
+                        maze[y][x][dir.wall] = false;
+                        maze[ny][nx][dir.opposite] = false;
+                        visit(nx, ny);
+                    }
+                }
+            }
+            
+            // Start maze generation from top-left corner
+            visit(0, 0);
+            
+            // Set exit at bottom-right corner
+            exitX = mazeWidth - 1;
+            exitY = mazeHeight - 1;
+            
+            // Remove walls at entrance and exit
+            maze[0][0].top = false;
+            maze[exitY][exitX].bottom = false;
+        }
+        
+        function resetPlayer() {
+            playerX = 0;
+            playerY = 0;
+        }
+        
+        function setMazeSize(size) {
+            switch(size) {
+                case 'small':
+                    mazeWidth = 10;
+                    mazeHeight = 10;
+                    break;
+                case 'medium':
+                    mazeWidth = 15;
+                    mazeHeight = 15;
+                    break;
+                case 'large':
+                    mazeWidth = 20;
+                    mazeHeight = 20;
+                    break;
+                default:
+                    mazeWidth = 15;
+                    mazeHeight = 15;
+            }
+        }
+        
+        function triggerWinAnimation() {
+            gameWon = true;
+            winOverlay.classList.add('active');
+            
+            // Create particles for win animation
+            createParticles();
+            
+            // Play sound effect (if supported)
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.5);
+                
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 0.5);
+            } catch(e) {
+                // Audio not supported, skip
+            }
+        }
+        
+        function createParticles() {
+            // Clear existing particles
+            particlesContainer.innerHTML = '';
+            
+            // Create new particles
+            for (let i = 0; i < 80; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random position
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                
+                // Random size
+                const size = Math.random() * 8 + 4;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random color
+                const colors = ['#0ff', '#f0f', '#0f0', '#ff0'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = color;
+                particle.style.boxShadow = `0 0 ${size}px ${color}, 0 0 ${size*2}px ${color}`;
+                
+                // Random animation duration
+                const duration = Math.random() * 3 + 2;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${Math.random() * 2}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // AI Pathfinding (simple BFS for shortest path)
+        function findPath() {
+            const queue = [{x: playerX, y: playerY, path: []}];
+            const visited = new Set();
+            visited.add(`${playerX},${playerY}`);
+            
+            const directions = [
+                {dx: 0, dy: -1, dir: 'up'},
+                {dx: 1, dy: 0, dir: 'right'},
+                {dx: 0, dy: 1, dir: 'down'},
+                {dx: -1, dy: 0, dir: 'left'}
+            ];
+            
+            while (queue.length > 0) {
+                const current = queue.shift();
+                
+                if (current.x === exitX && current.y === exitY) {
+                    return current.path;
+                }
+                
+                for (const dir of directions) {
+                    const nx = current.x + dir.dx;
+                    const ny = current.y + dir.dy;
+                    
+                    if (nx >= 0 && nx < mazeWidth && ny >= 0 && ny < mazeHeight) {
+                        const key = `${nx},${ny}`;
+                        if (!visited.has(key)) {
+                            // Check if move is valid
+                            let canMove = false;
+                            if (dir.dir === 'up' && !maze[current.y][current.x].top) canMove = true;
+                            if (dir.dir === 'down' && !maze[current.y][current.x].bottom) canMove = true;
+                            if (dir.dir === 'left' && !maze[current.y][current.x].left) canMove = true;
+                            if (dir.dir === 'right' && !maze[current.y][current.x].right) canMove = true;
+                            
+                            if (canMove) {
+                                visited.add(key);
+                                queue.push({
+                                    x: nx,
+                                    y: ny,
+                                    path: [...current.path, dir.dir]
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            
+            return []; // No path found
+        }
+        
+        let aiPath = [];
+        function moveAI() {
+            if (aiPath.length === 0) {
+                aiPath = findPath();
+                if (aiPath.length === 0) return; // No path found
+            }
+            
+            const nextMove = aiPath.shift();
+            
+            switch(nextMove) {
+                case 'up':
+                    if (playerY > 0 && !maze[playerY][playerX].top) {
+                        playerY--;
+                    }
+                    break;
+                case 'down':
+                    if (playerY < mazeHeight - 1 && !maze[playerY][playerX].bottom) {
+                        playerY++;
+                    }
+                    break;
+                case 'left':
+                    if (playerX > 0 && !maze[playerY][playerX].left) {
+                        playerX--;
+                    }
+                    break;
+                case 'right':
+                    if (playerX < mazeWidth - 1 && !maze[playerY][playerX].right) {
+                        playerX++;
+                    }
+                    break;
+            }
+        }
+        
+        // Event listeners
+        resetBtn.addEventListener('click', () => {
+            const size = mazeSizeSelect.value;
+            setMazeSize(size);
+            setup();
+        });
+        
+        playAgainBtn.addEventListener('click', () => {
+            const size = mazeSizeSelect.value;
+            setMazeSize(size);
+            setup();
+        });
+        
+        mazeSizeSelect.addEventListener('change', () => {
+            const size = mazeSizeSelect.value;
+            setMazeSize(size);
+            setup();
+        });
+        
+        aiToggleBtn.addEventListener('click', () => {
+            aiActive = !aiActive;
+            aiToggleBtn.textContent = `AI: ${aiActive ? 'ON' : 'OFF'}`;
+            if (!aiActive) {
+                aiPath = [];
+            }
+        });
+        
+        aiSpeedSlider.addEventListener('input', () => {
+            aiSpeed = parseInt(aiSpeedSlider.value);
+            aiSpeedValue.textContent = aiSpeed;
+            // Adjust move delay: higher speed = lower delay
+            aiMoveDelay = Math.max(10, 60 - (aiSpeed - 1) * 6);
+        });
+        
+        // Initialize the game
+        window.addEventListener('load', () => {
+            setup();
+        });
+    </script>
+</body>
+</html>

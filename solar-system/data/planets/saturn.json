@@ -1,0 +1,92 @@
+{
+  "id": "saturn",
+  "name": {"zh": "土星", "en": "Saturn"},
+  "icon": "🪐",
+  "theme_color": "#ead6b8",
+  "accent_color": "#ead6b8",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "行星类型", "en": "Planet Type"}, "value": {"zh": "气态巨行星", "en": "Gas Giant"}},
+        {"label": {"zh": "赤道直径", "en": "Equatorial Diameter"}, "value": {"zh": "120,536 km", "en": "120,536 km"}},
+        {"label": {"zh": "极地直径", "en": "Polar Diameter"}, "value": {"zh": "108,728 km", "en": "108,728 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "5.683×10²⁶kg", "en": "5.683×10²⁶kg"}},
+        {"label": {"zh": "体积", "en": "Volume"}, "value": {"zh": "8.271×10¹⁴km³", "en": "8.271×10¹⁴km³"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "0.687 g/cm³", "en": "0.687 g/cm³"}}
+      ],
+      "note": {"zh": "※ 太阳系第二大行星，密度比水还低", "en": "※ Second largest planet, density lower than water"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "10 小时 42 分", "en": "10h 42m"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "29.5 年", "en": "29.5 years"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "9.69 km/s", "en": "9.69 km/s"}},
+        {"label": {"zh": "轨道离心率", "en": "Orbital Eccentricity"}, "value": {"zh": "0.0565", "en": "0.0565"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "2.49°", "en": "2.49°"}}
+      ],
+      "note": {"zh": "※ 自转速度第二快（仅次于木星）", "en": "※ Second fastest rotation (after Jupiter)"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-178°C", "en": "-178°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-139°C", "en": "-139°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "100-300 kPa", "en": "100-300 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "H₂ 96%, He 3%, CH₄ 0.4%", "en": "H₂ 96%, He 3%, CH₄ 0.4%"}},
+        {"label": {"zh": "磁场强度", "en": "Magnetic Field Strength"}, "value": {"zh": "地球的 578 倍", "en": "578x Earth's"}}
+      ],
+      "note": {"zh": "※ 有太阳系最壮观的行星环系统", "en": "※ Has the most spectacular ring system"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "近日点", "en": "Perihelion"}, "value": {"zh": "13.5 亿 km", "en": "1.35 billion km"}},
+        {"label": {"zh": "远日点", "en": "Aphelion"}, "value": {"zh": "15.1 亿 km", "en": "1.51 billion km"}},
+        {"label": {"zh": "半长轴", "en": "Semi-major Axis"}, "value": {"zh": "14.3 亿 km", "en": "1.43 billion km"}},
+        {"label": {"zh": "天文单位", "en": "Astronomical Units"}, "value": {"zh": "9.58 AU", "en": "9.58 AU"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "1.3-1.4 小时", "en": "1.3-1.4 hours"}}
+      ]
+    },
+    {
+      "title": {"zh": "🛰 卫星系统", "en": "🛰 Satellite System"},
+      "items": [
+        {"label": {"zh": "已知卫星", "en": "Known Moons"}, "value": {"zh": "146 颗", "en": "146 moons"}},
+        {"label": {"zh": "最大卫星", "en": "Largest Moon"}, "value": {"zh": "土卫六 (Titan)", "en": "Titan"}},
+        {"label": {"zh": "土卫六直径", "en": "Titan Diameter"}, "value": {"zh": "5,150 km", "en": "5,150 km"}},
+        {"label": {"zh": "有大气卫星", "en": "Moons with Atmosphere"}, "value": {"zh": "1 颗（土卫六）", "en": "1 (Titan)"}}
+      ],
+      "note": {"zh": "※ 土卫六是太阳系第二大卫星，唯一有浓厚大气的卫星", "en": "※ Titan is second largest moon, only moon with thick atmosphere"},
+      "moons_list": [
+        {"name": {"zh": "土卫一", "en": "Mimas"}, "color": "#c0c0c0", "period": {"zh": "0.94 天", "en": "0.94 days"}},
+        {"name": {"zh": "土卫二", "en": "Enceladus"}, "color": "#d0d0d0", "period": {"zh": "1.37 天", "en": "1.37 days"}},
+        {"name": {"zh": "土卫三", "en": "Tethys"}, "color": "#c8c8c8", "period": {"zh": "1.89 天", "en": "1.89 days"}},
+        {"name": {"zh": "土卫四", "en": "Dione"}, "color": "#b8b8b8", "period": {"zh": "2.74 天", "en": "2.74 days"}},
+        {"name": {"zh": "土卫五", "en": "Rhea"}, "color": "#b0b0b0", "period": {"zh": "4.52 天", "en": "4.52 days"}},
+        {"name": {"zh": "土卫六", "en": "Titan"}, "color": "#d4b88c", "period": {"zh": "15.95 天", "en": "15.95 days"}},
+        {"name": {"zh": "土卫八", "en": "Iapetus"}, "color": "#a8a8a8", "period": {"zh": "79.33 天", "en": "79.33 days"}}
+      ]
+    },
+    {
+      "title": {"zh": "💍 行星环系统", "en": "💍 Ring System"},
+      "items": [
+        {"label": {"zh": "光环数量", "en": "Number of Rings"}, "value": {"zh": "7 组主环", "en": "7 main ring groups"}},
+        {"label": {"zh": "环直径", "en": "Ring Diameter"}, "value": {"zh": "282,000 km", "en": "282,000 km"}},
+        {"label": {"zh": "环厚度", "en": "Ring Thickness"}, "value": {"zh": "10-100 m", "en": "10-100 m"}},
+        {"label": {"zh": "主要成分", "en": "Main Composition"}, "value": {"zh": "冰粒、岩石碎片", "en": "Ice particles, rock debris"}}
+      ],
+      "note": {"zh": "※ 土星环是太阳系最壮观的环系统", "en": "※ Saturn's rings are the most spectacular in Solar System"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现环", "en": "Rings Discovered"}, "value": {"zh": "1610 年伽利略", "en": "1610 by Galileo"}},
+        {"label": {"zh": "发现土卫六", "en": "Titan Discovered"}, "value": {"zh": "1655 年惠更斯", "en": "1655 by Huygens"}},
+        {"label": {"zh": "首次飞掠", "en": "First Flyby"}, "value": {"zh": "1979 年先驱者 11 号", "en": "1979 Pioneer 11"}},
+        {"label": {"zh": "轨道器任务", "en": "Orbiter Mission"}, "value": {"zh": "2004-2017 卡西尼号", "en": "2004-2017 Cassini"}}
+      ],
+      "note": {"zh": "※ 卡西尼号是首个土星轨道器", "en": "※ Cassini was first Saturn orbiter"}
+    }
+  ]
+}

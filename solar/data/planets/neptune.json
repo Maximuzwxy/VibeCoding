@@ -1,0 +1,401 @@
+{
+  "id": "neptune",
+  "name": {
+    "zh": "海王星",
+    "en": "Neptune"
+  },
+  "icon": "♆",
+  "theme_color": "#4169E1",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "冰巨星",
+            "en": "Ice Giant"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "49,528 km",
+            "en": "49,528 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.024 × 10²⁶ kg",
+            "en": "1.024 × 10²⁶ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "6.254 × 10¹³ km³",
+            "en": "6.254 × 10¹³ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.638 g/cm³",
+            "en": "1.638 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "11.15 m/s²",
+            "en": "11.15 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海王星是太阳系中密度最大的气态巨行星，其蓝色外观源于大气中的甲烷吸收红光。",
+        "en": "※ Neptune is the densest gas giant in the solar system; its blue color comes from methane in the atmosphere absorbing red light."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "16.11 小时",
+            "en": "16.11 hours"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "164.8 年",
+            "en": "164.8 years"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "5.43 km/s",
+            "en": "5.43 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0086",
+            "en": "0.0086"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "1.77°",
+            "en": "1.77°"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海王星自转轴倾斜约28.3°，与地球（23.5°）相近，因此也有明显的季节变化，但每个季节长达约41年。",
+        "en": "※ Neptune's axial tilt of about 28.3° is similar to Earth's 23.5°, giving it distinct seasons that each last about 41 years."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "-218 °C（云顶）",
+            "en": "-218 °C (cloud top)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "-201 °C",
+            "en": "-201 °C"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "1–3 bar（云顶）",
+            "en": "1–3 bar (cloud top)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "氢气 80%、氦气 19%、甲烷 1.5%",
+            "en": "Hydrogen 80%, Helium 19%, Methane 1.5%"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "约 0.14 Gauss（赤道）",
+            "en": "~0.14 Gauss (equatorial)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海王星拥有太阳系中最强的风暴，风速可达2,100 km/h，是地球上最强飓风的数倍。",
+        "en": "※ Neptune has the strongest winds in the solar system, reaching up to 2,100 km/h, several times stronger than Earth's most powerful hurricanes."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "29.81 AU",
+            "en": "29.81 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "30.33 AU",
+            "en": "30.33 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "30.07 AU",
+            "en": "30.07 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "30.07 AU",
+            "en": "30.07 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 4.1 小时",
+            "en": "~4.1 hours"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "16 颗",
+            "en": "16"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "海卫一（特里同）、海卫二（涅瑞伊得）、海卫三（奈索）等",
+            "en": "Triton, Nereid, Naiad, Thalassa, Despina, Galatea, Larissa, Proteus, etc."
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海卫一（特里同）是太阳系中唯一一颗逆行轨道的大型卫星，且表面有氮冰间歇泉喷发。",
+        "en": "※ Triton is the only large moon in the solar system with a retrograde orbit, and it has active nitrogen ice geysers on its surface."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "气态大气层、云带、风暴（大暗斑）",
+            "en": "Gaseous atmosphere, cloud bands, storms (Great Dark Spot)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "不适用（无固体表面）",
+            "en": "N/A (no solid surface)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "不适用（大气层动态变化）",
+            "en": "N/A (dynamic atmosphere)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "不适用",
+            "en": "N/A"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海王星的大暗斑是一个巨大的反气旋风暴，大小与地球相当，但会随时间出现和消失。",
+        "en": "※ Neptune's Great Dark Spot is a giant anticyclonic storm about the size of Earth, which appears and disappears over time."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1846年9月23日，由约翰·伽勒根据勒维耶的数学预测发现",
+            "en": "September 23, 1846, by Johann Galle based on Urbain Le Verrier's mathematical predictions"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1989年8月25日，旅行者2号",
+            "en": "August 25, 1989, Voyager 2"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "尚未有探测器入轨",
+            "en": "No orbiter yet"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "无活跃任务；未来计划包括NASA的“海王星轨道器”概念",
+            "en": "No active mission; future concepts include NASA's Neptune Orbiter"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海王星是第一颗通过数学计算而非直接观测被发现的行星，堪称“笔尖上的发现”。",
+        "en": "※ Neptune was the first planet discovered through mathematical prediction rather than direct observation, a true 'discovery on paper'."
+      }
+    }
+  ]
+}

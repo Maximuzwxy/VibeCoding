@@ -1,0 +1,67 @@
+{
+  "id": "europa",
+  "name": {"zh": "木卫二", "en": "Europa"},
+  "icon": "🌑",
+  "theme_color": "#c4b8a8",
+  "accent_color": "#c4b8a8",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "卫星类型", "en": "Satellite Type"}, "value": {"zh": "冰卫星", "en": "Icy Moon"}},
+        {"label": {"zh": "直径", "en": "Diameter"}, "value": {"zh": "3,122 km", "en": "3,122 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "4.80×10²²kg", "en": "4.80×10²²kg"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "3.01 g/cm³", "en": "3.01 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "1.31 m/s²", "en": "1.31 m/s²"}}
+      ],
+      "note": {"zh": "※ 可能有地下海洋，是寻找外星生命的热点", "en": "※ May have subsurface ocean, prime target for alien life search"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "3.55 天", "en": "3.55 days"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "3.55 天", "en": "3.55 days"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "13.74 km/s", "en": "13.74 km/s"}},
+        {"label": {"zh": "轨道半径", "en": "Orbital Radius"}, "value": {"zh": "671,034 km", "en": "671,034 km"}}
+      ],
+      "note": {"zh": "※ 潮汐锁定", "en": "※ Tidally locked"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-160°C", "en": "-160°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-160°C", "en": "-160°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "0.0000001 kPa", "en": "0.0000001 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "O₂ 微量", "en": "Trace O₂"}}
+      ],
+      "note": {"zh": "※ 有极稀薄的氧气大气", "en": "※ Has extremely thin oxygen atmosphere"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "与木星距离", "en": "Distance from Jupiter"}, "value": {"zh": "671,034 km", "en": "671,034 km"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "0.47°", "en": "0.47°"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "约 2.2 秒", "en": "About 2.2 seconds"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "冰壳厚度", "en": "Ice Shell Thickness"}, "value": {"zh": "10-30 km", "en": "10-30 km"}},
+        {"label": {"zh": "海洋深度", "en": "Ocean Depth"}, "value": {"zh": "约 100 km", "en": "About 100 km"}},
+        {"label": {"zh": "表面特征", "en": "Surface Features"}, "value": {"zh": "冰裂纹和脊", "en": "Ice cracks and ridges"}},
+        {"label": {"zh": "表面年龄", "en": "Surface Age"}, "value": {"zh": "约 2-3 亿年", "en": "About 200-300 million years"}}
+      ],
+      "note": {"zh": "※ 表面非常年轻，地质活跃", "en": "※ Surface very young, geologically active"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现者", "en": "Discoverer"}, "value": {"zh": "1610 年伽利略", "en": "1610 by Galileo"}},
+        {"label": {"zh": "详细探测", "en": "Detailed Survey"}, "value": {"zh": "1995-2003 伽利略号", "en": "1995-2003 Galileo"}},
+        {"label": {"zh": "未来任务", "en": "Future Mission"}, "value": {"zh": "欧罗巴快船 (2024)", "en": "Europa Clipper (2024)"}},
+        {"label": {"zh": "命名来源", "en": "Name Origin"}, "value": {"zh": "希腊神话腓尼基公主", "en": "Phoenician princess in Greek mythology"}}
+      ]
+    }
+  ]
+}

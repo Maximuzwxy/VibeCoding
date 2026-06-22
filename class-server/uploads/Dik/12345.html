@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong: Advanced & Buffs</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+        }
+        canvas {
+            border: 4px solid #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            background-color: #000;
+            cursor: none;
+        }
+        #ui-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10;
+        }
+        .hidden { display: none !important; }
+        h1 {
+            font-size: 48px; margin-bottom: 20px; text-transform: uppercase;
+            letter-spacing: 5px; text-shadow: 0 0 10px #fff; color: #fff;
+        }
+        .settings-container {
+            background: #222; padding: 30px; border: 2px solid #444;
+            border-radius: 8px; text-align: left; min-width: 350px;
+            max-height: 80vh; overflow-y: auto;
+        }
+        .setting-row {
+            margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;
+        }
+        label { color: #ccc; font-size: 14px; }
+        input[type="number"], select {
+            background: #111; border: 1px solid #555; color: #fff;
+            padding: 5px; font-family: inherit; width: 100px; text-align: right;
+        }
+        input[type="checkbox"] {
+            transform: scale(1.5);
+        }
+        .btn-group {
+            display: flex; gap: 20px; margin-top: 20px; justify-content: center;
+            flex-wrap: wrap;
+        }
+        button {
+            background: transparent; border: 2px solid #fff; color: #fff;
+            padding: 10px 20px; font-size: 16px; font-family: inherit;
+            cursor: pointer; transition: all 0.2s; text-transform: uppercase;
+        }
+        button:hover { background: #fff; color: #000; box-shadow: 0 0 15px #fff; }
+        .controls-info {
+            margin-top: 20px; text-align: center; color: #aaa;
+            line-height: 1.6; font-size: 12px;
+        }
+        .key {
+            border: 1px solid #666; padding: 2px 6px; border-radius: 4px;
+            color: #fff; background: #222; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- UI Overlay -->
+    <div id="ui-layer">
+        <h1>PONG: EVOLVED</h1>
+        
+        <div class="settings-container">
+            <div class="setting-row">
+                <label>Winning Score</label>
+                <input type="number" id="winScoreInput" value="10" min="1" max="50">
+            </div>
+            <div class="setting-row">
+                <label>Paddle Speed</label>
+                <input type="number" id="paddleSpeedInput" value="8" min="1" max="20">
+            </div>
+            <div class="setting-row">
+                <label>Base Paddle Height</label>
+                <input type="number" id="paddleHeightInput" value="70" min="40" max="150">
+            </div>
+            <div class="setting-row">
+                <label>Ball Acceleration</label>
+                <input type="number" id="ballAccelInput" value="0.3" min="0" max="2" step="0.1">
+            </div>
+            <div class="setting-row">
+                <label>AI Difficulty</label>
+                <select id="aiDifficultyInput">
+                    <option value="0.05">Easy</option>
+                    <option value="0.09" selected>Normal</option>
+                    <option value="0.15">Hard</option>
+                    <option value="0.25">Impossible</option>
+                </select>
+            </div>
+            <div class="setting-row">
+                <label>Invert Controls?</label>
+                <input type="checkbox" id="invertControlsInput">
+            </div>
+            
+            <hr style="border-color: #444; margin: 20px 0;">
+            
+            <div class="setting-row">
+                <label>P1 Skill (Key: Q)</label>
+                <select id="p1SkillInput">
+                    <option value="none">None</option>
+                    <option value="dash">Dash (Teleport to Ball Y)</option>
+                    <option value="slow">Time Slow (3s)</option>
+                    <option value="shrink">Shrink Opponent</option>
+                </select>
+            </div>
+            <div class="setting-row">
+                <label>P2 Skill (Key: O)</label>
+                <select id="p2SkillInput">
+                    <option value="none">None</option>
+                    <option value="dash">Dash (Teleport to Ball Y)</option>
+                    <option value="slow">Time Slow (3s)</option>
+                    <option value="shrink">Shrink Opponent</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button onclick="startGame('pve')">1 Player (vs AI)</button>
+            <button onclick="startGame('pvp')">2 Players (PvP)</button>
+            <button onclick="startGame('aivai')" style="border-color: #ffff00; color: #ffff00;">Watch AI vs AI</button>
+        </div>
+
+        <div class="controls-info">
+            <p><span style="color:#0ff">P1:</span> <span class="key">W</span>/<span class="key">S</span> Move • <span class="key">Q</span> Skill</p>
+            <p><span style="color:#f0f">P2:</span> <span class="key">I</span>/<span class="key">K</span> Move • <span class="key">O</span> Skill</p>
+            <p style="margin-top:5px;">Press <span class="key">ESC</span> to Pause</p>
+        </div>
+    </div>
+
+    <canvas id="pongCanvas" width="800" height="500"></canvas>
+
+<script>
+    const canvas = document.getElementById('pongCanvas');
+    const ctx = canvas.getContext('2d');
+    const uiLayer = document.getElementById('ui-layer');
+
+    // Game State
+    let isRunning = false;
+    let gameMode = 'pve'; // 'pve', 'pvp', or 'aivai'
+    let animationId;
+    let lastHitBy = null; // 'user' or 'com'
+
+    // Configurable Constants
+    let WIN_SCORE = 10;
+    let PADDLE_SPEED = 8;
+    let BASE_PADDLE_HEIGHT = 70;
+    let BALL_ACCELERATION = 0.3;
+    let AI_SPEED_FACTOR = 0.09;
+    let INVERT_CONTROLS = false;
+    let P1_SKILL = 'none';
+    let P2_SKILL = 'none';
+
+    // Input State
+    const keys = {
+        w: false, s: false, i: false, k: false,
+        ArrowUp: false, ArrowDown: false,
+        q: false, o: false // Skills
+    };
+
+    // Objects
+    const ball = {
+        x: canvas.width / 2, y: canvas.height / 2,
+        radius: 8, baseSpeed: 7, speed: 7,
+        velocityX: 5, velocityY: 5,
+        color: '#fff',
+        trail: [] // Stores {x, y} history
+    };
+
+    const user = {
+        x: 10, y: 0, width: 15, height: BASE_PADDLE_HEIGHT,
+        color: '#0ff', score: 0,
+        skillCD: 0, frozen: 0,
+        buffs: [] // {type, duration}
+    };
+
+    const com = {
+        x: canvas.width - 25, y: 0, width: 15, height: BASE_PADDLE_HEIGHT,
+        color: '#f0f', score: 0,
+        skillCD: 0, frozen: 0,
+        buffs: []
+    };
+
+    let buffs = []; // Active buff blocks on field
+    const BUFF_TYPES = ['speed', 'grow', 'shrink', 'freeze'];
+    const BUFF_COLORS = {
+        'speed': '#ffaa00', // Orange
+        'grow': '#00ff00',  // Green
+        'shrink': '#ff0000', // Red
+        'freeze': '#00ffff'  // Cyan
+    };
+
+    const net = { x: (canvas.width - 2) / 2, y: 0, height: 10, width: 2, color: '#333' };
+
+    // --- Input Handling ---
+    window.addEventListener('keydown', e => {
+        if(keys.hasOwnProperty(e.key.toLowerCase())) keys[e.key.toLowerCase()] = true;
+        if(keys.hasOwnProperty(e.key)) keys[e.key] = true; // Arrows
+        
+        if (e.code === 'Escape' && isRunning) togglePause();
+        
+        // Skill Triggers (On Press) - Only if not in AI vs AI mode
+        if (isRunning && gameMode !== 'aivai') {
+            if (e.key.toLowerCase() === 'q') activateSkill(user, P1_SKILL, 'p1');
+            if (e.key.toLowerCase() === 'o') activateSkill(com, P2_SKILL, 'p2');
+        }
+    });
+
+    window.addEventListener('keyup', e => {
+        if(keys.hasOwnProperty(e.key.toLowerCase())) keys[e.key.toLowerCase()] = false;
+        if(keys.hasOwnProperty(e.key)) keys[e.key] = false;
+    });
+
+    // --- Core Functions ---
+
+    function startGame(mode) {
+        // Read Settings
+        WIN_SCORE = parseInt(document.getElementById('winScoreInput').value) || 10;
+        PADDLE_SPEED = parseInt(document.getElementById('paddleSpeedInput').value) || 8;
+        BASE_PADDLE_HEIGHT = parseInt(document.getElementById('paddleHeightInput').value) || 70;
+        BALL_ACCELERATION = parseFloat(document.getElementById('ballAccelInput').value) || 0.3;
+        AI_SPEED_FACTOR = parseFloat(document.getElementById('aiDifficultyInput').value) || 0.09;
+        INVERT_CONTROLS = document.getElementById('invertControlsInput').checked;
+        P1_SKILL = document.getElementById('p1SkillInput').value;
+        P2_SKILL = document.getElementById('p2SkillInput').value;
+
+        // Reset State
+        gameMode = mode;
+        user.score = 0; com.score = 0;
+        user.height = BASE_PADDLE_HEIGHT; com.height = BASE_PADDLE_HEIGHT;
+        user.y = (canvas.height - user.height) / 2;
+        com.y = (canvas.height - com.height) / 2;
+        user.buffs = []; com.buffs = [];
+        buffs = [];
+        lastHitBy = null;
+        
+        resetBall();
+        uiLayer.classList.add('hidden');
+        isRunning = true;
+        gameLoop();
+    }
+
+    function togglePause() {
+        isRunning = !isRunning;
+        if (isRunning) {
+            uiLayer.classList.add('hidden');
+            gameLoop();
+        } else {
+            uiLayer.classList.remove('hidden');
+            document.querySelector('h1').innerText = "PAUSED";
+        }
+    }
+
+    function resetBall() {
+        ball.x = canvas.width / 2;
+        ball.y = canvas.height / 2;
+        ball.speed = ball.baseSpeed;
+        ball.velocityX = (Math.random() > 0.5 ? 1 : -1) * ball.speed;
+        ball.velocityY = (Math.random() * 6) - 3;
+        ball.trail = [];
+        
+        // Chance to spawn buff
+        if (Math.random() < 0.7 && buffs.length < 2) {
+            spawnBuff();
+        }
+    }
+
+    function spawnBuff() {
+        let type = BUFF_TYPES[Math.floor(Math.random() * BUFF_TYPES.length)];
+        buffs.push({
+            x: 200 + Math.random() * 400,
+            y: 50 + Math.random() * 400,
+            w: 30, h: 30,
+            type: type,
+            color: BUFF_COLORS[type],
+            life: 600 // Disappear after ~10 seconds
+        });
+    }
+
+    function activateSkill(player, skill, who) {
+        if (player.skillCD > 0) return;
+        
+        if (skill === 'dash') {
+            player.y = ball.y - player.height/2;
+            player.skillCD = 180; // 3s
+        } else if (skill === 'slow') {
+            ball.speed *= 0.5;
+            setTimeout(() => ball.speed *= 2, 3000);
+            player.skillCD = 300;
+        } else if (skill === 'shrink') {
+            let opp = (who === 'p1') ? com : user;
+            opp.height = Math.max(30, opp.height * 0.6);
+            setTimeout(() => opp.height = BASE_PADDLE_HEIGHT, 5000);
+            player.skillCD = 300;
+        }
+    }
+
+    function applyBuffEffect(type, recipient, opponent) {
+        if (type === 'speed') {
+            ball.speed += 3;
+        } else if (type === 'grow') {
+            recipient.height = Math.min(200, recipient.height + 30);
+            recipient.buffs.push({type: 'grow', duration: 300}); // 5s
+        } else if (type === 'shrink') {
+            opponent.height = Math.max(30, opponent.height * 0.6);
+            opponent.buffs.push({type: 'shrink', duration: 300});
+        } else if (type === 'freeze') {
+            opponent.frozen = 60; // 1s
+        }
+    }
+
+    function update() {
+        // Cooldowns
+        if (user.skillCD > 0) user.skillCD--;
+        if (com.skillCD > 0) com.skillCD--;
+        if (user.frozen > 0) user.frozen--;
+        if (com.frozen > 0) com.frozen--;
+
+        // Update Buff Durations
+        [user, com].forEach(p => {
+            for (let i = p.buffs.length - 1; i >= 0; i--) {
+                p.buffs[i].duration--;
+                if (p.buffs[i].duration <= 0) {
+                    // Revert effects
+                    if (p.buffs[i].type === 'grow' || p.buffs[i].type === 'shrink') {
+                        p.height = BASE_PADDLE_HEIGHT;
+                    }
+                    p.buffs.splice(i, 1);
+                }
+            }
+        });
+
+        // 1. Player 1 Movement
+        if (gameMode === 'aivai' || (gameMode === 'pve' && user.frozen > 0)) {
+             // AI Logic for User Paddle in AI vs AI mode OR if frozen
+             let targetY = ball.y - (user.height / 2);
+             // Add some error/delay to AI to make it beatable/natural
+             if (gameMode === 'aivai') {
+                 // Make left AI slightly imperfect
+                 if (Math.abs(ball.y - (user.y + user.height/2)) > 10) {
+                     user.y += (targetY - user.y) * AI_SPEED_FACTOR;
+                 }
+             }
+        } else if (user.frozen <= 0) {
+            // Manual Control
+            let up = INVERT_CONTROLS ? keys.s : keys.w;
+            let down = INVERT_CONTROLS ? keys.w : keys.s;
+            
+            if (up && user.y > 0) user.y -= PADDLE_SPEED;
+            if (down && user.y < canvas.height - user.height) user.y += PADDLE_SPEED;
+        }
+
+        // 2. Player 2 / AI Movement
+        if (gameMode === 'pvp' && com.frozen <= 0) {
+            // Manual Control for P2
+            let up = INVERT_CONTROLS ? keys.k : keys.i;
+            let down = INVERT_CONTROLS ? keys.i : keys.k;
+            
+            if (INVERT_CONTROLS) {
+                if (keys.ArrowDown && com.y > 0) com.y -= PADDLE_SPEED;
+                if (keys.ArrowUp && com.y < canvas.height - com.height) com.y += PADDLE_SPEED;
+            } else {
+                if ((keys.i || keys.ArrowUp) && com.y > 0) com.y -= PADDLE_SPEED;
+                if ((keys.k || keys.ArrowDown) && com.y < canvas.height - com.height) com.y += PADDLE_SPEED;
+            }
+        } else if (com.frozen <= 0) {
+            // AI Logic (PvE or AI vs AI)
+            let targetY = ball.y - (com.height / 2);
+            com.y += (targetY - com.y) * AI_SPEED_FACTOR;
+        }
+
+        // Clamp positions
+        user.y = Math.max(0, Math.min(canvas.height - user.height, user.y));
+        com.y = Math.max(0, Math.min(canvas.height - com.height, com.y));
+
+        // 3. Ball Trail Logic
+        ball.trail.push({x: ball.x, y: ball.y});
+        if (ball.trail.length > 10) ball.trail.shift();
+
+        // 4. Ball Physics
+        ball.x += ball.velocityX;
+        ball.y += ball.velocityY;
+
+        // Wall Collision
+        if (ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height) {
+            ball.velocityY = -ball.velocityY;
+        }
+
+        // Buff Block Collision
+        for (let i = buffs.length - 1; i >= 0; i--) {
+            let b = buffs[i];
+            if (ball.x + ball.radius > b.x && ball.x - ball.radius < b.x + b.w &&
+                ball.y + ball.radius > b.y && ball.y - ball.radius < b.y + b.h) {
+                
+                let recipient = (lastHitBy === 'user') ? user : com;
+                let opponent = (lastHitBy === 'user') ? com : user;
+                
+                applyBuffEffect(b.type, recipient, opponent);
+                buffs.splice(i, 1);
+            }
+            b.life--;
+            if (b.life <= 0) buffs.splice(i, 1);
+        }
+
+        // Paddle Collision
+        let player = (ball.x < canvas.width / 2) ? user : com;
+        let hitter = (ball.x < canvas.width / 2) ? 'user' : 'com';
+        
+        if (collision(ball, player)) {
+            lastHitBy = hitter;
+            
+            let collidePoint = (ball.y - (player.y + player.height / 2));
+            collidePoint = collidePoint / (player.height / 2);
+
+            let angleRad = (Math.PI / 4) * collidePoint;
+            let direction = (ball.x < canvas.width / 2) ? 1 : -1;
+
+            ball.velocityX = direction * ball.speed * Math.cos(angleRad);
+            ball.velocityY = ball.speed * Math.sin(angleRad);
+
+            ball.speed += BALL_ACCELERATION;
+            
+            // Push out
+            if(direction === 1) ball.x = player.x + player.width + ball.radius;
+            else ball.x = player.x - ball.radius;
+        }
+
+        // Scoring
+        if (ball.x - ball.radius < 0) {
+            com.score++;
+            checkWin();
+            resetBall();
+        } else if (ball.x + ball.radius > canvas.width) {
+            user.score++;
+            checkWin();
+            resetBall();
+        }
+    }
+
+    function checkWin() {
+        if (user.score >= WIN_SCORE || com.score >= WIN_SCORE) {
+            isRunning = false;
+            uiLayer.classList.remove('hidden');
+            let winner = user.score >= WIN_SCORE ? "PLAYER 1 WINS!" : (gameMode === 'pvp' ? "PLAYER 2 WINS!" : "AI WINS!");
+            if (gameMode === 'aivai') {
+                winner = user.score >= WIN_SCORE ? "LEFT AI WINS!" : "RIGHT AI WINS!";
+            }
+            document.querySelector('h1').innerText = winner;
+            document.querySelector('.btn-group').innerHTML = '<button onclick="location.reload()">Play Again</button>';
+            document.querySelector('.controls-info').style.display = 'none';
+            document.querySelector('.settings-container').style.display = 'none';
+        }
+    }
+
+    function collision(b, p) {
+        return b.x - b.radius < p.x + p.width &&
+               b.x + b.radius > p.x &&
+               b.y - b.radius < p.y + p.height &&
+               b.y + b.radius > p.y;
+    }
+
+    function render() {
+        ctx.fillStyle = "#000";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        drawNet();
+        
+        // Draw Buffs
+        buffs.forEach(b => {
+            ctx.fillStyle = b.color;
+            ctx.fillRect(b.x, b.y, b.w, b.h);
+            ctx.strokeStyle = "#fff";
+            ctx.strokeRect(b.x, b.y, b.w, b.h);
+            ctx.fillStyle = "#000";
+            ctx.font = "bold 12px Arial";
+            ctx.fillText(b.type[0].toUpperCase(), b.x + 10, b.y + 18);
+        });
+
+        // Draw Trail
+        for (let i = 0; i < ball.trail.length; i++) {
+            let pos = ball.trail[i];
+            let opacity = (i + 1) / ball.trail.length;
+            ctx.fillStyle = `rgba(255, 255, 255, ${opacity * 0.5})`;
+            ctx.beginPath();
+            ctx.arc(pos.x, pos.y, ball.radius * (opacity), 0, Math.PI*2);
+            ctx.fill();
+        }
+
+        // Scores
+        drawText(user.score, canvas.width / 4, canvas.height / 5);
+        drawText(com.score, 3 * canvas.width / 4, canvas.height / 5);
+
+        // Paddles
+        drawRect(user.x, user.y, user.width, user.height, user.color);
+        drawRect(com.x, com.y, com.width, com.height, com.color);
+
+        // Ball
+        drawArc(ball.x, ball.y, ball.radius, ball.color);
+
+        // Draw Active Buffs UI (Bottom)
+        drawBuffStatus(user, 20, canvas.height - 30);
+        drawBuffStatus(com, canvas.width - 20, canvas.height - 30, true);
+        
+        // Mode Indicator
+        if (gameMode === 'aivai') {
+            ctx.fillStyle = "#ffff00";
+            ctx.font = "16px 'Courier New'";
+            ctx.textAlign = "center";
+            ctx.fillText("AI VS AI MODE", canvas.width/2, 20);
+        }
+    }
+
+    function drawBuffStatus(player, x, y, alignRight = false) {
+        if (player.buffs.length === 0) return;
+        
+        ctx.font = "14px 'Courier New'";
+        ctx.textBaseline = "bottom";
+        
+        let text = player.buffs.map(b => `${b.type.toUpperCase()} (${Math.ceil(b.duration/60)})`).join(" | ");
+        
+        if (alignRight) {
+            ctx.textAlign = "right";
+            ctx.fillStyle = player.color;
+            ctx.fillText(text, x, y);
+        } else {
+            ctx.textAlign = "left";
+            ctx.fillStyle = player.color;
+            ctx.fillText(text, x, y);
+        }
+    }
+
+    function drawRect(x, y, w, h, color) {
+        ctx.fillStyle = color;
+        ctx.fillRect(x, y, w, h);
+    }
+
+    function drawArc(x, y, r, color) {
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    function drawNet() {
+        for (let i = 0; i <= canvas.height; i += 15) {
+            drawRect(net.x, net.y + i, net.width, net.height, net.color);
+        }
+    }
+
+    function drawText(text, x, y) {
+        ctx.fillStyle = "#FFF";
+        ctx.font = "60px 'Courier New'";
+        ctx.textAlign = "center";
+        ctx.fillText(text, x, y);
+    }
+
+    function gameLoop() {
+        if (isRunning) {
+            update();
+            render();
+            animationId = requestAnimationFrame(gameLoop);
+        }
+    }
+
+    // Initial Render
+    render();
+
+</script>
+</body>
+</html>

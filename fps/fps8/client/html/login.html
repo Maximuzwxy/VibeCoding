@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS8 - 登录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #00d4ff;
+        }
+
+        .subtitle {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .player-name-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 1em;
+            width: 100%;
+            text-align: center;
+        }
+
+        .player-name-input::placeholder {
+            color: #888;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .login-btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .error-msg {
+            color: #ff6b6b;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>FPS8</h1>
+        <p class="subtitle">输入你的昵称登录</p>
+
+        <div class="input-group">
+            <input type="text" class="player-name-input" id="player-name" placeholder="输入你的昵称" maxlength="12">
+        </div>
+
+        <button class="login-btn" id="login-btn" onclick="doLogin()">登录</button>
+        <div class="error-msg" id="error-msg" style="display: none;"></div>
+
+        <button class="back-btn" onclick="goBack()">返回主页</button>
+    </div>
+
+    <script>
+        const SERVER_URL = window.location.origin;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedName = localStorage.getItem('fps8_player_name');
+            if (savedName) {
+                document.getElementById('player-name').value = savedName;
+            }
+        });
+
+        document.getElementById('player-name').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                doLogin();
+            }
+        });
+
+        function goBack() {
+            window.location.href = '../index.html';
+        }
+
+        async function doLogin() {
+            const name = document.getElementById('player-name').value.trim();
+            if (!name) {
+                showError('请输入昵称');
+                return;
+            }
+
+            const loginBtn = document.getElementById('login-btn');
+            loginBtn.disabled = true;
+            loginBtn.textContent = '登录中...';
+
+            try {
+                const response = await fetch(`${SERVER_URL}/api/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ player_name: name })
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    localStorage.setItem('fps8_user_id', data.user_id);
+                    localStorage.setItem('fps8_player_name', name);
+                    console.log('[Login] Login success, user_id:', data.user_id);
+                    window.location.href = 'lobby.html';
+                } else {
+                    showError(data.message || '登录失败');
+                    loginBtn.disabled = false;
+                    loginBtn.textContent = '登录';
+                }
+            } catch (error) {
+                console.error('[Login] Login failed:', error);
+                showError('连接服务器失败，请检查服务器是否运行');
+                loginBtn.disabled = false;
+                loginBtn.textContent = '登录';
+            }
+        }
+
+        function showError(msg) {
+            const errorDiv = document.getElementById('error-msg');
+            errorDiv.textContent = msg;
+            errorDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

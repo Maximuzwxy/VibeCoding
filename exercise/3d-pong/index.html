@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Pong - 阶段五：丰富游戏功能</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="info">
+        <h3>阶段五：丰富游戏功能</h3>
+        <p>红方（W/A/S/D）| 绿方（↑/←/↓/→）</p>
+        <p>拖动鼠标旋转视角</p>
+    </div>
+
+    <div id="start-screen">
+        <div class="start-content">
+            <h1 class="game-title">
+                <span class="title-3d">3D</span>
+                <span class="title-pong">PONG</span>
+            </h1>
+            <div class="title-underline"></div>
+            <p class="game-subtitle">with Power-ups</p>
+            
+            <div class="controls-info">
+                <div class="control-group">
+                    <div class="control-icon">🔴</div>
+                    <div class="control-text">
+                        <strong>红方</strong>
+                        <span>WASD 移动</span>
+                    </div>
+                </div>
+                <div class="control-divider"></div>
+                <div class="control-group">
+                    <div class="control-icon">🟢</div>
+                    <div class="control-text">
+                        <strong>绿方</strong>
+                        <span>方向键移动</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buff-preview">
+                <div class="buff-preview-title">道具效果</div>
+                <div class="buff-items">
+                    <div class="buff-preview-item enlarge">放大</div>
+                    <div class="buff-preview-item shrink">缩小</div>
+                    <div class="buff-preview-item slow">减速</div>
+                    <div class="buff-preview-item split">分裂</div>
+                </div>
+            </div>
+            
+            <button id="start-game-btn" class="start-btn">
+                <span class="btn-text">开始游戏</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="hud" class="hidden">
+        <div id="score-board">
+            <div class="player-score" id="red-score">
+                <div class="score-label">红方</div>
+                <div class="score-value">0</div>
+            </div>
+            <div class="score-divider">:</div>
+            <div class="player-score" id="green-score">
+                <div class="score-label">绿方</div>
+                <div class="score-value">0</div>
+            </div>
+        </div>
+        
+        <div id="buff-display">
+            <div id="player1-buffs" class="player-buffs">
+                <div class="buff-title">🔴 红方道具</div>
+                <div class="buff-list"></div>
+            </div>
+            <div id="player2-buffs" class="player-buffs">
+                <div class="buff-title">🟢 绿方道具</div>
+                <div class="buff-list"></div>
+            </div>
+        </div>
+        
+        <div id="game-controls">
+            <button id="pause-btn" class="control-btn">
+                <span>⏸ 暂停</span>
+            </button>
+            <button id="reset-btn" class="control-btn">
+                <span>↺ 重置</span>
+            </button>
+            <button id="settings-btn" class="control-btn">
+                <span>⚙ 设置</span>
+            </button>
+        </div>
+        
+        <div id="mode-controls">
+            <div class="mode-group">
+                <span class="mode-label">🔴 红方</span>
+                <button id="red-human" class="mode-btn active">Human</button>
+                <button id="red-ai" class="mode-btn">AI</button>
+            </div>
+            <div class="mode-group">
+                <span class="mode-label">🟢 绿方</span>
+                <button id="green-human" class="mode-btn active">Human</button>
+                <button id="green-ai" class="mode-btn">AI</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="game-over" class="hidden">
+        <div class="game-over-content">
+            <div class="game-over-title">游戏结束</div>
+            <div id="winner-text" class="winner-announcement"></div>
+            <div class="final-score">
+                <span id="final-red">0</span>
+                <span class="score-separator">-</span>
+                <span id="final-green">0</span>
+            </div>
+            <button id="restart-btn" class="control-btn">
+                <span>↺ 再来一局</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="settings-panel" class="hidden">
+        <div class="settings-container">
+            <h2 class="settings-title">⚙ 游戏设置</h2>
+            
+            <div class="settings-group">
+                <h3 class="settings-label">道具设置</h3>
+                <div class="settings-row">
+                    <label for="buff-frequency">道具刷新频率:</label>
+                    <div class="slider-container">
+                        <input type="range" id="buff-frequency" class="settings-slider" min="0" max="5" value="3">
+                        <span id="buff-frequency-value" class="value-display">3</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <h3 class="settings-label">球设置</h3>
+                <div class="settings-row">
+                    <label for="ball-base-speed">基础速度:</label>
+                    <input type="number" id="ball-base-speed" class="settings-input" min="1" max="15" value="5">
+                </div>
+                <div class="settings-row">
+                    <label for="ball-max-speed">最大速度:</label>
+                    <input type="number" id="ball-max-speed" class="settings-input" min="5" max="30" value="20">
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <h3 class="settings-label">游戏设置</h3>
+                <div class="settings-row">
+                    <label for="max-score">获胜分数:</label>
+                    <input type="number" id="max-score" class="settings-input" min="3" max="20" value="10">
+                </div>
+            </div>
+            
+            <div class="settings-btns">
+                <button id="save-settings" class="settings-btn save">保存并继续</button>
+                <button id="cancel-settings" class="settings-btn cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

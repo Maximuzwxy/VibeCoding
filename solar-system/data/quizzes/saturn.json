@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_saturn_001",
+      "question": {"zh": "土星的直径约为多少？", "en": "What is the approximate diameter of Saturn?"},
+      "options": [
+        {"zh": "90,536 公里", "en": "90,536 km"},
+        {"zh": "100,536 公里", "en": "100,536 km"},
+        {"zh": "120,536 公里", "en": "120,536 km"},
+        {"zh": "140,536 公里", "en": "140,536 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "土星的赤道直径约为 120,536 公里，是太阳系第二大行星，仅次于木星。", "en": "Saturn's equatorial diameter is approximately 120,536 km, making it the second largest planet in the Solar System."}
+    },
+    {
+      "id": "q_saturn_002",
+      "question": {"zh": "土星绕太阳公转一周需要多少年？", "en": "How many years does it take for Saturn to orbit the Sun once?"},
+      "options": [
+        {"zh": "15.5 年", "en": "15.5 years"},
+        {"zh": "29.5 年", "en": "29.5 years"},
+        {"zh": "45.5 年", "en": "45.5 years"},
+        {"zh": "84 年", "en": "84 years"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土星公转周期为 29.5 年，约是地球公转周期的 30 倍。", "en": "Saturn's orbital period is 29.5 years, about 30 times Earth's orbital period."}
+    },
+    {
+      "id": "q_saturn_003",
+      "question": {"zh": "土星的自转周期是多少？", "en": "What is Saturn's rotation period?"},
+      "options": [
+        {"zh": "10 小时 42 分", "en": "10h 42m"},
+        {"zh": "16 小时", "en": "16 hours"},
+        {"zh": "24 小时", "en": "24 hours"},
+        {"zh": "58 天", "en": "58 days"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "土星自转一周需要约 10 小时 42 分，是太阳系自转第二快的行星。", "en": "Saturn takes approximately 10 hours and 42 minutes to complete one rotation, the second fastest in the Solar System."}
+    },
+    {
+      "id": "q_saturn_004",
+      "question": {"zh": "土星有多少颗已知卫星？", "en": "How many known moons does Saturn have?"},
+      "options": [
+        {"zh": "27 颗", "en": "27 moons"},
+        {"zh": "53 颗", "en": "53 moons"},
+        {"zh": "82 颗", "en": "82 moons"},
+        {"zh": "146 颗", "en": "146 moons"}
+      ],
+      "answer": 3,
+      "explanation": {"zh": "土星有 146 颗已知卫星，是太阳系中卫星最多的行星。", "en": "Saturn has 146 known moons, the most of any planet in the Solar System."}
+    },
+    {
+      "id": "q_saturn_005",
+      "question": {"zh": "土星最大的卫星是什么？", "en": "What is Saturn's largest moon?"},
+      "options": [
+        {"zh": "土卫二", "en": "Enceladus"},
+        {"zh": "土卫五", "en": "Rhea"},
+        {"zh": "土卫六（Titan）", "en": "Titan"},
+        {"zh": "土卫八", "en": "Iapetus"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "土卫六（Titan）是土星最大的卫星，直径约 5,150 公里，是太阳系第二大卫星。", "en": "Titan is Saturn's largest moon, with a diameter of about 5,150 km, making it the second largest moon in the Solar System."}
+    },
+    {
+      "id": "q_saturn_006",
+      "question": {"zh": "土星距离太阳的平均距离约为多少？", "en": "What is the average distance from Saturn to the Sun?"},
+      "options": [
+        {"zh": "5.2 AU", "en": "5.2 AU"},
+        {"zh": "9.58 AU", "en": "9.58 AU"},
+        {"zh": "19.2 AU", "en": "19.2 AU"},
+        {"zh": "30.1 AU", "en": "30.1 AU"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土星与太阳的平均距离约为 9.58 AU（14.3 亿公里），是太阳系第六颗行星。", "en": "Saturn's average distance from the Sun is approximately 9.58 AU (1.43 billion km), the sixth planet from the Sun."}
+    },
+    {
+      "id": "q_saturn_007",
+      "question": {"zh": "土星的平均密度是多少？", "en": "What is Saturn's average density?"},
+      "options": [
+        {"zh": "0.687 g/cm³", "en": "0.687 g/cm³"},
+        {"zh": "1.27 g/cm³", "en": "1.27 g/cm³"},
+        {"zh": "1.64 g/cm³", "en": "1.64 g/cm³"},
+        {"zh": "5.52 g/cm³", "en": "5.52 g/cm³"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "土星的平均密度为 0.687 g/cm³，是太阳系中唯一密度低于水的行星。", "en": "Saturn's average density is 0.687 g/cm³, the only planet less dense than water."}
+    },
+    {
+      "id": "q_saturn_008",
+      "question": {"zh": "土星环的主要成分是什么？", "en": "What are Saturn's rings mainly composed of?"},
+      "options": [
+        {"zh": "岩石和金属", "en": "Rock and metal"},
+        {"zh": "冰粒和岩石碎片", "en": "Ice particles and rock debris"},
+        {"zh": "气体和尘埃", "en": "Gas and dust"},
+        {"zh": "液态水", "en": "Liquid water"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土星环主要由冰粒和岩石碎片组成，大小从微米到米不等。", "en": "Saturn's rings are mainly composed of ice particles and rock debris, ranging in size from micrometers to meters."}
+    },
+    {
+      "id": "q_saturn_009",
+      "question": {"zh": "谁首先发现了土星环？", "en": "Who first discovered Saturn's rings?"},
+      "options": [
+        {"zh": "开普勒", "en": "Kepler"},
+        {"zh": "伽利略", "en": "Galileo"},
+        {"zh": "牛顿", "en": "Newton"},
+        {"zh": "惠更斯", "en": "Huygens"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "伽利略于 1610 年首次观测到土星环，但他当时以为是土星两侧的卫星。", "en": "Galileo first observed Saturn's rings in 1610, but he thought they were satellites on either side of Saturn."}
+    },
+    {
+      "id": "q_saturn_010",
+      "question": {"zh": "首个土星轨道器任务是？", "en": "What was the first Saturn orbiter mission?"},
+      "options": [
+        {"zh": "旅行者 1 号", "en": "Voyager 1"},
+        {"zh": "旅行者 2 号", "en": "Voyager 2"},
+        {"zh": "卡西尼号", "en": "Cassini"},
+        {"zh": "先驱者 11 号", "en": "Pioneer 11"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "卡西尼号于 2004 年进入土星轨道，运行至 2017 年，是首个土星轨道器。", "en": "Cassini entered Saturn's orbit in 2004 and operated until 2017, being the first Saturn orbiter."}
+    }
+  ]
+}

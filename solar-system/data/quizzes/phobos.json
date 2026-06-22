@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_phobos_001",
+      "question": {"zh": "火卫一的直径约为多少？", "en": "What is the approximate diameter of Phobos?"},
+      "options": [
+        {"zh": "12.2 km", "en": "12.2 km"},
+        {"zh": "22.2 km", "en": "22.2 km"},
+        {"zh": "32.2 km", "en": "32.2 km"},
+        {"zh": "42.2 km", "en": "42.2 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫一的直径约为 22.2 公里，是火星较大的卫星。", "en": "Phobos's diameter is approximately 22.2 km, the larger moon of Mars."}
+    },
+    {
+      "id": "q_phobos_002",
+      "question": {"zh": "火卫一绕火星公转一周需要多少时间？", "en": "How long does it take for Phobos to orbit Mars once?"},
+      "options": [
+        {"zh": "7 小时 39 分", "en": "7h 39m"},
+        {"zh": "17 小时 39 分", "en": "17h 39m"},
+        {"zh": "27 小时 39 分", "en": "27h 39m"},
+        {"zh": "37 小时 39 分", "en": "37h 39m"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "火卫一公转周期为 7 小时 39 分，比火星自转还快。", "en": "Phobos's orbital period is 7h 39m, faster than Mars's rotation."}
+    },
+    {
+      "id": "q_phobos_003",
+      "question": {"zh": "火卫一距离火星表面约为多少？", "en": "What is the distance from Phobos to Mars's surface?"},
+      "options": [
+        {"zh": "约 1,000 km", "en": "About 1,000 km"},
+        {"zh": "约 6,000 km", "en": "About 6,000 km"},
+        {"zh": "约 11,000 km", "en": "About 11,000 km"},
+        {"zh": "约 16,000 km", "en": "About 16,000 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫一距离火星表面约 6,000 公里，是太阳系最接近行星的卫星之一。", "en": "Phobos is about 6,000 km from Mars's surface, one of the closest moons to its planet."}
+    },
+    {
+      "id": "q_phobos_004",
+      "question": {"zh": "火卫一最大的撞击坑是？", "en": "What is the largest crater on Phobos?"},
+      "options": [
+        {"zh": "盖尼米德坑", "en": "Ganymede Crater"},
+        {"zh": "斯蒂克尼坑", "en": "Stickney Crater"},
+        {"zh": "第谷坑", "en": "Tycho Crater"},
+        {"zh": "哥白尼坑", "en": "Copernicus Crater"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "斯蒂克尼坑直径约 9 公里，几乎占火卫一直径的一半。", "en": "Stickney Crater is about 9 km in diameter, nearly half of Phobos's diameter."}
+    },
+    {
+      "id": "q_phobos_005",
+      "question": {"zh": "火卫一表面的沟槽是如何形成的？", "en": "How did the grooves on Phobos form?"},
+      "options": [
+        {"zh": "火山活动", "en": "Volcanic activity"},
+        {"zh": "火星潮汐力", "en": "Mars's tidal forces"},
+        {"zh": "陨石撞击", "en": "Meteor impacts"},
+        {"zh": "风化侵蚀", "en": "Weathering erosion"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫一表面的沟槽可能是火星潮汐力拉扯造成的。", "en": "The grooves on Phobos are likely caused by Mars's tidal forces."}
+    },
+    {
+      "id": "q_phobos_006",
+      "question": {"zh": "火卫一是由谁发现的？", "en": "Who discovered Phobos?"},
+      "options": [
+        {"zh": "伽利略", "en": "Galileo"},
+        {"zh": "霍尔", "en": "Hall"},
+        {"zh": "惠更斯", "en": "Huygens"},
+        {"zh": "卡西尼", "en": "Cassini"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "阿萨夫·霍尔于 1877 年发现火卫一。", "en": "Asaph Hall discovered Phobos in 1877."}
+    },
+    {
+      "id": "q_phobos_007",
+      "question": {"zh": "火卫一的形状是？", "en": "What is the shape of Phobos?"},
+      "options": [
+        {"zh": "完美球体", "en": "Perfect sphere"},
+        {"zh": "不规则椭球", "en": "Irregular ellipsoid"},
+        {"zh": "扁平圆盘", "en": "Flat disk"},
+        {"zh": "长条状", "en": "Elongated"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫一形状不规则，呈椭球状，尺寸约为 27×22×18 公里。", "en": "Phobos is irregularly shaped, an ellipsoid about 27×22×18 km."}
+    },
+    {
+      "id": "q_phobos_008",
+      "question": {"zh": "火卫一的平均密度约为多少？", "en": "What is the average density of Phobos?"},
+      "options": [
+        {"zh": "0.88 g/cm³", "en": "0.88 g/cm³"},
+        {"zh": "1.88 g/cm³", "en": "1.88 g/cm³"},
+        {"zh": "2.88 g/cm³", "en": "2.88 g/cm³"},
+        {"zh": "3.88 g/cm³", "en": "3.88 g/cm³"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫一平均密度约 1.88 g/cm³，表明内部多孔。", "en": "Phobos's average density is about 1.88 g/cm³, indicating a porous interior."}
+    },
+    {
+      "id": "q_phobos_009",
+      "question": {"zh": "火卫一的未来命运是？", "en": "What is the future fate of Phobos?"},
+      "options": [
+        {"zh": "逃离火星轨道", "en": "Escape Mars's orbit"},
+        {"zh": "撞向火星或解体成环", "en": "Crash into Mars or break into rings"},
+        {"zh": "保持稳定轨道", "en": "Stay in stable orbit"},
+        {"zh": "被木星捕获", "en": "Be captured by Jupiter"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火卫一正以每世纪 1.8 米的速度靠近火星，预计 5000 万年后将撞向火星或解体成环。", "en": "Phobos is approaching Mars at 1.8 meters per century, expected to crash or break into rings in 50 million years."}
+    },
+    {
+      "id": "q_phobos_010",
+      "question": {"zh": "哪个探测器详细探测了火卫一？", "en": "Which spacecraft detailed surveyed Phobos?"},
+      "options": [
+        {"zh": "旅行者 1 号", "en": "Voyager 1"},
+        {"zh": "火星快车号", "en": "Mars Express"},
+        {"zh": "卡西尼号", "en": "Cassini"},
+        {"zh": "新视野号", "en": "New Horizons"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "火星快车号于 2003 年开始详细探测火卫一。", "en": "Mars Express has been surveying Phobos in detail since 2003."}
+    }
+  ]
+}

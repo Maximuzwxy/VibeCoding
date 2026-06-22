@@ -1,0 +1,68 @@
+{
+  "id": "moon",
+  "name": {"zh": "月球", "en": "Moon"},
+  "icon": "🌑",
+  "theme_color": "#cccccc",
+  "accent_color": "#cccccc",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "卫星类型", "en": "Satellite Type"}, "value": {"zh": "岩石卫星", "en": "Rocky Moon"}},
+        {"label": {"zh": "直径", "en": "Diameter"}, "value": {"zh": "3,474 km", "en": "3,474 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "7.342×10²²kg", "en": "7.342×10²²kg"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "3.344 g/cm³", "en": "3.344 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "1.62 m/s²", "en": "1.62 m/s²"}}
+      ],
+      "note": {"zh": "※ 太阳系第五大卫星", "en": "※ Fifth largest moon in Solar System"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "27.3 天", "en": "27.3 days"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "27.3 天", "en": "27.3 days"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "1.022 km/s", "en": "1.022 km/s"}},
+        {"label": {"zh": "轨道离心率", "en": "Orbital Eccentricity"}, "value": {"zh": "0.0549", "en": "0.0549"}}
+      ],
+      "note": {"zh": "※ 潮汐锁定，始终以同一面朝向地球", "en": "※ Tidally locked, always shows same face to Earth"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-173°C ~ 127°C", "en": "-173°C to 127°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-20°C", "en": "-20°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "≈0 kPa", "en": "≈0 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "极稀薄", "en": "Extremely thin"}}
+      ],
+      "note": {"zh": "※ 几乎没有大气层", "en": "※ Almost no atmosphere"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "近地点", "en": "Perigee"}, "value": {"zh": "363,300 km", "en": "363,300 km"}},
+        {"label": {"zh": "远地点", "en": "Apogee"}, "value": {"zh": "405,500 km", "en": "405,500 km"}},
+        {"label": {"zh": "平均距离", "en": "Average Distance"}, "value": {"zh": "384,400 km", "en": "384,400 km"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "1.3 秒", "en": "1.3 seconds"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "最高峰", "en": "Highest Peak"}, "value": {"zh": "约 10,786 m", "en": "About 10,786 m"}},
+        {"label": {"zh": "最大撞击坑", "en": "Largest Crater"}, "value": {"zh": "南极 - 艾特肯盆地", "en": "South Pole-Aitken Basin"}},
+        {"label": {"zh": "月海面积", "en": "Mare Area"}, "value": {"zh": "约 16%", "en": "About 16%"}},
+        {"label": {"zh": "地表年龄", "en": "Surface Age"}, "value": {"zh": "约 45 亿年", "en": "About 4.5 billion years"}}
+      ],
+      "note": {"zh": "※ 月海是暗色玄武岩平原", "en": "※ Lunar maria are dark basaltic plains"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "首次飞掠", "en": "First Flyby"}, "value": {"zh": "1959 年月球 1 号", "en": "1959 Luna 1"}},
+        {"label": {"zh": "首次着陆", "en": "First Landing"}, "value": {"zh": "1966 年月球 9 号", "en": "1966 Luna 9"}},
+        {"label": {"zh": "首次载人登月", "en": "First Manned Landing"}, "value": {"zh": "1969 年阿波罗 11 号", "en": "1969 Apollo 11"}},
+        {"label": {"zh": "最后载人登月", "en": "Last Manned Landing"}, "value": {"zh": "1972 年阿波罗 17 号", "en": "1972 Apollo 17"}}
+      ]
+    }
+  ]
+}

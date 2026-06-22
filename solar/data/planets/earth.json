@@ -1,0 +1,401 @@
+{
+  "id": "earth",
+  "name": {
+    "zh": "地球",
+    "en": "Earth"
+  },
+  "icon": "🌍",
+  "theme_color": "#2E86C1",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "类地行星（岩石行星）",
+            "en": "Terrestrial Planet (Rocky Planet)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "12,756 km",
+            "en": "12,756 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "5.972 × 10²⁴ kg",
+            "en": "5.972 × 10²⁴ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "1.083 × 10¹² km³",
+            "en": "1.083 × 10¹² km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "5.514 g/cm³",
+            "en": "5.514 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "9.807 m/s²（1 g）",
+            "en": "9.807 m/s² (1 g)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 地球是太阳系中密度最大的行星，也是目前已知唯一拥有液态水表面和生命的天体。",
+        "en": "※ Earth is the densest planet in the Solar System and the only known celestial body with liquid surface water and life."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "23小时56分4.09秒（恒星日）",
+            "en": "23h 56m 4.09s (Sidereal Day)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "365.256天（恒星年）",
+            "en": "365.256 days (Sidereal Year)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "29.78 km/s（平均）",
+            "en": "29.78 km/s (average)"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0167",
+            "en": "0.0167"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.000°（相对于太阳赤道）",
+            "en": "0.000° (relative to Sun's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 地球的自转正在因月球引力而逐渐减慢，每世纪日长增加约1.7毫秒。",
+        "en": "※ Earth's rotation is gradually slowing due to lunar gravity, increasing day length by about 1.7 milliseconds per century."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "-89°C 至 57°C（极端）",
+            "en": "-89°C to 57°C (extreme)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "15°C（288 K）",
+            "en": "15°C (288 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "101.325 kPa（海平面）",
+            "en": "101.325 kPa (sea level)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "氮气 78.08%，氧气 20.95%，氩气 0.93%，二氧化碳 0.04%",
+            "en": "N₂ 78.08%, O₂ 20.95%, Ar 0.93%, CO₂ 0.04%"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "约 25-65 μT（赤道-极地）",
+            "en": "~25-65 μT (equator to poles)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 地球是太阳系中唯一拥有富氧大气和强大臭氧层的行星，保护生命免受紫外线伤害。",
+        "en": "※ Earth is the only planet in the Solar System with an oxygen-rich atmosphere and a strong ozone layer, shielding life from UV radiation."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "147,098,074 km",
+            "en": "147,098,074 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "152,097,701 km",
+            "en": "152,097,701 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "149,598,023 km",
+            "en": "149,598,023 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "1.000 AU",
+            "en": "1.000 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 8分19秒（从太阳）",
+            "en": "~8 min 19 sec (from Sun)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "1颗（月球）",
+            "en": "1 (the Moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "月球（Luna）",
+            "en": "Moon (Luna)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 月球是太阳系中第五大卫星，其潮汐锁定使地球永远只能看到同一面。",
+        "en": "※ The Moon is the fifth largest moon in the Solar System, and its tidal locking means Earth always sees the same face."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "大陆（29%）、海洋（71%）",
+            "en": "Continents (29%), Oceans (71%)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "弗里德堡陨石坑（南非，直径约300 km）",
+            "en": "Vredefort Crater (South Africa, ~300 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 45.4 亿年（整体），最老岩石约 44 亿年",
+            "en": "~4.54 billion years (overall), oldest rocks ~4.4 Ga"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "珠穆朗玛峰（8,848.86 m 海拔）",
+            "en": "Mount Everest (8,848.86 m above sea level)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 地球表面约71%被水覆盖，是太阳系中唯一拥有稳定液态水海洋的星球。",
+        "en": "※ About 71% of Earth's surface is covered by water, making it the only planet in the Solar System with stable oceans of liquid water."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "自古以来已知",
+            "en": "Known since antiquity"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "不适用（地球是出发点）",
+            "en": "N/A (Earth is the starting point)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "1957年（斯普特尼克1号，人造卫星）",
+            "en": "1957 (Sputnik 1, artificial satellite)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "国际空间站（ISS，持续有人驻守）",
+            "en": "International Space Station (ISS, continuously crewed)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 地球是人类唯一亲自踏足的天体，也是所有太空探索的起点和基地。",
+        "en": "※ Earth is the only celestial body humans have personally set foot on, and the starting point and base for all space exploration."
+      }
+    }
+  ]
+}

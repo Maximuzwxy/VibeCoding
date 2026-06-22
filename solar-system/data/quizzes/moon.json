@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_moon_001",
+      "question": {"zh": "月球的直径约为多少？", "en": "What is the approximate diameter of the Moon?"},
+      "options": [
+        {"zh": "2,474 公里", "en": "2,474 km"},
+        {"zh": "3,474 公里", "en": "3,474 km"},
+        {"zh": "4,474 公里", "en": "4,474 km"},
+        {"zh": "5,474 公里", "en": "5,474 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "月球的直径约为 3,474 公里，是太阳系第五大卫星。", "en": "The Moon's diameter is approximately 3,474 km, making it the fifth largest moon in the Solar System."}
+    },
+    {
+      "id": "q_moon_002",
+      "question": {"zh": "月球绕地球公转一周需要多少天？", "en": "How many days does it take for the Moon to orbit Earth once?"},
+      "options": [
+        {"zh": "14.3 天", "en": "14.3 days"},
+        {"zh": "27.3 天", "en": "27.3 days"},
+        {"zh": "30.3 天", "en": "30.3 days"},
+        {"zh": "365 天", "en": "365 days"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "月球公转周期为 27.3 天，与自转周期相同。", "en": "The Moon's orbital period is 27.3 days, the same as its rotation period."}
+    },
+    {
+      "id": "q_moon_003",
+      "question": {"zh": "月球的自转周期是多少？", "en": "What is the Moon's rotation period?"},
+      "options": [
+        {"zh": "24 小时", "en": "24 hours"},
+        {"zh": "7 天", "en": "7 days"},
+        {"zh": "27.3 天", "en": "27.3 days"},
+        {"zh": "365 天", "en": "365 days"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "月球自转周期为 27.3 天，与公转周期相同，因此始终以同一面朝向地球（潮汐锁定）。", "en": "The Moon's rotation period is 27.3 days, the same as its orbital period, so it always shows the same face to Earth (tidal locking)."}
+    },
+    {
+      "id": "q_moon_004",
+      "question": {"zh": "月球距离地球的平均距离约为多少？", "en": "What is the average distance from the Moon to Earth?"},
+      "options": [
+        {"zh": "184,400 km", "en": "184,400 km"},
+        {"zh": "284,400 km", "en": "284,400 km"},
+        {"zh": "384,400 km", "en": "384,400 km"},
+        {"zh": "484,400 km", "en": "484,400 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "月球与地球的平均距离约为 384,400 公里，光行时约 1.3 秒。", "en": "The Moon's average distance from Earth is approximately 384,400 km, with light travel time of about 1.3 seconds."}
+    },
+    {
+      "id": "q_moon_005",
+      "question": {"zh": "月球表面的重力约为地球的多少？", "en": "What is the Moon's surface gravity compared to Earth's?"},
+      "options": [
+        {"zh": "约 1/10", "en": "About 1/10"},
+        {"zh": "约 1/6", "en": "About 1/6"},
+        {"zh": "约 1/3", "en": "About 1/3"},
+        {"zh": "约 1/2", "en": "About 1/2"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "月球表面重力约为 1.62 m/s²，是地球重力（9.8 m/s²）的约 1/6。", "en": "The Moon's surface gravity is about 1.62 m/s², approximately 1/6 of Earth's gravity (9.8 m/s²)."}
+    },
+    {
+      "id": "q_moon_006",
+      "question": {"zh": "人类首次登月是在哪一年？", "en": "In which year did humans first land on the Moon?"},
+      "options": [
+        {"zh": "1965 年", "en": "1965"},
+        {"zh": "1967 年", "en": "1967"},
+        {"zh": "1969 年", "en": "1969"},
+        {"zh": "1971 年", "en": "1971"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "1969 年 7 月 20 日，阿波罗 11 号成功登月，尼尔·阿姆斯特朗成为第一个踏上月球的人。", "en": "On July 20, 1969, Apollo 11 successfully landed on the Moon, and Neil Armstrong became the first person to step on the Moon."}
+    },
+    {
+      "id": "q_moon_007",
+      "question": {"zh": "月球上最大的撞击坑是？", "en": "What is the largest impact crater on the Moon?"},
+      "options": [
+        {"zh": "第谷坑", "en": "Tycho Crater"},
+        {"zh": "哥白尼坑", "en": "Copernicus Crater"},
+        {"zh": "南极 - 艾特肯盆地", "en": "South Pole-Aitken Basin"},
+        {"zh": "风暴洋", "en": "Oceanus Procellarum"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "南极 - 艾特肯盆地是月球上最大的撞击坑，直径约 2,500 公里，也是太阳系最大的撞击坑之一。", "en": "The South Pole-Aitken Basin is the largest impact crater on the Moon, about 2,500 km in diameter, and one of the largest in the Solar System."}
+    },
+    {
+      "id": "q_moon_008",
+      "question": {"zh": "月球表面的温度范围是？", "en": "What is the surface temperature range on the Moon?"},
+      "options": [
+        {"zh": "-50°C ~ 100°C", "en": "-50°C to 100°C"},
+        {"zh": "-100°C ~ 150°C", "en": "-100°C to 150°C"},
+        {"zh": "-173°C ~ 127°C", "en": "-173°C to 127°C"},
+        {"zh": "-200°C ~ 200°C", "en": "-200°C to 200°C"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "月球表面温度范围为 -173°C 到 127°C，因为没有大气层保温，温差极大。", "en": "The Moon's surface temperature ranges from -173°C to 127°C, with extreme variation due to lack of atmosphere."}
+    },
+    {
+      "id": "q_moon_009",
+      "question": {"zh": "月球上的暗色区域被称为？", "en": "What are the dark areas on the Moon called?"},
+      "options": [
+        {"zh": "月陆", "en": "Lunar Highlands"},
+        {"zh": "月海", "en": "Lunar Maria"},
+        {"zh": "月谷", "en": "Lunar Valleys"},
+        {"zh": "月峰", "en": "Lunar Peaks"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "月海是月球上的暗色玄武岩平原，占月球表面积约 16%，实际上是古代火山喷发形成的。", "en": "Lunar maria are dark basaltic plains on the Moon, covering about 16% of the surface, actually formed by ancient volcanic eruptions."}
+    },
+    {
+      "id": "q_moon_010",
+      "question": {"zh": "最后一次载人登月任务是？", "en": "What was the last manned mission to the Moon?"},
+      "options": [
+        {"zh": "阿波罗 13 号", "en": "Apollo 13"},
+        {"zh": "阿波罗 15 号", "en": "Apollo 15"},
+        {"zh": "阿波罗 17 号", "en": "Apollo 17"},
+        {"zh": "阿波罗 18 号", "en": "Apollo 18"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "阿波罗 17 号于 1972 年 12 月登月，是迄今为止最后一次载人登月任务。", "en": "Apollo 17 landed on the Moon in December 1972, and remains the last manned mission to the Moon to date."}
+    }
+  ]
+}

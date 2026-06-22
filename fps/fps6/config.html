@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS 游戏配置</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .config-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            color: #00d4ff;
+        }
+
+        .team-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+
+        .team-title {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #00d4ff;
+        }
+
+        .team-title.player-team {
+            color: #44ff44;
+        }
+
+        .team-title.enemy-team {
+            color: #ff4444;
+        }
+
+        .option-group {
+            margin-bottom: 15px;
+        }
+
+        .option-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .color-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .color-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .color-btn.selected {
+            border-color: #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .number-options {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .number-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .number-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .number-btn.selected {
+            border-color: #00d4ff;
+            background: rgba(0, 212, 255, 0.3);
+        }
+
+        .start-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.3em;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .slider-group {
+            margin-bottom: 15px;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .slider-value {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #00d4ff;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #00d4ff;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="config-container">
+        <h1>🎮 FPS 游戏配置</h1>
+
+        <div class="team-section">
+            <div class="team-title player-team">🟢 我方队伍</div>
+            
+            <div class="option-group">
+                <label class="option-label">队伍颜色</label>
+                <div class="color-options" id="player-colors">
+                    <button class="color-btn selected" data-color="0x4444ff" style="background: #4444ff;"></button>
+                    <button class="color-btn" data-color="0xff4444" style="background: #ff4444;"></button>
+                    <button class="color-btn" data-color="0x44ff44" style="background: #44ff44;"></button>
+                    <button class="color-btn" data-color="0xffff44" style="background: #ffff44;"></button>
+                    <button class="color-btn" data-color="0xff44ff" style="background: #ff44ff;"></button>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label class="option-label">NPC 数量 (1-9)</label>
+                <div class="number-options" id="player-npcs">
+                    <button class="number-btn" data-num="1">1</button>
+                    <button class="number-btn" data-num="2">2</button>
+                    <button class="number-btn" data-num="3">3</button>
+                    <button class="number-btn" data-num="4">4</button>
+                    <button class="number-btn selected" data-num="5">5</button>
+                    <button class="number-btn" data-num="6">6</button>
+                    <button class="number-btn" data-num="7">7</button>
+                    <button class="number-btn" data-num="8">8</button>
+                    <button class="number-btn" data-num="9">9</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <div class="team-title enemy-team">🔴 敌方队伍</div>
+            
+            <div class="option-group">
+                <label class="option-label">队伍颜色</label>
+                <div class="color-options" id="enemy-colors">
+                    <button class="color-btn" data-color="0x4444ff" style="background: #4444ff;"></button>
+                    <button class="color-btn selected" data-color="0xff4444" style="background: #ff4444;"></button>
+                    <button class="color-btn" data-color="0x44ff44" style="background: #44ff44;"></button>
+                    <button class="color-btn" data-color="0xffff44" style="background: #ffff44;"></button>
+                    <button class="color-btn" data-color="0xff44ff" style="background: #ff44ff;"></button>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label class="option-label">NPC 数量 (1-10)</label>
+                <div class="number-options" id="enemy-npcs">
+                    <button class="number-btn" data-num="1">1</button>
+                    <button class="number-btn" data-num="2">2</button>
+                    <button class="number-btn" data-num="3">3</button>
+                    <button class="number-btn" data-num="4">4</button>
+                    <button class="number-btn selected" data-num="5">5</button>
+                    <button class="number-btn" data-num="6">6</button>
+                    <button class="number-btn" data-num="7">7</button>
+                    <button class="number-btn" data-num="8">8</button>
+                    <button class="number-btn" data-num="9">9</button>
+                    <button class="number-btn" data-num="10">10</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <div class="team-title">❤️ 血量配置</div>
+            
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>玩家血量</span>
+                    <span class="slider-value" id="player-health-value">10</span>
+                </div>
+                <input type="range" id="player-health" min="1" max="50" value="10" step="1">
+            </div>
+
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>NPC血量</span>
+                    <span class="slider-value" id="npc-health-value">10</span>
+                </div>
+                <input type="range" id="npc-health" min="1" max="50" value="10" step="1">
+            </div>
+        </div>
+
+        <div class="team-section">
+            <div class="team-title">🎯 NPC 命中率配置</div>
+            
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>近距离命中率 (0~10)</span>
+                    <span class="slider-value" id="close-range-value">80%</span>
+                </div>
+                <input type="range" id="close-range" min="10" max="100" value="80" step="5">
+            </div>
+
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>中距离命中率 (10~25)</span>
+                    <span class="slider-value" id="mid-range-value">50%</span>
+                </div>
+                <input type="range" id="mid-range" min="10" max="100" value="50" step="5">
+            </div>
+
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>远距离命中率 (>25)</span>
+                    <span class="slider-value" id="far-range-value">20%</span>
+                </div>
+                <input type="range" id="far-range" min="10" max="100" value="20" step="5">
+            </div>
+
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>目标运动惩罚</span>
+                    <span class="slider-value" id="target-move-value">50%</span>
+                </div>
+                <input type="range" id="target-move" min="10" max="100" value="50" step="5">
+            </div>
+
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>NPC运动惩罚</span>
+                    <span class="slider-value" id="npc-move-value">50%</span>
+                </div>
+                <input type="range" id="npc-move" min="10" max="100" value="50" step="5">
+            </div>
+        </div>
+
+        <button class="start-btn" id="start-btn">🚀 开始游戏</button>
+    </div>
+
+    <script>
+        const config = {
+            playerTeam: {
+                color: 0x4444ff,
+                npcCount: 5
+            },
+            enemyTeam: {
+                color: 0xff4444,
+                npcCount: 5
+            },
+            health: {
+                player: 10,
+                npc: 10
+            },
+            hitRate: {
+                closeRange: 0.8,
+                midRange: 0.5,
+                farRange: 0.2,
+                targetMovePenalty: 0.5,
+                npcMovePenalty: 0.5
+            }
+        };
+
+        document.querySelectorAll('#player-colors .color-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#player-colors .color-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                config.playerTeam.color = parseInt(btn.dataset.color);
+            });
+        });
+
+        document.querySelectorAll('#enemy-colors .color-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#enemy-colors .color-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                config.enemyTeam.color = parseInt(btn.dataset.color);
+            });
+        });
+
+        document.querySelectorAll('#player-npcs .number-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#player-npcs .number-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                config.playerTeam.npcCount = parseInt(btn.dataset.num);
+            });
+        });
+
+        document.querySelectorAll('#enemy-npcs .number-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#enemy-npcs .number-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                config.enemyTeam.npcCount = parseInt(btn.dataset.num);
+            });
+        });
+
+        const sliders = [
+            { id: 'close-range', key: 'closeRange', valueId: 'close-range-value' },
+            { id: 'mid-range', key: 'midRange', valueId: 'mid-range-value' },
+            { id: 'far-range', key: 'farRange', valueId: 'far-range-value' },
+            { id: 'target-move', key: 'targetMovePenalty', valueId: 'target-move-value' },
+            { id: 'npc-move', key: 'npcMovePenalty', valueId: 'npc-move-value' }
+        ];
+
+        sliders.forEach(slider => {
+            const el = document.getElementById(slider.id);
+            const valueEl = document.getElementById(slider.valueId);
+            el.addEventListener('input', () => {
+                config.hitRate[slider.key] = parseInt(el.value) / 100;
+                valueEl.textContent = el.value + '%';
+            });
+        });
+
+        const playerHealthSlider = document.getElementById('player-health');
+        const playerHealthValue = document.getElementById('player-health-value');
+        playerHealthSlider.addEventListener('input', () => {
+            config.health.player = parseInt(playerHealthSlider.value);
+            playerHealthValue.textContent = playerHealthSlider.value;
+        });
+
+        const npcHealthSlider = document.getElementById('npc-health');
+        const npcHealthValue = document.getElementById('npc-health-value');
+        npcHealthSlider.addEventListener('input', () => {
+            config.health.npc = parseInt(npcHealthSlider.value);
+            npcHealthValue.textContent = npcHealthSlider.value;
+        });
+
+        document.getElementById('start-btn').addEventListener('click', () => {
+            const params = new URLSearchParams({
+                playerColor: config.playerTeam.color,
+                playerNpcs: config.playerTeam.npcCount,
+                enemyColor: config.enemyTeam.color,
+                enemyNpcs: config.enemyTeam.npcCount,
+                playerHealth: config.health.player,
+                npcHealth: config.health.npc,
+                closeRange: Math.round(config.hitRate.closeRange * 100),
+                midRange: Math.round(config.hitRate.midRange * 100),
+                farRange: Math.round(config.hitRate.farRange * 100),
+                targetMove: Math.round(config.hitRate.targetMovePenalty * 100),
+                npcMove: Math.round(config.hitRate.npcMovePenalty * 100)
+            });
+            window.location.href = `index.html?${params.toString()}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_umbriel_001",
+      "question": {
+        "zh": "天卫三是天王星的哪一颗卫星？",
+        "en": "What is the ranking of Umbriel among Uranus's moons by distance from the planet?"
+      },
+      "options": [
+        {
+          "zh": "第三大卫星",
+          "en": "Third largest moon"
+        },
+        {
+          "zh": "第二大卫星",
+          "en": "Second largest moon"
+        },
+        {
+          "zh": "第四大卫星",
+          "en": "Fourth largest moon"
+        },
+        {
+          "zh": "最大卫星",
+          "en": "Largest moon"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫三是天王星的第三大卫星，仅次于天卫三（泰坦尼亚）和天卫四（欧贝隆）。",
+        "en": "Umbriel is the third largest moon of Uranus, after Titania and Oberon."
+      }
+    },
+    {
+      "id": "q_umbriel_002",
+      "question": {
+        "zh": "天卫三的轨道周期大约是多少天？",
+        "en": "What is the approximate orbital period of Umbriel in days?"
+      },
+      "options": [
+        {
+          "zh": "4.1天",
+          "en": "4.1 days"
+        },
+        {
+          "zh": "8.7天",
+          "en": "8.7 days"
+        },
+        {
+          "zh": "2.5天",
+          "en": "2.5 days"
+        },
+        {
+          "zh": "13.5天",
+          "en": "13.5 days"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫三的轨道周期约为4.1天，与天王星的其他主要卫星相似。",
+        "en": "Umbriel's orbital period is about 4.1 days, similar to other major moons of Uranus."
+      }
+    },
+    {
+      "id": "q_umbriel_003",
+      "question": {
+        "zh": "天卫三的表面最显著的特征是什么？",
+        "en": "What is the most prominent surface feature on Umbriel?"
+      },
+      "options": [
+        {
+          "zh": "一个巨大的撞击坑——Wunda",
+          "en": "A large impact crater called Wunda"
+        },
+        {
+          "zh": "一条巨大的峡谷",
+          "en": "A giant canyon"
+        },
+        {
+          "zh": "活跃的冰火山",
+          "en": "Active cryovolcanoes"
+        },
+        {
+          "zh": "广阔的暗色平原",
+          "en": "Extensive dark plains"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫三表面最显著的特征是Wunda撞击坑，其底部有明亮的物质。",
+        "en": "The most prominent feature on Umbriel is the impact crater Wunda, which has bright material on its floor."
+      }
+    },
+    {
+      "id": "q_umbriel_004",
+      "question": {
+        "zh": "天卫三主要由什么物质组成？",
+        "en": "What is Umbriel primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "水冰和岩石",
+          "en": "Water ice and rock"
+        },
+        {
+          "zh": "纯金属核心",
+          "en": "Pure metallic core"
+        },
+        {
+          "zh": "液态甲烷",
+          "en": "Liquid methane"
+        },
+        {
+          "zh": "二氧化碳冰",
+          "en": "Carbon dioxide ice"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫三主要由水冰和岩石组成，比例大约为50:50。",
+        "en": "Umbriel is composed of roughly equal parts water ice and rock."
+      }
+    },
+    {
+      "id": "q_umbriel_005",
+      "question": {
+        "zh": "天卫三的表面反照率（反射率）如何？",
+        "en": "What is the surface albedo (reflectivity) of Umbriel?"
+      },
+      "options": [
+        {
+          "zh": "非常低，是天王星主要卫星中最暗的",
+          "en": "Very low, the darkest among Uranus's major moons"
+        },
+        {
+          "zh": "非常高，像雪一样白",
+          "en": "Very high, as white as snow"
+        },
+        {
+          "zh": "中等，与月球相似",
+          "en": "Moderate, similar to the Moon"
+        },
+        {
+          "zh": "变化极大，没有固定值",
+          "en": "Highly variable, no fixed value"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫三的反照率很低，约16%，是天王星五颗主要卫星中最暗的。",
+        "en": "Umbriel has a low albedo of about 16%, making it the darkest of Uranus's five major moons."
+      }
+    },
+    {
+      "id": "q_umbriel_006",
+      "question": {
+        "zh": "天卫三的直径大约是多少？",
+        "en": "What is the approximate diameter of Umbriel?"
+      },
+      "options": [
+        {
+          "zh": "约1170公里",
+          "en": "About 1170 km"
+        },
+        {
+          "zh": "约500公里",
+          "en": "About 500 km"
+        },
+        {
+          "zh": "约2000公里",
+          "en": "About 2000 km"
+        },
+        {
+          "zh": "约800公里",
+          "en": "About 800 km"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫三的直径约为1170公里，是天王星的第三大卫星。",
+        "en": "Umbriel has a diameter of about 1170 km, making it the third largest moon of Uranus."
+      }
+    },
+    {
+      "id": "q_umbriel_007",
+      "question": {
+        "zh": "天卫三的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Umbriel?"
+      },
+      "options": [
+        {
+          "zh": "约-200°C（约70K）",
+          "en": "About -200°C (about 70 K)"
+        },
+        {
+          "zh": "约-100°C（约170K）",
+          "en": "About -100°C (about 170 K)"
+        },
+        {
+          "zh": "约0°C（约273K）",
+          "en": "About 0°C (about 273 K)"
+        },
+        {
+          "zh": "约-50°C（约220K）",
+          "en": "About -50°C (about 220 K)"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫三的表面温度极低，大约在70K（-200°C）左右。",
+        "en": "The surface temperature of Umbriel is extremely cold, around 70 K (-200°C)."
+      }
+    },
+    {
+      "id": "q_umbriel_008",
+      "question": {
+        "zh": "天卫三是由谁发现的？",
+        "en": "Who discovered Umbriel?"
+      },
+      "options": [
+        {
+          "zh": "威廉·赫歇尔",
+          "en": "William Herschel"
+        },
+        {
+          "zh": "约翰·赫歇尔",
+          "en": "John Herschel"
+        },
+        {
+          "zh": "威廉·拉塞尔",
+          "en": "William Lassell"
+        },
+        {
+          "zh": "伽利略·伽利雷",
+          "en": "Galileo Galilei"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫三由威廉·赫歇尔于1787年发现，与天卫四（欧贝隆）同时被发现。",
+        "en": "Umbriel was discovered by William Herschel in 1787, along with Oberon."
+      }
+    },
+    {
+      "id": "q_umbriel_009",
+      "question": {
+        "zh": "哪艘航天器曾近距离探测过天卫三？",
+        "en": "Which spacecraft has performed a close flyby of Umbriel?"
+      },
+      "options": [
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "旅行者2号在1986年飞越天王星系统时，对天卫三进行了唯一的近距离探测。",
+        "en": "Voyager 2 conducted the only close flyby of Umbriel during its Uranus encounter in 1986."
+      }
+    },
+    {
+      "id": "q_umbriel_010",
+      "question": {
+        "zh": "天卫三的轨道倾角相对于天王星赤道如何？",
+        "en": "What is the orbital inclination of Umbriel relative to Uranus's equator?"
+      },
+      "options": [
+        {
+          "zh": "几乎为零，非常接近赤道面",
+          "en": "Nearly zero, very close to the equatorial plane"
+        },
+        {
+          "zh": "约45度",
+          "en": "About 45 degrees"
+        },
+        {
+          "zh": "约90度",
+          "en": "About 90 degrees"
+        },
+        {
+          "zh": "约180度（逆行）",
+          "en": "About 180 degrees (retrograde)"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫三的轨道倾角非常小，几乎与天王星的赤道面重合，与其他规则卫星一致。",
+        "en": "Umbriel has a very low orbital inclination, nearly coincident with Uranus's equatorial plane, like other regular moons."
+      }
+    }
+  ]
+}

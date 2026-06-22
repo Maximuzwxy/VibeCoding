@@ -1,0 +1,52 @@
+{
+  "id": "mimas",
+  "name": {"zh": "土卫一", "en": "Mimas"},
+  "icon": "🌑",
+  "theme_color": "#c0c0c0",
+  "accent_color": "#c0c0c0",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "卫星类型", "en": "Satellite Type"}, "value": {"zh": "冰卫星", "en": "Icy Moon"}},
+        {"label": {"zh": "直径", "en": "Diameter"}, "value": {"zh": "396 km", "en": "396 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "3.75×10¹⁹kg", "en": "3.75×10¹⁹kg"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "1.15 g/cm³", "en": "1.15 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "0.064 m/s²", "en": "0.064 m/s²"}}
+      ],
+      "note": {"zh": "※ 太阳系最小的流体静力平衡天体", "en": "※ Smallest body in hydrostatic equilibrium"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "0.94 天", "en": "0.94 days"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "0.94 天", "en": "0.94 days"}},
+        {"label": {"zh": "轨道半径", "en": "Orbital Radius"}, "value": {"zh": "185,404 km", "en": "185,404 km"}}
+      ],
+      "note": {"zh": "※ 潮汐锁定", "en": "※ Tidally locked"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-190°C", "en": "-190°C"}},
+        {"label": {"zh": "大气", "en": "Atmosphere"}, "value": {"zh": "无", "en": "None"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "最大撞击坑", "en": "Largest Crater"}, "value": {"zh": "赫歇尔撞击坑", "en": "Herschel Crater"}},
+        {"label": {"zh": "撞击坑直径", "en": "Crater Diameter"}, "value": {"zh": "130 km", "en": "130 km"}},
+        {"label": {"zh": "形状", "en": "Shape"}, "value": {"zh": "椭球形", "en": "Ellipsoidal"}}
+      ],
+      "note": {"zh": "※ 赫歇尔坑占土卫一直径的 1/3", "en": "※ Herschel is 1/3 of Mimas's diameter"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现者", "en": "Discoverer"}, "value": {"zh": "1789 年赫歇尔", "en": "1789 by Herschel"}},
+        {"label": {"zh": "命名来源", "en": "Name Origin"}, "value": {"zh": "希腊神话巨人", "en": "Giant in Greek mythology"}}
+      ]
+    }
+  ]
+}

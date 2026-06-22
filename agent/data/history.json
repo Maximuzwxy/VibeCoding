@@ -1,0 +1,18 @@
+[
+  {
+    "role": "user",
+    "content": "i am max"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi Max! Great to meet you 👋\n\nHow can I help you today? Whether it's answering a question, helping with a task, or just having a chat — I'm all ears!"
+  },
+  {
+    "role": "user",
+    "content": "今天天气怎么样"
+  },
+  {
+    "role": "assistant",
+    "content": "抱歉，暂时无法自动获取你的位置信息。你能告诉我你在哪个城市吗？这样我可以帮你查询今天的天气！"
+  }
+]

@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_mars_001",
+      "question": {
+        "zh": "火星在太阳系中距离太阳第几近？",
+        "en": "What is Mars' position from the Sun in the solar system?"
+      },
+      "options": [
+        {
+          "zh": "第二近",
+          "en": "Second"
+        },
+        {
+          "zh": "第三近",
+          "en": "Third"
+        },
+        {
+          "zh": "第四近",
+          "en": "Fourth"
+        },
+        {
+          "zh": "第五近",
+          "en": "Fifth"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "火星是距离太阳第四近的行星，位于地球和木星之间。",
+        "en": "Mars is the fourth planet from the Sun, located between Earth and Jupiter."
+      }
+    },
+    {
+      "id": "q_mars_002",
+      "answer": 0,
+      "question": {
+        "zh": "火星的直径大约是地球的多少？",
+        "en": "Mars' diameter is approximately what fraction of Earth's?"
+      },
+      "options": [
+        {
+          "zh": "一半",
+          "en": "Half"
+        },
+        {
+          "zh": "三分之一",
+          "en": "One-third"
+        },
+        {
+          "zh": "四分之三",
+          "en": "Three-quarters"
+        },
+        {
+          "zh": "十分之一",
+          "en": "One-tenth"
+        }
+      ],
+      "explanation": {
+        "zh": "火星直径约6779公里，约为地球直径（12742公里）的一半。",
+        "en": "Mars has a diameter of about 6,779 km, roughly half of Earth's 12,742 km."
+      }
+    },
+    {
+      "id": "q_mars_003",
+      "answer": 3,
+      "question": {
+        "zh": "火星上的一天（太阳日）大约有多长？",
+        "en": "How long is a solar day on Mars?"
+      },
+      "options": [
+        {
+          "zh": "12小时",
+          "en": "12 hours"
+        },
+        {
+          "zh": "18小时",
+          "en": "18 hours"
+        },
+        {
+          "zh": "23小时56分钟",
+          "en": "23 hours 56 minutes"
+        },
+        {
+          "zh": "24小时37分钟",
+          "en": "24 hours 37 minutes"
+        }
+      ],
+      "explanation": {
+        "zh": "火星的一个太阳日约为24小时39分钟，比地球的一天稍长。",
+        "en": "A solar day on Mars is about 24 hours and 39 minutes, slightly longer than an Earth day."
+      }
+    },
+    {
+      "id": "q_mars_004",
+      "answer": 1,
+      "question": {
+        "zh": "火星大气的主要成分是什么？",
+        "en": "What is the primary component of Mars' atmosphere?"
+      },
+      "options": [
+        {
+          "zh": "氧气",
+          "en": "Oxygen"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        },
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "氩气",
+          "en": "Argon"
+        }
+      ],
+      "explanation": {
+        "zh": "火星大气约95%是二氧化碳，非常稀薄，表面气压仅为地球的0.6%。",
+        "en": "Mars' atmosphere is about 95% carbon dioxide, very thin, with surface pressure only 0.6% of Earth's."
+      }
+    },
+    {
+      "id": "q_mars_005",
+      "answer": 2,
+      "question": {
+        "zh": "火星上最大的火山叫什么？",
+        "en": "What is the name of the largest volcano on Mars?"
+      },
+      "options": [
+        {
+          "zh": "埃律西昂山",
+          "en": "Elysium Mons"
+        },
+        {
+          "zh": "阿尔西亚山",
+          "en": "Arsia Mons"
+        },
+        {
+          "zh": "奥林匹斯山",
+          "en": "Olympus Mons"
+        },
+        {
+          "zh": "帕弗尼斯山",
+          "en": "Pavonis Mons"
+        }
+      ],
+      "explanation": {
+        "zh": "奥林匹斯山是太阳系已知最大的火山，高约21.9公里，位于火星塔尔西斯地区。",
+        "en": "Olympus Mons is the largest known volcano in the solar system, about 21.9 km high, located in the Tharsis region of Mars."
+      }
+    },
+    {
+      "id": "q_mars_006",
+      "answer": 0,
+      "question": {
+        "zh": "火星的两颗天然卫星叫什么？",
+        "en": "What are the names of Mars' two natural satellites?"
+      },
+      "options": [
+        {
+          "zh": "火卫一和火卫二",
+          "en": "Phobos and Deimos"
+        },
+        {
+          "zh": "木卫一和木卫二",
+          "en": "Io and Europa"
+        },
+        {
+          "zh": "土卫六和土卫五",
+          "en": "Titan and Rhea"
+        },
+        {
+          "zh": "天卫三和天卫四",
+          "en": "Titania and Oberon"
+        }
+      ],
+      "explanation": {
+        "zh": "火星有两颗小卫星：火卫一（Phobos）和火卫二（Deimos），形状不规则，可能为捕获的小行星。",
+        "en": "Mars has two small moons: Phobos and Deimos, which are irregularly shaped and may be captured asteroids."
+      }
+    },
+    {
+      "id": "q_mars_007",
+      "answer": 3,
+      "question": {
+        "zh": "火星表面呈现红色的主要原因是？",
+        "en": "What is the main reason for Mars' reddish appearance?"
+      },
+      "options": [
+        {
+          "zh": "大量红色植物",
+          "en": "Abundant red plants"
+        },
+        {
+          "zh": "红色沙尘暴",
+          "en": "Red dust storms"
+        },
+        {
+          "zh": "火山喷发物质",
+          "en": "Volcanic ejecta"
+        },
+        {
+          "zh": "氧化铁（铁锈）",
+          "en": "Iron oxide (rust)"
+        }
+      ],
+      "explanation": {
+        "zh": "火星表面富含氧化铁（铁锈），使其呈现独特的红色或铁锈色。",
+        "en": "Mars' surface is rich in iron oxide (rust), giving it a distinctive red or rusty color."
+      }
+    },
+    {
+      "id": "q_mars_008",
+      "answer": 1,
+      "question": {
+        "zh": "人类第一个成功在火星表面着陆的探测器是？",
+        "en": "What was the first human-made object to successfully land on Mars?"
+      },
+      "options": [
+        {
+          "zh": "水手4号",
+          "en": "Mariner 4"
+        },
+        {
+          "zh": "火星3号",
+          "en": "Mars 3"
+        },
+        {
+          "zh": "海盗1号",
+          "en": "Viking 1"
+        },
+        {
+          "zh": "探路者号",
+          "en": "Pathfinder"
+        }
+      ],
+      "explanation": {
+        "zh": "苏联的火星3号于1971年12月2日成功软着陆，但仅传输了约20秒数据后失联。",
+        "en": "The Soviet Mars 3 successfully soft-landed on December 2, 1971, but lost contact after transmitting data for about 20 seconds."
+      }
+    },
+    {
+      "id": "q_mars_009",
+      "answer": 0,
+      "question": {
+        "zh": "火星的轨道偏心率约为多少？",
+        "en": "What is the approximate orbital eccentricity of Mars?"
+      },
+      "options": [
+        {
+          "zh": "0.093",
+          "en": "0.093"
+        },
+        {
+          "zh": "0.017",
+          "en": "0.017"
+        },
+        {
+          "zh": "0.205",
+          "en": "0.205"
+        },
+        {
+          "zh": "0.007",
+          "en": "0.007"
+        }
+      ],
+      "explanation": {
+        "zh": "火星的轨道偏心率约为0.093，是太阳系中除水星外偏心率较大的行星之一，导致其近日点和远日点距离差异显著。",
+        "en": "Mars has an orbital eccentricity of about 0.093, one of the largest in the solar system after Mercury, causing a significant difference between its perihelion and aphelion distances."
+      }
+    },
+    {
+      "id": "q_mars_010",
+      "answer": 2,
+      "question": {
+        "zh": "火星上最大的峡谷系统叫什么？",
+        "en": "What is the name of the largest canyon system on Mars?"
+      },
+      "options": [
+        {
+          "zh": "大峡谷",
+          "en": "Grand Canyon"
+        },
+        {
+          "zh": "赫拉斯盆地",
+          "en": "Hellas Basin"
+        },
+        {
+          "zh": "水手号峡谷",
+          "en": "Valles Marineris"
+        },
+        {
+          "zh": "北极峡谷",
+          "en": "North Polar Chasma"
+        }
+      ],
+      "explanation": {
+        "zh": "水手号峡谷（Valles Marineris）长约4000公里，深达7公里，是太阳系已知最大的峡谷系统。",
+        "en": "Valles Marineris is about 4,000 km long and up to 7 km deep, making it the largest known canyon system in the solar system."
+      }
+    }
+  ]
+}

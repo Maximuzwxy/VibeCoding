@@ -1,0 +1,401 @@
+{
+  "id": "iapetus",
+  "name": {
+    "zh": "土卫八",
+    "en": "Iapetus"
+  },
+  "icon": "🪐",
+  "theme_color": "#b0a090",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "土星卫星",
+            "en": "Saturnian moon"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "1,469 km",
+            "en": "1,469 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.806×10²¹ kg",
+            "en": "1.806×10²¹ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "1.66×10⁹ km³",
+            "en": "1.66×10⁹ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.088 g/cm³",
+            "en": "1.088 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.223 m/s²",
+            "en": "0.223 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫八拥有著名的“阴阳脸”：一侧极黑（反照率0.03-0.05），另一侧极白（反照率0.5-0.6）。",
+        "en": "※ Iapetus has a famous 'yin-yang' appearance: one hemisphere is extremely dark (albedo 0.03-0.05), the other extremely bright (albedo 0.5-0.6)."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "79.3215 天（潮汐锁定）",
+            "en": "79.3215 days (tidally locked)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "79.3215 天",
+            "en": "79.3215 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "3.26 km/s",
+            "en": "3.26 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0283",
+            "en": "0.0283"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "15.47°（相对于土星赤道）",
+            "en": "15.47° (to Saturn's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫八的轨道倾角是土星主要卫星中最大的，使其在土星赤道面上方和下方大幅摆动。",
+        "en": "※ Iapetus has the largest orbital inclination among Saturn's major moons, causing it to swing far above and below the ring plane."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "暗面：130 K（-143°C）；亮面：100 K（-173°C）",
+            "en": "Dark side: 130 K (-143°C); Bright side: 100 K (-173°C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 115 K（-158°C）",
+            "en": "~115 K (-158°C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "几乎为零（无显著大气）",
+            "en": "Nearly zero (no significant atmosphere)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无内源磁场",
+            "en": "No intrinsic magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 暗面因吸收更多阳光而比亮面温度高出约30°C，这是太阳系中同一颗天体上最大的温差之一。",
+        "en": "※ The dark hemisphere is about 30°C warmer than the bright side due to greater sunlight absorption, one of the largest temperature contrasts on a single body in the Solar System."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕土星公转）",
+            "en": "N/A (orbits Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用（绕土星公转）",
+            "en": "N/A (orbits Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "3,560,820 km（距土星）",
+            "en": "3,560,820 km (from Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.0238 AU（距土星）",
+            "en": "0.0238 AU (from Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 1.2 小时（从地球）",
+            "en": "~1.2 hours (from Earth)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（土卫八本身是土星的卫星）",
+            "en": "0 (Iapetus is itself a moon of Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫八是土星第三大卫星，也是太阳系中离其主星最远的规则卫星之一。",
+        "en": "※ Iapetus is Saturn's third-largest moon and one of the most distant regular satellites from its planet in the Solar System."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "暗色卡西尼区（Cassini Regio）与亮色冰原",
+            "en": "Dark Cassini Regio and bright icy terrains"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "阿巴里姆撞击坑（Abarym，直径约 200 km）",
+            "en": "Abarym crater (~200 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 40 亿年（古老表面）",
+            "en": "~4 billion years (ancient surface)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "赤道脊（Equatorial Ridge），高达 20 km",
+            "en": "Equatorial Ridge, up to 20 km high"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫八拥有太阳系中最奇特的地形之一——一条几乎环绕整个赤道的山脊，最高处达20公里，成因至今仍是谜。",
+        "en": "※ Iapetus has one of the most bizarre features in the Solar System: an equatorial ridge up to 20 km high encircling most of the moon, whose origin remains a mystery."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1671年10月25日，由乔瓦尼·卡西尼发现",
+            "en": "October 25, 1671, by Giovanni Cassini"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1980年9月1日，旅行者1号",
+            "en": "September 1, 1980, Voyager 1"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "2004年7月1日，卡西尼号进入土星轨道后多次飞掠",
+            "en": "July 1, 2004, Cassini orbiter (multiple flybys)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "卡西尼号（2004-2017）提供了最详细的数据",
+            "en": "Cassini (2004-2017) provided the most detailed data"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 卡西尼发现土卫八时，注意到它只在土星西侧可见，东侧不可见，从而推断出它一面亮一面暗。",
+        "en": "※ When Cassini discovered Iapetus, he noticed it was only visible west of Saturn and not east, deducing its two-toned appearance."
+      }
+    }
+  ]
+}

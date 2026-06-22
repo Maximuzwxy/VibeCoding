@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_deimos_001",
+      "question": {
+        "zh": "火卫二是火星的哪一颗卫星？",
+        "en": "Which moon of Mars is Deimos?"
+      },
+      "options": [
+        {
+          "zh": "较大的内卫星",
+          "en": "The larger inner moon"
+        },
+        {
+          "zh": "较小的外卫星",
+          "en": "The smaller outer moon"
+        },
+        {
+          "zh": "火星唯一的卫星",
+          "en": "The only moon of Mars"
+        },
+        {
+          "zh": "与火卫一大小相同",
+          "en": "Same size as Phobos"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火卫二是火星两颗天然卫星中较小且轨道较远的一颗，火卫一（Phobos）是较大且较近的内卫星。",
+        "en": "Deimos is the smaller and more distant of Mars' two natural moons, while Phobos is the larger and closer inner moon."
+      }
+    },
+    {
+      "id": "q_deimos_002",
+      "question": {
+        "zh": "火卫二的平均直径大约是多少？",
+        "en": "What is the approximate average diameter of Deimos?"
+      },
+      "options": [
+        {
+          "zh": "约 5 公里",
+          "en": "About 5 km"
+        },
+        {
+          "zh": "约 12 公里",
+          "en": "About 12 km"
+        },
+        {
+          "zh": "约 22 公里",
+          "en": "About 22 km"
+        },
+        {
+          "zh": "约 50 公里",
+          "en": "About 50 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火卫二形状不规则，平均直径约为 12.4 公里，远小于火卫一（约 22 公里）。",
+        "en": "Deimos is irregularly shaped with an average diameter of about 12.4 km, much smaller than Phobos (about 22 km)."
+      }
+    },
+    {
+      "id": "q_deimos_003",
+      "question": {
+        "zh": "火卫二绕火星公转的周期大约是多久？",
+        "en": "What is the orbital period of Deimos around Mars?"
+      },
+      "options": [
+        {
+          "zh": "约 7.7 小时",
+          "en": "About 7.7 hours"
+        },
+        {
+          "zh": "约 30.3 小时",
+          "en": "About 30.3 hours"
+        },
+        {
+          "zh": "约 1.3 天",
+          "en": "About 1.3 days"
+        },
+        {
+          "zh": "约 7.7 天",
+          "en": "About 7.7 days"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火卫二的公转周期约为 30.3 小时，比火星自转周期（约 24.6 小时）略长，因此从火星表面看，它缓慢地东升西落。",
+        "en": "Deimos orbits Mars in about 30.3 hours, slightly longer than Mars' rotation period (about 24.6 hours), so it rises in the east and sets in the west slowly."
+      }
+    },
+    {
+      "id": "q_deimos_004",
+      "question": {
+        "zh": "火卫二的表面特征主要是什么？",
+        "en": "What is the main surface feature of Deimos?"
+      },
+      "options": [
+        {
+          "zh": "大量活跃火山",
+          "en": "Numerous active volcanoes"
+        },
+        {
+          "zh": "深厚的尘埃层和少量陨石坑",
+          "en": "A thick dust layer and few craters"
+        },
+        {
+          "zh": "液态水海洋",
+          "en": "Liquid water oceans"
+        },
+        {
+          "zh": "密集的峡谷系统",
+          "en": "Dense canyon systems"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火卫二表面覆盖着厚厚的尘埃（风化层），陨石坑相对较少且较浅，因为尘埃填平了较小的撞击坑。",
+        "en": "Deimos has a thick regolith (dust layer) covering its surface, with relatively few and shallow craters, as dust fills in smaller impact features."
+      }
+    },
+    {
+      "id": "q_deimos_005",
+      "question": {
+        "zh": "火卫二与火星的平均距离大约是多少？",
+        "en": "What is the average distance of Deimos from Mars?"
+      },
+      "options": [
+        {
+          "zh": "约 9,400 公里",
+          "en": "About 9,400 km"
+        },
+        {
+          "zh": "约 23,500 公里",
+          "en": "About 23,500 km"
+        },
+        {
+          "zh": "约 50,000 公里",
+          "en": "About 50,000 km"
+        },
+        {
+          "zh": "约 100,000 公里",
+          "en": "About 100,000 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火卫二轨道平均半径约为 23,460 公里，远大于火卫一（约 9,376 公里）。",
+        "en": "Deimos orbits at an average distance of about 23,460 km from Mars, much farther than Phobos (about 9,376 km)."
+      }
+    },
+    {
+      "id": "q_deimos_006",
+      "question": {
+        "zh": "火卫二的形状最接近以下哪种描述？",
+        "en": "Which description best matches the shape of Deimos?"
+      },
+      "options": [
+        {
+          "zh": "完美球形",
+          "en": "Perfectly spherical"
+        },
+        {
+          "zh": "三轴椭球体",
+          "en": "Triaxial ellipsoid"
+        },
+        {
+          "zh": "细长雪茄形",
+          "en": "Elongated cigar shape"
+        },
+        {
+          "zh": "扁平圆盘形",
+          "en": "Flat disk shape"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火卫二形状不规则，近似三轴椭球体，尺寸约为 15.0 km × 12.0 km × 10.4 km。",
+        "en": "Deimos is irregularly shaped, approximating a triaxial ellipsoid with dimensions of about 15.0 km × 12.0 km × 10.4 km."
+      }
+    },
+    {
+      "id": "q_deimos_007",
+      "question": {
+        "zh": "以下哪个探测器曾对火卫二进行过近距离观测？",
+        "en": "Which spacecraft has performed close-up observations of Deimos?"
+      },
+      "options": [
+        {
+          "zh": "水手9号",
+          "en": "Mariner 9"
+        },
+        {
+          "zh": "海盗1号轨道器",
+          "en": "Viking 1 orbiter"
+        },
+        {
+          "zh": "火星快车",
+          "en": "Mars Express"
+        },
+        {
+          "zh": "以上都是",
+          "en": "All of the above"
+        }
+      ],
+      "answer": 3,
+      "explanation": {
+        "zh": "水手9号（1971年）、海盗1号轨道器（1977年）和火星快车（2000年代）都曾对火卫二进行过成像和观测。",
+        "en": "Mariner 9 (1971), Viking 1 orbiter (1977), and Mars Express (2000s) have all imaged and observed Deimos."
+      }
+    },
+    {
+      "id": "q_deimos_008",
+      "question": {
+        "zh": "火卫二的表面反照率（反射率）大约是多少？",
+        "en": "What is the approximate surface albedo (reflectivity) of Deimos?"
+      },
+      "options": [
+        {
+          "zh": "约 0.02",
+          "en": "About 0.02"
+        },
+        {
+          "zh": "约 0.07",
+          "en": "About 0.07"
+        },
+        {
+          "zh": "约 0.25",
+          "en": "About 0.25"
+        },
+        {
+          "zh": "约 0.50",
+          "en": "About 0.50"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火卫二表面反照率约为 0.07，比月球（约 0.12）略暗，呈暗灰色，类似C型小行星。",
+        "en": "Deimos has a surface albedo of about 0.07, slightly darker than the Moon (about 0.12), appearing dark gray, similar to C-type asteroids."
+      }
+    },
+    {
+      "id": "q_deimos_009",
+      "question": {
+        "zh": "关于火卫二的起源，目前最主流的理论是什么？",
+        "en": "What is the most widely accepted theory for the origin of Deimos?"
+      },
+      "options": [
+        {
+          "zh": "火星火山喷发形成",
+          "en": "Formed by Martian volcanic eruptions"
+        },
+        {
+          "zh": "被火星引力捕获的小行星",
+          "en": "An asteroid captured by Mars' gravity"
+        },
+        {
+          "zh": "火星与另一颗行星碰撞的碎片",
+          "en": "Debris from a collision between Mars and another planet"
+        },
+        {
+          "zh": "火星早期形成的原生卫星",
+          "en": "A primordial moon formed early with Mars"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "主流理论认为火卫二和火卫一原本是火星与木星之间小行星带的小行星，后被火星引力捕获。其光谱特征与C型或D型小行星相似。",
+        "en": "The leading theory is that both Deimos and Phobos were originally asteroids from the main belt between Mars and Jupiter, later captured by Mars' gravity. Their spectra resemble C-type or D-type asteroids."
+      }
+    },
+    {
+      "id": "q_deimos_010",
+      "question": {
+        "zh": "从火星表面观察，火卫二的视大小和运动特点是什么？",
+        "en": "What are the apparent size and motion characteristics of Deimos as seen from the Martian surface?"
+      },
+      "options": [
+        {
+          "zh": "看起来比月亮大，快速划过天空",
+          "en": "Appears larger than Earth's Moon, moves quickly across the sky"
+        },
+        {
+          "zh": "看起来像一颗明亮的星星，缓慢移动",
+          "en": "Appears like a bright star, moves slowly"
+        },
+        {
+          "zh": "完全不可见",
+          "en": "Completely invisible"
+        },
+        {
+          "zh": "看起来与太阳一样大",
+          "en": "Appears as large as the Sun"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火卫二距离火星较远且体积小，从火星表面看仅像一颗明亮的星星（视星等约-1等），由于轨道周期略长于火星自转周期，它在天空中缓慢移动。",
+        "en": "Deimos is far from Mars and small, so from the Martian surface it appears only as a bright star (apparent magnitude about -1), moving slowly across the sky because its orbital period is slightly longer than Mars' rotation period."
+      }
+    }
+  ]
+}

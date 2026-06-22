@@ -1,0 +1,68 @@
+{
+  "id": "deimos",
+  "name": {"zh": "火卫二", "en": "Deimos"},
+  "icon": "🌑",
+  "theme_color": "#a0826d",
+  "accent_color": "#a0826d",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "卫星类型", "en": "Satellite Type"}, "value": {"zh": "不规则岩石卫星", "en": "Irregular Rocky Moon"}},
+        {"label": {"zh": "直径", "en": "Diameter"}, "value": {"zh": "12.6 km", "en": "12.6 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "1.48×10¹⁵kg", "en": "1.48×10¹⁵kg"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "1.47 g/cm³", "en": "1.47 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "0.003 m/s²", "en": "0.003 m/s²"}}
+      ],
+      "note": {"zh": "※ 火星较小的卫星", "en": "※ Smaller moon of Mars"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "30 小时 18 分", "en": "30h 18m"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "30 小时 18 分", "en": "30h 18m"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "1.35 km/s", "en": "1.35 km/s"}},
+        {"label": {"zh": "轨道半径", "en": "Orbital Radius"}, "value": {"zh": "23,460 km", "en": "23,460 km"}}
+      ],
+      "note": {"zh": "※ 潮汐锁定", "en": "※ Tidally locked"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-40°C ~ -80°C", "en": "-40°C to -80°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-60°C", "en": "-60°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "≈0 kPa", "en": "≈0 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "无", "en": "None"}}
+      ],
+      "note": {"zh": "※ 没有大气层", "en": "※ No atmosphere"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "与火星距离", "en": "Distance from Mars"}, "value": {"zh": "23,460 km", "en": "23,460 km"}},
+        {"label": {"zh": "轨道高度", "en": "Orbital Altitude"}, "value": {"zh": "20,000 km", "en": "20,000 km"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "1.79°", "en": "1.79°"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "约 0.08 秒", "en": "About 0.08 seconds"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "最大撞击坑", "en": "Largest Crater"}, "value": {"zh": "伏尔泰坑", "en": "Voltaire Crater"}},
+        {"label": {"zh": "撞击坑直径", "en": "Crater Diameter"}, "value": {"zh": "2.3 km", "en": "2.3 km"}},
+        {"label": {"zh": "表面特征", "en": "Surface Features"}, "value": {"zh": "撞击坑和碎石", "en": "Craters and debris"}},
+        {"label": {"zh": "形状", "en": "Shape"}, "value": {"zh": "不规则椭球", "en": "Irregular ellipsoid"}}
+      ],
+      "note": {"zh": "※ 表面相对平滑，撞击坑较少", "en": "※ Surface relatively smooth, fewer craters"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现者", "en": "Discoverer"}, "value": {"zh": "1877 年霍尔", "en": "1877 by Hall"}},
+        {"label": {"zh": "首次近距离拍摄", "en": "First Close-up Photos"}, "value": {"zh": "1977 年海盗 1 号", "en": "1977 Viking 1"}},
+        {"label": {"zh": "详细探测", "en": "Detailed Survey"}, "value": {"zh": "2003 年火星快车号", "en": "2003 Mars Express"}},
+        {"label": {"zh": "命名来源", "en": "Name Origin"}, "value": {"zh": "希腊神话恐惧之神", "en": "Greek god of fear"}}
+      ]
+    }
+  ]
+}

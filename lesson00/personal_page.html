@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maximuz Wang - Secure Access</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a14;
+      color: #eaeaff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* === Starfield Background === */
+    .starfield {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle var(--duration, 3s) infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* === Access Verification Modal === */
+    .access-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(12, 12, 24, 0.92);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      border: 1px solid rgba(76, 201, 240, 0.2);
+    }
+
+    .modal-content {
+      background: rgba(20, 20, 40, 0.85);
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(76, 201, 240, 0.15);
+    }
+
+    .modal-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #4cc9f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .math-question {
+      font-size: 2.2rem;
+      margin: 25px 0;
+      color: #f0f0ff;
+      font-weight: 600;
+    }
+
+    .input-container {
+      margin: 25px 0;
+    }
+
+    .answer-input {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 1.2rem;
+      background: rgba(10, 10, 25, 0.7);
+      border: 1px solid rgba(76, 201, 240, 0.3);
+      border-radius: 12px;
+      color: #eaeaff;
+      text-align: center;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .answer-input:focus {
+      border-color: #4cc9f0;
+      box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+    }
+
+    .submit-btn {
+      background: linear-gradient(90deg, #4361ee, #4cc9f0);
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(76, 201, 240, 0.4);
+    }
+
+    .error-message {
+      color: #ff6b6b;
+      margin-top: 15px;
+      min-height: 22px;
+      font-size: 0.95rem;
+    }
+
+    /* === Content Card (Hidden until verified) === */
+    .container {
+      width: 96%;
+      max-width: 1200px;
+      height: 90vh;
+      display: flex;
+      background: rgba(12, 12, 24, 0.78);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(76, 201, 240, 0.15);
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+      display: none; /* Hidden by default */
+    }
+
+    .left-panel {
+      flex: 1;
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(100, 100, 140, 0.2);
+    }
+
+    .name {
+      font-size: 3.6rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      background: linear-gradient(90deg, #4cc9f0, #f72585, #4361ee);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.05;
+      letter-spacing: -0.2px;
+      word-spacing: 0.1em;
+      padding-bottom: 0.15em;
+    }
+
+    .intro {
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: #d0d0ff;
+      max-width: 520px;
+    }
+
+    .right-panel {
+      flex: 1.4;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      align-content: start;
+    }
+
+    .detail-item {
+      padding: 20px;
+      background: rgba(20, 20, 40, 0.55);
+      border-radius: 16px;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      border: 1px solid rgba(76, 201, 240, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detail-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4),
+                  0 0 0 1px rgba(76, 201, 240, 0.3);
+      background: rgba(25, 25, 50, 0.65);
+    }
+
+    .item-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .icon {
+      font-size: 1.4rem;
+      color: #4cc9f0;
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #4cc9f0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .value {
+      font-size: 1.15rem;
+      color: #f0f0ff;
+      line-height: 1.5;
+    }
+
+    .colors-container {
+      display: flex;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .color-swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .color-swatch:hover {
+      transform: scale(1.25);
+      box-shadow: 0 0 14px rgba(255, 255, 255, 0.6);
+    }
+
+    .green { background-color: #579312; }
+    .blue { background-color: #1e90ff; }
+
+    /* Footer: 2026 in bottom-right */
+    .footer-year {
+      position: absolute;
+      bottom: 24px;
+      right: 30px;
+      font-size: 0.95rem;
+      color: #8a8aa5;
+      font-weight: 500;
+      z-index: 10;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+        max-height: 95vh;
+        padding: 20px;
+      }
+      .right-panel {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+      }
+      .left-panel {
+        border-right: none;
+        border-bottom: 1px solid rgba(100, 100, 140, 0.2);
+        padding: 30px 20px;
+      }
+      .name {
+        font-size: 2.4rem;
+      }
+      .intro {
+        font-size: 1.15rem;
+      }
+      
+      .modal-content {
+        padding: 30px 20px;
+      }
+      
+      .math-question {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Starfield Background -->
+  <div class="starfield" id="starfield"></div>
+
+  <!-- Access Verification Modal -->
+  <div class="access-modal" id="accessModal">
+    <div class="modal-content">
+      <h2 class="modal-title"><i class="fas fa-lock"></i> Access Verification</h2>
+      <p>Solve this math problem to verify you're human:</p>
+      
+      <div class="math-question" id="mathQuestion">8 + 5 = ?</div>
+      
+      <div class="input-container">
+        <input type="number" class="answer-input" id="answerInput" placeholder="Enter your answer" autocomplete="off">
+      </div>
+      
+      <button class="submit-btn" id="submitBtn">Verify Access</button>
+      
+      <div class="error-message" id="errorMessage"></div>
+    </div>
+  </div>
+
+  <!-- Main Content (Initially Hidden) -->
+  <div class="container" id="mainContent">
+    <div class="left-panel">
+      <h1 class="name">Maximuz Wang</h1>
+      <p class="intro">I am an engaging teacher who loves learning and sports. I hope we can grow together.</p>
+    </div>
+
+    <div class="right-panel">
+      <div class="detail-item">
+        <div class="item-header">
+          <div class="icon"><i class="fas fa-birthday-cake"></i></div>
+          <div class="label">Age</div>
+        </div>
+        <div class="value">18</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="item-header">
+          <div class="icon"><i class="fas fa-utensils"></i></div>
+          <div class="label">Favorite Food</div>
+        </div>
+        <div class="value">Chongqing Beef Tallow Hotpot</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="item-header">
+          <div class="icon"><i class="fas fa-book"></i></div>
+          <div class="label">Favorite Books</div>
+        </div>
+        <div class="value">The Three-Body Problem<br>The Dark Forest<br>Death's End</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="item-header">
+          <div class="icon"><i class="fas fa-film"></i></div>
+          <div class="label">Favorite Movies</div>
+        </div>
+        <div class="value">Gladiator<br>Westworld<br>The Matrix<br>Alita: Battle Angel</div>
+      </div>
+
+      <div class="detail-item">
+        <div class="item-header">
+          <div class="icon"><i class="fas fa-palette"></i></div>
+          <div class="label">Favorite Colors</div>
+        </div>
+        <div class="value">Green and Blue</div>
+        <div class="colors-container">
+          <div class="color-swatch green"></div>
+          <div class="color-swatch blue"></div>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <div class="item-header">
+          <div class="icon"><i class="fas fa-rocket"></i></div>
+          <div class="label">Future Plan</div>
+        </div>
+        <div class="value">Embrace AI, master science and mathematics, and be confident anywhere in the world.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Year in bottom-right -->
+  <div class="footer-year">Personal Introduction • 2026</div>
+
+  <script>
+    // Generate Starfield Background
+    document.addEventListener('DOMContentLoaded', () => {
+      const starfield = document.getElementById('starfield');
+      const canvasWidth = window.innerWidth;
+      const canvasHeight = window.innerHeight;
+      const starCount = 200; // density
+
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+
+        // Random position
+        const x = Math.random() * canvasWidth;
+        const y = Math.random() * canvasHeight;
+        star.style.left = `${x}px`;
+        star.style.top = `${y}px`;
+
+        // Random size (3px to 9px)
+        const size = (Math.random() * 2 + 1) * 3;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+
+        // Random color: white, light blue, soft green
+        const colors = ['#ffffff', '#a2d2ff', '#b2f7bf', '#98e4ff'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        star.style.background = color;
+
+        // Random twinkle duration (2–6s)
+        const duration = 2 + Math.random() * 4;
+        star.style.setProperty('--duration', `${duration}s`);
+
+        // Optional: slight glow for bling effect
+        if (Math.random() > 0.7) {
+          star.style.boxShadow = `0 0 ${Math.random() * 10 + 5}px ${color}`;
+        }
+
+        starfield.appendChild(star);
+      }
+
+      // Initialize math verification
+      setupMathVerification();
+    });
+
+    function setupMathVerification() {
+      const accessModal = document.getElementById('accessModal');
+      const mainContent = document.getElementById('mainContent');
+      const mathQuestion = document.getElementById('mathQuestion');
+      const answerInput = document.getElementById('answerInput');
+      const submitBtn = document.getElementById('submitBtn');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      let correctAnswer;
+      
+      // Generate a random math question
+      function generateMathQuestion() {
+        const num1 = Math.floor(Math.random() * 20) + 1;
+        const num2 = Math.floor(Math.random() * 20) + 1;
+        correctAnswer = num1 + num2;
+        mathQuestion.textContent = `${num1} + ${num2} = ?`;
+        answerInput.value = '';
+        errorMessage.textContent = '';
+      }
+      
+      // Handle form submission
+      submitBtn.addEventListener('click', checkAnswer);
+      answerInput.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+          checkAnswer();
+        }
+      });
+      
+      function checkAnswer() {
+        const userAnswer = parseInt(answerInput.value);
+        
+        if (isNaN(userAnswer)) {
+          errorMessage.textContent = "Please enter a valid number";
+          return;
+        }
+        
+        if (userAnswer === correctAnswer) {
+          // Correct answer - show main content
+          accessModal.style.display = 'none';
+          mainContent.style.display = 'flex';
+        } else {
+          // Wrong answer
+          errorMessage.textContent = "Incorrect answer. Please try again.";
+          generateMathQuestion(); // Generate new question
+        }
+      }
+      
+      // Initialize with first question
+      generateMathQuestion();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+[
+  {
+    "id": "msg-001",
+    "from": "maximuz",
+    "to": "luna_star",
+    "content": "嗨，最近怎么样？",
+    "created_at": "2026-05-10T10:20:00"
+  },
+  {
+    "id": "msg-002",
+    "from": "luna_star",
+    "to": "maximuz",
+    "content": "还不错，你呢？",
+    "created_at": "2026-05-10T10:22:00"
+  },
+  {
+    "id": "msg-003",
+    "from": "maximuz",
+    "to": "luna_star",
+    "content": "挺好的，周末有什么计划吗？",
+    "created_at": "2026-05-10T10:25:00"
+  },
+  {
+    "id": "msg-004",
+    "from": "luna_star",
+    "to": "maximuz",
+    "content": "还没想好，可能在家休息吧",
+    "created_at": "2026-05-10T10:28:00"
+  },
+  {
+    "id": "msg-005",
+    "from": "maximuz",
+    "to": "luna_star",
+    "content": "今天天气怎么样？",
+    "created_at": "2026-05-10T10:30:00"
+  },
+  {
+    "id": "27e7fa41-87e2-4ab8-83b5-232bf00e5bb3",
+    "from": "test_8fd76a76",
+    "to": "friend_52897204",
+    "content": "你好，这是一条测试消息",
+    "created_at": "2026-05-10T11:34:36.001830"
+  },
+  {
+    "id": "cf489baa-8097-4cad-95a0-d86ace4e7d1c",
+    "from": "maximuz",
+    "to": "luna_star",
+    "content": "hi",
+    "created_at": "2026-05-10T11:35:26.575258"
+  },
+  {
+    "id": "b076e1f3-47a4-4dec-a912-d7c2b936860e",
+    "from": "maximuz",
+    "to": "luna_star",
+    "content": "hi",
+    "created_at": "2026-05-10T11:36:29.665634"
+  },
+  {
+    "id": "23523315-3330-488f-9664-322017aeb740",
+    "from": "maximuz",
+    "to": "luna_star",
+    "content": "？？",
+    "created_at": "2026-05-10T11:36:34.719068"
+  },
+  {
+    "id": "ec186bbd-97be-4ef1-9a75-4c7c512cc537",
+    "from": "maximuz",
+    "to": "luna_star",
+    "content": "哈哈",
+    "created_at": "2026-05-10T13:27:48.556153"
+  },
+  {
+    "id": "5af8d3c8-cb5b-4084-bdbb-c69c79efc95b",
+    "from": "maximuz",
+    "to": "bobo",
+    "content": "哈哈",
+    "created_at": "2026-05-10T13:30:18.207992"
+  },
+  {
+    "id": "f8e24718-9ca2-4ad2-b74f-93ef89be68b8",
+    "from": "maximuz",
+    "to": "bobo",
+    "content": "看到没",
+    "created_at": "2026-05-10T13:30:39.323484"
+  },
+  {
+    "id": "3b3c1206-8f27-4e8c-8d30-1b8b985d067a",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "看到了",
+    "created_at": "2026-05-10T13:37:35.314788"
+  },
+  {
+    "id": "a0b8198b-3de2-459a-b187-386eefb4af69",
+    "from": "maximuz",
+    "to": "bobo",
+    "content": "臭小皮儿",
+    "created_at": "2026-05-10T13:37:45.563022"
+  },
+  {
+    "id": "2fbd3f6b-71ee-4d6e-acdd-bf7cfbb8be5c",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "呆",
+    "created_at": "2026-05-10T13:37:48.400939"
+  },
+  {
+    "id": "18a38a76-aded-400a-bec4-2243ceddad89",
+    "from": "maximuz",
+    "to": "bobo",
+    "content": "在",
+    "created_at": "2026-05-10T13:46:28.645415"
+  },
+  {
+    "id": "951c70be-4df6-4ab1-96b2-c02bbb6dcca6",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "呆",
+    "created_at": "2026-05-10T13:46:31.441796"
+  },
+  {
+    "id": "bb7761f8-7fe6-4b4d-b83e-0d469558f0da",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "哈喽",
+    "created_at": "2026-05-10T13:49:29.472054"
+  },
+  {
+    "id": "44dc3c68-21c7-4d26-aa93-05e467d38151",
+    "from": "maximuz",
+    "to": "vv_vv",
+    "content": "hh",
+    "created_at": "2026-05-10T13:49:47.405972"
+  },
+  {
+    "id": "871fa918-ca0c-4153-bec1-4db41ac517f4",
+    "from": "vv_vv",
+    "to": "maximuz",
+    "content": "m",
+    "created_at": "2026-05-10T13:50:02.869156"
+  },
+  {
+    "id": "d25c730a-f4f2-44e4-9763-99021a5a74c1",
+    "from": "maximuz",
+    "to": "vv_vv",
+    "content": "asdf",
+    "created_at": "2026-05-10T13:56:33.434647"
+  },
+  {
+    "id": "cae23fa2-abe4-43a7-82a8-9fb0963d6b85",
+    "from": "maximuz",
+    "to": "vv_vv",
+    "content": "sadf",
+    "created_at": "2026-05-10T13:56:37.744021"
+  },
+  {
+    "id": "5e176d9a-41a2-4a1e-8e6d-c44d9f4a6446",
+    "from": "vv_vv",
+    "to": "maximuz",
+    "content": "哈哈",
+    "created_at": "2026-05-10T14:19:51.826933"
+  },
+  {
+    "id": "41f3da6a-9e71-487c-8d96-a6148cf25766",
+    "from": "maximuz",
+    "to": "bobo",
+    "content": "halou",
+    "created_at": "2026-05-11T05:06:36.780354"
+  },
+  {
+    "id": "c6668f21-fdf2-4ce9-9b43-6a61f3b7a5e9",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "hi",
+    "created_at": "2026-05-11T05:13:22.596448"
+  },
+  {
+    "id": "09a78823-07be-4a76-a7d8-31deda757f5f",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "hi",
+    "created_at": "2026-05-11T05:13:35.206131"
+  },
+  {
+    "id": "2b77b4fd-e6f4-48a0-80f4-298b5d72d590",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "hi",
+    "created_at": "2026-05-11T05:14:30.147736"
+  },
+  {
+    "id": "293c6e96-953c-4074-91ac-f20f3535cab8",
+    "from": "maximuz",
+    "to": "bobo",
+    "content": "hi",
+    "created_at": "2026-05-11T05:14:35.123155"
+  },
+  {
+    "id": "7a013f95-0a09-42bd-9641-71f03f6748ba",
+    "from": "maximuz",
+    "to": "bobo",
+    "content": "hi",
+    "created_at": "2026-05-11T05:18:54.368006"
+  },
+  {
+    "id": "cb1c38f5-9982-4b0d-8ee0-64c1ec245f6d",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "hi",
+    "created_at": "2026-05-11T05:19:03.768593"
+  },
+  {
+    "id": "3d031eaa-c952-493a-86f9-66f7842be741",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "hi",
+    "created_at": "2026-05-11T05:19:12.483094"
+  },
+  {
+    "id": "b429fff2-497b-43ce-8b73-794afbcdb288",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "hi",
+    "created_at": "2026-05-11T05:44:13.934806"
+  },
+  {
+    "id": "77de2b41-ef13-42a2-8ca4-fcdab2c1efdb",
+    "from": "usr53713",
+    "to": "us253713",
+    "content": "你好，这是一条测试消息",
+    "created_at": "2026-05-12T02:42:10.335633"
+  },
+  {
+    "id": "9a7533ab-2e58-4c56-8d43-2dca0df804bb",
+    "from": "usr53744",
+    "to": "us253744",
+    "content": "测试消息1",
+    "created_at": "2026-05-12T02:42:41.359138"
+  },
+  {
+    "id": "96c45ebe-f8c8-4b81-b0ef-a97dcb5a571e",
+    "from": "us253744",
+    "to": "usr53744",
+    "content": "测试消息2",
+    "created_at": "2026-05-12T02:42:43.409679"
+  },
+  {
+    "id": "ee5eed76-68bf-4671-89d8-cb0505888a6d",
+    "from": "usr53765",
+    "to": "us253765",
+    "content": "测试消息",
+    "created_at": "2026-05-12T02:43:01.912296"
+  },
+  {
+    "id": "11dca087-febf-4362-98b5-3c4ad2a9adc2",
+    "from": "u4048463569",
+    "to": "v4048462934",
+    "content": "你好，这是一条测试消息",
+    "created_at": "2026-05-12T02:47:44.771803"
+  },
+  {
+    "id": "26d0f10d-f9e3-450a-8a98-8e9aab9d756f",
+    "from": "u4079408533",
+    "to": "v4079422320",
+    "content": "测试消息1",
+    "created_at": "2026-05-12T02:48:15.747722"
+  },
+  {
+    "id": "2253ede3-87dc-4768-9f40-8dae551e0c09",
+    "from": "v4079422320",
+    "to": "u4079408533",
+    "content": "测试消息2",
+    "created_at": "2026-05-12T02:48:17.785770"
+  },
+  {
+    "id": "b9f5175b-1e7f-48be-96cb-dc57734c5bbf",
+    "from": "u4099859405",
+    "to": "v4099848872",
+    "content": "测试消息",
+    "created_at": "2026-05-12T02:48:36.247106"
+  },
+  {
+    "id": "68225935-7b10-450d-989d-19e4b7073d18",
+    "from": "u1860f897",
+    "to": "vea1677b0",
+    "content": "你好，这是一条测试消息",
+    "created_at": "2026-05-12T02:52:58.255502"
+  },
+  {
+    "id": "3294b383-1341-43d2-8a2b-1d5b812c6e76",
+    "from": "uc231ca1c",
+    "to": "v8d77d209",
+    "content": "测试消息1",
+    "created_at": "2026-05-12T02:53:29.391405"
+  },
+  {
+    "id": "45aa2827-b2c6-49e9-b25d-5d1090a18a1a",
+    "from": "v8d77d209",
+    "to": "uc231ca1c",
+    "content": "测试消息2",
+    "created_at": "2026-05-12T02:53:31.443138"
+  },
+  {
+    "id": "249a24c4-3522-4193-ae01-26abe7068424",
+    "from": "uf16c8e12",
+    "to": "v70166e33",
+    "content": "测试消息",
+    "created_at": "2026-05-12T02:53:50.004453"
+  },
+  {
+    "id": "4773d161-51a1-42ff-885b-9b8470056e70",
+    "from": "u0dcc9288",
+    "to": "veff639d3",
+    "content": "你好，这是一条测试消息",
+    "created_at": "2026-05-12T02:59:45.470688"
+  },
+  {
+    "id": "31ef66b6-0506-4d43-9117-1f9b4584c037",
+    "from": "u375a4553",
+    "to": "v286ed256",
+    "content": "测试消息1",
+    "created_at": "2026-05-12T03:00:16.419814"
+  },
+  {
+    "id": "af71cb71-8814-4116-a2b8-819c75428033",
+    "from": "v286ed256",
+    "to": "u375a4553",
+    "content": "测试消息2",
+    "created_at": "2026-05-12T03:00:18.481820"
+  },
+  {
+    "id": "93af0e9d-bf35-4596-b6bc-bae0b053e40f",
+    "from": "ucebdfee9",
+    "to": "v779a013c",
+    "content": "测试消息",
+    "created_at": "2026-05-12T03:00:36.979284"
+  },
+  {
+    "id": "e84ff88d-99e8-4e6b-b616-38e0c9b02f16",
+    "from": "u00de128b",
+    "to": "vff5a1b99",
+    "content": "你好，这是一条测试消息",
+    "created_at": "2026-05-12T03:19:16.210245"
+  },
+  {
+    "id": "f31f6e9c-b01c-47f8-82a9-80d79ba4f879",
+    "from": "u8ed781e4",
+    "to": "v832e0468",
+    "content": "测试消息1",
+    "created_at": "2026-05-12T03:19:49.142341"
+  },
+  {
+    "id": "bf889d94-78d8-412f-adc7-e6118d1f1d2d",
+    "from": "v832e0468",
+    "to": "u8ed781e4",
+    "content": "测试消息2",
+    "created_at": "2026-05-12T03:19:51.205846"
+  },
+  {
+    "id": "24699371-0f61-4fb8-916c-e1f68d447130",
+    "from": "ud36887ab",
+    "to": "vecb37d0f",
+    "content": "测试消息",
+    "created_at": "2026-05-12T03:20:09.728175"
+  },
+  {
+    "id": "10edcabb-0c33-408b-b1ac-70f9a0421d3b",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "haha",
+    "created_at": "2026-05-12T03:44:03.982589"
+  },
+  {
+    "id": "8a1906c9-c02d-4b15-b3ff-d28bf8cff589",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "饽饽",
+    "created_at": "2026-05-12T03:44:17.169337"
+  },
+  {
+    "id": "c259ae0a-3220-4982-9a4b-1f739458ddf0",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "lasdjf;lasdkfjksadjflasdjkjfkl;asdjfkjasdkfjaksdfkasdjf",
+    "created_at": "2026-05-12T05:08:36.932970"
+  },
+  {
+    "id": "1a86c977-dbd8-4ddc-b94e-abbbc1a7e509",
+    "from": "bobo",
+    "to": "maximuz",
+    "content": "呆",
+    "created_at": "2026-05-12T08:46:21.645616"
+  },
+  {
+    "id": "fc784620-e996-4966-9db8-8cd868b3b1f1",
+    "from": "maximuz",
+    "to": "bobo",
+    "content": "皮儿",
+    "created_at": "2026-05-12T08:46:30.538606"
+  },
+  {
+    "id": "0e065714-d7a1-4ea7-b8bd-b6ff08108c82",
+    "from": "maximuz",
+    "to": "vv_vv",
+    "content": "haha",
+    "created_at": "2026-05-24T10:29:39.716844"
+  },
+  {
+    "id": "718a9a8c-017a-4cef-87bc-2322123043f0",
+    "from": "maximuz",
+    "to": "vv_vv",
+    "content": "哈哈",
+    "created_at": "2026-06-14T15:41:22.671849"
+  }
+]

@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_mimas_001",
+      "question": {
+        "zh": "土卫一最显著的外观特征是什么？",
+        "en": "What is the most notable surface feature of Mimas?"
+      },
+      "options": [
+        {
+          "zh": "巨大的撞击坑赫歇尔",
+          "en": "The giant impact crater Herschel"
+        },
+        {
+          "zh": "活跃的冰火山",
+          "en": "Active cryovolcanoes"
+        },
+        {
+          "zh": "全球性的液态水海洋",
+          "en": "A global liquid water ocean"
+        },
+        {
+          "zh": "浓密的氮气大气层",
+          "en": "A thick nitrogen atmosphere"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫一表面最显著的特征是直径约130公里的赫歇尔撞击坑，使其外观类似《星球大战》中的死星。",
+        "en": "The most prominent feature on Mimas is the Herschel impact crater, about 130 km in diameter, giving it a resemblance to the Death Star from Star Wars."
+      }
+    },
+    {
+      "id": "q_mimas_002",
+      "question": {
+        "zh": "土卫一的平均半径大约是多少？",
+        "en": "What is the approximate mean radius of Mimas?"
+      },
+      "options": [
+        {
+          "zh": "约198公里",
+          "en": "About 198 km"
+        },
+        {
+          "zh": "约530公里",
+          "en": "About 530 km"
+        },
+        {
+          "zh": "约764公里",
+          "en": "About 764 km"
+        },
+        {
+          "zh": "约1230公里",
+          "en": "About 1230 km"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫一的平均半径约为198公里，是土星最小的主要卫星之一。",
+        "en": "Mimas has a mean radius of about 198 km, making it one of Saturn's smallest major moons."
+      }
+    },
+    {
+      "id": "q_mimas_003",
+      "question": {
+        "zh": "土卫一绕土星公转的轨道周期大约是多少？",
+        "en": "What is the approximate orbital period of Mimas around Saturn?"
+      },
+      "options": [
+        {
+          "zh": "约0.94天",
+          "en": "About 0.94 days"
+        },
+        {
+          "zh": "约4.5天",
+          "en": "About 4.5 days"
+        },
+        {
+          "zh": "约15.9天",
+          "en": "About 15.9 days"
+        },
+        {
+          "zh": "约79天",
+          "en": "About 79 days"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫一的轨道周期约为22.6小时（0.94天），是土星内侧轨道最快的卫星之一。",
+        "en": "Mimas orbits Saturn in about 22.6 hours (0.94 days), making it one of the fastest-orbiting inner moons."
+      }
+    },
+    {
+      "id": "q_mimas_004",
+      "question": {
+        "zh": "土卫一主要由什么物质构成？",
+        "en": "What is Mimas primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "水冰和少量岩石",
+          "en": "Water ice and a small amount of rock"
+        },
+        {
+          "zh": "纯铁和镍",
+          "en": "Pure iron and nickel"
+        },
+        {
+          "zh": "液态甲烷",
+          "en": "Liquid methane"
+        },
+        {
+          "zh": "硅酸盐岩石为主",
+          "en": "Primarily silicate rock"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫一的密度约为1.15 g/cm³，表明它主要由水冰组成，含有少量岩石成分。",
+        "en": "Mimas has a density of about 1.15 g/cm³, indicating it is composed mostly of water ice with a small rocky fraction."
+      }
+    },
+    {
+      "id": "q_mimas_005",
+      "question": {
+        "zh": "土卫一与土星环的什么结构有引力关联？",
+        "en": "Which Saturn ring structure is gravitationally associated with Mimas?"
+      },
+      "options": [
+        {
+          "zh": "卡西尼环缝",
+          "en": "The Cassini Division"
+        },
+        {
+          "zh": "恩克环缝",
+          "en": "The Encke Gap"
+        },
+        {
+          "zh": "F环",
+          "en": "The F Ring"
+        },
+        {
+          "zh": "E环",
+          "en": "The E Ring"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫一与土星环的卡西尼环缝存在2:1轨道共振，清除了该区域的环物质。",
+        "en": "Mimas is in a 2:1 orbital resonance with the Cassini Division, clearing ring material from that region."
+      }
+    },
+    {
+      "id": "q_mimas_006",
+      "question": {
+        "zh": "土卫一的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Mimas?"
+      },
+      "options": [
+        {
+          "zh": "约-200°C（73 K）",
+          "en": "About -200°C (73 K)"
+        },
+        {
+          "zh": "约-100°C（173 K）",
+          "en": "About -100°C (173 K)"
+        },
+        {
+          "zh": "约0°C（273 K）",
+          "en": "About 0°C (273 K)"
+        },
+        {
+          "zh": "约100°C（373 K）",
+          "en": "About 100°C (373 K)"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫一表面温度极低，白天最高约-200°C（73 K），夜晚更低。",
+        "en": "Mimas has a very cold surface, with daytime highs around -200°C (73 K) and even colder at night."
+      }
+    },
+    {
+      "id": "q_mimas_007",
+      "question": {
+        "zh": "土卫一是由谁在什么年份发现的？",
+        "en": "Who discovered Mimas and in what year?"
+      },
+      "options": [
+        {
+          "zh": "威廉·赫歇尔，1789年",
+          "en": "William Herschel, 1789"
+        },
+        {
+          "zh": "伽利略·伽利雷，1610年",
+          "en": "Galileo Galilei, 1610"
+        },
+        {
+          "zh": "克里斯蒂安·惠更斯，1655年",
+          "en": "Christiaan Huygens, 1655"
+        },
+        {
+          "zh": "乔凡尼·卡西尼，1671年",
+          "en": "Giovanni Cassini, 1671"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫一由英国天文学家威廉·赫歇尔于1789年发现。",
+        "en": "Mimas was discovered by the British astronomer William Herschel in 1789."
+      }
+    },
+    {
+      "id": "q_mimas_008",
+      "question": {
+        "zh": "土卫一的形状最接近以下哪种描述？",
+        "en": "Which description best matches the shape of Mimas?"
+      },
+      "options": [
+        {
+          "zh": "接近球形，但略有椭球变形",
+          "en": "Nearly spherical, but slightly ellipsoidal"
+        },
+        {
+          "zh": "完全不规则，像马铃薯",
+          "en": "Completely irregular, like a potato"
+        },
+        {
+          "zh": "扁平的圆盘状",
+          "en": "A flattened disk shape"
+        },
+        {
+          "zh": "细长的雪茄形",
+          "en": "An elongated cigar shape"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫一由于自身引力已接近球形，但受潮汐力影响略有椭球变形。",
+        "en": "Mimas is nearly spherical due to its own gravity, but slightly ellipsoidal due to tidal forces."
+      }
+    },
+    {
+      "id": "q_mimas_009",
+      "question": {
+        "zh": "以下哪项关于土卫一内部结构的说法最可能正确？",
+        "en": "Which statement about Mimas' internal structure is most likely correct?"
+      },
+      "options": [
+        {
+          "zh": "可能有一个岩石核心和冰质地幔",
+          "en": "It likely has a rocky core and an icy mantle"
+        },
+        {
+          "zh": "完全由松散尘埃组成",
+          "en": "It is entirely composed of loose dust"
+        },
+        {
+          "zh": "内部是空心的",
+          "en": "Its interior is hollow"
+        },
+        {
+          "zh": "拥有活跃的金属内核",
+          "en": "It has an active metallic core"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "基于密度和模型，土卫一被认为有一个小岩石核心，周围是水冰地幔。",
+        "en": "Based on density and models, Mimas is thought to have a small rocky core surrounded by a water-ice mantle."
+      }
+    },
+    {
+      "id": "q_mimas_010",
+      "question": {
+        "zh": "哪艘探测器曾近距离飞越土卫一并提供了详细图像？",
+        "en": "Which spacecraft performed a close flyby of Mimas and provided detailed images?"
+      },
+      "options": [
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        },
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        },
+        {
+          "zh": "朱诺号",
+          "en": "Juno"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "卡西尼号在2004-2017年期间多次飞越土卫一，获得了高分辨率图像和数据。",
+        "en": "The Cassini spacecraft performed multiple flybys of Mimas between 2004 and 2017, returning high-resolution images and data."
+      }
+    }
+  ]
+}

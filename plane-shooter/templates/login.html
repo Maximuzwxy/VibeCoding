@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Plane Shooter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <h1 class="login-title">🚀 Plane Shooter</h1>
+        <p class="login-subtitle">Enter your username to start playing!</p>
+        
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <!-- Login Form -->
+        <form method="POST" action="{{ url_for('login') }}" class="login-form">
+            <div class="form-group">
+                <label for="username">👤 Username</label>
+                <input type="text" id="username" name="username" class="form-control" 
+                       required placeholder="Enter your username" maxlength="20" autofocus>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-large">
+                🎮 Start Playing
+            </button>
+        </form>
+        
+        <div class="login-footer">
+            <p>No password needed - just enter your username!</p>
+            <p>
+                <a href="{{ url_for('leaderboard') }}">🏆 View Leaderboard</a> | 
+                <a href="{{ url_for('rules') }}">📖 Game Rules</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

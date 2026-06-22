@@ -1,0 +1,89 @@
+{
+  "id": "uranus",
+  "name": {"zh": "天王星", "en": "Uranus"},
+  "icon": "♅",
+  "theme_color": "#4fd0e7",
+  "accent_color": "#4fd0e7",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "行星类型", "en": "Planet Type"}, "value": {"zh": "冰巨星", "en": "Ice Giant"}},
+        {"label": {"zh": "赤道直径", "en": "Equatorial Diameter"}, "value": {"zh": "51,118 km", "en": "51,118 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "8.681×10²⁵kg", "en": "8.681×10²⁵kg"}},
+        {"label": {"zh": "体积", "en": "Volume"}, "value": {"zh": "6.833×10¹³km³", "en": "6.833×10¹³km³"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "1.27 g/cm³", "en": "1.27 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "8.69 m/s²", "en": "8.69 m/s²"}}
+      ],
+      "note": {"zh": "※ 太阳系第三大行星（按直径）", "en": "※ Third largest planet by diameter in Solar System"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "17 小时 14 分", "en": "17h 14m"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "84 年", "en": "84 years"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "6.8 km/s", "en": "6.8 km/s"}},
+        {"label": {"zh": "轨道离心率", "en": "Orbital Eccentricity"}, "value": {"zh": "0.0472", "en": "0.0472"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "0.77°", "en": "0.77°"}}
+      ],
+      "note": {"zh": "※ 轴倾角 97.8°（躺着自转）", "en": "※ Axial tilt 97.8° (rotates on its side)"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-224°C", "en": "-224°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "-197°C", "en": "-197°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "100-300 kPa", "en": "100-300 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "H₂ 83%, He 15%, CH₄ 2.3%", "en": "H₂ 83%, He 15%, CH₄ 2.3%"}},
+        {"label": {"zh": "磁场强度", "en": "Magnetic Field Strength"}, "value": {"zh": "地球的 50 倍", "en": "50x Earth's"}}
+      ],
+      "note": {"zh": "※ 太阳系最冷的行星大气", "en": "※ Coldest planetary atmosphere in Solar System"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "近日点", "en": "Perihelion"}, "value": {"zh": "27.4 亿 km", "en": "2.74 billion km"}},
+        {"label": {"zh": "远日点", "en": "Aphelion"}, "value": {"zh": "30.0 亿 km", "en": "3.00 billion km"}},
+        {"label": {"zh": "半长轴", "en": "Semi-major Axis"}, "value": {"zh": "28.7 亿 km", "en": "2.87 billion km"}},
+        {"label": {"zh": "天文单位", "en": "Astronomical Units"}, "value": {"zh": "19.2 AU", "en": "19.2 AU"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "2.5-2.8 小时", "en": "2.5-2.8 hours"}}
+      ]
+    },
+    {
+      "title": {"zh": "🛰 卫星系统", "en": "🛰 Satellite System"},
+      "items": [
+        {"label": {"zh": "已知卫星", "en": "Known Moons"}, "value": {"zh": "27 颗", "en": "27 moons"}},
+        {"label": {"zh": "主要卫星", "en": "Major Moons"}, "value": {"zh": "5 颗", "en": "5 major moons"}},
+        {"label": {"zh": "最大卫星", "en": "Largest Moon"}, "value": {"zh": "天卫三 (Titania)", "en": "Titania"}},
+        {"label": {"zh": "光环数量", "en": "Ring Count"}, "value": {"zh": "13 个", "en": "13 rings"}}
+      ],
+      "note": {"zh": "※ 5 颗主要卫星：天卫一、天卫二、天卫三、天卫四、天卫五", "en": "※ 5 major moons: Miranda, Ariel, Titania, Oberon, Umbriel"},
+      "moons_list": [
+        {"name": {"zh": "天卫一", "en": "Miranda"}, "color": "#b8c4d6", "period": {"zh": "1.41 天", "en": "1.41 days"}},
+        {"name": {"zh": "天卫二", "en": "Ariel"}, "color": "#c8d0d8", "period": {"zh": "2.52 天", "en": "2.52 days"}},
+        {"name": {"zh": "天卫三", "en": "Titania"}, "color": "#b0b8c0", "period": {"zh": "8.71 天", "en": "8.71 days"}},
+        {"name": {"zh": "天卫四", "en": "Oberon"}, "color": "#a8b0b8", "period": {"zh": "13.46 天", "en": "13.46 days"}},
+        {"name": {"zh": "天卫五", "en": "Umbriel"}, "color": "#98a0a8", "period": {"zh": "4.14 天", "en": "4.14 days"}}
+      ]
+    },
+    {
+      "title": {"zh": "💍 行星环系统", "en": "💍 Ring System"},
+      "items": [
+        {"label": {"zh": "光环数量", "en": "Number of Rings"}, "value": {"zh": "13 个", "en": "13 rings"}},
+        {"label": {"zh": "发现时间", "en": "Discovery Year"}, "value": {"zh": "1977 年", "en": "1977"}},
+        {"label": {"zh": "最亮环", "en": "Brightest Ring"}, "value": {"zh": "ε环", "en": "Epsilon ring"}},
+        {"label": {"zh": "环宽度", "en": "Ring Width"}, "value": {"zh": "1-100 km", "en": "1-100 km"}}
+      ],
+      "note": {"zh": "※ 天王星环是太阳系中最暗的环系统", "en": "※ Uranus rings are darkest in Solar System"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "发现者", "en": "Discoverer"}, "value": {"zh": "威廉·赫歇尔", "en": "William Herschel"}},
+        {"label": {"zh": "发现时间", "en": "Discovery Year"}, "value": {"zh": "1781 年", "en": "1781"}},
+        {"label": {"zh": "首次飞掠", "en": "First Flyby"}, "value": {"zh": "1986 年旅行者 2 号", "en": "1986 Voyager 2"}},
+        {"label": {"zh": "当前任务", "en": "Current Missions"}, "value": {"zh": "多个任务规划中", "en": "Multiple missions planned"}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_neptune_001",
+      "question": {
+        "zh": "海王星是太阳系中距离太阳第几远的行星？",
+        "en": "What is the rank of Neptune in terms of distance from the Sun in the solar system?"
+      },
+      "options": [
+        {
+          "zh": "第七",
+          "en": "Seventh"
+        },
+        {
+          "zh": "第八",
+          "en": "Eighth"
+        },
+        {
+          "zh": "第九",
+          "en": "Ninth"
+        },
+        {
+          "zh": "第六",
+          "en": "Sixth"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "海王星是太阳系中距离太阳第八远的行星，仅次于水星、金星、地球、火星、木星、土星和天王星。",
+        "en": "Neptune is the eighth planet from the Sun, after Mercury, Venus, Earth, Mars, Jupiter, Saturn, and Uranus."
+      }
+    },
+    {
+      "id": "q_neptune_002",
+      "question": {
+        "zh": "海王星的大气层中哪种气体赋予它独特的蓝色外观？",
+        "en": "Which gas in Neptune's atmosphere gives it its distinctive blue color?"
+      },
+      "options": [
+        {
+          "zh": "氧气",
+          "en": "Oxygen"
+        },
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "甲烷",
+          "en": "Methane"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "海王星大气中的甲烷吸收红光，反射蓝光，因此海王星呈现蓝色。",
+        "en": "Methane in Neptune's atmosphere absorbs red light and reflects blue light, giving Neptune its blue color."
+      }
+    },
+    {
+      "id": "q_neptune_003",
+      "question": {
+        "zh": "海王星绕太阳公转一周大约需要多少地球年？",
+        "en": "Approximately how many Earth years does it take for Neptune to orbit the Sun once?"
+      },
+      "options": [
+        {
+          "zh": "84年",
+          "en": "84 years"
+        },
+        {
+          "zh": "165年",
+          "en": "165 years"
+        },
+        {
+          "zh": "248年",
+          "en": "248 years"
+        },
+        {
+          "zh": "12年",
+          "en": "12 years"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "海王星的公转周期约为165个地球年。",
+        "en": "Neptune's orbital period is about 165 Earth years."
+      }
+    },
+    {
+      "id": "q_neptune_004",
+      "question": {
+        "zh": "海王星上记录到的太阳系中最强风速大约是多少？",
+        "en": "What is the approximate highest wind speed recorded on Neptune, the strongest in the solar system?"
+      },
+      "options": [
+        {
+          "zh": "500公里/小时",
+          "en": "500 km/h"
+        },
+        {
+          "zh": "1100公里/小时",
+          "en": "1100 km/h"
+        },
+        {
+          "zh": "2100公里/小时",
+          "en": "2100 km/h"
+        },
+        {
+          "zh": "300公里/小时",
+          "en": "300 km/h"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "海王星的风速可达约2100公里/小时，是太阳系中已知风速最快的行星。",
+        "en": "Wind speeds on Neptune can reach about 2100 km/h, making it the planet with the strongest known winds in the solar system."
+      }
+    },
+    {
+      "id": "q_neptune_005",
+      "question": {
+        "zh": "海王星有多少颗已知的天然卫星？",
+        "en": "How many known natural satellites does Neptune have?"
+      },
+      "options": [
+        {
+          "zh": "14颗",
+          "en": "14"
+        },
+        {
+          "zh": "16颗",
+          "en": "16"
+        },
+        {
+          "zh": "27颗",
+          "en": "27"
+        },
+        {
+          "zh": "8颗",
+          "en": "8"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "截至当前，海王星已知有16颗天然卫星，其中最大的是海卫一（特里同）。",
+        "en": "As of now, Neptune has 16 known natural satellites, the largest of which is Triton."
+      }
+    },
+    {
+      "id": "q_neptune_006",
+      "question": {
+        "zh": "唯一飞越海王星进行探测的航天器是哪一个？",
+        "en": "Which spacecraft is the only one to have flown by Neptune for exploration?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "旅行者2号于1989年飞越海王星，是迄今为止唯一造访过海王星的航天器。",
+        "en": "Voyager 2 flew by Neptune in 1989 and remains the only spacecraft to have visited Neptune."
+      }
+    },
+    {
+      "id": "q_neptune_007",
+      "question": {
+        "zh": "海王星的质量大约是地球的多少倍？",
+        "en": "How many times is Neptune's mass approximately that of Earth?"
+      },
+      "options": [
+        {
+          "zh": "5倍",
+          "en": "5 times"
+        },
+        {
+          "zh": "10倍",
+          "en": "10 times"
+        },
+        {
+          "zh": "17倍",
+          "en": "17 times"
+        },
+        {
+          "zh": "30倍",
+          "en": "30 times"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "海王星的质量约为地球的17倍，属于冰巨星。",
+        "en": "Neptune's mass is about 17 times that of Earth, classifying it as an ice giant."
+      }
+    },
+    {
+      "id": "q_neptune_008",
+      "question": {
+        "zh": "海王星是否有环系统？",
+        "en": "Does Neptune have a ring system?"
+      },
+      "options": [
+        {
+          "zh": "没有环",
+          "en": "No rings"
+        },
+        {
+          "zh": "有，但非常暗淡稀疏",
+          "en": "Yes, but very faint and sparse"
+        },
+        {
+          "zh": "有，和土星一样明亮",
+          "en": "Yes, as bright as Saturn's"
+        },
+        {
+          "zh": "有，但只有一道环",
+          "en": "Yes, but only one ring"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "海王星有暗淡的环系统，主要由尘埃和岩石碎片组成，远不如土星环明亮。",
+        "en": "Neptune has a faint ring system composed mainly of dust and rocky debris, much less bright than Saturn's rings."
+      }
+    },
+    {
+      "id": "q_neptune_009",
+      "question": {
+        "zh": "海王星的内核主要由什么组成？",
+        "en": "What is Neptune's core primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "铁和镍",
+          "en": "Iron and nickel"
+        },
+        {
+          "zh": "岩石和冰",
+          "en": "Rock and ice"
+        },
+        {
+          "zh": "氢和氦",
+          "en": "Hydrogen and helium"
+        },
+        {
+          "zh": "液态金属氢",
+          "en": "Liquid metallic hydrogen"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "海王星被认为有一个岩石和冰组成的内核，外面包裹着水、甲烷和氨的冰幔。",
+        "en": "Neptune is thought to have a core of rock and ice, surrounded by a mantle of water, methane, and ammonia ices."
+      }
+    },
+    {
+      "id": "q_neptune_010",
+      "question": {
+        "zh": "海王星的大黑斑是什么？",
+        "en": "What was the Great Dark Spot on Neptune?"
+      },
+      "options": [
+        {
+          "zh": "一个巨大的火山口",
+          "en": "A giant volcanic crater"
+        },
+        {
+          "zh": "一个巨大的风暴系统",
+          "en": "A giant storm system"
+        },
+        {
+          "zh": "一片冰原",
+          "en": "An ice field"
+        },
+        {
+          "zh": "一颗卫星的阴影",
+          "en": "The shadow of a moon"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "大黑斑是1989年旅行者2号在海王星上发现的一个巨大反气旋风暴系统，类似于木星的大红斑。",
+        "en": "The Great Dark Spot was a giant anticyclonic storm system discovered on Neptune by Voyager 2 in 1989, similar to Jupiter's Great Red Spot."
+      }
+    }
+  ]
+}

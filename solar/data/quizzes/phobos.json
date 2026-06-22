@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_phobos_001",
+      "question": {
+        "zh": "火卫一是火星最大的卫星，它的形状大致是什么？",
+        "en": "Phobos is the larger of Mars' two moons. What is its approximate shape?"
+      },
+      "options": [
+        {
+          "zh": "不规则形状",
+          "en": "Irregular shape"
+        },
+        {
+          "zh": "完美球形",
+          "en": "Perfect sphere"
+        },
+        {
+          "zh": "立方体",
+          "en": "Cube"
+        },
+        {
+          "zh": "扁平圆盘状",
+          "en": "Flat disk"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "火卫一是一个不规则形状的天体，尺寸约为27 km × 22 km × 18 km，不具备足够引力使其成为球形。",
+        "en": "Phobos is an irregularly shaped body with dimensions of about 27 km × 22 km × 18 km, lacking sufficient gravity to become spherical."
+      }
+    },
+    {
+      "id": "q_phobos_002",
+      "question": {
+        "zh": "火卫一绕火星公转的周期大约是多少？",
+        "en": "What is the approximate orbital period of Phobos around Mars?"
+      },
+      "options": [
+        {
+          "zh": "约7.7小时",
+          "en": "About 7.7 hours"
+        },
+        {
+          "zh": "约24小时",
+          "en": "About 24 hours"
+        },
+        {
+          "zh": "约30天",
+          "en": "About 30 days"
+        },
+        {
+          "zh": "约687天",
+          "en": "About 687 days"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "火卫一轨道周期极短，仅约7.7小时，比火星自转周期（24.6小时）还短，因此从火星表面看它是西升东落的。",
+        "en": "Phobos has a very short orbital period of about 7.7 hours, shorter than Mars' rotation period (24.6 hours), so it rises in the west and sets in the east as seen from Mars."
+      }
+    },
+    {
+      "id": "q_phobos_003",
+      "question": {
+        "zh": "火卫一表面最显著的地貌特征是什么？",
+        "en": "What is the most prominent surface feature on Phobos?"
+      },
+      "options": [
+        {
+          "zh": "巨大的陨石坑斯蒂克尼",
+          "en": "The large impact crater Stickney"
+        },
+        {
+          "zh": "活跃的火山口",
+          "en": "Active volcanic calderas"
+        },
+        {
+          "zh": "广阔的冰原",
+          "en": "Vast ice plains"
+        },
+        {
+          "zh": "深邃的峡谷系统",
+          "en": "Deep canyon systems"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "斯蒂克尼陨石坑直径约9公里，几乎覆盖了火卫一表面很大一部分，是火卫一最显著的特征。",
+        "en": "Stickney crater, about 9 km in diameter, covers a significant portion of Phobos' surface and is its most prominent feature."
+      }
+    },
+    {
+      "id": "q_phobos_004",
+      "question": {
+        "zh": "火卫一的平均密度约为1.9 g/cm³，这暗示它可能主要由什么物质组成？",
+        "en": "Phobos has an average density of about 1.9 g/cm³. What does this suggest about its composition?"
+      },
+      "options": [
+        {
+          "zh": "碳质 chondrite 类岩石和冰的混合物",
+          "en": "A mixture of carbonaceous chondrite rock and ice"
+        },
+        {
+          "zh": "纯铁镍金属",
+          "en": "Pure iron-nickel metal"
+        },
+        {
+          "zh": "纯水冰",
+          "en": "Pure water ice"
+        },
+        {
+          "zh": "致密玄武岩",
+          "en": "Dense basalt"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "火卫一的低密度（约1.9 g/cm³）表明它可能由多孔的碳质 chondrite 类岩石和少量水冰混合而成，类似于某些小行星。",
+        "en": "The low density (~1.9 g/cm³) of Phobos suggests it is composed of porous carbonaceous chondrite rock mixed with some water ice, similar to certain asteroids."
+      }
+    },
+    {
+      "id": "q_phobos_005",
+      "question": {
+        "zh": "火卫一表面的沟槽（条纹）最可能的成因是什么？",
+        "en": "What is the most likely origin of the grooves (striations) on Phobos' surface?"
+      },
+      "options": [
+        {
+          "zh": "斯蒂克尼撞击产生的溅射物和应力裂缝",
+          "en": "Ejecta and stress fractures from the Stickney impact"
+        },
+        {
+          "zh": "火星潮汐力造成的拉伸",
+          "en": "Tidal stretching from Mars"
+        },
+        {
+          "zh": "古代水流的侵蚀",
+          "en": "Ancient water erosion"
+        },
+        {
+          "zh": "火山熔岩流",
+          "en": "Volcanic lava flows"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "主流观点认为火卫一的沟槽是由斯蒂克尼陨石坑形成时产生的溅射物链和应力裂缝造成的。",
+        "en": "The prevailing view is that Phobos' grooves were formed by chains of ejecta and stress fractures resulting from the Stickney impact."
+      }
+    },
+    {
+      "id": "q_phobos_006",
+      "question": {
+        "zh": "火卫一距离火星表面约6000公里，它正在逐渐靠近还是远离火星？",
+        "en": "Phobos orbits about 6,000 km above the Martian surface. Is it gradually moving toward or away from Mars?"
+      },
+      "options": [
+        {
+          "zh": "逐渐靠近火星",
+          "en": "Gradually moving toward Mars"
+        },
+        {
+          "zh": "逐渐远离火星",
+          "en": "Gradually moving away from Mars"
+        },
+        {
+          "zh": "距离保持不变",
+          "en": "Distance remains constant"
+        },
+        {
+          "zh": "轨道不稳定，忽远忽近",
+          "en": "Orbit is unstable, fluctuating"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "由于潮汐相互作用，火卫一的轨道正在缓慢衰减，预计约3000万至5000万年后它将坠入火星或瓦解成环。",
+        "en": "Due to tidal interactions, Phobos' orbit is slowly decaying. In about 30–50 million years, it will either crash into Mars or break apart into a ring."
+      }
+    },
+    {
+      "id": "q_phobos_007",
+      "question": {
+        "zh": "火卫一的表面重力大约是地球表面重力的多少？",
+        "en": "The surface gravity on Phobos is approximately what fraction of Earth's surface gravity?"
+      },
+      "options": [
+        {
+          "zh": "约1/1000",
+          "en": "About 1/1000"
+        },
+        {
+          "zh": "约1/10",
+          "en": "About 1/10"
+        },
+        {
+          "zh": "约1/2",
+          "en": "About 1/2"
+        },
+        {
+          "zh": "与地球相同",
+          "en": "Same as Earth"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "火卫一的表面重力极低，仅为地球的约1/1000，一个在地球上重100公斤的人在那里仅重约100克。",
+        "en": "The surface gravity on Phobos is extremely low, about 1/1000 of Earth's. A person weighing 100 kg on Earth would weigh only about 100 grams there."
+      }
+    },
+    {
+      "id": "q_phobos_008",
+      "question": {
+        "zh": "火卫一的表面温度范围大约是多少？",
+        "en": "What is the approximate surface temperature range on Phobos?"
+      },
+      "options": [
+        {
+          "zh": "约-40°C到0°C",
+          "en": "About -40°C to 0°C"
+        },
+        {
+          "zh": "约-120°C到-20°C",
+          "en": "About -120°C to -20°C"
+        },
+        {
+          "zh": "约-200°C到-100°C",
+          "en": "About -200°C to -100°C"
+        },
+        {
+          "zh": "约20°C到50°C",
+          "en": "About 20°C to 50°C"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火卫一没有大气层保温，向阳面温度可达约-20°C，背阳面则低至约-120°C。",
+        "en": "With no atmosphere to retain heat, the sunlit side of Phobos can reach about -20°C, while the dark side drops to about -120°C."
+      }
+    },
+    {
+      "id": "q_phobos_009",
+      "question": {
+        "zh": "以下哪个航天器首次拍摄了火卫一的近距离高分辨率图像？",
+        "en": "Which spacecraft first took close-up, high-resolution images of Phobos?"
+      },
+      "options": [
+        {
+          "zh": "水手9号",
+          "en": "Mariner 9"
+        },
+        {
+          "zh": "海盗1号",
+          "en": "Viking 1"
+        },
+        {
+          "zh": "火星快车",
+          "en": "Mars Express"
+        },
+        {
+          "zh": "好奇号火星车",
+          "en": "Curiosity rover"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "1971年，美国的水手9号探测器成为第一个环绕火星的航天器，并首次拍摄了火卫一的近距离高分辨率图像。",
+        "en": "In 1971, NASA's Mariner 9 became the first spacecraft to orbit Mars and captured the first close-up, high-resolution images of Phobos."
+      }
+    },
+    {
+      "id": "q_phobos_010",
+      "question": {
+        "zh": "关于火卫一的起源，目前最被广泛接受的理论是什么？",
+        "en": "What is the most widely accepted theory for the origin of Phobos?"
+      },
+      "options": [
+        {
+          "zh": "被火星引力捕获的小行星",
+          "en": "An asteroid captured by Mars' gravity"
+        },
+        {
+          "zh": "火星早期与另一个天体撞击形成的碎片",
+          "en": "Debris from an early giant impact on Mars"
+        },
+        {
+          "zh": "与火卫二同时形成的原始火星卫星",
+          "en": "A primordial Martian moon formed together with Deimos"
+        },
+        {
+          "zh": "来自太阳系外的星际天体",
+          "en": "An interstellar object from outside the solar system"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "火卫一的光谱和密度与某些小行星相似，最广泛接受的理论认为它是一颗被火星引力捕获的碳质小行星。",
+        "en": "Phobos' spectrum and density resemble those of certain asteroids, and the most widely accepted theory is that it is a carbonaceous asteroid captured by Mars' gravity."
+      }
+    }
+  ]
+}

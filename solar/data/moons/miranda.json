@@ -1,0 +1,401 @@
+{
+  "id": "miranda",
+  "name": {
+    "zh": "天卫一",
+    "en": "Miranda"
+  },
+  "icon": "⛢",
+  "theme_color": "#8a9ba8",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "卫星（天王星V）",
+            "en": "Moon (Uranus V)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "471.6 km",
+            "en": "471.6 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "6.59 × 10¹⁹ kg",
+            "en": "6.59 × 10¹⁹ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "5.48 × 10⁷ km³",
+            "en": "5.48 × 10⁷ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.20 g/cm³",
+            "en": "1.20 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.079 m/s² (0.008 g)",
+            "en": "0.079 m/s² (0.008 g)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫一是天王星已知卫星中最小且最内侧的大卫星，其表面拥有太阳系中最极端的地形反差——巨大的峡谷深度可达20公里。",
+        "en": "※ Miranda is the smallest and innermost of Uranus's major moons, with the most extreme terrain contrast in the solar system—canyons up to 20 km deep."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "1.413 天（同步自转）",
+            "en": "1.413 days (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "1.413 天",
+            "en": "1.413 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "6.66 km/s",
+            "en": "6.66 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0013",
+            "en": "0.0013"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "4.34°（相对于天王星赤道）",
+            "en": "4.34° (to Uranus's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫一的轨道几乎完美圆形，离心率仅0.0013，是天王星主要卫星中最接近正圆的轨道之一。",
+        "en": "※ Miranda's orbit is nearly perfectly circular, with an eccentricity of only 0.0013, one of the most circular among Uranus's major moons."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "约 60 K（-213 °C）",
+            "en": "≈ 60 K (-213 °C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 60 K",
+            "en": "≈ 60 K"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "几乎为零（无显著大气）",
+            "en": "Nearly zero (no significant atmosphere)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "极弱或无固有磁场",
+            "en": "Very weak or no intrinsic magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫一表面温度极低，但内部可能曾因潮汐加热而部分融化，从而形成了其独特的地质构造。",
+        "en": "※ Miranda's surface is extremely cold, but its interior may have partially melted due to past tidal heating, creating its unique geological features."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "129,900 km（距天王星中心）",
+            "en": "129,900 km (from Uranus center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "130,300 km（距天王星中心）",
+            "en": "130,300 km (from Uranus center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "129,900 km",
+            "en": "129,900 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.000868 AU",
+            "en": "0.000868 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 0.43 秒（从天王星）",
+            "en": "≈ 0.43 sec (from Uranus)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "天卫一本身是天王星的卫星，无自身天然卫星",
+            "en": "Miranda itself is a moon of Uranus; no natural satellites of its own"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "不适用",
+            "en": "N/A"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫一是天王星五颗主要卫星中最内侧的一颗，距离天王星仅约13万公里，比地球到月球距离的三分之一还短。",
+        "en": "※ Miranda is the innermost of Uranus's five major moons, orbiting only about 130,000 km from Uranus—less than one-third the Earth-Moon distance."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "冠状构造（coronae）、峡谷、撞击坑、沟壑",
+            "en": "Coronae, canyons, impact craters, grooves"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "阿隆索撞击坑（Alonso），直径约 25 km",
+            "en": "Alonso crater, ~25 km diameter"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 1-3 亿年（部分区域较年轻）",
+            "en": "≈ 100-300 million years (some regions younger)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "维罗纳断崖（Verona Rupes），落差约 20 km",
+            "en": "Verona Rupes, ~20 km vertical drop"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 维罗纳断崖是太阳系已知最高的悬崖之一，落差达20公里，相当于地球珠穆朗玛峰高度的两倍多。",
+        "en": "※ Verona Rupes is one of the tallest known cliffs in the solar system, with a vertical drop of 20 km—more than twice the height of Mount Everest."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1948年2月16日，由杰拉德·柯伊伯发现",
+            "en": "February 16, 1948, by Gerard Kuiper"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1986年1月24日，旅行者2号",
+            "en": "January 24, 1986, Voyager 2"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "尚未有探测器入轨",
+            "en": "No orbiter yet"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "无活跃任务；未来计划：天王星轨道器（2030年代提案）",
+            "en": "No active mission; future: Uranus Orbiter (proposed 2030s)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 旅行者2号是迄今为止唯一探测过天卫一的航天器，它拍摄的图像揭示了这颗小卫星令人惊叹的复杂地质历史。",
+        "en": "※ Voyager 2 is the only spacecraft to have visited Miranda, revealing its surprisingly complex geological history in just a few images."
+      }
+    }
+  ]
+}

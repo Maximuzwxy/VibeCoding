@@ -1,0 +1,401 @@
+{
+  "id": "triton",
+  "name": {
+    "zh": "海卫一",
+    "en": "Triton"
+  },
+  "icon": "♆",
+  "theme_color": "#6a8caf",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "卫星（海王星最大卫星）",
+            "en": "Moon (largest moon of Neptune)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "2,706.8 km",
+            "en": "2,706.8 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "2.14 × 10²² kg",
+            "en": "2.14 × 10²² kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "1.04 × 10¹⁰ km³",
+            "en": "1.04 × 10¹⁰ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "2.061 g/cm³",
+            "en": "2.061 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.779 m/s²（约地球的0.079倍）",
+            "en": "0.779 m/s² (about 0.079 g)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海卫一是太阳系中唯一一颗拥有逆行轨道的大卫星，被认为是被海王星捕获的柯伊伯带天体。",
+        "en": "※ Triton is the only large moon in the solar system with a retrograde orbit, believed to be a captured Kuiper Belt object."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "5.877 天（潮汐锁定）",
+            "en": "5.877 days (tidally locked)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "5.877 天",
+            "en": "5.877 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "4.39 km/s",
+            "en": "4.39 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.000016（近乎完美圆形）",
+            "en": "0.000016 (nearly circular)"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "156.885°（逆行）",
+            "en": "156.885° (retrograde)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海卫一的轨道正在缓慢衰减，大约在36亿年后它将突破洛希极限，被海王星引力撕碎形成新的行星环。",
+        "en": "※ Triton's orbit is slowly decaying; in about 3.6 billion years it will cross the Roche limit and be torn apart by Neptune's gravity, forming a new ring."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "约38 K（−235 °C）",
+            "en": "~38 K (−235 °C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约38 K",
+            "en": "~38 K"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "约1.4 Pa（地球的1/70,000）",
+            "en": "~1.4 Pa (1/70,000 of Earth's)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "氮气（99%）、甲烷（少量）",
+            "en": "Nitrogen (99%), methane (trace)"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无显著固有磁场",
+            "en": "No significant intrinsic magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海卫一表面存在间歇性的氮冰火山喷发，喷出的氮气可达8公里高度，是太阳系中已知最冷的活跃地质天体。",
+        "en": "※ Triton has intermittent nitrogen ice volcanoes that erupt plumes up to 8 km high, making it the coldest known geologically active body in the solar system."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕海王星公转）",
+            "en": "N/A (orbits Neptune)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用",
+            "en": "N/A"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "354,759 km（距海王星中心）",
+            "en": "354,759 km (from Neptune's center)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "约30.1 AU（距太阳）",
+            "en": "~30.1 AU (from Sun)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约4.2小时（从太阳）",
+            "en": "~4.2 hours (from Sun)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（海卫一本身是卫星）",
+            "en": "0 (Triton itself is a moon)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海卫一是海王星最大的卫星，占海王星系统总质量的99.7%以上，其他卫星加起来都不足其质量的0.3%。",
+        "en": "※ Triton contains more than 99.7% of the total mass of Neptune's satellite system; all other moons combined account for less than 0.3%."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "冰原、冰火山、撞击坑、槽沟地形（哈密瓜地形）",
+            "en": "Ice plains, cryovolcanoes, impact craters, cantaloupe terrain"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "马祖尔坑（Mazomba，直径约27 km）",
+            "en": "Mazomba (approx. 27 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "相对年轻，约1亿至5亿年",
+            "en": "Relatively young, ~100–500 million years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "约2 km（冰火山穹丘）",
+            "en": "~2 km (cryovolcanic dome)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 海卫一的“哈密瓜地形”由大量凹陷和脊状结构组成，形似哈密瓜皮，是太阳系中独一无二的地貌。",
+        "en": "※ Triton's 'cantaloupe terrain' consists of numerous pits and ridges resembling a melon rind, a unique landform in the solar system."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1846年10月10日，威廉·拉塞尔",
+            "en": "October 10, 1846, by William Lassell"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1989年8月25日，旅行者2号",
+            "en": "August 25, 1989, Voyager 2"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "尚未实现",
+            "en": "Not yet achieved"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "无；旅行者2号是唯一探测器",
+            "en": "None; Voyager 2 is the only probe"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 旅行者2号飞掠时拍摄了海卫一南极约40%的表面，发现其表面温度低至-235°C，并观测到活跃的氮冰喷泉。",
+        "en": "※ During its flyby, Voyager 2 imaged about 40% of Triton's southern hemisphere, recorded surface temperatures as low as −235°C, and observed active nitrogen geysers."
+      }
+    }
+  ]
+}

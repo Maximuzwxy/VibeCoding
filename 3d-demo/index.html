@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Scene Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Control Panel -->
+        <div class="control-panel" id="control-panel">
+            <h1>Scene Demo</h1>
+            
+            <!-- Mode Switch Section -->
+            <div class="panel-section">
+                <div class="mode-switch">
+                    <button id="orbit-mode-btn" class="mode-btn active">Orbit Mode</button>
+                    <button id="fps-mode-btn" class="mode-btn">FPS Mode</button>
+                </div>
+            </div>
+            
+            <!-- Concept Explanation Panel -->
+            <div class="panel-section collapsible collapsed">
+                <div class="panel-header" onclick="togglePanel('concept-panel')">
+                    <span>📚 Scene Concept</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="concept-panel" class="panel-content">
+                    <p><strong>Scene:</strong> The container for all 3D objects, lights, and cameras.</p>
+                    <p><strong>Origin (0,0,0):</strong> The center point of the 3D coordinate system.</p>
+                    <p><strong>Axes:</strong></p>
+                    <ul>
+                        <li><span style="color: red;">X-axis (Red)</span>: Right direction</li>
+                        <li><span style="color: green;">Y-axis (Green)</span>: Up direction</li>
+                        <li><span style="color: blue;">Z-axis (Blue)</span>: Forward direction</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Background Color Section -->
+            <div class="panel-section collapsible collapsed">
+                <div class="panel-header" onclick="togglePanel('background-panel')">
+                    <span>🎨 Background Color</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="background-panel" class="panel-content">
+                    <div class="form-group">
+                        <label for="bg-color">Scene Background:</label>
+                        <div class="color-input-row">
+                            <input type="color" id="bg-color" value="#1a1a1a">
+                            <button id="reset-bg-btn" class="btn-secondary">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Geometry Section -->
+            <div class="panel-section collapsible collapsed">
+                <div class="panel-header" onclick="togglePanel('geometry-panel')">
+                    <span>➕ Add Geometry</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="geometry-panel" class="panel-content">
+                    <div class="form-group">
+                        <label for="geometry-type">Geometry Type:</label>
+                        <select id="geometry-type">
+                            <option value="box">Box (Cube)</option>
+                            <option value="sphere">Sphere</option>
+                            <option value="cylinder">Cylinder</option>
+                            <option value="cone">Cone</option>
+                        </select>
+                    </div>
+
+                    <!-- Position Inputs -->
+                    <div class="form-group">
+                        <label>Position:</label>
+                        <div class="input-row">
+                            <input type="number" id="pos-x" placeholder="X" value="0" step="0.5">
+                            <input type="number" id="pos-y" placeholder="Y" value="0" step="0.5">
+                            <input type="number" id="pos-z" placeholder="Z" value="0" step="0.5">
+                        </div>
+                    </div>
+
+                    <!-- Size Inputs (dynamic based on geometry type) -->
+                    <div class="form-group" id="size-inputs">
+                        <label>Size:</label>
+                        <div class="input-row" id="box-size">
+                            <input type="number" id="box-width" placeholder="Width" value="1" step="0.1" min="0.1">
+                            <input type="number" id="box-height" placeholder="Height" value="1" step="0.1" min="0.1">
+                            <input type="number" id="box-depth" placeholder="Depth" value="1" step="0.1" min="0.1">
+                        </div>
+                        <div class="input-row" id="sphere-size" style="display: none;">
+                            <input type="number" id="sphere-radius" placeholder="Radius" value="0.5" step="0.1" min="0.1">
+                        </div>
+                        <div class="input-row" id="cylinder-size" style="display: none;">
+                            <input type="number" id="cylinder-radius" placeholder="Radius" value="0.5" step="0.1" min="0.1">
+                            <input type="number" id="cylinder-height" placeholder="Height" value="1" step="0.1" min="0.1">
+                        </div>
+                        <div class="input-row" id="cone-size" style="display: none;">
+                            <input type="number" id="cone-radius" placeholder="Radius" value="0.5" step="0.1" min="0.1">
+                            <input type="number" id="cone-height" placeholder="Height" value="1" step="0.1" min="0.1">
+                        </div>
+                    </div>
+
+                    <!-- Color Input -->
+                    <div class="form-group">
+                        <label for="object-color">Color:</label>
+                        <div class="color-input-row">
+                            <input type="color" id="object-color" value="#4CAF50">
+                            <button id="random-color-btn" class="btn-secondary">Random</button>
+                        </div>
+                    </div>
+
+                    <!-- Name Input -->
+                    <div class="form-group">
+                        <label for="object-name">Name:</label>
+                        <input type="text" id="object-name" placeholder="e.g., MyBox1">
+                    </div>
+
+                    <button id="add-object-btn" class="btn-primary">Add Object</button>
+                </div>
+            </div>
+
+            <!-- Object List Section -->
+            <div class="panel-section collapsible collapsed">
+                <div class="panel-header" onclick="togglePanel('objects-panel')">
+                    <span>📦 Objects (<span id="object-count">0</span>)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="objects-panel" class="panel-content">
+                    <div id="object-list" class="object-list">
+                        <p class="empty-message">No objects added yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Object Properties Section -->
+            <div class="panel-section collapsible collapsed">
+                <div class="panel-header" onclick="togglePanel('properties-panel')">
+                    <span>🎯 Object Properties</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="properties-panel" class="panel-content">
+                    <p id="selection-hint" class="selection-hint">Click an object in the scene to select</p>
+                    
+                    <div id="properties-content" style="display: none;">
+                        <!-- Position -->
+                        <div class="form-group">
+                            <label>Position:</label>
+                            <div class="input-row">
+                                <input type="number" id="prop-pos-x" placeholder="X" value="0" step="0.1">
+                                <input type="number" id="prop-pos-y" placeholder="Y" value="0" step="0.1">
+                                <input type="number" id="prop-pos-z" placeholder="Z" value="0" step="0.1">
+                            </div>
+                        </div>
+
+                        <!-- Rotation Speed -->
+                        <div class="form-group">
+                            <label>Rotation Speed (rad/frame):</label>
+                            <div class="input-row">
+                                <input type="number" id="prop-rot-x" placeholder="X" value="0" step="0.01">
+                                <input type="number" id="prop-rot-y" placeholder="Y" value="0" step="0.01">
+                                <input type="number" id="prop-rot-z" placeholder="Z" value="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <!-- Scale -->
+                        <div class="form-group">
+                            <label>Scale:</label>
+                            <div class="input-row">
+                                <input type="number" id="prop-scale-x" placeholder="X" value="1" step="0.1" min="0.1">
+                                <input type="number" id="prop-scale-y" placeholder="Y" value="1" step="0.1" min="0.1">
+                                <input type="number" id="prop-scale-z" placeholder="Z" value="1" step="0.1" min="0.1">
+                            </div>
+                        </div>
+
+                        <button id="reset-transform-btn" class="btn-secondary">Reset Transform</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="panel-section collapsible collapsed">
+                <div class="panel-header" onclick="togglePanel('controls-panel')">
+                    <span>⚙️ Controls</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="controls-panel" class="panel-content">
+                    <button id="reset-scene-btn" class="btn-danger">Reset Scene</button>
+                    <div class="toggle-buttons">
+                        <button id="toggle-axes-btn" class="btn-secondary active">Hide Axes</button>
+                        <button id="toggle-grid-btn" class="btn-secondary active">Hide Grid</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right 3D View -->
+        <div class="canvas-container" id="canvas-container">
+            <canvas id="scene-canvas"></canvas>
+            
+            <!-- FPS Crosshair -->
+            <div id="fps-crosshair" class="fps-crosshair hidden">
+                <div class="crosshair-line horizontal"></div>
+                <div class="crosshair-line vertical"></div>
+            </div>
+            
+            <!-- FPS Mode Instructions -->
+            <div id="fps-instructions" class="fps-instructions hidden">
+                <div class="fps-hint">
+                    <p><strong>FPS Mode</strong></p>
+                    <p>WASD - Move | Mouse - Look Around</p>
+                    <p>Press ESC to exit FPS mode</p>
+                </div>
+            </div>
+            
+            <!-- Camera Parameters Panel -->
+            <div class="camera-panel collapsible collapsed">
+                <div class="camera-panel-header" onclick="togglePanel('camera-params')">
+                    <span>📷 Camera</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div id="camera-params" class="camera-panel-content">
+                    <!-- Camera Position -->
+                    <div class="form-group">
+                        <label>Position:</label>
+                        <div class="input-row">
+                            <input type="number" id="cam-pos-x" placeholder="X" value="5" step="0.5">
+                            <input type="number" id="cam-pos-y" placeholder="Y" value="5" step="0.5">
+                            <input type="number" id="cam-pos-z" placeholder="Z" value="5" step="0.5">
+                        </div>
+                    </div>
+
+                    <!-- Camera Target -->
+                    <div class="form-group">
+                        <label>Target (Look At):</label>
+                        <div class="input-row">
+                            <input type="number" id="cam-target-x" placeholder="X" value="0" step="0.5">
+                            <input type="number" id="cam-target-y" placeholder="Y" value="0" step="0.5">
+                            <input type="number" id="cam-target-z" placeholder="Z" value="0" step="0.5">
+                        </div>
+                    </div>
+
+                    <!-- FOV -->
+                    <div class="form-group">
+                        <label for="cam-fov">FOV (Field of View):</label>
+                        <input type="number" id="cam-fov" value="75" step="1" min="30" max="120">
+                    </div>
+
+                    <button id="reset-camera-btn" class="btn-secondary">Reset Camera</button>
+                </div>
+            </div>
+            
+            <div id="toast-notification" class="toast hidden"></div>
+        </div>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

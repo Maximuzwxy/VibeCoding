@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Demo</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="header">
+                <h1>Agent Chat</h1>
+                <button class="clear-btn" onclick="clearChat()">Clear</button>
+            </div>
+            <div class="chat-area" id="chatArea">
+                <div class="empty-state">开始和 Agent 对话吧</div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="输入消息..." onkeypress="handleKeyPress(event)">
+                <button class="voice-btn" id="voiceBtn" onclick="toggleVoice()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                </button>
+                <button onclick="sendMessage()" id="sendBtn">Send</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="json-header">
+                <h2>Message Details</h2>
+            </div>
+            <div class="json-area" id="jsonArea">
+                <div class="empty-state">点击 Agent 的回复查看 JSON 详情</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/main.js"></script>
+</body>
+</html>

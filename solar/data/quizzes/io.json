@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_io_001",
+      "question": {
+        "zh": "木卫一是太阳系中火山活动最活跃的天体，其主要能量来源是什么？",
+        "en": "What is the primary energy source for Io's intense volcanic activity?"
+      },
+      "options": [
+        {
+          "zh": "内部放射性衰变",
+          "en": "Internal radioactive decay"
+        },
+        {
+          "zh": "太阳辐射加热",
+          "en": "Solar radiation heating"
+        },
+        {
+          "zh": "潮汐加热（木星及其他卫星的引力作用）",
+          "en": "Tidal heating from Jupiter and other moons"
+        },
+        {
+          "zh": "原始形成余热",
+          "en": "Primordial formation heat"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "木卫一的火山活动主要由潮汐加热驱动，木星以及邻近的欧罗巴和盖尼米得的引力拉扯使木卫一内部产生巨大摩擦热。",
+        "en": "Io's volcanism is primarily driven by tidal heating caused by gravitational interactions with Jupiter and neighboring moons Europa and Ganymede."
+      }
+    },
+    {
+      "id": "q_io_002",
+      "question": {
+        "zh": "木卫一的直径大约是多少？",
+        "en": "What is the approximate diameter of Io?"
+      },
+      "options": [
+        {
+          "zh": "约1,200公里",
+          "en": "About 1,200 km"
+        },
+        {
+          "zh": "约3,600公里",
+          "en": "About 3,600 km"
+        },
+        {
+          "zh": "约5,200公里",
+          "en": "About 5,200 km"
+        },
+        {
+          "zh": "约7,800公里",
+          "en": "About 7,800 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫一的直径约为3,643公里，是太阳系中第四大的卫星。",
+        "en": "Io's diameter is about 3,643 km, making it the fourth-largest moon in the solar system."
+      }
+    },
+    {
+      "id": "q_io_003",
+      "question": {
+        "zh": "木卫一绕木星公转的周期大约是多少？",
+        "en": "What is the approximate orbital period of Io around Jupiter?"
+      },
+      "options": [
+        {
+          "zh": "约1.8天",
+          "en": "About 1.8 days"
+        },
+        {
+          "zh": "约3.6天",
+          "en": "About 3.6 days"
+        },
+        {
+          "zh": "约7.2天",
+          "en": "About 7.2 days"
+        },
+        {
+          "zh": "约16.7天",
+          "en": "About 16.7 days"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "木卫一的轨道周期约为1.77个地球日，是伽利略卫星中离木星最近的一颗。",
+        "en": "Io's orbital period is about 1.77 Earth days, making it the innermost of the Galilean moons."
+      }
+    },
+    {
+      "id": "q_io_004",
+      "question": {
+        "zh": "木卫一的表面主要由什么物质构成？",
+        "en": "What primarily composes the surface of Io?"
+      },
+      "options": [
+        {
+          "zh": "水冰和岩石",
+          "en": "Water ice and rock"
+        },
+        {
+          "zh": "硫和二氧化硫霜",
+          "en": "Sulfur and sulfur dioxide frost"
+        },
+        {
+          "zh": "甲烷和氮冰",
+          "en": "Methane and nitrogen ice"
+        },
+        {
+          "zh": "硅酸盐岩石和铁核",
+          "en": "Silicate rock and iron core"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫一表面覆盖着大量硫和二氧化硫霜，使其呈现出黄、红、白等多彩外观。",
+        "en": "Io's surface is covered with sulfur and sulfur dioxide frost, giving it a colorful appearance of yellow, red, and white."
+      }
+    },
+    {
+      "id": "q_io_005",
+      "question": {
+        "zh": "木卫一上观测到的火山喷发高度最高可达多少？",
+        "en": "What is the maximum height of volcanic plumes observed on Io?"
+      },
+      "options": [
+        {
+          "zh": "约10公里",
+          "en": "About 10 km"
+        },
+        {
+          "zh": "约100公里",
+          "en": "About 100 km"
+        },
+        {
+          "zh": "约300公里",
+          "en": "About 300 km"
+        },
+        {
+          "zh": "约500公里",
+          "en": "About 500 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "木卫一的火山喷发柱可高达300公里以上，由于低重力和无大气阻力，喷发物能喷射极高。",
+        "en": "Volcanic plumes on Io can reach heights of over 300 km due to low gravity and lack of significant atmosphere."
+      }
+    },
+    {
+      "id": "q_io_006",
+      "question": {
+        "zh": "木卫一与木星之间存在着什么特殊的天体物理现象？",
+        "en": "What special astrophysical phenomenon exists between Io and Jupiter?"
+      },
+      "options": [
+        {
+          "zh": "潮汐锁定",
+          "en": "Tidal locking"
+        },
+        {
+          "zh": "拉普拉斯共振（与欧罗巴、盖尼米得轨道共振）",
+          "en": "Laplace resonance with Europa and Ganymede"
+        },
+        {
+          "zh": "洛希极限内的物质交换",
+          "en": "Mass exchange within the Roche limit"
+        },
+        {
+          "zh": "磁层中的等离子体环（木卫一等离子体环）",
+          "en": "Plasma torus in Jupiter's magnetosphere"
+        }
+      ],
+      "answer": 3,
+      "explanation": {
+        "zh": "木卫一的火山喷发释放大量离子，在木星磁层中形成一个巨大的等离子体环，称为木卫一等离子体环。",
+        "en": "Io's volcanic eruptions release ions that form a large plasma torus in Jupiter's magnetosphere, known as the Io plasma torus."
+      }
+    },
+    {
+      "id": "q_io_007",
+      "question": {
+        "zh": "哪艘探测器首次近距离观测了木卫一的火山活动？",
+        "en": "Which spacecraft first closely observed volcanic activity on Io?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "伽利略号",
+          "en": "Galileo"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        },
+        {
+          "zh": "朱诺号",
+          "en": "Juno"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "旅行者1号在1979年飞越木星系统时首次发现了木卫一上的活火山。",
+        "en": "Voyager 1 first discovered active volcanoes on Io during its flyby of the Jupiter system in 1979."
+      }
+    },
+    {
+      "id": "q_io_008",
+      "question": {
+        "zh": "木卫一的平均表面温度大约是多少？",
+        "en": "What is the average surface temperature of Io?"
+      },
+      "options": [
+        {
+          "zh": "约-180°C",
+          "en": "About -180°C"
+        },
+        {
+          "zh": "约-130°C",
+          "en": "About -130°C"
+        },
+        {
+          "zh": "约-50°C",
+          "en": "About -50°C"
+        },
+        {
+          "zh": "约20°C",
+          "en": "About 20°C"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫一表面平均温度约为-130°C，但火山热点区域温度可高达上千摄氏度。",
+        "en": "Io's average surface temperature is about -130°C, though volcanic hot spots can reach thousands of degrees Celsius."
+      }
+    },
+    {
+      "id": "q_io_009",
+      "question": {
+        "zh": "木卫一的大气层主要成分是什么？",
+        "en": "What is the main component of Io's thin atmosphere?"
+      },
+      "options": [
+        {
+          "zh": "氮气",
+          "en": "Nitrogen"
+        },
+        {
+          "zh": "二氧化碳",
+          "en": "Carbon dioxide"
+        },
+        {
+          "zh": "二氧化硫",
+          "en": "Sulfur dioxide"
+        },
+        {
+          "zh": "氧气",
+          "en": "Oxygen"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "木卫一的稀薄大气主要由二氧化硫组成，来源于火山喷发和表面升华。",
+        "en": "Io's tenuous atmosphere is primarily composed of sulfur dioxide, sourced from volcanic eruptions and surface sublimation."
+      }
+    },
+    {
+      "id": "q_io_010",
+      "question": {
+        "zh": "木卫一在伽利略卫星中按距离木星由近到远排第几？",
+        "en": "What is Io's rank among the Galilean moons in order of distance from Jupiter?"
+      },
+      "options": [
+        {
+          "zh": "第一（最近）",
+          "en": "First (closest)"
+        },
+        {
+          "zh": "第二",
+          "en": "Second"
+        },
+        {
+          "zh": "第三",
+          "en": "Third"
+        },
+        {
+          "zh": "第四（最远）",
+          "en": "Fourth (farthest)"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "木卫一是伽利略卫星中离木星最近的卫星，轨道半径约42万公里。",
+        "en": "Io is the innermost of the four Galilean moons, with an orbital radius of about 420,000 km."
+      }
+    }
+  ]
+}

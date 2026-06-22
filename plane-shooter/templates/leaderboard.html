@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - Plane Shooter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="login-body">
+    <div class="leaderboard-container">
+        <h1 class="leaderboard-title">🏆 Leaderboard</h1>
+        <p class="leaderboard-subtitle">Top 10 Pilots</p>
+        
+        {% if scores %}
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Pilot</th>
+                    <th>Score</th>
+                    <th>Level</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for score in scores %}
+                <tr class="score-row rank-{{ loop.index }}">
+                    <td class="rank">
+                        {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% elif loop.index == 3 %}🥉{% else %}#{{ loop.index }}{% endif %}
+                    </td>
+                    <td class="username">{{ score.username }}</td>
+                    <td class="score">{{ score.score }}</td>
+                    <td class="level">🌟 {{ score.level }}</td>
+                    <td class="date">{{ score.date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="no-scores">
+            <p style="font-size: 3em;">🏆</p>
+            <p>No scores yet!</p>
+            <p>Be the first to set a record!</p>
+        </div>
+        {% endif %}
+        
+        <div class="leaderboard-footer">
+            <a href="{{ url_for('login') }}" class="btn btn-primary">← Back to Login</a>
+            <a href="{{ url_for('rules') }}" class="btn btn-accent">📖 Game Rules</a>
+        </div>
+    </div>
+</body>
+</html>

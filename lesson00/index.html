@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML/CSS/JS Introduction Example</title>
+  <style>
+    /* CSS Styles Section */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #ecf0f1;
+      border-left: 4px solid #3498db;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to Web Basics!</h1>
+    <p>This is a simple example page using HTML, CSS, and JavaScript.</p>
+
+    <label for="userInput">Enter your name:</label>
+    <input type="text" id="userInput" placeholder="e.g., Alice" />
+
+    <button onclick="showMessage()">Click Me!!!</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    // JavaScript Function Section
+    function showMessage() {
+      // Get input and output elements
+      const input = document.getElementById("userInput");
+      const output = document.getElementById("output");
+      const name = input.value.trim();
+
+      // Display a message based on user input
+      if (name === "") {
+        output.textContent = "Please enter your name first!";
+      } else {
+        output.textContent = "Hello, " + name + "! Welcome to web development!";
+      }
+
+      // Show the output message
+      output.style.display = "block";
+    }
+  </script>
+</body>
+</html>

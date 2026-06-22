@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汉诺塔 - 函数栈可视化</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        .controls {
+            margin: 15px 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        label {
+            color: #aaa;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            background: #16213e;
+            border: 1px solid #0f3460;
+            color: #00d4ff;
+            border-radius: 4px;
+            text-align: center;
+        }
+        button {
+            padding: 8px 20px;
+            background: #0f3460;
+            color: #00d4ff;
+            border: 1px solid #00d4ff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #00d4ff;
+            color: #1a1a2e;
+        }
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .container {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .tower-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .tower-label {
+            font-size: 18px;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .tower {
+            width: 120px;
+            height: 200px;
+            background: #16213e;
+            border: 2px solid #0f3460;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            padding: 5px;
+            gap: 2px;
+        }
+        .disk {
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #1a1a2e;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .stack-panel {
+            margin-top: 30px;
+            background: #16213e;
+            border: 2px solid #0f3460;
+            border-radius: 8px;
+            padding: 15px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .stack-title {
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .stack-container {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .stack-frame {
+            padding: 6px 12px;
+            margin: 4px 0;
+            background: #0f3460;
+            border-left: 3px solid #00d4ff;
+            font-size: 13px;
+            animation: fadeIn 0.3s;
+        }
+        .stack-frame.active {
+            border-left-color: #ff6b6b;
+            background: #1a1a2e;
+        }
+        .stack-frame.exiting {
+            border-left-color: #4ecdc4;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .step-info {
+            margin-top: 15px;
+            padding: 10px;
+            background: #0f3460;
+            border-radius: 4px;
+            color: #4ecdc4;
+            font-size: 14px;
+        }
+        .step-count {
+            color: #ffd93d;
+        }
+    </style>
+</head>
+<body>
+    <h1>汉诺塔 - 函数栈变化可视化</h1>
+    <div class="controls">
+        <label>圆盘数量 (1-5):</label>
+        <input type="number" id="diskCount" value="3" min="1" max="5">
+        <button id="startBtn" onclick="startHanoi()">开始演示</button>
+        <button id="stepBtn" onclick="stepForward()" disabled>单步执行</button>
+        <button id="autoBtn" onclick="toggleAuto()" disabled>自动播放</button>
+    </div>
+
+    <div class="container">
+        <div class="tower-area">
+            <div class="tower-label">A (源)</div>
+            <div class="tower" id="tower-A"></div>
+        </div>
+        <div class="tower-area">
+            <div class="tower-label">B (辅助)</div>
+            <div class="tower" id="tower-B"></div>
+        </div>
+        <div class="tower-area">
+            <div class="tower-label">C (目标)</div>
+            <div class="tower" id="tower-C"></div>
+        </div>
+    </div>
+
+    <div class="stack-panel">
+        <div class="stack-title">函数调用栈 (Call Stack)</div>
+        <div class="stack-container" id="stackContainer">
+            <div style="color: #666; font-style: italic;">点击"开始演示"或"单步执行"</div>
+        </div>
+        <div class="step-info" id="stepInfo">
+            等待开始...
+        </div>
+    </div>
+
+    <script>
+        let towers = { A: [], B: [], C: [] };
+        let moves = [];
+        let stepIndex = 0;
+        let autoInterval = null;
+        let callStack = [];
+
+        const COLORS = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#9b59b6'];
+
+        function hanoi(n, src, tmp, dest, result) {
+            callStack.push({ n, src, tmp, dest, action: 'call' });
+            if (n === 1) {
+                result.push({ from: src, to: dest, stack: [...callStack] });
+            } else {
+                hanoi(n - 1, src, dest, tmp, result);
+                result.push({ from: src, to: dest, stack: [...callStack] });
+                hanoi(n - 1, tmp, src, dest, result);
+            }
+            callStack.push({ n, src, tmp, dest, action: 'return' });
+        }
+
+        function initTowers(n) {
+            towers = { A: [], B: [], C: [] };
+            for (let i = n; i >= 1; i--) {
+                towers.A.push(i);
+            }
+            renderTowers();
+        }
+
+        function renderTowers() {
+            ['A', 'B', 'C'].forEach(tower => {
+                const el = document.getElementById(`tower-${tower}`);
+                el.innerHTML = '';
+                towers[tower].forEach((disk, idx) => {
+                    const diskEl = document.createElement('div');
+                    diskEl.className = 'disk';
+                    diskEl.style.width = (40 + disk * 15) + 'px';
+                    diskEl.style.background = COLORS[disk - 1];
+                    diskEl.textContent = disk;
+                    el.appendChild(diskEl);
+                });
+            });
+        }
+
+        function updateStackDisplay(stackSnapshot) {
+            const container = document.getElementById('stackContainer');
+            container.innerHTML = '';
+
+            stackSnapshot.forEach((frame, idx) => {
+                if (frame.action === 'call') {
+                    const frameEl = document.createElement('div');
+                    frameEl.className = 'stack-frame' + (idx === stackSnapshot.length - 1 ? ' active' : '');
+                    const depth = stackSnapshot.length - idx;
+                    frameEl.style.paddingLeft = (depth * 8 + 12) + 'px';
+                    frameEl.textContent = `hanoi(${frame.n}, '${frame.src}', '${frame.tmp}', '${frame.dest}')  ← 调用`;
+                    container.appendChild(frameEl);
+                }
+            });
+
+            if (stackSnapshot.length === 0) {
+                container.innerHTML = '<div style="color: #4ecdc4;">✓ 所有函数调用已返回，栈为空</div>';
+            }
+        }
+
+        function updateStepInfo(move, idx, total) {
+            const info = document.getElementById('stepInfo');
+            if (move) {
+                info.innerHTML = `<span class="step-count">步骤 ${idx + 1}/${total}</span>: 将圆盘 ${move.from} → ${move.to}`;
+            } else {
+                info.innerHTML = `<span class="step-count">步骤 ${idx + 1}/${total}</span>: 函数返回`;
+            }
+        }
+
+        function stepForward() {
+            if (stepIndex < moves.length) {
+                const move = moves[stepIndex];
+                const disk = towers[move.from].pop();
+                towers[move.to].push(disk);
+                updateStackDisplay(move.stack);
+                updateStepInfo(move, stepIndex, moves.length);
+                renderTowers();
+                stepIndex++;
+            } else {
+                document.getElementById('stepInfo').innerHTML = '<span class="step-count">完成！</span>';
+                document.getElementById('stackContainer').innerHTML = '<div style="color: #4ecdc4;">✓ 所有函数调用已返回，栈为空</div>';
+                stopAuto();
+            }
+            updateButtons();
+        }
+
+        function updateButtons() {
+            document.getElementById('stepBtn').disabled = stepIndex >= moves.length || autoInterval;
+            document.getElementById('autoBtn').disabled = stepIndex >= moves.length;
+            document.getElementById('autoBtn').textContent = autoInterval ? '暂停' : '自动播放';
+        }
+
+        function toggleAuto() {
+            if (autoInterval) {
+                stopAuto();
+            } else {
+                autoInterval = setInterval(stepForward, 800);
+                updateButtons();
+            }
+        }
+
+        function stopAuto() {
+            if (autoInterval) {
+                clearInterval(autoInterval);
+                autoInterval = null;
+            }
+            updateButtons();
+        }
+
+        function startHanoi() {
+            stopAuto();
+            const n = Math.min(5, Math.max(1, parseInt(document.getElementById('diskCount').value) || 3));
+            document.getElementById('diskCount').value = n;
+
+            initTowers(n);
+            callStack = [];
+            moves = [];
+            hanoi(n, 'A', 'B', 'C', moves);
+
+            stepIndex = 0;
+            document.getElementById('stackContainer').innerHTML = '<div style="color: #666; font-style: italic;">准备就绪，点击"单步执行"或"自动播放"</div>';
+            updateStepInfo(null, 0, moves.length);
+            updateButtons();
+        }
+
+        initTowers(3);
+    </script>
+</body>
+</html>

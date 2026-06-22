@@ -1,0 +1,401 @@
+{
+  "id": "dione",
+  "name": {
+    "zh": "土卫四",
+    "en": "Dione"
+  },
+  "icon": "🪐",
+  "theme_color": "#b0b7c6",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "冰卫星",
+            "en": "Icy moon"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "1,122.8 km",
+            "en": "1,122.8 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "1.095 × 10²¹ kg",
+            "en": "1.095 × 10²¹ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "7.4 × 10⁸ km³",
+            "en": "7.4 × 10⁸ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.478 g/cm³",
+            "en": "1.478 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.232 m/s²",
+            "en": "0.232 m/s²"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫四的密度表明其内部约40%是岩石核心，其余为水冰。",
+        "en": "※ Dione's density suggests it is about 40% rock core and 60% water ice."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "2.7369 天（同步自转）",
+            "en": "2.7369 days (synchronous)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "2.7369 天",
+            "en": "2.7369 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "10.03 km/s",
+            "en": "10.03 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0022",
+            "en": "0.0022"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.019°（相对于土星赤道）",
+            "en": "0.019° (to Saturn's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫四与土卫二处于1:2的轨道共振，每绕土星一圈，土卫二绕两圈。",
+        "en": "※ Dione is in a 1:2 orbital resonance with Enceladus: for each orbit of Dione, Enceladus orbits twice."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "87 K（-186°C）至 187 K（-86°C）",
+            "en": "87 K (-186°C) to 187 K (-86°C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 120 K（-153°C）",
+            "en": "~120 K (-153°C)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "极稀薄（几乎无大气）",
+            "en": "Extremely tenuous (almost no atmosphere)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "痕量氧气（O₂）",
+            "en": "Trace oxygen (O₂)"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无内源磁场",
+            "en": "No intrinsic magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 卡西尼号探测器在土卫四周围发现极稀薄的氧气大气层，由表面冰层被高能粒子轰击产生。",
+        "en": "※ Cassini detected an extremely thin oxygen atmosphere around Dione, created by high-energy particles bombarding its icy surface."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "不适用（绕土星公转）",
+            "en": "N/A (orbits Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "不适用（绕土星公转）",
+            "en": "N/A (orbits Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "377,396 km",
+            "en": "377,396 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "0.00252 AU",
+            "en": "0.00252 AU"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 1.26 秒（从土星）",
+            "en": "~1.26 seconds (from Saturn)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "0（土卫四本身是土星的卫星）",
+            "en": "0 (Dione is itself a moon of Saturn)"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "无",
+            "en": "None"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫四与土卫二共享轨道共振，并可能通过潮汐加热影响土卫二的地质活动。",
+        "en": "※ Dione shares an orbital resonance with Enceladus, possibly contributing to Enceladus' tidal heating and geological activity."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "撞击坑、冰崖、亮色条纹（冰脊）",
+            "en": "Impact craters, ice cliffs, bright wispy streaks (ice ridges)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "厄庇墨透斯撞击坑（直径约 100 km）",
+            "en": "Epimetheus crater (~100 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 4 亿至 10 亿年（部分区域较年轻）",
+            "en": "~400 million to 1 billion years (some regions younger)"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "约 2 km（冰崖边缘）",
+            "en": "~2 km (ice cliff edge)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 土卫四表面有神秘的亮白色条纹（称为“柳条状地形”），可能是冰火山活动形成的冰脊。",
+        "en": "※ Dione features mysterious bright white streaks (called 'wispy terrain'), likely ice ridges formed by cryovolcanism."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1684年3月21日，由乔瓦尼·卡西尼发现",
+            "en": "March 21, 1684, by Giovanni Cassini"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1980年11月，旅行者1号",
+            "en": "November 1980, Voyager 1"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "未入轨（仅飞掠）",
+            "en": "No orbit insertion (flybys only)"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "卡西尼号（2004-2017年多次飞掠）",
+            "en": "Cassini (multiple flybys 2004-2017)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 卡西尼号在2015年以最近距离（约500 km）飞掠土卫四，揭示了其冰崖和柳条状地形的细节。",
+        "en": "※ Cassini's closest flyby of Dione in 2015 (about 500 km) revealed details of its ice cliffs and wispy terrain."
+      }
+    }
+  ]
+}

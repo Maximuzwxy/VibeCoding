@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Pong - Three.js</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <div class="start-content">
+            <h1 class="game-title">
+                <span class="title-3d">3D</span>
+                <span class="title-pong">PONG</span>
+            </h1>
+            <div class="title-underline"></div>
+            <p class="game-subtitle">with Power-ups</p>
+            
+            <div class="controls-info">
+                <div class="control-group">
+                    <div class="control-icon">🔴</div>
+                    <div class="control-text">
+                        <strong>Red Paddle</strong>
+                        <span>WASD to move</span>
+                    </div>
+                </div>
+                <div class="control-divider"></div>
+                <div class="control-group">
+                    <div class="control-icon">🟢</div>
+                    <div class="control-text">
+                        <strong>Green Paddle</strong>
+                        <span>Arrow Keys to move</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buff-preview">
+                <div class="buff-preview-title">Power-ups</div>
+                <div class="buff-items">
+                    <div class="buff-preview-item enlarge">Enlarge</div>
+                    <div class="buff-preview-item shrink">Shrink</div>
+                    <div class="buff-preview-item slow">Slow</div>
+                    <div class="buff-preview-item split">Split</div>
+                </div>
+            </div>
+            
+            <button id="start-game-btn" class="start-btn">
+                <span class="btn-text">START GAME</span>
+                <span class="btn-shine"></span>
+            </button>
+        </div>
+        
+        <!-- Animated background particles -->
+        <div class="bg-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+        <div id="score-board">
+            <div class="player-score" id="red-score">
+                <div class="score-label">RED</div>
+                <div class="score-value">0</div>
+            </div>
+            <div class="score-divider">:</div>
+            <div class="player-score" id="green-score">
+                <div class="score-label">GREEN</div>
+                <div class="score-value">0</div>
+            </div>
+        </div>
+        
+        <div id="buff-display">
+            <div id="player1-buffs" class="player-buffs">
+                <div class="buff-title">🔴 Red Buffs</div>
+                <div class="buff-list"></div>
+            </div>
+            <div id="player2-buffs" class="player-buffs">
+                <div class="buff-title">🟢 Green Buffs</div>
+                <div class="buff-list"></div>
+            </div>
+        </div>
+        
+        <div id="game-controls">
+            <button id="pause-btn" class="control-btn">
+                <span class="btn-icon">⏸</span>
+                <span>Pause</span>
+            </button>
+            <button id="reset-btn" class="control-btn">
+                <span class="btn-icon">↺</span>
+                <span>Reset</span>
+            </button>
+            <button id="settings-btn" class="control-btn">
+                <span class="btn-icon">⚙</span>
+                <span>Settings</span>
+            </button>
+        </div>
+        
+        <div id="mode-controls">
+            <div class="mode-group">
+                <span class="mode-label">🔴 Red</span>
+                <button id="red-human" class="mode-btn active">Human</button>
+                <button id="red-ai" class="mode-btn">AI</button>
+            </div>
+            <div class="mode-group">
+                <span class="mode-label">🟢 Green</span>
+                <button id="green-human" class="mode-btn active">Human</button>
+                <button id="green-ai" class="mode-btn">AI</button>
+            </div>
+        </div>
+        
+        <div id="info-panel">
+            <span>🖱 Drag to rotate view</span>
+            <span>⚡ Collect buffs for power-ups</span>
+        </div>
+    </div>
+    
+    <!-- Game Over Screen -->
+    <div id="game-over" class="hidden">
+        <div class="game-over-content">
+            <div class="game-over-title">GAME OVER</div>
+            <div id="winner-text" class="winner-announcement"></div>
+            <div class="final-score">
+                <span id="final-red">0</span>
+                <span class="score-separator">-</span>
+                <span id="final-green">0</span>
+            </div>
+            <button id="restart-btn" class="control-btn">
+                <span class="btn-icon">↺</span>
+                <span>Play Again</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div id="settings-panel" class="hidden">
+        <div class="settings-container">
+            <h2 class="settings-title">⚙ Game Settings</h2>
+            
+            <div class="settings-group">
+                <h3 class="settings-label">Buff Settings</h3>
+                <div class="settings-row">
+                    <label for="buff-frequency">Buff Refresh Frequency:</label>
+                    <div class="slider-container">
+                        <input type="range" id="buff-frequency" class="settings-slider" min="0" max="5" value="3">
+                        <span id="buff-frequency-value" class="value-display">3</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <h3 class="settings-label">Ball Settings</h3>
+                <div class="settings-row">
+                    <label for="ball-base-speed">Base Speed:</label>
+                    <input type="number" id="ball-base-speed" class="settings-input" min="1" max="15" value="5">
+                </div>
+                <div class="settings-row">
+                    <label for="ball-max-speed">Max Speed:</label>
+                    <input type="number" id="ball-max-speed" class="settings-input" min="5" max="30" value="20">
+                </div>
+                <div class="settings-row">
+                    <label for="ball-speed-ratio">Speed Increase:</label>
+                    <input type="number" id="ball-speed-ratio" class="settings-input" min="1.01" max="1.5" step="0.01" value="1.05">
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <h3 class="settings-label">Game Settings</h3>
+                <div class="settings-row">
+                    <label for="max-score">Win Score:</label>
+                    <input type="number" id="max-score" class="settings-input" min="3" max="20" value="10">
+                </div>
+            </div>
+            
+            <div class="settings-btns">
+                <button id="save-settings" class="settings-btn save">Save & Resume</button>
+                <button id="cancel-settings" class="settings-btn cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

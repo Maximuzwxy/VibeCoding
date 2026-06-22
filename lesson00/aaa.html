@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你好，世界！</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            transition: background 0.5s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .mydiv {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .mydiv:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .mydiv p {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-bg {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .btn-bg:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        .btn-text {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .btn-text:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            button {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>👋 Hello, World!</h1>
+        <p class="subtitle">欢迎来到我的第一个网页</p>
+
+        <div class="mydiv">
+            <p>✨ 这是第一个卡片中的内容。卡片采用了现代化的设计风格，带有阴影和圆角效果。</p>
+        </div>
+
+        <div class="mydiv">
+            <p>🎨 这是第二个卡片。点击下面的按钮可以改变卡片的背景色和文字颜色！</p>
+        </div>
+
+        <div class="button-container">
+            <button class="btn-bg" onclick="changeBackgroundColor()">🎨 改变背景色</button>
+            <button class="btn-text" onclick="changeTextColor()">✏️ 改变文字色</button>
+        </div>
+    </div>
+
+    <script>
+        console.log("Hello from JS!");
+
+        // 更丰富的颜色选择
+        const bgColors = [
+            "#ff9a9e", "#fad0c4", "#a18cd1", "#fbc2eb",
+            "#84fab0", "#8fd3f4", "#fccb90", "#d5dee1",
+            "#ffecd2", "#fcb69f", "#a6c0fe", "#f68084"
+        ];
+        
+        const textColors = [
+            "#333333", "#2c3e50", "#e74c3c", "#3498db",
+            "#27ae60", "#9b59b6", "#f39c12", "#1abc9c"
+        ];
+
+        function changeBackgroundColor() {
+            let divs = document.getElementsByClassName("mydiv");
+            for (let div of divs) {
+                const randomColor = bgColors[Math.floor(Math.random() * bgColors.length)];
+                div.style.background = randomColor;
+            }
+        }
+
+        function changeTextColor() {
+            let divs = document.getElementsByClassName("mydiv");
+            for (let div of divs) {
+                const randomColor = textColors[Math.floor(Math.random() * textColors.length)];
+                div.style.color = randomColor;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="app-page">
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                    <circle cx="24" cy="24" r="24" fill="#6366F1"/>
+                    <path d="M16 20C16 17.79 17.79 16 20 16H28C30.21 16 32 17.79 32 20V28C32 30.21 30.21 32 28 32H20C17.79 32 16 30.21 16 28V20Z" fill="white"/>
+                    <circle cx="20" cy="22" r="2" fill="#6366F1"/>
+                    <circle cx="28" cy="22" r="2" fill="#6366F1"/>
+                    <path d="M20 27C20 27 22 29 24 29C26 29 28 27 28 27" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar-title">Social</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item" data-page="contacts">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <span>通讯录</span>
+                </a>
+                <a href="#" class="nav-item" data-page="settings">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                    <span>设置</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img id="sidebarAvatar" class="user-avatar-small" src="" alt="头像">
+                    <span id="sidebarUsername" class="username-small"></span>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <div id="contactsPage" class="page">
+                <div class="page-header">
+                    <h2>通讯录</h2>
+                    <div class="search-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="搜索用户...">
+                    </div>
+                </div>
+                
+                <div id="friendRequestsSection" class="friend-requests-section" style="display: none;">
+                    <div class="section-header">
+                        <h3>好友请求</h3>
+                        <span id="requestBadge" class="badge" style="display: none;">0</span>
+                    </div>
+                    <div id="friendRequestsList" class="friend-requests-list"></div>
+                </div>
+                
+                <div class="section-header">
+                    <h3>我的好友</h3>
+                </div>
+                <div id="friendsList" class="friends-list">
+                    <div class="empty-state">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <p>还没有好友</p>
+                        <p class="empty-hint">搜索用户并发送好友请求</p>
+                    </div>
+                </div>
+                
+                <div id="searchResults" class="search-results" style="display: none;">
+                    <div class="section-header">
+                        <h3>搜索结果</h3>
+                    </div>
+                    <div id="searchResultsList" class="search-results-list"></div>
+                </div>
+            </div>
+            
+            <div id="settingsPage" class="page" style="display: none;">
+                <div class="settings-page">
+                    <div class="settings-header">
+                        <h1>设置</h1>
+                    </div>
+                    
+                    <div class="settings-profile-card">
+                        <div class="profile-header">
+                            <div class="avatar-wrapper">
+                                <img id="settingsAvatar" class="profile-avatar" src="" alt="头像">
+                                <label for="avatarInput" class="avatar-edit-btn">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                        <circle cx="12" cy="13" r="4"/>
+                                    </svg>
+                                </label>
+                                <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                            </div>
+                            <div class="profile-info">
+                                <h2 id="profileUsername" class="profile-name"></h2>
+                                <p id="profileBio" class="profile-bio"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-edit-section">
+                            <div class="edit-field">
+                                <label>个人简介</label>
+                                <div class="input-with-count">
+                                    <textarea id="settingsBio" maxlength="100" rows="3" placeholder="介绍一下自己..."></textarea>
+                                    <span class="char-count"><span id="bioCharCount">0</span>/100</span>
+                                </div>
+                            </div>
+                            <button id="saveProfileBtn" class="btn-save">保存修改</button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>修改密码</h3>
+                        <div class="password-form">
+                            <div class="form-row">
+                                <input type="password" id="currentPassword" placeholder="当前密码">
+                            </div>
+                            <div class="form-row">
+                                <input type="password" id="newPassword" placeholder="新密码">
+                            </div>
+                            <div class="form-row">
+                                <input type="password" id="confirmNewPassword" placeholder="确认新密码">
+                            </div>
+                            <button id="changePasswordBtn" class="btn-password">更新密码</button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card danger-zone">
+                        <div class="danger-content">
+                            <div class="danger-text">
+                                <h3>退出登录</h3>
+                                <p>退出后需要重新登录</p>
+                            </div>
+                            <button id="logoutBtn" class="btn-logout">退出</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div id="toast" class="toast" style="display: none;"></div>
+    
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

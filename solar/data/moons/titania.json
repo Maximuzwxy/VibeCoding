@@ -1,0 +1,401 @@
+{
+  "id": "titania",
+  "name": {
+    "zh": "天卫四",
+    "en": "Titania"
+  },
+  "icon": "🪐",
+  "theme_color": "#7a9eb1",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "行星类型",
+            "en": "Planet Type"
+          },
+          "value": {
+            "zh": "冰卫星（天王星的最大卫星）",
+            "en": "Icy moon (largest moon of Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "赤道直径",
+            "en": "Equatorial Diameter"
+          },
+          "value": {
+            "zh": "1,578 公里",
+            "en": "1,578 km"
+          }
+        },
+        {
+          "label": {
+            "zh": "质量",
+            "en": "Mass"
+          },
+          "value": {
+            "zh": "3.527×10²¹ 千克",
+            "en": "3.527×10²¹ kg"
+          }
+        },
+        {
+          "label": {
+            "zh": "体积",
+            "en": "Volume"
+          },
+          "value": {
+            "zh": "2.06×10⁹ 立方公里",
+            "en": "2.06×10⁹ km³"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均密度",
+            "en": "Average Density"
+          },
+          "value": {
+            "zh": "1.71 克/立方厘米",
+            "en": "1.71 g/cm³"
+          }
+        },
+        {
+          "label": {
+            "zh": "表面重力",
+            "en": "Surface Gravity"
+          },
+          "value": {
+            "zh": "0.378 米/秒²（约地球的0.039倍）",
+            "en": "0.378 m/s² (≈0.039× Earth)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫四是天王星最大的卫星，也是太阳系中第八大的卫星。",
+        "en": "※ Titania is the largest moon of Uranus and the 8th largest moon in the Solar System."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 时间参数",
+        "en": "🕐 Time Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "自转周期",
+            "en": "Rotation Period"
+          },
+          "value": {
+            "zh": "8.7 天（潮汐锁定）",
+            "en": "8.7 days (tidally locked)"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "8.7 天",
+            "en": "8.7 days"
+          }
+        },
+        {
+          "label": {
+            "zh": "公转速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "3.64 公里/秒",
+            "en": "3.64 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道离心率",
+            "en": "Orbital Eccentricity"
+          },
+          "value": {
+            "zh": "0.0011",
+            "en": "0.0011"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "0.340°（相对于天王星赤道）",
+            "en": "0.340° (relative to Uranus's equator)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫四的轨道几乎完美圆形，离心率极低。",
+        "en": "※ Titania's orbit is nearly perfectly circular, with an extremely low eccentricity."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌡 环境参数",
+        "en": "🌡 Environmental Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "表面温度",
+            "en": "Surface Temperature"
+          },
+          "value": {
+            "zh": "约 -203°C（70 K）至 -193°C（80 K）",
+            "en": "≈ -203°C (70 K) to -193°C (80 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "平均温度",
+            "en": "Average Temperature"
+          },
+          "value": {
+            "zh": "约 -198°C（75 K）",
+            "en": "≈ -198°C (75 K)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气压力",
+            "en": "Atmospheric Pressure"
+          },
+          "value": {
+            "zh": "极稀薄（几乎不存在）",
+            "en": "Extremely tenuous (nearly absent)"
+          }
+        },
+        {
+          "label": {
+            "zh": "大气成分",
+            "en": "Atmospheric Composition"
+          },
+          "value": {
+            "zh": "可能含有微量二氧化碳或甲烷",
+            "en": "Possible trace CO₂ or CH₄"
+          }
+        },
+        {
+          "label": {
+            "zh": "磁场强度",
+            "en": "Magnetic Field Strength"
+          },
+          "value": {
+            "zh": "无显著全球磁场",
+            "en": "No significant global magnetic field"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫四表面可能存在水冰和干冰（固态二氧化碳）。",
+        "en": "※ Titania's surface may contain water ice and dry ice (solid CO₂)."
+      }
+    },
+    {
+      "title": {
+        "zh": "📍 位置参数",
+        "en": "📍 Position Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "近日点",
+            "en": "Perihelion"
+          },
+          "value": {
+            "zh": "约 435,000 公里（距天王星）",
+            "en": "≈ 435,000 km (from Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "远日点",
+            "en": "Aphelion"
+          },
+          "value": {
+            "zh": "约 437,000 公里（距天王星）",
+            "en": "≈ 437,000 km (from Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "半长轴",
+            "en": "Semi-major Axis"
+          },
+          "value": {
+            "zh": "436,300 公里（距天王星）",
+            "en": "436,300 km (from Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "天文单位",
+            "en": "Astronomical Units"
+          },
+          "value": {
+            "zh": "约 0.00292 AU（距天王星）",
+            "en": "≈ 0.00292 AU (from Uranus)"
+          }
+        },
+        {
+          "label": {
+            "zh": "光行时",
+            "en": "Light Travel Time"
+          },
+          "value": {
+            "zh": "约 1.45 秒（从天王星到天卫四）",
+            "en": "≈ 1.45 seconds (Uranus to Titania)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🌑 卫星系统",
+        "en": "🌑 Satellite System"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "已知卫星",
+            "en": "Known Moons"
+          },
+          "value": {
+            "zh": "天卫四本身是天王星的卫星，无已知子卫星",
+            "en": "Titania itself is a moon of Uranus; no known sub-satellites"
+          }
+        },
+        {
+          "label": {
+            "zh": "卫星名称",
+            "en": "Moon Names"
+          },
+          "value": {
+            "zh": "天卫四（Titania）是天王星27颗已知卫星之一",
+            "en": "Titania is one of Uranus's 27 known moons"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫四是天王星最大的卫星，但质量仅占天王星卫星系统总质量的约30%。",
+        "en": "※ Titania is Uranus's largest moon, but its mass is only about 30% of the total mass of Uranus's moon system."
+      }
+    },
+    {
+      "title": {
+        "zh": "🌋 地表特征",
+        "en": "🌋 Surface Features"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "主要地形",
+            "en": "Main Terrain"
+          },
+          "value": {
+            "zh": "撞击坑、峡谷、悬崖、冰原",
+            "en": "Craters, canyons, scarps, icy plains"
+          }
+        },
+        {
+          "label": {
+            "zh": "最大撞击坑",
+            "en": "Largest Crater"
+          },
+          "value": {
+            "zh": "格特鲁德撞击坑（直径约 326 公里）",
+            "en": "Gertrude crater (≈ 326 km diameter)"
+          }
+        },
+        {
+          "label": {
+            "zh": "地表年龄",
+            "en": "Surface Age"
+          },
+          "value": {
+            "zh": "约 10 亿至 30 亿年",
+            "en": "≈ 1 to 3 billion years"
+          }
+        },
+        {
+          "label": {
+            "zh": "最高峰",
+            "en": "Highest Peak"
+          },
+          "value": {
+            "zh": "未精确测量，估计约 2-3 公里",
+            "en": "Not precisely measured; estimated ≈ 2-3 km"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天卫四表面有一条巨大的峡谷系统——墨西拿峡谷，长度超过 1,500 公里。",
+        "en": "※ Titania features a vast canyon system—Messina Chasma—stretching over 1,500 km."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔭 探索历史",
+        "en": "🔭 Exploration History"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "首次发现/观测",
+            "en": "First Discovered/Observed"
+          },
+          "value": {
+            "zh": "1787年1月11日，由威廉·赫歇尔发现",
+            "en": "January 11, 1787, by William Herschel"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次飞掠",
+            "en": "First Flyby"
+          },
+          "value": {
+            "zh": "1986年1月24日，旅行者2号",
+            "en": "January 24, 1986, Voyager 2"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次入轨",
+            "en": "First Orbit"
+          },
+          "value": {
+            "zh": "尚未有探测器入轨",
+            "en": "No orbiter yet"
+          }
+        },
+        {
+          "label": {
+            "zh": "当前/最近任务",
+            "en": "Current/Recent Mission"
+          },
+          "value": {
+            "zh": "无活跃任务；未来计划：天王星轨道器（2030年代提议）",
+            "en": "No active mission; future: Uranus Orbiter (proposed for 2030s)"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 旅行者2号是迄今为止唯一飞掠天卫四的探测器，仅拍摄了约40%的表面。",
+        "en": "※ Voyager 2 is the only spacecraft to have flown by Titania, imaging only about 40% of its surface."
+      }
+    }
+  ]
+}

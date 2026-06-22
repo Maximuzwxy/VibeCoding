@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转测试 - 公转 + 自转</title>
+    <style>
+        body { margin: 0; overflow: hidden; font-family: Arial, sans-serif; }
+        #info { position: absolute; top: 10px; left: 10px; color: white; background: rgba(0,0,0,0.8); padding: 15px; border-radius: 8px; z-index: 100; line-height: 1.8; }
+        button { padding: 8px 16px; font-size: 14px; cursor: pointer; margin: 5px; }
+        .axis-label { font-weight: bold; font-size: 18px; }
+        .red { color: #ff4444; }
+        .green { color: #44ff44; }
+        .blue { color: #4444ff; }
+        .orange { color: #ffaa00; }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <p><span class="axis-label red">X轴</span> = 红色</p>
+        <p><span class="axis-label green">Y轴</span> = 绿色</p>
+        <p><span class="axis-label blue">Z轴</span> = 蓝色</p>
+        <hr>
+        <p>公转 speed = <span id="orbitSpeed">-0.02</span> (<span id="orbitDir">逆时针</span>)</p>
+        <p>自转 speed = <span id="spinSpeed">0.01</span> (<span id="spinDir">逆时针</span>)</p>
+        <hr>
+        <p><button onclick="toggleOrbitDirection()">切换公转方向</button></p>
+        <p><button onclick="toggleSpinDirection()">切换自转方向</button></p>
+        <hr>
+        <p class="orange">太阳：中心橙色球体（带纹理+自转）</p>
+        <p>行星：绕太阳公转 + 自转</p>
+    </div>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        let scene, camera, renderer, controls;
+        let sun, planet;
+        let orbitSpeed = -0.02;
+        let spinSpeed = 0.01;
+        let angle = 0;
+        const distance = 5;
+
+        function init() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x111111);
+
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(12, 8, 12);
+            camera.lookAt(0, 0, 0);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+
+            // 灯光
+            scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+            const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+            dirLight.position.set(10, 10, 10);
+            scene.add(dirLight);
+
+            // 坐标轴
+            const xGeom = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(-10, 0, 0),
+                new THREE.Vector3(10, 0, 0)
+            ]);
+            scene.add(new THREE.Line(xGeom, new THREE.LineBasicMaterial({ color: 0xff4444 })));
+
+            const yGeom = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(0, -10, 0),
+                new THREE.Vector3(0, 10, 0)
+            ]);
+            scene.add(new THREE.Line(yGeom, new THREE.LineBasicMaterial({ color: 0x44ff44 })));
+
+            const zGeom = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(0, 0, -10),
+                new THREE.Vector3(0, 0, 10)
+            ]);
+            scene.add(new THREE.Line(zGeom, new THREE.LineBasicMaterial({ color: 0x4444ff })));
+
+            // 轴标签
+            createAxisLabel('X', 10.5, 0, 0, 0xff4444);
+            createAxisLabel('Y', 0, 10.5, 0, 0x44ff44);
+            createAxisLabel('Z', 0, 0, 10.5, 0x4444ff);
+
+            // 网格(XZ平面)
+            const grid = new THREE.GridHelper(20, 20);
+            scene.add(grid);
+
+            // 创建太阳（带纹理）
+            sun = createSun();
+            scene.add(sun);
+
+            // 创建行星
+            planet = createPlanet();
+            scene.add(planet);
+
+            // 轨道
+            const orbitPoints = [];
+            for (let i = 0; i <= 64; i++) {
+                const a = (i / 64) * Math.PI * 2;
+                orbitPoints.push(new THREE.Vector3(Math.cos(a) * distance, 0, Math.sin(a) * distance));
+            }
+            const orbitGeom = new THREE.BufferGeometry().setFromPoints(orbitPoints);
+            scene.add(new THREE.Line(orbitGeom, new THREE.LineBasicMaterial({ color: 0xffff00 })));
+
+            animate();
+        }
+
+        function createSun() {
+            const geometry = new THREE.SphereGeometry(0.8, 64, 64);
+
+            // 创建太阳纹理
+            const canvas = document.createElement('canvas');
+            canvas.width = 512;
+            canvas.height = 256;
+            const ctx = canvas.getContext('2d');
+
+            // 太阳基础颜色（橙黄色）
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#ff8800');
+            gradient.addColorStop(0.3, '#ffcc00');
+            gradient.addColorStop(0.5, '#ffee66');
+            gradient.addColorStop(0.7, '#ffcc00');
+            gradient.addColorStop(1, '#ff8800');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // 太阳黑子
+            for (let i = 0; i < 10; i++) {
+                const x = Math.random() * canvas.width;
+                const y = canvas.height / 2 + (Math.random() - 0.5) * 100;
+                const r = Math.random() * 20 + 10;
+                ctx.fillStyle = 'rgba(180, 80, 0, 0.4)';
+                ctx.beginPath();
+                ctx.arc(x, y, r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // 日珥（边缘火焰）
+            for (let i = 0; i < 20; i++) {
+                const angle = (i / 20) * Math.PI * 2;
+                const x = canvas.width / 2 + Math.cos(angle) * 200;
+                const y = canvas.height / 2 + Math.sin(angle) * 80;
+                const r = Math.random() * 15 + 5;
+                ctx.fillStyle = `rgba(255, 150, 0, ${Math.random() * 0.3 + 0.1})`;
+                ctx.beginPath();
+                ctx.arc(x, y, r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const material = new THREE.MeshBasicMaterial({
+                map: texture,
+                color: 0xffaa00
+            });
+
+            const sunMesh = new THREE.Mesh(geometry, material);
+
+            // 太阳光晕
+            const glowGeometry = new THREE.SphereGeometry(1.0, 32, 32);
+            const glowMaterial = new THREE.MeshBasicMaterial({
+                color: 0xff6600,
+                transparent: true,
+                opacity: 0.3
+            });
+            const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+            sunMesh.add(glow);
+
+            return sunMesh;
+        }
+
+        function createPlanet() {
+            const geometry = new THREE.SphereGeometry(0.4, 32, 32);
+
+            // 创建行星纹理（蓝色地球）
+            const canvas = document.createElement('canvas');
+            canvas.width = 512;
+            canvas.height = 256;
+            const ctx = canvas.getContext('2d');
+
+            // 海洋基础颜色
+            ctx.fillStyle = '#1a4d7c';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // 大陆（绿色）
+            ctx.fillStyle = '#2d5a1e';
+            ctx.beginPath();
+            ctx.ellipse(200, 128, 80, 50, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.ellipse(350, 120, 60, 40, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 纹理
+            for (let i = 0; i < 50; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const r = Math.random() * 20 + 5;
+                ctx.fillStyle = `rgba(45, 90, 30, 0.3)`;
+                ctx.beginPath();
+                ctx.arc(x, y, r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const material = new THREE.MeshStandardMaterial({
+                map: texture,
+                roughness: 0.8,
+                metalness: 0.2
+            });
+
+            const planetMesh = new THREE.Mesh(geometry, material);
+            return planetMesh;
+        }
+
+        function createAxisLabel(text, x, y, z, color) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 64;
+            canvas.height = 64;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#' + color.toString(16).padStart(6, '0');
+            ctx.font = 'bold 48px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, 32, 32);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.set(x, y, z);
+            scene.add(sprite);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // 公转
+            angle += orbitSpeed;
+            planet.position.x = Math.cos(angle) * distance;
+            planet.position.z = Math.sin(angle) * distance;
+
+            // 行星自转
+            planet.rotation.y += spinSpeed;
+
+            // 太阳自转
+            sun.rotation.y += spinSpeed;
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        window.toggleOrbitDirection = function() {
+            orbitSpeed = orbitSpeed > 0 ? -0.02 : 0.02;
+            document.getElementById('orbitSpeed').textContent = orbitSpeed;
+            document.getElementById('orbitDir').textContent = orbitSpeed > 0 ? '顺时针' : '逆时针';
+        };
+
+        window.toggleSpinDirection = function() {
+            spinSpeed = spinSpeed > 0 ? -0.01 : 0.01;
+            document.getElementById('spinSpeed').textContent = spinSpeed;
+            document.getElementById('spinDir').textContent = spinSpeed > 0 ? '逆时针' : '顺时针';
+        };
+
+        init();
+    </script>
+</body>
+</html>

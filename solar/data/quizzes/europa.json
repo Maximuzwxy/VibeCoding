@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_europa_001",
+      "question": {
+        "zh": "木卫二是木星的哪一颗卫星？",
+        "en": "What is the orbital order of Europa among Jupiter's major moons?"
+      },
+      "options": [
+        {
+          "zh": "第一颗",
+          "en": "First"
+        },
+        {
+          "zh": "第二颗",
+          "en": "Second"
+        },
+        {
+          "zh": "第三颗",
+          "en": "Third"
+        },
+        {
+          "zh": "第四颗",
+          "en": "Fourth"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫二是木星伽利略卫星中第二颗，按距离木星由近到远依次为：木卫一、木卫二、木卫三、木卫四。",
+        "en": "Europa is the second of Jupiter's Galilean moons, ordered by distance from Jupiter: Io, Europa, Ganymede, Callisto."
+      }
+    },
+    {
+      "id": "q_europa_002",
+      "question": {
+        "zh": "木卫二的表面主要由什么物质覆盖？",
+        "en": "What primarily covers the surface of Europa?"
+      },
+      "options": [
+        {
+          "zh": "岩石",
+          "en": "Rock"
+        },
+        {
+          "zh": "水冰",
+          "en": "Water ice"
+        },
+        {
+          "zh": "干冰",
+          "en": "Dry ice"
+        },
+        {
+          "zh": "沙尘",
+          "en": "Dust"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫二表面主要由水冰覆盖，使其成为太阳系中最光滑的天体之一，反照率很高。",
+        "en": "Europa's surface is primarily composed of water ice, making it one of the smoothest bodies in the solar system with high albedo."
+      }
+    },
+    {
+      "id": "q_europa_003",
+      "question": {
+        "zh": "木卫二的直径大约是多少？",
+        "en": "What is the approximate diameter of Europa?"
+      },
+      "options": [
+        {
+          "zh": "约 1,200 公里",
+          "en": "About 1,200 km"
+        },
+        {
+          "zh": "约 3,100 公里",
+          "en": "About 3,100 km"
+        },
+        {
+          "zh": "约 5,200 公里",
+          "en": "About 5,200 km"
+        },
+        {
+          "zh": "约 7,800 公里",
+          "en": "About 7,800 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫二的直径约为 3,100 公里，略小于月球，是伽利略卫星中第二小的。",
+        "en": "Europa has a diameter of about 3,100 km, slightly smaller than Earth's Moon, and is the second smallest of the Galilean moons."
+      }
+    },
+    {
+      "id": "q_europa_004",
+      "question": {
+        "zh": "木卫二绕木星公转的周期大约是多少？",
+        "en": "What is the approximate orbital period of Europa around Jupiter?"
+      },
+      "options": [
+        {
+          "zh": "1.8 天",
+          "en": "1.8 days"
+        },
+        {
+          "zh": "3.6 天",
+          "en": "3.6 days"
+        },
+        {
+          "zh": "7.2 天",
+          "en": "7.2 days"
+        },
+        {
+          "zh": "16.7 天",
+          "en": "16.7 days"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫二的公转周期约为 3.55 天（约 3.6 天），与木卫一和木卫三存在轨道共振。",
+        "en": "Europa's orbital period is about 3.55 days (approximately 3.6 days), and it is in orbital resonance with Io and Ganymede."
+      }
+    },
+    {
+      "id": "q_europa_005",
+      "question": {
+        "zh": "木卫二表面最显著的地貌特征是什么？",
+        "en": "What is the most prominent surface feature on Europa?"
+      },
+      "options": [
+        {
+          "zh": "巨大的环形山",
+          "en": "Giant craters"
+        },
+        {
+          "zh": "纵横交错的暗色条纹",
+          "en": "Intersecting dark streaks"
+        },
+        {
+          "zh": "高耸的火山",
+          "en": "Tall volcanoes"
+        },
+        {
+          "zh": "深邃的峡谷",
+          "en": "Deep canyons"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫二表面布满纵横交错的暗色条纹，被认为是冰壳裂缝中涌出的物质形成的，表明存在活跃的地质活动。",
+        "en": "Europa's surface is covered with intersecting dark streaks, thought to be material erupted from cracks in the ice crust, indicating active geology."
+      }
+    },
+    {
+      "id": "q_europa_006",
+      "question": {
+        "zh": "科学家认为木卫二冰壳下方可能存在什么？",
+        "en": "What do scientists believe may exist beneath Europa's icy crust?"
+      },
+      "options": [
+        {
+          "zh": "固态岩石核心",
+          "en": "A solid rock core"
+        },
+        {
+          "zh": "液态水海洋",
+          "en": "A liquid water ocean"
+        },
+        {
+          "zh": "甲烷湖泊",
+          "en": "Methane lakes"
+        },
+        {
+          "zh": "岩浆层",
+          "en": "A magma layer"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "基于磁场数据和表面特征，科学家强烈认为木卫二冰壳下方存在全球性的液态水海洋，深度可能达 100 公里。",
+        "en": "Based on magnetic field data and surface features, scientists strongly believe a global liquid water ocean exists beneath Europa's ice crust, possibly up to 100 km deep."
+      }
+    },
+    {
+      "id": "q_europa_007",
+      "question": {
+        "zh": "木卫二的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Europa?"
+      },
+      "options": [
+        {
+          "zh": "约 -50°C",
+          "en": "About -50°C"
+        },
+        {
+          "zh": "约 -100°C",
+          "en": "About -100°C"
+        },
+        {
+          "zh": "约 -160°C",
+          "en": "About -160°C"
+        },
+        {
+          "zh": "约 -220°C",
+          "en": "About -220°C"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "木卫二表面平均温度约为 -160°C（约 110 K），即使在赤道附近也很少超过 -140°C。",
+        "en": "Europa's average surface temperature is about -160°C (approximately 110 K), rarely exceeding -140°C even near the equator."
+      }
+    },
+    {
+      "id": "q_europa_008",
+      "question": {
+        "zh": "哪艘探测器首次近距离飞越木卫二并传回详细图像？",
+        "en": "Which spacecraft first performed a close flyby of Europa and returned detailed images?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "伽利略号",
+          "en": "Galileo"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "伽利略号探测器在 1995 年至 2003 年间环绕木星，多次飞越木卫二，提供了高分辨率图像和大量科学数据。",
+        "en": "The Galileo orbiter studied Jupiter from 1995 to 2003, performing multiple flybys of Europa and providing high-resolution images and extensive scientific data."
+      }
+    },
+    {
+      "id": "q_europa_009",
+      "question": {
+        "zh": "木卫二被认为可能支持生命的主要原因是？",
+        "en": "What is the primary reason Europa is considered a potential habitat for life?"
+      },
+      "options": [
+        {
+          "zh": "表面有液态水",
+          "en": "Liquid water on the surface"
+        },
+        {
+          "zh": "存在液态水海洋、能量来源和化学元素",
+          "en": "Liquid water ocean, energy source, and chemical elements"
+        },
+        {
+          "zh": "大气层富含氧气",
+          "en": "Oxygen-rich atmosphere"
+        },
+        {
+          "zh": "温度适宜",
+          "en": "Mild temperatures"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木卫二拥有液态水海洋、潮汐加热提供的能量以及可能的化学元素（如硫和碳），具备生命存在的三大基本条件。",
+        "en": "Europa has a liquid water ocean, tidal heating as an energy source, and possible chemical elements (like sulfur and carbon), meeting the three basic requirements for life."
+      }
+    },
+    {
+      "id": "q_europa_010",
+      "question": {
+        "zh": "计划于 2024 年发射、专门探测木卫二的探测器名称是什么？",
+        "en": "What is the name of the spacecraft planned for launch in 2024 specifically to explore Europa?"
+      },
+      "options": [
+        {
+          "zh": "木卫二快船",
+          "en": "Europa Clipper"
+        },
+        {
+          "zh": "木星冰月探测器",
+          "en": "JUICE"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        },
+        {
+          "zh": "朱诺号",
+          "en": "Juno"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "NASA 的欧罗巴快船（Europa Clipper）计划于 2024 年发射，将对木卫二进行详细探测，评估其宜居性。",
+        "en": "NASA's Europa Clipper is planned for launch in 2024 to conduct detailed reconnaissance of Europa and assess its habitability."
+      }
+    }
+  ]
+}

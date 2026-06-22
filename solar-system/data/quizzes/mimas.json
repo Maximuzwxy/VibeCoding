@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": "q_mimas_001",
+      "question": {"zh": "土卫一的直径约为多少？", "en": "What is the approximate diameter of Mimas?"},
+      "options": [
+        {"zh": "196 km", "en": "196 km"},
+        {"zh": "396 km", "en": "396 km"},
+        {"zh": "596 km", "en": "596 km"},
+        {"zh": "796 km", "en": "796 km"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土卫一直径约 396 公里，是土星主要卫星中最小的。", "en": "Mimas is about 396 km in diameter, the smallest of Saturn's major moons."}
+    },
+    {
+      "id": "q_mimas_002",
+      "question": {"zh": "土卫一最大的撞击坑是？", "en": "What is the largest crater on Mimas?"},
+      "options": [
+        {"zh": "斯蒂克尼坑", "en": "Stickney Crater"},
+        {"zh": "赫歇尔撞击坑", "en": "Herschel Crater"},
+        {"zh": "瓦尔哈拉坑", "en": "Valhalla Crater"},
+        {"zh": "第谷坑", "en": "Tycho Crater"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "赫歇尔撞击坑直径 130 公里，占土卫一直径的 1/3。", "en": "Herschel Crater is 130 km in diameter, 1/3 of Mimas's diameter."}
+    },
+    {
+      "id": "q_mimas_003",
+      "question": {"zh": "土卫一是由谁发现的？", "en": "Who discovered Mimas?"},
+      "options": [
+        {"zh": "伽利略", "en": "Galileo"},
+        {"zh": "惠更斯", "en": "Huygens"},
+        {"zh": "赫歇尔", "en": "Herschel"},
+        {"zh": "卡西尼", "en": "Cassini"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "威廉·赫歇尔于 1789 年发现土卫一。", "en": "William Herschel discovered Mimas in 1789."}
+    },
+    {
+      "id": "q_mimas_004",
+      "question": {"zh": "土卫一的形状像什么？", "en": "What does Mimas's shape resemble?"},
+      "options": [
+        {"zh": "完美球体", "en": "Perfect sphere"},
+        {"zh": "椭球形", "en": "Ellipsoid"},
+        {"zh": "土豆形", "en": "Potato-shaped"},
+        {"zh": "圆盘形", "en": "Disk-shaped"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土卫一呈椭球形，是太阳系最小的流体静力平衡天体。", "en": "Mimas is ellipsoidal, the smallest body in hydrostatic equilibrium."}
+    },
+    {
+      "id": "q_mimas_005",
+      "question": {"zh": "土卫一绕土星公转一周需要多少时间？", "en": "How long does it take Mimas to orbit Saturn?"},
+      "options": [
+        {"zh": "0.94 天", "en": "0.94 days"},
+        {"zh": "1.94 天", "en": "1.94 days"},
+        {"zh": "2.94 天", "en": "2.94 days"},
+        {"zh": "3.94 天", "en": "3.94 days"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "土卫一公转周期为 0.94 天，约 22.5 小时。", "en": "Mimas's orbital period is 0.94 days, about 22.5 hours."}
+    },
+    {
+      "id": "q_mimas_006",
+      "question": {"zh": "土卫一的平均密度约为多少？", "en": "What is the average density of Mimas?"},
+      "options": [
+        {"zh": "0.15 g/cm³", "en": "0.15 g/cm³"},
+        {"zh": "1.15 g/cm³", "en": "1.15 g/cm³"},
+        {"zh": "2.15 g/cm³", "en": "2.15 g/cm³"},
+        {"zh": "3.15 g/cm³", "en": "3.15 g/cm³"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土卫一平均密度约 1.15 g/cm³，主要由冰组成。", "en": "Mimas's density is about 1.15 g/cm³, mainly composed of ice."}
+    },
+    {
+      "id": "q_mimas_007",
+      "question": {"zh": "土卫一表面温度约为多少？", "en": "What is Mimas's surface temperature?"},
+      "options": [
+        {"zh": "-90°C", "en": "-90°C"},
+        {"zh": "-140°C", "en": "-140°C"},
+        {"zh": "-190°C", "en": "-190°C"},
+        {"zh": "-240°C", "en": "-240°C"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "土卫一表面温度约 -190°C，非常寒冷。", "en": "Mimas's surface temperature is about -190°C, extremely cold."}
+    },
+    {
+      "id": "q_mimas_008",
+      "question": {"zh": "土卫一距离土星约为多少？", "en": "What is the distance from Mimas to Saturn?"},
+      "options": [
+        {"zh": "85,404 km", "en": "85,404 km"},
+        {"zh": "135,404 km", "en": "135,404 km"},
+        {"zh": "185,404 km", "en": "185,404 km"},
+        {"zh": "235,404 km", "en": "235,404 km"}
+      ],
+      "answer": 2,
+      "explanation": {"zh": "土卫一距离土星约 185,404 公里。", "en": "Mimas is about 185,404 km from Saturn."}
+    },
+    {
+      "id": "q_mimas_009",
+      "question": {"zh": "土卫一的命名来源于？", "en": "What is the naming origin of Mimas?"},
+      "options": [
+        {"zh": "罗马神话", "en": "Roman mythology"},
+        {"zh": "希腊神话巨人", "en": "Greek mythology giant"},
+        {"zh": "埃及神话", "en": "Egyptian mythology"},
+        {"zh": "北欧神话", "en": "Norse mythology"}
+      ],
+      "answer": 1,
+      "explanation": {"zh": "土卫一以希腊神话中的巨人米玛斯命名。", "en": "Mimas is named after the giant Mimas in Greek mythology."}
+    },
+    {
+      "id": "q_mimas_010",
+      "question": {"zh": "土卫一因为外形像什么而闻名？", "en": "What is Mimas famous for resembling?"},
+      "options": [
+        {"zh": "死星（星球大战）", "en": "Death Star (Star Wars)"},
+        {"zh": "眼睛", "en": "Eye"},
+        {"zh": "笑脸", "en": "Smiley face"},
+        {"zh": "土豆", "en": "Potato"}
+      ],
+      "answer": 0,
+      "explanation": {"zh": "土卫一因赫歇尔撞击坑而酷似《星球大战》中的死星。", "en": "Mimas resembles the Death Star from Star Wars due to Herschel Crater."}
+    }
+  ]
+}

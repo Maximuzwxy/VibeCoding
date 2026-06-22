@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_dione_001",
+      "question": {
+        "zh": "土卫四（Dione）是土星的第几颗已知卫星（按发现顺序）？",
+        "en": "What is the order of discovery of Dione among Saturn's known moons?"
+      },
+      "options": [
+        {
+          "zh": "第四颗",
+          "en": "Fourth"
+        },
+        {
+          "zh": "第五颗",
+          "en": "Fifth"
+        },
+        {
+          "zh": "第六颗",
+          "en": "Sixth"
+        },
+        {
+          "zh": "第七颗",
+          "en": "Seventh"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫四由乔瓦尼·卡西尼于1684年发现，是土星第四颗被发现的卫星。",
+        "en": "Dione was discovered by Giovanni Cassini in 1684, and it is the fourth discovered moon of Saturn."
+      }
+    },
+    {
+      "id": "q_dione_002",
+      "question": {
+        "zh": "土卫四的平均轨道半径大约是多少？",
+        "en": "What is the approximate average orbital radius of Dione?"
+      },
+      "options": [
+        {
+          "zh": "约 12 万公里",
+          "en": "About 120,000 km"
+        },
+        {
+          "zh": "约 23 万公里",
+          "en": "About 230,000 km"
+        },
+        {
+          "zh": "约 38 万公里",
+          "en": "About 380,000 km"
+        },
+        {
+          "zh": "约 53 万公里",
+          "en": "About 530,000 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫四的平均轨道半径约为 377,400 公里，接近 38 万公里。",
+        "en": "Dione's average orbital radius is about 377,400 km, close to 380,000 km."
+      }
+    },
+    {
+      "id": "q_dione_003",
+      "question": {
+        "zh": "土卫四主要由什么物质构成？",
+        "en": "What is Dione primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "纯岩石",
+          "en": "Pure rock"
+        },
+        {
+          "zh": "水冰和岩石",
+          "en": "Water ice and rock"
+        },
+        {
+          "zh": "液态甲烷",
+          "en": "Liquid methane"
+        },
+        {
+          "zh": "金属铁",
+          "en": "Metallic iron"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫四主要由水冰和硅酸盐岩石组成，密度约为 1.48 g/cm³，表明冰占很大比例。",
+        "en": "Dione is composed mainly of water ice and silicate rock, with a density of about 1.48 g/cm³, indicating a significant ice component."
+      }
+    },
+    {
+      "id": "q_dione_004",
+      "question": {
+        "zh": "土卫四的表面最显著的特征是什么？",
+        "en": "What is the most prominent surface feature on Dione?"
+      },
+      "options": [
+        {
+          "zh": "巨大的环形山",
+          "en": "Huge impact craters"
+        },
+        {
+          "zh": "明亮的冰原",
+          "en": "Bright ice plains"
+        },
+        {
+          "zh": "暗色的条纹和悬崖",
+          "en": "Dark streaks and cliffs"
+        },
+        {
+          "zh": "活跃的火山",
+          "en": "Active volcanoes"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫四表面有明亮的冰原和暗色条纹，以及被称为“冰崖”的陡峭悬崖，暗色条纹是其显著特征。",
+        "en": "Dione's surface features bright ice plains, dark streaks, and steep cliffs called 'ice cliffs'; the dark streaks are its most prominent features."
+      }
+    },
+    {
+      "id": "q_dione_005",
+      "question": {
+        "zh": "土卫四的轨道共振状态如何？",
+        "en": "What is the orbital resonance status of Dione?"
+      },
+      "options": [
+        {
+          "zh": "与土卫二（Enceladus）形成 2:1 共振",
+          "en": "In a 2:1 resonance with Enceladus"
+        },
+        {
+          "zh": "与土卫三（Tethys）形成 1:2 共振",
+          "en": "In a 1:2 resonance with Tethys"
+        },
+        {
+          "zh": "与土卫五（Rhea）形成 3:2 共振",
+          "en": "In a 3:2 resonance with Rhea"
+        },
+        {
+          "zh": "无轨道共振",
+          "en": "No orbital resonance"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "土卫四与土卫二（Enceladus）处于 2:1 平均运动轨道共振，即土卫四每绕土星一圈，土卫二绕两圈。",
+        "en": "Dione is in a 2:1 mean-motion orbital resonance with Enceladus: for every orbit of Dione, Enceladus completes two orbits."
+      }
+    },
+    {
+      "id": "q_dione_006",
+      "question": {
+        "zh": "土卫四的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Dione?"
+      },
+      "options": [
+        {
+          "zh": "约 -50°C",
+          "en": "About -50°C"
+        },
+        {
+          "zh": "约 -100°C",
+          "en": "About -100°C"
+        },
+        {
+          "zh": "约 -180°C",
+          "en": "About -180°C"
+        },
+        {
+          "zh": "约 -220°C",
+          "en": "About -220°C"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫四的表面温度极低，平均约为 -180°C（93 K），因为距离太阳很远。",
+        "en": "Dione's surface temperature is extremely low, averaging about -180°C (93 K), due to its great distance from the Sun."
+      }
+    },
+    {
+      "id": "q_dione_007",
+      "question": {
+        "zh": "哪艘探测器首次近距离飞越土卫四并传回详细图像？",
+        "en": "Which spacecraft first performed a close flyby of Dione and returned detailed images?"
+      },
+      "options": [
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        },
+        {
+          "zh": "先驱者11号",
+          "en": "Pioneer 11"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "旅行者2号于1981年8月近距离飞越土卫四，首次提供了高分辨率图像。",
+        "en": "Voyager 2 performed a close flyby of Dione in August 1981, providing the first high-resolution images."
+      }
+    },
+    {
+      "id": "q_dione_008",
+      "question": {
+        "zh": "土卫四是否有稀薄的大气层？",
+        "en": "Does Dione have a thin atmosphere?"
+      },
+      "options": [
+        {
+          "zh": "有，主要由氧气组成",
+          "en": "Yes, mainly composed of oxygen"
+        },
+        {
+          "zh": "有，主要由二氧化碳组成",
+          "en": "Yes, mainly composed of carbon dioxide"
+        },
+        {
+          "zh": "有，主要由氮气组成",
+          "en": "Yes, mainly composed of nitrogen"
+        },
+        {
+          "zh": "没有可检测到的大气层",
+          "en": "No detectable atmosphere"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "卡西尼号探测器发现土卫四周围存在极其稀薄的氧气大气层（外逸层），由表面冰层受辐射分解产生。",
+        "en": "The Cassini spacecraft detected an extremely thin oxygen atmosphere (exosphere) around Dione, produced by radiation breaking down surface ice."
+      }
+    },
+    {
+      "id": "q_dione_009",
+      "question": {
+        "zh": "土卫四的直径大约是多少？",
+        "en": "What is the approximate diameter of Dione?"
+      },
+      "options": [
+        {
+          "zh": "约 500 公里",
+          "en": "About 500 km"
+        },
+        {
+          "zh": "约 800 公里",
+          "en": "About 800 km"
+        },
+        {
+          "zh": "约 1120 公里",
+          "en": "About 1,120 km"
+        },
+        {
+          "zh": "约 1500 公里",
+          "en": "About 1,500 km"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "土卫四的直径约为 1,123 公里，是土星中等大小的卫星。",
+        "en": "Dione has a diameter of about 1,123 km, making it a medium-sized moon of Saturn."
+      }
+    },
+    {
+      "id": "q_dione_010",
+      "question": {
+        "zh": "土卫四的背面（后半球）相比正面（前半球）有何特点？",
+        "en": "How does the trailing hemisphere of Dione compare to its leading hemisphere?"
+      },
+      "options": [
+        {
+          "zh": "背面更亮且环形山更多",
+          "en": "The trailing hemisphere is brighter and more cratered"
+        },
+        {
+          "zh": "背面更暗且暗色条纹更多",
+          "en": "The trailing hemisphere is darker and has more dark streaks"
+        },
+        {
+          "zh": "背面有更多火山",
+          "en": "The trailing hemisphere has more volcanoes"
+        },
+        {
+          "zh": "两面完全相同",
+          "en": "Both hemispheres are identical"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土卫四的背面（后半球）比正面（前半球）更暗，并分布有大量暗色条纹和物质，这可能是由于表面物质差异或辐射作用。",
+        "en": "The trailing hemisphere of Dione is darker than the leading hemisphere and features extensive dark streaks and material, likely due to compositional differences or radiation effects."
+      }
+    }
+  ]
+}

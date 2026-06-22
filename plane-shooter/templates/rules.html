@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Rules - Plane Shooter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="login-body">
+    <div class="rules-container">
+        <h1 class="rules-title">📖 Game Rules</h1>
+        
+        <div class="rules-section">
+            <h2>🎮 Game Objective</h2>
+            <p>Pilot your spaceship through 6 dangerous levels, defeat enemy forces, and survive boss battles to become the ultimate space ace!</p>
+        </div>
+        
+        <div class="rules-section">
+            <h2>⌨️ Controls</h2>
+            <table class="controls-table">
+                <tr>
+                    <td><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd></td>
+                    <td>Move spaceship</td>
+                </tr>
+                <tr>
+                    <td><kbd>SPACE</kbd></td>
+                    <td>Fire bullets</td>
+                </tr>
+                <tr>
+                    <td><kbd>P</kbd></td>
+                    <td>Pause game (Single Player only)</td>
+                </tr>
+            </table>
+            <p class="note"><strong>2 Player Mode:</strong> Player 1 uses Arrow Keys, Player 2 uses W/A/S/D keys.</p>
+        </div>
+        
+        <div class="rules-section">
+            <h2>✨ Power-ups</h2>
+            <div class="powerup-grid">
+                <div class="powerup-item">
+                    <span class="powerup-icon">🔥</span>
+                    <h4>Rapid Fire</h4>
+                    <p>Increases firing rate for 10 seconds</p>
+                </div>
+                <div class="powerup-item">
+                    <span class="powerup-icon">🛡️</span>
+                    <h4>Shield</h4>
+                    <p>Temporary invincibility for 8 seconds</p>
+                </div>
+                <div class="powerup-item">
+                    <span class="powerup-icon">⭐</span>
+                    <h4>Multi-shot</h4>
+                    <p>Fire 3 bullets at once for 12 seconds</p>
+                </div>
+                <div class="powerup-item">
+                    <span class="powerup-icon">❤️</span>
+                    <h4>Extra Life</h4>
+                    <p>Adds one life permanently</p>
+                </div>
+                <div class="powerup-item">
+                    <span class="powerup-icon">💣</span>
+                    <h4>Bomb</h4>
+                    <p>Clears all enemies on screen instantly</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rules-section">
+            <h2>🎯 Scoring System</h2>
+            <table class="scoring-table">
+                <tr>
+                    <td>Destroy small enemy</td>
+                    <td><strong>100</strong> points</td>
+                </tr>
+                <tr>
+                    <td>Destroy medium enemy</td>
+                    <td><strong>250</strong> points</td>
+                </tr>
+                <tr>
+                    <td>Destroy large enemy</td>
+                    <td><strong>500</strong> points</td>
+                </tr>
+                <tr>
+                    <td>Destroy boss</td>
+                    <td><strong>1000</strong> points</td>
+                </tr>
+                <tr>
+                    <td>Collect power-up</td>
+                    <td><strong>50</strong> points</td>
+                </tr>
+                <tr>
+                    <td>Collect extra life</td>
+                    <td><strong>200</strong> points</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="rules-section">
+            <h2>🌟 Levels</h2>
+            <p>The game features 6 unique levels, each ending with a challenging boss battle:</p>
+            <ul class="level-list">
+                <li><strong>Level 1:</strong> Asteroid Field - Boss: Rock Destroyer</li>
+                <li><strong>Level 2:</strong> Enemy Fleet - Boss: Battle Cruiser</li>
+                <li><strong>Level 3:</strong> Alien Planet - Boss: Mothership</li>
+                <li><strong>Level 4:</strong> Space Station - Boss: Station Core</li>
+                <li><strong>Level 5:</strong> Nebula Storm - Boss: Storm Bringer</li>
+                <li><strong>Level 6:</strong> Enemy Base - Boss: Final Boss</li>
+            </ul>
+        </div>
+        
+        <div class="rules-section">
+            <h2>❤️ Lives & Game Over</h2>
+            <p>You start with 3 lives (configurable in Settings). When your spaceship collides with enemies or their bullets, you lose a life.</p>
+            <p><strong>Game Over</strong> occurs when all lives are depleted. Your score is saved to the leaderboard!</p>
+        </div>
+        
+        <div class="rules-section">
+            <h2>🎚️ Difficulty Levels</h2>
+            <ul>
+                <li><strong>🟢 Easy:</strong> Slower enemies, lower spawn rate, simple bullet patterns</li>
+                <li><strong>🟡 Normal:</strong> Balanced challenge for experienced players</li>
+                <li><strong>🔴 Hard:</strong> Fast enemies, high spawn rate, complex bullet patterns</li>
+            </ul>
+        </div>
+        
+        <div class="rules-footer">
+            <a href="{{ url_for('login') }}" class="btn btn-primary">← Back to Login</a>
+            <a href="{{ url_for('leaderboard') }}" class="btn btn-secondary">🏆 Leaderboard</a>
+        </div>
+    </div>
+</body>
+</html>

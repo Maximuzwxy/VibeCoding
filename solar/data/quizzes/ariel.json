@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q_ariel_001",
+      "question": {
+        "zh": "天卫二（Ariel）是围绕哪颗行星运行的卫星？",
+        "en": "Which planet does Ariel orbit?"
+      },
+      "options": [
+        {
+          "zh": "天王星",
+          "en": "Uranus"
+        },
+        {
+          "zh": "海王星",
+          "en": "Neptune"
+        },
+        {
+          "zh": "土星",
+          "en": "Saturn"
+        },
+        {
+          "zh": "木星",
+          "en": "Jupiter"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫二是天王星已知的27颗卫星之一，由威廉·拉塞尔于1851年发现。",
+        "en": "Ariel is one of the 27 known moons of Uranus, discovered by William Lassell in 1851."
+      }
+    },
+    {
+      "id": "q_ariel_002",
+      "question": {
+        "zh": "天卫二的轨道属于天王星卫星系统中的哪一类？",
+        "en": "What type of orbit does Ariel have within the Uranian moon system?"
+      },
+      "options": [
+        {
+          "zh": "不规则逆行轨道",
+          "en": "Irregular retrograde orbit"
+        },
+        {
+          "zh": "规则顺行轨道（内圈大卫星）",
+          "en": "Regular prograde orbit (inner large moon)"
+        },
+        {
+          "zh": "共轨轨道",
+          "en": "Co-orbital orbit"
+        },
+        {
+          "zh": "极轨道",
+          "en": "Polar orbit"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫二是天王星的内圈大卫星之一，轨道接近圆形且位于天王星赤道平面内，属于规则顺行轨道。",
+        "en": "Ariel is one of Uranus's inner large moons, with a nearly circular orbit in the planet's equatorial plane, making it a regular prograde orbit."
+      }
+    },
+    {
+      "id": "q_ariel_003",
+      "question": {
+        "zh": "天卫二的表面最显著的地质特征是什么？",
+        "en": "What is the most prominent geological feature on Ariel's surface?"
+      },
+      "options": [
+        {
+          "zh": "巨大的环形山",
+          "en": "Giant impact craters"
+        },
+        {
+          "zh": "纵横交错的峡谷和沟壑",
+          "en": "Extensive systems of canyons and valleys"
+        },
+        {
+          "zh": "活跃的冰火山",
+          "en": "Active cryovolcanoes"
+        },
+        {
+          "zh": "广阔的暗色平原",
+          "en": "Vast dark plains"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫二表面布满了复杂的峡谷和沟壑系统，表明其历史上曾经历过强烈的构造活动。",
+        "en": "Ariel's surface is marked by extensive canyon and valley systems, indicating a history of intense tectonic activity."
+      }
+    },
+    {
+      "id": "q_ariel_004",
+      "question": {
+        "zh": "天卫二的直径大约是多少？",
+        "en": "What is the approximate diameter of Ariel?"
+      },
+      "options": [
+        {
+          "zh": "约500公里",
+          "en": "About 500 km"
+        },
+        {
+          "zh": "约1158公里",
+          "en": "About 1158 km"
+        },
+        {
+          "zh": "约2700公里",
+          "en": "About 2700 km"
+        },
+        {
+          "zh": "约4800公里",
+          "en": "About 4800 km"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫二的直径约为1158公里，是天王星第四大卫星。",
+        "en": "Ariel has a diameter of about 1158 km, making it the fourth-largest moon of Uranus."
+      }
+    },
+    {
+      "id": "q_ariel_005",
+      "question": {
+        "zh": "天卫二主要由什么物质组成？",
+        "en": "What is Ariel primarily composed of?"
+      },
+      "options": [
+        {
+          "zh": "纯岩石",
+          "en": "Pure rock"
+        },
+        {
+          "zh": "水冰和岩石的混合物",
+          "en": "A mixture of water ice and rock"
+        },
+        {
+          "zh": "金属铁和镍",
+          "en": "Metallic iron and nickel"
+        },
+        {
+          "zh": "固态甲烷",
+          "en": "Solid methane"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫二由大约等比例的水冰和岩石组成，可能还含有少量其他冰如氨冰。",
+        "en": "Ariel is composed of roughly equal parts water ice and rock, possibly with minor amounts of other ices like ammonia."
+      }
+    },
+    {
+      "id": "q_ariel_006",
+      "question": {
+        "zh": "天卫二的表面温度大约是多少？",
+        "en": "What is the approximate surface temperature of Ariel?"
+      },
+      "options": [
+        {
+          "zh": "约-180°C（93 K）",
+          "en": "About -180°C (93 K)"
+        },
+        {
+          "zh": "约-220°C（53 K）",
+          "en": "About -220°C (53 K)"
+        },
+        {
+          "zh": "约-100°C（173 K）",
+          "en": "About -100°C (173 K)"
+        },
+        {
+          "zh": "约-50°C（223 K）",
+          "en": "About -50°C (223 K)"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "天卫二的表面温度极低，平均约为-180°C（93 K），这使其表面的水冰保持固态。",
+        "en": "Ariel's surface temperature is extremely low, averaging about -180°C (93 K), keeping its water ice solid."
+      }
+    },
+    {
+      "id": "q_ariel_007",
+      "question": {
+        "zh": "哪艘航天器曾飞越并拍摄了天卫二的详细图像？",
+        "en": "Which spacecraft flew by and captured detailed images of Ariel?"
+      },
+      "options": [
+        {
+          "zh": "旅行者2号",
+          "en": "Voyager 2"
+        },
+        {
+          "zh": "旅行者1号",
+          "en": "Voyager 1"
+        },
+        {
+          "zh": "新视野号",
+          "en": "New Horizons"
+        },
+        {
+          "zh": "卡西尼号",
+          "en": "Cassini"
+        }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "1986年，旅行者2号在飞越天王星系统时拍摄了天卫二的详细图像，这是目前唯一一次近距离探测。",
+        "en": "In 1986, Voyager 2 captured detailed images of Ariel during its flyby of the Uranian system, the only close-up exploration to date."
+      }
+    },
+    {
+      "id": "q_ariel_008",
+      "question": {
+        "zh": "天卫二的表面反照率（反射率）相对较高，这表明什么？",
+        "en": "Ariel's relatively high surface albedo suggests what?"
+      },
+      "options": [
+        {
+          "zh": "表面覆盖着暗色有机物",
+          "en": "The surface is covered in dark organic material"
+        },
+        {
+          "zh": "表面主要由新鲜的水冰组成",
+          "en": "The surface is primarily composed of fresh water ice"
+        },
+        {
+          "zh": "表面有液态水海洋",
+          "en": "There is a liquid water ocean on the surface"
+        },
+        {
+          "zh": "表面温度极高",
+          "en": "The surface temperature is extremely high"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫二的高反照率（约0.39）表明其表面覆盖着相对新鲜、未被暗色物质严重污染的水冰。",
+        "en": "Ariel's high albedo (about 0.39) indicates its surface is covered with relatively fresh water ice, not heavily contaminated by dark material."
+      }
+    },
+    {
+      "id": "q_ariel_009",
+      "question": {
+        "zh": "天卫二上存在峡谷和沟壑，最可能的地质成因是什么？",
+        "en": "What is the most likely geological cause of the canyons and valleys on Ariel?"
+      },
+      "options": [
+        {
+          "zh": "大规模陨石撞击",
+          "en": "Large-scale meteorite impacts"
+        },
+        {
+          "zh": "内部热膨胀导致表面张裂",
+          "en": "Surface fracturing due to internal thermal expansion"
+        },
+        {
+          "zh": "外部天体引力潮汐作用",
+          "en": "Tidal forces from an external body"
+        },
+        {
+          "zh": "风蚀作用",
+          "en": "Wind erosion"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫二的峡谷被认为是由内部热膨胀或冰火山活动导致表面张裂形成的，而非撞击或风蚀。",
+        "en": "Ariel's canyons are thought to have formed by surface fracturing due to internal thermal expansion or cryovolcanic activity, not impacts or wind."
+      }
+    },
+    {
+      "id": "q_ariel_010",
+      "question": {
+        "zh": "天卫二与天王星其他大卫星（如米兰达、泰坦尼亚）相比，其表面年龄如何？",
+        "en": "Compared to other large Uranian moons like Miranda and Titania, how old is Ariel's surface?"
+      },
+      "options": [
+        {
+          "zh": "最年轻",
+          "en": "The youngest"
+        },
+        {
+          "zh": "中等年龄，介于米兰达和泰坦尼亚之间",
+          "en": "Intermediate, between Miranda and Titania"
+        },
+        {
+          "zh": "最古老",
+          "en": "The oldest"
+        },
+        {
+          "zh": "与泰坦尼亚一样古老",
+          "en": "As old as Titania"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天卫二的表面年龄介于米兰达（最年轻）和泰坦尼亚（较古老）之间，显示其中等程度的构造和撞击历史。",
+        "en": "Ariel's surface age is intermediate between Miranda (youngest) and Titania (older), indicating a moderate history of tectonic and impact activity."
+      }
+    }
+  ]
+}

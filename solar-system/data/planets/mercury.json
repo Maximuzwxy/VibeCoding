@@ -1,0 +1,80 @@
+{
+  "id": "mercury",
+  "name": {"zh": "水星", "en": "Mercury"},
+  "icon": "☿️",
+  "theme_color": "#b5b5b5",
+  "accent_color": "#b5b5b5",
+  "info_sections": [
+    {
+      "title": {"zh": "📊 基本参数", "en": "📊 Basic Parameters"},
+      "items": [
+        {"label": {"zh": "行星类型", "en": "Planet Type"}, "value": {"zh": "类地行星", "en": "Terrestrial Planet"}},
+        {"label": {"zh": "赤道直径", "en": "Equatorial Diameter"}, "value": {"zh": "4,880 km", "en": "4,880 km"}},
+        {"label": {"zh": "质量", "en": "Mass"}, "value": {"zh": "3.285×10²³kg", "en": "3.285×10²³kg"}},
+        {"label": {"zh": "体积", "en": "Volume"}, "value": {"zh": "6.083×10¹⁰km³", "en": "6.083×10¹⁰km³"}},
+        {"label": {"zh": "平均密度", "en": "Average Density"}, "value": {"zh": "5.427 g/cm³", "en": "5.427 g/cm³"}},
+        {"label": {"zh": "表面重力", "en": "Surface Gravity"}, "value": {"zh": "3.7 m/s²", "en": "3.7 m/s²"}}
+      ],
+      "note": {"zh": "※ 太阳系中最小的行星", "en": "※ Smallest planet in the Solar System"}
+    },
+    {
+      "title": {"zh": "🕐 时间参数", "en": "🕐 Time Parameters"},
+      "items": [
+        {"label": {"zh": "自转周期", "en": "Rotation Period"}, "value": {"zh": "58.6 天", "en": "58.6 days"}},
+        {"label": {"zh": "公转周期", "en": "Orbital Period"}, "value": {"zh": "88 天", "en": "88 days"}},
+        {"label": {"zh": "公转速度", "en": "Orbital Speed"}, "value": {"zh": "47.4 km/s", "en": "47.4 km/s"}},
+        {"label": {"zh": "轨道离心率", "en": "Orbital Eccentricity"}, "value": {"zh": "0.2056", "en": "0.2056"}},
+        {"label": {"zh": "轨道倾角", "en": "Orbital Inclination"}, "value": {"zh": "7.0°", "en": "7.0°"}}
+      ],
+      "note": {"zh": "※ 太阳系中公转最快的行星", "en": "※ Fastest orbiting planet in the Solar System"}
+    },
+    {
+      "title": {"zh": "🌡 环境参数", "en": "🌡 Environmental Parameters"},
+      "items": [
+        {"label": {"zh": "表面温度", "en": "Surface Temperature"}, "value": {"zh": "-180°C ~ 430°C", "en": "-180°C to 430°C"}},
+        {"label": {"zh": "平均温度", "en": "Average Temperature"}, "value": {"zh": "167°C", "en": "167°C"}},
+        {"label": {"zh": "大气压力", "en": "Atmospheric Pressure"}, "value": {"zh": "≈0 kPa", "en": "≈0 kPa"}},
+        {"label": {"zh": "大气成分", "en": "Atmospheric Composition"}, "value": {"zh": "极稀薄 (O₂, Na, H)", "en": "Very thin (O₂, Na, H)"}},
+        {"label": {"zh": "磁场强度", "en": "Magnetic Field Strength"}, "value": {"zh": "地球的 1%", "en": "1% of Earth's"}}
+      ],
+      "note": {"zh": "※ 温差最大的行星（无大气保温）", "en": "※ Largest temperature variation (no atmosphere)"}
+    },
+    {
+      "title": {"zh": "📍 位置参数", "en": "📍 Position Parameters"},
+      "items": [
+        {"label": {"zh": "近日点", "en": "Perihelion"}, "value": {"zh": "4,600 万 km", "en": "46 million km"}},
+        {"label": {"zh": "远日点", "en": "Aphelion"}, "value": {"zh": "6,980 万 km", "en": "69.8 million km"}},
+        {"label": {"zh": "半长轴", "en": "Semi-major Axis"}, "value": {"zh": "5,790 万 km", "en": "57.9 million km"}},
+        {"label": {"zh": "天文单位", "en": "Astronomical Units"}, "value": {"zh": "0.39 AU", "en": "0.39 AU"}},
+        {"label": {"zh": "光行时", "en": "Light Travel Time"}, "value": {"zh": "3.2-5.2 分钟", "en": "3.2-5.2 minutes"}}
+      ]
+    },
+    {
+      "title": {"zh": "🌑 卫星系统", "en": "🌑 Satellite System"},
+      "items": [
+        {"label": {"zh": "已知卫星", "en": "Known Moons"}, "value": {"zh": "0 颗", "en": "0 moons"}},
+        {"label": {"zh": "卫星名称", "en": "Moon Names"}, "value": {"zh": "无", "en": "None"}}
+      ],
+      "note": {"zh": "※ 水星没有卫星", "en": "※ Mercury has no moons"}
+    },
+    {
+      "title": {"zh": "🌋 地表特征", "en": "🌋 Surface Features"},
+      "items": [
+        {"label": {"zh": "最大撞击坑", "en": "Largest Crater"}, "value": {"zh": "卡洛里盆地", "en": "Caloris Basin"}},
+        {"label": {"zh": "撞击坑直径", "en": "Crater Diameter"}, "value": {"zh": "1,550 km", "en": "1,550 km"}},
+        {"label": {"zh": "地表年龄", "en": "Surface Age"}, "value": {"zh": "约 40 亿年", "en": "About 4 billion years"}},
+        {"label": {"zh": "最高峰", "en": "Highest Peak"}, "value": {"zh": "约 4,400 m", "en": "About 4,400 m"}}
+      ],
+      "note": {"zh": "※ 地表类似月球，布满陨石坑", "en": "※ Moon-like surface, covered with craters"}
+    },
+    {
+      "title": {"zh": "🔭 探索历史", "en": "🔭 Exploration History"},
+      "items": [
+        {"label": {"zh": "首次飞掠", "en": "First Flyby"}, "value": {"zh": "1974 年水手 10 号", "en": "1974 Mariner 10"}},
+        {"label": {"zh": "首次入轨", "en": "First Orbit"}, "value": {"zh": "2011 年信使号", "en": "2011 MESSENGER"}},
+        {"label": {"zh": "当前任务", "en": "Current Missions"}, "value": {"zh": "贝皮可伦坡号 (2018-)", "en": "BepiColombo (2018-)"}},
+        {"label": {"zh": "最后一次飞掠", "en": "Last Flyby"}, "value": {"zh": "2025 年贝皮可伦坡号", "en": "2025 BepiColombo"}}
+      ]
+    }
+  ]
+}

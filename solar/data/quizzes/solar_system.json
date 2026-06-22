@@ -1,0 +1,334 @@
+{
+  "questions": [
+    {
+      "id": "q_sun_001",
+      "question": {
+        "zh": "太阳系中最大的行星是哪颗？",
+        "en": "Which is the largest planet in the Solar System?"
+      },
+      "options": [
+        {
+          "zh": "土星",
+          "en": "Saturn"
+        },
+        {
+          "zh": "木星",
+          "en": "Jupiter"
+        },
+        {
+          "zh": "天王星",
+          "en": "Uranus"
+        },
+        {
+          "zh": "海王星",
+          "en": "Neptune"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "木星是太阳系中最大的行星，直径约为 142,984 公里，质量是其他所有行星总和的 2.5 倍。",
+        "en": "Jupiter is the largest planet in the Solar System, with a diameter of about 142,984 km and a mass 2.5 times that of all other planets combined."
+      }
+    },
+    {
+      "id": "q_sun_002",
+      "question": {
+        "zh": "太阳系有多少颗行星？",
+        "en": "How many planets are there in the Solar System?"
+      },
+      "options": [
+        {
+          "zh": "7 颗",
+          "en": "7"
+        },
+        {
+          "zh": "8 颗",
+          "en": "8"
+        },
+        {
+          "zh": "9 颗",
+          "en": "9"
+        },
+        {
+          "zh": "10 颗",
+          "en": "10"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "太阳系有 8 颗行星：水星、金星、地球、火星、木星、土星、天王星、海王星。冥王星在 2006 年被重新分类为矮行星。",
+        "en": "The Solar System has 8 planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune. Pluto was reclassified as a dwarf planet in 2006."
+      }
+    },
+    {
+      "id": "q_sun_003",
+      "question": {
+        "zh": "哪颗行星离太阳最近？",
+        "en": "Which planet is closest to the Sun?"
+      },
+      "options": [
+        {
+          "zh": "金星",
+          "en": "Venus"
+        },
+        {
+          "zh": "地球",
+          "en": "Earth"
+        },
+        {
+          "zh": "水星",
+          "en": "Mercury"
+        },
+        {
+          "zh": "火星",
+          "en": "Mars"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "水星是离太阳最近的行星，平均距离约 5800 万公里。",
+        "en": "Mercury is the closest planet to the Sun, with an average distance of about 58 million kilometers."
+      }
+    },
+    {
+      "id": "q_sun_004",
+      "question": {
+        "zh": "太阳的表面温度约为多少？",
+        "en": "What is the approximate surface temperature of the Sun?"
+      },
+      "options": [
+        {
+          "zh": "3,500°C",
+          "en": "3,500°C"
+        },
+        {
+          "zh": "5,500°C",
+          "en": "5,500°C"
+        },
+        {
+          "zh": "7,500°C",
+          "en": "7,500°C"
+        },
+        {
+          "zh": "10,000°C",
+          "en": "10,000°C"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "太阳的表面温度约为 5,500°C，而核心温度高达 1,500 万°C。",
+        "en": "The Sun's surface temperature is approximately 5,500°C, while its core temperature reaches 15 million°C."
+      }
+    },
+    {
+      "id": "q_sun_005",
+      "question": {
+        "zh": "哪颗行星被称为'红色星球'？",
+        "en": "Which planet is known as the 'Red Planet'?"
+      },
+      "options": [
+        {
+          "zh": "金星",
+          "en": "Venus"
+        },
+        {
+          "zh": "火星",
+          "en": "Mars"
+        },
+        {
+          "zh": "木星",
+          "en": "Jupiter"
+        },
+        {
+          "zh": "土星",
+          "en": "Saturn"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "火星因其表面富含氧化铁（铁锈）而呈现红色，被称为'红色星球'。",
+        "en": "Mars appears red due to iron oxide (rust) on its surface, earning it the nickname 'Red Planet'."
+      }
+    },
+    {
+      "id": "q_sun_006",
+      "question": {
+        "zh": "太阳系形成于约多少年前？",
+        "en": "When was the Solar System formed?"
+      },
+      "options": [
+        {
+          "zh": "26 亿年前",
+          "en": "2.6 billion years ago"
+        },
+        {
+          "zh": "36 亿年前",
+          "en": "3.6 billion years ago"
+        },
+        {
+          "zh": "46 亿年前",
+          "en": "4.6 billion years ago"
+        },
+        {
+          "zh": "56 亿年前",
+          "en": "5.6 billion years ago"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "太阳系形成于约 46 亿年前，由一个巨大的分子云坍缩形成。",
+        "en": "The Solar System formed approximately 4.6 billion years ago from the gravitational collapse of a giant molecular cloud."
+      }
+    },
+    {
+      "id": "q_sun_007",
+      "question": {
+        "zh": "哪颗行星有最明显的行星环？",
+        "en": "Which planet has the most prominent ring system?"
+      },
+      "options": [
+        {
+          "zh": "木星",
+          "en": "Jupiter"
+        },
+        {
+          "zh": "土星",
+          "en": "Saturn"
+        },
+        {
+          "zh": "天王星",
+          "en": "Uranus"
+        },
+        {
+          "zh": "海王星",
+          "en": "Neptune"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "土星拥有太阳系中最壮观的行星环系统，主要由冰和岩石碎片组成。",
+        "en": "Saturn has the most spectacular ring system in the Solar System, composed primarily of ice and rock particles."
+      }
+    },
+    {
+      "id": "q_sun_008",
+      "question": {
+        "zh": "地球是太阳系中第几颗行星？",
+        "en": "What is Earth's position from the Sun?"
+      },
+      "options": [
+        {
+          "zh": "第2颗",
+          "en": "2nd"
+        },
+        {
+          "zh": "第3颗",
+          "en": "3rd"
+        },
+        {
+          "zh": "第4颗",
+          "en": "4th"
+        },
+        {
+          "zh": "第5颗",
+          "en": "5th"
+        }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "地球是太阳系中距离太阳第三近的行星，位于金星和火星之间。",
+        "en": "Earth is the third planet from the Sun, located between Venus and Mars."
+      }
+    },
+    {
+      "id": "q_sun_009",
+      "question": {
+        "zh": "太阳占太阳系总质量的多少？",
+        "en": "What percentage of the Solar System's mass does the Sun contain?"
+      },
+      "options": [
+        {
+          "zh": "约 50%",
+          "en": "About 50%"
+        },
+        {
+          "zh": "约 75%",
+          "en": "About 75%"
+        },
+        {
+          "zh": "约 90%",
+          "en": "About 90%"
+        },
+        {
+          "zh": "约 99.86%",
+          "en": "About 99.86%"
+        }
+      ],
+      "answer": 3,
+      "explanation": {
+        "zh": "太阳占太阳系总质量的约 99.86%，是太阳系中绝对主导的天体。",
+        "en": "The Sun contains about 99.86% of the total mass of the Solar System, making it the overwhelmingly dominant body."
+      }
+    },
+    {
+      "id": "q_sun_010",
+      "question": {
+        "zh": "哪个行星以躺着旋转而闻名？",
+        "en": "Which planet is famous for rotating on its side?"
+      },
+      "options": [
+        {
+          "zh": "木星",
+          "en": "Jupiter"
+        },
+        {
+          "zh": "土星",
+          "en": "Saturn"
+        },
+        {
+          "zh": "天王星",
+          "en": "Uranus"
+        },
+        {
+          "zh": "海王星",
+          "en": "Neptune"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天王星的轴倾角约为 97.77°，几乎完全侧躺着旋转，可能是远古时期被大型天体撞击导致的。",
+        "en": "Uranus has an axial tilt of about 97.77°, rotating almost completely on its side, likely caused by a massive collision in the distant past."
+      }
+    },
+    {
+      "id": "q_sola_011",
+      "question": {
+        "en": "Which planet in the solar system is the only one known to host stable liquid water on its surface?",
+        "zh": "太阳系中唯一已知存在稳定液态水表面的行星是哪一颗？"
+      },
+      "options": [
+        {
+          "en": "Mars",
+          "zh": "火星"
+        },
+        {
+          "en": "Venus",
+          "zh": "金星"
+        },
+        {
+          "en": "Earth",
+          "zh": "地球"
+        },
+        {
+          "en": "Mercury",
+          "zh": "水星"
+        }
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "Earth is the only planet confirmed to sustain persistent liquid water oceans, lakes, and rivers; Mars shows only transient briny seeps, while Venus’s surface is too hot for stable liquid water.",
+        "zh": "地球是太阳系中唯一确认拥有持续存在的液态水海洋、湖泊和河流的行星；火星仅有季节性卤水痕迹，金星表面温度过高，水无法以液态稳定存在。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Little Prince - Colorful Paragraphs</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f7f0;
+            color: #333;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #8b4513;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            border-bottom: 2px solid #d4c1a8;
+            padding-bottom: 15px;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .paragraph {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        #textColorBtn {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+        }
+        
+        #bgColorBtn {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #5a3a3a;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+        
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #8b4513;
+            font-style: italic;
+        }
+        
+        .instructions {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2575fc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Little Prince</h1>
+        
+        <div class="instructions">
+            <p>Click the buttons below to randomly change text colors or background colors of the paragraphs. 
+            The system ensures text remains readable by avoiding identical text and background colors.</p>
+        </div>
+        
+        <div class="controls">
+            <button id="textColorBtn">Change Text Color</button>
+            <button id="bgColorBtn">Change Background Color</button>
+        </div>
+        
+        <div id="content">
+            <!-- Paragraphs will be inserted here by JavaScript -->
+        </div>
+        
+        <div class="footer">
+            <p>Excerpts from "The Little Prince" by Antoine de Saint-Exupéry</p>
+        </div>
+    </div>
+
+    <script>
+        // Excerpts from "The Little Prince"
+        const excerpts = [
+            "All grown-ups were once children... but only few of them remember it.",
+            "It is only with the heart that one can see rightly; what is essential is invisible to the eye.",
+            "The most beautiful things in the world cannot be seen or touched, they are felt with the heart.",
+            "You become responsible, forever, for what you have tamed.",
+            "Grown-ups never understand anything by themselves, and it is tiresome for children to be always and forever explaining things to them.",
+            "What makes the desert beautiful is that somewhere it hides a well.",
+            "It is the time you have wasted for your rose that makes your rose so important.",
+            "One sees clearly only with the heart. Anything essential is invisible to the eyes.",
+            "The stars are beautiful because of a flower that cannot be seen.",
+            "You're beautiful, but you're empty... One could not die for you."
+        ];
+        
+        // Color palettes
+        const textColors = [
+            '#000000', '#2E294E', '#1B998B', '#D90368', 
+            '#FF9A00', '#005F73', '#9B2226', '#AE2012',
+            '#003049', '#6A040F'
+        ];
+        
+        const bgColors = [
+            '#FFFFFF', '#FDF0D5', '#FFEEAD', '#C1FBA4', 
+            '#A0E7E5', '#BDE0FE', '#FFCAD4', '#E2E2B6',
+            '#FFE0B5', '#D8F3DC'
+        ];
+        
+        // Create paragraph elements
+        const contentDiv = document.getElementById('content');
+        const paragraphs = [];
+        
+        excerpts.forEach((excerpt, index) => {
+            const p = document.createElement('p');
+            p.className = 'paragraph';
+            p.textContent = excerpt;
+            p.dataset.index = index;
+            contentDiv.appendChild(p);
+            paragraphs.push(p);
+        });
+        
+        // Function to get a random color from an array
+        function getRandomColor(colorArray) {
+            return colorArray[Math.floor(Math.random() * colorArray.length)];
+        }
+        
+        // Function to ensure text is readable against background
+        function getContrastingTextColor(bgColor) {
+            // If background is light, use dark text; if dark, use light text
+            // Simple luminance calculation
+            const hex = bgColor.replace('#', '');
+            const r = parseInt(hex.substr(0, 2), 16);
+            const g = parseInt(hex.substr(2, 2), 16);
+            const b = parseInt(hex.substr(4, 2), 16);
+            
+            const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+            
+            // Return black for light backgrounds, white for dark backgrounds
+            return luminance > 0.6 ? '#000000' : '#FFFFFF';
+        }
+        
+        // Change text colors
+        document.getElementById('textColorBtn').addEventListener('click', () => {
+            paragraphs.forEach(paragraph => {
+                let newTextColor;
+                let currentBg = paragraph.style.backgroundColor || '#FFFFFF';
+                
+                // Remove rgb() formatting if present
+                if (currentBg.startsWith('rgb')) {
+                    // Convert RGB to hex for comparison
+                    const match = currentBg.match(/\d+/g);
+                    if (match) {
+                        const r = parseInt(match[0]).toString(16).padStart(2, '0');
+                        const g = parseInt(match[1]).toString(16).padStart(2, '0');
+                        const b = parseInt(match[2]).toString(16).padStart(2, '0');
+                        currentBg = `#${r}${g}${b}`;
+                    } else {
+                        currentBg = '#FFFFFF';
+                    }
+                }
+                
+                // Ensure text color is different from background
+                do {
+                    newTextColor = getRandomColor(textColors);
+                } while (newTextColor.toLowerCase() === currentBg.toLowerCase());
+                
+                paragraph.style.color = newTextColor;
+            });
+        });
+        
+        // Change background colors
+        document.getElementById('bgColorBtn').addEventListener('click', () => {
+            paragraphs.forEach(paragraph => {
+                let newBgColor;
+                let currentText = paragraph.style.color || '#000000';
+                
+                // Ensure background color is different from text color
+                do {
+                    newBgColor = getRandomColor(bgColors);
+                } while (newBgColor.toLowerCase() === currentText.toLowerCase());
+                
+                paragraph.style.backgroundColor = newBgColor;
+                
+                // Adjust text color if needed for readability
+                const contrastingColor = getContrastingTextColor(newBgColor);
+                if (Math.abs(parseInt(currentText.replace('#', ''), 16) - parseInt(contrastingColor.replace('#', ''), 16)) < 1000000) {
+                    // Only change if current text color isn't already contrasting enough
+                    paragraph.style.color = contrastingColor;
+                }
+            });
+        });
+        
+        // Initialize with some colors
+        document.getElementById('textColorBtn').click();
+        document.getElementById('bgColorBtn').click();
+    </script>
+</body>
+</html>

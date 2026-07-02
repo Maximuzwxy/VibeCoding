@@ -1,8 +1,10 @@
 import os
 import re
 import json
+import zipfile
+import io
 from datetime import datetime, timezone, timedelta
-from flask import Flask, render_template, request, redirect, url_for, jsonify, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, jsonify, send_from_directory, send_file
 import markdown
 from werkzeug.utils import secure_filename
 
@@ -104,7 +106,10 @@ def class_page(nickname):
             md_path = os.path.join(target_dir, lesson_files[0])
             with open(md_path, 'r', encoding='utf-8') as f:
                 md_text = f.read()
-            md_content = markdown.markdown(md_text)
+            md_content = markdown.markdown(
+                md_text,
+                extensions=['tables', 'fenced_code', 'codehilite', 'toc', 'nl2br']
+            )
         else:
             md_content = "<p>No course introduction available.</p>"
 
@@ -112,7 +117,9 @@ def class_page(nickname):
         file_list = []
         for f in os.listdir(target_dir):
             if not f.lower().startswith('lesson'):
-                file_list.append(f)
+                full_path = os.path.join(target_dir, f)
+                is_dir = os.path.isdir(full_path)
+                file_list.append({"name": f, "is_dir": is_dir})
 
     is_admin = (nickname == "maximuz")
 
@@ -122,6 +129,7 @@ def class_page(nickname):
         md_content=md_content,
         file_list=file_list,
         folder_name=current_folder_name,
+        current_path="",
         is_admin=is_admin
     )
 
@@ -161,10 +169,74 @@ def upload_file(nickname):
     return "OK", 200
 
 
-@app.route('/download/<filename>')
+@app.route('/download_all')
+def download_all():
+    """Download all files (not folders) in current path as a zip"""
+    global current_folder_name
+    subpath = request.args.get('path', '')
+    target_dir = os.path.join(FILES_FOLDER, current_folder_name, subpath)
+
+    if not os.path.exists(target_dir) or not os.path.isdir(target_dir):
+        return "Not found", 404
+
+    # Security check
+    real_base = os.path.realpath(os.path.join(FILES_FOLDER, current_folder_name))
+    real_target = os.path.realpath(target_dir)
+    if not real_target.startswith(real_base):
+        return "Access denied", 403
+
+    # Collect all files (not folders) in the directory
+    memory_zip = io.BytesIO()
+    with zipfile.ZipFile(memory_zip, 'w', zipfile.ZIP_DEFLATED) as zf:
+        for f in os.listdir(target_dir):
+            file_path = os.path.join(target_dir, f)
+            if os.path.isfile(file_path):
+                zf.write(file_path, f)
+
+    memory_zip.seek(0)
+
+    # Determine zip filename
+    if subpath:
+        zip_name = subpath.replace('/', '_') + '_files.zip'
+    else:
+        zip_name = current_folder_name + '_files.zip'
+
+    return send_file(memory_zip, mimetype='application/zip',
+                     as_attachment=True, download_name=zip_name)
+
+
+@app.route('/download/<path:filename>')
 def download_file(filename):
     target_dir = os.path.join(FILES_FOLDER, current_folder_name)
     return send_from_directory(target_dir, filename, as_attachment=True)
+
+
+@app.route('/api/browse', methods=['GET'])
+def api_browse():
+    """Return files and folders in the given subpath"""
+    global current_folder_name
+    subpath = request.args.get('path', '')
+    target_dir = os.path.join(FILES_FOLDER, current_folder_name, subpath)
+
+    if not os.path.exists(target_dir) or not os.path.isdir(target_dir):
+        return jsonify({"error": "Path not found"}), 404
+
+    # Security: prevent escaping FILES_FOLDER
+    real_base = os.path.realpath(os.path.join(FILES_FOLDER, current_folder_name))
+    real_target = os.path.realpath(target_dir)
+    if not real_target.startswith(real_base):
+        return jsonify({"error": "Access denied"}), 403
+
+    items = []
+    for f in os.listdir(target_dir):
+        full_path = os.path.join(target_dir, f)
+        is_dir = os.path.isdir(full_path)
+        items.append({"name": f, "is_dir": is_dir})
+
+    # Sort: folders first, then alphabetical
+    items.sort(key=lambda x: (not x["is_dir"], x["name"].lower()))
+
+    return jsonify({"items": items, "path": subpath})
 
 
 @app.route('/api/users')

@@ -34,16 +34,32 @@
         <div class="right-panel">
             <div class="file-list">
                 <h3 class="course-title">Course Materials</h3>
-                {% if file_list %}
-                    {% for file in file_list %}
-                    <div class="file-item">
-                        <span>{{ file }}</span>
-                        <a href="{{ url_for('download_file', filename=file) }}" class="download-btn">⬇️</a>
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-row">
+                    <div class="breadcrumb" id="breadcrumb">
+                        <span class="breadcrumb-item breadcrumb-root" data-path="">{{ folder_name }}</span>
                     </div>
-                    {% endfor %}
-                {% else %}
-                    <p>No materials available.</p>
-                {% endif %}
+                    <a class="download-all-btn" id="downloadAllBtn" href="/download_all?path=" title="Download all files in current folder">📥 All</a>
+                </div>
+                <!-- Back button (hidden at root level) -->
+                <button class="back-btn" id="backBtn" style="display:none;">⬅ Back</button>
+                <!-- File list -->
+                <div id="fileListContainer">
+                    {% if file_list %}
+                        {% for item in file_list %}
+                        <div class="file-item {{ 'folder-item' if item.is_dir else '' }}">
+                            {% if item.is_dir %}
+                            <span class="item-name" data-path="{{ item.name }}" data-isdir="true">📁 {{ item.name }}</span>
+                            {% else %}
+                            <span class="item-name">{{ item.name }}</span>
+                            <a href="{{ url_for('download_file', filename=item.name) }}" class="download-btn">⬇️</a>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="empty-files">No materials available.</p>
+                    {% endif %}
+                </div>
             </div>
 
             <div class="upload-area" id="dropZone">
@@ -81,8 +97,9 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <script>
         const nickname = "{{ nickname }}";
-        // const is_admin = {{ 'true' if is_admin else 'false' }};
         const is_admin = JSON.parse("{{ 'true' if is_admin else 'false' }}");
+        const baseFolder = "{{ folder_name }}";
+        let currentSubPath = "";
     </script>
 </body>
 </html>

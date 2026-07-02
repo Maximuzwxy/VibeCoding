@@ -33,9 +33,20 @@ Trae IDE supports a **project memory** feature — a `.md` file stored at:
 ```
 
 - This file acts as persistent rules or context that AI references in every conversation within the project.
-- Example: save the "split HTML into 3 files" rule into project memory so AI automatically follows it.
 - Project memory is project-scoped — different projects can have different memories.
 - Update it whenever you establish a new convention you want AI to remember.
+
+Copy and paste the following into your `project_memory.md`:
+
+```
+Rule: Split HTML into Three Separate Files
+
+All HTML files must be split into three independent files: HTML (structure), CSS (styling), and JavaScript (logic). Inline <style> and <script> tags are not allowed. The original file must be preserved.
+
+- index.html — Contains only the HTML structure. Links to external CSS via <link rel="stylesheet" href="style.css"> and external JS via <script src="script.js"></script> .
+- style.css — Contains all CSS rules extracted from the original <style> block.
+- script.js — Contains all JavaScript logic extracted from the original <script> block.
+```
 
 ## Git: A Quick Intro
 

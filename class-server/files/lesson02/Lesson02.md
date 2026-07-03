@@ -5,7 +5,7 @@
 - **Class Server**: http://192.168.66.207:6688
 - **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
 - **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
-- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+J to open the Console.
+- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.
 
 ## Why Split HTML, CSS, and JS?
 
@@ -18,11 +18,14 @@
 ## Exercise: Split the Little Prince HTML
 
 1. Open `lesson02/little_prince.html` — observe the inline `<style>` and `<script>` blocks.
-2. Create a new folder (e.g., `little_prince_split/`) and ask AI to split it into three files:
-   - `index.html` — structure only
-   - `style.css` — all extracted styles
-   - `script.js` — all extracted JavaScript
+2. Create a new folder (e.g., `little_prince_split/`) and ask AI to split it into three files: `index.html` (structure only), `style.css` (all extracted styles), `script.js` (all extracted JavaScript).
 3. Verify that the split version works the same as the original.
+
+Example prompt for step 2:
+
+```text
+Split little_prince.html into three separate files: index.html (HTML structure only, link to style.css via <link> and script.js via <script>), style.css (all styles), script.js (all scripts). Keep the original file unchanged.
+```
 
 ## Project Memory
 
@@ -48,14 +51,6 @@ All HTML files must be split into three independent files: HTML (structure), CSS
 - script.js — Contains all JavaScript logic extracted from the original <script> block.
 ```
 
-## Git: A Quick Intro
-
-Git is a **version control system** — it tracks changes to your code over time.
-
-- Think of it as an unlimited "undo" history for your entire project folder.
-- You can save checkpoints (**commits**), revert to any previous version, and collaborate with others without overwriting each other's work.
-- In this course, Git is useful for backing up your progress and comparing changes between lessons.
-
 ## Markdown: The AI-Friendly Format
 
 Markdown (`.md`) is a lightweight plain-text format for writing structured documents.
@@ -63,6 +58,14 @@ Markdown (`.md`) is a lightweight plain-text format for writing structured docum
 - Unlike Word or PDF, Markdown is **plain text with simple symbols** for formatting — headings, lists, tables, and code blocks.
 - **Why AI loves it**: AI tools can read and generate Markdown natively with perfect accuracy, making it the go-to format for project specs, documentation, rules, and memory files.
 - In this course, you'll use Markdown for: lesson materials, project requirements (`steps.md`), memory rules (`project_memory.md`), and homework notes.
+
+## Git: A Quick Intro
+
+Git is a **version control system** — it tracks changes to your code over time.
+
+- Think of it as an unlimited "undo" history for your entire project folder.
+- You can save checkpoints (**commits**), revert to any previous version, and collaborate with others without overwriting each other's work.
+- In this course, Git is useful for backing up your progress and comparing changes between lessons.
 
 ## Pong Game: Step-by-Step
 

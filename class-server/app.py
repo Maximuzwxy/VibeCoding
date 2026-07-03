@@ -113,13 +113,13 @@ def class_page(nickname):
         else:
             md_content = "<p>No course introduction available.</p>"
 
-        # 获取非 Lesson 开头的文件列表（用于右边课程资料）
+        # 获取文件列表（用于右边课程资料）
         file_list = []
         for f in os.listdir(target_dir):
-            if not f.lower().startswith('lesson'):
-                full_path = os.path.join(target_dir, f)
-                is_dir = os.path.isdir(full_path)
-                file_list.append({"name": f, "is_dir": is_dir})
+            full_path = os.path.join(target_dir, f)
+            is_dir = os.path.isdir(full_path)
+            file_list.append({"name": f, "is_dir": is_dir})
+        file_list.sort(key=lambda x: (not x["is_dir"], x["name"].lower()))
 
     is_admin = (nickname == "maximuz")
 
@@ -237,6 +237,31 @@ def api_browse():
     items.sort(key=lambda x: (not x["is_dir"], x["name"].lower()))
 
     return jsonify({"items": items, "path": subpath})
+
+
+@app.route('/api/render_md', methods=['GET'])
+def api_render_md():
+    """Render a .md file and return its HTML content"""
+    global current_folder_name
+    filepath = request.args.get('path', '')
+    target_file = os.path.join(FILES_FOLDER, current_folder_name, filepath)
+
+    # Security check
+    real_base = os.path.realpath(os.path.join(FILES_FOLDER, current_folder_name))
+    real_target = os.path.realpath(target_file)
+    if not real_target.startswith(real_base):
+        return jsonify({"error": "Access denied"}), 403
+
+    if not os.path.isfile(target_file) or not filepath.lower().endswith('.md'):
+        return jsonify({"error": "Not a markdown file"}), 400
+
+    with open(target_file, 'r', encoding='utf-8') as f:
+        md_text = f.read()
+    html = markdown.markdown(
+        md_text,
+        extensions=['tables', 'fenced_code', 'codehilite', 'toc', 'nl2br']
+    )
+    return jsonify({"html": html, "name": os.path.basename(filepath)})
 
 
 @app.route('/api/users')

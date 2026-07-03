@@ -25,7 +25,7 @@
     <div class="container">
         <!-- Left: Markdown (2/3) -->
         <div class="left-panel">
-            <div class="markdown-content">
+            <div class="markdown-content" id="mdContent">
                 {{ md_content | safe }}
             </div>
         </div>
@@ -51,7 +51,7 @@
                             {% if item.is_dir %}
                             <span class="item-name" data-path="{{ item.name }}" data-isdir="true">📁 {{ item.name }}</span>
                             {% else %}
-                            <span class="item-name">{{ item.name }}</span>
+                            <span class="item-name{% if item.name.lower().endswith('.md') %} md-file{% endif %}" data-path="{{ item.name }}" data-ismd="{{ 'true' if item.name.lower().endswith('.md') else 'false' }}">{{ '📝 ' if item.name.lower().endswith('.md') else '' }}{{ item.name }}</span>
                             <a href="{{ url_for('download_file', filename=item.name) }}" class="download-btn">⬇️</a>
                             {% endif %}
                         </div>

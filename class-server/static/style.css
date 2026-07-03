@@ -329,6 +329,18 @@ body {
     font-weight: 500;
 }
 
+/* MD file items - clickable to view on left panel */
+.md-file {
+    color: #81d4fa !important;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.md-file:hover {
+    color: #4fc3f7 !important;
+    text-decoration: underline;
+}
+
 .download-btn {
     color: #4fc3f7;
     text-decoration: none;

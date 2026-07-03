@@ -94,16 +94,25 @@ function showError(msg) {
 
 // ========== Folder Navigation ==========
 
-// Click on a folder item
+// Click on file/folder items
 document.getElementById('fileListContainer')?.addEventListener('click', (e) => {
+    // Check download button click first - let it pass through
+    if (e.target.closest('.download-btn')) return;
+
     const nameSpan = e.target.closest('.item-name');
     if (!nameSpan) return;
-    const isDir = nameSpan.dataset.isdir === 'true';
-    if (!isDir) return;
 
-    const folderName = nameSpan.dataset.path;
-    const newPath = currentSubPath ? `${currentSubPath}/${folderName}` : folderName;
-    navigateTo(newPath);
+    const isDir = nameSpan.dataset.isdir === 'true';
+    const isMd = nameSpan.dataset.ismd === 'true';
+
+    if (isDir) {
+        const folderName = nameSpan.dataset.path;
+        const newPath = currentSubPath ? `${currentSubPath}/${folderName}` : folderName;
+        navigateTo(newPath);
+    } else if (isMd) {
+        const filePath = nameSpan.dataset.path;
+        loadMarkdown(filePath);
+    }
 });
 
 // Back button
@@ -164,13 +173,35 @@ function renderFileList(items, subpath) {
                 </div>`;
         } else {
             const downloadPath = subpath ? `${subpath}/${item.name}` : item.name;
+            const isMd = item.name.toLowerCase().endsWith('.md');
+            const mdPath = subpath ? `${subpath}/${item.name}` : item.name;
             return `
                 <div class="file-item">
-                    <span class="item-name">${item.name}</span>
+                    <span class="item-name${isMd ? ' md-file' : ''}" data-path="${mdPath}" data-ismd="${isMd}">${isMd ? '📝 ' : ''}${item.name}</span>
                     <a href="/download/${encodeURIComponent(downloadPath)}" class="download-btn">⬇️</a>
                 </div>`;
         }
     }).join('');
+}
+
+function loadMarkdown(filePath) {
+    const mdContent = document.getElementById('mdContent');
+    if (!mdContent) return;
+
+    mdContent.innerHTML = '<p class="loading">Loading...</p>';
+
+    fetch(`/api/render_md?path=${encodeURIComponent(filePath)}`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.error) {
+                mdContent.innerHTML = `<p class="empty-files">${data.error}</p>`;
+            } else {
+                mdContent.innerHTML = data.html;
+            }
+        })
+        .catch(() => {
+            mdContent.innerHTML = '<p class="empty-files">Load failed</p>';
+        });
 }
 
 function updateBreadcrumb(subpath) {

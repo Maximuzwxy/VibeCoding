@@ -4,6 +4,7 @@
 // Global variables
 let scene, camera, renderer, controls;
 let axesHelper, gridHelper, originMarker;
+let axisLabelsGroup;
 let objects = [];
 let objectCounter = 0;
 
@@ -53,9 +54,9 @@ function init() {
 
     // Create camera
     camera = new THREE.PerspectiveCamera(
-        75, 
-        window.innerWidth / window.innerHeight, 
-        0.1, 
+        50,
+        window.innerWidth / window.innerHeight,
+        0.1,
         1000
     );
     camera.position.set(5, 5, 5);
@@ -93,6 +94,14 @@ function init() {
     axesHelper = new THREE.AxesHelper(5);
     axesHelper.position.y = 0.01;
     scene.add(axesHelper);
+
+    // Add axis labels
+    axisLabelsGroup = new THREE.Group();
+    const labelMin = 5.5;
+    axisLabelsGroup.add(createAxisLabel('X', labelMin, 0, 0, '#ff4444'));
+    axisLabelsGroup.add(createAxisLabel('Y', 0, labelMin, 0, '#44ff44'));
+    axisLabelsGroup.add(createAxisLabel('Z', 0, 0, labelMin, '#4444ff'));
+    scene.add(axisLabelsGroup);
 
     // Add grid helper
     gridHelper = new THREE.GridHelper(20, 20, 0x444444, 0x5a5a5a);
@@ -146,6 +155,14 @@ function createTextSprite(text, color) {
     const sprite = new THREE.Sprite(material);
     sprite.scale.set(1, 0.25, 1);
 
+    return sprite;
+}
+
+// Create axis label sprite at given position
+function createAxisLabel(text, x, y, z, color) {
+    const sprite = createTextSprite(text, color);
+    sprite.position.set(x, y, z);
+    sprite.scale.set(2, 0.5, 1);
     return sprite;
 }
 
@@ -425,10 +442,12 @@ function toggleAxes() {
     const btn = document.getElementById('toggle-axes-btn');
     if (axesHelper.visible) {
         axesHelper.visible = false;
+        axisLabelsGroup.visible = false;
         btn.textContent = 'Show Axes';
         btn.classList.remove('active');
     } else {
         axesHelper.visible = true;
+        axisLabelsGroup.visible = true;
         btn.textContent = 'Hide Axes';
         btn.classList.add('active');
     }
@@ -655,7 +674,7 @@ function updateCameraFromUI() {
     controls.target.set(targetX, targetY, targetZ);
 
     // Update FOV
-    const fov = parseFloat(document.getElementById('cam-fov').value) || 75;
+    const fov = parseFloat(document.getElementById('cam-fov').value) || 50;
     camera.fov = fov;
     camera.updateProjectionMatrix();
 
@@ -682,7 +701,7 @@ function updateUIFromCamera() {
 function resetCamera() {
     camera.position.set(5, 5, 5);
     controls.target.set(0, 0, 0);
-    camera.fov = 75;
+    camera.fov = 50;
     camera.updateProjectionMatrix();
     controls.update();
     

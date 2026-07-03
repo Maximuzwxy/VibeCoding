@@ -43,7 +43,7 @@ Three.js is a JavaScript library that makes 3D graphics in the browser simple. I
 
 ## 3D Scene Demo Project
 
-Build an interactive 3D scene in two steps. (For detailed requirements, see `lesson03/3d-demo/steps.md`.)
+Build an interactive 3D scene in two steps. (For detailed requirements, see steps.md)
 
 ### Step 1: 3D Scene Demo (Orbit Mode)
 - Set up a Three.js scene with lighting, grid, axes, and OrbitControls

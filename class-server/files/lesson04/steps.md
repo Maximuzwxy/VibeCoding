@@ -286,7 +286,7 @@ function moveAIPaddle(paddle, ballPos, ballVel, paddlePos) {
 
 ## 项目结构
 
-```
+```text
 3d-pong/
 ├── index.html      # 主页面
 ├── css/
@@ -304,12 +304,3 @@ function moveAIPaddle(paddle, ballPos, ballVel, paddlePos) {
 - **OrbitControls**：相机控制
 - **Web Audio API**：音效
 - **原生 JavaScript**：游戏逻辑
-
----
-
-## 后续扩展建议
-
-1. **难度选择**：不同级别的 AI 速度
-2. **皮肤系统**：自定义挡板和球的颜色/纹理
-3. **多人模式**：通过网络对战
-4. **关卡系统**：不同大小的 Cube 或特殊规则

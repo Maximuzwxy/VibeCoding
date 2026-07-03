@@ -93,7 +93,7 @@ Now we save every message to a JSON file and send the full history with each req
 We give the model the ability to call **functions** — starting with `update_system_prompt`, which lets us change the AI's role and behavior. The model doesn't execute code itself; it tells the agent which function to call, and the agent runs it.
 
 ### Phase 4: File I/O
-Now the agent can **read and write files**. Ask it to create an HTML file, and it actually writes it to disk. Ask it to read a file and summarize it — it can. We also add **voice input** using the browser's built-in speech recognition.
+Now the agent can **read, list, write, and delete files**. It can browse what files exist, create new ones, read and summarize existing ones, and delete unwanted files. We also add **voice input** using the browser's built-in speech recognition.
 
 ### Phase 5: Time, Location & Weather
 The model itself knows nothing about the real world. But now our agent can call `get_current_time`, `get_location`, and `get_weather` functions. Ask "What's the weather?" and the agent figures out your city, fetches weather data, and tells you.

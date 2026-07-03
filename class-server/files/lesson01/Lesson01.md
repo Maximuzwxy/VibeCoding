@@ -77,8 +77,20 @@ The AI Chat Panel is the core feature of Trae. Once you send a task, the Agent w
 - Official Website: https://www.trae.com.cn
 - Direct Download: https://www.trae.com.cn/download
 
----
+### 2.8 AI Model Configuration
 
+In later lessons, we will use **DeepSeek** (a powerful LLM) through its API. To use it, you need to configure your API Key in the project's `.env` file:
+
+```
+DEEPSEEK_API_KEY=REDACTED_DEEPSEEK_KEY
+DEEPSEEK_API_URL=https://api.deepseek.com/chat/completions
+```
+
+- Place the `.env` file in the **project root directory** (same level as all `lessonXX/` folders)
+- The `.env` file is excluded from Git by `.gitignore` — your key won't be leaked
+- All projects across different lessons will read from this single `.env` file
+
+---
 ## 3. What is HTML
 
 ### 3.1 Introduction to HTML

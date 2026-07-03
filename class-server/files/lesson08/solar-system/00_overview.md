@@ -52,7 +52,7 @@
 
 ## 项目结构
 
-```
+```text
 solar/
 ├── app.py                       # Flask 主应用
 ├── requirements.txt             # 依赖

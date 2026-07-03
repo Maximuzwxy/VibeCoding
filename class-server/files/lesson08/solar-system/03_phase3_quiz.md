@@ -60,7 +60,7 @@
 ## 技术实现
 
 ### 状态管理
-```
+```text
 QuizPanel
 ├── _mode: 'local' | 'online'
 ├── _topic: 'solar_system'
@@ -85,7 +85,7 @@ QuizPanel
 
 ### 请求流程（在线生成）
 
-```
+```text
 switchMode('online')
   ├── _isLoadingOnline?  → 显示"加载中..."，return
   ├── _onlineQuestions.length > 0?  → 恢复缓存，渲染
@@ -137,7 +137,7 @@ payload = {
 ---
 
 ## 界面
-```
+```text
 ┌──────────────────────────────────┐
 │  QuizPanel                       │
 │                                  │

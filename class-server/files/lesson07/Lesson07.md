@@ -72,7 +72,7 @@ We'll use **DeepSeek** as an example:
 5. Store it in a `.env` file in your project:
 
 ```
-DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxx
+DEEPSEEK_API_KEY=REDACTED_DEEPSEEK_KEY
 ```
 
 **Important**: Never share your API key or commit it to Git. It's like a password.

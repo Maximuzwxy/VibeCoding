@@ -18,6 +18,14 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 UPLOAD_DIR = os.path.join(BASE_DIR, 'uploads')
 
 os.makedirs(DATA_DIR, exist_ok=True)
+
+AVATAR_STYLES = ['monsterid', 'wavatar', 'robohash']
+
+def get_avatar_url(username):
+    """Generate a deterministic Cravatar avatar URL with random style per user."""
+    h = hashlib.md5(username.encode()).hexdigest()
+    style = AVATAR_STYLES[int(h[:2], 16) % 3]
+    return f'https://cravatar.cn/avatar/{h}?d={style}&s=200'
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 USERS_FILE = os.path.join(DATA_DIR, 'users.json')
@@ -126,7 +134,7 @@ def register():
         'id': str(uuid.uuid4()),
         'username': username,
         'password': password,
-        'avatar': f'https://api.dicebear.com/9.x/adventurer/svg?seed={username}',
+        'avatar': get_avatar_url(username),
         'bio': '这个人很懒，什么都没写',
         'created_at': datetime.now().isoformat()
     }

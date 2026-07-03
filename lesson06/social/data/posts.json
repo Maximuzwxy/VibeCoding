@@ -620,7 +620,7 @@
         "id": "884b1af7-ac04-4dcc-a2bb-939ae5117a00",
         "username": "vd3e41f26",
         "content": "这是一条评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=vd3e41f26",
+        "avatar": "https://cravatar.cn/avatar/f76954f56334c872234f1fc26e999f8d?d=wavatar&s=200",
         "created_at": "2026-05-12T06:20:56.742816"
       }
     ],
@@ -637,7 +637,7 @@
         "id": "921c6169-0a6a-4f01-9530-67049c9e9e2e",
         "username": "u2df73fb3",
         "content": "测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u2df73fb3",
+        "avatar": "https://cravatar.cn/avatar/24957fd650962a59cfc150f855c0ae59?d=monsterid&s=200",
         "created_at": "2026-05-12T06:21:12.253323"
       }
     ],
@@ -654,7 +654,7 @@
         "id": "3dc4cd6a-0f1e-4694-8f95-fbf618220449",
         "username": "uaba2e016",
         "content": "评论1",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=uaba2e016",
+        "avatar": "https://cravatar.cn/avatar/1328161b9ec24e40e20a14e61159ae32?d=wavatar&s=200",
         "created_at": "2026-05-12T06:21:26.311018"
       }
     ],
@@ -680,7 +680,7 @@
         "id": "6e1cc06f-7215-4e63-85e7-81d51d7d63c4",
         "username": "ud712dcb7",
         "content": "user1的评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=ud712dcb7",
+        "avatar": "https://cravatar.cn/avatar/33ebd08aa65e36a9cb96daad15c283a9?d=monsterid&s=200",
         "created_at": "2026-05-12T06:21:55.175080"
       }
     ],
@@ -793,7 +793,7 @@
         "id": "835e617f-1501-45e9-9147-f6b9e7224e54",
         "username": "v57a3b290",
         "content": "这是一条评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=v57a3b290",
+        "avatar": "https://cravatar.cn/avatar/03c6d9111b77cfef8ccd08ea4d7ccba0?d=monsterid&s=200",
         "created_at": "2026-05-12T06:24:13.610433"
       }
     ],
@@ -837,7 +837,7 @@
         "id": "1c9c6585-c446-4720-b4b7-6383785c22af",
         "username": "u152bcc5d",
         "content": "user1的评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u152bcc5d",
+        "avatar": "https://cravatar.cn/avatar/69b3e90d6af87fbdd2da11693a4a7ab0?d=monsterid&s=200",
         "created_at": "2026-05-12T06:24:50.689210"
       }
     ],
@@ -854,7 +854,7 @@
         "id": "538af4ea-b2c9-4d6a-8bf6-1bc7123b0dce",
         "username": "u293c852c",
         "content": "测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u293c852c",
+        "avatar": "https://cravatar.cn/avatar/47ac753cc0ace49ddcaabb8eba8fef1c?d=robohash&s=200",
         "created_at": "2026-05-12T06:25:03.051359"
       }
     ],
@@ -871,7 +871,7 @@
         "id": "292a088c-a8dd-4628-8bdc-14d55e48bd77",
         "username": "ud30c8add",
         "content": "评论1",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=ud30c8add",
+        "avatar": "https://cravatar.cn/avatar/5ada9c6463caa65452817d3674380ead?d=monsterid&s=200",
         "created_at": "2026-05-12T06:25:11.285787"
       }
     ],
@@ -969,7 +969,7 @@
         "id": "e483a0d5-c144-4021-a096-30105026e666",
         "username": "ue8ccc618",
         "content": "这是我的测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=ue8ccc618",
+        "avatar": "https://cravatar.cn/avatar/1e6e0c7743a3d6b2edded452199fde16?d=monsterid&s=200",
         "created_at": "2026-05-12T06:49:49.291650"
       }
     ],
@@ -1040,7 +1040,7 @@
         "id": "82016129-b73d-444b-9e9a-44c8b2bc1d59",
         "username": "ua17bed4b",
         "content": "这是我的测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=ua17bed4b",
+        "avatar": "https://cravatar.cn/avatar/2c527d131dc224b99dc17f0a13b0884f?d=robohash&s=200",
         "created_at": "2026-05-12T06:54:17.428012"
       }
     ],
@@ -1113,7 +1113,7 @@
         "id": "246c0c6f-8504-45fb-a880-3892f28de687",
         "username": "u6752c005",
         "content": "这是我的测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u6752c005",
+        "avatar": "https://cravatar.cn/avatar/6ac7bd958454f68858f8aeaf41f0b11f?d=wavatar&s=200",
         "created_at": "2026-05-12T06:58:45.352192"
       }
     ],
@@ -1235,7 +1235,7 @@
         "id": "32ed8523-8fff-42ce-866d-603e261053d8",
         "username": "vdc52324e",
         "content": "这是一条评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=vdc52324e",
+        "avatar": "https://cravatar.cn/avatar/db5219b2431c54283f7971a25ac41ed6?d=monsterid&s=200",
         "created_at": "2026-05-12T07:01:31.584638"
       }
     ],
@@ -1279,7 +1279,7 @@
         "id": "9ce1b9b9-ea56-44b4-9af3-54f0cc777487",
         "username": "u6f702b3b",
         "content": "user1的评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u6f702b3b",
+        "avatar": "https://cravatar.cn/avatar/94c8086272d6b2c6b74e205d9d6087a3?d=wavatar&s=200",
         "created_at": "2026-05-12T07:02:08.676069"
       }
     ],
@@ -1296,7 +1296,7 @@
         "id": "87d18560-4fd0-4ce4-b512-1f5c47db1c4e",
         "username": "u3536b758",
         "content": "测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u3536b758",
+        "avatar": "https://cravatar.cn/avatar/8834d1e376f41b50c71b35e1d0d12afd?d=wavatar&s=200",
         "created_at": "2026-05-12T07:02:21.047952"
       }
     ],
@@ -1313,7 +1313,7 @@
         "id": "feb50d95-c214-47fc-9f7f-846cd2e4bb56",
         "username": "ue0387209",
         "content": "评论1",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=ue0387209",
+        "avatar": "https://cravatar.cn/avatar/ad0f7a8cec60ee217e7c823dbf476c16?d=robohash&s=200",
         "created_at": "2026-05-12T07:02:29.293044"
       }
     ],
@@ -1404,7 +1404,7 @@
         "id": "82df8d6a-b339-499d-b94f-edb5c7b27bf3",
         "username": "u8152f5a3",
         "content": "这是我的测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u8152f5a3",
+        "avatar": "https://cravatar.cn/avatar/accbe0acfca2b36d574bd20cbb8e6a28?d=wavatar&s=200",
         "created_at": "2026-05-12T07:59:12.735343"
       }
     ],
@@ -1486,7 +1486,7 @@
         "id": "1e2e7158-5aea-4971-90bb-fa65ff6686f2",
         "username": "u2399fb14",
         "content": "这是我的测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u2399fb14",
+        "avatar": "https://cravatar.cn/avatar/ad551acb3ba78c8e95a24a4e375f55da?d=robohash&s=200",
         "created_at": "2026-05-12T08:12:24.590415"
       }
     ],
@@ -1579,7 +1579,7 @@
         "id": "d2193bf1-fd84-4547-947e-5558983e36e9",
         "username": "udec6cf64",
         "content": "这是我的测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=udec6cf64",
+        "avatar": "https://cravatar.cn/avatar/2c5a7c1f81fa027b45806672fccb0896?d=robohash&s=200",
         "created_at": "2026-05-12T09:16:20.236829"
       }
     ],
@@ -1652,7 +1652,7 @@
         "id": "f249eead-5b11-47f3-b789-cf5d5db6094b",
         "username": "u37458246",
         "content": "这是我的测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u37458246",
+        "avatar": "https://cravatar.cn/avatar/b110d45b11a4162e1500ad429db430d7?d=monsterid&s=200",
         "created_at": "2026-05-12T09:23:25.142589"
       }
     ],
@@ -1734,7 +1734,7 @@
         "id": "bd2d2661-e9a0-4a6e-b4ab-954206a24789",
         "username": "uf3577779",
         "content": "这是我的测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=uf3577779",
+        "avatar": "https://cravatar.cn/avatar/981d0d78dc15aa8ebd81f34a5ac41f8e?d=robohash&s=200",
         "created_at": "2026-05-12T17:35:00.286679"
       }
     ],
@@ -1818,7 +1818,7 @@
         "id": "68c26d47-be7a-44c0-93ae-323b057bb7cf",
         "username": "u5b83f69c",
         "content": "这是我的测试评论",
-        "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=u5b83f69c",
+        "avatar": "https://cravatar.cn/avatar/9c46a211c19b3f64e02cc34b83af2bc0?d=monsterid&s=200",
         "created_at": "2026-05-12T17:47:58.016144"
       }
     ],

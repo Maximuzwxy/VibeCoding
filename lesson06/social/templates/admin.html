@@ -537,6 +537,19 @@
         let currentImageIndex = 0;
         let currentImageList = [];
 
+        // Deterministic avatar fallback using Cravatar
+        function fallbackAvatar(username) {
+            let h = 0;
+            for (let i = 0; i < username.length; i++) {
+                h = ((h << 5) - h) + username.charCodeAt(i);
+                h |= 0;
+            }
+            const hashStr = Math.abs(h).toString(16);
+            const styles = ['monsterid', 'wavatar', 'robohash'];
+            const style = styles[Math.abs(h) % 3];
+            return `https://cravatar.cn/avatar/${hashStr}?d=${style}&s=200`;
+        }
+
         async function checkAdminSession() {
             try {
                 const response = await fetch('/api/admin/stats');
@@ -642,7 +655,7 @@
                 <tr>
                     <td>
                         <div class="user-cell">
-                            <img class="user-avatar" src="${u.avatar}" alt="${u.username}" onerror="this.src='https://api.dicebear.com/9.x/adventurer/svg?seed=${u.username}'">
+                            <img class="user-avatar" src="${u.avatar}" alt="${u.username}" onerror="this.src=fallbackAvatar('${u.username}')">
                             <span>${u.username}</span>
                         </div>
                     </td>
@@ -683,7 +696,7 @@
                 <tr>
                     <td>
                         <div class="user-cell">
-                            <img class="user-avatar" src="${p.avatar}" alt="${p.username}" onerror="this.src='https://api.dicebear.com/9.x/adventurer/svg?seed=${p.username}'">
+                            <img class="user-avatar" src="${p.avatar}" alt="${p.username}" onerror="this.src=fallbackAvatar('${p.username}')">
                             <span>${p.username}</span>
                         </div>
                     </td>

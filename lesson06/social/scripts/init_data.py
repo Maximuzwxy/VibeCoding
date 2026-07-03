@@ -11,7 +11,7 @@ users = [
         'id': 'f7a80c84-c4c6-488b-8809-f76e67065fed',
         'username': 'maximuz',
         'password': '111111',
-        'avatar': '',
+        'avatar': 'https://cravatar.cn/avatar/327caf04e9fc21a465a5f149593ae66f?d=robohash&s=200',
         'bio': '这个人很懒，什么都没写',
         'created_at': '2026-05-10T08:52:53.952023'
     },
@@ -19,7 +19,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'luna_star',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=luna',
+        'avatar': 'https://cravatar.cn/avatar/ba8a48b0e34226a2992d871c65600a7c?d=monsterid&s=200',
         'bio': '仰望星空的旅人',
         'created_at': '2026-05-09T10:00:00'
     },
@@ -27,7 +27,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'cloud_walker',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=cloud',
+        'avatar': 'https://cravatar.cn/avatar/a1234b3161b4fbfdfb96dd576b65bbea?d=robohash&s=200',
         'bio': '漫步云端，自在如风',
         'created_at': '2026-05-08T14:30:00'
     },
@@ -35,7 +35,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'pixel_dreamer',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=pixel',
+        'avatar': 'https://cravatar.cn/avatar/ab4086ecd47c568d5ba5739d4078988f?d=monsterid&s=200',
         'bio': '用像素编织梦想',
         'created_at': '2026-05-07T09:15:00'
     },
@@ -43,7 +43,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'echo_valley',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=echo',
+        'avatar': 'https://cravatar.cn/avatar/cbb11ed87dc8a95d81400c7f33c7c171?d=robohash&s=200',
         'bio': '山谷回声，听见世界',
         'created_at': '2026-05-06T16:45:00'
     },
@@ -51,7 +51,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'neon_pulse',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=neon',
+        'avatar': 'https://cravatar.cn/avatar/a63728c09cda459c3caaa158f4adff49?d=wavatar&s=200',
         'bio': '霓虹闪烁，心跳同步',
         'created_at': '2026-05-05T11:20:00'
     },
@@ -59,7 +59,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'forest_whisper',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=forest',
+        'avatar': 'https://cravatar.cn/avatar/f379cfd7a55b621577a8389d1817a102?d=monsterid&s=200',
         'bio': '森林低语，万物生长',
         'created_at': '2026-05-04T08:00:00'
     },
@@ -67,7 +67,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'ocean_drift',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=ocean',
+        'avatar': 'https://cravatar.cn/avatar/45d20b1d2cc2d52e74b3cbf1750a2e31?d=monsterid&s=200',
         'bio': '随波逐流，心向远方',
         'created_at': '2026-05-03T13:10:00'
     },
@@ -75,7 +75,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'solar_flare',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=solar',
+        'avatar': 'https://cravatar.cn/avatar/e2cf1817f9bb7713307949ada414cb68?d=wavatar&s=200',
         'bio': '太阳耀斑，能量爆棚',
         'created_at': '2026-05-02T17:30:00'
     },
@@ -83,7 +83,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'midnight_owl',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=owl',
+        'avatar': 'https://cravatar.cn/avatar/50f8b6c98b0f9a271a562632405ae63d?d=robohash&s=200',
         'bio': '深夜不眠，思绪万千',
         'created_at': '2026-05-01T22:00:00'
     },
@@ -91,7 +91,7 @@ users = [
         'id': str(uuid.uuid4()),
         'username': 'crystal_rain',
         'password': '111111',
-        'avatar': 'https://api.dicebear.com/9.x/adventurer/svg?seed=crystal',
+        'avatar': 'https://cravatar.cn/avatar/cc989606b586f33918fe0552dec367c8?d=monsterid&s=200',
         'bio': '水晶雨滴，晶莹剔透',
         'created_at': '2026-04-30T07:45:00'
     }

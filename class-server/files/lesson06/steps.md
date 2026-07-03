@@ -35,7 +35,7 @@
 
 ### 1.5 项目整体结构
 
-```
+```text
 social/
 ├── app.py                # Flask 主应用（后端入口）
 ├── requirements.txt      # Python 依赖
@@ -72,8 +72,7 @@ social/
 
 #### users.json - 用户表
 ```json
-{
-  "users": [
+[
     {
       "id": "uuid",
       "username": "zhang_san",
@@ -81,16 +80,14 @@ social/
       "avatar": "url or base64",
       "bio": "个人简介",
       "created_at": "ISO时间",
-      "last_login": "ISO时间"
+      "last_login": "ISO time"
     }
   ]
-}
 ```
 
 #### friendships.json - 好友关系表
 ```json
-{
-  "friendships": [
+[
     {
       "id": "uuid",
       "from": "用户A",
@@ -104,8 +101,7 @@ social/
 
 #### messages.json - 消息表
 ```json
-{
-  "messages": [
+[
     {
       "id": "uuid",
       "from": "发送者",
@@ -119,11 +115,11 @@ social/
 
 #### posts.json - 动态表
 ```json
-{
-  "posts": [
+[
     {
       "id": "uuid",
       "username": "发布者",
+      "avatar": "发布者头像URL",
       "content": "文字内容",
       "images": ["图片URL列表"],
       "likes": ["点赞用户名列表"],
@@ -131,6 +127,7 @@ social/
         {
           "id": "uuid",
           "username": "评论者",
+          "avatar": "评论者头像URL",
           "content": "评论内容",
           "created_at": "ISO时间"
         }
@@ -144,87 +141,92 @@ social/
 ### 1.7 预设数据
 
 #### 预设头像
-新用户默认使用 DiceBear 生成的卡通头像：
+新用户默认使用 Cravatar 生成的卡通头像：
 ```
-https://api.dicebear.com/9.x/adventurer/svg?seed={username}
+https://cravatar.cn/avatar/{md5_hash}?d=monsterid&s=200
 ```
 
-#### 预设用户（10个，用于好友关系测试）
-| 用户名 | 密码 | 头像 Seed | 简介 |
-|--------|------|-----------|------|
-| friend_01 | password123 | Alice | 喜欢摄影 |
-| friend_02 | password123 | Bob | 音乐爱好者 |
-| friend_03 | password123 | Charlie | 旅行达人 |
-| friend_04 | password123 | Diana | 美食家 |
-| friend_05 | password123 | Ethan | 书虫 |
-| friend_06 | password123 | Fiona | 健身爱好者 |
-| friend_07 | password123 | George | 游戏玩家 |
-| friend_08 | password123 | Hannah | 电影爱好者 |
-| friend_09 | password123 | Ian | 程序员 |
-| friend_10 | password123 | Julia | 设计师 |
+#### 预设用户（11个，用于好友关系测试）
+| 用户名 | 密码 | 头像 | 简介 |
+|--------|------|------|------|
+| maximuz | 111111 | Cravatar (robohash) | 这个人很懒，什么都没写 |
+| luna_star | 111111 | Cravatar (monsterid) | 仰望星空的旅人 |
+| cloud_walker | 111111 | Cravatar (robohash) | 漫步云端，自在如风 |
+| pixel_dreamer | 111111 | Cravatar (monsterid) | 用像素编织梦想 |
+| echo_valley | 111111 | Cravatar (robohash) | 山谷回声，听见世界 |
+| neon_pulse | 111111 | Cravatar (wavatar) | 霓虹闪烁，心跳同步 |
+| forest_whisper | 111111 | Cravatar (monsterid) | 森林低语，万物生长 |
+| ocean_drift | 111111 | Cravatar (monsterid) | 随波逐流，心向远方 |
+| solar_flare | 111111 | Cravatar (wavatar) | 太阳耀斑，能量爆棚 |
+| midnight_owl | 111111 | Cravatar (robohash) | 深夜不眠，思绪万千 |
+| crystal_rain | 111111 | Cravatar (monsterid) | 水晶雨滴，晶莹剔透 |
 
 #### 预设动态（每条动态包含评论）
 | 发布者 | 内容 | 图片 | 评论 |
 |--------|------|------|------|
-| friend_01 | 今天天气真好，出门拍照！ | picsum.photos/800/400?random=1 | friend_02: 拍得真好看！<br>friend_03: 这是在哪里拍的？ |
-| friend_02 | 新专辑终于发布了！ | picsum.photos/800/400?random=2 | friend_04: 循环播放中！<br>friend_05: 最爱这首歌 |
-| friend_03 | 旅行日记 - 第100站 | picsum.photos/800/400?random=3 | friend_01: 羡慕！<br>friend_06: 好美的地方 |
-| friend_04 | 教你做红烧肉 | picsum.photos/800/400?random=4 | friend_07: 看起来很好吃！<br>friend_08: 明天就做 |
-| friend_05 | 读完《百年孤独》 | picsum.photos/800/400?random=5 | friend_09: 经典之作<br>friend_10: 有什么感想？ |
+| luna_star | 今天天气真好，出门拍照！ | picsum.photos/800/400?random=1 | cloud_walker: 拍得真好看！<br>echo_valley: 这是在哪里拍的？ |
+| cloud_walker | 新专辑终于发布了！ | picsum.photos/800/400?random=2 | pixel_dreamer: 循环播放中！<br>neon_pulse: 最爱这首歌 |
+| echo_valley | 旅行日记 - 第100站 | picsum.photos/800/400?random=3 | luna_star: 羡慕！<br>forest_whisper: 好美的地方 |
+| pixel_dreamer | 教你做像素画 | picsum.photos/800/400?random=4 | ocean_drift: 看起来很有趣！<br>midnight_owl: 明天就试试 |
+| neon_pulse | 读完《百年孤独》 | picsum.photos/800/400?random=5 | solar_flare: 经典之作<br>crystal_rain: 有什么感想？ |
 
 #### 初始化数据脚本 (scripts/init_data.py)
 ```python
-import os
 import json
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime
 
-# 预设用户数据
-PRESET_USERS = [
-    {"username": "friend_01", "password": "password123", "seed": "Alice", "bio": "喜欢摄影"},
-    {"username": "friend_02", "password": "password123", "seed": "Bob", "bio": "音乐爱好者"},
-    {"username": "friend_03", "password": "password123", "seed": "Charlie", "bio": "旅行达人"},
-    {"username": "friend_04", "password": "password123", "seed": "Diana", "bio": "美食家"},
-    {"username": "friend_05", "password": "password123", "seed": "Ethan", "bio": "书虫"},
-    {"username": "friend_06", "password": "password123", "seed": "Fiona", "bio": "健身爱好者"},
-    {"username": "friend_07", "password": "password123", "seed": "George", "bio": "游戏玩家"},
-    {"username": "friend_08", "password": "password123", "seed": "Hannah", "bio": "电影爱好者"},
-    {"username": "friend_09", "password": "password123", "seed": "Ian", "bio": "程序员"},
-    {"username": "friend_10", "password": "password123", "seed": "Julia", "bio": "设计师"},
-]
+DATA_DIR = 'data'
+USERS_FILE = f'{DATA_DIR}/users.json'
+FRIENDSHIPS_FILE = f'{DATA_DIR}/friendships.json'
 
-# 预设动态数据
-PRESET_POSTS = [
+users = [
     {
-        "username": "friend_01",
-        "content": "今天天气真好，出门拍照！",
-        "images": ["https://picsum.photos/800/400?random=1"],
-        "likes": ["friend_03", "friend_05"],
-        "comments": [
-            {"id": str(uuid.uuid4()), "username": "friend_02", "content": "拍得真好看！", "created_at": datetime.now(timezone.utc).isoformat()},
-            {"id": str(uuid.uuid4()), "username": "friend_03", "content": "这是在哪里拍的？", "created_at": datetime.now(timezone.utc).isoformat()},
-        ]
+        'id': 'f7a80c84-c4c6-488b-8809-f76e67065fed',
+        'username': 'maximuz',
+        'password': '111111',
+        'avatar': 'https://cravatar.cn/avatar/327caf04e9fc21a465...?d=robohash&s=200',
+        'bio': '这个人很懒，什么都没写',
+        'created_at': '2026-05-10T08:52:53.952023'
     },
-    # ... 更多动态
+    {
+        'id': str(uuid.uuid4()),
+        'username': 'luna_star',
+        'password': '111111',
+        'avatar': 'https://cravatar.cn/avatar/ba8a48b0...?d=monsterid&s=200',
+        'bio': '仰望星空的旅人',
+        'created_at': '2026-05-09T10:00:00'
+    },
+    # ... cloud_walker, pixel_dreamer, echo_valley, neon_pulse,
+    #     forest_whisper, ocean_drift, solar_flare, midnight_owl, crystal_rain
 ]
 
-def init_preset_data():
-    """初始化预设数据到 JSON 文件"""
-    # 1. 写入预设用户到 users.json
-    # 2. 建立用户间好友关系到 friendships.json
-    # 3. 写入预设动态到 posts.json
-    pass
+friendships = []
+for i in range(1, len(users)):
+    friendships.append({
+        'id': str(uuid.uuid4()),
+        'user1': 'maximuz',
+        'user2': users[i]['username'],
+        'status': 'accepted',
+        'created_at': datetime.utcnow().isoformat()
+    })
+
+with open(USERS_FILE, 'w', encoding='utf-8') as f:
+    json.dump(users, f, ensure_ascii=False, indent=2)
+
+with open(FRIENDSHIPS_FILE, 'w', encoding='utf-8') as f:
+    json.dump(friendships, f, ensure_ascii=False, indent=2)
 ```
 
 #### 头像资源说明
-- **默认头像**: DiceBear API（免费，无需认证）
-  - URL: `https://api.dicebear.com/9.x/adventurer/svg?seed={username}`
+- **默认头像**: Cravatar API（免费，无需认证，支持 monsterid/wavatar/robohash 三种风格）
+  - URL: `https://cravatar.cn/avatar/{md5_hash}?d=monsterid&s=200`
 - **示例图片**: Lorem Picsum（免费，无需认证）
   - URL: `https://picsum.photos/800/400?random={n}`
 
 #### 预设数据用途
 1. **便于开发测试**：无需手动创建数据即可看到完整效果
-2. **好友关系演示**：新用户注册后自动拥有10个预设好友
+2. **好友关系演示**：新用户注册后自动拥有11个预设好友
 3. **动态功能演示**：预设动态包含图片、点赞、评论
 4. **UI 效果预览**：可以看到头像、图文混排等效果
 
@@ -255,7 +257,7 @@ playwright install chromium
 
 #### 测试文件结构
 
-```
+```text
 tests/
 ├── api/                  # API 测试
 │   ├── __init__.py
@@ -528,9 +530,9 @@ pytest tests/ui/ --headed
 - 删除后双方的好友关系解除
 
 #### 初始化数据
-- 新用户注册后，自动创建10个预设好友
-- 初始化脚本需要预先创建10个用户账号
-- 新用户与这10个用户之间自动建立好友关系（accepted状态）
+- 新用户注册后，自动创建11个预设好友
+- 初始化脚本需要预先创建11个用户账号
+- 新用户与这11个用户之间自动建立好友关系（accepted状态）
 
 ### API 设计
 
@@ -544,9 +546,9 @@ pytest tests/ui/ --headed
 | DELETE | /api/friends/{username} | 删除好友 |
 
 ### 初始化数据脚本 (scripts/init_data.py)
-- 创建10个预设用户（用于成为新用户的好友）
-- 用户名格式：`friend_01` 到 `friend_10`
-- 密码统一：`password123`
+- 创建11个预设用户（用于成为新用户的好友）
+- 用户名：`maximuz`, `luna_star`, `cloud_walker`, `pixel_dreamer`, `echo_valley`, `neon_pulse`, `forest_whisper`, `ocean_drift`, `solar_flare`, `midnight_owl`, `crystal_rain`
+- 密码统一：`111111`
 - 如果用户已存在则跳过
 
 ### 阶段二完成标准
@@ -555,7 +557,7 @@ pytest tests/ui/ --headed
 - [ ] 用户可以接受/拒绝好友请求
 - [ ] 用户可以查看好友列表
 - [ ] 用户可以删除好友
-- [ ] 新用户自动获得10个初始好友
+- [ ] 新用户自动获得11个初始好友
 
 ---
 
@@ -965,9 +967,9 @@ pytest tests/ui/ --headed
 - 总长度 4-16 个字符
 
 ### 4.2 默认头像
-新用户默认使用 DiceBear 生成的卡通头像：
+新用户默认使用 Cravatar 生成的卡通头像：
 ```
-https://api.dicebear.com/9.x/adventurer/svg?seed={username}
+https://cravatar.cn/avatar/{md5_hash}?d=monsterid&s=200
 ```
 
 ---
@@ -988,9 +990,3 @@ socketio.run(app, debug=True, host='0.0.0.0', port=5000)
 - **开发环境**: 此配置仅适用于本地开发调试
 - **安全性**: `debug=True` 模式下不应暴露给不受信任的网络
 - **防火墙**: 确保本地防火墙允许 5000 端口的入站连接
-
----
-
-*文档版本：2.0*
-*创建日期：2026-05-13*
-*更新日期：2026-05-13*

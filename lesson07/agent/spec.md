@@ -80,16 +80,22 @@ Agent：你叫 Max
 
 **功能**：
 - `read_file` - 读取文件内容
+- `list_files` - 列出文件目录
 - `write_file` - 写入文件内容
+- `delete_file` - 删除文件
 
 **使用场景**：
 - 让 AI 生成代码并保存
 - 让 AI 读取并修改现有文件
+- 让 AI 浏览文件目录并删除不需要的文件
 
 **示例**：
 ```
 用户：帮我创建一个 index.html 文件
 Agent：[调用 write_file] 文件已创建
+
+用户：删除之前的旧照片
+Agent：[调用 list_files] → [调用 delete_file] 文件已删除
 ```
 
 ---
@@ -135,7 +141,9 @@ Agent：[调用 download_image] → 图片已保存到 files/
 
 ### 后端
 - **框架**：Flask
-- **LLM**：支持 Kimi 和 Qwen 模型
+- **LLM**：DeepSeek（deepseek-chat）
+- **API**：https://api.deepseek.com/chat/completions
+- **Key**：存放在项目根目录 `.env` 文件中
 - **持久化**：JSON 文件存储
 
 ### 前端
@@ -148,7 +156,9 @@ Agent：[调用 download_image] → 图片已保存到 files/
 |--------|------|------|
 | update_system_prompt | 更新系统提示词 | 3 |
 | read_file | 读取文件 | 4 |
+| list_files | 列出文件目录 | 4 |
 | write_file | 写入文件 | 4 |
+| delete_file | 删除文件 | 4 |
 | get_current_time | 获取时间 | 5 |
 | get_location | 获取位置 | 5 |
 | get_weather | 获取天气 | 5 |

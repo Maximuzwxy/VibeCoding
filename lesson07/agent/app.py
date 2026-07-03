@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, render_template
 app = Flask(__name__)
 
 def _load_env():
-    env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
+    env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), '.env')
     if os.path.exists(env_path):
         with open(env_path, 'r', encoding='utf-8') as f:
             for line in f:
@@ -19,9 +19,10 @@ _load_env()
 
 API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 API_URL = os.environ.get("DEEPSEEK_API_URL", "https://api.deepseek.com/chat/completions")
-MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-pro")
+MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FILES_DIR = os.path.join(BASE_DIR, "files")
 HISTORY_FILE = os.path.join(BASE_DIR, "data", "history.json")
 SYSTEM_PROMPT_FILE = os.path.join(BASE_DIR, "data", "system_prompt.json")
 
@@ -53,7 +54,10 @@ current_system_prompt = load_system_prompt()
 
 def get_messages_with_system():
     messages = []
-    system_hint = '【重要规则】当用户要求设定AI角色/人设时（如"你是一位xxx"、"你充当xxx"、"你是xxx"），你必须：1) 立即调用update_system_prompt工具将角色描述作为role参数传入；2) 禁止仅在回复中声称"已设定角色"而不实际调用工具。'
+    system_hint = """【重要规则 - 必须严格遵守】
+1. 当你需要操作文件（读/写/删/查）时，必须调用对应的工具函数（read_file/list_files/write_file/delete_file）。严禁在未调用工具的情况下声称已完成文件操作。
+2. 删除文件前，先用 list_files 查看有哪些文件，确认文件名后再调用 delete_file。
+3. 当用户要求设定AI角色/人设时（如"你是一位xxx"），必须立即调用update_system_prompt工具，禁止仅在回复中声称"已设定角色"而不实际调用工具。"""
     if current_system_prompt:
         messages.append({"role": "system", "content": current_system_prompt})
     messages.append({"role": "system", "content": system_hint})
@@ -84,6 +88,34 @@ def execute_read_file(args):
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
+def execute_list_files(args):
+    """列出 files 目录中的文件"""
+    subdir = args.get("subdir", "")
+    full_dir = os.path.join(FILES_DIR, subdir) if subdir else FILES_DIR
+
+    if not os.path.realpath(full_dir).startswith(os.path.realpath(FILES_DIR)):
+        return {"status": "error", "message": "Cannot access directories outside the files directory"}
+
+    if not os.path.exists(full_dir):
+        return {"status": "error", "message": f"Directory not found: {subdir}"}
+
+    try:
+        items = []
+        for entry in os.listdir(full_dir):
+            entry_path = os.path.join(full_dir, entry)
+            rel_path = os.path.join(subdir, entry) if subdir else entry
+            items.append({
+                "name": entry,
+                "path": rel_path,
+                "type": "directory" if os.path.isdir(entry_path) else "file",
+                "size": os.path.getsize(entry_path) if os.path.isfile(entry_path) else None
+            })
+        # Sort: directories first, then files
+        items.sort(key=lambda x: (0 if x["type"] == "directory" else 1, x["name"]))
+        return {"status": "success", "items": items, "count": len(items)}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
 def execute_write_file(args):
     """执行写入文件的函数"""
     file_path = args.get("file_path", "")
@@ -92,14 +124,36 @@ def execute_write_file(args):
     if not file_path:
         return {"status": "error", "message": "file_path is required"}
 
-    if not file_path.startswith("files/"):
-        file_path = "files/" + file_path
+    # Ensure files are written to FILES_DIR
+    full_path = os.path.join(FILES_DIR, file_path)
 
     try:
-        os.makedirs(os.path.dirname(file_path) if os.path.dirname(file_path) else ".", exist_ok=True)
-        with open(file_path, "w", encoding="utf-8") as f:
+        os.makedirs(os.path.dirname(full_path), exist_ok=True)
+        with open(full_path, "w", encoding="utf-8") as f:
             f.write(content)
-        return {"status": "success", "message": f"File saved to {file_path}"}
+        return {"status": "success", "message": f"File saved to {full_path}"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+def execute_delete_file(args):
+    """执行删除文件的函数"""
+    file_path = args.get("file_path", "")
+
+    if not file_path:
+        return {"status": "error", "message": "file_path is required"}
+
+    full_path = os.path.join(FILES_DIR, file_path)
+
+    # Safety check: ensure the resolved path stays within FILES_DIR
+    if not os.path.realpath(full_path).startswith(os.path.realpath(FILES_DIR)):
+        return {"status": "error", "message": "Cannot delete files outside the files directory"}
+
+    if not os.path.exists(full_path):
+        return {"status": "error", "message": f"File not found: {file_path}"}
+
+    try:
+        os.remove(full_path)
+        return {"status": "success", "message": f"File deleted: {file_path}"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
@@ -255,8 +309,8 @@ def execute_download_image(args):
         if not filename or '.' not in filename:
             filename = "downloaded_image.jpg"
 
-    if not filename.startswith("files/"):
-        filename = "files/" + filename
+    if not os.path.isabs(filename):
+        filename = os.path.join(FILES_DIR, filename)
 
     try:
         os.makedirs(os.path.dirname(filename) if os.path.dirname(filename) else ".", exist_ok=True)
@@ -287,7 +341,9 @@ def execute_download_image(args):
 SKILLS = {
     "update_system_prompt": execute_update_system_prompt,
     "read_file": execute_read_file,
+    "list_files": execute_list_files,
     "write_file": execute_write_file,
+    "delete_file": execute_delete_file,
     "get_current_time": execute_get_current_time,
     "get_location": execute_get_location,
     "get_weather": execute_get_weather,
@@ -297,6 +353,23 @@ SKILLS = {
 }
 
 TOOLS = [
+    {
+        "type": "function",
+        "function": {
+            "name": "delete_file",
+            "description": "Delete a file from the files directory",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "file_path": {
+                        "type": "string",
+                        "description": "The path of the file to delete, relative to the files directory"
+                    }
+                },
+                "required": ["file_path"]
+            }
+        }
+    },
     {
         "type": "function",
         "function": {
@@ -328,6 +401,23 @@ TOOLS = [
                     }
                 },
                 "required": ["file_path"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_files",
+            "description": "List all files and directories in the files directory. Use this to browse what files are available before reading, deleting, or writing.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "subdir": {
+                        "type": "string",
+                        "description": "Optional subdirectory path to list (e.g. 'images' or 'project/src')"
+                    }
+                },
+                "required": []
             }
         }
     },

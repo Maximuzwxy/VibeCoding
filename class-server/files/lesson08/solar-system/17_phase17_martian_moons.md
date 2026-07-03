@@ -71,7 +71,7 @@ python data/init_celestial.py deimos 火卫二 Deimos --type moon
 
 ## 里程碑 — 卫星纹理全部完成
 
-此阶段后，太阳系 **22 颗天体**（含月球）全部具备独立特写纹理：
+此阶段后，太阳系 **20 颗卫星**（含月球）全部具备独立特写纹理：
 
 | 行星 | 卫星 |
 |------|------|
@@ -81,6 +81,6 @@ python data/init_celestial.py deimos 火卫二 Deimos --type moon
 | 土星 | Mimas, Enceladus, Tethys, Dione, Rhea, Titan, Iapetus |
 | 天王星 | Miranda, Ariel, Umbriel, Titania, Oberon |
 | 海王星 | Triton |
-| **合计** | **22**（8大行星 + 月球 + 21颗卫星 − 月球已计入共22颗天体）|
+| **合计** | **20** |
 
-> 注：以上指有独立特写纹理的天体 = 8大行星 + 太阳 + 22颗卫星 = 31个独立场景。
+> 注：以上指有独立特写纹理的天体 = 8大行星 + 太阳 + 20颗卫星 = 29个独立场景。

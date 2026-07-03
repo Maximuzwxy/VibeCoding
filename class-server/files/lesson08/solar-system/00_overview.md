@@ -101,6 +101,7 @@ solar/
 | GET | `/api/quiz/<type>` | 获取题库 |
 | POST | `/api/quiz/generate` | 调用 LLM 生成选择题（带去重） |
 | POST | `/api/quiz/save` | 保存题目到本地题库 |
+| POST | `/api/chat` | AI 对话（上下文记忆） |
 
 ---
 

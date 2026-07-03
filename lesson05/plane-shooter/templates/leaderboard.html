@@ -12,6 +12,7 @@
         <p class="leaderboard-subtitle">Top 10 Pilots</p>
         
         {% if scores %}
+        <div class="leaderboard-table-wrapper">
         <table class="leaderboard-table">
             <thead>
                 <tr>
@@ -36,6 +37,7 @@
                 {% endfor %}
             </tbody>
         </table>
+        </div>
         {% else %}
         <div class="no-scores">
             <p style="font-size: 3em;">🏆</p>

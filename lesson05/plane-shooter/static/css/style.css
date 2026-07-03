@@ -371,7 +371,27 @@ select.form-control {
 .leaderboard-table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+.leaderboard-table-wrapper {
+    max-height: 50vh;
+    overflow-y: auto;
     margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+/* Custom scrollbar for the table wrapper */
+.leaderboard-table-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+.leaderboard-table-wrapper::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+.leaderboard-table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
 }
 
 .leaderboard-table th,

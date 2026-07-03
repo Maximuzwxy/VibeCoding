@@ -13,9 +13,19 @@ Up until now, you've been opening HTML files directly in the browser. But real w
 
 ### Try this prompt:
 
-> Create a simple Flask app in app.py. When someone visits the root URL, return "Hello World! This is my first backend." Add a second route `/time` that shows the current server time.
+> Create a simple Flask app in app.py. When someone visits the root URL, return "Hello World! This is my first backend."
 
 Run it with `python app.py`, then open `http://127.0.0.1:5000` in your browser. No HTML file needed! The web page is generated entirely by Python code running on the server.
+
+### Add a new route:
+
+> Add a new route `/time` to the Flask app that shows the current server time.
+
+### Render an HTML file:
+
+> Create a `templates/` folder with a `hello.html` file inside. Then add a route `/hello` that uses `render_template('hello.html')` to serve it.
+
+Flask requires HTML templates to be placed in a folder named `templates/` — this is a convention, not something you configure.
 
 ### Why this matters:
 - This is how all real websites work — code runs on a server, not just a file on your computer

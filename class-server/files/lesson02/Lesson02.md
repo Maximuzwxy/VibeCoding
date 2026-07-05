@@ -29,17 +29,15 @@ Split little_prince.html into three separate files: index.html (HTML structure o
 
 ## Project Memory
 
-Trae IDE supports a **project memory** feature — a `.md` file stored at:
+Trae IDE supports a **project memory** feature. To configure it:
 
-```
-~/.trae-cn/memory/projects/<encoded-workspace-path>/project_memory.md
-```
+1. Open Trae IDE **Settings** → **Rules & Memory** → **Rules**
+2. Create a **project-level rule** file
+3. Paste the rule content below into that file
 
-- This file acts as persistent rules or context that AI references in every conversation within the project.
-- Project memory is project-scoped — different projects can have different memories.
-- Update it whenever you establish a new convention you want AI to remember.
+This rule acts as persistent context that AI references in every conversation within the project. Update it whenever you establish a new convention you want AI to remember.
 
-Copy and paste the following into your `project_memory.md`:
+Copy and paste the following into your project rule:
 
 ```
 Rule: Split HTML into Three Separate Files

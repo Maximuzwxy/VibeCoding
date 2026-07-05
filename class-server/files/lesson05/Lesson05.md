@@ -72,7 +72,7 @@ CRUD = **C**reate / **R**ead / **U**pdate / **D**elete — the four basic operat
 
 From now on, your projects have a new structure: frontend + backend + database. Let's update the project memory so AI remembers all the conventions.
 
-Open your `project_memory.md` and replace the old rule with the following:
+Open Trae IDE **Settings** → **Rules & Memory** → **Rules**, edit your project-level rule, and replace the old rule with the following:
 
 ```
 Rule: Project File Structure

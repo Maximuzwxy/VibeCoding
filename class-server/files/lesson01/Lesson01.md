@@ -2,15 +2,16 @@
 
 ---
 
-## 1. What is Web Coding
+## 1. What is Vibe Coding
 
-Web Coding is the practice of writing code to create web pages and websites. It involves three core technologies:
+Vibe Coding is a new way of programming — instead of writing every line of code yourself, you **describe what you want** in natural language, and an AI assistant inside your IDE generates the code for you.
 
-- **HTML** – Defines the structure and content of a web page (the skeleton)
-- **CSS** – Controls the appearance and styling of a web page (the skin)
-- **JavaScript** – Adds interactivity and dynamic behavior to a web page (the muscles)
+- You don't memorize syntax — you express your **intent**
+- You don't debug alone — you have an AI partner that helps
+- You learn by doing and iterating, not by reading thick textbooks
 
-Together, these three allow us to build rich, interactive web applications from scratch.
+In this course, we'll use **Trae IDE** as our AI-powered coding environment. With it, we'll build web pages, games, servers, and even a social network — all by communicating with the AI in plain language.
+
 
 ---
 

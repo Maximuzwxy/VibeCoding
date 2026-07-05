@@ -134,5 +134,21 @@
   {
     "role": "assistant",
     "content": "这次成功了！✈️✅\n\n**文件信息：**\n- 📂 文件名：`airplane.jpg`\n- 💾 大小：约 51KB\n\n现在你的文件目录里有：\n- 📁 `subdir` 文件夹\n- 🐱 `cute_cat.jpg`\n- 🐶 `cute_dog.jpg`\n- 📄 `hello.txt`\n- 🐴 `horse.jpg`\n- ✈️ `airplane.jpg` ✅ **成功下载！**\n\n还有其他需要帮忙的吗？😊"
+  },
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi Max! 👋 有什么需要我帮忙的吗？😊"
+  },
+  {
+    "role": "user",
+    "content": "今天天气咋样"
+  },
+  {
+    "role": "assistant",
+    "content": "根据当前服务器所在位置——**北京**，今天的天气情况如下：🌤️\n\n- 🌡️ **温度：** 31°C（体感 36°C）\n- ☀️ **天气状况：** 晴天\n- 💧 **湿度：** 46%\n- 🌬️ **风速：** 13 km/h（西南偏南风）\n- 🕶️ **紫外线指数：** 1（较低）\n- 👁️ **能见度：** 10 km\n\n体感温度有36°C，比较热哦，注意防暑和补水！💧😊"
   }
 ]

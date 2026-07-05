@@ -5,7 +5,7 @@ import uuid
 
 pytestmark = pytest.mark.ui
 
-BASE_URL = "http://localhost:5000"
+BASE_URL = "http://localhost:5006"
 
 @pytest.fixture(scope="function")
 def browser():

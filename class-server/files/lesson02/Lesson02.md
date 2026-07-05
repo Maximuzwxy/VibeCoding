@@ -1,12 +1,5 @@
 # 02 Code, Docs, Memory & Games
 
-## Tips
-
-- **Class Server**: http://192.168.66.207:6688
-- **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
-- **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
-- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.
-
 ## Why Split HTML, CSS, and JS?
 
 - **Separation of concerns**: HTML handles structure, CSS handles styling, JS handles logic — each file has a single responsibility.
@@ -80,3 +73,12 @@ Five buff types (Slow Down, Split, Color Change, Enlarge Paddle, Shrink Opponent
 
 ### Step 4: Settings Panel
 A full-screen settings panel to configure buff frequency, ball speed parameters, and paddle size limits.
+
+---
+
+## Tips
+
+- **Class Server**: http://192.168.66.207:6688
+- **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
+- **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
+- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.

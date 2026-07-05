@@ -1,12 +1,5 @@
 # 06 Social Network
 
-## Tips
-
-- **Class Server**: http://192.168.3.38:6688
-- **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
-- **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
-- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.
-
 ## Building a Social Network
 
 Today we're building something familiar — a social network app, like WeChat.
@@ -32,3 +25,12 @@ Build it step by step. Detailed requirements for each phase are in the `social/`
 | Phase 3 | Instant Messaging | Real-time chat with WebSocket — send and receive messages instantly |
 | Phase 4 | Moments (Friend Circle) | Publish posts with images, like and comment on friends' posts |
 | Phase 5 | Admin Dashboard | Admin panel: view statistics, manage users and posts |
+
+---
+
+## Tips
+
+- **Class Server**: http://192.168.3.38:6688
+- **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
+- **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
+- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.

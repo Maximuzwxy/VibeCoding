@@ -1,12 +1,5 @@
 # 05 HTML + Flask + DB (JSON)
 
-## Tips
-
-- **Class Server**: http://192.168.3.38:6688
-- **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
-- **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
-- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.
-
 ## Your First Backend: app.py
 
 Up until now, you've been opening HTML files directly in the browser. But real web apps work differently — a **server** sends the content to the browser.
@@ -114,3 +107,12 @@ You can build any game or app, as long as it includes:
 - How a backend stores and serves data
 - How the frontend communicates with the backend (fetch API calls)
 - How to separate game logic (frontend) from persistent data (backend)
+
+---
+
+## Tips
+
+- **Class Server**: http://192.168.3.38:6688
+- **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
+- **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
+- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.

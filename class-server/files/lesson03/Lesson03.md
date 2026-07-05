@@ -1,12 +1,5 @@
 # 03 The 3D World, Built by You
 
-## Tips
-
-- **Class Server**: http://192.168.66.207:6688
-- **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
-- **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
-- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.
-
 ## 3D Concepts
 
 Before building a 3D application, it helps to understand a few fundamental ideas:
@@ -61,3 +54,12 @@ Build an interactive 3D scene in two steps. (For detailed requirements, see step
 - Player body (cylinder) with collision detection against random obstacles
 - First-person / third-person view toggle
 - Grid boundary constraints, random object spawning
+
+---
+
+## Tips
+
+- **Class Server**: http://192.168.66.207:6688
+- **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
+- **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
+- **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.

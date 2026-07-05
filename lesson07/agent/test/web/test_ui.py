@@ -10,7 +10,7 @@ except ImportError:
     print("Playwright not installed. Run: pip install playwright && python -m playwright install chromium")
     sys.exit(1)
 
-BASE_URL = "http://127.0.0.1:5000"
+BASE_URL = "http://127.0.0.1:5007"
 
 class TestUI(unittest.TestCase):
     @classmethod

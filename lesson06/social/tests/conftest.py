@@ -3,7 +3,7 @@ import requests
 import uuid
 from pathlib import Path
 
-BASE_URL = "http://localhost:5000"
+BASE_URL = "http://localhost:5006"
 
 @pytest.fixture(scope="session")
 def base_url():

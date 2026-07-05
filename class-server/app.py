@@ -116,6 +116,8 @@ def class_page(nickname):
         # 获取文件列表（用于右边课程资料）
         file_list = []
         for f in os.listdir(target_dir):
+            if f.startswith('.'):
+                continue
             full_path = os.path.join(target_dir, f)
             is_dir = os.path.isdir(full_path)
             file_list.append({"name": f, "is_dir": is_dir})
@@ -189,6 +191,8 @@ def download_all():
     memory_zip = io.BytesIO()
     with zipfile.ZipFile(memory_zip, 'w', zipfile.ZIP_DEFLATED) as zf:
         for f in os.listdir(target_dir):
+            if f.startswith('.'):
+                continue
             file_path = os.path.join(target_dir, f)
             if os.path.isfile(file_path):
                 zf.write(file_path, f)
@@ -229,6 +233,8 @@ def api_browse():
 
     items = []
     for f in os.listdir(target_dir):
+        if f.startswith('.'):
+            continue
         full_path = os.path.join(target_dir, f)
         is_dir = os.path.isdir(full_path)
         items.append({"name": f, "is_dir": is_dir})

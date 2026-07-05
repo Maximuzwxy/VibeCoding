@@ -57,11 +57,6 @@ The Trae IDE is divided into three main areas:
 #### Creating a Folder
 - Right-click in the File Explorer → "New Folder", or ask the Agent directly in the AI Chat Panel
 
-#### What is a Markdown Document
-- Markdown (.md) is a lightweight markup language — simple symbols produce richly formatted documents
-- Commonly used for documentation, notes, course materials, etc.
-- This file itself is a Markdown document
-
 ### 2.6 The AI Chat Panel
 
 The AI Chat Panel is the core feature of Trae. Once you send a task, the Agent will:

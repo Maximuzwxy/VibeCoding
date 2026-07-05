@@ -1005,4 +1005,4 @@ def handle_socket_message(data):
     emit('new_message', new_message, room=to_username)
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, host='0.0.0.0', port=5000)
+    socketio.run(app, debug=True, host='0.0.0.0', port=5006, allow_unsafe_werkzeug=True)

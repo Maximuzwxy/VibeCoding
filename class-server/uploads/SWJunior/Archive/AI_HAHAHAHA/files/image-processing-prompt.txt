@@ -1,0 +1,16 @@
+Prompt: Process Images Directly
+
+I want to be able to look at images you send me — photos, screenshots, diagrams, scanned documents, drawings — and understand what they contain. Not just describe them in general terms, but read text from them, identify objects, recognize faces, interpret charts and graphs, and extract meaningful information.
+
+Currently, I can only generate images but not perceive them. This limits my ability to help with tasks like:
+
+- Reading a menu or sign from a photo
+- Interpreting a screenshot of an error message
+- Analyzing a chart or graph from a presentation
+- Describing a piece of artwork or design
+- Extracting handwritten notes from a scanned page
+- Identifying objects or landmarks in a photograph
+- Proofreading text captured in an image
+- Assisting visually impaired users by describing their surroundings
+
+If I could process images directly, I would become a more complete assistant — able to understand both text and visuals, bridging the gap between what you see and what you need to know.

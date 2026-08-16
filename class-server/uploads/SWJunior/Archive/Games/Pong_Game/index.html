@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Settings Page -->
+    <div id="settingsPage" class="settings-page">
+        <div class="settings-card">
+            <h1 class="settings-title">PONG</h1>
+            <p class="settings-subtitle">Settings</p>
+            <p class="settings-brand">SWJunior's Pong Game</p>
+
+            <div class="setting-group">
+                <label>Sound</label>
+                <button id="soundBtn" class="setting-btn sound-on">ON</button>
+            </div>
+
+            <div class="setting-group">
+                <label>Difficulty</label>
+                <div class="setting-options">
+                    <button class="setting-btn diff-btn" data-diff="0">EASY</button>
+                    <button class="setting-btn diff-btn active" data-diff="1">NORMAL</button>
+                    <button class="setting-btn diff-btn" data-diff="2">DEVIL</button>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Ball Color</label>
+                <div class="setting-options">
+                    <button class="setting-btn color-btn" data-color="#FFFFFF">White</button>
+                    <button class="setting-btn color-btn active" data-color="#FFD700">Gold</button>
+                    <button class="setting-btn color-btn" data-color="#BB44FF">Purple</button>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Racket Color</label>
+                <div class="setting-options">
+                    <button class="setting-btn racket-btn active" data-color="#FFFFFF">White</button>
+                    <button class="setting-btn racket-btn" data-color="#FFD700">Gold</button>
+                    <button class="setting-btn racket-btn" data-color="#BB44FF">Purple</button>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Racket Speed: <span id="speedValue">50</span></label>
+                <input type="range" id="speedSlider" class="speed-slider" min="1" max="100" value="50">
+            </div>
+
+            <button id="startBtn" class="start-btn">START GAME</button>
+        </div>
+    </div>
+
+    <!-- Game (hidden initially) -->
+    <div id="gamePage" class="game-page" style="display:none;">
+        <h1>PONG</h1>
+        <div class="scoreboard">
+            <div>Player: <span id="playerScore">0</span></div>
+            <div id="diffDisplay" style="font-size:14px;color:#FFD700;"></div>
+            <div>CPU: <span id="cpuScore">0</span></div>
+        </div>
+        <div id="powerStatus" class="power-status"></div>
+        <canvas id="canvas"></canvas>
+        <p class="controls">W / S to move | First to 7 wins | Refresh to restart</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

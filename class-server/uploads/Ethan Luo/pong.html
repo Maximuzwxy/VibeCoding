@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #010a12;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            user-select: none;
+            overflow: hidden;
+        }
+        #water-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: 0;
+        }
+        #game-wrapper { text-align: center; position: relative; z-index: 1; }
+        #scoreboard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+            margin-bottom: 10px;
+            gap: 8px;
+        }
+        #player-score, #ai-score {
+            font-size: 48px;
+            font-weight: bold;
+            width: 80px;
+        }
+        #player-score { color: #4fc3f7; }
+        #ai-score { color: #ff5252; }
+        #divider { color: #555; font-size: 32px; }
+        #trio-scoreboard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 20px;
+            margin-bottom: 10px;
+            gap: 40px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        #trio-scoreboard > div {
+            font-size: 32px;
+            font-weight: bold;
+            min-width: 100px;
+            text-align: center;
+            text-shadow: 0 0 10px currentColor;
+        }
+        canvas {
+            border: 2px solid #1a3a5c;
+            border-radius: 4px;
+            background: #020d1a;
+        }
+        #game-over {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.9);
+            color: #fff;
+            padding: 30px 50px;
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+            pointer-events: auto;
+        }
+        #game-over h2 { font-size: 32px; margin-bottom: 10px; }
+        #game-over .winner { color: #4fc3f7; }
+        #game-over .loser { color: #ff5252; }
+        #game-over p { margin: 6px 0; color: #ccc; }
+        #game-over button {
+            margin-top: 16px;
+            padding: 10px 30px;
+            font-size: 18px;
+            border: none;
+            background: #4fc3f7;
+            color: #000;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #game-over button:hover { background: #81d4fa; }
+        #effects-bar {
+            position: absolute;
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+        }
+        .effect-icon {
+            font-size: 20px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(0,0,0,0.7);
+            animation: pulse 0.8s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        #instructions {
+            color: #555;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        #instructions span { color: #4fc3f7; }
+
+        #start-screen {
+            position: relative; z-index: 1;
+            width: 800px;
+            height: 500px;
+            background: transparent;
+            border: 2px solid #1a4a6e;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            backdrop-filter: blur(2px);
+        }
+        #user-page {
+            position: relative; z-index: 1;
+            width: 800px;
+            height: 500px;
+            background: transparent;
+            border: 2px solid #1a4a6e;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            backdrop-filter: blur(2px);
+        }
+        #user-page h1 {
+            font-size: 72px;
+            color: #fff;
+            letter-spacing: 12px;
+            text-shadow: 0 0 30px rgba(79,195,247,0.5);
+        }
+        #user-page .subtitle {
+            color: #666;
+            font-size: 16px;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+        #username-input {
+            width: 260px;
+            padding: 10px 16px;
+            font-size: 18px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            background: #222;
+            color: #fff;
+            text-align: center;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        #username-input:focus { border-color: #4fc3f7; }
+        #enter-btn {
+            padding: 12px 50px;
+            font-size: 18px;
+            border: none;
+            background: #4fc3f7;
+            color: #000;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: inherit;
+            transition: transform 0.15s;
+        }
+        #enter-btn:hover { transform: scale(1.05); }
+        #username-display {
+            font-size: 14px;
+            color: #4fc3f7;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+        #quit-btn {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            z-index: 10;
+            background: transparent;
+            border: 1px solid #555;
+            color: #888;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+        }
+        #quit-btn:hover { color: #f44336; border-color: #f44336; }
+        #avatar-pick {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .av-opt {
+            font-size: 32px;
+            cursor: pointer;
+            padding: 6px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: all 0.15s;
+        }
+        .av-opt:hover { background: rgba(79,195,247,0.15); }
+        .av-opt.selected { border-color: #4fc3f7; background: rgba(79,195,247,0.15); }
+        .big-av { font-size: 40px; }
+        #settings-user {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+        .av-pick-small {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #333;
+        }
+        .avs-opt {
+            font-size: 22px;
+            cursor: pointer;
+            padding: 4px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            transition: all 0.15s;
+        }
+        .avs-opt:hover { background: rgba(79,195,247,0.15); }
+        .avs-opt.selected { border-color: #4fc3f7; background: rgba(79,195,247,0.15); }
+        #settings-stats {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid #333;
+        }
+        .stats-title {
+            font-size: 14px;
+            color: #4fc3f7;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .stat-item {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+        .stat-val {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+        }
+        .reset-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 6px 20px;
+            font-size: 12px;
+            border: 1px solid #555;
+            background: transparent;
+            color: #888;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .reset-btn:hover { color: #f44336; border-color: #f44336; }
+        #start-screen h1 {
+            font-size: 72px;
+            color: #fff;
+            letter-spacing: 12px;
+            text-shadow: 0 0 30px rgba(79,195,247,0.5);
+            margin-bottom: 10px;
+        }
+        #start-screen .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+        #mode-select {
+            display: flex;
+            gap: 12px;
+        }
+        #mode-select button {
+            padding: 12px 28px;
+            font-size: 16px;
+            border: 2px solid #444;
+            background: transparent;
+            color: #aaa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        #mode-select button:hover { border-color: #4fc3f7; color: #fff; }
+        #mode-select button.active {
+            border-color: #4fc3f7;
+            color: #4fc3f7;
+            background: rgba(79,195,247,0.1);
+        }
+        #start-btn {
+            padding: 14px 60px;
+            font-size: 20px;
+            border: none;
+            background: #4fc3f7;
+            color: #000;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: inherit;
+            transition: transform 0.15s;
+        }
+        #start-btn:hover { transform: scale(1.05); }
+        #settings-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 42px;
+            height: 42px;
+            border: 2px solid #444;
+            background: transparent;
+            color: #888;
+            font-size: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #settings-btn:hover { border-color: #4fc3f7; color: #4fc3f7; transform: rotate(30deg); }
+        #settings-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+        #settings-panel {
+            background: #1a1a2e;
+            border: 2px solid #4fc3f7;
+            border-radius: 12px;
+            padding: 30px 36px;
+            min-width: 340px;
+            color: #ccc;
+        }
+        #settings-panel h2 {
+            text-align: center;
+            color: #4fc3f7;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 14px 0;
+            gap: 14px;
+        }
+        .setting-row label {
+            font-size: 15px;
+            white-space: nowrap;
+        }
+        .setting-row input[type="range"] {
+            flex: 1;
+            accent-color: #4fc3f7;
+        }
+        .setting-row select {
+            padding: 4px 10px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background: #111;
+            color: #ccc;
+            font-size: 14px;
+        }
+        #settings-panel button {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background: #4fc3f7;
+            color: #000;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: inherit;
+        }
+        #settings-panel button:hover { background: #81d4fa; }
+        #play-again {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #555;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div id="user-page">
+    <h1>PONG</h1>
+    <div class="subtitle">选择头像 & 输入昵称</div>
+    <div id="avatar-pick">
+        <span class="av-opt" data-emoji="😎">😎</span>
+        <span class="av-opt" data-emoji="🐱">🐱</span>
+        <span class="av-opt selected" data-emoji="🎮">🎮</span>
+        <span class="av-opt" data-emoji="⚡">⚡</span>
+        <span class="av-opt" data-emoji="🔥">🔥</span>
+        <span class="av-opt" data-emoji="🦊">🦊</span>
+        <span class="av-opt" data-emoji="🐼">🐼</span>
+        <span class="av-opt" data-emoji="👾">👾</span>
+    </div>
+    <input type="text" id="username-input" placeholder="输入昵称..." maxlength="12" autocomplete="off">
+    <button id="enter-btn" onclick="enterGame()">进入游戏</button>
+    <p id="name-hint" style="color:#f44336;font-size:13px;display:none;">请输入昵称</p>
+</div>
+
+<canvas id="water-bg"></canvas>
+
+<div id="start-screen" style="display:none;">
+    <h1>PONG</h1>
+    <div class="subtitle">C L A S S I C</div>
+    <div id="mode-select">
+        <button class="active" data-mode="pve">玩家 vs AI</button>
+        <button data-mode="pvp2">玩家 vs 玩家</button>
+        <button data-mode="trio">三人三角</button>
+        <button data-mode="2v2">2v2 vs AI</button>
+        <button data-mode="1v2">1+AI v 2AI</button>
+        <button data-mode="aia">AI vs AI</button>
+    </div>
+    <button id="start-btn" onclick="startGame()">开始游戏</button>
+    <button id="settings-btn" onclick="openSettings()" class="gear">⚙</button>
+</div>
+
+<div id="settings-overlay" style="display:none;" onclick="if(event.target===this)closeSettings()">
+    <div id="settings-panel">
+        <h2>设置</h2>
+        <div id="settings-user">
+            <span id="settings-avatar" class="big-av">🎮</span>
+            <div>
+                <input type="text" id="settings-name" maxlength="12" onchange="updateUsername()" style="width:120px;padding:4px 8px;border:1px solid #555;border-radius:4px;background:#222;color:#fff;font-size:14px;text-align:center;">
+            </div>
+        </div>
+        <div id="settings-avatar-pick" class="av-pick-small">
+            <span class="avs-opt" data-emoji="😎">😎</span>
+            <span class="avs-opt" data-emoji="🐱">🐱</span>
+            <span class="avs-opt" data-emoji="🎮">🎮</span>
+            <span class="avs-opt" data-emoji="⚡">⚡</span>
+            <span class="avs-opt" data-emoji="🔥">🔥</span>
+            <span class="avs-opt" data-emoji="🦊">🦊</span>
+            <span class="avs-opt" data-emoji="🐼">🐼</span>
+            <span class="avs-opt" data-emoji="👾">👾</span>
+        </div>
+        <div class="setting-row">
+            <label>音乐音量</label>
+            <input type="range" id="music-vol" min="0" max="100" value="100" oninput="updateMusicVol()">
+        </div>
+        <div class="setting-row">
+            <label>音效音量</label>
+            <input type="range" id="sfx-vol" min="0" max="100" value="100" oninput="updateSfxVol()">
+        </div>
+        <div class="setting-row">
+            <label>球速</label>
+            <input type="range" id="ball-speed" min="1" max="5" value="3" oninput="updateBallSpeed()">
+        </div>
+        <div class="setting-row">
+            <label>球皮肤</label>
+            <select id="ball-skin" onchange="updateBallSkin()">
+                <option value="0">⚪ 经典</option>
+                <option value="1">🏀 篮球</option>
+                <option value="2">⚽ 足球</option>
+                <option value="3">🎾 网球</option>
+                <option value="4">⚾ 棒球</option>
+                <option value="5">🧶 毛线球</option>
+                <option value="6">🔮 弹珠</option>
+                <option value="7">🔥 火球</option>
+            </select>
+        </div>
+        <div class="setting-row">
+            <label>拖尾颜色</label>
+            <input type="color" id="trail-color" value="#ffffff" onchange="updateTrailColor()" style="width:40px;height:28px;border:1px solid #555;border-radius:4px;cursor:pointer;background:transparent;">
+        </div>
+        <div class="setting-row">
+            <label>AI 难度</label>
+            <input type="range" id="ai-diff" min="1" max="5" value="3" oninput="updateAiDiff()">
+        </div>
+        <div class="setting-row">
+            <label>获胜分数</label>
+            <select id="win-score" onchange="updateWinScore()">
+                <option value="3">3 分</option>
+                <option value="5">5 分</option>
+                <option value="7" selected>7 分</option>
+                <option value="11">11 分</option>
+                <option value="15">15 分</option>
+            </select>
+        </div>
+        <div id="settings-stats">
+            <div class="stats-title">战绩</div>
+            <div class="stats-grid">
+                <div class="stat-item"><span class="stat-val" id="stat-total">0</span><span class="stat-label">总局数</span></div>
+                <div class="stat-item"><span class="stat-val" id="stat-wins">0</span><span class="stat-label">胜场</span></div>
+                <div class="stat-item"><span class="stat-val" id="stat-loses">0</span><span class="stat-label">败场</span></div>
+                <div class="stat-item"><span class="stat-val" id="stat-pts">0</span><span class="stat-label">总得分</span></div>
+            </div>
+            <button onclick="resetStats()" class="reset-btn">重置战绩</button>
+        </div>
+        <button onclick="closeSettings()">关闭</button>
+    </div>
+</div>
+
+<div id="game-wrapper" style="display:none;">
+    <div id="username-display"></div>
+    <button id="quit-btn" onclick="quitGame()" title="退出游戏">✕</button>
+    <div id="scoreboard">
+        <div id="player-score">0</div>
+        <div id="divider">-</div>
+        <div id="ai-score">0</div>
+    </div>
+    <div id="trio-scoreboard" style="display:none;">
+        <div id="trio-left-score" style="color:#ff5252;">AI左 0</div>
+        <div id="trio-bot-score" style="color:#4fc3f7;">你 0</div>
+        <div id="trio-right-score" style="color:#ff9800;">AI右 0</div>
+    </div>
+    <div style="position:relative;">
+        <canvas id="game"></canvas>
+        <div id="effects-bar"></div>
+        <div id="game-over">
+            <h2 id="result-text"></h2>
+            <p id="result-score"></p>
+            <button onclick="restart()">再来一局</button>
+        </div>
+    </div>
+    <div id="instructions">
+        <span>AI vs AI</span> | <span>空格</span> 暂停
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById('game');
+    const ctx = canvas.getContext('2d');
+    const gameOverEl = document.getElementById('game-over');
+    const playerScoreEl = document.getElementById('player-score');
+    const aiScoreEl = document.getElementById('ai-score');
+    const resultText = document.getElementById('result-text');
+    const resultScore = document.getElementById('result-score');
+    const effectsBar = document.getElementById('effects-bar');
+    const trioScoreEls = [
+        document.getElementById('trio-left-score'),
+        document.getElementById('trio-bot-score'),
+        document.getElementById('trio-right-score')
+    ];
+    const trioScoreboard = document.getElementById('trio-scoreboard');
+    const scoreboard = document.getElementById('scoreboard');
+
+    const W = 800, H = 500;
+    canvas.width = W; canvas.height = H;
+
+    const PADDLE_W = 12, PADDLE_H = 90, BALL_R = 8;
+    let WIN = 7;
+
+    let gameMode = 'pve'; // 'pve' | 'pvp2' | 'aia' | 'trio'
+    let username = '';
+    let avatar = '🎮';
+    let stats = { total: 0, wins: 0, loses: 0, points: 0 };
+    let gameStarted = false;
+    let playerY, playerH, aiY, aiH, ballX, ballY, ballVX, ballVY;
+    let p2Y, p2H, ai2Y, ai2H; // 2v2 mode paddles
+    let lastHitBy = null; // 'player' | 'ai'
+    let playerScore, aiScore, gameOver, paused;
+    let ballSpeed, baseSpeed;
+    // Trio mode
+    let trioScores = [0, 0, 0]; // [left, bottom, right]
+    let trioPaddlePos = [0.5, 0.5, 0.5]; // normalized positions along each side [left, bottom, right]
+    const TRIO_PADDLE_LEN = 100; // paddle length along edge
+    let ballSkin = 0; // 0=classic 1=basketball 2=soccer 3=tennis 4=baseball 5=yarn 6=marble 7=fire
+    let trailColor = '#ffffff'; // customizable trail color
+    let particles = [];
+    let countdown = 0;
+    let aiFrozen = 0;
+    let ballTrail = [];
+    const MAX_TRAIL = 12;
+
+    // Sound system (Web Audio API)
+    let audioCtx;
+    function initAudio() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    function playTone(freq, duration, type = 'square', vol = 0.08, glide = 0) {
+        initAudio();
+        const t = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, t);
+        if (glide) osc.frequency.linearRampToValueAtTime(freq + glide, t + duration);
+        gain.gain.setValueAtTime(vol * sfxVol, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(t);
+        osc.stop(t + duration);
+    }
+    function sfxPaddleHit() { playTone(440, 0.08, 'square', 0.06); }
+    function sfxWallHit()  { playTone(300, 0.06, 'triangle', 0.04); }
+    function sfxScore()     { playTone(220, 0.25, 'sawtooth', 0.05, -100); }
+    function sfxPowerUp()   {
+        initAudio();
+        const t = audioCtx.currentTime;
+        [523, 659, 784].forEach((f, i) => {
+            const o = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            o.type = 'sine';
+            o.frequency.setValueAtTime(f, t + i * 0.08);
+            g.gain.setValueAtTime(0.06 * sfxVol, t + i * 0.08);
+            g.gain.exponentialRampToValueAtTime(0.001, t + i * 0.08 + 0.15);
+            o.connect(g); g.connect(audioCtx.destination);
+            o.start(t + i * 0.08);
+            o.stop(t + i * 0.08 + 0.15);
+        });
+    }
+    function sfxWin() {
+        initAudio();
+        const t = audioCtx.currentTime;
+        [523, 659, 784, 1047].forEach((f, i) => {
+            const o = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            o.type = 'sine';
+            o.frequency.setValueAtTime(f, t + i * 0.12);
+            g.gain.setValueAtTime(0.06 * sfxVol, t + i * 0.12);
+            g.gain.exponentialRampToValueAtTime(0.001, t + i * 0.12 + 0.2);
+            o.connect(g); g.connect(audioCtx.destination);
+            o.start(t + i * 0.12);
+            o.stop(t + i * 0.12 + 0.2);
+        });
+    }
+
+    // Background music
+    let musicOn = true;
+    let musicVol = 1.0;
+    let sfxVol = 1.0;
+    let aiDifficulty = 3; // 1-5
+    let ballSpeedSetting = 3; // 1-5
+    let musicNodes = [];
+    let musicInterval;
+    let masterGain; // Master gain for music
+
+    function playMusic() {
+        if (!audioCtx || !musicOn) return;
+        stopMusic();
+        masterGain = audioCtx.createGain();
+        masterGain.gain.setValueAtTime(musicVol * 0.7, audioCtx.currentTime);
+        masterGain.connect(audioCtx.destination);
+
+        const t = audioCtx.currentTime;
+        const bpm = 130;
+        const beat = 60 / bpm;
+
+        // Simple retro bass line: C3 G3 A3 F3
+        const bassNotes = [131, 196, 220, 175];
+        // Melody: simple C-major pentatonic
+        const melody = [
+            523, 587, 659, 523, 784, 659, 523, 587,
+            523, 659, 784, 659, 587, 523, 659, 523,
+        ];
+
+        // Bass
+        for (let i = 0; i < 32; i++) {
+            const o = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            o.type = 'triangle';
+            o.frequency.setValueAtTime(bassNotes[i % 4], t + i * beat * 2);
+            g.gain.setValueAtTime(0.025, t + i * beat * 2);
+            g.gain.linearRampToValueAtTime(0.025, t + i * beat * 2 + beat * 0.1);
+            g.gain.linearRampToValueAtTime(0.001, t + i * beat * 2 + beat * 1.8);
+            o.connect(g); g.connect(masterGain);
+            o.start(t + i * beat * 2);
+            o.stop(t + i * beat * 2 + beat * 2);
+            musicNodes.push(o, g);
+        }
+
+        // Melody lead
+        for (let i = 0; i < melody.length; i++) {
+            const o = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            o.type = 'square';
+            o.frequency.setValueAtTime(melody[i], t + i * beat);
+            g.gain.setValueAtTime(0.018, t + i * beat);
+            g.gain.linearRampToValueAtTime(0.018, t + i * beat + 0.03);
+            g.gain.linearRampToValueAtTime(0.001, t + i * beat + beat * 0.8);
+            o.connect(g); g.connect(masterGain);
+            o.start(t + i * beat);
+            o.stop(t + i * beat + beat);
+            musicNodes.push(o, g);
+        }
+
+        // Schedule loop
+        const loopLen = melody.length * beat;
+        musicInterval = setInterval(() => {
+            if (!musicOn || !audioCtx) { clearInterval(musicInterval); return; }
+            playMusic();
+        }, loopLen * 1000 - 200); // Slight overlap
+    }
+
+    function stopMusic() {
+        clearInterval(musicInterval);
+        musicNodes.forEach(n => { try { n.stop(); } catch (e) {} });
+        musicNodes = [];
+    }
+
+    function toggleMusic() {
+        musicOn = !musicOn;
+        if (musicOn) playMusic();
+        else stopMusic();
+    }
+
+    // Settings
+    function openSettings() {
+        document.getElementById('settings-avatar').textContent = avatar;
+        document.getElementById('settings-name').value = username;
+        document.querySelectorAll('.avs-opt').forEach(el => {
+            el.classList.toggle('selected', el.dataset.emoji === avatar);
+        });
+        updateStatsDisplay();
+        document.getElementById('settings-overlay').style.display = 'flex';
+    }
+    function statsKey() { return 'pong-stats-' + username; }
+    function loadStats() {
+        const s = localStorage.getItem(statsKey());
+        if (s) { stats = JSON.parse(s); }
+        else {
+            // Migrate old global stats to current user
+            const old = localStorage.getItem('pong-stats');
+            if (old) {
+                stats = JSON.parse(old);
+                localStorage.removeItem('pong-stats');
+                saveStats();
+            } else {
+                stats = { total: 0, wins: 0, loses: 0, points: 0 };
+            }
+        }
+    }
+    function saveStats() {
+        localStorage.setItem(statsKey(), JSON.stringify(stats));
+    }
+    function updateStatsDisplay() {
+        document.getElementById('stat-total').textContent = stats.total;
+        document.getElementById('stat-wins').textContent = stats.wins;
+        document.getElementById('stat-loses').textContent = stats.loses;
+        document.getElementById('stat-pts').textContent = stats.points;
+    }
+    function resetStats() {
+        stats = { total: 0, wins: 0, loses: 0, points: 0 };
+        saveStats();
+        updateStatsDisplay();
+    }
+    function closeSettings() {
+        document.getElementById('settings-overlay').style.display = 'none';
+    }
+    function updateMusicVol() {
+        musicVol = document.getElementById('music-vol').value / 100;
+        if (masterGain) masterGain.gain.setValueAtTime(musicVol * 0.7, audioCtx.currentTime);
+    }
+    function updateSfxVol() {
+        sfxVol = document.getElementById('sfx-vol').value / 100;
+    }
+    function updateAiDiff() {
+        aiDifficulty = parseInt(document.getElementById('ai-diff').value);
+    }
+    function updateBallSkin() {
+        ballSkin = parseInt(document.getElementById('ball-skin').value);
+        localStorage.setItem('pong-ball-skin', ballSkin);
+    }
+    function updateTrailColor() {
+        trailColor = document.getElementById('trail-color').value;
+        localStorage.setItem('pong-trail-color', trailColor);
+    }
+    function updateBallSpeed() {
+        ballSpeedSetting = parseInt(document.getElementById('ball-speed').value);
+        baseSpeed = 5 + ballSpeedSetting;
+        if (!gameOver && gameStarted) ballSpeed = baseSpeed;
+    }
+    function updateWinScore() {
+        // Applied on next init (start/restart)
+    }
+    function getWinScore() {
+        return parseInt(document.getElementById('win-score').value);
+    }
+
+    // Pre-render background
+    let waterTime = 0;
+
+    function drawWaterBackground(ctx) {
+        waterTime += 0.008;
+        const t = waterTime;
+
+        ctx.fillStyle = '#0e5a72';
+        ctx.fillRect(0, 0, W, H);
+
+        // Large wave bands — horizontal gradient strips
+        for (let i = 0; i < 8; i++) {
+            const baseY = (i * H / 8 + t * 20) % (H + 40) - 20;
+            const grad = ctx.createLinearGradient(0, baseY - 14, 0, baseY + 14);
+            grad.addColorStop(0, 'rgba(100,190,225,0)');
+            grad.addColorStop(0.5, 'rgba(160,225,250,0.12)');
+            grad.addColorStop(1, 'rgba(100,190,225,0)');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, baseY - 14, W, 28);
+        }
+        // Diagonal cross-swells
+        for (let i = 0; i < 6; i++) {
+            ctx.save();
+            ctx.beginPath();
+            const y0 = (i * H / 5 + t * 25) % (H + 60) - 30;
+            const grad = ctx.createLinearGradient(0, -15, 0, 15);
+            grad.addColorStop(0, 'rgba(100,190,225,0)');
+            grad.addColorStop(0.5, 'rgba(140,215,240,0.09)');
+            grad.addColorStop(1, 'rgba(100,190,225,0)');
+            ctx.fillStyle = grad;
+            ctx.translate(0, y0);
+            ctx.rotate(0.15 + i * 0.1);
+            ctx.fillRect(-W, -15, W * 3, 30);
+            ctx.restore();
+        }
+
+        // Foam lines
+        ctx.globalAlpha = 0.1;
+        ctx.strokeStyle = '#e0f4fa';
+        ctx.lineWidth = 1.5;
+        for (let i = 0; i < 5; i++) {
+            ctx.beginPath();
+            for (let j = 0; j <= W; j += 15) {
+                const wy = H * 0.15 + i * H * 0.18
+                         + Math.sin(j * 0.018 + t * 0.55 + i * 1.2) * 35
+                         + Math.sin(j * 0.025 - t * 0.4 + i) * 20;
+                j === 0 ? ctx.moveTo(j, wy) : ctx.lineTo(j, wy);
+            }
+            ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+
+        // Sun glare
+        ctx.globalAlpha = 0.09;
+        for (let i = 0; i < 6; i++) {
+            const gx = ((Math.sin(t * 0.25 + i * 1.5) * 0.5 + 0.5) * W);
+            const gy = ((Math.cos(t * 0.2 + i * 1.8) * 0.5 + 0.5) * H);
+            const gr = 20 + Math.sin(t * 1.2 + i) * 10;
+            const gg = ctx.createRadialGradient(gx, gy, 0, gx, gy, gr);
+            gg.addColorStop(0, 'rgba(255,255,250,0.5)');
+            gg.addColorStop(0.4, 'rgba(210,240,250,0.2)');
+            gg.addColorStop(1, 'rgba(160,215,235,0)');
+            ctx.fillStyle = gg;
+            ctx.beginPath(); ctx.arc(gx, gy, gr, 0, Math.PI * 2); ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+    }
+
+    // Power-up system
+    const POWER_TYPES = [
+        { id: 'speed',    emoji: '⚡', name: '加速',     color: '#ffd740', desc: '球速提升' },
+        { id: 'slow',     emoji: '🐢', name: '减速',     color: '#81c784', desc: '球速降低' },
+        { id: 'grow',     emoji: '⬆️', name: '球拍变大', color: '#4fc3f7', desc: '我方球拍变大' },
+        { id: 'shrink',   emoji: '⬇️', name: '对手缩小', color: '#ef5350', desc: 'AI 球拍缩小' },
+        { id: 'freeze',   emoji: '❄️', name: '冻结',     color: '#80deea', desc: '冻结 AI' },
+        { id: 'multiball',emoji: '🔵', name: '多球',     color: '#ce93d8', desc: '额外球' },
+        { id: 'reverse',  emoji: '🔄', name: '反转',     color: '#ff8a65', desc: '反转 AI 方向' },
+    ];
+
+    let powerUp = null;
+    let powerUpTimer = 0;
+    let activeEffects = [];
+    let extraBalls = [];
+
+    function spawnPowerUp() {
+        if (powerUp || gameOver) return;
+        powerUpTimer++;
+        if (powerUpTimer < 210) return; // ~3.5 seconds between spawns
+        powerUpTimer = 0;
+        const type = POWER_TYPES[Math.floor(Math.random() * POWER_TYPES.length)];
+        // Spawn on paddle paths: randomly left (player) or right (AI) side
+        const side = Math.random() > 0.5 ? 'left' : 'right';
+        const px = side === 'left' ? 26 : W - 26;
+        const py = 40 + Math.random() * (H - 80);
+        powerUp = {
+            type,
+            x: px, y: py,
+            life: 420, // 7 seconds
+            pulse: 0,
+        };
+    }
+
+    function collectPowerUp(type) {
+        const px = powerUp.x, py = powerUp.y;
+        powerUp = null;
+        powerUpTimer = 0;
+
+        // Remove conflicting effects
+        activeEffects = activeEffects.filter(e =>
+            !((e.id === 'speed' && type.id === 'slow') ||
+              (e.id === 'slow' && type.id === 'speed') ||
+              (e.id === 'grow' && type.id === 'shrink'))
+        );
+
+        // Add effect
+        activeEffects.push({ ...type, timer: 360 }); // 6 seconds
+        updateEffectsBar();
+
+        // Apply
+        switch (type.id) {
+            case 'speed':  ballSpeed = Math.min(13, baseSpeed + 2.5); break;
+            case 'slow':   ballSpeed = Math.max(2, baseSpeed - 2);   break;
+            case 'grow':
+                playerH = Math.min(160, PADDLE_H * 1.6);
+                if (gameMode === '2v2' || gameMode === '1v2') p2H = Math.min(160, PADDLE_H * 0.55 * 1.6);
+                break;
+            case 'shrink':
+                aiH = Math.max(35, PADDLE_H * 0.45);
+                if (gameMode === '2v2' || gameMode === '1v2') ai2H = Math.max(35, PADDLE_H * 0.55 * 0.45);
+                break;
+            case 'freeze': aiFrozen = 180;                           break;
+            case 'multiball': spawnExtraBall();                       break;
+            case 'reverse':
+                ballVX *= -1;
+                ballVY *= -1;
+                lastHitBy = ballVX > 0 ? 'player' : 'ai';
+                break;
+        }
+        spawnParticles(px, py, type.color, 12);
+        sfxPowerUp();
+    }
+
+    function spawnExtraBall() {
+        const vx = -ballVX;
+        extraBalls.push({
+            x: ballX, y: ballY,
+            vx: vx, vy: ballVY + (Math.random() - 0.5) * 3,
+            lastBy: vx < 0 ? 'ai' : 'player'
+        });
+        // Cap extra balls
+        if (extraBalls.length > 3) extraBalls.shift();
+    }
+
+    function updateEffectsBar() {
+        effectsBar.innerHTML = activeEffects.map(e =>
+            `<span class="effect-icon" style="color:${e.color}" title="${e.desc}">${e.emoji}</span>`
+        ).join('');
+    }
+
+    function updateEffects() {
+        // Timers
+        activeEffects = activeEffects.filter(e => {
+            e.timer--;
+            if (e.timer <= 0) {
+                endEffect(e);
+                return false;
+            }
+            return true;
+        });
+
+        if (aiFrozen > 0) aiFrozen--;
+
+        // PowerUp decay
+        if (powerUp) {
+            powerUp.life--;
+            powerUp.pulse += 0.05;
+            if (powerUp.life <= 0) {
+                spawnParticles(powerUp.x, powerUp.y, '#888', 6);
+                powerUp = null;
+                powerUpTimer = 0;
+            }
+        }
+
+        updateEffectsBar();
+    }
+
+    function endEffect(e) {
+        switch (e.id) {
+            case 'speed':
+            case 'slow': ballSpeed = baseSpeed; break;
+            case 'grow': playerH = PADDLE_H;     break;
+            case 'shrink': aiH = PADDLE_H;        break;
+            case 'freeze': aiFrozen = 0;           break;
+        }
+    }
+
+    function aiCollectPowerUp(pu) {
+        const px = pu.x, py = pu.y;
+        powerUp = null;
+        powerUpTimer = 0;
+        spawnParticles(px, py, pu.type.color, 12);
+        sfxPowerUp();
+
+        // AI-collected power-ups work against the player
+        switch (pu.type.id) {
+            case 'speed':  ballSpeed = Math.min(13, baseSpeed + 2.5); break;
+            case 'slow':   ballSpeed = Math.max(2, baseSpeed - 2);   break;
+            case 'grow':
+                aiH = Math.min(160, PADDLE_H * 1.6);
+                if (gameMode === '2v2' || gameMode === '1v2') ai2H = Math.min(160, PADDLE_H * 0.55 * 1.6);
+                break;
+            case 'shrink':
+                playerH = Math.max(35, PADDLE_H * 0.45);
+                if (gameMode === '2v2' || gameMode === '1v2') p2H = Math.max(35, PADDLE_H * 0.55 * 0.45);
+                break;
+            case 'freeze':
+                // Reverse ball toward player side
+                ballVX = -Math.abs(ballVX);
+                break;
+            case 'multiball':
+                extraBalls.push({ x: ballX, y: ballY, vx: Math.abs(ballVX), vy: ballVY + (Math.random() - 0.5) * 3, lastBy: 'player' });
+                if (extraBalls.length > 3) extraBalls.shift();
+                break;
+            case 'reverse':
+                ballVX *= -1; ballVY *= -1;
+                lastHitBy = ballVX > 0 ? 'player' : 'ai';
+                break;
+        }
+    }
+
+    // ---- Trio Mode Helpers ----
+    function triVertices() {
+        return [
+            { x: W * 0.06, y: H * 0.88 },  // A: bottom-left
+            { x: W * 0.94, y: H * 0.88 },  // B: bottom-right
+            { x: W * 0.5,  y: H * 0.05 },  // C: top
+        ];
+    }
+    function triEdges() {
+        const [A, B, C] = triVertices();
+        return [
+            [A, C], // left edge
+            [A, B], // bottom edge
+            [C, B], // right edge
+        ];
+    }
+    function edgeNormal(edge) {
+        const [P1, P2] = edge;
+        const dx = P2.x - P1.x, dy = P2.y - P1.y;
+        const len = Math.hypot(dx, dy);
+        // inward normal: rotate (dx,dy) 90° clockwise (screen coords: y-down)
+        let nx = dy / len, ny = -dx / len;
+        // Check it points inward (toward triangle center)
+        const mid = { x: (P1.x + P2.x) / 2, y: (P1.y + P2.y) / 2 };
+        const center = { x: W / 2, y: H * 0.55 };
+        if ((center.x - mid.x) * nx + (center.y - mid.y) * ny < 0) { nx = -nx; ny = -ny; }
+        return { nx, ny };
+    }
+    function signedDistToEdge(P, edge) {
+        const [P1, P2] = edge;
+        const { nx, ny } = edgeNormal(edge);
+        return (P.x - P1.x) * nx + (P.y - P1.y) * ny;
+    }
+    function pointOnEdge(t, edge) {
+        const [P1, P2] = edge;
+        return { x: P1.x + t * (P2.x - P1.x), y: P1.y + t * (P2.y - P1.y) };
+    }
+    function segmentDist(P, P1, P2) {
+        const dx = P2.x - P1.x, dy = P2.y - P1.y;
+        const len2 = dx * dx + dy * dy;
+        let tt = ((P.x - P1.x) * dx + (P.y - P1.y) * dy) / len2;
+        tt = Math.max(0, Math.min(1, tt));
+        const cx = P1.x + tt * dx, cy = P1.y + tt * dy;
+        return Math.hypot(P.x - cx, P.y - cy);
+    }
+
+    // Init
+    function init() {
+        WIN = getWinScore();
+        playerY = H / 2 - PADDLE_H / 2;
+        aiY = H / 2 - PADDLE_H / 2;
+        playerH = PADDLE_H;
+        aiH = PADDLE_H;
+        // 2v2 mode: half-height paddles, 2 per side
+        if (gameMode === '2v2' || gameMode === '1v2') {
+            playerH = PADDLE_H * 0.55;
+            p2H = PADDLE_H * 0.55;
+            aiH = PADDLE_H * 0.55;
+            ai2H = PADDLE_H * 0.55;
+            playerY = H * 0.2;
+            p2Y = H * 0.7;
+            aiY = H * 0.2;
+            ai2Y = H * 0.7;
+        }
+        playerScore = 0; aiScore = 0;
+        trioScores = [0, 0, 0];
+        trioPaddlePos = [0.5, 0.5, 0.5];
+        gameOver = false; paused = false;
+        updateScores();
+        lastHitBy = 'ai';
+        baseSpeed = gameMode === 'trio' ? 3 + ballSpeedSetting * 0.5 : 5 + ballSpeedSetting;
+        ballSpeed = baseSpeed;
+        particles = [];
+        ballTrail = [];
+        countdown = 60;
+        aiFrozen = 0;
+        activeEffects = [];
+        extraBalls = [];
+        powerUp = null;
+        powerUpTimer = 0;
+        playerScoreEl.textContent = '0';
+        aiScoreEl.textContent = '0';
+        trioScoreEls.forEach((el, i) => { el.textContent = (i === 0 ? 'AI左 ' : i === 1 ? '你 ' : 'AI右 ') + '0'; });
+        effectsBar.innerHTML = '';
+        gameOverEl.style.display = 'none';
+        resetBall();
+    }
+
+    function resetBall() {
+        ballX = W / 2; ballY = H / 2;
+        const angle = (Math.random() * 0.8 - 0.4);
+        const dir = Math.random() > 0.5 ? 1 : -1;
+        ballVX = Math.cos(angle) * ballSpeed * dir;
+        ballVY = Math.sin(angle) * ballSpeed;
+        lastHitBy = dir > 0 ? 'player' : 'ai';
+        // Ensure minimum vertical component
+        if (Math.abs(ballVY) < 2) ballVY = (ballVY >= 0 ? 1 : -1) * 2;
+        extraBalls = [];
+        countdown = 60;
+    }
+
+    function spawnParticles(x, y, color, count = 8) {
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x, y,
+                vx: (Math.random() - 0.5) * 5,
+                vy: (Math.random() - 0.5) * 5,
+                life: 1, color,
+                size: Math.random() * 4 + 2,
+            });
+        }
+    }
+
+    function updateBall(b) {
+        const oldX = b.x, oldY = b.y;
+        b.x += b.vx;
+        b.y += b.vy;
+
+        // Top & bottom wall bounce (with segment correction)
+        if (b.y - BALL_R <= 0) {
+            b.y = BALL_R;
+            b.vy = Math.abs(b.vy);
+            spawnParticles(b.x, b.y, '#888', 3);
+        }
+        if (b.y + BALL_R >= H) {
+            b.y = H - BALL_R;
+            b.vy = -Math.abs(b.vy);
+            spawnParticles(b.x, b.y, '#888', 3);
+        }
+
+        // Player paddle — segment vs rectangle (prevents tunneling)
+        const padFace = 20 + PADDLE_W;
+        if (b.vx < 0 && oldX - BALL_R > padFace && b.x - BALL_R <= padFace) {
+            const t = (padFace - (oldX - BALL_R)) / (b.x - oldX);
+            const yAt = oldY + (b.y - oldY) * t;
+            const hitP1 = yAt >= playerY && yAt <= playerY + playerH;
+            const hitP2 = (gameMode === '2v2' || gameMode === '1v2') && yAt >= p2Y && yAt <= p2Y + p2H;
+            if (hitP1 || hitP2) {
+                const yRef = hitP1 ? playerY : p2Y;
+                const hRef = hitP1 ? playerH : p2H;
+                const hit = Math.max(0, Math.min(1, (yAt - yRef) / hRef));
+                const angle = (hit - 0.5) * Math.PI * 0.65;
+                const spd = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+                b.vx = Math.cos(angle) * spd;
+                b.vy = Math.sin(angle) * spd;
+                b.x = padFace + BALL_R;
+                b.y = yAt;
+                if (Math.abs(b.vy) < 2) b.vy = (b.vy >= 0 ? 1 : -1) * 2;
+                spawnParticles(b.x, b.y, '#4fc3f7', 6);
+                sfxPaddleHit();
+                lastHitBy = 'player';
+                if (b.hasOwnProperty('lastBy')) b.lastBy = 'player';
+            }
+        }
+
+        // AI paddle — segment vs rectangle
+        const aiFace = W - 20 - PADDLE_W;
+        if (b.vx > 0 && oldX + BALL_R < aiFace && b.x + BALL_R >= aiFace) {
+            const t = (aiFace - (oldX + BALL_R)) / (b.x - oldX);
+            const yAt = oldY + (b.y - oldY) * t;
+            const hitA1 = yAt >= aiY && yAt <= aiY + aiH;
+            const hitA2 = (gameMode === '2v2' || gameMode === '1v2') && yAt >= ai2Y && yAt <= ai2Y + ai2H;
+            if (hitA1 || hitA2) {
+                const yRef = hitA1 ? aiY : ai2Y;
+                const hRef = hitA1 ? aiH : ai2H;
+                const hit = Math.max(0, Math.min(1, (yAt - yRef) / hRef));
+                const angle = (hit - 0.5) * Math.PI * 0.65;
+                const spd = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+                b.vx = -Math.cos(angle) * spd;
+                b.vy = Math.sin(angle) * spd;
+                b.x = aiFace - BALL_R;
+                b.y = yAt;
+                if (Math.abs(b.vy) < 2) b.vy = (b.vy >= 0 ? 1 : -1) * 2;
+                spawnParticles(b.x, b.y, '#ff5252', 6);
+                sfxPaddleHit();
+                lastHitBy = 'ai';
+                if (b.hasOwnProperty('lastBy')) b.lastBy = 'ai';
+            }
+        }
+
+        // Scoring
+        // Extra balls: score based on exit side (standard pong logic)
+        if (b.hasOwnProperty('lastBy')) {
+            if (b.x < -20) return 'ai';
+            if (b.x > W + 20) return 'player';
+        }
+        if (b.x < -20) return lastHitBy;
+        if (b.x > W + 20) return lastHitBy;
+        return null;
+    }
+
+    function updateTrio() {
+        const edges = triEdges();
+        const [A, B, C] = triVertices();
+
+        // Move bottom paddle (player) - A/D or arrow keys
+        // Bottom paddle moves horizontally along AB
+        const botEdgeLen = B.x - A.x; // horizontal distance
+        if (keys['KeyA'] || keys['ArrowLeft']) trioPaddlePos[1] -= 0.02;
+        if (keys['KeyD'] || keys['ArrowRight']) trioPaddlePos[1] += 0.02;
+        trioPaddlePos[1] = Math.max(0.05, Math.min(0.95, trioPaddlePos[1]));
+
+        // AI for left paddle (along AC edge, index 0)
+        // Edge AC: A(bottom-left) → C(top), sInt=0 at A, sInt=1 at C
+        {
+            const edx = C.x - A.x, edy = C.y - A.y;
+            const denom = ballVX * edy - ballVY * edx;
+            let target = trioPaddlePos[0];
+            if (Math.abs(denom) > 0.0001) {
+                const tHit = ((A.x - ballX) * edy - (A.y - ballY) * edx) / denom;
+                if (tHit > 0 && tHit < 120) {
+                    const hitX = ballX + ballVX * tHit;
+                    const hitY = ballY + ballVY * tHit;
+                    const sProj = ((hitX - A.x) * edx + (hitY - A.y) * edy) / (edx * edx + edy * edy);
+                    target = Math.max(0.05, Math.min(0.95, sProj));
+                    const { nx, ny } = edgeNormal(edges[0]);
+                    if (ballVX * nx + ballVY * ny >= -0.5) target = trioPaddlePos[0];
+                }
+            }
+            const aiSpeedL = 0.015 * aiDifficulty / 3;
+            trioPaddlePos[0] += Math.sign(target - trioPaddlePos[0]) * aiSpeedL;
+            trioPaddlePos[0] = Math.max(0.05, Math.min(0.95, trioPaddlePos[0]));
+        }
+
+        // AI for right paddle (along CB edge, index 2)
+        // Edge CB: C(top) → B(bottom-right), sInt=0 at C, sInt=1 at B
+        {
+            const edx = B.x - C.x, edy = B.y - C.y;
+            const denom = ballVX * edy - ballVY * edx;
+            let target = trioPaddlePos[2];
+            if (Math.abs(denom) > 0.0001) {
+                const tHit = ((C.x - ballX) * edy - (C.y - ballY) * edx) / denom;
+                if (tHit > 0 && tHit < 120) {
+                    const hitX = ballX + ballVX * tHit;
+                    const hitY = ballY + ballVY * tHit;
+                    const sProj = ((hitX - C.x) * edx + (hitY - C.y) * edy) / (edx * edx + edy * edy);
+                    target = Math.max(0.05, Math.min(0.95, sProj));
+                    const { nx, ny } = edgeNormal(edges[2]);
+                    if (ballVX * nx + ballVY * ny >= -0.5) target = trioPaddlePos[2];
+                }
+            }
+            const aiSpeedR = 0.015 * aiDifficulty / 3;
+            trioPaddlePos[2] += Math.sign(target - trioPaddlePos[2]) * aiSpeedR;
+            trioPaddlePos[2] = Math.max(0.05, Math.min(0.95, trioPaddlePos[2]));
+        }
+
+        // Cap trio speed
+        ballSpeed = Math.min(gameMode === 'trio' ? 7 : 12, ballSpeed);
+
+        // Update ball position
+        const oldX = ballX, oldY = ballY;
+        ballX += ballVX;
+        ballY += ballVY;
+
+        // Segment-intersection collision for each edge
+        // Segment-intersection: find edge with earliest crossing (min tInt)
+        let bestEi = -1, bestT = Infinity, bestS = 0;
+        for (let ei = 0; ei < 3; ei++) {
+            const edge = edges[ei];
+            const [P1, P2] = edge;
+            const edx = P2.x - P1.x, edy = P2.y - P1.y;
+            const denom = bdx * edy - bdy * edx;
+            if (Math.abs(denom) < 0.0001) continue;
+            const tInt = ((P1.x - oldX) * edy - (P1.y - oldY) * edx) / denom;
+            const sInt = ((P1.x - oldX) * bdy - (P1.y - oldY) * bdx) / denom;
+            if (tInt >= 0 && tInt <= 1 && sInt >= 0 && sInt <= 1 && tInt < bestT) {
+                bestT = tInt; bestS = sInt; bestEi = ei;
+            }
+        }
+
+        if (bestEi >= 0) {
+            const ei = bestEi;
+            const edge = edges[ei];
+            const [P1, P2] = edge;
+            const edx = P2.x - P1.x, edy = P2.y - P1.y;
+            const pPos = trioPaddlePos[ei];
+            const padLen = TRIO_PADDLE_LEN;
+            const edgeLen = Math.hypot(edx, edy);
+            const halfPadFrac = (padLen / 2) / edgeLen;
+            const padStart = pPos - halfPadFrac;
+            const padEnd = pPos + halfPadFrac;
+
+            if (bestS >= padStart && bestS <= padEnd) {
+                // Paddle hit at intersection point!
+                const ix = oldX + bestT * bdx;
+                const iy = oldY + bestT * bdy;
+                const { nx, ny } = edgeNormal(edge);
+                const vn = ballVX * nx + ballVY * ny;
+                if (vn < 0) {
+                    const hitFrac = (bestS - pPos) / (halfPadFrac * 2);
+                    const maxAngle = 1.0;
+                    const angle = hitFrac * maxAngle;
+                    const cosA = Math.cos(angle), sinA = Math.sin(angle);
+                    const rnx = nx * cosA - ny * sinA;
+                    const rny = nx * sinA + ny * cosA;
+                    ballVX = ballVX - 2 * vn * rnx + (Math.random() - 0.5) * 0.2;
+                    ballVY = ballVY - 2 * vn * rny + (Math.random() - 0.5) * 0.2;
+                    const spd = Math.hypot(ballVX, ballVY);
+                    ballVX = ballVX / spd * ballSpeed;
+                    ballVY = ballVY / spd * ballSpeed;
+                    ballX = ix + nx * (BALL_R + 2);
+                    ballY = iy + ny * (BALL_R + 2);
+                    spawnParticles(ix, iy, '#fff', 3);
+                }
+            } else {
+                // Crossed edge outside paddle → score!
+                trioScores[ei]++;
+                updateTrioScores();
+                sfxScore();
+                ballSpeed = Math.min(gameMode === 'trio' ? 7 : 12, ballSpeed + 0.25);
+                baseSpeed = ballSpeed;
+                if (trioScores[0] >= WIN || trioScores[1] >= WIN || trioScores[2] >= WIN) {
+                    gameOver = true;
+                    showTrioEnd();
+                    return;
+                }
+                resetBallTrio();
+                return;
+            }
+        }
+
+        // Ball trail and particles
+        ballTrail.push({ x: ballX, y: ballY, life: 1 });
+        if (ballTrail.length > 12) ballTrail.shift();
+        ballTrail.forEach(t => t.life -= 0.03);
+        ballTrail = ballTrail.filter(t => t.life > 0);
+
+        particles.forEach(p => { p.x += p.vx; p.y += p.vy; p.life -= 0.025; });
+        particles = particles.filter(p => p.life > 0);
+    }
+
+    function resetBallTrio() {
+        const [A, B, C] = triVertices();
+        ballX = W / 2; ballY = H * 0.5;
+        const angle = Math.random() * Math.PI * 2;
+        ballSpeed = baseSpeed;
+        ballVX = Math.cos(angle) * ballSpeed;
+        ballVY = Math.sin(angle) * ballSpeed;
+        countdown = 60;
+        endAllEffects();
+    }
+
+    function updateTrioScores() {
+        const labels = ['AI左 ', '你 ', 'AI右 '];
+        trioScoreEls.forEach((el, i) => { el.textContent = labels[i] + trioScores[i]; });
+    }
+
+    function showTrioEnd() {
+        gameOver = true;
+        sfxWin();
+        stopMusic();
+        const best = trioScores.indexOf(Math.min(...trioScores));
+        const playerPts = trioScores[0] + trioScores[2];
+        if (best === 1) {
+            resultText.innerHTML = '<span class="winner">你赢了!</span>';
+            stats.total++; stats.wins++; stats.points += playerPts;
+            saveStats();
+        } else {
+            resultText.innerHTML = '<span class="loser">' + (best === 0 ? 'AI左' : 'AI右') + ' 赢了</span>';
+            stats.total++; stats.loses++;
+            saveStats();
+        }
+        resultScore.textContent = `${trioScores[0]} | ${trioScores[1]} | ${trioScores[2]}`;
+        gameOverEl.style.display = 'block';
+    }
+
+    function update() {
+        if (!gameStarted || gameOver || paused) return;
+
+        // Countdown
+        if (countdown > 0) { countdown--; updateEffectsBar(); return; }
+
+        if (gameMode === 'trio') { updateTrio(); return; }
+
+        // Left paddle: AI or Player 1
+        if (gameMode === 'aia') {
+            {
+                let tx = ballX, ty = ballY, tvy = ballVY, md = Math.abs(ballX);
+                extraBalls.forEach(b => {
+                    const d = Math.abs(b.x);
+                    if (d < md) { md = d; tx = b.x; ty = b.y; tvy = b.vy; }
+                });
+                const dist = tx - (20 + PADDLE_W);
+                const time = tx > W / 2 ? 999 : (dist / Math.max(1, Math.abs(ballVX)));
+                let py = ty + tvy * Math.min(time, 60);
+                if (py < 0) py = -py;
+                if (py > H) py = 2 * H - py;
+                py = ((py % (2 * H)) + 2 * H) % (2 * H);
+                if (py > H) py = 2 * H - py;
+                const diff = aiScore / WIN;
+                const spd = (0.04 + diff * 0.03) * aiDifficulty / 3;
+                playerY += (py - (playerY + playerH / 2)) * spd;
+            }
+        } else if (gameMode === 'pvp2') {
+            if (keys['KeyW']) playerY -= 7;
+            if (keys['KeyS']) playerY += 7;
+        } else if (gameMode === '2v2') {
+            if (keys['KeyW']) playerY -= 7;
+            if (keys['KeyS']) playerY += 7;
+            if (keys['KeyR']) p2Y -= 7;
+            if (keys['KeyF']) p2Y += 7;
+        } else if (gameMode === '1v2') {
+            if (keys['KeyW']) playerY -= 7;
+            if (keys['KeyS']) playerY += 7;
+            // AI teammate on lower left
+            const p2c = p2Y + p2H / 2;
+            const aiSpd = 0.045 * aiDifficulty / 3;
+            if (ballVX < 0 && ballX < W / 2) {
+                p2Y += Math.sign(ballY - p2c) * Math.min(7, Math.abs(ballY - p2c) * aiSpd * 3);
+            } else {
+                p2Y += Math.sign(H * 0.65 - p2c) * Math.min(5, Math.abs(H * 0.65 - p2c) * aiSpd * 2);
+            }
+        } else {
+            if (keys['KeyW'] || keys['ArrowUp']) playerY -= 7;
+            if (keys['KeyS'] || keys['ArrowDown']) playerY += 7;
+        }
+        playerY = Math.max(0, Math.min(playerY, H - playerH));
+        if (gameMode === '2v2' || gameMode === '1v2') {
+            p2Y = Math.max(0, Math.min(p2Y, H - p2H));
+        }
+
+        // Paddle collects power-up
+        if (powerUp) {
+            const pu = powerUp;
+            const pw = 24; // pickup radius
+            if (pu.x < W / 2) {
+                // Left side - player(s) collect
+                if (pu.y >= playerY - pw && pu.y <= playerY + playerH + pw) {
+                    collectPowerUp(pu.type);
+                } else if ((gameMode === '2v2' || gameMode === '1v2') && pu.y >= p2Y - pw && pu.y <= p2Y + p2H + pw) {
+                    collectPowerUp(pu.type);
+                }
+            } else {
+                // Right side - AI collects (becomes an effect against player)
+                const picked = pu.y >= aiY - pw && pu.y <= aiY + aiH + pw;
+                const picked2 = (gameMode === '2v2' || gameMode === '1v2') && (pu.y >= ai2Y - pw && pu.y <= ai2Y + ai2H + pw);
+                if (picked || picked2) {
+                    aiCollectPowerUp(pu);
+                }
+            }
+        }
+
+        // Right paddle: AI or Player 2 or 2v2 AIs
+        if (gameMode === 'pvp2') {
+            if (keys['ArrowUp']) aiY -= 7;
+            if (keys['ArrowDown']) aiY += 7;
+        } else if (gameMode === '2v2' || gameMode === '1v2') {
+            // AI 1 (upper) and AI 2 (lower) each track their half
+            const half = H / 2;
+            [0, 1].forEach(i => {
+                const yRef = i === 0 ? aiY : ai2Y;
+                const hRef = i === 0 ? aiH : ai2H;
+                const center = yRef + hRef / 2;
+                const aiSpd = 0.04 * aiDifficulty / 3;
+                let trackY = ballY;
+                // Each AI tracks balls near its zone
+                if ((i === 0 && ballY > half) || (i === 1 && ballY <= half)) {
+                    trackY = i === 0 ? half / 2 : half + half / 2;
+                }
+                const target = trackY - hRef / 2;
+                if (aiFrozen <= 0) {
+                    if (i === 0) aiY += Math.sign(target - aiY) * Math.min(7, Math.abs(target - aiY) * aiSpd * 3);
+                    else ai2Y += Math.sign(target - ai2Y) * Math.min(7, Math.abs(target - ai2Y) * aiSpd * 3);
+                }
+            });
+        } else if (aiFrozen <= 0) {
+            let targetX = ballX, targetY = ballY, targetVY = ballVY, minDist = Math.abs(ballX - W);
+            extraBalls.forEach(b => {
+                const d = Math.abs(b.x - W);
+                if (d < minDist) { minDist = d; targetX = b.x; targetY = b.y; targetVY = b.vy; }
+            });
+            // Predict where the ball will be when it reaches AI's x position
+            const distToAI = W - 20 - PADDLE_W - targetX;
+            const timeToReach = targetX < W / 2 ? 999 : (distToAI / Math.max(1, Math.abs(ballVX)));
+            const predictedY = targetY + targetVY * Math.min(timeToReach, 60);
+            // Bounce prediction
+            let finalY = predictedY;
+            if (finalY < 0) finalY = -finalY;
+            if (finalY > H) finalY = 2 * H - finalY;
+            finalY = ((finalY % (2 * H)) + 2 * H) % (2 * H);
+            if (finalY > H) finalY = 2 * H - finalY;
+
+            const diff = aiScore / WIN;
+            const speed = (0.045 + diff * 0.035) * aiDifficulty / 3;
+            aiY += (finalY - (aiY + aiH / 2)) * speed;
+        }
+        aiY = Math.max(0, Math.min(aiY, H - aiH));
+        if (gameMode === '2v2' || gameMode === '1v2') {
+            ai2Y = Math.max(0, Math.min(ai2Y, H - ai2H));
+        }
+
+        // Main ball (pass as mutable object)
+        const mainBall = { x: ballX, y: ballY, vx: ballVX, vy: ballVY };
+        const mr = updateBall(mainBall);
+        ballX = mainBall.x; ballY = mainBall.y;
+        ballVX = mainBall.vx; ballVY = mainBall.vy;
+        if (mr) { handleScore(mr); return; }
+
+        // Extra balls
+        extraBalls = extraBalls.filter(b => {
+            const r = updateBall(b);
+            if (r) { handleScore(r); return false; }
+            return true;
+        });
+
+        // Trail
+        ballTrail.push({ x: ballX, y: ballY, life: 1 });
+        extraBalls.forEach(b => ballTrail.push({ x: b.x, y: b.y, life: 1 }));
+        if (ballTrail.length > MAX_TRAIL * (1 + extraBalls.length)) ballTrail.shift();
+        ballTrail.forEach(t => t.life -= 0.08);
+        ballTrail = ballTrail.filter(t => t.life > 0);
+
+        // Particles
+        particles.forEach(p => { p.x += p.vx; p.y += p.vy; p.life -= 0.025; });
+        particles = particles.filter(p => p.life > 0);
+
+        // Power-ups
+        updateEffects();
+        spawnPowerUp();
+    }
+
+    function handleScore(who) {
+        sfxScore();
+        if (!who) who = 'ai'; // fallback
+        if (who === 'ai') { aiScore++; }
+        else if (who === 'player') { playerScore++; }
+        updateScores();
+
+        ballSpeed = Math.min(12, ballSpeed + 0.25);
+        baseSpeed = ballSpeed;
+
+        if (playerScore >= WIN) { gameOver = true; showEnd('win'); return; }
+        if (aiScore >= WIN) { gameOver = true; showEnd('lose'); return; }
+
+        resetBall();
+        endAllEffects();
+    }
+
+    function endAllEffects() {
+        activeEffects = [];
+        playerH = (gameMode === '2v2' || gameMode === '1v2') ? PADDLE_H * 0.55 : PADDLE_H;
+        p2H = (gameMode === '2v2' || gameMode === '1v2') ? PADDLE_H * 0.55 : PADDLE_H;
+        aiH = (gameMode === '2v2' || gameMode === '1v2') ? PADDLE_H * 0.55 : PADDLE_H;
+        ai2H = (gameMode === '2v2' || gameMode === '1v2') ? PADDLE_H * 0.55 : PADDLE_H;
+        aiFrozen = 0;
+        ballSpeed = baseSpeed;
+        extraBalls = [];
+        powerUp = null;
+        powerUpTimer = 0;
+        updateEffectsBar();
+    }
+
+    function showEnd(result) {
+        gameOver = true;
+        sfxWin();
+        stopMusic();
+        // Update stats (only for pve and pvp2 modes)
+        if (gameMode === 'pve' || gameMode === 'pvp2' || gameMode === '2v2' || gameMode === '1v2') {
+            stats.total++;
+            stats.points += playerScore;
+            if (result === 'win') stats.wins++;
+            else stats.loses++;
+            saveStats();
+        }
+        resultText.innerHTML = result === 'win'
+            ? '<span class="winner">你赢了!</span>'
+            : '<span class="loser">AI 赢了</span>';
+        resultScore.textContent = `${playerScore} : ${aiScore}`;
+        gameOverEl.style.display = 'block';
+    }
+
+    function drawBall(ctx, x, y, r, skin) {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        switch (skin) {
+            case 1: { // Basketball
+                const bbg = ctx.createRadialGradient(x - r * 0.3, y - r * 0.3, r * 0.1, x, y, r);
+                bbg.addColorStop(0, '#ff9800'); bbg.addColorStop(0.7, '#e65100'); bbg.addColorStop(1, '#bf360c');
+                ctx.fillStyle = bbg; ctx.fill();
+                ctx.strokeStyle = '#1a1a1a'; ctx.lineWidth = 1;
+                ctx.beginPath(); ctx.moveTo(x - r, y); ctx.quadraticCurveTo(x, y - r * 0.7, x + r, y); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(x - r, y); ctx.quadraticCurveTo(x, y + r * 0.7, x + r, y); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(x - r * 0.15, y - r * 0.95); ctx.quadraticCurveTo(x, y - r * 0.3, x - r * 0.85, y - r * 0.2); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(x + r * 0.15, y - r * 0.95); ctx.quadraticCurveTo(x, y - r * 0.3, x + r * 0.85, y - r * 0.2); ctx.stroke();
+                break;
+            }
+            case 2: { // Soccer
+                ctx.fillStyle = '#fff'; ctx.fill();
+                ctx.strokeStyle = '#222'; ctx.lineWidth = 1;
+                for (let i = 0; i < 5; i++) {
+                    const a = i * Math.PI * 2 / 5;
+                    ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r); ctx.stroke();
+                }
+                ctx.beginPath(); ctx.arc(x, y, r * 0.55, 0, Math.PI * 2); ctx.fillStyle = '#222'; ctx.fill();
+                break;
+            }
+            case 3: { // Tennis
+                const tng = ctx.createRadialGradient(x - r * 0.3, y - r * 0.3, r * 0.1, x, y, r);
+                tng.addColorStop(0, '#cddc39'); tng.addColorStop(1, '#827717');
+                ctx.fillStyle = tng; ctx.fill();
+                ctx.strokeStyle = '#fff'; ctx.lineWidth = 1;
+                ctx.beginPath(); ctx.arc(x, y, r * 0.8, 0, Math.PI * 2); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(x - r * 0.5, y - r); ctx.quadraticCurveTo(x, y, x - r * 0.5, y + r); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(x + r * 0.5, y - r); ctx.quadraticCurveTo(x, y, x + r * 0.5, y + r); ctx.stroke();
+                break;
+            }
+            case 4: // Baseball
+                ctx.fillStyle = '#f5f5f5'; ctx.fill();
+                ctx.strokeStyle = '#c62828'; ctx.lineWidth = 1.2;
+                ctx.beginPath(); ctx.moveTo(x - r * 0.95, y - r * 0.3); ctx.quadraticCurveTo(x - r * 0.2, y, x - r * 0.95, y + r * 0.3); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(x + r * 0.95, y - r * 0.3); ctx.quadraticCurveTo(x + r * 0.2, y, x + r * 0.95, y + r * 0.3); ctx.stroke();
+                break;
+            case 5: { // Yarn ball
+                const yarn = ctx.createRadialGradient(x, y, r * 0.1, x, y, r);
+                yarn.addColorStop(0, '#ffcc80'); yarn.addColorStop(0.5, '#ff9800'); yarn.addColorStop(1, '#e65100');
+                ctx.fillStyle = yarn; ctx.fill();
+                ctx.strokeStyle = 'rgba(0,0,0,0.2)'; ctx.lineWidth = 0.5;
+                for (let i = 0; i < 6; i++) {
+                    ctx.beginPath(); ctx.arc(x, y - r * 0.15, r * 0.8, (i * Math.PI) / 3, ((i + 1.5) * Math.PI) / 3); ctx.stroke();
+                }
+                ctx.beginPath(); ctx.arc(x, y + r * 0.3, r * 0.7, Math.PI * 0.8, Math.PI * 2.2); ctx.stroke();
+                break;
+            }
+            case 6: { // Marble
+                const mbl = ctx.createRadialGradient(x - r * 0.35, y - r * 0.35, r * 0.05, x + r * 0.1, y + r * 0.15, r);
+                mbl.addColorStop(0, 'rgba(255,255,255,0.9)'); mbl.addColorStop(0.25, '#b39ddb'); mbl.addColorStop(0.6, '#4527a0'); mbl.addColorStop(1, '#1a237e');
+                ctx.fillStyle = mbl; ctx.fill();
+                ctx.fillStyle = 'rgba(255,255,255,0.4)'; ctx.beginPath(); ctx.arc(x - r * 0.3, y - r * 0.3, r * 0.25, 0, Math.PI * 2); ctx.fill();
+                break;
+            }
+            case 7: { // Fire
+                const fire = ctx.createRadialGradient(x, y - r * 0.2, r * 0.05, x, y + r * 0.2, r * 1.1);
+                fire.addColorStop(0, '#fff9c4'); fire.addColorStop(0.2, '#ffeb3b'); fire.addColorStop(0.5, '#ff9800'); fire.addColorStop(0.8, '#f44336'); fire.addColorStop(1, 'rgba(183,28,28,0)');
+                ctx.fillStyle = fire; ctx.fill();
+                break;
+            }
+            default: // Classic
+                ctx.fillStyle = '#fff'; ctx.fill();
+                break;
+        }
+    }
+
+    function drawTrio() {
+        const [A, B, C] = triVertices();
+        const edges = triEdges();
+
+        // Draw triangle arena
+        ctx.strokeStyle = 'rgba(100, 180, 220, 0.4)';
+        ctx.lineWidth = 2;
+        ctx.shadowColor = 'rgba(30, 120, 200, 0.3)';
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        ctx.moveTo(A.x, A.y);
+        ctx.lineTo(C.x, C.y);
+        ctx.lineTo(B.x, B.y);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // Draw paddles
+        for (let ei = 0; ei < 3; ei++) {
+            const edge = edges[ei];
+            const [P1, P2] = edge;
+            const t = trioPaddlePos[ei];
+            const edgeLen = Math.hypot(P2.x - P1.x, P2.y - P1.y);
+            const halfPadFrac = (TRIO_PADDLE_LEN / 2) / edgeLen;
+            const t0 = Math.max(0, t - halfPadFrac), t1 = Math.min(1, t + halfPadFrac);
+            const p0 = pointOnEdge(t0, edge);
+            const p1 = pointOnEdge(t1, edge);
+            const padThick = 8;
+            // Offset inward by padThick
+            const { nx, ny } = edgeNormal(edge);
+            ctx.lineWidth = padThick;
+            ctx.lineCap = 'round';
+            if (ei === 0) ctx.strokeStyle = '#ff5252';      // left AI - red
+            else if (ei === 1) ctx.strokeStyle = '#4fc3f7'; // bottom player - blue
+            else ctx.strokeStyle = '#ff9800';                // right AI - orange
+            ctx.shadowColor = ctx.strokeStyle;
+            ctx.shadowBlur = 10;
+            ctx.beginPath();
+            ctx.moveTo(p0.x + nx * padThick / 2, p0.y + ny * padThick / 2);
+            ctx.lineTo(p1.x + nx * padThick / 2, p1.y + ny * padThick / 2);
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+        }
+
+        // Ball trail
+        const [tr, tg, tb] = hexToRgb(trailColor);
+        ballTrail.forEach(t => {
+            ctx.fillStyle = `rgba(${tr},${tg},${tb},${t.life * 0.25})`;
+            ctx.beginPath();
+            ctx.arc(t.x, t.y, BALL_R * 0.8, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        // Main ball
+        drawBall(ctx, ballX, ballY, BALL_R, ballSkin);
+
+        // Particles
+        particles.forEach(p => {
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.life;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+
+        // Countdown
+        if (countdown > 0 && !gameOver) {
+            const num = Math.ceil(countdown / 20);
+            ctx.fillStyle = 'rgba(255,255,255,0.7)';
+            ctx.font = 'bold 72px "PingFang SC","Microsoft YaHei",sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(num, W / 2, H / 2);
+        }
+
+        // Pause
+        if (paused && !gameOver) {
+            ctx.fillStyle = 'rgba(0,0,0,0.6)';
+            ctx.fillRect(0, 0, W, H);
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 36px "PingFang SC","Microsoft YaHei",sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('已暂停', W / 2, H / 2);
+        }
+    }
+
+    function draw() {
+        if (!gameStarted) return; // Don't draw before game starts
+
+        // Animated water background
+        drawWaterBackground(ctx);
+
+        if (gameMode === 'trio') { drawTrio(); return; }
+
+        // Subtle water borders
+        const bw = waterTime;
+        ctx.lineWidth = 1.5;
+        ctx.shadowColor = 'rgba(30, 100, 160, 0.3)';
+        ctx.shadowBlur = 5;
+
+        // Top
+        ctx.strokeStyle = 'rgba(30, 100, 160, 0.35)';
+        ctx.beginPath();
+        for (let x = 0; x <= W; x += 4) {
+            const y = 2 + Math.sin(x * 0.015 + bw * 0.6) * 2;
+            x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Bottom
+        ctx.strokeStyle = 'rgba(20, 80, 140, 0.35)';
+        ctx.beginPath();
+        for (let x = 0; x <= W; x += 4) {
+            const y = H - 2 + Math.sin(x * 0.015 + bw * 0.6 + 1.5) * 2;
+            x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Left
+        ctx.strokeStyle = 'rgba(30, 100, 160, 0.3)';
+        ctx.beginPath();
+        for (let y = 0; y <= H; y += 4) {
+            const x = 2 + Math.sin(y * 0.015 + bw * 0.5) * 2;
+            y === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Right
+        ctx.strokeStyle = 'rgba(20, 80, 140, 0.3)';
+        ctx.beginPath();
+        for (let y = 0; y <= H; y += 4) {
+            const x = W - 2 + Math.sin(y * 0.015 + bw * 0.5 + 1.5) * 2;
+            y === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        ctx.shadowBlur = 0;
+
+        // PowerUp
+        if (powerUp) {
+            const p = powerUp;
+            const glow = Math.sin(p.pulse) * 0.3 + 0.7;
+            ctx.save();
+            ctx.globalAlpha = glow;
+            ctx.fillStyle = p.type.color;
+            ctx.shadowColor = p.type.color;
+            ctx.shadowBlur = 15;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 14, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+            ctx.fillStyle = '#000';
+            ctx.font = '18px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(p.type.emoji, p.x, p.y + 6);
+            ctx.globalAlpha = 1;
+            ctx.restore();
+        }
+
+        // Ball trail
+        const [tr, tg, tb] = hexToRgb(trailColor);
+        ballTrail.forEach(t => {
+            ctx.fillStyle = `rgba(${tr},${tg},${tb},${t.life * 0.25})`;
+            ctx.beginPath();
+            ctx.arc(t.x, t.y, BALL_R * 0.8, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        // Extra balls
+        extraBalls.forEach(b => {
+            drawBall(ctx, b.x, b.y, BALL_R, ballSkin);
+        });
+
+        // Player paddle(s)
+        ctx.fillStyle = playerH > PADDLE_H ? '#81d4fa' : '#4fc3f7';
+        ctx.fillRect(20, playerY, PADDLE_W, playerH);
+        if (gameMode === '2v2' || gameMode === '1v2') {
+            ctx.fillStyle = '#29b6f6';
+            ctx.fillRect(20, p2Y, PADDLE_W, p2H);
+        }
+
+        // AI paddle(s)
+        ctx.fillStyle = aiFrozen > 0 ? '#80deea' : (aiH < PADDLE_H ? '#ef5350' : '#ff5252');
+        ctx.fillRect(W - 20 - PADDLE_W, aiY, PADDLE_W, aiH);
+        if (gameMode === '2v2' || gameMode === '1v2') {
+            ctx.fillStyle = '#e53935';
+            ctx.fillRect(W - 20 - PADDLE_W, ai2Y, PADDLE_W, ai2H);
+        }
+
+
+        // Main ball
+        drawBall(ctx, ballX, ballY, BALL_R, ballSkin);
+
+        // Particles
+        particles.forEach(p => {
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.life;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+
+        // Countdown
+        if (countdown > 0 && !gameOver) {
+            const num = Math.ceil(countdown / 20);
+            ctx.fillStyle = 'rgba(255,255,255,0.7)';
+            ctx.font = 'bold 72px "PingFang SC","Microsoft YaHei",sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(num, W / 2, H / 2);
+        }
+
+        // Pause
+        if (paused && !gameOver) {
+            ctx.fillStyle = 'rgba(0,0,0,0.6)';
+            ctx.fillRect(0, 0, W, H);
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 36px "PingFang SC","Microsoft YaHei",sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('已暂停', W / 2, H / 2);
+        }
+    }
+
+    function gameLoop() {
+        try {
+            update();
+            draw();
+        } catch(e) {
+            console.error('Game loop error:', e);
+        }
+        requestAnimationFrame(gameLoop);
+    }
+
+    function hexToRgb(hex) {
+        const v = parseInt(hex.substring(1), 16);
+        return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+    }
+
+    function restart() {
+        init();
+        if (musicOn) playMusic();
+    }
+
+    // Mode selection
+    document.querySelectorAll('#mode-select button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('#mode-select button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            gameMode = btn.dataset.mode;
+        });
+    });
+
+    function enterGame() {
+        const name = document.getElementById('username-input').value.trim();
+        if (!name) {
+            document.getElementById('name-hint').style.display = 'block';
+            return;
+        }
+        document.getElementById('name-hint').style.display = 'none';
+        username = name;
+        localStorage.setItem('pong-username', username);
+        localStorage.setItem('pong-avatar', avatar);
+        loadStats();
+        updateStatsDisplay();
+        document.getElementById('user-page').style.display = 'none';
+        document.getElementById('start-screen').style.display = '';
+    }
+    function updateUsername() {
+        const newName = document.getElementById('settings-name').value.trim();
+        if (newName && newName !== username) {
+            username = newName;
+            localStorage.setItem('pong-username', username);
+            document.getElementById('username-input').value = username;
+            document.getElementById('username-display').textContent = avatar + ' ' + username;
+            loadStats();
+            updateStatsDisplay();
+        }
+    }
+
+    function updateScores() {
+        playerScoreEl.textContent = playerScore;
+        aiScoreEl.textContent = aiScore;
+    }
+
+    function quitGame() {
+        stopMusic();
+        gameOver = true;
+        gameStarted = false;
+        endAllEffects();
+        document.getElementById('game-wrapper').style.display = 'none';
+        document.getElementById('start-screen').style.display = '';
+        document.getElementById('game-over').style.display = 'none';
+    }
+
+    function startGame() {
+        gameStarted = true;
+        initAudio();
+        playMusic();
+        document.getElementById('start-screen').style.display = 'none';
+        document.getElementById('game-wrapper').style.display = '';
+        // Toggle scoreboard for trio mode
+        scoreboard.style.display = gameMode === 'trio' ? 'none' : '';
+        trioScoreboard.style.display = gameMode === 'trio' ? '' : 'none';
+        document.getElementById('username-display').textContent = avatar + ' ' + username;
+        document.getElementById('instructions').innerHTML =
+            gameMode === 'pve'
+                ? '<span>鼠标</span> 或 <span>W/S</span> 控制 | <span>空格</span> 暂停 | <span>M</span> 音乐'
+                : gameMode === 'pvp2'
+                ? '<span>W/S</span> 左 | <span>↑↓</span> 右 | <span>空格</span> 暂停 | <span>M</span> 音乐'
+                : gameMode === 'trio'
+                ? '<span>A/D</span> 移动 | <span>空格</span> 暂停 | <span>M</span> 音乐'
+                : gameMode === '2v2'
+                ? '<span>W/S</span> P1 | <span>R/F</span> P2 | <span>空格</span> 暂停 | <span>M</span> 音乐'
+                : gameMode === '1v2'
+                ? '<span>W/S</span> 控制 | <span>AI</span> 队友 | <span>空格</span> 暂停 | <span>M</span> 音乐'
+                : '<span>AI vs AI</span> 观战 | <span>空格</span> 暂停 | <span>M</span> 音乐';
+        init();
+        if (gameMode === 'pvp') setupPlayerControls();
+    }
+
+    function setupPlayerControls() {
+        canvas.addEventListener('mousemove', e => {
+            const rect = canvas.getBoundingClientRect();
+            playerY = e.clientY - rect.top - playerH / 2;
+            playerY = Math.max(0, Math.min(playerY, H - playerH));
+        });
+    }
+
+    let keys = {};
+    // Only Space for pause
+    window.addEventListener('keydown', e => {
+        if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'ArrowDown' || e.code === 'ArrowLeft' || e.code === 'ArrowRight' || e.code === 'KeyW' || e.code === 'KeyS' || e.code === 'KeyR' || e.code === 'KeyF' || e.code === 'KeyA' || e.code === 'KeyD') {
+            e.preventDefault();
+            if (e.code === 'Space') {
+                if (gameOver) { restart(); return; }
+                paused = !paused;
+            }
+        }
+        if (e.code === 'KeyM') {
+            toggleMusic();
+        }
+        if (gameMode === 'pve' || gameMode === 'pvp2' || gameMode === '2v2' || gameMode === '1v2' || gameMode === 'trio') keys[e.code] = true;
+    });
+    window.addEventListener('keyup', e => {
+        if (gameMode === 'pve' || gameMode === 'pvp2' || gameMode === '2v2' || gameMode === '1v2' || gameMode === 'trio') keys[e.code] = false;
+    });
+    window.addEventListener('blur', () => { keys = {}; });
+
+    // Fullscreen water background animation
+    (function() {
+        const wCanvas = document.getElementById('water-bg');
+        const wCtx = wCanvas.getContext('2d');
+        let t = 0;
+        function resize() {
+            wCanvas.width = window.innerWidth;
+            wCanvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        function anim() {
+            const Ww = wCanvas.width, Hw = wCanvas.height;
+            t += 0.006;
+
+            wCtx.fillStyle = '#0e5a72';
+            wCtx.fillRect(0, 0, Ww, Hw);
+
+            // Wave bands
+            for (let i = 0; i < 8; i++) {
+                const baseY = (i * Hw / 8 + t * 16) % (Hw + 40) - 20;
+                const grad = wCtx.createLinearGradient(0, baseY - 14, 0, baseY + 14);
+                grad.addColorStop(0, 'rgba(100,190,225,0)');
+                grad.addColorStop(0.5, 'rgba(160,225,250,0.1)');
+                grad.addColorStop(1, 'rgba(100,190,225,0)');
+                wCtx.fillStyle = grad;
+                wCtx.fillRect(0, baseY - 14, Ww, 28);
+            }
+            // Diagonal swells
+            for (let i = 0; i < 4; i++) {
+                wCtx.save();
+                const y0 = (i * Hw / 4 + t * 20) % (Hw + 50) - 25;
+                const grad = wCtx.createLinearGradient(0, -15, 0, 15);
+                grad.addColorStop(0, 'rgba(100,190,225,0)');
+                grad.addColorStop(0.5, 'rgba(140,215,240,0.07)');
+                grad.addColorStop(1, 'rgba(100,190,225,0)');
+                wCtx.fillStyle = grad;
+                wCtx.translate(0, y0);
+                wCtx.rotate(0.15 + i * 0.1);
+                wCtx.fillRect(-Ww, -15, Ww * 3, 30);
+                wCtx.restore();
+            }
+            // Foam lines
+            wCtx.globalAlpha = 0.08;
+            wCtx.strokeStyle = '#e0f4fa';
+            wCtx.lineWidth = 1.5;
+            for (let i = 0; i < 4; i++) {
+                wCtx.beginPath();
+                for (let j = 0; j <= Ww; j += 15) {
+                    const wy = Hw * 0.15 + i * Hw * 0.2
+                             + Math.sin(j * 0.015 + t * 0.45 + i * 1.2) * 30
+                             + Math.sin(j * 0.022 - t * 0.35 + i) * 18;
+                    j === 0 ? wCtx.moveTo(j, wy) : wCtx.lineTo(j, wy);
+                }
+                wCtx.stroke();
+            }
+            wCtx.globalAlpha = 1;
+            // Sun glare
+            wCtx.globalAlpha = 0.07;
+            for (let i = 0; i < 5; i++) {
+                const gx = ((Math.sin(t * 0.2 + i * 1.5) * 0.5 + 0.5) * Ww);
+                const gy = ((Math.cos(t * 0.18 + i * 1.8) * 0.5 + 0.5) * Hw);
+                const gr = 16 + Math.sin(t * 1 + i) * 8;
+                const gg = wCtx.createRadialGradient(gx, gy, 0, gx, gy, gr);
+                gg.addColorStop(0, 'rgba(255,255,250,0.45)');
+                gg.addColorStop(0.4, 'rgba(210,240,250,0.18)');
+                gg.addColorStop(1, 'rgba(160,215,235,0)');
+                wCtx.fillStyle = gg;
+                wCtx.beginPath(); wCtx.arc(gx, gy, gr, 0, Math.PI * 2); wCtx.fill();
+            }
+            wCtx.globalAlpha = 1;
+            // Subtle borders
+            wCtx.lineWidth = 1; wCtx.shadowColor = 'rgba(30,100,160,0.25)'; wCtx.shadowBlur = 3;
+            wCtx.strokeStyle = 'rgba(30, 100, 160, 0.3)'; wCtx.beginPath();
+            for (let x = 0; x <= Ww; x += 4) {
+                const y = 1 + Math.sin(x * 0.015 + t * 0.6) * 2;
+                x === 0 ? wCtx.moveTo(x, y) : wCtx.lineTo(x, y);
+            }
+            wCtx.stroke();
+            wCtx.beginPath();
+            for (let x = 0; x <= Ww; x += 4) {
+                const y = Hw - 1 + Math.sin(x * 0.015 + t * 0.6 + 1.5) * 2;
+                x === 0 ? wCtx.moveTo(x, y) : wCtx.lineTo(x, y);
+            }
+            wCtx.stroke();
+            wCtx.shadowBlur = 0;
+            requestAnimationFrame(anim);
+        }
+        anim();
+    })();
+
+    // Load saved data
+    const savedName = localStorage.getItem('pong-username');
+    const savedAv = localStorage.getItem('pong-avatar');
+    if (savedName) {
+        username = savedName;
+        document.getElementById('username-input').value = savedName;
+    }
+    loadStats();
+    if (savedAv) {
+        avatar = savedAv;
+        document.querySelectorAll('.av-opt').forEach(el => {
+            el.classList.toggle('selected', el.dataset.emoji === avatar);
+        });
+    }
+    // Load ball skin preference
+    const savedSkin = localStorage.getItem('pong-ball-skin');
+    if (savedSkin !== null) {
+        ballSkin = parseInt(savedSkin);
+        document.getElementById('ball-skin').value = savedSkin;
+    }
+    // Load trail color
+    const savedTrail = localStorage.getItem('pong-trail-color');
+    if (savedTrail) {
+        trailColor = savedTrail;
+        document.getElementById('trail-color').value = savedTrail;
+    }
+    // Avatar selection clicks
+    document.querySelectorAll('.av-opt').forEach(el => {
+        el.addEventListener('click', () => {
+            document.querySelectorAll('.av-opt').forEach(e => e.classList.remove('selected'));
+            el.classList.add('selected');
+            avatar = el.dataset.emoji;
+        });
+    });
+    // Enter key on user page
+    document.getElementById('username-input').addEventListener('keydown', e => {
+        if (e.key === 'Enter') enterGame();
+    });
+    // Settings avatar selection
+    document.querySelectorAll('.avs-opt').forEach(el => {
+        el.addEventListener('click', () => {
+            document.querySelectorAll('.avs-opt').forEach(e => e.classList.remove('selected'));
+            document.querySelectorAll('.av-opt').forEach(e => e.classList.remove('selected'));
+            el.classList.add('selected');
+            avatar = el.dataset.emoji;
+            document.getElementById('settings-avatar').textContent = avatar;
+            // sync user page avatar
+            document.querySelectorAll('.av-opt').forEach(e => {
+                if (e.dataset.emoji === avatar) e.classList.add('selected');
+            });
+            localStorage.setItem('pong-avatar', avatar);
+            document.getElementById('username-display').textContent = avatar + ' ' + username;
+        });
+    });
+
+    // Start rendering (draw loop runs always for start screen background animation)
+    gameLoop();
+</script>
+</body>
+</html>

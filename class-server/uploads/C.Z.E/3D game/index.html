@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Squash Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="canvas-container"></div>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div class="score-panel" id="score-p1">
+        <span class="player-name">P1</span>
+        <span class="score-num" id="score1">0</span>
+      </div>
+      <div class="score-divider">:</div>
+      <div class="score-panel" id="score-p2">
+        <span class="score-num" id="score2">0</span>
+        <span class="player-name">P2</span>
+      </div>
+      <div class="serve-indicator" id="serve-indicator"></div>
+    </div>
+
+    <!-- In-game buttons -->
+    <button id="btnPause" class="game-corner-btn" title="Pause (Esc)">⏸</button>
+    <button id="btnSettings" class="game-corner-btn right" title="Settings">⚙</button>
+
+    <!-- Pause Overlay -->
+    <div id="pauseOverlay" class="overlay hidden">
+      <div class="overlay-panel">
+        <h3>Paused</h3>
+        <button class="btn primary" id="btnResume">Resume</button>
+        <button class="btn" id="btnRestartFromPause">Restart</button>
+        <button class="btn back" id="btnMenuFromPause">Main Menu</button>
+      </div>
+    </div>
+
+    <!-- Settings Overlay -->
+    <div id="settingsOverlay" class="overlay hidden">
+      <div class="overlay-panel">
+        <h3>Settings</h3>
+        <div class="setting-row">
+          <span>Music</span>
+          <label class="toggle">
+            <input type="checkbox" id="toggleMusic" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-row">
+          <span>Sound Effects</span>
+          <label class="toggle">
+            <input type="checkbox" id="toggleSFX" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <br>
+        <button class="btn primary" id="btnCloseSettings">Done</button>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div id="countdown"></div>
+
+    <!-- Main Menu -->
+    <div id="menu">
+      <div id="menuMain">
+        <h1>SQUASH</h1>
+        <div class="sub">3D Court Battle</div>
+        <button class="btn primary" id="btnPlay">PLAY</button>
+      </div>
+
+      <div id="menuMode" class="menu-panel hidden">
+        <h3>Select Mode</h3>
+        <button class="btn" data-mode="ai">Player 1 vs AI</button>
+        <button class="btn" data-mode="pvp">Player 1 vs Player 2</button>
+        <br><br>
+        <button class="btn back" id="btnBackMode">Back</button>
+      </div>
+
+      <div id="menuDifficulty" class="menu-panel hidden">
+        <h3>AI Difficulty</h3>
+        <button class="btn" data-diff="1">Easy</button>
+        <button class="btn" data-diff="2">Medium</button>
+        <button class="btn" data-diff="3">Hard</button>
+        <br><br>
+        <button class="btn back" id="btnBackDiff">Back</button>
+      </div>
+
+      <div id="gameOver" class="menu-panel hidden">
+        <h3 id="winTitle"></h3>
+        <p id="winMsg"></p>
+        <button class="btn primary" id="btnRestart">Play Again</button>
+        <button class="btn back" id="btnQuit">Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

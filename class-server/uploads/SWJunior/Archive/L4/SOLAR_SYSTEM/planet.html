@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Close-Up — Phantom SS</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+  canvas { display: block; }
+
+  #hud {
+    position: absolute;
+    top: 16px; left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
+    font-size: 0.7rem;
+    pointer-events: none;
+  }
+  #back {
+    position: absolute;
+    top: 14px; left: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #aaa;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.25s;
+    text-decoration: none;
+  }
+  #back:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.3);
+  }
+  #moon-bar {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(0,0,0,0.65);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .moon-tag {
+    color: #888;
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+  }
+  .no-moons {
+    color: #555;
+    font-size: 0.65rem;
+  }
+  /* ─── AI Search Bar ───────────────────────────────── */
+  .ai-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 10px 20px;
+    background: rgba(10,10,20,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ai-bar-inner {
+    display: flex; align-items: center; gap: 10px;
+    max-width: 520px; width: 100%; position: relative;
+  }
+  .ai-input {
+    flex: 1; padding: 10px 18px; border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    color: #fff; font-size: 0.9rem; outline: none;
+    transition: border-color 0.2s;
+  }
+  .ai-input:focus { border-color: #FDB813; }
+  .ai-input::placeholder { color: #556; }
+  .ai-btn {
+    width: 40px; height: 40px; border-radius: 50%; border: none;
+    background: linear-gradient(135deg, #FDB813, #ff9500);
+    color: #000; font-size: 1.2rem; cursor: pointer;
+    flex-shrink: 0; transition: transform 0.15s;
+  }
+  .ai-btn:hover { transform: scale(1.08); }
+  .ai-btn.loading { opacity: 0.6; pointer-events: none; }
+  .ai-answer {
+    position: absolute; top: calc(100% + 8px); left: 0; right: 0;
+    background: rgba(16,16,32,0.96); border: 1px solid rgba(253,184,19,0.2);
+    border-radius: 12px; padding: 14px 18px; display: none;
+    color: #c8c8e0; font-size: 0.84rem; line-height: 1.55;
+    max-height: 220px; overflow-y: auto; z-index: 10;
+    text-shadow: none;
+  }
+  .ai-answer.show { display: block; }
+  .ai-label {
+    color: #FDB813; font-size: 0.7rem; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+<a id="back" href="model.html">&larr; Phantom SS</a>
+<div id="hud"><span id="planet-name">Planet</span></div>
+<div id="hint">Drag to rotate &bull; Scroll to zoom</div>
+<div id="moon-bar"></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// ─── Planet Data ──────────────────────────────────────────
+const planetData = {
+  sun: {
+    name: 'Sun', color: 0xFDB813, size: 1,
+    info: 'The star at the center of our Solar System.',
+    moons: [], isSun: true
+  },
+  mercury: {
+    name: 'Mercury', color: 0xb5b5b5, size: 1, info: 'Smallest planet, closest to the Sun.',
+    moons: []
+  },
+  venus: {
+    name: 'Venus', color: 0xe6c229, size: 1, info: 'Hottest planet, thick atmosphere.',
+    moons: []
+  },
+  earth: {
+    name: 'Earth', color: 0x4da6ff, size: 1, info: 'Our home planet.',
+    moons: [{ name:'Moon', size:0.27, orbit:2.2, color:0xcccccc, speed:5 }],
+    isEarth: true, hasISS: true
+  },
+  mars: {
+    name: 'Mars', color: 0xc1440e, size: 1, info: 'The Red Planet.',
+    moons: [
+      { name:'Phobos', size:0.08, orbit:1.8, color:0x8b7355, speed:8 },
+      { name:'Deimos', size:0.06, orbit:2.6, color:0x998877, speed:5 }
+    ]
+  },
+  jupiter: {
+    name: 'Jupiter', color: 0xd4a574, size: 1, info: 'Largest planet, Great Red Spot.',
+    moons: [
+      { name:'Io', size:0.2, orbit:2.2, color:0xffcc44, speed:7 },
+      { name:'Europa', size:0.18, orbit:2.8, color:0xeeddcc, speed:5.5 },
+      { name:'Ganymede', size:0.24, orbit:3.4, color:0xbbb8a8, speed:4.5 },
+      { name:'Callisto', size:0.22, orbit:4.0, color:0x888877, speed:3.5 }
+    ],
+    isJupiter: true
+  },
+  saturn: {
+    name: 'Saturn', color: 0xe0c070, size: 1, info: 'The ringed giant.',
+    moons: [
+      { name:'Titan', size:0.22, orbit:2.2, color:0xddaa66, speed:3 },
+      { name:'Enceladus', size:0.08, orbit:2.7, color:0xeeeeff, speed:5 },
+      { name:'Mimas', size:0.06, orbit:3.2, color:0xcccccc, speed:6 }
+    ],
+    hasRings: true
+  },
+  uranus: {
+    name: 'Uranus', color: 0x7ec8e3, size: 1, info: 'Ice giant, tilted on its side.',
+    moons: [
+      { name:'Miranda', size:0.06, orbit:1.8, color:0xaaaaaa, speed:6 },
+      { name:'Ariel', size:0.08, orbit:2.2, color:0xbbc8cc, speed:5 },
+      { name:'Umbriel', size:0.08, orbit:2.6, color:0x887766, speed:4 },
+      { name:'Titania', size:0.1, orbit:3.0, color:0x99aabb, speed:3.5 },
+      { name:'Oberon', size:0.1, orbit:3.5, color:0x887766, speed:3 }
+    ]
+  },
+  neptune: {
+    name: 'Neptune', color: 0x3f54ba, size: 1, info: 'Farthest planet, deepest blue.',
+    moons: [
+      { name:'Triton', size:0.16, orbit:2.0, color:0xddccee, speed:4.5 }
+    ]
+  }
+};
+
+// ─── Get planet from URL ──────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const planetKey = params.get('planet') || 'earth';
+const data = planetData[planetKey] || planetData.earth;
+
+document.title = data.name + ' — Phantom SS';
+document.getElementById('planet-name').textContent = data.name;
+
+// Moon bar
+const moonBar = document.getElementById('moon-bar');
+if (data.moons.length) {
+  moonBar.innerHTML = data.moons.map(m => `<span class="moon-tag">${m.name}</span>`).join('');
+} else {
+  moonBar.innerHTML = '<span class="no-moons">No moons</span>';
+}
+
+// ─── Scene ─────────────────────────────────────────────────
+const scene = new THREE.Scene();
+
+// Starfield
+const starsGeo = new THREE.BufferGeometry();
+const starsPos = new Float32Array(2000 * 3);
+for (let i = 0; i < 2000 * 3; i += 3) {
+  starsPos[i] = (Math.random() - 0.5) * 60;
+  starsPos[i+1] = (Math.random() - 0.5) * 60;
+  starsPos[i+2] = (Math.random() - 0.5) * 60;
+}
+starsGeo.setAttribute('position', new THREE.BufferAttribute(starsPos, 3));
+scene.add(new THREE.Points(starsGeo, new THREE.PointsMaterial({ color:0xffffff, size:0.04, sizeAttenuation:true })));
+
+// ─── Camera ────────────────────────────────────────────────
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 200);
+camera.position.set(0, 0.5, 4.5);
+camera.lookAt(0, 0, 0);
+
+// ─── Renderer ──────────────────────────────────────────────
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.75;
+document.body.appendChild(renderer.domElement);
+
+// ─── Controls ──────────────────────────────────────────────
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.15;
+controls.target.set(0, 0, 0);
+controls.minDistance = 1.5;
+controls.maxDistance = 20;
+controls.zoomSpeed = 3.0;
+controls.update();
+
+// ─── Lighting ──────────────────────────────────────────────
+scene.add(new THREE.AmbientLight(0x446688, 2.2));
+scene.add(new THREE.HemisphereLight(0xffffdd, 0x334466, 0.55));
+const keyLight = new THREE.PointLight(0xfff5e8, 18, 25, 1.5);
+keyLight.position.set(2, 1, 3);
+scene.add(keyLight);
+const fillLight = new THREE.PointLight(0x6688cc, 6, 18, 2);
+fillLight.position.set(-2, -0.5, -1);
+scene.add(fillLight);
+
+// ─── Planet ────────────────────────────────────────────────
+const pGeo = new THREE.SphereGeometry(1, 64, 64);
+let pMat;
+if (data.isEarth) {
+  const c = document.createElement('canvas'); c.width=512; c.height=256;
+  const ctx=c.getContext('2d');
+  // Ocean base with depth variation
+  const og=ctx.createLinearGradient(0,0,0,256);
+  og.addColorStop(0,'#e8f0ff'); og.addColorStop(0.08,'#ddeeff'); og.addColorStop(0.15,'#3388cc');
+  og.addColorStop(0.3,'#2266aa'); og.addColorStop(0.5,'#1a5599');
+  og.addColorStop(0.7,'#2266aa'); og.addColorStop(0.85,'#3388cc');
+  og.addColorStop(0.92,'#ddeeff'); og.addColorStop(1,'#e8f0ff');
+  ctx.fillStyle=og; ctx.fillRect(0,0,512,256);
+  // Ocean texture - subtle variations
+  for (let i=0;i<200;i++) {
+    ctx.globalAlpha=0.03+Math.random()*0.07;
+    ctx.fillStyle=Math.random()>0.5?'#114488':'#3377bb';
+    ctx.beginPath(); ctx.arc(Math.random()*512,Math.random()*256,3+Math.random()*20,0,Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  // North America
+  ctx.fillStyle='#3a8c3a'; ctx.beginPath();
+  ctx.moveTo(40,70); ctx.lineTo(80,55); ctx.lineTo(130,50); ctx.lineTo(160,60);
+  ctx.lineTo(140,100); ctx.lineTo(120,120); ctx.lineTo(160,130); ctx.lineTo(140,160);
+  ctx.lineTo(100,140); ctx.lineTo(60,100); ctx.closePath(); ctx.fill();
+  // Greenland
+  ctx.fillStyle='#e8f0ff'; ctx.beginPath(); ctx.ellipse(180,45,25,20,0,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle='#3a8c3a'; ctx.beginPath(); ctx.ellipse(178,48,20,15,0.1,0,Math.PI*2); ctx.fill();
+  // Central America
+  ctx.beginPath(); ctx.moveTo(100,140); ctx.lineTo(120,160); ctx.lineTo(130,170);
+  ctx.lineTo(110,175); ctx.lineTo(90,150); ctx.closePath(); ctx.fill();
+  // South America
+  ctx.beginPath(); ctx.moveTo(120,160); ctx.lineTo(145,165); ctx.lineTo(155,190);
+  ctx.lineTo(150,210); ctx.lineTo(135,230); ctx.lineTo(120,235);
+  ctx.lineTo(110,210); ctx.lineTo(105,185); ctx.closePath(); ctx.fill();
+  // Amazon rainforest
+  ctx.fillStyle='#2d7a2d'; ctx.beginPath(); ctx.ellipse(130,200,25,12,0.1,0,Math.PI*2); ctx.fill();
+  // Europe
+  ctx.fillStyle='#4a9e4a'; ctx.beginPath();
+  ctx.moveTo(240,55); ctx.lineTo(260,50); ctx.lineTo(290,55); ctx.lineTo(280,75);
+  ctx.lineTo(260,85); ctx.lineTo(240,75); ctx.closePath(); ctx.fill();
+  // British Isles
+  ctx.beginPath(); ctx.ellipse(238,65,7,10,0,0,Math.PI*2); ctx.fill();
+  // Africa
+  ctx.beginPath(); ctx.moveTo(245,90); ctx.lineTo(260,85); ctx.lineTo(275,95);
+  ctx.lineTo(285,120); ctx.lineTo(290,150); ctx.lineTo(275,180);
+  ctx.lineTo(255,185); ctx.lineTo(240,165); ctx.lineTo(235,130); ctx.closePath(); ctx.fill();
+  // Sahara desert
+  ctx.fillStyle='#c4a85a'; ctx.beginPath(); ctx.ellipse(260,130,30,15,0,0,Math.PI*2); ctx.fill();
+  // Asia
+  ctx.fillStyle='#4a9e4a'; ctx.beginPath();
+  ctx.moveTo(290,50); ctx.lineTo(320,45); ctx.lineTo(360,48); ctx.lineTo(400,52);
+  ctx.lineTo(420,60); ctx.lineTo(430,80); ctx.lineTo(400,90);
+  ctx.lineTo(360,85); ctx.lineTo(340,95); ctx.lineTo(320,100);
+  ctx.lineTo(300,105); ctx.lineTo(280,95); ctx.lineTo(275,75); ctx.closePath(); ctx.fill();
+  // India
+  ctx.beginPath(); ctx.moveTo(320,100); ctx.lineTo(335,105); ctx.lineTo(330,125);
+  ctx.lineTo(320,130); ctx.lineTo(310,115); ctx.closePath(); ctx.fill();
+  // Southeast Asia
+  ctx.beginPath(); ctx.moveTo(340,95); ctx.lineTo(360,100); ctx.lineTo(370,115);
+  ctx.lineTo(355,120); ctx.lineTo(340,110); ctx.closePath(); ctx.fill();
+  // Japan
+  ctx.beginPath(); ctx.ellipse(395,80,5,12,0.3,0,Math.PI*2); ctx.fill();
+  // Australia
+  ctx.fillStyle='#c4944a'; ctx.beginPath();
+  ctx.moveTo(380,155); ctx.lineTo(400,148); ctx.lineTo(420,155);
+  ctx.lineTo(425,170); ctx.lineTo(415,185); ctx.lineTo(395,188);
+  ctx.lineTo(375,175); ctx.closePath(); ctx.fill();
+  // Outback
+  ctx.fillStyle='#bf7630'; ctx.beginPath(); ctx.ellipse(400,170,20,10,-0.1,0,Math.PI*2); ctx.fill();
+  // New Zealand
+  ctx.fillStyle='#4a9e4a'; ctx.beginPath(); ctx.ellipse(430,195,4,10,0.4,0,Math.PI*2); ctx.fill();
+  // Antarctica
+  ctx.fillStyle='#e8f4ff'; ctx.beginPath(); ctx.rect(0,240,512,16); ctx.fill();
+  ctx.fillStyle='#ffffff'; ctx.beginPath(); ctx.ellipse(256,248,180,8,0,0,Math.PI*2); ctx.fill();
+  // Arctic ice
+  ctx.fillStyle='#e8f4ff'; ctx.beginPath(); ctx.rect(0,0,512,12); ctx.fill();
+  ctx.fillStyle='#ffffff'; ctx.beginPath(); ctx.ellipse(256,8,160,6,0,0,Math.PI*2); ctx.fill();
+  // Madagascar
+  ctx.fillStyle='#4a9e4a'; ctx.beginPath(); ctx.ellipse(292,185,5,10,0.2,0,Math.PI*2); ctx.fill();
+  // Mountains / terrain variation
+  for (let i=0;i<60;i++) {
+    const mx=Math.random()*512, my=Math.random()*256;
+    ctx.globalAlpha=0.1+Math.random()*0.15;
+    ctx.fillStyle='#2d6a2d'; ctx.beginPath();
+    ctx.arc(mx,my,2+Math.random()*6,0,Math.PI*2); ctx.fill();
+  }
+  // Clouds
+  ctx.globalAlpha=1;
+  for (let i=0;i<80;i++) {
+    const cx=Math.random()*512, cy=Math.random()*256;
+    ctx.fillStyle=`rgba(255,255,255,${0.08+Math.random()*0.18})`;
+    ctx.beginPath(); ctx.ellipse(cx,cy,8+Math.random()*30,3+Math.random()*8,Math.random()*Math.PI,0,Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  const tex = new THREE.CanvasTexture(c);
+  pMat = new THREE.MeshPhongMaterial({ map:tex, specular:0x446688, shininess:25 });
+} else if (data.isJupiter) {
+  const c=document.createElement('canvas'); c.width=512; c.height=256;
+  const ctx=c.getContext('2d');
+  const jg=ctx.createLinearGradient(0,0,0,256);
+  jg.addColorStop(0,'#d4a574'); jg.addColorStop(0.15,'#c4956a'); jg.addColorStop(0.2,'#e8c89e');
+  jg.addColorStop(0.35,'#c4956a'); jg.addColorStop(0.45,'#b87050'); jg.addColorStop(0.5,'#e8c89e');
+  jg.addColorStop(0.65,'#c4956a'); jg.addColorStop(0.8,'#e8c89e'); jg.addColorStop(0.9,'#b87050');
+  jg.addColorStop(1,'#d4a574'); ctx.fillStyle=jg; ctx.fillRect(0,0,512,256);
+  ctx.fillStyle='#b85a3a'; ctx.beginPath(); ctx.ellipse(360,110,30,16,0,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle='#c4784a'; ctx.beginPath(); ctx.ellipse(370,105,20,10,0.2,0,Math.PI*2); ctx.fill();
+  const tex=new THREE.CanvasTexture(c);
+  pMat=new THREE.MeshPhongMaterial({ map:tex, specular:0x111111, shininess:5, emissive:0x110800 });
+} else if (data.isSun) {
+  const c=document.createElement('canvas'); c.width=512; c.height=256;
+  const ctx=c.getContext('2d');
+  // Base yellow-orange
+  const sg=ctx.createLinearGradient(0,0,0,256);
+  sg.addColorStop(0,'#991100');
+  sg.addColorStop(0.12,'#bb2200');
+  sg.addColorStop(0.28,'#dd3300');
+  sg.addColorStop(0.4,'#ee4411');
+  sg.addColorStop(0.5,'#ff5522');
+  sg.addColorStop(0.6,'#ee4411');
+  sg.addColorStop(0.72,'#dd3300');
+  sg.addColorStop(0.88,'#bb2200');
+  sg.addColorStop(1,'#991100');
+  ctx.fillStyle=sg; ctx.fillRect(0,0,512,256);
+  // Solar granules / spots
+  for (let i=0;i<200;i++) {
+    const sx=Math.random()*512, sy=Math.random()*256;
+    const sr=3+Math.random()*15;
+    const alpha=0.05+Math.random()*0.25;
+    const spotColor=Math.random()>0.5?'#dd2200':'#ff6633';
+    ctx.fillStyle=spotColor; ctx.globalAlpha=alpha;
+    ctx.beginPath(); ctx.arc(sx,sy,sr,0,Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  // Darker sunspot bands
+  for (let i=0;i<8;i++) {
+    const bx=80+Math.random()*350, by=40+Math.random()*170;
+    ctx.fillStyle='#550800'; ctx.globalAlpha=0.2;
+    ctx.beginPath(); ctx.ellipse(bx,by,30+Math.random()*40,8+Math.random()*10,Math.random()*Math.PI,0,Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  const tex=new THREE.CanvasTexture(c);
+  pMat=new THREE.MeshBasicMaterial({ map:tex });
+} else if (data.name === 'Mercury') {
+  const c=document.createElement('canvas'); c.width=512; c.height=256;
+  const ctx=c.getContext('2d');
+  // Base dark grey, uneven surface
+  ctx.fillStyle='#888888'; ctx.fillRect(0,0,512,256);
+  // Uneven grey patches
+  for (let i=0;i<40;i++) {
+    ctx.globalAlpha=0.3+Math.random()*0.5;
+    const shade=90+Math.random()*90;
+    ctx.fillStyle=`rgb(${shade},${shade},${shade})`;
+    ctx.beginPath();
+    ctx.ellipse(Math.random()*512,Math.random()*256,20+Math.random()*60,15+Math.random()*40,Math.random()*Math.PI,0,Math.PI*2);
+    ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  // Dark grey craters (dots)
+  for (let i=0;i<120;i++) {
+    const sx=Math.random()*512, sy=Math.random()*256;
+    const sr=2+Math.random()*10;
+    const alpha=0.2+Math.random()*0.5;
+    const shade=30+Math.random()*40;
+    ctx.fillStyle=`rgba(${shade},${shade},${shade},${alpha})`;
+    ctx.beginPath(); ctx.arc(sx,sy,sr,0,Math.PI*2); ctx.fill();
+  }
+  // Scattered brighter rim dots around some craters
+  for (let i=0;i<40;i++) {
+    const sx=Math.random()*512, sy=Math.random()*256;
+    const shade=180+Math.random()*60;
+    ctx.fillStyle=`rgb(${shade},${shade},${shade})`;
+    ctx.globalAlpha=0.3+Math.random()*0.4;
+    ctx.beginPath(); ctx.arc(sx,sy,1+Math.random()*4,0,Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  const tex=new THREE.CanvasTexture(c);
+  pMat=new THREE.MeshPhongMaterial({ map:tex, specular:0x111111, shininess:5, emissive:new THREE.Color(0x222222).multiplyScalar(0.1) });
+} else if (data.name === 'Venus') {
+  const c=document.createElement('canvas'); c.width=512; c.height=256;
+  const ctx=c.getContext('2d');
+  // Rich golden-yellow base
+  ctx.fillStyle='#e6c850'; ctx.fillRect(0,0,512,256);
+  // Uneven cloud-like patches
+  for (let i=0;i<40;i++) {
+    ctx.globalAlpha=0.2+Math.random()*0.4;
+    const r=210+Math.random()*45, g=180+Math.random()*50, b=50+Math.random()*40;
+    ctx.fillStyle=`rgb(${r},${g},${b})`;
+    ctx.beginPath();
+    ctx.ellipse(Math.random()*512,Math.random()*256,20+Math.random()*60,15+Math.random()*40,Math.random()*Math.PI,0,Math.PI*2);
+    ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  // Dark gold/brown dots
+  for (let i=0;i<100;i++) {
+    const sx=Math.random()*512, sy=Math.random()*256;
+    const sr=2+Math.random()*8;
+    const alpha=0.15+Math.random()*0.45;
+    const r=120+Math.random()*50, g=90+Math.random()*40, b=20+Math.random()*25;
+    ctx.fillStyle=`rgba(${r},${g},${b},${alpha})`;
+    ctx.beginPath(); ctx.arc(sx,sy,sr,0,Math.PI*2); ctx.fill();
+  }
+  // Brighter gold specks
+  for (let i=0;i<30;i++) {
+    const sx=Math.random()*512, sy=Math.random()*256;
+    const r=235+Math.random()*20, g=210+Math.random()*30, b=100+Math.random()*40;
+    ctx.fillStyle=`rgb(${r},${g},${b})`;
+    ctx.globalAlpha=0.25+Math.random()*0.35;
+    ctx.beginPath(); ctx.arc(sx,sy,1+Math.random()*4,0,Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  const tex=new THREE.CanvasTexture(c);
+  pMat=new THREE.MeshPhongMaterial({ map:tex, specular:0x443311, shininess:18, emissive:new THREE.Color(0x332200).multiplyScalar(0.2) });
+} else if (data.name === 'Mars') {
+  const c=document.createElement('canvas'); c.width=512; c.height=256;
+  const ctx=c.getContext('2d');
+  // Base rusty red-orange
+  const mg=ctx.createLinearGradient(0,0,0,256);
+  mg.addColorStop(0,'#ffddcc'); mg.addColorStop(0.08,'#dd9977'); mg.addColorStop(0.3,'#cc5533');
+  mg.addColorStop(0.5,'#dd4422'); mg.addColorStop(0.7,'#cc5533');
+  mg.addColorStop(0.92,'#dd9977'); mg.addColorStop(1,'#ffddcc');
+  ctx.fillStyle=mg; ctx.fillRect(0,0,512,256);
+  // Dark terrain patches
+  for (let i=0;i<50;i++) {
+    ctx.globalAlpha=0.2+Math.random()*0.4;
+    ctx.fillStyle=Math.random()>0.5?'#772211':'#993322';
+    ctx.beginPath();
+    ctx.ellipse(Math.random()*512,Math.random()*256,10+Math.random()*50,5+Math.random()*25,Math.random()*Math.PI,0,Math.PI*2);
+    ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  // Craters
+  for (let i=0;i<80;i++) {
+    const sx=Math.random()*512, sy=Math.random()*256;
+    const sr=2+Math.random()*8;
+    const alpha=0.15+Math.random()*0.4;
+    const shade=80+Math.random()*60;
+    ctx.fillStyle=`rgba(${shade},${shade/3},${shade/6},${alpha})`;
+    ctx.beginPath(); ctx.arc(sx,sy,sr,0,Math.PI*2); ctx.fill();
+  }
+  // Polar caps
+  ctx.fillStyle='#fff8f0'; ctx.globalAlpha=0.6;
+  ctx.beginPath(); ctx.ellipse(256,10,150,12,0,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(256,246,150,12,0,0,Math.PI*2); ctx.fill();
+  ctx.globalAlpha=1;
+  const tex=new THREE.CanvasTexture(c);
+  pMat=new THREE.MeshPhongMaterial({ map:tex, specular:0x221111, shininess:5 });
+} else if (data.name === 'Saturn') {
+  const c=document.createElement('canvas'); c.width=512; c.height=256;
+  const ctx=c.getContext('2d');
+  // Banded pale yellow/tan
+  const sg=ctx.createLinearGradient(0,0,0,256);
+  sg.addColorStop(0,'#f5e6c8'); sg.addColorStop(0.08,'#e8d5a8'); sg.addColorStop(0.15,'#f0dca8');
+  sg.addColorStop(0.25,'#dcc895'); sg.addColorStop(0.35,'#eed8a0'); sg.addColorStop(0.45,'#e0c890');
+  sg.addColorStop(0.55,'#f0daa0'); sg.addColorStop(0.65,'#d8c088'); sg.addColorStop(0.75,'#ecd49a');
+  sg.addColorStop(0.85,'#e0c890'); sg.addColorStop(0.92,'#f0dca8'); sg.addColorStop(1,'#f5e6c8');
+  ctx.fillStyle=sg; ctx.fillRect(0,0,512,256);
+  // Subtle storm bands
+  for (let i=0;i<15;i++) {
+    const sy=20+Math.random()*216;
+    ctx.globalAlpha=0.08+Math.random()*0.12;
+    ctx.fillStyle='#c4a870';
+    ctx.fillRect(0,sy,512,2+Math.random()*6);
+  }
+  ctx.globalAlpha=1;
+  const tex=new THREE.CanvasTexture(c);
+  pMat=new THREE.MeshPhongMaterial({ map:tex, specular:0x333322, shininess:12, emissive:new THREE.Color(0x221100).multiplyScalar(0.1) });
+} else if (data.name === 'Uranus') {
+  const c=document.createElement('canvas'); c.width=512; c.height=256;
+  const ctx=c.getContext('2d');
+  // Pale cyan-blue with subtle bands
+  const ug=ctx.createLinearGradient(0,0,0,256);
+  ug.addColorStop(0,'#d8f0f8'); ug.addColorStop(0.15,'#b8e0e8'); ug.addColorStop(0.3,'#a0d4e0');
+  ug.addColorStop(0.5,'#90ccd8'); ug.addColorStop(0.7,'#a0d4e0');
+  ug.addColorStop(0.85,'#b8e0e8'); ug.addColorStop(1,'#d8f0f8');
+  ctx.fillStyle=ug; ctx.fillRect(0,0,512,256);
+  // Faint band variations
+  for (let i=0;i<10;i++) {
+    const sy=30+Math.random()*196;
+    ctx.globalAlpha=0.06+Math.random()*0.1;
+    ctx.fillStyle='#c8e8f0';
+    ctx.fillRect(0,sy,512,3+Math.random()*5);
+  }
+  ctx.globalAlpha=1;
+  const tex=new THREE.CanvasTexture(c);
+  pMat=new THREE.MeshPhongMaterial({ map:tex, specular:0x334444, shininess:15, emissive:new THREE.Color(0x111822).multiplyScalar(0.15) });
+} else if (data.name === 'Neptune') {
+  const c=document.createElement('canvas'); c.width=512; c.height=256;
+  const ctx=c.getContext('2d');
+  // Deep blue with bands
+  const ng=ctx.createLinearGradient(0,0,0,256);
+  ng.addColorStop(0,'#6688cc'); ng.addColorStop(0.12,'#3355aa'); ng.addColorStop(0.3,'#2244aa');
+  ng.addColorStop(0.5,'#1144cc'); ng.addColorStop(0.7,'#2244aa');
+  ng.addColorStop(0.88,'#3355aa'); ng.addColorStop(1,'#6688cc');
+  ctx.fillStyle=ng; ctx.fillRect(0,0,512,256);
+  // Dark storm spots
+  for (let i=0;i<8;i++) {
+    const sx=100+Math.random()*312, sy=50+Math.random()*156;
+    ctx.globalAlpha=0.2+Math.random()*0.3;
+    ctx.fillStyle='#001144';
+    ctx.beginPath(); ctx.ellipse(sx,sy,5+Math.random()*15,3+Math.random()*8,Math.random()*Math.PI,0,Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  // Brighter cloud wisps
+  for (let i=0;i<20;i++) {
+    const sy=20+Math.random()*216;
+    ctx.globalAlpha=0.05+Math.random()*0.1;
+    ctx.fillStyle='#8899cc';
+    ctx.fillRect(40+Math.random()*200,sy,80+Math.random()*200,1+Math.random()*3);
+  }
+  ctx.globalAlpha=1;
+  const tex=new THREE.CanvasTexture(c);
+  pMat=new THREE.MeshPhongMaterial({ map:tex, specular:0x223344, shininess:15, emissive:new THREE.Color(0x000822).multiplyScalar(0.2) });
+} else if (data.hasRings) {
+  pMat=new THREE.MeshPhongMaterial({ color:data.color, specular:0x333333, shininess:12, emissive:new THREE.Color(data.color).multiplyScalar(0.15) });
+} else {
+  pMat=new THREE.MeshPhongMaterial({ color:data.color, specular:0x333333, shininess:15, emissive:new THREE.Color(data.color).multiplyScalar(0.15) });
+}
+const planet = new THREE.Mesh(pGeo, pMat);
+scene.add(planet);
+
+// ─── Rings (Saturn) ────────────────────────────────────────
+let ringMesh = null;
+if (data.hasRings) {
+  const ringCount = 1500;
+  const rGeo = new THREE.BufferGeometry();
+  const rPositions = [];
+  const rColors = [];
+  const innerR = 1.25;
+  const outerR = 2.4;
+  for (let i = 0; i < ringCount; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const r = innerR + Math.random() * (outerR - innerR);
+    const y = (Math.random() - 0.5) * 0.06;
+    rPositions.push(Math.cos(angle) * r, y, Math.sin(angle) * r);
+    const shade = 0.5 + Math.random() * 0.45;
+    rColors.push(shade, shade * 0.85, shade * 0.55);
+  }
+  rGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(rPositions), 3));
+  rGeo.setAttribute('color', new THREE.BufferAttribute(new Float32Array(rColors), 3));
+  const rMat = new THREE.PointsMaterial({
+    size: 0.05,
+    vertexColors: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    transparent: true,
+    opacity: 0.75
+  });
+  ringMesh = new THREE.Points(rGeo, rMat);
+  ringMesh.rotation.x = Math.PI / 6;
+  scene.add(ringMesh);
+}
+
+// ─── Moons ─────────────────────────────────────────────────
+const moonObjects = [];
+data.moons.forEach(moon => {
+  const pivot = new THREE.Object3D();
+  pivot.rotation.y = Math.random() * Math.PI * 2;
+  scene.add(pivot);
+
+  const mGeo = new THREE.SphereGeometry(moon.size * 0.55, 24, 24);
+  const mMat = new THREE.MeshPhongMaterial({ color:moon.color, specular:0x111111, shininess:5 });
+  const mMesh = new THREE.Mesh(mGeo, mMat);
+  mMesh.position.set(moon.orbit, 0, 0);
+  pivot.add(mMesh);
+
+  // Orbit ring
+  const oGeo = new THREE.TorusGeometry(moon.orbit, 0.015, 6, 80);
+  const oRing = new THREE.Mesh(oGeo, new THREE.MeshBasicMaterial({ color:0x334455, transparent:true, opacity:0.3 }));
+  oRing.rotation.x = Math.PI / 2;
+  pivot.add(oRing);
+
+  moonObjects.push({ pivot, speed: moon.speed });
+});
+
+// ─── ISS (Earth only) ──────────────────────────────────────
+let issPivot = null;
+if (data.hasISS) {
+  issPivot = new THREE.Object3D();
+  issPivot.rotation.y = Math.random() * Math.PI * 2;
+  scene.add(issPivot);
+
+  const issGroup = new THREE.Object3D();
+  issGroup.position.set(1.35, 0, 0);
+  issPivot.add(issGroup);
+
+  // Main body
+  const issBody = new THREE.Mesh(
+    new THREE.BoxGeometry(0.06, 0.02, 0.02),
+    new THREE.MeshPhongMaterial({ color:0xffffff, specular:0x666666, shininess:40 })
+  );
+  issGroup.add(issBody);
+
+  // Truss
+  const truss = new THREE.Mesh(
+    new THREE.BoxGeometry(0.15, 0.006, 0.006),
+    new THREE.MeshPhongMaterial({ color:0xffffff, specular:0x666666, shininess:40 })
+  );
+  issGroup.add(truss);
+
+  // Solar panels
+  [-0.08, 0.08].forEach(xOff => {
+    const panelMat = new THREE.MeshPhongMaterial({ color:0x1a3a5c, emissive:0x050f1a, specular:0x111111, shininess:20 });
+    const p = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.002, 0.03), panelMat);
+    p.position.set(xOff, 0.008, 0);
+    issGroup.add(p);
+    const p2 = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.002, 0.03), panelMat);
+    p2.position.set(xOff, -0.008, 0);
+    issGroup.add(p2);
+  });
+
+  // Orbit ring
+  const issOrbit = new THREE.Mesh(
+    new THREE.TorusGeometry(1.35, 0.01, 6, 80),
+    new THREE.MeshBasicMaterial({ color:0x445566, transparent:true, opacity:0.25 })
+  );
+  issOrbit.rotation.x = Math.PI / 2;
+  issPivot.add(issOrbit);
+
+  // Add to moon bar
+  if (!data.moons.length) {
+    moonBar.innerHTML = '<span class="moon-tag">ISS</span>';
+  } else {
+    moonBar.innerHTML += '<span class="moon-tag">ISS</span>';
+  }
+}
+
+// ─── Animation ─────────────────────────────────────────────
+function animate() {
+  requestAnimationFrame(animate);
+  planet.rotation.y += 0.003;
+  if (ringMesh) ringMesh.rotation.y += 0.003;
+  moonObjects.forEach(m => { m.pivot.rotation.y += m.speed * 0.015; });
+  if (issPivot) issPivot.rotation.y += 0.06;
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+
+// ─── Resize ────────────────────────────────────────────────
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+</body>
+</html>

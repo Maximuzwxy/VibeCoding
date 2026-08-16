@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tag Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="bodyEl">
+  <div id="container">
+    <canvas id="gameCanvas" width="960" height="540"></canvas>
+    <button id="settingsBtn">&#9881;</button>
+
+    <div id="countdown"></div>
+
+    <div id="hud">
+      <span class="tagger-label" id="taggerLabel"></span>
+      <span class="timer" id="timerDisplay"></span>
+    </div>
+
+    <div id="menu">
+      <div id="menuMain">
+        <h1>TAG GAME</h1>
+        <div class="sub">Catch or Be Caught!</div>
+        <button class="btn primary" id="btnPlay">PLAY</button>
+        <button class="btn" id="btnSettings" style="margin-top:10px;">SETTINGS</button>
+      </div>
+
+      <div id="menuMode" class="menu-panel hidden">
+        <h3>Select Mode</h3>
+        <button class="btn" data-mode="ai">Player 1 vs AI</button>
+        <button class="btn" data-mode="pvp2">Player 1 vs Player 2</button>
+        <button class="btn" data-mode="pvp3">Three Players</button>
+        <br><br>
+        <button class="btn back" id="btnBackMode">Back</button>
+      </div>
+
+      <div id="menuMap" class="menu-panel hidden">
+        <h3>Select Map</h3>
+        <div id="mapButtons"></div>
+        <br>
+        <button class="btn back" id="btnBackMap">Back</button>
+      </div>
+
+      <div id="menuTime" class="menu-panel hidden">
+        <h3>Select Game Time</h3>
+        <button class="btn" data-time="30">30 Seconds</button>
+        <button class="btn" data-time="60">60 Seconds</button>
+        <button class="btn" data-time="90">90 Seconds</button>
+        <button class="btn" data-time="120">120 Seconds</button>
+        <br><br>
+        <button class="btn back" id="btnBackTime">Back</button>
+      </div>
+
+      <div id="menuSettings" class="menu-panel hidden">
+        <h3>Settings</h3>
+        <div class="settings-row"><span>Light Mode</span>
+          <label class="toggle"><input type="checkbox" id="toggleLight"><span class="slider"></span></label>
+        </div>
+        <div class="settings-row"><span>Background Music</span>
+          <label class="toggle"><input type="checkbox" id="toggleMusic" checked><span class="slider"></span></label>
+        </div>
+        <div class="settings-row"><span>Sound Effects</span>
+          <label class="toggle"><input type="checkbox" id="toggleSfx" checked><span class="slider"></span></label>
+        </div>
+        <br>
+        <button class="btn back" id="btnCloseSettings">Back</button>
+      </div>
+
+      <div id="gameOver" class="menu-panel hidden">
+        <h3 id="gameOverTitle">Time's Up!</h3>
+        <p id="gameOverMsg"></p>
+        <button class="btn primary" id="btnPlayAgain">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

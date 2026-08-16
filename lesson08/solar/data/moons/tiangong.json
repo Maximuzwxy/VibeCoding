@@ -1,0 +1,235 @@
+{
+  "id": "tiangong",
+  "name": {
+    "zh": "天宫空间站",
+    "en": "Tiangong Space Station"
+  },
+  "icon": "🛰️",
+  "theme_color": "#d4d4e8",
+  "info_sections": [
+    {
+      "title": {
+        "zh": "📊 基本参数",
+        "en": "📊 Basic Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "类型",
+            "en": "Type"
+          },
+          "value": {
+            "zh": "模块化空间站",
+            "en": "Modular Space Station"
+          }
+        },
+        {
+          "label": {
+            "zh": "所属国家",
+            "en": "Country"
+          },
+          "value": {
+            "zh": "中国",
+            "en": "China"
+          }
+        },
+        {
+          "label": {
+            "zh": "总质量",
+            "en": "Total Mass"
+          },
+          "value": {
+            "zh": "约 180 吨",
+            "en": "~180 metric tons"
+          }
+        },
+        {
+          "label": {
+            "zh": "总长度",
+            "en": "Total Length"
+          },
+          "value": {
+            "zh": "约 55 米",
+            "en": "~55 meters"
+          }
+        },
+        {
+          "label": {
+            "zh": "太阳能翼展",
+            "en": "Solar Wingspan"
+          },
+          "value": {
+            "zh": "约 40 米",
+            "en": "~40 meters"
+          }
+        },
+        {
+          "label": {
+            "zh": "可居住体积",
+            "en": "Habitable Volume"
+          },
+          "value": {
+            "zh": "约 122 立方米",
+            "en": "~122 m³"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天宫空间站是中国自主建造的第三代模块化空间站，也是继国际空间站后人类在轨的最大的空间基础设施。",
+        "en": "※ The Tiangong Space Station is China's self-built third-generation modular space station and the largest orbital infrastructure after the ISS."
+      }
+    },
+    {
+      "title": {
+        "zh": "🕐 轨道参数",
+        "en": "🕐 Orbital Parameters"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "轨道高度",
+            "en": "Orbital Altitude"
+          },
+          "value": {
+            "zh": "约 400 km（近地轨道）",
+            "en": "~400 km (LEO)"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道周期",
+            "en": "Orbital Period"
+          },
+          "value": {
+            "zh": "约 90 分钟",
+            "en": "~90 minutes"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道倾角",
+            "en": "Orbital Inclination"
+          },
+          "value": {
+            "zh": "约 41.5°",
+            "en": "~41.5°"
+          }
+        },
+        {
+          "label": {
+            "zh": "轨道速度",
+            "en": "Orbital Speed"
+          },
+          "value": {
+            "zh": "约 7.68 km/s",
+            "en": "~7.68 km/s"
+          }
+        },
+        {
+          "label": {
+            "zh": "每天绕地圈数",
+            "en": "Orbits per Day"
+          },
+          "value": {
+            "zh": "约 16 圈",
+            "en": "~16 orbits"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "zh": "🏗 模块构成",
+        "en": "🏗 Module Composition"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "天和核心舱",
+            "en": "Tianhe Core Module"
+          },
+          "value": {
+            "zh": "2021年4月发射 — 控制中枢+生活舱",
+            "en": "Launched Apr 2021 — control center + living quarters"
+          }
+        },
+        {
+          "label": {
+            "zh": "问天实验舱",
+            "en": "Wentian Lab Module"
+          },
+          "value": {
+            "zh": "2022年7月发射 — 生命科学实验舱",
+            "en": "Launched Jul 2022 — life science experiments"
+          }
+        },
+        {
+          "label": {
+            "zh": "梦天实验舱",
+            "en": "Mengtian Lab Module"
+          },
+          "value": {
+            "zh": "2022年10月发射 — 微重力材料科学实验舱",
+            "en": "Launched Oct 2022 — microgravity & materials science"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天宫空间站采用T型三舱结构，设计寿命10年以上，可通过在轨维护延长至15年。",
+        "en": "※ Tiangong features a T-shaped three-module layout with a design life of 10+ years, extendable to 15 years via on-orbit maintenance."
+      }
+    },
+    {
+      "title": {
+        "zh": "🔬 科学与任务",
+        "en": "🔬 Science & Missions"
+      },
+      "items": [
+        {
+          "label": {
+            "zh": "常驻乘组",
+            "en": "Permanent Crew"
+          },
+          "value": {
+            "zh": "3 名航天员，每6个月轮换",
+            "en": "3 taikonauts, rotated every 6 months"
+          }
+        },
+        {
+          "label": {
+            "zh": "首批乘组",
+            "en": "First Crew"
+          },
+          "value": {
+            "zh": "神舟十二号（2021年6月）",
+            "en": "Shenzhou-12 (June 2021)"
+          }
+        },
+        {
+          "label": {
+            "zh": "首批出舱",
+            "en": "First EVA"
+          },
+          "value": {
+            "zh": "2021年7月，持续近7小时",
+            "en": "July 2021, nearly 7 hours"
+          }
+        },
+        {
+          "label": {
+            "zh": "首次舱内授课",
+            "en": "First In-Space Lecture"
+          },
+          "value": {
+            "zh": "2021年12月天宫课堂第一课",
+            "en": "December 2021, Tiangong Classroom"
+          }
+        }
+      ],
+      "note": {
+        "zh": "※ 天宫空间站是中国载人航天'三步走'战略的第三步，标志着中国进入了长期载人航天时代。",
+        "en": "※ Tiangong is the third step of China's crewed spaceflight strategy, marking China's entry into the era of long-duration human spaceflight."
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Image Generator</h1>
+        <p class="subtitle">Powered by Pollinations.ai</p>
+
+        <div class="input-group">
+            <input type="text" id="promptInput" placeholder="Describe the image you want... 如：a cat wearing sunglasses" autocomplete="off">
+            <button id="generateBtn">Generate</button>
+        </div>
+
+        <div class="size-options">
+            <label class="size-label">
+                <input type="radio" name="size" value="square" checked> Square
+            </label>
+            <label class="size-label">
+                <input type="radio" name="size" value="landscape"> Landscape
+            </label>
+            <label class="size-label">
+                <input type="radio" name="size" value="portrait"> Portrait
+            </label>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Generating your image...</p>
+        </div>
+
+        <div id="result" class="result hidden">
+            <img id="resultImage" src="" alt="Generated image">
+            <button id="downloadBtn" class="download-btn">Download</button>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="history" class="history">
+            <h3>Recent Generations</h3>
+            <div id="historyGrid" class="history-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

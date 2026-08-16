@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pong Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="menu" class="screen">
+    <h1>PONG</h1>
+    <button id="btn-ai" class="menu-btn">Player 1 vs AI</button>
+    <button id="btn-pvp" class="menu-btn">Player 1 vs Player 2</button>
+    <button id="btn-settings-main" class="menu-btn settings-btn">Settings</button>
+  </div>
+
+  <div id="difficulty-screen" class="screen hidden">
+    <h2>Select AI Difficulty</h2>
+    <div id="stars-container">
+      <button class="star-btn" data-level="1">★</button>
+      <button class="star-btn" data-level="2">★</button>
+      <button class="star-btn" data-level="3">★</button>
+      <button class="star-btn" data-level="4">★</button>
+      <button class="star-btn" data-level="5">★</button>
+    </div>
+    <button id="btn-diff-back" class="back-btn">Back</button>
+  </div>
+
+  <div id="perspective-screen" class="screen hidden">
+    <h2>Select Perspective</h2>
+    <button id="btn-first" class="menu-btn">First Person</button>
+    <button id="btn-third" class="menu-btn">Third Person</button>
+    <button id="btn-persp-back" class="back-btn">Back</button>
+  </div>
+
+  <div id="paddle-screen" class="screen hidden">
+    <h2 id="paddle-title">Choose Your Paddle</h2>
+    <div id="paddle-grid"></div>
+    <button id="btn-paddle-confirm" class="menu-btn" disabled>Confirm</button>
+    <button id="btn-paddle-back" class="back-btn">Back</button>
+  </div>
+
+  <div id="game-screen" class="screen hidden">
+    <canvas id="game-canvas"></canvas>
+    <div id="game-score">
+      <span id="score-p1">0</span>
+      <span>-</span>
+      <span id="score-p2">0</span>
+    </div>
+    <button id="btn-pause" class="icon-btn">II</button>
+    <button id="btn-settings-game" class="icon-btn">*</button>
+  </div>
+
+  <div id="pause-screen" class="screen hidden">
+    <h2>PAUSED</h2>
+    <button id="btn-resume" class="menu-btn">Resume</button>
+    <button id="btn-quit" class="menu-btn">Quit</button>
+  </div>
+
+  <div id="game-over-screen" class="screen hidden">
+    <h2 id="game-over-title"></h2>
+    <p id="game-over-score"></p>
+    <button id="btn-restart" class="menu-btn">Play Again</button>
+    <button id="btn-main-menu" class="menu-btn">Main Menu</button>
+  </div>
+
+  <div id="settings-screen" class="screen hidden">
+    <h2>Settings</h2>
+    <div class="setting-row">
+      <span>Music</span>
+      <label class="toggle">
+        <input type="checkbox" id="toggle-music" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+    <div class="setting-row">
+      <span>Sound Effects</span>
+      <label class="toggle">
+        <input type="checkbox" id="toggle-sfx" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+    <button id="btn-settings-close" class="menu-btn">Close</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

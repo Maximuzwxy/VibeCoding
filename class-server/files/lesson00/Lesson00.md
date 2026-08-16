@@ -1,5 +1,5 @@
 ## Preparation
-- 192.168.66.207:6688
+- http://192.168.3.47:6688
 
 ## 1. Create an Elegant Presentation on Studying in the AI Era
 - Create an HTML presentation about how to study effectively in the age of artificial intelligence.

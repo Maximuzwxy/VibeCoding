@@ -1,0 +1,18 @@
+{
+  "conversations": [
+    {
+      "id": "815e553d-997e-4558-92ad-33c80f0cecf8",
+      "title": "hi",
+      "messages": [
+        {
+          "user": "hi",
+          "assistant": "Hey there! 😊 Great to see you. What's on your mind today?",
+          "timestamp": "2026-07-09T13:00:49.881582"
+        }
+      ],
+      "created": "2026-07-09T12:02:42.927093",
+      "updated": "2026-07-09T13:00:49.881613"
+    }
+  ],
+  "active": "815e553d-997e-4558-92ad-33c80f0cecf8"
+}

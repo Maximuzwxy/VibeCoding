@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多功能Pong乒乓球游戏</title>
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box;font-family:system-ui, sans-serif;}
+        body {background:#111;color:#fff;overflow:hidden;}
+        #menuWrap {
+            position:fixed;inset:0;background:rgba(0,0,0,0.95);
+            display:flex;flex-direction:column;align-items:center;justify-content:center;
+            z-index:999;gap:20px;padding:20px;
+        }
+        .hidden {display:none !important;}
+        h1 {font-size:42px;color:#0cf;margin-bottom:10px;}
+        .btn {
+            padding:14px 32px;font-size:18px;border:none;border-radius:8px;
+            cursor:pointer;background:#0cf;color:#000;font-weight:bold;
+            transition:0.2s;margin:6px;min-width:220px;
+        }
+        .btn:hover {background:#0ee;transform:scale(1.03);}
+        .btn-secondary {background:#333;color:#fff;}
+        .btn-secondary:hover {background:#444;}
+        .modal {
+            background:#222;padding:30px;border-radius:12px;max-width:600px;
+            display:flex;flex-direction:column;gap:12px;text-align:center;
+        }
+        .row {display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+        canvas {display:block;background:#000;}
+        #gameContainer {display:flex;height:100vh;width:100vw;}
+        .paddle-item {
+            width:70px;height:90px;border:2px solid #666;
+            display:flex;align-items:center;justify-content:center;
+            cursor:pointer;opacity:0.6;
+        }
+        .paddle-item.active {border-color:#0cf;opacity:1;}
+        .setting-row {margin:8px 0;font-size:16px;}
+        input[type="checkbox"] {width:18px;height:18px;}
+    </style>
+</head>
+<body>
+    <!-- 主菜单 -->
+    <div id="menuWrap">
+        <h1>PONG 对战游戏</h1>
+        <button class="btn" onclick="openModeSelect()">开始游戏</button>
+        <button class="btn btn-secondary" onclick="openSettings()">音效设置</button>
+        <div id="modeModal" class="modal hidden">
+            <h2>选择对战模式</h2>
+            <button class="btn" onclick="startAIMode()">VS AI 电脑</button>
+            <button class="btn" onclick="startTwoPlayerMode()">玩家1 VS 玩家2</button>
+            <button class="btn btn-secondary" onclick="closeAllModals()">返回</button>
+        </div>
+        <!-- AI难度选择弹窗 -->
+        <div id="aiDiffModal" class="modal hidden">
+            <h2>AI难度选择</h2>
+            <div class="row">
+                <button class="btn" onclick="setAIDiff(1)">⭐ 1星(简单)</button>
+                <button class="btn" onclick="setAIDiff(2)">⭐⭐ 2星</button>
+                <button class="btn" onclick="setAIDiff(3)">⭐⭐⭐ 3星(普通)</button>
+                <button class="btn" onclick="setAIDiff(4)">⭐⭐⭐⭐ 4星</button>
+                <button class="btn" onclick="setAIDiff(5)">⭐⭐⭐⭐⭐ 5星(地狱)</button>
+            </div>
+            <h3>视角选择</h3>
+            <button class="btn" onclick="startAIGame('first')">第一人称视角</button>
+            <button class="btn" onclick="startAIGame('third')">第三人称视角</button>
+            <button class="btn btn-secondary" onclick="closeAllModals()">返回</button>
+        </div>
+        <!-- 双人球拍选择弹窗 -->
+        <div id="twoPaddleModal" class="modal hidden">
+            <h2>选择球拍样式</h2>
+            <p>玩家1左侧 | 玩家2右侧</p>
+            <div style="margin:10px 0;">
+                <h4>玩家1球拍</h4>
+                <div class="row" id="p1PaddleList"></div>
+            </div>
+            <div style="margin:10px 0;">
+                <h4>玩家2球拍</h4>
+                <div class="row" id="p2PaddleList"></div>
+            </div>
+            <button class="btn" onclick="startTwoPlayerGame()">开始双人对战</button>
+            <button class="btn btn-secondary" onclick="closeAllModals()">返回</button>
+        </div>
+        <!-- 设置弹窗 -->
+        <div id="settingModal" class="modal hidden">
+            <h2>音频设置</h2>
+            <div class="setting-row">
+                <label>
+                    <input type="checkbox" id="bgmSwitch" checked> 背景音乐
+                </label>
+            </div>
+            <div class="setting-row">
+                <label>
+                    <input type="checkbox" id="sfxSwitch" checked> 碰撞音效
+                </label>
+            </div>
+            <button class="btn btn-secondary" onclick="closeAllModals()">确认关闭</button>
+        </div>
+    </div>
+
+    <!-- 游戏画布容器 -->
+    <div id="gameContainer" class="hidden"></div>
+
+    <script>
+        // ========== 全局配置 ==========
+        const paddleTypes = [
+            {name:"标准白",color:"#fff",w:12,h:100},
+            {name:"红色进攻",color:"#f33",w:14,h:85},
+            {name:"蓝色防守",color:"#0cf",w:10,h:120},
+            {name:"金色均衡",color:"#fc0",w:12,h:95},
+            {name:"紫色极速",color:"#a3f",w:16,h:70},
+            {name:"绿色厚重",color:"#0f6",w:9,h:140}
+        ];
+        let gameConfig = {
+            mode: null, // ai / two
+            aiDiff: 3,
+            aiView: "third",
+            p1PaddleIdx:0,
+            p2PaddleIdx:0,
+            bgmOn:true,
+            sfxOn:true
+        };
+        let audioCtx;
+        let bgmLoop;
+        let gameRunning = false;
+        let canvas1,ctx1,canvas2,ctx2;
+        let ball, p1, p2, aiPaddle;
+        let keys = {};
+
+        // ========== 音频系统 ==========
+        function initAudio(){
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            // 背景音乐简易正弦循环
+            bgmLoop = audioCtx.createOscillator();
+            const bgmGain = audioCtx.createGain();
+            bgmGain.gain.value = 0.06;
+            bgmLoop.type = "sine";
+            bgmLoop.frequency.value = 220;
+            bgmLoop.connect(bgmGain);
+            bgmGain.connect(audioCtx.destination);
+        }
+        function playBGM(){
+            if(!gameConfig.bgmOn) return;
+            if(!audioCtx) initAudio();
+            bgmLoop.start();
+        }
+        function stopBGM(){
+            try{bgmLoop.stop()}catch(e){}
+        }
+        function playHitSound(){
+            if(!gameConfig.sfxOn) return;
+            if(!audioCtx) initAudio();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+0.12);
+            osc.frequency.value = 600;
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime+0.12);
+        }
+
+        // ========== 菜单弹窗控制 ==========
+        function closeAllModals(){
+            document.querySelectorAll(".modal").forEach(m=>m.classList.add("hidden"));
+        }
+        function openModeSelect(){
+            closeAllModals();
+            document.getElementById("modeModal").classList.remove("hidden");
+        }
+        function openSettings(){
+            closeAllModals();
+            document.getElementById("settingModal").classList.remove("hidden");
+        }
+        function startAIMode(){
+            gameConfig.mode = "ai";
+            closeAllModals();
+            document.getElementById("aiDiffModal").classList.remove("hidden");
+        }
+        function setAIDiff(lv){
+            gameConfig.aiDiff = lv;
+        }
+        function startTwoPlayerMode(){
+            gameConfig.mode = "two";
+            closeAllModals();
+            renderPaddleSelect();
+            document.getElementById("twoPaddleModal").classList.remove("hidden");
+        }
+        // 渲染球拍选择面板
+        function renderPaddleSelect(){
+            const p1List = document.getElementById("p1PaddleList");
+            const p2List = document.getElementById("p2PaddleList");
+            p1List.innerHTML = ""; p2List.innerHTML = "";
+            paddleTypes.forEach((pad,i)=>{
+                const div1 = document.createElement("div");
+                div1.className = "paddle-item "+(i===gameConfig.p1PaddleIdx?"active":"");
+                div1.style.background = pad.color;
+                div1.onclick = ()=>{
+                    gameConfig.p1PaddleIdx = i; renderPaddleSelect();
+                }
+                p1List.appendChild(div1);
+
+                const div2 = document.createElement("div");
+                div2.className = "paddle-item "+(i===gameConfig.p2PaddleIdx?"active":"");
+                div2.style.background = pad.color;
+                div2.onclick = ()=>{
+                    gameConfig.p2PaddleIdx = i; renderPaddleSelect();
+                }
+                p2List.appendChild(div2);
+            })
+        }
+
+        // ========== 游戏初始化 AI模式 ==========
+        function startAIGame(viewType){
+            gameConfig.aiView = viewType;
+            closeAllModals();
+            document.getElementById("menuWrap").classList.add("hidden");
+            const container = document.getElementById("gameContainer");
+            container.classList.remove("hidden");
+            container.innerHTML = "";
+            // 画布尺寸
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            canvas1 = document.createElement("canvas");
+            canvas1.width = w; canvas1.height = h;
+            ctx1 = canvas1.getContext("2d");
+            container.appendChild(canvas1);
+            // 游戏实体
+            resetGameEntities(h,w);
+            gameRunning = true;
+            playBGM();
+            gameLoopAI();
+        }
+        // 双人分屏初始化
+        function startTwoPlayerGame(){
+            closeAllModals();
+            document.getElementById("menuWrap").classList.add("hidden");
+            const container = document.getElementById("gameContainer");
+            container.classList.remove("hidden");
+            container.innerHTML = "";
+            const w = window.innerWidth/2;
+            const h = window.innerHeight;
+            // 左画布 P1第一人称
+            canvas1 = document.createElement("canvas");
+            canvas1.width = w; canvas1.height = h;
+            ctx1 = canvas1.getContext("2d");
+            container.appendChild(canvas1);
+            // 右画布 P2第一人称
+            canvas2 = document.createElement("canvas");
+            canvas2.width = w; canvas2.height = h;
+            ctx2 = canvas2.getContext("2d");
+            container.appendChild(canvas2);
+            resetGameEntities(h,w);
+            gameRunning = true;
+            playBGM();
+            gameLoopTwo();
+        }
+
+        // ========== 游戏实体重置 ==========
+        function resetGameEntities(screenH,screenW){
+            // 球参数
+            ball = {
+                x: screenW/2, y: screenH/2, r:12,
+                dx: 6*(Math.random()>0.5?1:-1),
+                dy: (Math.random()*4-2)
+            }
+            // 玩家1球拍
+            const p1Pad = paddleTypes[gameConfig.p1PaddleIdx];
+            p1 = {
+                x: 20, y: screenH/2 - p1Pad.h/2,
+                w: p1Pad.w, h: p1Pad.h,
+                color: p1Pad.color, speed:8
+            }
+            // 玩家2/AI球拍
+            const p2Pad = paddleTypes[gameConfig.p2PaddleIdx];
+            p2 = {
+                x: screenW - 20 - p2Pad.w, y: screenH/2 - p2Pad.h/2,
+                w: p2Pad.w, h: p2Pad.h,
+                color: p2Pad.color, speed:8
+            }
+            aiPaddle = {...p2};
+        }
+
+        // ========== AI逻辑 难度控制 ==========
+        function updateAI(screenH){
+            const diff = gameConfig.aiDiff;
+            const aiSpeed = 2 + diff * 1.6;
+            const errorOffset = (6 - diff) * 25; // 难度越低预判误差越大
+            const targetY = ball.y + (Math.random()*errorOffset - errorOffset/2);
+            if(aiPaddle.y + aiPaddle.h/2 < targetY - 5){
+                aiPaddle.y += aiSpeed;
+            }else if(aiPaddle.y + aiPaddle.h/2 > targetY +5){
+                aiPaddle.y -= aiSpeed;
+            }
+            // 边界限制
+            aiPaddle.y = Math.max(0, Math.min(screenH - aiPaddle.h, aiPaddle.y));
+        }
+
+        // ========== 碰撞检测：球碰拍子反弹 ==========
+        function checkCollision(screenW,screenH){
+            // 上下边界反弹
+            if(ball.y - ball.r <=0 || ball.y + ball.r >= screenH){
+                ball.dy *= -1;
+                playHitSound();
+            }
+            // 左右出界重置
+            if(ball.x - ball.r <=0 || ball.x + ball.r >= screenW){
+                resetGameEntities(screenH,screenW);
+                return;
+            }
+            // 球拍碰撞 只要碰到就反弹
+            // P1球拍
+            if(ball.x - ball.r < p1.x + p1.w
+                && ball.y > p1.y && ball.y < p1.y + p1.h
+                && ball.x > p1.x){
+                ball.dx *= -1;
+                ball.dx += 0.3; // 加速
+                playHitSound();
+            }
+            // AI/P2球拍
+            const targetPad = gameConfig.mode==="ai" ? aiPaddle : p2;
+            if(ball.x + ball.r > targetPad.x
+                && ball.y > targetPad.y && ball.y < targetPad.y + targetPad.h
+                && ball.x < targetPad.x + targetPad.w){
+                ball.dx *= -1;
+                ball.dx -= 0.3;
+                playHitSound();
+            }
+        }
+
+        // ========== 绘制函数 ==========
+        function drawScene(ctx, isFirstPerson, screenW, screenH){
+            ctx.fillStyle = "#000";
+            ctx.fillRect(0,0,screenW,screenH);
+            // 中线
+            ctx.strokeStyle = "#444";
+            ctx.setLineDash([10,10]);
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(screenW/2,0);
+            ctx.lineTo(screenW/2,screenH);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // 第一人称视角偏移（镜头跟随自己球拍）
+            let offsetX = 0;
+            if(isFirstPerson){
+                offsetX = screenW/2 - p1.x - p1.w/2;
+            }
+            ctx.save();
+            ctx.translate(offsetX,0);
+
+            // 绘制玩家1球拍
+            ctx.fillStyle = p1.color;
+            ctx.fillRect(p1.x,p1.y,p1.w,p1.h);
+            // 绘制对手球拍
+            const targetPad = gameConfig.mode==="ai"?aiPaddle:p2;
+            ctx.fillStyle = targetPad.color;
+            ctx.fillRect(targetPad.x,targetPad.y,targetPad.w,targetPad.h);
+            // 绘制球
+            ctx.beginPath();
+            ctx.arc(ball.x,ball.y,ball.r,0,Math.PI*2);
+            ctx.fillStyle = "#fff";
+            ctx.fill();
+            ctx.restore();
+        }
+
+        // ========== AI游戏主循环 ==========
+        function gameLoopAI(){
+            if(!gameRunning) return;
+            const w = canvas1.width;
+            const h = canvas1.height;
+            // 玩家1移动
+            if(keys["w"] || keys["ArrowUp"]) p1.y -= p1.speed;
+            if(keys["s"] || keys["ArrowDown"]) p1.y += p1.speed;
+            p1.y = Math.max(0, Math.min(h-p1.h, p1.y));
+            // AI更新
+            updateAI(h);
+            // 球移动
+            ball.x += ball.dx;
+            ball.y += ball.dy;
+            checkCollision(w,h);
+            // 渲染
+            drawScene(ctx1, gameConfig.aiView==="first", w, h);
+            requestAnimationFrame(gameLoopAI);
+        }
+
+        // ========== 双人分屏循环 ==========
+        function gameLoopTwo(){
+            if(!gameRunning) return;
+            const w = canvas1.width;
+            const h = canvas1.height;
+            // P1控制 W S
+            if(keys["w"]) p1.y -= p1.speed;
+            if(keys["s"]) p1.y += p1.speed;
+            p1.y = Math.max(0, Math.min(h-p1.h, p1.y));
+            // P2 上下箭头
+            if(keys["ArrowUp"]) p2.y -= p2.speed;
+            if(keys["ArrowDown"]) p2.y += p2.speed;
+            p2.y = Math.max(0, Math.min(h-p2.h, p2.h));
+            // 球运动
+            ball.x += ball.dx;
+            ball.y += ball.dy;
+            checkCollision(w,h);
+            // 左画布 P1第一人称
+            drawScene(ctx1, true, w, h);
+            // 右画布 P2第一人称（镜像偏移）
+            ctx2.save();
+            ctx2.scale(-1,1);
+            ctx2.translate(-w,0);
+            drawScene(ctx2, true, w, h);
+            ctx2.restore();
+            requestAnimationFrame(gameLoopTwo);
+        }
+
+        // ========== 键盘监听 ==========
+        window.addEventListener("keydown",e=>{
+            keys[e.key] = true;
+        })
+        window.addEventListener("keyup",e=>{
+            keys[e.key] = false;
+        })
+        // 设置音频开关同步
+        document.getElementById("bgmSwitch").onchange = e=>{
+            gameConfig.bgmOn = e.target.checked;
+            if(gameRunning && gameConfig.bgmOn) playBGM();
+            else stopBGM();
+        }
+        document.getElementById("sfxSwitch").onchange = e=>{
+            gameConfig.sfxOn = e.target.checked;
+        }
+        // 窗口适配
+        window.addEventListener("resize",()=>{
+            if(gameRunning){
+                location.reload();
+            }
+        })
+    </script>
+</body>
+</html>

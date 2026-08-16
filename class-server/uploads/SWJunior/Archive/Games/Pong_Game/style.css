@@ -1,0 +1,200 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+}
+
+/* ===== SETTINGS PAGE ===== */
+.settings-page {
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-card {
+    background: #fff;
+    border: 3px solid #222;
+    border-radius: 12px;
+    padding: 40px 50px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    max-width: 420px;
+    width: 90%;
+}
+
+.settings-title {
+    font-size: 42px;
+    letter-spacing: 10px;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.settings-subtitle {
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.settings-brand {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 48px;
+    font-weight: bold;
+    color: #e0e0e0;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+.settings-smile {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-size: 48px;
+    font-weight: bold;
+    color: #e0e0e0;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+.setting-group {
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.setting-group > label {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.setting-options {
+    display: flex;
+    gap: 8px;
+}
+
+.setting-btn {
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    color: #555;
+    padding: 8px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+}
+
+.setting-btn:hover {
+    background: #e0e0e0;
+    border-color: #aaa;
+}
+
+.setting-btn.active {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+}
+
+#soundBtn.sound-on {
+    background: #222;
+    color: #00FF00;
+    border-color: #222;
+}
+
+#soundBtn.muted {
+    background: #222;
+    color: #FF4444;
+    border-color: #222;
+}
+
+.start-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.start-btn:hover {
+    background: #FFD700;
+    color: #222;
+}
+
+/* ===== GAME PAGE ===== */
+.game-page {
+    background: #0a0a0a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.game-page h1 {
+    margin: 10px 0 0 0;
+    letter-spacing: 8px;
+    font-size: 36px;
+}
+
+.scoreboard {
+    display: flex;
+    gap: 60px;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.scoreboard span {
+    color: #00FF00;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+canvas {
+    border: 3px solid #1a1a1a;
+    background: #0A1628;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.controls {
+    margin-top: 12px;
+    color: #666;
+    font-size: 14px;
+}
+
+.power-status {
+    height: 22px;
+    font-size: 13px;
+    margin-bottom: 2px;
+    color: #FFD700;
+}
+
+.speed-slider {
+    width: 100%;
+    accent-color: #222;
+    cursor: pointer;
+    margin-top: 4px;
+}

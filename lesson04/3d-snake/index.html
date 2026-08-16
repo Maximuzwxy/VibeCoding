@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Snake - First Person</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hud">
+    <div class="hud-item">Score: <span id="score">0</span></div>
+    <div class="hud-item">Length: <span id="length">3</span></div>
+  </div>
+
+  <div id="start-overlay">
+    <h1>3D SNAKE</h1>
+    <p>First-Person Edition</p>
+    <button id="start-btn">START</button>
+    <div class="controls">
+      <p>Mouse — Look Around</p>
+      <p>W / ↑ — Move Forward</p>
+      <p>S / ↓ — Slow Down</p>
+    </div>
+  </div>
+
+  <div id="gameover-overlay" class="hidden">
+    <h1>GAME OVER</h1>
+    <p>Score: <span id="final-score">0</span></p>
+    <button id="restart-btn">RESTART</button>
+  </div>
+
+  <div id="crosshair" class="hidden">+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

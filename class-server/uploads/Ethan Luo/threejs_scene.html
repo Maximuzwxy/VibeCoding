@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three.js Scene</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
+  canvas { display: block; }
+
+  /* ── Panels ── */
+  .panel {
+    position: fixed; top: 10px; bottom: 10px;
+    background: rgba(18,18,26,0.94);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    color: #ccc; z-index: 10;
+    overflow-y: auto; overflow-x: hidden;
+  }
+  .panel::-webkit-scrollbar { width: 4px; }
+  .panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+
+  #left-panel { left: 10px; width: 260px; padding: 14px; display: flex; flex-direction: column; gap: 16px; }
+  #right-panel { right: 10px; width: 240px; padding: 14px; display: none; }
+
+  h2 { font-size: 14px; color: #fff; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; }
+  h3 { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+
+  /* ── Form ── */
+  .form-group { margin-bottom: 8px; }
+  .form-group label { display: block; font-size: 11px; color: #888; margin-bottom: 2px; }
+  .form-row { display: flex; gap: 6px; }
+  .form-row input, .form-row select { flex: 1; }
+
+  input, select, button {
+    background: rgba(255,255,255,0.06); color: #ddd; border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 5px; padding: 6px 8px; font-size: 12px; outline: none; transition: border 0.2s;
+  }
+  input:focus, select:focus { border-color: rgba(100,160,255,0.5); }
+  input[type="color"] {
+    width: 36px; height: 28px; padding: 2px; cursor: pointer; flex: 0 0 auto;
+  }
+  input[type="range"] { padding: 0; height: 20px; }
+
+  button {
+    cursor: pointer; font-weight: 600; letter-spacing: 0.5px;
+    transition: all 0.2s;
+  }
+  button:hover { background: rgba(255,255,255,0.12); }
+  .btn-add {
+    background: rgba(80,160,255,0.2); border-color: rgba(80,160,255,0.4); color: #7cb8ff;
+    width: 100%; padding: 8px; font-size: 13px;
+  }
+  .btn-add:hover { background: rgba(80,160,255,0.3); }
+  .btn-random { flex: 0 0 auto; padding: 6px 10px; font-size: 11px; }
+  .btn-del {
+    background: transparent; border: none; color: #f66; cursor: pointer;
+    font-size: 16px; padding: 0 4px; line-height: 1;
+  }
+  .btn-del:hover { color: #f00; }
+  .btn-reset {
+    width: 100%; padding: 7px; margin-top: 10px;
+    font-size: 12px; color: #ff8866;
+    background: rgba(255,100,60,0.12); border-color: rgba(255,100,60,0.3);
+  }
+  .btn-reset:hover { background: rgba(255,100,60,0.25); }
+
+  /* ── Object list ── */
+  #object-list { list-style: none; max-height: 300px; overflow-y: auto; }
+  #object-list li {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 8px; margin-bottom: 3px; border-radius: 5px;
+    cursor: pointer; font-size: 12px; transition: background 0.15s;
+    background: rgba(255,255,255,0.03);
+  }
+  #object-list li:hover { background: rgba(255,255,255,0.08); }
+  #object-list li.selected { background: rgba(255,220,80,0.15); border: 1px solid rgba(255,220,80,0.3); }
+  #object-list li .name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #object-list li .pos { color: #777; font-size: 10px; margin: 0 8px; white-space: nowrap; }
+
+  /* ── Right panel props ── */
+  .prop-row { margin-bottom: 8px; }
+  .prop-row label { display: block; font-size: 11px; color: #888; margin-bottom: 2px; }
+  .prop-row input { width: 100%; }
+  #no-selection { color: #666; font-size: 12px; text-align: center; padding: 30px 0; }
+
+  /* ── Bottom info ── */
+  #info {
+    position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%);
+    color: #555; font-family: monospace; font-size: 12px;
+    background: rgba(0,0,0,0.5); padding: 3px 12px; border-radius: 4px;
+    pointer-events: none; z-index: 5;
+  }
+
+  /* ── Mode toggle ── */
+  .mode-toggle {
+    display: flex; gap: 0;
+  }
+  .mode-toggle button {
+    flex: 1; padding: 8px; font-size: 13px; border-radius: 0;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: #888;
+  }
+  .mode-toggle button:first-child { border-radius: 5px 0 0 5px; }
+  .mode-toggle button:last-child { border-radius: 0 5px 5px 0; }
+  .mode-toggle button.active {
+    background: rgba(80,160,255,0.25); border-color: rgba(80,160,255,0.5); color: #7cb8ff;
+  }
+
+  /* ── Crosshair ── */
+  #crosshair {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 20px; height: 20px; z-index: 15; pointer-events: none; display: none;
+  }
+  #crosshair::before, #crosshair::after {
+    content: ''; position: absolute; background: rgba(255,255,255,0.7);
+  }
+  #crosshair::before { top: 50%; left: 0; right: 0; height: 2px; transform: translateY(-50%); }
+  #crosshair::after { left: 50%; top: 0; bottom: 0; width: 2px; transform: translateX(-50%); }
+
+  /* ── FPS info ── */
+  #fps-info {
+    position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.6); font-size: 12px; font-family: monospace;
+    z-index: 15; pointer-events: none; display: none;
+    background: rgba(0,0,0,0.4); padding: 4px 10px; border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Left panel -->
+<div id="left-panel" class="panel">
+  <div class="mode-toggle">
+    <button id="mode-orbit" class="active">Orbit</button>
+    <button id="mode-fps">FPS</button>
+  </div>
+
+  <h2>添加 3D 对象</h2>
+
+  <div class="form-group">
+    <label>名称（可选）</label>
+    <input type="text" id="obj-name" placeholder="未命名对象" style="width:100%">
+  </div>
+
+  <div class="form-group">
+    <label>几何体类型</label>
+    <select id="geom-type">
+      <option value="box">Box 立方体</option>
+      <option value="sphere">Sphere 球体</option>
+      <option value="cylinder">Cylinder 圆柱</option>
+      <option value="cone">Cone 圆锥</option>
+    </select>
+  </div>
+
+  <!-- Dynamic size fields -->
+  <div class="form-group">
+    <label id="size-label">尺寸 (宽 / 高 / 深)</label>
+    <div class="form-row" id="size-fields">
+      <input type="number" id="size-1" value="1" step="0.1" min="0.1" placeholder="W">
+      <input type="number" id="size-2" value="1" step="0.1" min="0.1" placeholder="H">
+      <input type="number" id="size-3" value="1" step="0.1" min="0.1" placeholder="D">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>颜色</label>
+    <div class="form-row">
+      <input type="color" id="obj-color" value="#4488cc">
+      <button class="btn-random" id="btn-random-color">🎲 随机</button>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>位置</label>
+    <div class="form-row">
+      <input type="number" id="pos-x" value="0" step="0.1" placeholder="X">
+      <input type="number" id="pos-y" value="1" step="0.1" placeholder="Y">
+      <input type="number" id="pos-z" value="0" step="0.1" placeholder="Z">
+    </div>
+  </div>
+
+  <button class="btn-add" id="btn-add">+ 添加对象</button>
+
+  <h2>对象列表</h2>
+  <ul id="object-list"></ul>
+</div>
+
+<!-- Right panel (properties) -->
+<div id="right-panel" class="panel">
+  <h2>属性编辑</h2>
+  <div id="no-selection">点击列表或场景中的对象进行编辑</div>
+
+  <div id="props-content" style="display:none;">
+    <h3 id="props-name" style="color:#ffcc44;"></h3>
+
+    <h3>位置</h3>
+    <div class="prop-row"><div class="form-row">
+      <input type="number" id="prop-pos-x" step="0.1" placeholder="X">
+      <input type="number" id="prop-pos-y" step="0.1" placeholder="Y">
+      <input type="number" id="prop-pos-z" step="0.1" placeholder="Z">
+    </div></div>
+
+    <h3>旋转角度 (°)</h3>
+    <div class="prop-row"><div class="form-row">
+      <input type="number" id="prop-angle-x" value="0" step="1" placeholder="X°">
+      <input type="number" id="prop-angle-y" value="0" step="1" placeholder="Y°">
+      <input type="number" id="prop-angle-z" value="0" step="1" placeholder="Z°">
+    </div></div>
+
+    <h3>旋转速度</h3>
+    <div class="prop-row"><div class="form-row">
+      <input type="number" id="prop-rot-x" value="0" step="0.1" placeholder="X">
+      <input type="number" id="prop-rot-y" value="0" step="0.1" placeholder="Y">
+      <input type="number" id="prop-rot-z" value="0" step="0.1" placeholder="Z">
+    </div></div>
+
+    <h3>缩放</h3>
+    <div class="prop-row"><div class="form-row">
+      <input type="number" id="prop-scale-x" value="1" step="0.1" min="0.1" placeholder="X">
+      <input type="number" id="prop-scale-y" value="1" step="0.1" min="0.1" placeholder="Y">
+      <input type="number" id="prop-scale-z" value="1" step="0.1" min="0.1" placeholder="Z">
+    </div></div>
+
+    <button id="btn-reset-transform" class="btn-reset">↺ 重置变换</button>
+  </div>
+</div>
+
+<div id="info">拖拽旋转 | 滚轮缩放 | 右键平移 | 点击对象选中</div>
+<div id="crosshair"></div>
+<div id="fps-info">WASD 移动 | 鼠标环顾 | 空格跳跃 | Enter 切换视角 | Esc 退出</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+
+// ── DOM refs ──
+const elGeomType = document.getElementById('geom-type');
+const elSizeLabel = document.getElementById('size-label');
+const elSizeFields = document.getElementById('size-fields');
+const elSize1 = document.getElementById('size-1');
+const elSize2 = document.getElementById('size-2');
+const elSize3 = document.getElementById('size-3');
+const elObjName = document.getElementById('obj-name');
+const elObjColor = document.getElementById('obj-color');
+const elPosX = document.getElementById('pos-x');
+const elPosY = document.getElementById('pos-y');
+const elPosZ = document.getElementById('pos-z');
+const elObjList = document.getElementById('object-list');
+const elRightPanel = document.getElementById('right-panel');
+const elNoSel = document.getElementById('no-selection');
+const elPropsContent = document.getElementById('props-content');
+const elPropsName = document.getElementById('props-name');
+const elPropPosX = document.getElementById('prop-pos-x');
+const elPropPosY = document.getElementById('prop-pos-y');
+const elPropPosZ = document.getElementById('prop-pos-z');
+const elPropRotX = document.getElementById('prop-rot-x');
+const elPropRotY = document.getElementById('prop-rot-y');
+const elPropRotZ = document.getElementById('prop-rot-z');
+const elPropAngleX = document.getElementById('prop-angle-x');
+const elPropAngleY = document.getElementById('prop-angle-y');
+const elPropAngleZ = document.getElementById('prop-angle-z');
+const elPropSX = document.getElementById('prop-scale-x');
+const elPropSY = document.getElementById('prop-scale-y');
+const elPropSZ = document.getElementById('prop-scale-z');
+const elLeftPanel = document.getElementById('left-panel');
+const elModeOrbit = document.getElementById('mode-orbit');
+const elModeFps = document.getElementById('mode-fps');
+const elCrosshair = document.getElementById('crosshair');
+const elFpsInfo = document.getElementById('fps-info');
+const elInfo = document.getElementById('info');
+
+// ── Scene setup ──
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x111118);
+
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+camera.position.set(5, 5, 5);
+camera.lookAt(0, 0, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+
+// Lights
+scene.add(new THREE.AmbientLight(0x404060, 1.5));
+const dirLight = new THREE.DirectionalLight(0xffffff, 2.5);
+dirLight.position.set(8, 12, 6);
+scene.add(dirLight);
+
+// Grid
+scene.add(new THREE.GridHelper(10, 20, 0x333344, 0x222233));
+
+// Axes
+function makeArrow(dir, color) {
+  const a = new THREE.ArrowHelper(dir, new THREE.Vector3(0,0,0), 4, color, 0.3, 0.15);
+  scene.add(a);
+}
+makeArrow(new THREE.Vector3(1,0,0), 0xff4444);
+makeArrow(new THREE.Vector3(0,1,0), 0x44ff44);
+makeArrow(new THREE.Vector3(0,0,1), 0x4488ff);
+
+// Origin
+const origin = new THREE.Mesh(
+  new THREE.SphereGeometry(0.12), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0.8 })
+);
+scene.add(origin);
+
+// Axis labels
+function label(text, pos, color) {
+  const c = document.createElement('canvas');
+  c.width = c.height = 64;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = color;
+  ctx.font = 'bold 48px monospace';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 32, 32);
+  const t = new THREE.CanvasTexture(c);
+  t.minFilter = THREE.LinearFilter;
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t }));
+  s.position.copy(pos);
+  s.scale.set(0.6, 0.6, 1);
+  scene.add(s);
+}
+label('X', new THREE.Vector3(4.5, 0, 0), '#ff6666');
+label('Y', new THREE.Vector3(0, 4.5, 0), '#66ff66');
+label('Z', new THREE.Vector3(0, 0, 4.5), '#6699ff');
+
+// Controls
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0, 0);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.minDistance = 2;
+controls.maxDistance = 20;
+controls.update();
+
+// ── Object management ──
+const objects = []; // { mesh, outlineGroup, name, rotationSpeed: {x,y,z} }
+let selectedIndex = -1;
+
+function createOutline(mesh) {
+  const group = new THREE.Group();
+  mesh.add(group);
+  const geo = mesh.geometry.clone();
+  const mat = new THREE.MeshBasicMaterial({ color: 0xffdd44, wireframe: true, transparent: true, opacity: 0.6 });
+  const outline = new THREE.Mesh(geo, mat);
+  outline.scale.setScalar(1.06);
+  group.add(outline);
+  group.visible = false;
+  return group;
+}
+
+function getSizeConfig() {
+  const t = elGeomType.value;
+  if (t === 'box') return { label: '尺寸 (宽 / 高 / 深)', fields: 3, p1: '宽', p2: '高', p3: '深' };
+  if (t === 'sphere') return { label: '尺寸 (半径)', fields: 1, p1: '半径' };
+  if (t === 'cylinder') return { label: '尺寸 (顶半径 / 底半径 / 高)', fields: 3, p1: '顶半径', p2: '底半径', p3: '高' };
+  if (t === 'cone') return { label: '尺寸 (半径 / 高)', fields: 2, p1: '半径', p2: '高' };
+}
+
+function updateSizeFields() {
+  const cfg = getSizeConfig();
+  elSizeLabel.textContent = cfg.label;
+  const inputs = elSizeFields.querySelectorAll('input');
+  inputs[0].style.display = '';
+  inputs[1].style.display = cfg.fields >= 2 ? '' : 'none';
+  inputs[2].style.display = cfg.fields >= 3 ? '' : 'none';
+  inputs[0].placeholder = cfg.p1;
+  if (cfg.fields >= 2) inputs[1].placeholder = cfg.p2;
+  if (cfg.fields >= 3) inputs[2].placeholder = cfg.p3;
+}
+
+elGeomType.addEventListener('change', updateSizeFields);
+updateSizeFields();
+
+document.getElementById('btn-random-color').addEventListener('click', () => {
+  elObjColor.value = '#' + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');
+});
+
+function buildGeometry() {
+  const t = elGeomType.value;
+  const v1 = parseFloat(elSize1.value) || 1;
+  const v2 = parseFloat(elSize2.value) || 1;
+  const v3 = parseFloat(elSize3.value) || 1;
+  if (t === 'box') return new THREE.BoxGeometry(v1, v2, v3);
+  if (t === 'sphere') return new THREE.SphereGeometry(v1, 32, 32);
+  if (t === 'cylinder') return new THREE.CylinderGeometry(v1, v2, v3, 32);
+  if (t === 'cone') return new THREE.CylinderGeometry(v1, 0, v2, 32);
+}
+
+function addObject() {
+  const name = elObjName.value.trim() || '未命名';
+  const color = elObjColor.value;
+  const px = parseFloat(elPosX.value) || 0;
+  const py = parseFloat(elPosY.value) || 0;
+  const pz = parseFloat(elPosZ.value) || 0;
+
+  const geo = buildGeometry();
+  const mat = new THREE.MeshStandardMaterial({ color, roughness: 0.4, metalness: 0.1 });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.set(px, py, pz);
+  mesh.castShadow = true;
+
+  const outlineGroup = createOutline(mesh);
+  scene.add(mesh);
+
+  const entry = {
+    mesh,
+    outlineGroup,
+    name,
+    rotationSpeed: { x: 0, y: 0, z: 0 },
+    color,
+    initial: {
+      pos: { x: px, y: py, z: pz },
+      rot: { x: 0, y: 0, z: 0 },
+      scale: { x: 1, y: 1, z: 1 },
+    },
+  };
+  objects.push(entry);
+
+  selectObject(objects.length - 1);
+  renderObjectList();
+
+  // Clear name for next
+  elObjName.value = '';
+}
+
+function deleteObject(index) {
+  if (index < 0 || index >= objects.length) return;
+  const obj = objects[index];
+  scene.remove(obj.mesh);
+  obj.mesh.geometry.dispose();
+  obj.mesh.material.dispose();
+  objects.splice(index, 1);
+
+  if (selectedIndex === index) selectObject(-1);
+  else if (selectedIndex > index) selectedIndex--;
+  renderObjectList();
+}
+
+function selectObject(index) {
+  // Deselect old
+  if (selectedIndex >= 0 && selectedIndex < objects.length) {
+    objects[selectedIndex].outlineGroup.visible = false;
+  }
+  selectedIndex = index;
+  if (index >= 0 && index < objects.length) {
+    objects[index].outlineGroup.visible = true;
+  }
+  renderObjectList();
+  updatePropsPanel();
+}
+
+function renderObjectList() {
+  elObjList.innerHTML = '';
+  objects.forEach((obj, i) => {
+    const li = document.createElement('li');
+    if (i === selectedIndex) li.classList.add('selected');
+
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'name';
+    nameSpan.textContent = obj.name;
+
+    const posSpan = document.createElement('span');
+    posSpan.className = 'pos';
+    const p = obj.mesh.position;
+    posSpan.textContent = `${p.x.toFixed(1)}, ${p.y.toFixed(1)}, ${p.z.toFixed(1)}`;
+
+    const delBtn = document.createElement('button');
+    delBtn.className = 'btn-del';
+    delBtn.innerHTML = '&times;';
+    delBtn.title = '删除';
+    delBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      deleteObject(i);
+    });
+
+    li.appendChild(nameSpan);
+    li.appendChild(posSpan);
+    li.appendChild(delBtn);
+
+    li.addEventListener('click', (e) => {
+      if (e.target === delBtn) return;
+      selectObject(i);
+    });
+
+    elObjList.appendChild(li);
+  });
+}
+
+function updatePropsPanel() {
+  if (selectedIndex < 0 || selectedIndex >= objects.length) {
+    elRightPanel.style.display = 'none';
+    return;
+  }
+  elRightPanel.style.display = 'block';
+  elNoSel.style.display = 'none';
+  elPropsContent.style.display = '';
+
+  const obj = objects[selectedIndex];
+  elPropsName.textContent = obj.name;
+
+  const p = obj.mesh.position;
+  elPropPosX.value = p.x.toFixed(2);
+  elPropPosY.value = p.y.toFixed(2);
+  elPropPosZ.value = p.z.toFixed(2);
+
+  elPropRotX.value = obj.rotationSpeed.x;
+  elPropRotY.value = obj.rotationSpeed.y;
+  elPropRotZ.value = obj.rotationSpeed.z;
+
+  const r = obj.mesh.rotation;
+  elPropAngleX.value = ((r.x * 180) / Math.PI).toFixed(1);
+  elPropAngleY.value = ((r.y * 180) / Math.PI).toFixed(1);
+  elPropAngleZ.value = ((r.z * 180) / Math.PI).toFixed(1);
+
+  const s = obj.mesh.scale;
+  elPropSX.value = s.x.toFixed(2);
+  elPropSY.value = s.y.toFixed(2);
+  elPropSZ.value = s.z.toFixed(2);
+}
+
+// Props change handlers
+function onPropChange() {
+  if (selectedIndex < 0 || selectedIndex >= objects.length) return;
+  const obj = objects[selectedIndex];
+  obj.mesh.position.set(
+    parseFloat(elPropPosX.value) || 0,
+    parseFloat(elPropPosY.value) || 0,
+    parseFloat(elPropPosZ.value) || 0
+  );
+  obj.rotationSpeed.x = parseFloat(elPropRotX.value) || 0;
+  obj.rotationSpeed.y = parseFloat(elPropRotY.value) || 0;
+  obj.rotationSpeed.z = parseFloat(elPropRotZ.value) || 0;
+  obj.mesh.rotation.set(
+    (parseFloat(elPropAngleX.value) || 0) * Math.PI / 180,
+    (parseFloat(elPropAngleY.value) || 0) * Math.PI / 180,
+    (parseFloat(elPropAngleZ.value) || 0) * Math.PI / 180
+  );
+  obj.mesh.scale.set(
+    parseFloat(elPropSX.value) || 1,
+    parseFloat(elPropSY.value) || 1,
+    parseFloat(elPropSZ.value) || 1
+  );
+  renderObjectList();
+}
+[elPropPosX,elPropPosY,elPropPosZ,elPropRotX,elPropRotY,elPropRotZ,elPropAngleX,elPropAngleY,elPropAngleZ,elPropSX,elPropSY,elPropSZ]
+  .forEach(el => el.addEventListener('input', onPropChange));
+
+// ── Reset transform ──
+document.getElementById('btn-reset-transform').addEventListener('click', () => {
+  if (selectedIndex < 0 || selectedIndex >= objects.length) return;
+  const obj = objects[selectedIndex];
+  const init = obj.initial;
+  obj.mesh.position.set(init.pos.x, init.pos.y, init.pos.z);
+  obj.mesh.rotation.set(init.rot.x, init.rot.y, init.rot.z);
+  obj.mesh.scale.set(init.scale.x, init.scale.y, init.scale.z);
+  obj.rotationSpeed.x = obj.rotationSpeed.y = obj.rotationSpeed.z = 0;
+  updatePropsPanel();
+  renderObjectList();
+});
+
+// ── Add button ──
+document.getElementById('btn-add').addEventListener('click', addObject);
+
+// ── Raycaster click-to-select ──
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+let mouseMoved = false;
+
+renderer.domElement.addEventListener('pointerdown', (e) => { mouseMoved = false; });
+renderer.domElement.addEventListener('pointermove', () => { mouseMoved = true; });
+
+renderer.domElement.addEventListener('pointerup', (e) => {
+  if (mouseMoved) return;
+  if (e.button !== 0) return;
+  if (fpsMode) return;
+
+  mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const meshes = objects.map(o => o.mesh);
+  const intersects = raycaster.intersectObjects(meshes, false);
+
+  if (intersects.length > 0) {
+    const hitMesh = intersects[0].object;
+    const idx = objects.findIndex(o => o.mesh === hitMesh);
+    if (idx >= 0) selectObject(idx);
+  } else {
+    selectObject(-1);
+  }
+});
+
+// ── Animation loop ──
+
+// ── FPS mode ──
+let fpsMode = false;
+let thirdPerson = false;
+const fpsControls = new PointerLockControls(camera, renderer.domElement);
+fpsControls.enabled = false;
+const fpsVelocity = new THREE.Vector3();
+const fpsDir = new THREE.Vector3();
+const fpsKeys = {};
+let fpsCanJump = true;
+const PLAYER_HEIGHT = 1.8;
+const PLAYER_RADIUS = 0.4;
+const BOUNDARY = 4.5;
+
+// Player body (visible in third person)
+const playerGeo = new THREE.CylinderGeometry(PLAYER_RADIUS, PLAYER_RADIUS, PLAYER_HEIGHT, 16);
+const playerMat = new THREE.MeshStandardMaterial({ color: 0x3388ff, roughness: 0.5 });
+const playerBody = new THREE.Mesh(playerGeo, playerMat);
+playerBody.position.y = PLAYER_HEIGHT / 2;
+playerBody.visible = false;
+scene.add(playerBody);
+
+// Obstacles (for FPS collision)
+const fpsObstacles = [];
+
+function spawnObstacles() {
+  // Clear old
+  fpsObstacles.forEach(o => { scene.remove(o.mesh); });
+  fpsObstacles.length = 0;
+  const types = [
+    () => new THREE.BoxGeometry(0.8 + Math.random(), 0.5 + Math.random() * 1.5, 0.8 + Math.random()),
+    () => new THREE.SphereGeometry(0.4 + Math.random() * 0.5, 16, 16),
+    () => new THREE.CylinderGeometry(0.3 + Math.random() * 0.4, 0.3 + Math.random() * 0.4, 0.8 + Math.random(), 16),
+  ];
+  for (let i = 0; i < 15; i++) {
+    const geo = types[Math.floor(Math.random() * 3)]();
+    const mat = new THREE.MeshStandardMaterial({
+      color: new THREE.Color().setHSL(Math.random(), 0.6, 0.3 + Math.random() * 0.4),
+      roughness: 0.5
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    let px, pz;
+    do {
+      px = (Math.random() - 0.5) * 8;
+      pz = (Math.random() - 0.5) * 8;
+    } while (Math.abs(px) < 1.5 && Math.abs(pz) < 1.5);
+    mesh.position.set(px, geo.parameters?.height ? geo.parameters.height / 2 : 0.5, pz);
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    scene.add(mesh);
+    fpsObstacles.push({ mesh, radius: 0.6 });
+  }
+}
+spawnObstacles();
+
+// FPS key handlers
+document.addEventListener('keydown', (e) => {
+  fpsKeys[e.code] = true;
+  if (!fpsMode) return;
+  if (e.code === 'Enter') { thirdPerson = !thirdPerson; }
+  if (e.code === 'Escape') switchToOrbit();
+});
+document.addEventListener('keyup', (e) => { fpsKeys[e.code] = false; });
+
+function switchToFPS() {
+  fpsMode = true;
+  thirdPerson = false;
+  elLeftPanel.style.display = 'none';
+  elRightPanel.style.display = 'none';
+  elInfo.style.display = 'none';
+  elCrosshair.style.display = 'block';
+  elFpsInfo.style.display = 'block';
+  elModeOrbit.classList.remove('active');
+  elModeFps.classList.add('active');
+  controls.enabled = false;
+  camera.position.set(0, PLAYER_HEIGHT, 0);
+  fpsVelocity.set(0, 0, 0);
+  fpsCanJump = true;
+  spawnObstacles();
+  fpsControls.enabled = true;
+  fpsControls.lock();
+  selectObject(-1);
+}
+
+function switchToOrbit() {
+  fpsMode = false;
+  thirdPerson = false;
+  fpsControls.enabled = false;
+  fpsControls.unlock();
+  elLeftPanel.style.display = '';
+  elInfo.style.display = '';
+  elCrosshair.style.display = 'none';
+  elFpsInfo.style.display = 'none';
+  elModeOrbit.classList.add('active');
+  elModeFps.classList.remove('active');
+  playerBody.visible = false;
+  controls.enabled = true;
+  camera.position.set(5, 5, 5);
+  controls.target.set(0, 0, 0);
+  controls.update();
+}
+
+elModeOrbit.addEventListener('click', () => { if (fpsMode) switchToOrbit(); });
+elModeFps.addEventListener('click', () => { if (!fpsMode) switchToFPS(); });
+
+// Collision helper
+function checkCollision(pos) {
+  for (const obs of fpsObstacles) {
+    const dx = pos.x - obs.mesh.position.x;
+    const dz = pos.z - obs.mesh.position.z;
+    const dist = Math.sqrt(dx * dx + dz * dz);
+    const minDist = PLAYER_RADIUS + obs.radius;
+    if (dist < minDist) {
+      const nx = dx / dist;
+      const nz = dz / dist;
+      const overlap = minDist - dist;
+      return { hit: true, nx, nz, overlap };
+    }
+  }
+  return { hit: false };
+}
+
+function updateFPS(dt) {
+  if (!fpsMode || !fpsControls.isLocked) return;
+
+  // Gravity
+  fpsVelocity.y -= 12 * dt;
+
+  // Movement direction from camera
+  fpsDir.set(0, 0, 0);
+  if (fpsKeys['KeyW']) fpsDir.z -= 1;
+  if (fpsKeys['KeyS']) fpsDir.z += 1;
+  if (fpsKeys['KeyA']) fpsDir.x -= 1;
+  if (fpsKeys['KeyD']) fpsDir.x += 1;
+  fpsDir.normalize();
+
+  const speed = 5;
+  const moveX = fpsDir.x * speed * dt;
+  const moveZ = fpsDir.z * speed * dt;
+
+  // Apply relative to camera
+  const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(camera.quaternion);
+  forward.y = 0; forward.normalize();
+  const right = new THREE.Vector3(1, 0, 0).applyQuaternion(camera.quaternion);
+  right.y = 0; right.normalize();
+
+  camera.position.x += forward.x * moveZ + right.x * moveX;
+  camera.position.z += forward.z * moveZ + right.z * moveX;
+
+  // Vertical
+  camera.position.y += fpsVelocity.y * dt;
+  if (camera.position.y <= PLAYER_HEIGHT) {
+    camera.position.y = PLAYER_HEIGHT;
+    fpsVelocity.y = 0;
+    fpsCanJump = true;
+  }
+
+  // Jump
+  if (fpsKeys['Space'] && fpsCanJump) {
+    fpsVelocity.y = 6;
+    fpsCanJump = false;
+  }
+
+  // Collision
+  const col = checkCollision(camera.position);
+  if (col.hit) {
+    camera.position.x += col.nx * col.overlap;
+    camera.position.z += col.nz * col.overlap;
+  }
+
+  // Boundary
+  camera.position.x = Math.max(-BOUNDARY, Math.min(BOUNDARY, camera.position.x));
+  camera.position.z = Math.max(-BOUNDARY, Math.min(BOUNDARY, camera.position.z));
+  if (camera.position.y < 0) { camera.position.y = PLAYER_HEIGHT; fpsVelocity.y = 0; }
+
+  // Player body follows camera (third person shows body, first person hides)
+  if (thirdPerson) {
+    playerBody.visible = true;
+    playerBody.position.copy(camera.position);
+    playerBody.position.y -= PLAYER_HEIGHT / 2;
+  } else {
+    playerBody.visible = false;
+  }
+}
+
+// ── Animation loop ──
+const clock = new THREE.Clock();
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  const dt = clock.getDelta();
+  objects.forEach(obj => {
+    obj.mesh.rotation.x += obj.rotationSpeed.x * dt;
+    obj.mesh.rotation.y += obj.rotationSpeed.y * dt;
+    obj.mesh.rotation.z += obj.rotationSpeed.z * dt;
+  });
+
+  if (fpsMode) {
+    updateFPS(dt);
+  } else {
+    controls.update();
+  }
+  renderer.render(scene, camera);
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+</body>
+</html>

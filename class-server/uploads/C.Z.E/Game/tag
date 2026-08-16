@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tag Game</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:#1a1a2e;color:#eee;overflow:hidden;height:100vh;
+  display:flex;justify-content:center;align-items:center;
+  transition:background .4s,color .4s;
+}
+body.light{background:#f0f0f0;color:#222;}
+#container{position:relative;width:960px;height:540px;}
+canvas{display:block;border-radius:8px;box-shadow:0 4px 30px rgba(0,0,0,.5);}
+
+#settingsBtn{
+  position:absolute;top:10px;right:10px;
+  font-size:24px;background:none;border:none;color:#ff6b6b;
+  cursor:pointer;z-index:20;display:none;
+}
+#settingsBtn:hover{color:#e55a5a;}
+
+#hud{
+  position:absolute;top:10px;left:50%;transform:translateX(-50%);
+  display:none;gap:20px;font-size:18px;font-weight:bold;
+}
+#hud .timer{color:#ff6b6b;}
+#hud .tagger-label{padding:4px 12px;border-radius:20px;font-size:14px;}
+
+#menu{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  text-align:center;z-index:10;
+}
+#menu h1{font-size:48px;margin-bottom:10px;letter-spacing:4px;text-shadow:0 0 20px rgba(255,100,100,.5);}
+#menu .sub{font-size:16px;opacity:.7;margin-bottom:30px;}
+.menu-panel{
+  background:rgba(0,0,0,.75);border-radius:16px;padding:30px 40px;
+  min-width:380px;backdrop-filter:blur(10px);
+  transition:background .4s;
+}
+body.light .menu-panel{background:rgba(255,255,255,.85);}
+.menu-panel h3{font-size:20px;margin-bottom:20px;color:#ff6b6b;}
+.btn{
+  display:inline-block;padding:12px 28px;margin:6px;font-size:16px;
+  border:2px solid #ff6b6b;background:transparent;color:#ff6b6b;
+  border-radius:8px;cursor:pointer;transition:all .2s;
+  font-weight:bold;letter-spacing:1px;
+}
+.btn:hover{background:#ff6b6b;color:#fff;}
+.btn.primary{background:#ff6b6b;color:#fff;padding:14px 40px;font-size:18px;}
+.btn.primary:hover{background:#e55a5a;border-color:#e55a5a;}
+.btn.back{border-color:#aaa;color:#aaa;}
+.btn.back:hover{background:#aaa;color:#fff;}
+
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;}
+.settings-row span{font-size:15px;}
+.toggle{position:relative;width:50px;height:26px;display:inline-block;}
+.toggle input{opacity:0;width:0;height:0;}
+.toggle .slider{
+  position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;
+  background:#555;border-radius:26px;transition:.3s;
+}
+.toggle .slider:before{
+  content:'';position:absolute;height:20px;width:20px;
+  left:3px;bottom:3px;background:white;border-radius:50%;transition:.3s;
+}
+.toggle input:checked+.slider{background:#ff6b6b;}
+.toggle input:checked+.slider:before{transform:translateX(24px);}
+
+#countdown{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-size:80px;font-weight:bold;color:#ff6b6b;display:none;z-index:15;
+  text-shadow:0 0 40px rgba(255,100,100,.7);
+}
+
+.hidden{display:none !important;}
+</style>
+</head>
+<body id="bodyEl">
+<div id="container">
+<canvas id="gameCanvas" width="960" height="540"></canvas>
+<button id="settingsBtn" onclick="openSettings()">&#9881;</button>
+
+<div id="countdown"></div>
+
+<div id="hud">
+  <span class="tagger-label" id="taggerLabel"></span>
+  <span class="timer" id="timerDisplay"></span>
+</div>
+
+<div id="menu">
+  <div id="menuMain">
+    <h1>TAG GAME</h1>
+    <div class="sub">Catch or Be Caught!</div>
+    <button class="btn primary" onclick="showModeSelect()">PLAY</button>
+    <button class="btn" onclick="showSettings()" style="margin-top:10px;">SETTINGS</button>
+  </div>
+
+  <div id="menuMode" class="menu-panel hidden">
+    <h3>Select Mode</h3>
+    <button class="btn" onclick="selectMode(2,'ai')">Player 1 vs AI</button>
+    <button class="btn" onclick="selectMode(2,'pvp')">Player 1 vs Player 2</button>
+    <button class="btn" onclick="selectMode(3,'pvp')">Three Players</button>
+    <br><br>
+    <button class="btn back" onclick="backToMain()">Back</button>
+  </div>
+
+  <div id="menuMap" class="menu-panel hidden">
+    <h3>Select Map</h3>
+    <div id="mapButtons"></div>
+    <br>
+    <button class="btn back" onclick="backToMode()">Back</button>
+  </div>
+
+  <div id="menuTime" class="menu-panel hidden">
+    <h3>Select Game Time</h3>
+    <button class="btn" onclick="startGame(30)">30 Seconds</button>
+    <button class="btn" onclick="startGame(60)">60 Seconds</button>
+    <button class="btn" onclick="startGame(90)">90 Seconds</button>
+    <button class="btn" onclick="startGame(120)">120 Seconds</button>
+    <br><br>
+    <button class="btn back" onclick="backToMap()">Back</button>
+  </div>
+
+  <div id="menuSettings" class="menu-panel hidden">
+    <h3>Settings</h3>
+    <div class="settings-row"><span>Light Mode</span>
+      <label class="toggle"><input type="checkbox" id="toggleLight" onchange="toggleLightMode()"><span class="slider"></span></label>
+    </div>
+    <div class="settings-row"><span>Background Music</span>
+      <label class="toggle"><input type="checkbox" id="toggleMusic" checked onchange="toggleMusic()"><span class="slider"></span></label>
+    </div>
+    <div class="settings-row"><span>Sound Effects</span>
+      <label class="toggle"><input type="checkbox" id="toggleSfx" checked onchange="toggleSfx()"><span class="slider"></span></label>
+    </div>
+    <br>
+    <button class="btn back" onclick="closeSettings()">Back</button>
+  </div>
+
+  <div id="gameOver" class="menu-panel hidden">
+    <h3 id="gameOverTitle" style="margin-bottom:10px;">Time's Up!</h3>
+    <p id="gameOverMsg" style="font-size:18px;margin-bottom:20px;"></p>
+    <button class="btn primary" onclick="backToMain()">Play Again</button>
+  </div>
+</div>
+</div>
+
+<script>
+// ==================== AUDIO ENGINE ====================
+const AudioCtx = window.AudioContext || window.webkitAudioContext;
+let audioCtx;
+let musicOn = true, sfxOn = true;
+let musicGain, musicOsc1, musicOsc2;
+let musicInterval;
+
+function initAudio(){
+  if(!audioCtx) audioCtx = new AudioCtx();
+}
+
+function playSfx(freq, type, duration, vol){
+  vol = vol || 0.15;
+  if(!sfxOn || !audioCtx) return;
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.type = type;
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + duration);
+}
+
+function playTagSound(){
+  playSfx(800, 'square', 0.1, 0.2);
+  setTimeout(function(){ playSfx(400, 'square', 0.1, 0.2); }, 100);
+}
+
+function playCountdownBeep(){
+  playSfx(660, 'sine', 0.15, 0.1);
+}
+
+function playGameOverSound(){
+  playSfx(200, 'sawtooth', 0.5, 0.2);
+  setTimeout(function(){ playSfx(150, 'sawtooth', 0.4, 0.2); }, 200);
+  setTimeout(function(){ playSfx(100, 'sawtooth', 0.3, 0.3); }, 400);
+}
+
+function startMusic(){
+  if(!audioCtx) return;
+  stopMusic();
+  musicGain = audioCtx.createGain();
+  musicGain.gain.value = 0.06;
+  musicGain.connect(audioCtx.destination);
+  musicOsc1 = audioCtx.createOscillator();
+  musicOsc1.type = 'sine';
+  musicOsc1.frequency.value = 220;
+  musicOsc1.connect(musicGain);
+  musicOsc1.start();
+  musicOsc2 = audioCtx.createOscillator();
+  musicOsc2.type = 'triangle';
+  musicOsc2.frequency.value = 330;
+  var g2 = audioCtx.createGain();
+  g2.gain.value = 0.5;
+  musicOsc2.connect(g2);
+  g2.connect(musicGain);
+  musicOsc2.start();
+  musicInterval = setInterval(function(){
+    if(musicOsc1) musicOsc1.frequency.value = 220 + Math.sin(Date.now()/3000) * 10;
+    if(musicOsc2) musicOsc2.frequency.value = 330 + Math.cos(Date.now()/4000) * 15;
+  }, 200);
+}
+
+function stopMusic(){
+  if(musicInterval) clearInterval(musicInterval);
+  try{ if(musicOsc1) musicOsc1.stop(); if(musicOsc2) musicOsc2.stop(); }catch(e){}
+  musicOsc1 = null;
+  musicOsc2 = null;
+}
+
+function toggleMusic(){
+  musicOn = document.getElementById('toggleMusic').checked;
+  if(musicOn) startMusic(); else stopMusic();
+}
+
+function toggleSfx(){
+  sfxOn = document.getElementById('toggleSfx').checked;
+}
+
+function toggleLightMode(){
+  document.body.classList.toggle('light', document.getElementById('toggleLight').checked);
+}
+
+// ==================== GAME STATE ====================
+var canvas = document.getElementById('gameCanvas');
+var ctx = canvas.getContext('2d');
+var W = 960, H = 540, GRAVITY = 0.6, FRICTION = 0.85;
+var gameState = 'menu';
+var playerCount = 2, aiMode = false, threePlayerMode = false;
+var selectedMap = 0, gameTime = 60;
+var players = [], platforms = [], mapTheme = {};
+var timeLeft = 0, timerInterval;
+var countdownValue = 0;
+var keys = {};
+
+// ==================== MAP DEFINITIONS ====================
+var maps = [
+  {
+    name: 'Forest',
+    bgTop: '#87CEEB', bgBot: '#228B22',
+    platTop: '#5a3a1a', platBot: '#3a2510', platStroke: 'rgba(0,0,0,0.3)',
+    platforms: [
+      {x:0,y:500,w:960,h:40},{x:40,y:420,w:150,h:16},
+      {x:250,y:370,w:180,h:16},{x:500,y:340,w:140,h:16},
+      {x:700,y:400,w:200,h:16},{x:350,y:250,w:120,h:16},
+      {x:100,y:300,w:100,h:16},{x:600,y:220,w:160,h:16},
+      {x:800,y:300,w:100,h:16},{x:0,y:200,w:80,h:16}
+    ],
+    playerStart: [{x:80,y:460},{x:450,y:300},{x:750,y:360}]
+  },
+  {
+    name: 'Desert',
+    bgTop: '#F4A460', bgBot: '#D2691E',
+    platTop: '#c4956a', platBot: '#a07040', platStroke: 'rgba(0,0,0,0.3)',
+    platforms: [
+      {x:0,y:500,w:960,h:40},{x:50,y:430,w:200,h:16},
+      {x:320,y:380,w:150,h:16},{x:550,y:430,w:180,h:16},
+      {x:780,y:360,w:140,h:16},{x:150,y:310,w:120,h:16},
+      {x:420,y:270,w:160,h:16},{x:680,y:300,w:100,h:16},
+      {x:30,y:230,w:100,h:16},{x:860,y:250,w:80,h:16}
+    ],
+    playerStart: [{x:100,y:460},{x:400,y:340},{x:800,y:320}]
+  },
+  {
+    name: 'City',
+    bgTop: '#2c3e50', bgBot: '#34495e',
+    platTop: '#7f8c8d', platBot: '#5a6268', platStroke: 'rgba(0,0,0,0.3)',
+    platforms: [
+      {x:0,y:500,w:960,h:40},{x:30,y:440,w:100,h:16},
+      {x:180,y:400,w:90,h:16},{x:320,y:440,w:100,h:16},
+      {x:470,y:380,w:90,h:16},{x:610,y:440,w:100,h:16},
+      {x:760,y:390,w:90,h:16},{x:100,y:320,w:120,h:16},
+      {x:350,y:300,w:110,h:16},{x:600,y:310,w:130,h:16},
+      {x:850,y:280,w:90,h:16},{x:200,y:230,w:100,h:16}
+    ],
+    playerStart: [{x:60,y:460},{x:350,y:400},{x:650,y:400}]
+  },
+  {
+    name: 'Ice Cave',
+    bgTop: '#1a3a5c', bgBot: '#0d2137',
+    platTop: '#a0d8ef', platBot: '#70b8d8', platStroke: 'rgba(200,230,255,0.4)',
+    platforms: [
+      {x:0,y:500,w:960,h:40},{x:60,y:410,w:130,h:16},
+      {x:240,y:440,w:150,h:16},{x:450,y:380,w:120,h:16},
+      {x:630,y:430,w:160,h:16},{x:830,y:370,w:100,h:16},
+      {x:120,y:320,w:100,h:16},{x:300,y:290,w:140,h:16},
+      {x:520,y:310,w:110,h:16},{x:720,y:270,w:100,h:16},
+      {x:880,y:230,w:60,h:16},{x:30,y:240,w:80,h:16}
+    ],
+    playerStart: [{x:80,y:460},{x:500,y:340},{x:850,y:330}]
+  },
+  {
+    name: 'Space',
+    bgTop: '#0a0a1a', bgBot: '#0a0a1a',
+    platTop: '#6c3483', platBot: '#4a235a', platStroke: 'rgba(180,100,255,0.4)',
+    platforms: [
+      {x:0,y:500,w:960,h:40},{x:80,y:430,w:120,h:14},
+      {x:280,y:450,w:100,h:14},{x:450,y:400,w:100,h:14},
+      {x:620,y:440,w:120,h:14},{x:800,y:380,w:100,h:14},
+      {x:150,y:340,w:90,h:14},{x:350,y:310,w:110,h:14},
+      {x:550,y:330,w:90,h:14},{x:720,y:280,w:100,h:14},
+      {x:880,y:310,w:60,h:14},{x:30,y:260,w:70,h:14}
+    ],
+    playerStart: [{x:100,y:460},{x:500,y:360},{x:820,y:340}]
+  }
+];
+
+// ==================== PLAYER CLASS ====================
+function Player(id, x, y, color, name){
+  this.id = id;
+  this.x = x;
+  this.y = y;
+  this.w = 28;
+  this.h = 38;
+  this.vx = 0;
+  this.vy = 0;
+  this.color = color;
+  this.name = name;
+  this.isTagger = false;
+  this.cooldown = 0;
+  this.onGround = false;
+  this.facingRight = true;
+}
+
+function getPlayerColors(){
+  if(threePlayerMode) return ['#e74c3c','#3498db','#2ecc71'];
+  return ['#e74c3c','#3498db'];
+}
+
+function getPlayerNames(){
+  if(threePlayerMode) return ['P1','P2','P3'];
+  if(aiMode) return ['You','AI'];
+  return ['P1','P2'];
+}
+
+// ==================== MAP RENDERING ====================
+function drawMapBackground(){
+  var t = mapTheme;
+  var grad = ctx.createLinearGradient(0,0,0,H);
+  grad.addColorStop(0, t.bgTop);
+  grad.addColorStop(1, t.bgBot);
+  ctx.fillStyle = grad;
+  ctx.fillRect(0,0,W,H);
+
+  // Map-specific decorations
+  if(selectedMap === 0){
+    // Forest - trees
+    ctx.fillStyle = '#1a5c1a';
+    [50,200,400,600,800].forEach(function(x){
+      ctx.fillRect(x-8,420,16,80);
+      ctx.beginPath(); ctx.arc(x,400,30,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.arc(x-15,420,25,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.arc(x+15,420,25,0,Math.PI*2); ctx.fill();
+    });
+  } else if(selectedMap === 1){
+    // Desert - dunes
+    ctx.fillStyle = '#c4956a';
+    [0,300,600].forEach(function(x){
+      ctx.beginPath(); ctx.arc(x+100,510,80,Math.PI,0); ctx.fill();
+    });
+  } else if(selectedMap === 2){
+    // City - windows
+    ctx.fillStyle = '#f1c40f';
+    [60,120,200,280,360,440,520,600,680,760,840].forEach(function(x){
+      if((x>200&&x<400)||(x>550&&x<700)) return;
+      ctx.fillRect(x+5,440,10,12);
+      ctx.fillRect(x+20,440,10,12);
+    });
+  } else if(selectedMap === 3){
+    // Ice - crystals
+    ctx.fillStyle = 'rgba(100,200,255,0.3)';
+    [100,350,600,850].forEach(function(x){
+      ctx.beginPath(); ctx.moveTo(x,400); ctx.lineTo(x+20,360); ctx.lineTo(x+40,400); ctx.fill();
+    });
+  } else if(selectedMap === 4){
+    // Space - stars
+    ctx.fillStyle = 'white';
+    var i, sx, sy;
+    for(i=0;i<60;i++){
+      sx = Math.random()*W;
+      sy = Math.random()*H*0.7;
+      ctx.globalAlpha = 0.3 + Math.random()*0.7;
+      ctx.fillRect(sx,sy,2,2);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  // Draw platforms
+  var p, pg;
+  for(var i=0;i<platforms.length;i++){
+    p = platforms[i];
+    pg = ctx.createLinearGradient(p.x, p.y, p.x, p.y+p.h);
+    pg.addColorStop(0, t.platTop||'#8B7355');
+    pg.addColorStop(1, t.platBot||'#6B5340');
+    ctx.fillStyle = pg;
+    ctx.fillRect(p.x, p.y, p.w, p.h);
+    ctx.strokeStyle = t.platStroke||'rgba(0,0,0,0.3)';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(p.x, p.y, p.w, p.h);
+    ctx.fillStyle = 'rgba(255,255,255,0.25)';
+    ctx.fillRect(p.x, p.y, p.w, 3);
+  }
+}
+
+function drawPlayer(p){
+  ctx.save();
+  if(p.cooldown > 0){
+    ctx.globalAlpha = 0.5 + Math.sin(Date.now()/100)*0.2;
+  }
+
+  var px = p.x + p.w/2;
+  var py = p.y + p.h/2;
+
+  // Body
+  ctx.fillStyle = p.color;
+  ctx.fillRect(p.x, p.y+8, p.w, p.h-8);
+  // Head
+  ctx.beginPath(); ctx.arc(px, p.y+8, 12, 0, Math.PI*2); ctx.fill();
+  // Eyes
+  ctx.fillStyle = 'white';
+  ctx.beginPath(); ctx.arc(px-4, p.y+5, 4, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(px+4, p.y+5, 4, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#222';
+  var eyeDir = p.facingRight ? 1.5 : -1.5;
+  ctx.beginPath(); ctx.arc(px-4+eyeDir, p.y+5, 2, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(px+4+eyeDir, p.y+5, 2, 0, Math.PI*2); ctx.fill();
+
+  // Tagger ring at feet
+  if(p.isTagger){
+    ctx.strokeStyle = p.color;
+    ctx.lineWidth = 3;
+    ctx.globalAlpha = 0.6 + Math.sin(Date.now()/150)*0.4;
+    ctx.beginPath();
+    ctx.ellipse(px, py+p.h/2, 16, 6, 0, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.lineWidth = 1.5;
+    ctx.globalAlpha = 0.3 + Math.sin(Date.now()/200+1)*0.3;
+    ctx.beginPath();
+    ctx.ellipse(px, py+p.h/2, 22, 8, 0, 0, Math.PI*2);
+    ctx.stroke();
+  }
+
+  // Name label
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = 'white';
+  ctx.font = 'bold 11px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(p.name, px, py-20);
+  if(p.isTagger){
+    ctx.fillStyle = '#ff6b6b';
+    ctx.font = 'bold 10px sans-serif';
+    ctx.fillText('IT!', px, py-32);
+  }
+
+  ctx.restore();
+}
+
+// ==================== PHYSICS & COLLISION ====================
+function updatePlayer(p){
+  p.vy += GRAVITY;
+  p.x += p.vx;
+  p.y += p.vy;
+
+  if(p.x < 0){ p.x = 0; p.vx = 0; }
+  if(p.x + p.w > W){ p.x = W - p.w; p.vx = 0; }
+
+  if(p.cooldown > 0) p.cooldown -= 1/60;
+
+  p.onGround = false;
+  var pl;
+  for(var i=0;i<platforms.length;i++){
+    pl = platforms[i];
+    if(p.x+p.w > pl.x && p.x < pl.x+pl.w){
+      if(p.vy >= 0 && p.y+p.h >= pl.y && p.y+p.h <= pl.y+pl.h+15){
+        p.y = pl.y - p.h;
+        p.vy = 0;
+        p.onGround = true;
+      }
+      if(p.vy < 0 && p.y <= pl.y+pl.h && p.y >= pl.y){
+        p.y = pl.y + pl.h;
+        p.vy = 0;
+      }
+    }
+  }
+
+  if(p.y + p.h > H){ p.y = H - p.h; p.vy = 0; p.onGround = true; }
+
+  if(p.onGround) p.vx *= FRICTION; else p.vx *= 0.95;
+  if(Math.abs(p.vx) < 0.1) p.vx = 0;
+
+  if(p.vx > 0.1) p.facingRight = true;
+  if(p.vx < -0.1) p.facingRight = false;
+}
+
+function checkTag(){
+  var tagger = null;
+  for(var i=0;i<players.length;i++){
+    if(players[i].isTagger){ tagger = players[i]; break; }
+  }
+  if(!tagger) return;
+
+  var p;
+  for(var i=0;i<players.length;i++){
+    p = players[i];
+    if(p === tagger || p.cooldown > 0) continue;
+    if(p.x < tagger.x+tagger.w && p.x+p.w > tagger.x &&
+       p.y < tagger.y+tagger.h && p.y+p.h > tagger.y){
+      tagger.isTagger = false;
+      p.isTagger = true;
+      p.cooldown = 2;
+      playTagSound();
+      break;
+    }
+  }
+}
+
+// ==================== AI ====================
+function aiControl(aiPlayer){
+  var tagger = null;
+  for(var i=0;i<players.length;i++){
+    if(players[i].isTagger){ tagger = players[i]; break; }
+  }
+  var speed = 3.5;
+
+  if(aiPlayer.isTagger){
+    var target = null, minDist = Infinity;
+    var p, d;
+    for(var i=0;i<players.length;i++){
+      p = players[i];
+      if(p === aiPlayer || p.cooldown > 0) continue;
+      d = Math.abs(p.x - aiPlayer.x) + Math.abs(p.y - aiPlayer.y);
+      if(d < minDist){ minDist = d; target = p; }
+    }
+    if(target){
+      if(target.x < aiPlayer.x - 10) aiPlayer.vx = -speed;
+      else if(target.x > aiPlayer.x + 10) aiPlayer.vx = speed;
+      if(target.y < aiPlayer.y - 40 && aiPlayer.onGround) aiPlayer.vy = -11;
+    }
+  } else {
+    if(tagger){
+      if(tagger.x < aiPlayer.x) aiPlayer.vx = speed;
+      else aiPlayer.vx = -speed;
+      if(tagger.y < aiPlayer.y - 30 && aiPlayer.onGround) aiPlayer.vy = -11;
+      if(Math.abs(tagger.x - aiPlayer.x) < 50 && aiPlayer.onGround && Math.random() < 0.1) aiPlayer.vy = -10;
+    }
+  }
+  if(aiPlayer.onGround && Math.random() < 0.02) aiPlayer.vy = -10;
+}
+
+// ==================== GAME LOOP ====================
+function gameLoop(){
+  ctx.clearRect(0,0,W,H);
+  if(gameState === 'playing' || gameState === 'countdown'){
+    drawMapBackground();
+    var i;
+    for(i=0;i<players.length;i++){
+      if(aiMode && players[i].id === 1) aiControl(players[i]);
+      updatePlayer(players[i]);
+    }
+    if(gameState === 'playing') checkTag();
+    for(i=0;i<players.length;i++) drawPlayer(players[i]);
+
+    // Cooldown indicator
+    for(i=0;i<players.length;i++){
+      if(players[i].cooldown > 0){
+        ctx.fillStyle = 'rgba(0,0,0,0.4)';
+        ctx.font = 'bold 13px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(Math.ceil(players[i].cooldown)+'s', players[i].x+players[i].w/2, players[i].y-45);
+      }
+    }
+  }
+  requestAnimationFrame(gameLoop);
+}
+
+// ==================== INPUT ====================
+document.addEventListener('keydown', function(e){
+  keys[e.key.toLowerCase()] = true;
+  e.preventDefault();
+});
+document.addEventListener('keyup', function(e){
+  keys[e.key.toLowerCase()] = false;
+  e.preventDefault();
+});
+
+function handleInput(){
+  if(gameState !== 'playing') return;
+  var speed = 5, jumpVel = -12;
+
+  // Player 1: W/A/D
+  var p1 = players[0];
+  if(p1){
+    if(keys['a']) p1.vx = -speed;
+    if(keys['d']) p1.vx = speed;
+    if(keys['w'] && p1.onGround) p1.vy = jumpVel;
+  }
+
+  if(!aiMode){
+    if(threePlayerMode){
+      // P2: Y/G/J
+      var p2 = players[1];
+      if(p2){
+        if(keys['g']) p2.vx = -speed;
+        if(keys['j']) p2.vx = speed;
+        if(keys['y'] && p2.onGround) p2.vy = jumpVel;
+      }
+      // P3: Arrow keys
+      var p3 = players[2];
+      if(p3){
+        if(keys['arrowleft']) p3.vx = -speed;
+        if(keys['arrowright']) p3.vx = speed;
+        if(keys['arrowup'] && p3.onGround) p3.vy = jumpVel;
+      }
+    } else {
+      // Two-player: P2 uses arrow keys
+      var p2b = players[1];
+      if(p2b){
+        if(keys['arrowleft']) p2b.vx = -speed;
+        if(keys['arrowright']) p2b.vx = speed;
+        if(keys['arrowup'] && p2b.onGround) p2b.vy = jumpVel;
+      }
+    }
+  }
+}
+setInterval(handleInput, 16);
+
+// ==================== GAME FLOW ====================
+function showModeSelect(){
+  document.getElementById('menuMain').classList.add('hidden');
+  document.getElementById('menuMode').classList.remove('hidden');
+}
+
+function selectMode(count, mode){
+  playerCount = count;
+  aiMode = (mode === 'ai');
+  threePlayerMode = (count === 3);
+  document.getElementById('menuMode').classList.add('hidden');
+  var mapDiv = document.getElementById('mapButtons');
+  var html = '';
+  for(var i=0;i<maps.length;i++){
+    html += '<button class="btn" onclick="selectMap('+i+')">'+maps[i].name+'</button>';
+  }
+  mapDiv.innerHTML = html;
+  document.getElementById('menuMap').classList.remove('hidden');
+}
+
+function selectMap(index){
+  selectedMap = index;
+  document.getElementById('menuMap').classList.add('hidden');
+  document.getElementById('menuTime').classList.remove('hidden');
+}
+
+function backToMain(){
+  stopGame();
+  var divs = document.getElementById('menu').children;
+  for(var i=0;i<divs.length;i++) divs[i].classList.add('hidden');
+  document.getElementById('menuMain').classList.remove('hidden');
+  document.getElementById('gameOver').classList.add('hidden');
+  document.getElementById('settingsBtn').style.display = 'none';
+  document.getElementById('hud').style.display = 'none';
+}
+
+function backToMode(){
+  document.getElementById('menuMap').classList.add('hidden');
+  document.getElementById('menuMode').classList.remove('hidden');
+}
+
+function backToMap(){
+  document.getElementById('menuTime').classList.add('hidden');
+  document.getElementById('menuMap').classList.remove('hidden');
+}
+
+function showSettings(){
+  document.getElementById('menuMain').classList.add('hidden');
+  document.getElementById('menuSettings').classList.remove('hidden');
+}
+
+function closeSettings(){
+  document.getElementById('menuSettings').classList.add('hidden');
+  document.getElementById('menuMain').classList.remove('hidden');
+}
+
+function openSettings(){
+  if(gameState === 'playing') stopGame();
+  var divs = document.getElementById('menu').children;
+  for(var i=0;i<divs.length;i++) divs[i].classList.add('hidden');
+  document.getElementById('gameOver').classList.add('hidden');
+  document.getElementById('settingsBtn').style.display = 'none';
+  document.getElementById('hud').style.display = 'none';
+  document.getElementById('menuSettings').classList.remove('hidden');
+}
+
+function startGame(time){
+  initAudio();
+  if(musicOn) startMusic();
+  document.getElementById('menuTime').classList.add('hidden');
+  document.getElementById('settingsBtn').style.display = 'block';
+  document.getElementById('hud').style.display = 'flex';
+
+  gameTime = time;
+  timeLeft = time;
+  mapTheme = maps[selectedMap];
+  platforms = maps[selectedMap].platforms;
+  var colors = getPlayerColors();
+  var names = getPlayerNames();
+  var starts = maps[selectedMap].playerStart;
+
+  players = [];
+  for(var i=0;i<playerCount;i++){
+    var s = starts[i] || starts[0];
+    players.push(new Player(i, s.x, s.y, colors[i], names[i]));
+  }
+
+  // Random tagger
+  var taggerIdx = Math.floor(Math.random() * playerCount);
+  players[taggerIdx].isTagger = true;
+
+  // Countdown
+  gameState = 'countdown';
+  countdownValue = 3;
+  document.getElementById('countdown').style.display = 'block';
+  updateHUD();
+
+  var cdInterval = setInterval(function(){
+    countdownValue--;
+    if(countdownValue > 0){
+      document.getElementById('countdown').textContent = countdownValue;
+      playCountdownBeep();
+    } else {
+      document.getElementById('countdown').textContent = 'GO!';
+      playSfx(880, 'sine', 0.2, 0.15);
+      setTimeout(function(){
+        document.getElementById('countdown').style.display = 'none';
+        gameState = 'playing';
+        timerInterval = setInterval(function(){
+          timeLeft--;
+          updateHUD();
+          if(timeLeft <= 0) endGame();
+        }, 1000);
+      }, 500);
+      clearInterval(cdInterval);
+    }
+  }, 800);
+}
+
+function updateHUD(){
+  document.getElementById('timerDisplay').textContent = 'Time: ' + timeLeft + 's';
+  var tagger = null;
+  for(var i=0;i<players.length;i++){
+    if(players[i].isTagger){ tagger = players[i]; break; }
+  }
+  if(tagger){
+    var lbl = document.getElementById('taggerLabel');
+    lbl.textContent = tagger.name + ' is IT!';
+    lbl.style.background = tagger.color;
+    lbl.style.color = '#fff';
+  }
+}
+
+function endGame(){
+  gameState = 'over';
+  clearInterval(timerInterval);
+  stopMusic();
+  playGameOverSound();
+
+  var tagger = null;
+  for(var i=0;i<players.length;i++){
+    if(players[i].isTagger){ tagger = players[i]; break; }
+  }
+  var loserName = tagger ? tagger.name : 'Nobody';
+  document.getElementById('gameOverTitle').textContent = "Time's Up!";
+  document.getElementById('gameOverMsg').innerHTML =
+    '<span style="color:'+(tagger?tagger.color:'#fff')+'">'+loserName+'</span> was the tagger &mdash; <b>'+loserName+' loses!</b>';
+  document.getElementById('gameOver').classList.remove('hidden');
+  document.getElementById('settingsBtn').style.display = 'none';
+  document.getElementById('hud').style.display = 'none';
+}
+
+function stopGame(){
+  gameState = 'menu';
+  clearInterval(timerInterval);
+  stopMusic();
+  players = [];
+  countdownValue = 0;
+  document.getElementById('countdown').style.display = 'none';
+}
+
+// ==================== INIT ====================
+gameLoop();
+</script>
+</body>
+</html>

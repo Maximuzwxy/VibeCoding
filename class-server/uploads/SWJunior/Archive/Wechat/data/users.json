@@ -1,0 +1,36 @@
+{
+  "1783488374344": {
+    "username": "SWJunior",
+    "password": "20140129",
+    "nickname": "SWJunior",
+    "avatar": "crown",
+    "created": 1783488374.344901,
+    "bio": ""
+  },
+  "1783488472397": {
+    "username": "Gabriela",
+    "password": "20080808",
+    "nickname": "Gabriela",
+    "avatar": "lemon",
+    "created": 1783488472.397121,
+    "bio": ""
+  },
+  "1783491170614": {
+    "username": "Maximuz",
+    "password": "111111",
+    "nickname": "Maximuz",
+    "avatar": "cat",
+    "bio": "111111",
+    "role": "user",
+    "created": 1783491170.614327
+  },
+  "1783494249796": {
+    "username": "mama",
+    "password": "123456",
+    "nickname": "Mama",
+    "avatar": "chicken",
+    "bio": "",
+    "role": "user",
+    "created": 1783494249.796577
+  }
+}

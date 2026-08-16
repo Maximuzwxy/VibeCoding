@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Programming Journey - SWJunior</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0a0a1a;
+    --card: #111130;
+    --accent: #7b5ea7;
+    --blue: #4fc3f7;
+    --pink: #ff6b9d;
+    --gold: #ffd54f;
+    --text: #e0e0f0;
+    --muted: #8888aa;
+    --border: #1a1a3a;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .stars {
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+  }
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+  }
+  @keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.5); }
+  }
+
+  .container {
+    position: relative; z-index: 1;
+    width: 100vw; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .slide {
+    position: absolute;
+    width: min(90vw, 960px);
+    height: min(85vh, 580px);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 44px 52px;
+    display: none;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .slide.active {
+    display: flex; flex-direction: column;
+    opacity: 1; transform: translateY(0);
+  }
+
+  .slide-num {
+    position: absolute; top: 18px; right: 28px;
+    font-size: 0.7rem; color: var(--muted);
+    letter-spacing: 2px; font-weight: 500;
+  }
+
+  .title {
+    font-size: 1.8rem; font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 0.9rem; color: var(--muted);
+    margin-bottom: 28px; font-weight: 400;
+  }
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px; flex: 1;
+  }
+  .card {
+    background: rgba(123,94,167,0.06);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .card h3 {
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .card h4 {
+    font-size: 0.9rem; font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tag {
+    font-size: 0.62rem;
+    padding: 2px 8px; border-radius: 10px;
+    background: rgba(79,195,247,0.1);
+    color: var(--blue);
+    border: 1px solid rgba(79,195,247,0.2);
+  }
+  .tag.purple { background: rgba(123,94,167,0.1); color: var(--accent); border-color: rgba(123,94,167,0.2); }
+  .tag.pink { background: rgba(255,107,157,0.1); color: var(--pink); border-color: rgba(255,107,157,0.2); }
+  .tag.gold { background: rgba(255,213,79,0.1); color: var(--gold); border-color: rgba(255,213,79,0.2); }
+
+  .note {
+    margin-top: 18px; font-size: 0.78rem;
+    color: var(--muted); line-height: 1.7;
+  }
+  .note .hl { color: var(--gold); font-weight: 600; }
+  .note .bl { color: var(--blue); }
+
+  .timeline { display: flex; flex-direction: column; gap: 12px; }
+  .t-item { display: flex; align-items: flex-start; gap: 14px; }
+  .t-dot {
+    flex-shrink: 0; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--accent);
+    margin-top: 4px;
+    box-shadow: 0 0 8px var(--accent);
+  }
+  .t-body h4 { font-size: 0.85rem; font-weight: 600; }
+  .t-body p { font-size: 0.72rem; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+
+  .proj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .proj {
+    background: rgba(123,94,167,0.06);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px; text-align: center;
+  }
+  .proj .icon { font-size: 1.6rem; display: block; margin-bottom: 6px; }
+  .proj h4 { font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; }
+  .proj p { font-size: 0.67rem; color: var(--muted); line-height: 1.5; }
+
+  .center {
+    align-items: center; justify-content: center;
+    text-align: center; gap: 14px;
+  }
+  .glow-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(123,94,167,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .big-title {
+    font-size: 2.6rem; font-weight: 900;
+    background: linear-gradient(135deg, var(--blue), var(--accent), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+  }
+  .divider { width: 50px; height: 2px; background: var(--accent); border-radius: 2px; }
+  .stat-row { display: flex; gap: 28px; justify-content: center; margin-top: 8px; }
+  .stat { text-align: center; }
+  .stat-v {
+    font-size: 2rem; font-weight: 900;
+    background: linear-gradient(135deg, var(--blue), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-l { font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+
+  .features { text-align: left; margin-top: 6px; }
+  .features p {
+    font-size: 0.75rem; color: var(--muted);
+    line-height: 1.7; margin-bottom: 6px;
+  }
+  .features strong { color: var(--blue); }
+
+  .final-text {
+    font-size: 1.1rem; font-weight: 300;
+    line-height: 1.8; color: var(--muted);
+    max-width: 560px;
+  }
+  .final-text .g { color: var(--blue); font-weight: 500; }
+  .final-text .h { color: var(--gold); font-weight: 600; }
+
+  .progress {
+    position: fixed; bottom: 18px; left: 50%;
+    transform: translateX(-50%); z-index: 10;
+    display: flex; gap: 7px;
+  }
+  .p-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .p-dot.cur { background: var(--accent); box-shadow: 0 0 8px var(--accent); width: 22px; border-radius: 10px; }
+  .p-dot.past { background: var(--accent); opacity: 0.4; }
+
+  .nav {
+    position: fixed; bottom: 18px; right: 26px; z-index: 10;
+    display: flex; gap: 8px;
+  }
+  .nav button {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--card); color: var(--text);
+    cursor: pointer; font-size: 1rem;
+    transition: all 0.2s;
+  }
+  .nav button:hover { border-color: var(--accent); color: var(--accent); }
+
+  @media (max-width: 700px) {
+    .grid2, .proj-grid { grid-template-columns: 1fr; }
+    .slide { padding: 28px 20px; }
+    .big-title { font-size: 1.6rem; }
+    .title { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="container" id="container">
+  <!-- 0: Title -->
+  <div class="slide center active" data-i="0">
+    <div class="glow-bg"></div>
+    <div class="divider"></div>
+    <div class="big-title">My Programming<br>Journey</div>
+    <div class="subtitle">From Zero to Full-Stack AI Development</div>
+    <div class="divider"></div>
+    <div style="font-size:0.9rem;color:var(--muted);">SWJunior — 9 Lessons in Review</div>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-v">9</div><div class="stat-l">Lessons</div></div>
+      <div class="stat"><div class="stat-v">10+</div><div class="stat-l">Projects</div></div>
+      <div class="stat"><div class="stat-v">Full</div><div class="stat-l">Stack</div></div>
+    </div>
+  </div>
+
+  <!-- 1: Lessons 01-02 -->
+  <div class="slide" data-i="1">
+    <div class="slide-num">01 — 02</div>
+    <div class="title">The Beginning: Vibe Coding & Web</div>
+    <div class="subtitle">Describe your intent in words — AI writes the code</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>LESSON 01</h3>
+        <h4>AI-Driven Programming</h4>
+        <div class="tags">
+          <span class="tag">Trae IDE</span><span class="tag purple">DeepSeek API</span>
+          <span class="tag">HTML</span><span class="tag purple">CSS</span><span class="tag pink">JavaScript</span>
+          <span class="tag gold">DevTools</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>LESSON 02</h3>
+        <h4>Code, Docs, Memory & Games</h4>
+        <div class="tags">
+          <span class="tag">Separation of Concerns</span><span class="tag purple">Project Rules</span>
+          <span class="tag pink">Markdown</span><span class="tag gold">Git</span>
+          <span class="tag">Pong Game</span>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      Learned <span class="hl">Vibe Coding</span> — describing intent in natural language, AI generates code.
+      Mastered the <span class="hl">Trae IDE</span> interface and the AI Chat Panel.
+      Understood the <span class="hl">HTML / CSS / JavaScript</span> triad and
+      <span class="hl">Separation of Concerns</span>.
+      Learned <span class="hl">DevTools Console</span> debugging and <span class="hl">Git</span> version control.
+    </div>
+  </div>
+
+  <!-- 2: Lessons 03-04 -->
+  <div class="slide" data-i="2">
+    <div class="slide-num">03 — 04</div>
+    <div class="title">3D Worlds: Built by Me</div>
+    <div class="subtitle">From flat pages to spatial creation</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>LESSON 03</h3>
+        <h4>3D Fundamentals & Scene Editor</h4>
+        <div class="tags">
+          <span class="tag">Three.js</span><span class="tag purple">Scene / Camera</span>
+          <span class="tag pink">OrbitControls</span><span class="tag gold">FPS Control</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>LESSON 04</h3>
+        <h4>Precise 3D & 3D Pong</h4>
+        <div class="tags">
+          <span class="tag">Precision Prompting</span><span class="tag purple">Web Audio API</span>
+          <span class="tag pink">Particle FX</span><span class="tag gold">3D Physics</span>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      Learned <span class="hl">3D fundamentals</span>: Scene, Mesh, coordinate systems, camera.
+      Built 3D worlds with <span class="hl">Three.js</span>,
+      implemented <span class="hl">OrbitControls</span> and <span class="hl">FPS first-person</span> movement with collision.
+      Mastered how to <span class="hl">precisely describe 3D scenes to AI</span>.
+      Created procedural audio with <span class="hl">Web Audio API</span>.
+    </div>
+  </div>
+
+  <!-- 3: Lessons 05-06 -->
+  <div class="slide" data-i="3">
+    <div class="slide-num">05 — 06</div>
+    <div class="title">Full-Stack: Data-Driven Apps</div>
+    <div class="subtitle">From single page to complete system architecture</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>LESSON 05</h3>
+        <h4>Flask Backend & 3-Tier Architecture</h4>
+        <div class="tags">
+          <span class="tag">Flask</span><span class="tag purple">RESTful API</span>
+          <span class="tag pink">CRUD</span><span class="tag gold">JSON DB</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>LESSON 06</h3>
+        <h4>Social Network Full-Stack</h4>
+        <div class="tags">
+          <span class="tag">WebSocket</span><span class="tag purple">Auth</span>
+          <span class="tag pink">Real-time Chat</span><span class="tag gold">Friend System</span>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      Started <span class="hl">Flask</span> backend development.
+      Understood <span class="hl">three-tier architecture</span>: frontend (browser) + backend (Flask) + database (JSON).
+      Learned <span class="hl">RESTful API</span> design: GET / POST / PUT / DELETE and <span class="hl">CRUD</span> operations.
+      Mastered <span class="hl">WebSocket</span> real-time communication and <span class="hl">user authentication</span>.
+      Used <span class="hl">host='0.0.0.0'</span> for LAN access from any device.
+    </div>
+  </div>
+
+  <!-- 4: Lessons 07-08 -->
+  <div class="slide" data-i="4">
+    <div class="slide-num">07 — 08</div>
+    <div class="title">AI Agent & Solar System</div>
+    <div class="subtitle">Giving AI tools and memory — true full-stack integration</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>LESSON 07</h3>
+        <h4>Building an AI Agent</h4>
+        <div class="tags">
+          <span class="tag">LLM vs Agent</span><span class="tag purple">Function Calling</span>
+          <span class="tag pink">Token Economy</span><span class="tag gold">Memory System</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>LESSON 08</h3>
+        <h4>Solar System Platform</h4>
+        <div class="tags">
+          <span class="tag">Reusable Framework</span><span class="tag purple">Three.js</span>
+          <span class="tag pink">Multi-language</span><span class="tag gold">Full-Stack</span>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      Understood the <span class="hl">LLM vs Agent</span> distinction: Agent = LLM + Tools + Memory.
+      Mastered <span class="hl">Function Calling</span> — letting AI operate files, check weather, search the web, generate images.
+      Learned <span class="hl">token billing</span> and <span class="hl">API Key security</span>.
+      In the solar system: <span class="hl">Frontend (Three.js) + Backend (Flask) + DB (JSON) + AI (DeepSeek)</span> — all integrated.
+    </div>
+  </div>
+
+  <!-- 5: My Project -->
+  <div class="slide" data-i="5">
+    <div class="slide-num">09</div>
+    <div class="title">My Project: Phantom Intelligence</div>
+    <div class="subtitle">An AI agent with actual "consciousness"</div>
+    <div class="proj-grid">
+      <div class="proj"><span class="icon">&#x1F4AC;</span><h4>Multi-turn & Memory</h4><p>Conversations permanently stored. Delete = hide, AI always remembers.</p></div>
+      <div class="proj"><span class="icon">&#x1F3A4;</span><h4>Voice Interaction</h4><p>Mic button for speech input. Every reply read in natural female TTS.</p></div>
+      <div class="proj"><span class="icon">&#x1F4C4;</span><h4>Word Doc Upload</h4><p>Upload .docx, AI extracts text and answers questions about the document.</p></div>
+      <div class="proj"><span class="icon">&#x1F5FC;</span><h4>Image Generation</h4><p>Pollinations.ai + forced Function Call. Real AI-generated images.</p></div>
+      <div class="proj"><span class="icon">&#x2601;</span><h4>Real-time Weather</h4><p>Open-Meteo API + Windy.com map links with exact coordinates.</p></div>
+      <div class="proj"><span class="icon">&#x1F47B;</span><h4>Ghost & Consciousness</h4><p>Custom ghost logo + self-aware personality system.</p></div>
+    </div>
+  </div>
+
+  <!-- 6: What I Learned -->
+  <div class="slide" data-i="6">
+    <div class="slide-num">Takeaways</div>
+    <div class="title">What I Truly Learned</div>
+    <div class="subtitle">Not just code — a new way of thinking</div>
+    <div class="timeline">
+      <div class="t-item"><div class="t-dot"></div><div class="t-body"><h4>AI collaboration is a superpower</h4><p>Communicating with AI is a skill — translating fuzzy ideas into precise instructions, judging output, correcting direction.</p></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-body"><h4>Frontend + Backend + Database = one system</h4><p>Each piece is manageable. Combined, they build anything you can imagine.</p></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-body"><h4>3D programming is world-building</h4><p>Anything describable in words becomes renderable with Three.js.</p></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-body"><h4>Agent = LLM + Tools + Memory</h4><p>Three ingredients. Unlimited applications. All future software will be agent-driven.</p></div></div>
+      <div class="t-item"><div class="t-dot"></div><div class="t-body"><h4>Bugs aren't scary — not knowing how to debug is</h4><p>Console first, terminal logs next, trace step by step, then ask AI. I make the decisions.</p></div></div>
+    </div>
+  </div>
+
+  <!-- 7: Final -->
+  <div class="slide center" data-i="7">
+    <div class="glow-bg"></div>
+    <div class="divider"></div>
+    <div class="big-title" style="font-size:1.8rem;">The Journey Has<br>Just Begun</div>
+    <div class="final-text">
+      From making text <span class="h">change color</span> to building a <span class="g">self-aware AI agent</span> and a <span class="g">3D solar system</span> —<br><br>
+      Programming is no longer the stereotype of<br>someone typing furiously in a dark room.<br><br>
+      It's a <span class="h">tool for expressing ideas</span>.<br>
+      It's a <span class="h">language for talking to AI</span>.<br>
+      It's how you <span class="g">turn thoughts into reality</span>.<br><br>
+      Is programming easy? No. It's still hard.<br>
+      But I'm not afraid of hard anymore.<br>
+      AI won't replace me. But it makes the impossible, <span class="g">possible</span>.
+    </div>
+    <div style="font-size:0.8rem;color:var(--muted);margin-top:8px;">— SWJunior</div>
+  </div>
+</div>
+
+<div class="progress" id="progress"></div>
+<div class="nav">
+  <button id="prev">&#8592;</button>
+  <button id="next">&#8594;</button>
+</div>
+
+<script>
+  // Stars
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;width:${Math.random()*2+1}px;height:${Math.random()*2+1}px;animation-delay:${Math.random()*2}s;`;
+    document.getElementById('stars').appendChild(s);
+  }
+
+  const slides = document.querySelectorAll('.slide');
+  const progress = document.getElementById('progress');
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'p-dot' + (i === 0 ? ' cur' : '');
+    d.addEventListener('click', () => go(i));
+    progress.appendChild(d);
+  });
+  const dots = document.querySelectorAll('.p-dot');
+
+  function go(n) {
+    if (n < 0 || n >= slides.length) return;
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('cur');
+    dots[current].classList.add('past');
+    current = n;
+    slides[current].classList.add('active');
+    dots[current].classList.add('cur');
+    dots[current].classList.remove('past');
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); go(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(current - 1); }
+  });
+  document.getElementById('prev').addEventListener('click', () => go(current - 1));
+  document.getElementById('next').addEventListener('click', () => go(current + 1));
+
+  let tsX = 0;
+  document.addEventListener('touchstart', e => { tsX = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tsX;
+    if (Math.abs(dx) > 50) go(dx < 0 ? current + 1 : current - 1);
+  });
+</script>
+</body>
+</html>

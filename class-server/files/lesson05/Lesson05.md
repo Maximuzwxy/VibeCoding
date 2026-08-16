@@ -6,9 +6,9 @@ Up until now, you've been opening HTML files directly in the browser. But real w
 
 ### Try this prompt:
 
-> Create a simple Flask app in app.py. When someone visits the root URL, return "Hello World! This is my first backend."
+> Create a simple Flask app in app.py. When someone visits the root URL, return "Hello World! This is my first backend." Make sure to bind to host='0.0.0.0' so the server is accessible from other devices on the same WiFi network.
 
-Run it with `python app.py`, then open `http://127.0.0.1:5000` in your browser. No HTML file needed! The web page is generated entirely by Python code running on the server.
+Run it with `python app.py`, then open `http://127.0.0.1:5000` (your own machine) or `http://<YOUR_IP>:5000` (from any device on the same WiFi) in your browser. No HTML file needed! The web page is generated entirely by Python code running on the server.
 
 ### Add a new route:
 
@@ -24,6 +24,7 @@ Flask requires HTML templates to be placed in a folder named `templates/` — th
 - This is how all real websites work — code runs on a server, not just a file on your computer
 - You can return HTML, JSON, or any content you want
 - Later you'll use this to serve your game files and handle API requests
+- Using `host='0.0.0.0'` makes your server visible to all devices on the same WiFi — your phone, tablet, or classmates can access it using your local IP (e.g., `http://192.168.x.x:5000`)
 
 ## How Real Projects Work: Frontend, Backend & Database
 
@@ -79,7 +80,7 @@ Frontend-only projects (no backend):
 
 Flask projects (frontend + backend):
 - Frontend: /static/ for CSS and JS files, /templates/ for HTML files.
-- Backend: app.py in the project root as the single entry point. Run with python app.py.
+- Backend: app.py in the project root as the single entry point. Run with python app.py. Always bind to host='0.0.0.0' so the server is accessible from other devices on the same WiFi (e.g., http://192.168.x.x:5000).
 - Database: .json files in the project root. Backend reads/writes them — frontend never touches them directly.
 - HTML pages are served via render_template(), not opened directly in the browser.
 - Frontend communicates with backend using fetch() calls. API routes return JSON via jsonify(), never HTML.
@@ -112,7 +113,7 @@ You can build any game or app, as long as it includes:
 
 ## Tips
 
-- **Class Server**: http://192.168.3.38:6688
+- **Class Server**: http://192.168.3.47:6688
 - **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
 - **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
 - **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.

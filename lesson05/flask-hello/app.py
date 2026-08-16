@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello, World!"
+    return "Hello, Timmy"
 
 @app.route('/time')
 def current_time():

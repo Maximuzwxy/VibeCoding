@@ -1,0 +1,352 @@
+/* ========== 全局 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ========== 开始画面 ========== */
+#startScreen {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #CC0000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: opacity 0.5s;
+}
+
+#startScreen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#startScreen h1 {
+    font-size: 96px;
+    color: #FFF;
+    letter-spacing: 16px;
+    text-shadow: 4px 4px 0 #880000;
+    margin-bottom: 10px;
+}
+
+#startScreen .subtitle {
+    font-size: 20px;
+    color: #FFCCCC;
+    margin-bottom: 50px;
+    letter-spacing: 4px;
+}
+
+#startBtn {
+    padding: 16px 60px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #CC0000;
+    background: #FFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 4px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+#startBtn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+#startBtn:active {
+    transform: scale(0.97);
+}
+
+#startScreen .controls-hint {
+    margin-top: 40px;
+    color: #FFAAAA;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* ========== 画布 ========== */
+#gameCanvas {
+    background: #000;
+    border: 2px solid #444;
+    border-radius: 4px;
+    display: block;
+}
+
+/* ========== 控制栏 ========== */
+#controlBar {
+    margin-top: 12px;
+    display: flex;
+    gap: 16px;
+}
+
+#controlBar button {
+    padding: 10px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #FFF;
+    letter-spacing: 1px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#controlBar button:active {
+    transform: scale(0.95);
+}
+
+#btnStart {
+    background: #27AE60;
+}
+#btnStart:hover {
+    background: #2ECC71;
+}
+
+#btnPause {
+    background: #F39C12;
+}
+#btnPause:hover {
+    background: #F1C40F;
+}
+
+#btnRestart {
+    background: #E74C3C;
+}
+#btnRestart:hover {
+    background: #EC7063;
+}
+
+/* ========== 模式选择面板 ========== */
+#modePanel {
+    display: flex;
+    gap: 40px;
+    margin-top: 12px;
+    align-items: center;
+}
+
+.mode-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mode-label {
+    color: #CCC;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.mode-btn {
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px solid #555;
+    border-radius: 5px;
+    background: #222;
+    color: #999;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.mode-btn:hover {
+    border-color: #888;
+    color: #CCC;
+}
+
+.mode-btn.active {
+    background: #3498DB;
+    border-color: #2980B9;
+    color: #FFF;
+    box-shadow: 0 0 8px rgba(52,152,219,0.5);
+}
+
+/* ========== Settings 按钮 ========== */
+#btnSettings {
+    background: #8E44AD;
+}
+#btnSettings:hover {
+    background: #9B59B6;
+}
+
+/* ========== 设置面板覆盖层 ========== */
+#settingsOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+#settingsOverlay.visible {
+    display: flex;
+}
+
+#settingsPanel {
+    background: #1a1a2e;
+    border: 2px solid #555;
+    border-radius: 12px;
+    padding: 30px 40px;
+    width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: #EEE;
+}
+
+#settingsPanel h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #FFF;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 12px;
+}
+
+.settings-section {
+    margin-bottom: 20px;
+}
+
+.settings-section h3 {
+    font-size: 16px;
+    color: #3498DB;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #333;
+}
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 6px 0;
+}
+
+.setting-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.setting-info label {
+    font-size: 14px;
+    color: #CCC;
+    cursor: default;
+}
+
+.tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #444;
+    color: #AAA;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: help;
+    position: relative;
+}
+
+.tooltip:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #FFF;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+    pointer-events: none;
+    border: 1px solid #555;
+    z-index: 30;
+}
+
+.setting-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.setting-control input[type="range"] {
+    width: 160px;
+    accent-color: #3498DB;
+}
+
+.setting-value {
+    font-size: 14px;
+    color: #3498DB;
+    font-weight: bold;
+    min-width: 32px;
+    text-align: right;
+}
+
+.settings-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #444;
+}
+
+.settings-buttons button {
+    padding: 10px 32px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.settings-buttons button:active {
+    transform: scale(0.95);
+}
+
+#btnSaveSettings {
+    background: #27AE60;
+    color: #FFF;
+}
+#btnSaveSettings:hover {
+    background: #2ECC71;
+}
+
+#btnCancelSettings {
+    background: #7F8C8D;
+    color: #FFF;
+}
+#btnCancelSettings:hover {
+    background: #95A5A6;
+}

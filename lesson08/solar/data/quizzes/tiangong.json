@@ -1,0 +1,184 @@
+{
+  "questions": [
+    {
+      "id": "q_tiangong_001",
+      "question": {
+        "zh": "天宫空间站是哪个国家建造的？",
+        "en": "Which country built the Tiangong Space Station?"
+      },
+      "options": [
+        { "zh": "美国", "en": "United States" },
+        { "zh": "俄罗斯", "en": "Russia" },
+        { "zh": "中国", "en": "China" },
+        { "zh": "日本", "en": "Japan" }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天宫空间站是中国自主建造的第三代模块化空间站。",
+        "en": "The Tiangong Space Station is China's self-built third-generation modular space station."
+      }
+    },
+    {
+      "id": "q_tiangong_002",
+      "question": {
+        "zh": "天和核心舱是哪一年发射的？",
+        "en": "In which year was the Tianhe core module launched?"
+      },
+      "options": [
+        { "zh": "2019年", "en": "2019" },
+        { "zh": "2020年", "en": "2020" },
+        { "zh": "2021年", "en": "2021" },
+        { "zh": "2022年", "en": "2022" }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天和核心舱于2021年4月发射，是天宫空间站的首个舱段。",
+        "en": "The Tianhe core module was launched in April 2021 as the first module of the Tiangong Space Station."
+      }
+    },
+    {
+      "id": "q_tiangong_003",
+      "question": {
+        "zh": "天宫空间站采用什么构型？",
+        "en": "What configuration does the Tiangong Space Station use?"
+      },
+      "options": [
+        { "zh": "一字型", "en": "Linear" },
+        { "zh": "十字型", "en": "Cross-shaped" },
+        { "zh": "T型三舱结构", "en": "T-shaped three-module" },
+        { "zh": "环型", "en": "Ring-shaped" }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天宫空间站采用T型三舱结构，由天和核心舱、问天实验舱和梦天实验舱组成。",
+        "en": "Tiangong uses a T-shaped three-module layout: Tianhe core, Wentian lab, and Mengtian lab."
+      }
+    },
+    {
+      "id": "q_tiangong_004",
+      "question": {
+        "zh": "天宫空间站的轨道高度大约是多少？",
+        "en": "What is the approximate orbital altitude of Tiangong?"
+      },
+      "options": [
+        { "zh": "约200 km", "en": "About 200 km" },
+        { "zh": "约400 km", "en": "About 400 km" },
+        { "zh": "约600 km", "en": "About 600 km" },
+        { "zh": "约1000 km", "en": "About 1000 km" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天宫空间站在近地轨道运行，轨道高度约400 km。",
+        "en": "Tiangong operates in low Earth orbit at an altitude of about 400 km."
+      }
+    },
+    {
+      "id": "q_tiangong_005",
+      "question": {
+        "zh": "天宫空间站绕地球一圈大约需要多长时间？",
+        "en": "How long does it take for Tiangong to orbit Earth once?"
+      },
+      "options": [
+        { "zh": "约45分钟", "en": "About 45 minutes" },
+        { "zh": "约90分钟", "en": "About 90 minutes" },
+        { "zh": "约180分钟", "en": "About 180 minutes" },
+        { "zh": "约24小时", "en": "About 24 hours" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天宫空间站的轨道周期约为90分钟，每天绕地球约16圈。",
+        "en": "Tiangong's orbital period is about 90 minutes, completing about 16 orbits per day."
+      }
+    },
+    {
+      "id": "q_tiangong_006",
+      "question": {
+        "zh": "天宫空间站能容纳多少名航天员长期驻留？",
+        "en": "How many astronauts can Tiangong accommodate for long-term stays?"
+      },
+      "options": [
+        { "zh": "2名", "en": "2" },
+        { "zh": "3名", "en": "3" },
+        { "zh": "6名", "en": "6" },
+        { "zh": "10名", "en": "10" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天宫空间站常规乘组为3名航天员，每6个月轮换一次。",
+        "en": "Tiangong has a permanent crew of 3 astronauts, rotated every 6 months."
+      }
+    },
+    {
+      "id": "q_tiangong_007",
+      "question": {
+        "zh": "首批进入天宫空间站的航天员乘坐的是哪艘飞船？",
+        "en": "Which spacecraft carried the first crew to Tiangong?"
+      },
+      "options": [
+        { "zh": "神舟十一号", "en": "Shenzhou-11" },
+        { "zh": "神舟十二号", "en": "Shenzhou-12" },
+        { "zh": "神舟十三号", "en": "Shenzhou-13" },
+        { "zh": "天舟二号", "en": "Tianzhou-2" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "2021年6月，神舟十二号乘组成为首批进入天宫空间站的航天员。",
+        "en": "In June 2021, the Shenzhou-12 crew became the first to enter the Tiangong Space Station."
+      }
+    },
+    {
+      "id": "q_tiangong_008",
+      "question": {
+        "zh": "天宫空间站的总质量大约是多少？",
+        "en": "What is the approximate total mass of Tiangong?"
+      },
+      "options": [
+        { "zh": "约60吨", "en": "About 60 tons" },
+        { "zh": "约100吨", "en": "About 100 tons" },
+        { "zh": "约180吨", "en": "About 180 tons" },
+        { "zh": "约400吨", "en": "About 400 tons" }
+      ],
+      "answer": 2,
+      "explanation": {
+        "zh": "天宫空间站三舱组合后总质量约180吨。",
+        "en": "The combined mass of Tiangong's three modules is about 180 metric tons."
+      }
+    },
+    {
+      "id": "q_tiangong_009",
+      "question": {
+        "zh": "中国首次太空授课是在哪个平台上进行的？",
+        "en": "On which platform was China's first space lecture conducted?"
+      },
+      "options": [
+        { "zh": "天宫一号", "en": "Tiangong-1" },
+        { "zh": "天宫空间站", "en": "Tiangong Space Station" },
+        { "zh": "国际空间站", "en": "International Space Station" },
+        { "zh": "神舟十号", "en": "Shenzhou-10" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "zh": "2013年，王亚平在天宫一号上进行了中国首次太空授课。2021年12月，天宫空间站开展了天宫课堂第一课。",
+        "en": "In 2013, Wang Yaping conducted China's first space lecture on Tiangong-1. In December 2021, the first Tiangong Classroom lesson was held on Tiangong Space Station."
+      }
+    },
+    {
+      "id": "q_tiangong_010",
+      "question": {
+        "zh": "天宫空间站的设计寿命是多久？",
+        "en": "What is the design life of the Tiangong Space Station?"
+      },
+      "options": [
+        { "zh": "5年", "en": "5 years" },
+        { "zh": "10年以上", "en": "10+ years" },
+        { "zh": "20年", "en": "20 years" },
+        { "zh": "30年", "en": "30 years" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "zh": "天宫空间站设计寿命10年以上，可通过在轨维护延长至15年。",
+        "en": "Tiangong has a design life of 10+ years, extendable to 15 years via on-orbit maintenance."
+      }
+    }
+  ]
+}

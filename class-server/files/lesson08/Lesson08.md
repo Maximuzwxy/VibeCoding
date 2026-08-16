@@ -28,6 +28,15 @@ You're not building one planet — you're building a **framework** that can rend
 
 ## Building the Framework
 
+> **Tip: Start a new chat and paste this first**
+>
+> Before building the solar system, open a fresh chat and send the following message. This tells the AI which model and key to use — the QuizPanel and ChatPanel need LLM access.
+>
+> ```
+> I'm going to build a 3D Solar System app. Use DeepSeek's model deepseek-chat, the API key is:
+> DEEPSEEK_API_KEY=REDACTED_DEEPSEEK_KEY
+> ```
+
 ### Step 1: Start with one planet
 
 Pick one planet — say **Jupiter** — and build the full pipeline around it:
@@ -80,7 +89,7 @@ Detailed requirements for each phase are in the `solar-system/` folder (Chinese)
 
 ## Tips
 
-- **Class Server**: http://192.168.3.38:6688
+- **Class Server**: http://192.168.3.47:6688
 - **Starting a New Project**: Always create a new folder and start a fresh AI chat session. Make sure AI recognizes the new directory context and generates all subsequent code within it.
 - **Submitting Homework**: At the end of class, submit your assignment by compressing (zipping) your project folder and uploading it.
 - **Console Logs**: If the program behaves unexpectedly, always check the browser Console logs for error messages. Press F12 or Ctrl+Shift+J / Cmd+Option+C to open the Console.

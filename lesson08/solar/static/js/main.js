@@ -17,6 +17,7 @@ import { createSaturnTexture, createSaturnRing } from './planets/saturn.js';
 import { createUranusTexture, createUranusAtmosphereTexture } from './planets/uranus.js';
 import { createNeptuneTexture, createNeptuneAtmosphereTexture } from './planets/neptune.js';
 import { createMoonTexture } from './moons/moon.js';
+import { createTiangongStation } from './moons/tiangong.js';
 import { createIoTexture } from './moons/io.js';
 import { createEuropaTexture } from './moons/europa.js';
 import { createGanymedeTexture } from './moons/ganymede.js';
@@ -125,7 +126,7 @@ const planetConfigs = {
         cameraPosition: { x: 0, y: 3, z: 7 },
         minDistance: 2, maxDistance: 15,
         starCount: 5000,
-        // 云层（作为 earth mesh 的子对象，跟随自转）+ 月球
+        // 云层（作为 earth mesh 的子对象，跟随自转）+ 月球 + 天宫空间站
         onInit(scene) {
             // 云层
             const cloudGeo = new THREE.SphereGeometry(1.02, 64, 64);
@@ -137,9 +138,27 @@ const planetConfigs = {
             });
             const cloudMesh = new THREE.Mesh(cloudGeo, cloudMat);
             this.centerMesh.add(cloudMesh);  // 子对象，跟随倾角+自转
+
+            // 天宫空间站（程序化模型 + 轨道线）
+            const tiangong = createTiangongStation();
+            const tgTiltGroup = new THREE.Group();
+            tgTiltGroup.add(tiangong);
+            this.scene.add(tgTiltGroup);
+            // 创建轨道线
+            this._createOrbitLine(1.6);
+            this.orbitingBodies.push({
+                name: 'tiangong',
+                tiltGroup: tgTiltGroup,
+                mesh: tiangong,
+                distance: 1.6,
+                speed: -0.025,     // 稍远一点轨道，速度降低
+                angle: 0,
+                rotationSpeed: 0.002
+            });
+            this._tiangong = tiangong;
         },
         orbitingBodies: [
-            { name: 'moon', radius: 0.18, distance: 2.5, color: '#888888', speed: -0.005, rotationSpeed: 0.001, textureGenerator: createMoonTexture }
+            { name: 'moon', radius: 0.18, distance: 3.5, color: '#888888', speed: -0.003, rotationSpeed: 0.001, textureGenerator: createMoonTexture }
         ]
     },
     mars: {
@@ -380,6 +399,17 @@ const planetConfigs = {
         cameraPosition: { x: 0, y: 2, z: 5 },
         minDistance: 2, maxDistance: 15,
         starCount: 5000
+    },
+    tiangong: {
+        centerBody: { radius: 0.01, color: 0x000000 },
+        cameraPosition: { x: 0, y: 0.1, z: 0.8 },
+        minDistance: 0.2, maxDistance: 3,
+        starCount: 3000,
+        onInit(scene) {
+            const station = createTiangongStation();
+            this.centerGroup.add(station);
+            this._tiangongModel = station;
+        }
     }
 };
 
@@ -405,6 +435,7 @@ const PLANET_NAMES = {
 const ALL_MOONS = [
     // 地球卫星
     { id: 'moon', name: { zh: '月球', en: 'Moon' }, color: '#888888', planet: 'earth', enabled: true },
+    { id: 'tiangong', name: { zh: '天宫空间站', en: 'Tiangong' }, color: '#d4d4e8', planet: 'earth', enabled: true },
     // 火星卫星
     { id: 'phobos', name: { zh: '火卫一', en: 'Phobos' }, color: '#8b7355', planet: 'mars', enabled: true },
     { id: 'deimos', name: { zh: '火卫二', en: 'Deimos' }, color: '#a0826d', planet: 'mars', enabled: true },

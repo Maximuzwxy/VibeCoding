@@ -1,4 +1,0 @@
-flask
-requests
-ddgs
-python-dotenv

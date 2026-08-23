@@ -23,3 +23,6 @@ Thumbs.db
 *.rar
 *.zip
 *.tar.gz
+
+# Student uploads
+class-server/uploads/

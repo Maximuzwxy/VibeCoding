@@ -78,7 +78,7 @@ The AI Chat Panel is the core feature of Trae. Once you send a task, the Agent w
 In later lessons, we will use **DeepSeek** (a powerful LLM) through its API. To use it, you need to configure your API Key in the project's `.env` file:
 
 ```
-DEEPSEEK_API_KEY=REDACTED_DEEPSEEK_KEY
+DEEPSEEK_API_KEY=YOUR_DEEPSEEK_API_KEY
 DEEPSEEK_API_URL=https://api.deepseek.com/chat/completions
 ```
 

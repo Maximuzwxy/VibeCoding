@@ -65,7 +65,7 @@ We'll use **DeepSeek** as an example:
 5. Store it in a `.env` file in your project:
 
 ```
-DEEPSEEK_API_KEY=REDACTED_DEEPSEEK_KEY
+DEEPSEEK_API_KEY=YOUR_DEEPSEEK_API_KEY
 ```
 
 **Important**: Never share your API key or commit it to Git. It's like a password.
@@ -78,7 +78,7 @@ Other popular LLM providers: OpenAI, Anthropic (Claude), Alibaba (Qwen), Zhipu (
 >
 > ```
 > I'm going to build an agent. Use DeepSeek's model deepseek-chat, the API key is:
-> DEEPSEEK_API_KEY=REDACTED_DEEPSEEK_KEY
+> DEEPSEEK_API_KEY=YOUR_DEEPSEEK_API_KEY
 > ```
 
 ## Building an Agent Step by Step

@@ -34,7 +34,7 @@ You're not building one planet — you're building a **framework** that can rend
 >
 > ```
 > I'm going to build a 3D Solar System app. Use DeepSeek's model deepseek-chat, the API key is:
-> DEEPSEEK_API_KEY=REDACTED_DEEPSEEK_KEY
+> DEEPSEEK_API_KEY=YOUR_DEEPSEEK_API_KEY
 > ```
 
 ### Step 1: Start with one planet
